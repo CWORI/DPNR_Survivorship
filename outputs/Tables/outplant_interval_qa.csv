@@ -1,0 +1,7 @@
+plot,interval_order,month_start,month_end,source_file,n_rows,n_missing_genet,n_missing_species,n_missing_tag,n_negative_area_start,n_negative_area_end,actions,split_fuse_events
+Plot E,1,May,June,plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv,76,0,0,76,0,0,dead; grow; same; shrink,n/s; none
+Plot E,2,June,July,plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv,70,0,0,70,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,3,July,August,plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv,65,0,0,65,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,4,August,September,plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,62,0,0,62,0,0,grow; n/s; same; shrink,fuse; n/s
+Plot E,5,September,October,plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,59,0,0,59,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,6,October,November,plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,57,0,0,57,0,0,born; grow; n/s; same; shrink,fuse; n/s; none

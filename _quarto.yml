@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "DPNR Outplant Analyses"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: coral_survivorship_report.qmd
+        text: Analysis Report
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    embed-resources: true

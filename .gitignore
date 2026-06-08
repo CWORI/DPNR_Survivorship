@@ -1,0 +1,25 @@
+.DS_Store
+.RData
+.Rhistory
+.Rproj.user/
+
+# Quarto/R temporary files
+*_cache/
+*_files/
+*.knit.md
+
+# OS/editor backups
+*.tmp
+*.bak
+*~
+
+# Keep the GitHub repo focused on the active outplant workflow.
+# These old/raw folders can stay on the local computer but are not needed
+# for the current Plot E same-batch outplant analysis.
+data_raw/metadata/
+data_raw/taglab/Plot_C/
+data_raw/taglab/Plot_E/0-0_*.csv
+data_raw/taglab/Plot_E/1-0_*.csv
+data_raw/taglab/Plot_E/1-1_PlotE_Matches_*.csv
+
+/.quarto/

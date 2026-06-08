@@ -1,0 +1,16 @@
+---
+title: "DPNR Outplant Analyses"
+---
+
+This website contains the DPNR coral outplant monitoring workflow and rendered analysis report.
+
+## Start Here
+
+- Open the [Analysis Report](coral_survivorship_report.qmd) to view survivorship, cover, and species-composition results.
+- Edit `config/outplant_interval_files.csv` to add new plots or month-to-month TagLab match files.
+- Render the website after adding or changing data.
+
+## Recommended Outputs
+
+- `data_processed/outplant_master_tracking_dataset.csv`
+- `outputs/Tables/outplant_master_summary_dataset.csv`

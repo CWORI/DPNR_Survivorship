@@ -1,0 +1,388 @@
+---
+title: "DPNR Outplant Analyses"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Select the Plot that you would like to view
+
+::: panel-tabset
+## Home
+
+This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, and the tables and figures rebuild automatically.
+
+The current test case is Plot E, chunk 1-1, using same-batch TagLab match exports from May through November. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, and species cover composition.
+
+The two recommended datasets to open first are:
+
+-   `data_processed/outplant_master_tracking_dataset.csv`: one row per tracked `Genet` per month, including presence, area, cover contribution, and baseline-survival status.
+-   `outputs/Tables/outplant_master_summary_dataset.csv`: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.
+
+## SOP
+
+1.  Export TagLab match files for each plot/month pair using the same batch export process so `Genet` IDs stay consistent across months.
+2.  Place the exported CSV files in `data_raw/taglab/<Plot_Folder>/`.
+3.  Add one row per month-to-month match file in `config/outplant_interval_files.csv`.
+4.  Confirm each config row has the correct plot name, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
+5.  Render this Quarto report.
+6.  Check the file audit and QA/QC tables first.
+7.  Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.
+8.  Use cumulative survivorship as the main survival result.
+9.  Use interval survivorship as a diagnostic for each month-to-month transition.
+10. Open the two master datasets when exporting or sharing results.
+
+## Main Work Flow
+
+This setup chunk loads the packages needed for table formatting and data manipulation, then sources the outplant interval workflow. Sourcing the script here means the report always rebuilds from the latest raw/config files when rendered.
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(knitr)
+
+# Find the project folder from the report location. This lets collaborators move
+# the full project folder anywhere on their computer and still render the report.
+report_path <- knitr::current_input(dir = TRUE)
+report_dir <- if (!is.null(report_path)) {
+  dirname(normalizePath(report_path, mustWork = TRUE))
+} else {
+  getwd()
+}
+
+project_root <- report_dir
+while (!file.exists(file.path(project_root, "config", "outplant_interval_files.csv"))) {
+  parent_dir <- dirname(project_root)
+  if (identical(parent_dir, project_root)) {
+    stop(
+      "Could not find config/outplant_interval_files.csv. ",
+      "Render this report from inside the Coral_survivorship_project folder.",
+      call. = FALSE
+    )
+  }
+  project_root <- parent_dir
+}
+
+knitr::opts_knit$set(root.dir = project_root)
+setwd(project_root)
+
+source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
+```
+
+### Workflow
+
+This report reads the outplant-only TagLab match files listed in `config/outplant_interval_files.csv`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces survivorship, cover, and species-composition outputs.
+
+The workflow is designed so future users can add new plots or month pairs by editing the config rather than changing analysis code.
+
+The two recommended outplant datasets to open first are:
+
+-   `data_processed/outplant_master_tracking_dataset.csv`: one row per tracked `Genet` per month, including presence, area, cover contribution, and baseline-survival status.
+-   `outputs/Tables/outplant_master_summary_dataset.csv`: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.
+
+The workflow still writes detailed intermediate CSVs for QA/QC and reproducibility, but most users should only need the two files above unless they are debugging the analysis.
+
+Survivorship is treated as apparent persistence through a TagLab interval: an outplant is counted as surviving when it has measurable area at the start and end of the interval.
+
+### Outplant-Only Plot E Workflow
+
+This is the main test workflow for the outplant-only TagLab match files. It treats `Area1` as the start-month area and `Area2` as the end-month area, and calculates cover using the configured 16 by 30 m plot area. The same-batch TagLab exports use `Genet` as the across-month tracking ID. If a `Genet` has multiple blob rows in one interval, those rows are collapsed into one tracked outplant before survivorship is calculated. The area unit is read from `config/outplant_interval_files.csv`; the current test assumes TagLab areas are in square centimeters.
+
+This chunk verifies that every outplant interval file listed in the config exists. This is the first place to check when adding new files for other plots or months.
+
+```{r}
+#| label: outplant-file-audit
+
+outplant_file_audit %>%
+  select(plot, month_start, month_end, match_type, file, file_exists) %>%
+  kable(
+    col.names = c("Plot", "Start month", "End month", "Match type", "File", "File exists")
+  )
+```
+
+This chunk checks whether the TagLab files have missing `Genet` IDs, missing species, negative areas, or unusual action/split-fuse labels. These checks catch export problems before the biological summaries are interpreted.
+
+```{r}
+#| label: outplant-interval-qa
+
+outplant_interval_qa %>%
+  select(
+    month_start,
+    month_end,
+    n_rows,
+    n_missing_genet,
+    n_missing_species,
+    n_negative_area_start,
+    n_negative_area_end,
+    actions,
+    split_fuse_events
+  ) %>%
+  kable(
+    col.names = c(
+      "Start month", "End month", "Rows", "Missing Genet", "Missing species",
+      "Negative start area", "Negative end area", "Actions", "Split/fuse events"
+    )
+  )
+```
+
+This chunk checks whether the same `Genet` number maps to different species, tags, or genotypes across files. If the table says no conflicts were detected, the same-batch export is behaving much better for individual-level survivorship.
+
+```{r}
+#| label: outplant-unstable-genet-examples
+
+if (nrow(outplant_unstable_genet_examples) == 0) {
+  tibble(status = "No cross-file Genet identity conflicts detected.") %>%
+    kable(col.names = "Status")
+} else {
+  outplant_unstable_genet_examples %>%
+    slice_head(n = 20) %>%
+    kable(
+      col.names = c(
+        "Plot", "Source file", "Start month", "End month", "Genet",
+        "Tag", "Genotype", "Species", "Action", "Start area", "End area"
+      )
+    )
+}
+```
+
+This chunk checks whether the same shared month matches between adjacent files after repeated `Genet` blob rows have been collapsed. A good export should have zero missing/new Genets and zero species mismatches for each shared month. Area mismatches can occur when TagLab split/fuse behavior changes how multiple blobs are grouped under the same `Genet`.
+
+```{r}
+#| label: outplant-shared-month-continuity
+
+outplant_shared_month_continuity_qa %>%
+  select(
+    shared_month,
+    previous_end_n,
+    next_start_n,
+    in_both_snapshots,
+    missing_from_next_start,
+    new_in_next_start,
+    species_mismatches,
+    area_mismatches,
+    max_abs_area_difference
+  ) %>%
+  mutate(max_abs_area_difference = round(max_abs_area_difference, 4)) %>%
+  kable(
+    col.names = c(
+      "Shared month", "Previous file end n", "Next file start n",
+      "In both", "Missing from next start", "New in next start",
+      "Species mismatches", "Area mismatches", "Max area difference"
+    )
+  )
+```
+
+This chunk summarizes cumulative outplant survivorship from the baseline month. May is treated as 100%, and later months report how many original May `Genet` IDs are still present.
+
+```{r}
+#| label: outplant-cumulative-survival-table
+
+outplant_cumulative_survival_summary %>%
+  select(
+    month,
+    baseline_month,
+    n_baseline,
+    n_died_interval,
+    cumulative_deaths_observed,
+    n_surviving_from_baseline,
+    percent_cumulative_survival,
+    percent_cumulative_survival_low,
+    percent_cumulative_survival_high
+  ) %>%
+  mutate(
+    percent_cumulative_survival = round(percent_cumulative_survival, 1),
+    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
+    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Cumulative deaths", "Surviving from baseline",
+      "Cumulative survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+This chunk plots cumulative outplant survivorship from the baseline month. This is the main survivorship figure for the outplants.
+
+```{r}
+#| label: outplant-cumulative-survival-plot
+#| fig-width: 9
+#| fig-height: 4.8
+
+outplant_cumulative_survival_plot
+```
+
+This chunk reports interval survivorship between adjacent survey months. It is useful as a diagnostic because a later interval can be 100% even if cumulative survivorship has already declined.
+
+```{r}
+#| label: outplant-interval-survival-table
+
+outplant_survival_summary %>%
+  select(
+    interval_label,
+    n_start,
+    n_survived,
+    n_died,
+    n_born,
+    percent_survival,
+    percent_survival_low,
+    percent_survival_high
+  ) %>%
+  mutate(
+    percent_survival = round(percent_survival, 1),
+    percent_survival_low = round(percent_survival_low, 1),
+    percent_survival_high = round(percent_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Interval survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+This chunk plots interval survivorship between adjacent survey months. This is why October-to-November can be 100% even when cumulative survivorship is lower.
+
+```{r}
+#| label: outplant-interval-survival-plot
+#| fig-width: 9
+#| fig-height: 4.8
+
+outplant_survival_plot
+```
+
+This chunk reports outplant coral cover by month. Cover is calculated as summed outplant area divided by the 480 m2 plot area.
+
+```{r}
+#| label: outplant-cover-table
+
+outplant_cover_summary %>%
+  select(month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) %>%
+  mutate(
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_outplant_cover = round(percent_outplant_cover, 5)
+  ) %>%
+  kable(
+    col.names = c(
+      "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot area (m2)", "Outplant cover (%)"
+    )
+  )
+```
+
+This chunk plots outplant cover through time. Because outplants are small relative to a 480 m2 plot, the percent cover values are expected to be very small.
+
+```{r}
+#| label: outplant-cover-plot
+#| fig-width: 8
+#| fig-height: 4.8
+
+outplant_cover_plot
+```
+
+This chunk summarizes species abundance and prevalence among present outplant annotations in each monthly snapshot. `n_outplants` is the abundance count, and `percent_prevalence` is that species' share of present outplants for that month.
+
+```{r}
+#| label: outplant-species-prevalence-table
+
+outplant_species_prevalence_summary %>%
+  select(
+    month,
+    species,
+    n_outplants,
+    percent_prevalence,
+    total_outplant_area_m2,
+    percent_cover_within_outplants
+  ) %>%
+  mutate(
+    percent_prevalence = round(percent_prevalence, 1),
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_cover_within_outplants = round(percent_cover_within_outplants, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Outplant area (m2)", "Share of outplant cover (%)"
+    )
+  )
+```
+
+This chunk plots species prevalence through time using counts of present outplant annotations.
+
+```{r}
+#| label: outplant-species-prevalence-plot
+#| fig-width: 8
+#| fig-height: 4.8
+
+outplant_species_prevalence_plot
+```
+
+This chunk plots each species' share of total outplant cover through time. It complements prevalence because a species can have fewer annotations but more cover.
+
+```{r}
+#| label: outplant-species-cover-plot
+#| fig-width: 8
+#| fig-height: 4.8
+
+outplant_species_cover_plot
+```
+
+## Plot A
+
+No Plot A outplant match files are currently configured. Add Plot A rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+## Plot B
+
+No Plot B outplant match files are currently configured. Add Plot B rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+## Plot C
+
+No Plot C outplant match files are currently configured. Add Plot C rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+## Plot D
+
+No Plot D outplant match files are currently configured. Add Plot D rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+## Plot E
+
+Plot E is currently the configured test plot. The active files are:
+
+```{r}
+#| label: plot-e-configured-files
+
+outplant_config %>%
+  filter(plot == "Plot E") %>%
+  select(plot, month_start, month_end, file, plot_length_m, plot_width_m, taglab_area_units) %>%
+  kable(
+    col.names = c(
+      "Plot", "Start month", "End month", "File",
+      "Plot length (m)", "Plot width (m)", "Area units"
+    )
+  )
+```
+
+The full Plot E analysis is shown in the Main Work Flow tab.
+
+## Plot F
+
+No Plot F outplant match files are currently configured. Add Plot F rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+## Plot G
+
+No Plot G outplant match files are currently configured. Add Plot G rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+## Plot H
+
+No Plot H outplant match files are currently configured. Add Plot H rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+:::
