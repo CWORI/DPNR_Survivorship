@@ -4822,6 +4822,7 @@ vertical-align: -.125em;
 <li><code>data_processed/outplant_master_tracking_dataset.csv</code>: one row per tracked <code>Genet</code> per month, including presence, area, cover contribution, and baseline-survival status.</li>
 <li><code>outputs/Tables/outplant_master_summary_dataset.csv</code>: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.</li>
 </ul>
+<p>Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
@@ -5956,19 +5957,165 @@ vertical-align: -.125em;
 </section>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>Plot A is included as a placeholder for future outplant match-file analyses.</p>
+</section>
+<section id="data-status" class="level3">
+<h3 class="anchored" data-anchor-id="data-status">Data Status</h3>
 <p>No Plot A outplant match files are currently configured. Add Plot A rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="qaqc" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc">QA/QC</h3>
+<p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot A data are added.</p>
+</section>
+<section id="cumulative-survivorship" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship">Cumulative Survivorship</h3>
+<p>This section will show the percentage of baseline Plot A outplants still present through time.</p>
+</section>
+<section id="interval-survivorship" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship">Interval Survivorship</h3>
+<p>This section will show month-to-month Plot A survivorship between adjacent TagLab match files.</p>
+</section>
+<section id="coral-cover" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover">Coral Cover</h3>
+<p>This section will show Plot A outplant cover through time using the configured plot area.</p>
+</section>
+<section id="species-prevalence" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence">Species Prevalence</h3>
+<p>This section will show Plot A outplant abundance and prevalence by species through time.</p>
+</section>
+<section id="species-cover-composition" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition">Species Cover Composition</h3>
+<p>This section will show each species’ share of total Plot A outplant cover through time.</p>
+</section>
+<section id="downloads" class="level3">
+<h3 class="anchored" data-anchor-id="downloads">Downloads</h3>
+<p>This section will point to Plot A processed datasets, summary tables, and figures after Plot A data are configured.</p>
+</section>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<section id="overview-1" class="level3">
+<h3 class="anchored" data-anchor-id="overview-1">Overview</h3>
+<p>Plot B is included as a placeholder for future outplant match-file analyses.</p>
+</section>
+<section id="data-status-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-status-1">Data Status</h3>
 <p>No Plot B outplant match files are currently configured. Add Plot B rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="qaqc-1" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc-1">QA/QC</h3>
+<p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot B data are added.</p>
+</section>
+<section id="cumulative-survivorship-1" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship-1">Cumulative Survivorship</h3>
+<p>This section will show the percentage of baseline Plot B outplants still present through time.</p>
+</section>
+<section id="interval-survivorship-1" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship-1">Interval Survivorship</h3>
+<p>This section will show month-to-month Plot B survivorship between adjacent TagLab match files.</p>
+</section>
+<section id="coral-cover-1" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover-1">Coral Cover</h3>
+<p>This section will show Plot B outplant cover through time using the configured plot area.</p>
+</section>
+<section id="species-prevalence-1" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence-1">Species Prevalence</h3>
+<p>This section will show Plot B outplant abundance and prevalence by species through time.</p>
+</section>
+<section id="species-cover-composition-1" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition-1">Species Cover Composition</h3>
+<p>This section will show each species’ share of total Plot B outplant cover through time.</p>
+</section>
+<section id="downloads-1" class="level3">
+<h3 class="anchored" data-anchor-id="downloads-1">Downloads</h3>
+<p>This section will point to Plot B processed datasets, summary tables, and figures after Plot B data are configured.</p>
+</section>
 </div>
 <div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<section id="overview-2" class="level3">
+<h3 class="anchored" data-anchor-id="overview-2">Overview</h3>
+<p>Plot C is included as a placeholder for future outplant match-file analyses.</p>
+</section>
+<section id="data-status-2" class="level3">
+<h3 class="anchored" data-anchor-id="data-status-2">Data Status</h3>
 <p>No Plot C outplant match files are currently configured. Add Plot C rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="qaqc-2" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc-2">QA/QC</h3>
+<p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot C data are added.</p>
+</section>
+<section id="cumulative-survivorship-2" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship-2">Cumulative Survivorship</h3>
+<p>This section will show the percentage of baseline Plot C outplants still present through time.</p>
+</section>
+<section id="interval-survivorship-2" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship-2">Interval Survivorship</h3>
+<p>This section will show month-to-month Plot C survivorship between adjacent TagLab match files.</p>
+</section>
+<section id="coral-cover-2" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover-2">Coral Cover</h3>
+<p>This section will show Plot C outplant cover through time using the configured plot area.</p>
+</section>
+<section id="species-prevalence-2" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence-2">Species Prevalence</h3>
+<p>This section will show Plot C outplant abundance and prevalence by species through time.</p>
+</section>
+<section id="species-cover-composition-2" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition-2">Species Cover Composition</h3>
+<p>This section will show each species’ share of total Plot C outplant cover through time.</p>
+</section>
+<section id="downloads-2" class="level3">
+<h3 class="anchored" data-anchor-id="downloads-2">Downloads</h3>
+<p>This section will point to Plot C processed datasets, summary tables, and figures after Plot C data are configured.</p>
+</section>
 </div>
 <div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<section id="overview-3" class="level3">
+<h3 class="anchored" data-anchor-id="overview-3">Overview</h3>
+<p>Plot D is included as a placeholder for future outplant match-file analyses.</p>
+</section>
+<section id="data-status-3" class="level3">
+<h3 class="anchored" data-anchor-id="data-status-3">Data Status</h3>
 <p>No Plot D outplant match files are currently configured. Add Plot D rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="qaqc-3" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc-3">QA/QC</h3>
+<p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot D data are added.</p>
+</section>
+<section id="cumulative-survivorship-3" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship-3">Cumulative Survivorship</h3>
+<p>This section will show the percentage of baseline Plot D outplants still present through time.</p>
+</section>
+<section id="interval-survivorship-3" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship-3">Interval Survivorship</h3>
+<p>This section will show month-to-month Plot D survivorship between adjacent TagLab match files.</p>
+</section>
+<section id="coral-cover-3" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover-3">Coral Cover</h3>
+<p>This section will show Plot D outplant cover through time using the configured plot area.</p>
+</section>
+<section id="species-prevalence-3" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence-3">Species Prevalence</h3>
+<p>This section will show Plot D outplant abundance and prevalence by species through time.</p>
+</section>
+<section id="species-cover-composition-3" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition-3">Species Cover Composition</h3>
+<p>This section will show each species’ share of total Plot D outplant cover through time.</p>
+</section>
+<section id="downloads-3" class="level3">
+<h3 class="anchored" data-anchor-id="downloads-3">Downloads</h3>
+<p>This section will point to Plot D processed datasets, summary tables, and figures after Plot D data are configured.</p>
+</section>
 </div>
 <div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
-<p>Plot E is currently the configured test plot. The active files are:</p>
+<section id="overview-4" class="level3">
+<h3 class="anchored" data-anchor-id="overview-4">Overview</h3>
+<p>Plot E is currently the configured test plot for the outplant-only TagLab match workflow.</p>
+</section>
+<section id="data-status-4" class="level3">
+<h3 class="anchored" data-anchor-id="data-status-4">Data Status</h3>
+<p>The active Plot E files are:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -6063,16 +6210,149 @@ vertical-align: -.125em;
 </table>
 </div>
 </div>
-<p>The full Plot E analysis is shown in the Main Work Flow tab.</p>
+</section>
+<section id="qaqc-4" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc-4">QA/QC</h3>
+<p>The full Plot E QA/QC tables are shown in the Main Work Flow tab. These include file checks, interval QA, Genet consistency, and shared-month continuity.</p>
+</section>
+<section id="cumulative-survivorship-4" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship-4">Cumulative Survivorship</h3>
+<p>The Plot E cumulative survivorship table and figure are shown in the Main Work Flow tab.</p>
+</section>
+<section id="interval-survivorship-4" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship-4">Interval Survivorship</h3>
+<p>The Plot E interval survivorship table and figure are shown in the Main Work Flow tab.</p>
+</section>
+<section id="coral-cover-4" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover-4">Coral Cover</h3>
+<p>The Plot E outplant cover table and figure are shown in the Main Work Flow tab.</p>
+</section>
+<section id="species-prevalence-4" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence-4">Species Prevalence</h3>
+<p>The Plot E species prevalence table and figure are shown in the Main Work Flow tab.</p>
+</section>
+<section id="species-cover-composition-4" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition-4">Species Cover Composition</h3>
+<p>The Plot E species cover-composition figure is shown in the Main Work Flow tab.</p>
+</section>
+<section id="downloads-4" class="level3">
+<h3 class="anchored" data-anchor-id="downloads-4">Downloads</h3>
+<p>Use the master tracking dataset and master summary dataset listed in the Home tab for Plot E results.</p>
+</section>
 </div>
 <div id="tabset-1-9" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-9-tab">
+<section id="overview-5" class="level3">
+<h3 class="anchored" data-anchor-id="overview-5">Overview</h3>
+<p>Plot F is included as a placeholder for future outplant match-file analyses.</p>
+</section>
+<section id="data-status-5" class="level3">
+<h3 class="anchored" data-anchor-id="data-status-5">Data Status</h3>
 <p>No Plot F outplant match files are currently configured. Add Plot F rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="qaqc-5" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc-5">QA/QC</h3>
+<p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot F data are added.</p>
+</section>
+<section id="cumulative-survivorship-5" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship-5">Cumulative Survivorship</h3>
+<p>This section will show the percentage of baseline Plot F outplants still present through time.</p>
+</section>
+<section id="interval-survivorship-5" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship-5">Interval Survivorship</h3>
+<p>This section will show month-to-month Plot F survivorship between adjacent TagLab match files.</p>
+</section>
+<section id="coral-cover-5" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover-5">Coral Cover</h3>
+<p>This section will show Plot F outplant cover through time using the configured plot area.</p>
+</section>
+<section id="species-prevalence-5" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence-5">Species Prevalence</h3>
+<p>This section will show Plot F outplant abundance and prevalence by species through time.</p>
+</section>
+<section id="species-cover-composition-5" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition-5">Species Cover Composition</h3>
+<p>This section will show each species’ share of total Plot F outplant cover through time.</p>
+</section>
+<section id="downloads-5" class="level3">
+<h3 class="anchored" data-anchor-id="downloads-5">Downloads</h3>
+<p>This section will point to Plot F processed datasets, summary tables, and figures after Plot F data are configured.</p>
+</section>
 </div>
 <div id="tabset-1-10" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-10-tab">
+<section id="overview-6" class="level3">
+<h3 class="anchored" data-anchor-id="overview-6">Overview</h3>
+<p>Plot G is included as a placeholder for future outplant match-file analyses.</p>
+</section>
+<section id="data-status-6" class="level3">
+<h3 class="anchored" data-anchor-id="data-status-6">Data Status</h3>
 <p>No Plot G outplant match files are currently configured. Add Plot G rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="qaqc-6" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc-6">QA/QC</h3>
+<p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot G data are added.</p>
+</section>
+<section id="cumulative-survivorship-6" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship-6">Cumulative Survivorship</h3>
+<p>This section will show the percentage of baseline Plot G outplants still present through time.</p>
+</section>
+<section id="interval-survivorship-6" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship-6">Interval Survivorship</h3>
+<p>This section will show month-to-month Plot G survivorship between adjacent TagLab match files.</p>
+</section>
+<section id="coral-cover-6" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover-6">Coral Cover</h3>
+<p>This section will show Plot G outplant cover through time using the configured plot area.</p>
+</section>
+<section id="species-prevalence-6" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence-6">Species Prevalence</h3>
+<p>This section will show Plot G outplant abundance and prevalence by species through time.</p>
+</section>
+<section id="species-cover-composition-6" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition-6">Species Cover Composition</h3>
+<p>This section will show each species’ share of total Plot G outplant cover through time.</p>
+</section>
+<section id="downloads-6" class="level3">
+<h3 class="anchored" data-anchor-id="downloads-6">Downloads</h3>
+<p>This section will point to Plot G processed datasets, summary tables, and figures after Plot G data are configured.</p>
+</section>
 </div>
 <div id="tabset-1-11" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-11-tab">
+<section id="overview-7" class="level3">
+<h3 class="anchored" data-anchor-id="overview-7">Overview</h3>
+<p>Plot H is included as a placeholder for future outplant match-file analyses.</p>
+</section>
+<section id="data-status-7" class="level3">
+<h3 class="anchored" data-anchor-id="data-status-7">Data Status</h3>
 <p>No Plot H outplant match files are currently configured. Add Plot H rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="qaqc-7" class="level3">
+<h3 class="anchored" data-anchor-id="qaqc-7">QA/QC</h3>
+<p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot H data are added.</p>
+</section>
+<section id="cumulative-survivorship-7" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-survivorship-7">Cumulative Survivorship</h3>
+<p>This section will show the percentage of baseline Plot H outplants still present through time.</p>
+</section>
+<section id="interval-survivorship-7" class="level3">
+<h3 class="anchored" data-anchor-id="interval-survivorship-7">Interval Survivorship</h3>
+<p>This section will show month-to-month Plot H survivorship between adjacent TagLab match files.</p>
+</section>
+<section id="coral-cover-7" class="level3">
+<h3 class="anchored" data-anchor-id="coral-cover-7">Coral Cover</h3>
+<p>This section will show Plot H outplant cover through time using the configured plot area.</p>
+</section>
+<section id="species-prevalence-7" class="level3">
+<h3 class="anchored" data-anchor-id="species-prevalence-7">Species Prevalence</h3>
+<p>This section will show Plot H outplant abundance and prevalence by species through time.</p>
+</section>
+<section id="species-cover-composition-7" class="level3">
+<h3 class="anchored" data-anchor-id="species-cover-composition-7">Species Cover Composition</h3>
+<p>This section will show each species’ share of total Plot H outplant cover through time.</p>
+</section>
+<section id="downloads-7" class="level3">
+<h3 class="anchored" data-anchor-id="downloads-7">Downloads</h3>
+<p>This section will point to Plot H processed datasets, summary tables, and figures after Plot H data are configured.</p>
+</section>
 </div>
 </div>
 </div>

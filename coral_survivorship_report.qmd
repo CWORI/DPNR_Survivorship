@@ -26,6 +26,8 @@ The two recommended datasets to open first are:
 -   `data_processed/outplant_master_tracking_dataset.csv`: one row per tracked `Genet` per month, including presence, area, cover contribution, and baseline-survival status.
 -   `outputs/Tables/outplant_master_summary_dataset.csv`: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.
 
+Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.
+
 ## SOP
 
 1.  Export TagLab match files for each plot/month pair using the same batch export process so `Genet` IDs stay consistent across months.
@@ -340,23 +342,165 @@ outplant_species_cover_plot
 
 ## Plot A
 
+### Overview
+
+Plot A is included as a placeholder for future outplant match-file analyses.
+
+### Data Status
+
 No Plot A outplant match files are currently configured. Add Plot A rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### QA/QC
+
+This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot A data are added.
+
+### Cumulative Survivorship
+
+This section will show the percentage of baseline Plot A outplants still present through time.
+
+### Interval Survivorship
+
+This section will show month-to-month Plot A survivorship between adjacent TagLab match files.
+
+### Coral Cover
+
+This section will show Plot A outplant cover through time using the configured plot area.
+
+### Species Prevalence
+
+This section will show Plot A outplant abundance and prevalence by species through time.
+
+### Species Cover Composition
+
+This section will show each species' share of total Plot A outplant cover through time.
+
+### Downloads
+
+This section will point to Plot A processed datasets, summary tables, and figures after Plot A data are configured.
 
 ## Plot B
 
+### Overview
+
+Plot B is included as a placeholder for future outplant match-file analyses.
+
+### Data Status
+
 No Plot B outplant match files are currently configured. Add Plot B rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### QA/QC
+
+This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot B data are added.
+
+### Cumulative Survivorship
+
+This section will show the percentage of baseline Plot B outplants still present through time.
+
+### Interval Survivorship
+
+This section will show month-to-month Plot B survivorship between adjacent TagLab match files.
+
+### Coral Cover
+
+This section will show Plot B outplant cover through time using the configured plot area.
+
+### Species Prevalence
+
+This section will show Plot B outplant abundance and prevalence by species through time.
+
+### Species Cover Composition
+
+This section will show each species' share of total Plot B outplant cover through time.
+
+### Downloads
+
+This section will point to Plot B processed datasets, summary tables, and figures after Plot B data are configured.
 
 ## Plot C
 
+### Overview
+
+Plot C is included as a placeholder for future outplant match-file analyses.
+
+### Data Status
+
 No Plot C outplant match files are currently configured. Add Plot C rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### QA/QC
+
+This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot C data are added.
+
+### Cumulative Survivorship
+
+This section will show the percentage of baseline Plot C outplants still present through time.
+
+### Interval Survivorship
+
+This section will show month-to-month Plot C survivorship between adjacent TagLab match files.
+
+### Coral Cover
+
+This section will show Plot C outplant cover through time using the configured plot area.
+
+### Species Prevalence
+
+This section will show Plot C outplant abundance and prevalence by species through time.
+
+### Species Cover Composition
+
+This section will show each species' share of total Plot C outplant cover through time.
+
+### Downloads
+
+This section will point to Plot C processed datasets, summary tables, and figures after Plot C data are configured.
 
 ## Plot D
 
+### Overview
+
+Plot D is included as a placeholder for future outplant match-file analyses.
+
+### Data Status
+
 No Plot D outplant match files are currently configured. Add Plot D rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### QA/QC
+
+This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot D data are added.
+
+### Cumulative Survivorship
+
+This section will show the percentage of baseline Plot D outplants still present through time.
+
+### Interval Survivorship
+
+This section will show month-to-month Plot D survivorship between adjacent TagLab match files.
+
+### Coral Cover
+
+This section will show Plot D outplant cover through time using the configured plot area.
+
+### Species Prevalence
+
+This section will show Plot D outplant abundance and prevalence by species through time.
+
+### Species Cover Composition
+
+This section will show each species' share of total Plot D outplant cover through time.
+
+### Downloads
+
+This section will point to Plot D processed datasets, summary tables, and figures after Plot D data are configured.
 
 ## Plot E
 
-Plot E is currently the configured test plot. The active files are:
+### Overview
+
+Plot E is currently the configured test plot for the outplant-only TagLab match workflow.
+
+### Data Status
+
+The active Plot E files are:
 
 ```{r}
 #| label: plot-e-configured-files
@@ -372,17 +516,145 @@ outplant_config %>%
   )
 ```
 
-The full Plot E analysis is shown in the Main Work Flow tab.
+### QA/QC
+
+The full Plot E QA/QC tables are shown in the Main Work Flow tab. These include file checks, interval QA, Genet consistency, and shared-month continuity.
+
+### Cumulative Survivorship
+
+The Plot E cumulative survivorship table and figure are shown in the Main Work Flow tab.
+
+### Interval Survivorship
+
+The Plot E interval survivorship table and figure are shown in the Main Work Flow tab.
+
+### Coral Cover
+
+The Plot E outplant cover table and figure are shown in the Main Work Flow tab.
+
+### Species Prevalence
+
+The Plot E species prevalence table and figure are shown in the Main Work Flow tab.
+
+### Species Cover Composition
+
+The Plot E species cover-composition figure is shown in the Main Work Flow tab.
+
+### Downloads
+
+Use the master tracking dataset and master summary dataset listed in the Home tab for Plot E results.
 
 ## Plot F
 
+### Overview
+
+Plot F is included as a placeholder for future outplant match-file analyses.
+
+### Data Status
+
 No Plot F outplant match files are currently configured. Add Plot F rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### QA/QC
+
+This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot F data are added.
+
+### Cumulative Survivorship
+
+This section will show the percentage of baseline Plot F outplants still present through time.
+
+### Interval Survivorship
+
+This section will show month-to-month Plot F survivorship between adjacent TagLab match files.
+
+### Coral Cover
+
+This section will show Plot F outplant cover through time using the configured plot area.
+
+### Species Prevalence
+
+This section will show Plot F outplant abundance and prevalence by species through time.
+
+### Species Cover Composition
+
+This section will show each species' share of total Plot F outplant cover through time.
+
+### Downloads
+
+This section will point to Plot F processed datasets, summary tables, and figures after Plot F data are configured.
 
 ## Plot G
 
+### Overview
+
+Plot G is included as a placeholder for future outplant match-file analyses.
+
+### Data Status
+
 No Plot G outplant match files are currently configured. Add Plot G rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### QA/QC
+
+This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot G data are added.
+
+### Cumulative Survivorship
+
+This section will show the percentage of baseline Plot G outplants still present through time.
+
+### Interval Survivorship
+
+This section will show month-to-month Plot G survivorship between adjacent TagLab match files.
+
+### Coral Cover
+
+This section will show Plot G outplant cover through time using the configured plot area.
+
+### Species Prevalence
+
+This section will show Plot G outplant abundance and prevalence by species through time.
+
+### Species Cover Composition
+
+This section will show each species' share of total Plot G outplant cover through time.
+
+### Downloads
+
+This section will point to Plot G processed datasets, summary tables, and figures after Plot G data are configured.
 
 ## Plot H
 
+### Overview
+
+Plot H is included as a placeholder for future outplant match-file analyses.
+
+### Data Status
+
 No Plot H outplant match files are currently configured. Add Plot H rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### QA/QC
+
+This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot H data are added.
+
+### Cumulative Survivorship
+
+This section will show the percentage of baseline Plot H outplants still present through time.
+
+### Interval Survivorship
+
+This section will show month-to-month Plot H survivorship between adjacent TagLab match files.
+
+### Coral Cover
+
+This section will show Plot H outplant cover through time using the configured plot area.
+
+### Species Prevalence
+
+This section will show Plot H outplant abundance and prevalence by species through time.
+
+### Species Cover Composition
+
+This section will show each species' share of total Plot H outplant cover through time.
+
+### Downloads
+
+This section will point to Plot H processed datasets, summary tables, and figures after Plot H data are configured.
 :::
