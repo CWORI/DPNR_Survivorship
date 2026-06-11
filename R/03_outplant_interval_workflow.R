@@ -63,6 +63,7 @@ setwd(outplant_project_root)
 # The script should not need edits as long as the TagLab export has the same
 # general columns: Genet, Blob1, Blob2, Area1, Area2, Class, Action, Split/Fuse.
 outplant_config_path <- file.path("config", "outplant_interval_files.csv")
+outplant_depth_path <- file.path("data_raw", "metadata", "Coordinates_Depths.csv")
 outplant_temperature_path <- file.path(
   "data_raw", "Temperature", "2025",
   "21706349 Deep Nurser 2025-11-20 14_38_59 AST (Data AST).csv"
@@ -111,6 +112,12 @@ outplant_clean_species <- function(x) {
     species == "Montastrea cavernosa" ~ "Montastraea cavernosa",
     TRUE ~ species
   )
+}
+
+outplant_normalize_plot_name <- function(x) {
+  x %>%
+    outplant_clean_text() %>%
+    str_replace("^Plot([A-H])$", "Plot \\1")
 }
 
 outplant_first_non_missing <- function(x) {
@@ -188,7 +195,7 @@ outplant_read_config <- function(path) {
   read_csv(path, show_col_types = FALSE) %>%
     clean_names() %>%
     mutate(
-      plot = str_squish(plot),
+      plot = outplant_normalize_plot_name(plot),
       plot_folder = str_squish(plot_folder),
       file_type = str_to_lower(file_type),
       match_type = as.character(match_type),
@@ -514,6 +521,66 @@ outplant_summarize_species_prevalence <- function(monthly_observations) {
       percent_cover_within_outplants = 100 * total_outplant_area_m2 / total_area_month_m2
     ) %>%
     ungroup() %>%
+    arrange(plot, month_order, species)
+}
+
+outplant_read_depth_metadata <- function(path) {
+  if (!file.exists(path)) {
+    warning("Could not find plot depth metadata file: ", path, call. = FALSE)
+    return(tibble())
+  }
+
+  read_csv(path, show_col_types = FALSE) %>%
+    clean_names() %>%
+    transmute(
+      source_plot_id = outplant_clean_text(id),
+      plot = outplant_normalize_plot_name(id_new),
+      marker = outplant_clean_text(marker),
+      latitude = as.numeric(lat),
+      longitude = as.numeric(lon),
+      depth_ft = as.numeric(depth_ft),
+      depth_m = as.numeric(depth_m)
+    ) %>%
+    filter(!is.na(plot), !is.na(marker))
+}
+
+outplant_summarize_plot_depth <- function(depth_metadata) {
+  if (nrow(depth_metadata) == 0) {
+    return(tibble())
+  }
+
+  depth_metadata %>%
+    group_by(plot) %>%
+    summarise(
+      n_depth_markers = n(),
+      mean_depth_ft = mean(depth_ft, na.rm = TRUE),
+      min_depth_ft = min(depth_ft, na.rm = TRUE),
+      max_depth_ft = max(depth_ft, na.rm = TRUE),
+      depth_range_ft = max_depth_ft - min_depth_ft,
+      mean_depth_m = mean(depth_m, na.rm = TRUE),
+      min_depth_m = min(depth_m, na.rm = TRUE),
+      max_depth_m = max(depth_m, na.rm = TRUE),
+      depth_range_m = max_depth_m - min_depth_m,
+      centroid_latitude = mean(latitude, na.rm = TRUE),
+      centroid_longitude = mean(longitude, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    arrange(plot)
+}
+
+outplant_summarize_species_depth <- function(species_prevalence, plot_depth_summary) {
+  if (nrow(species_prevalence) == 0 || nrow(plot_depth_summary) == 0) {
+    return(tibble())
+  }
+
+  species_prevalence %>%
+    left_join(plot_depth_summary, by = "plot") %>%
+    select(
+      plot, month_order, month, species, n_outplants, percent_prevalence,
+      total_outplant_area_m2, percent_cover_within_outplants,
+      mean_depth_ft, min_depth_ft, max_depth_ft, depth_range_ft,
+      mean_depth_m, min_depth_m, max_depth_m, depth_range_m
+    ) %>%
     arrange(plot, month_order, species)
 }
 
@@ -1081,6 +1148,8 @@ outplant_plot_species_cover <- function(species_prevalence) {
 outplant_setup_output_dirs()
 
 outplant_config <- outplant_read_config(outplant_config_path)
+outplant_depth_metadata <- outplant_read_depth_metadata(outplant_depth_path)
+outplant_plot_depth_summary <- outplant_summarize_plot_depth(outplant_depth_metadata)
 outplant_file_audit <- outplant_build_file_audit(outplant_config)
 outplant_interval_rows <- outplant_build_interval_rows(outplant_config)
 outplant_coral_intervals <- outplant_build_coral_intervals(outplant_interval_rows)
@@ -1099,6 +1168,10 @@ outplant_survival_summary <- outplant_summarize_survival(outplant_coral_interval
 outplant_species_survival_summary <- outplant_summarize_species_survival(outplant_coral_intervals)
 outplant_cover_summary <- outplant_summarize_cover(outplant_monthly_observations)
 outplant_species_prevalence_summary <- outplant_summarize_species_prevalence(outplant_monthly_observations)
+outplant_species_depth_summary <- outplant_summarize_species_depth(
+  outplant_species_prevalence_summary,
+  outplant_plot_depth_summary
+)
 
 outplant_master_tracking_dataset <- outplant_build_master_tracking_dataset(outplant_monthly_observations)
 outplant_master_summary_dataset <- outplant_build_master_summary_dataset(
@@ -1134,6 +1207,7 @@ outplant_write_named_csvs(
     outplant_coral_intervals = outplant_coral_intervals,
     outplant_monthly_observations = outplant_monthly_observations,
     outplant_master_tracking_dataset = outplant_master_tracking_dataset,
+    outplant_depth_metadata = outplant_depth_metadata,
     outplant_temperature_observations = outplant_temperature_observations
   ),
   outplant_processed_dir
@@ -1146,6 +1220,8 @@ outplant_write_named_csvs(
     outplant_species_survival_summary = outplant_species_survival_summary,
     outplant_cover_summary = outplant_cover_summary,
     outplant_species_prevalence_summary = outplant_species_prevalence_summary,
+    outplant_plot_depth_summary = outplant_plot_depth_summary,
+    outplant_species_depth_summary = outplant_species_depth_summary,
     outplant_daily_temperature_summary = outplant_daily_temperature_summary,
     outplant_master_summary_dataset = outplant_master_summary_dataset
   ),

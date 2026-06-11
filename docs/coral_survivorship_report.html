@@ -4816,13 +4816,13 @@ vertical-align: -.125em;
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, and the tables and figures rebuild automatically.</p>
-<p>The current test case is Plot E, chunk 1-1, using same-batch TagLab match exports from May through November. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, and species cover composition.</p>
+<p>The current test case is Plot E, chunk 1-1, using same-batch TagLab match exports from May through November. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, species cover composition, temperature, and plot-level depth metadata.</p>
 <p>The two recommended datasets to open first are:</p>
 <ul>
 <li><code>data_processed/outplant_master_tracking_dataset.csv</code>: one row per tracked <code>Genet</code> per month, including presence, area, cover contribution, and baseline-survival status.</li>
 <li><code>outputs/Tables/outplant_master_summary_dataset.csv</code>: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.</li>
 </ul>
-<p>Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.</p>
+<p>Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, depth metadata, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
@@ -4830,6 +4830,7 @@ vertical-align: -.125em;
 <li>Place the exported CSV files in <code>data_raw/taglab/&lt;Plot_Folder&gt;/</code>.</li>
 <li>Add one row per month-to-month match file in <code>config/outplant_interval_files.csv</code>.</li>
 <li>Confirm each config row has the correct plot name, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.</li>
+<li>Confirm <code>data_raw/metadata/Coordinates_Depths.csv</code> has marker depths for each plot if depth summaries will be used.</li>
 <li>Render this Quarto report.</li>
 <li>Check the file audit and QA/QC tables first.</li>
 <li>Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.</li>
@@ -6017,6 +6018,634 @@ vertical-align: -.125em;
 </div>
 </div>
 </section>
+<section id="plot-depth-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="plot-depth-metadata">Plot Depth Metadata</h3>
+<p>This chunk summarizes the corner-marker depth metadata for every plot listed in <code>data_raw/metadata/Coordinates_Depths.csv</code>. These values describe the plot-level depth context and should not be interpreted as exact depths for individual coral colonies.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>outplant_plot_depth_summary <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_m =</span> <span class="fu">round</span>(mean_depth_m, <span class="dv">2</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_m =</span> <span class="fu">round</span>(min_depth_m, <span class="dv">2</span>),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_m =</span> <span class="fu">round</span>(max_depth_m, <span class="dv">2</span>),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_m =</span> <span class="fu">round</span>(depth_range_m, <span class="dv">2</span>),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">centroid_latitude =</span> <span class="fu">round</span>(centroid_latitude, <span class="dv">6</span>),</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">centroid_longitude =</span> <span class="fu">round</span>(centroid_longitude, <span class="dv">6</span>)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Depth markers&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>, <span class="st">&quot;Min depth (ft)&quot;</span>,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span>, <span class="st">&quot;Mean depth (m)&quot;</span>,</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (m)&quot;</span>, <span class="st">&quot;Max depth (m)&quot;</span>, <span class="st">&quot;Depth range (m)&quot;</span>,</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Centroid latitude&quot;</span>, <span class="st">&quot;Centroid longitude&quot;</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: right;">Depth markers</th>
+<th style="text-align: right;">Mean depth (ft)</th>
+<th style="text-align: right;">Min depth (ft)</th>
+<th style="text-align: right;">Max depth (ft)</th>
+<th style="text-align: right;">Depth range (ft)</th>
+<th style="text-align: right;">Mean depth (m)</th>
+<th style="text-align: right;">Min depth (m)</th>
+<th style="text-align: right;">Max depth (m)</th>
+<th style="text-align: right;">Depth range (m)</th>
+<th style="text-align: right;">Centroid latitude</th>
+<th style="text-align: right;">Centroid longitude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot A</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">40.2</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">12.27</td>
+<td style="text-align: right;">9.14</td>
+<td style="text-align: right;">15.54</td>
+<td style="text-align: right;">6.40</td>
+<td style="text-align: right;">18.35083</td>
+<td style="text-align: right;">-64.86417</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">37.8</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">11.51</td>
+<td style="text-align: right;">7.62</td>
+<td style="text-align: right;">15.54</td>
+<td style="text-align: right;">7.92</td>
+<td style="text-align: right;">18.35078</td>
+<td style="text-align: right;">-64.86444</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot C</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">33.5</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">10.21</td>
+<td style="text-align: right;">6.71</td>
+<td style="text-align: right;">13.72</td>
+<td style="text-align: right;">7.01</td>
+<td style="text-align: right;">18.35072</td>
+<td style="text-align: right;">-64.86471</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot D</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">9.68</td>
+<td style="text-align: right;">6.71</td>
+<td style="text-align: right;">12.80</td>
+<td style="text-align: right;">6.10</td>
+<td style="text-align: right;">18.35064</td>
+<td style="text-align: right;">-64.86495</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">9.68</td>
+<td style="text-align: right;">6.71</td>
+<td style="text-align: right;">12.80</td>
+<td style="text-align: right;">6.10</td>
+<td style="text-align: right;">18.35057</td>
+<td style="text-align: right;">-64.86519</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot F</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">30.0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">9.14</td>
+<td style="text-align: right;">6.10</td>
+<td style="text-align: right;">12.50</td>
+<td style="text-align: right;">6.40</td>
+<td style="text-align: right;">18.35046</td>
+<td style="text-align: right;">-64.86546</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot G</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">29.0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">8.84</td>
+<td style="text-align: right;">6.10</td>
+<td style="text-align: right;">11.58</td>
+<td style="text-align: right;">5.49</td>
+<td style="text-align: right;">18.35037</td>
+<td style="text-align: right;">-64.86575</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot H</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">27.8</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">8.46</td>
+<td style="text-align: right;">5.79</td>
+<td style="text-align: right;">11.58</td>
+<td style="text-align: right;">5.79</td>
+<td style="text-align: right;">18.35028</td>
+<td style="text-align: right;">-64.86601</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>This chunk joins the species prevalence results to the plot-level depth summary. It is a setup table for future species-depth analyses once multiple plots have outplant match files configured.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>outplant_species_depth_summary <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    plot,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    month,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    species,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    n_outplants,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    percent_prevalence,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    percent_cover_within_outplants,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    mean_depth_ft,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    min_depth_ft,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    max_depth_ft,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    depth_range_ft</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_prevalence =</span> <span class="fu">round</span>(percent_prevalence, <span class="dv">1</span>),</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cover_within_outplants =</span> <span class="fu">round</span>(percent_cover_within_outplants, <span class="dv">1</span>),</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Outplant abundance&quot;</span>,</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Prevalence (%)&quot;</span>, <span class="st">&quot;Share of outplant cover (%)&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>,</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (ft)&quot;</span>, <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 17%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: left;">Month</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">Outplant abundance</th>
+<th style="text-align: right;">Prevalence (%)</th>
+<th style="text-align: right;">Share of outplant cover (%)</th>
+<th style="text-align: right;">Mean depth (ft)</th>
+<th style="text-align: right;">Min depth (ft)</th>
+<th style="text-align: right;">Max depth (ft)</th>
+<th style="text-align: right;">Depth range (ft)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">61.7</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">44.3</td>
+<td style="text-align: right;">22.7</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">31.1</td>
+<td style="text-align: right;">12.6</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10.9</td>
+<td style="text-align: right;">51.5</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">49.1</td>
+<td style="text-align: right;">27.4</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">34.5</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">11.1</td>
+<td style="text-align: right;">75.0</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">48.1</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">35.2</td>
+<td style="text-align: right;">8.5</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10.9</td>
+<td style="text-align: right;">76.1</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">45.5</td>
+<td style="text-align: right;">13.7</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">34.5</td>
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella sp.</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10.9</td>
+<td style="text-align: right;">52.0</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">45.5</td>
+<td style="text-align: right;">31.2</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">34.5</td>
+<td style="text-align: right;">12.8</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">Orbicella sp.</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">11.1</td>
+<td style="text-align: right;">50.7</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">46.3</td>
+<td style="text-align: right;">32.9</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">35.2</td>
+<td style="text-align: right;">12.8</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">Orbicella sp.</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">November</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10.7</td>
+<td style="text-align: right;">56.3</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">November</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">44.6</td>
+<td style="text-align: right;">25.7</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">November</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">November</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">13.6</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">November</td>
+<td style="text-align: left;">Orbicella sp.</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <section id="overview" class="level3">
@@ -6026,6 +6655,10 @@ vertical-align: -.125em;
 <section id="data-status" class="level3">
 <h3 class="anchored" data-anchor-id="data-status">Data Status</h3>
 <p>No Plot A outplant match files are currently configured. Add Plot A rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="depth-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata">Depth Metadata</h3>
+<p>This section will show Plot A corner-marker depth summaries and plot-level depth-gradient context once Plot A outplant match files are configured.</p>
 </section>
 <section id="qaqc" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc">QA/QC</h3>
@@ -6065,6 +6698,10 @@ vertical-align: -.125em;
 <h3 class="anchored" data-anchor-id="data-status-1">Data Status</h3>
 <p>No Plot B outplant match files are currently configured. Add Plot B rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
+<section id="depth-metadata-1" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata-1">Depth Metadata</h3>
+<p>This section will show Plot B corner-marker depth summaries and plot-level depth-gradient context once Plot B outplant match files are configured.</p>
+</section>
 <section id="qaqc-1" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc-1">QA/QC</h3>
 <p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot B data are added.</p>
@@ -6103,6 +6740,10 @@ vertical-align: -.125em;
 <h3 class="anchored" data-anchor-id="data-status-2">Data Status</h3>
 <p>No Plot C outplant match files are currently configured. Add Plot C rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
+<section id="depth-metadata-2" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata-2">Depth Metadata</h3>
+<p>This section will show Plot C corner-marker depth summaries and plot-level depth-gradient context once Plot C outplant match files are configured.</p>
+</section>
 <section id="qaqc-2" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc-2">QA/QC</h3>
 <p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot C data are added.</p>
@@ -6140,6 +6781,10 @@ vertical-align: -.125em;
 <section id="data-status-3" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-3">Data Status</h3>
 <p>No Plot D outplant match files are currently configured. Add Plot D rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="depth-metadata-3" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata-3">Depth Metadata</h3>
+<p>This section will show Plot D corner-marker depth summaries and plot-level depth-gradient context once Plot D outplant match files are configured.</p>
 </section>
 <section id="qaqc-3" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc-3">QA/QC</h3>
@@ -6181,15 +6826,15 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>outplant_config <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plot <span class="sc">==</span> <span class="st">&quot;Plot E&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) <span class="sc">%&gt;%</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Start date&quot;</span>, <span class="st">&quot;End date&quot;</span>, <span class="st">&quot;File&quot;</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot length (m)&quot;</span>, <span class="st">&quot;Plot width (m)&quot;</span>, <span class="st">&quot;Area units&quot;</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>outplant_config <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plot <span class="sc">==</span> <span class="st">&quot;Plot E&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Start date&quot;</span>, <span class="st">&quot;End date&quot;</span>, <span class="st">&quot;File&quot;</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot length (m)&quot;</span>, <span class="st">&quot;Plot width (m)&quot;</span>, <span class="st">&quot;Area units&quot;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -6289,6 +6934,90 @@ vertical-align: -.125em;
 </div>
 </div>
 </section>
+<section id="depth-metadata-4" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata-4">Depth Metadata</h3>
+<p>The Plot E depth summary is based on the four corner markers in <code>data_raw/metadata/Coordinates_Depths.csv</code>. These depths describe the plot-level setting for the active outplant workflow.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>outplant_plot_depth_summary <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plot <span class="sc">==</span> <span class="st">&quot;Plot E&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_m =</span> <span class="fu">round</span>(mean_depth_m, <span class="dv">2</span>),</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_m =</span> <span class="fu">round</span>(min_depth_m, <span class="dv">2</span>),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_m =</span> <span class="fu">round</span>(max_depth_m, <span class="dv">2</span>),</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_m =</span> <span class="fu">round</span>(depth_range_m, <span class="dv">2</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    plot,</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    n_depth_markers,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    mean_depth_ft,</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    min_depth_ft,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    max_depth_ft,</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    depth_range_ft,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    mean_depth_m,</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    min_depth_m,</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    max_depth_m,</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    depth_range_m</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Depth markers&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>, <span class="st">&quot;Min depth (ft)&quot;</span>,</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span>, <span class="st">&quot;Mean depth (m)&quot;</span>,</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (m)&quot;</span>, <span class="st">&quot;Max depth (m)&quot;</span>, <span class="st">&quot;Depth range (m)&quot;</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: right;">Depth markers</th>
+<th style="text-align: right;">Mean depth (ft)</th>
+<th style="text-align: right;">Min depth (ft)</th>
+<th style="text-align: right;">Max depth (ft)</th>
+<th style="text-align: right;">Depth range (ft)</th>
+<th style="text-align: right;">Mean depth (m)</th>
+<th style="text-align: right;">Min depth (m)</th>
+<th style="text-align: right;">Max depth (m)</th>
+<th style="text-align: right;">Depth range (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">9.68</td>
+<td style="text-align: right;">6.71</td>
+<td style="text-align: right;">12.8</td>
+<td style="text-align: right;">6.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 <section id="qaqc-4" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc-4">QA/QC</h3>
 <p>The full Plot E QA/QC tables are shown in the Main Work Flow tab. These include file checks, interval QA, Genet consistency, and shared-month continuity.</p>
@@ -6326,6 +7055,10 @@ vertical-align: -.125em;
 <section id="data-status-5" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-5">Data Status</h3>
 <p>No Plot F outplant match files are currently configured. Add Plot F rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="depth-metadata-5" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata-5">Depth Metadata</h3>
+<p>This section will show Plot F corner-marker depth summaries and plot-level depth-gradient context once Plot F outplant match files are configured.</p>
 </section>
 <section id="qaqc-5" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc-5">QA/QC</h3>
@@ -6365,6 +7098,10 @@ vertical-align: -.125em;
 <h3 class="anchored" data-anchor-id="data-status-6">Data Status</h3>
 <p>No Plot G outplant match files are currently configured. Add Plot G rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
+<section id="depth-metadata-6" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata-6">Depth Metadata</h3>
+<p>This section will show Plot G corner-marker depth summaries and plot-level depth-gradient context once Plot G outplant match files are configured.</p>
+</section>
 <section id="qaqc-6" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc-6">QA/QC</h3>
 <p>This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot G data are added.</p>
@@ -6402,6 +7139,10 @@ vertical-align: -.125em;
 <section id="data-status-7" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-7">Data Status</h3>
 <p>No Plot H outplant match files are currently configured. Add Plot H rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+</section>
+<section id="depth-metadata-7" class="level3">
+<h3 class="anchored" data-anchor-id="depth-metadata-7">Depth Metadata</h3>
+<p>This section will show Plot H corner-marker depth summaries and plot-level depth-gradient context once Plot H outplant match files are configured.</p>
 </section>
 <section id="qaqc-7" class="level3">
 <h3 class="anchored" data-anchor-id="qaqc-7">QA/QC</h3>

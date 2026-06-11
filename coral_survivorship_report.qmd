@@ -19,14 +19,14 @@ execute:
 
 This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, and the tables and figures rebuild automatically.
 
-The current test case is Plot E, chunk 1-1, using same-batch TagLab match exports from May through November. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, and species cover composition.
+The current test case is Plot E, chunk 1-1, using same-batch TagLab match exports from May through November. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, species cover composition, temperature, and plot-level depth metadata.
 
 The two recommended datasets to open first are:
 
 -   `data_processed/outplant_master_tracking_dataset.csv`: one row per tracked `Genet` per month, including presence, area, cover contribution, and baseline-survival status.
 -   `outputs/Tables/outplant_master_summary_dataset.csv`: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.
 
-Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.
+Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, depth metadata, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.
 
 ## SOP
 
@@ -34,12 +34,13 @@ Each plot tab is organized with the same outline so new data can be added withou
 2.  Place the exported CSV files in `data_raw/taglab/<Plot_Folder>/`.
 3.  Add one row per month-to-month match file in `config/outplant_interval_files.csv`.
 4.  Confirm each config row has the correct plot name, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
-5.  Render this Quarto report.
-6.  Check the file audit and QA/QC tables first.
-7.  Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.
-8.  Use cumulative survivorship as the main survival result.
-9.  Use interval survivorship as a diagnostic for each month-to-month transition.
-10. Open the two master datasets when exporting or sharing results.
+5.  Confirm `data_raw/metadata/Coordinates_Depths.csv` has marker depths for each plot if depth summaries will be used.
+6.  Render this Quarto report.
+7.  Check the file audit and QA/QC tables first.
+8.  Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.
+9.  Use cumulative survivorship as the main survival result.
+10. Use interval survivorship as a diagnostic for each month-to-month transition.
+11. Open the two master datasets when exporting or sharing results.
 
 ## Main Work Flow
 
@@ -368,6 +369,71 @@ This chunk plots each species' share of total outplant cover through time. It co
 outplant_species_cover_plot
 ```
 
+### Plot Depth Metadata
+
+This chunk summarizes the corner-marker depth metadata for every plot listed in `data_raw/metadata/Coordinates_Depths.csv`. These values describe the plot-level depth context and should not be interpreted as exact depths for individual coral colonies.
+
+```{r}
+#| label: outplant-plot-depth-summary
+
+outplant_plot_depth_summary %>%
+  mutate(
+    mean_depth_ft = round(mean_depth_ft, 1),
+    min_depth_ft = round(min_depth_ft, 1),
+    max_depth_ft = round(max_depth_ft, 1),
+    depth_range_ft = round(depth_range_ft, 1),
+    mean_depth_m = round(mean_depth_m, 2),
+    min_depth_m = round(min_depth_m, 2),
+    max_depth_m = round(max_depth_m, 2),
+    depth_range_m = round(depth_range_m, 2),
+    centroid_latitude = round(centroid_latitude, 6),
+    centroid_longitude = round(centroid_longitude, 6)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Depth markers", "Mean depth (ft)", "Min depth (ft)",
+      "Max depth (ft)", "Depth range (ft)", "Mean depth (m)",
+      "Min depth (m)", "Max depth (m)", "Depth range (m)",
+      "Centroid latitude", "Centroid longitude"
+    )
+  )
+```
+
+This chunk joins the species prevalence results to the plot-level depth summary. It is a setup table for future species-depth analyses once multiple plots have outplant match files configured.
+
+```{r}
+#| label: outplant-species-depth-summary
+
+outplant_species_depth_summary %>%
+  select(
+    plot,
+    month,
+    species,
+    n_outplants,
+    percent_prevalence,
+    percent_cover_within_outplants,
+    mean_depth_ft,
+    min_depth_ft,
+    max_depth_ft,
+    depth_range_ft
+  ) %>%
+  mutate(
+    percent_prevalence = round(percent_prevalence, 1),
+    percent_cover_within_outplants = round(percent_cover_within_outplants, 1),
+    mean_depth_ft = round(mean_depth_ft, 1),
+    min_depth_ft = round(min_depth_ft, 1),
+    max_depth_ft = round(max_depth_ft, 1),
+    depth_range_ft = round(depth_range_ft, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Month", "Species", "Outplant abundance",
+      "Prevalence (%)", "Share of outplant cover (%)", "Mean depth (ft)",
+      "Min depth (ft)", "Max depth (ft)", "Depth range (ft)"
+    )
+  )
+```
+
 ## Plot A
 
 ### Overview
@@ -377,6 +443,10 @@ Plot A is included as a placeholder for future outplant match-file analyses.
 ### Data Status
 
 No Plot A outplant match files are currently configured. Add Plot A rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### Depth Metadata
+
+This section will show Plot A corner-marker depth summaries and plot-level depth-gradient context once Plot A outplant match files are configured.
 
 ### QA/QC
 
@@ -416,6 +486,10 @@ Plot B is included as a placeholder for future outplant match-file analyses.
 
 No Plot B outplant match files are currently configured. Add Plot B rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
 
+### Depth Metadata
+
+This section will show Plot B corner-marker depth summaries and plot-level depth-gradient context once Plot B outplant match files are configured.
+
 ### QA/QC
 
 This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot B data are added.
@@ -454,6 +528,10 @@ Plot C is included as a placeholder for future outplant match-file analyses.
 
 No Plot C outplant match files are currently configured. Add Plot C rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
 
+### Depth Metadata
+
+This section will show Plot C corner-marker depth summaries and plot-level depth-gradient context once Plot C outplant match files are configured.
+
 ### QA/QC
 
 This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot C data are added.
@@ -491,6 +569,10 @@ Plot D is included as a placeholder for future outplant match-file analyses.
 ### Data Status
 
 No Plot D outplant match files are currently configured. Add Plot D rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### Depth Metadata
+
+This section will show Plot D corner-marker depth summaries and plot-level depth-gradient context once Plot D outplant match files are configured.
 
 ### QA/QC
 
@@ -544,6 +626,46 @@ outplant_config %>%
   )
 ```
 
+### Depth Metadata
+
+The Plot E depth summary is based on the four corner markers in `data_raw/metadata/Coordinates_Depths.csv`. These depths describe the plot-level setting for the active outplant workflow.
+
+```{r}
+#| label: plot-e-depth-summary
+
+outplant_plot_depth_summary %>%
+  filter(plot == "Plot E") %>%
+  mutate(
+    mean_depth_ft = round(mean_depth_ft, 1),
+    min_depth_ft = round(min_depth_ft, 1),
+    max_depth_ft = round(max_depth_ft, 1),
+    depth_range_ft = round(depth_range_ft, 1),
+    mean_depth_m = round(mean_depth_m, 2),
+    min_depth_m = round(min_depth_m, 2),
+    max_depth_m = round(max_depth_m, 2),
+    depth_range_m = round(depth_range_m, 2)
+  ) %>%
+  select(
+    plot,
+    n_depth_markers,
+    mean_depth_ft,
+    min_depth_ft,
+    max_depth_ft,
+    depth_range_ft,
+    mean_depth_m,
+    min_depth_m,
+    max_depth_m,
+    depth_range_m
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Depth markers", "Mean depth (ft)", "Min depth (ft)",
+      "Max depth (ft)", "Depth range (ft)", "Mean depth (m)",
+      "Min depth (m)", "Max depth (m)", "Depth range (m)"
+    )
+  )
+```
+
 ### QA/QC
 
 The full Plot E QA/QC tables are shown in the Main Work Flow tab. These include file checks, interval QA, Genet consistency, and shared-month continuity.
@@ -581,6 +703,10 @@ Plot F is included as a placeholder for future outplant match-file analyses.
 ### Data Status
 
 No Plot F outplant match files are currently configured. Add Plot F rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### Depth Metadata
+
+This section will show Plot F corner-marker depth summaries and plot-level depth-gradient context once Plot F outplant match files are configured.
 
 ### QA/QC
 
@@ -620,6 +746,10 @@ Plot G is included as a placeholder for future outplant match-file analyses.
 
 No Plot G outplant match files are currently configured. Add Plot G rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
 
+### Depth Metadata
+
+This section will show Plot G corner-marker depth summaries and plot-level depth-gradient context once Plot G outplant match files are configured.
+
 ### QA/QC
 
 This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot G data are added.
@@ -657,6 +787,10 @@ Plot H is included as a placeholder for future outplant match-file analyses.
 ### Data Status
 
 No Plot H outplant match files are currently configured. Add Plot H rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+
+### Depth Metadata
+
+This section will show Plot H corner-marker depth summaries and plot-level depth-gradient context once Plot H outplant match files are configured.
 
 ### QA/QC
 
