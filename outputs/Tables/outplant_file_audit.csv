@@ -1,7 +1,7 @@
-plot,month_start,month_end,match_type,file,path,file_exists
-Plot E,May,June,1-1,plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv,TRUE
-Plot E,June,July,1-1,plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv,TRUE
-Plot E,July,August,1-1,plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv,TRUE
-Plot E,August,September,1-1,plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,TRUE
-Plot E,September,October,1-1,plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,TRUE
-Plot E,October,November,1-1,plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,TRUE
+plot,month_start,month_end,month_start_date,month_end_date,match_type,file,path,file_exists
+Plot E,May,June,2025-05-07,2025-06-09,1-1,plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv,TRUE
+Plot E,June,July,2025-06-09,2025-07-11,1-1,plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv,TRUE
+Plot E,July,August,2025-07-11,2025-08-04,1-1,plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv,TRUE
+Plot E,August,September,2025-08-04,2025-09-08,1-1,plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,TRUE
+Plot E,September,October,2025-09-08,2025-10-14,1-1,plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,TRUE
+Plot E,October,November,2025-10-14,2025-11-06,1-1,plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,TRUE

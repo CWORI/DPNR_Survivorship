@@ -21,5 +21,9 @@ data_raw/taglab/Plot_C/
 data_raw/taglab/Plot_E/0-0_*.csv
 data_raw/taglab/Plot_E/1-0_*.csv
 data_raw/taglab/Plot_E/1-1_PlotE_Matches_*.csv
+data_raw/Temperature/**
+!data_raw/Temperature/
+!data_raw/Temperature/2025/
+!data_raw/Temperature/2025/21706349 Deep Nurser 2025-11-20 14_38_59 AST (Data AST).csv
 
 /.quarto/

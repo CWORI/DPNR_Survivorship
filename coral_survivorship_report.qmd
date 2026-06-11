@@ -215,7 +215,35 @@ outplant_cumulative_survival_summary %>%
   )
 ```
 
-This chunk plots cumulative outplant survivorship from the baseline month. This is the main survivorship figure for the outplants.
+This chunk summarizes the Deep Nursery temperature logger data used in the cumulative survivorship figure. The logger is slightly deeper than the outplant site but close enough for this practice overlay.
+
+```{r}
+#| label: outplant-temperature-summary
+
+outplant_daily_temperature_summary %>%
+  summarise(
+    logger_location = first(logger_location),
+    start_date = min(date),
+    end_date = max(date),
+    n_days = n(),
+    mean_temperature_c = mean(mean_temperature_c, na.rm = TRUE),
+    min_temperature_c = min(min_temperature_c, na.rm = TRUE),
+    max_temperature_c = max(max_temperature_c, na.rm = TRUE)
+  ) %>%
+  mutate(
+    mean_temperature_c = round(mean_temperature_c, 2),
+    min_temperature_c = round(min_temperature_c, 2),
+    max_temperature_c = round(max_temperature_c, 2)
+  ) %>%
+  kable(
+    col.names = c(
+      "Logger", "Start date", "End date", "Days",
+      "Mean temp (°C)", "Min temp (°C)", "Max temp (°C)"
+    )
+  )
+```
+
+This chunk plots cumulative outplant survivorship from the baseline month. The red line shows daily mean temperature on the secondary y-axis.
 
 ```{r}
 #| label: outplant-cumulative-survival-plot
@@ -507,10 +535,10 @@ The active Plot E files are:
 
 outplant_config %>%
   filter(plot == "Plot E") %>%
-  select(plot, month_start, month_end, file, plot_length_m, plot_width_m, taglab_area_units) %>%
+  select(plot, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) %>%
   kable(
     col.names = c(
-      "Plot", "Start month", "End month", "File",
+      "Plot", "Start month", "End month", "Start date", "End date", "File",
       "Plot length (m)", "Plot width (m)", "Area units"
     )
   )
