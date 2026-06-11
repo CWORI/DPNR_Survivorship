@@ -19,7 +19,7 @@ execute:
 
 This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, and the tables and figures rebuild automatically.
 
-The current test case is Plot E, chunk 1-1, using same-batch TagLab match exports from May through November. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, species cover composition, temperature, and plot-level depth metadata.
+The current test case is Plot E, with TagLab subsections tracked separately. Section 1-1 currently runs from May through November, and section 1-0 currently runs from May through August. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, species cover composition, temperature, and plot-level depth metadata.
 
 The two recommended datasets to open first are:
 
@@ -30,10 +30,10 @@ Each plot tab is organized with the same outline so new data can be added withou
 
 ## SOP
 
-1.  Export TagLab match files for each plot/month pair using the same batch export process so `Genet` IDs stay consistent across months.
+1.  Export TagLab match files for each plot section/month pair using the same batch export process so `Genet` IDs stay consistent across months.
 2.  Place the exported CSV files in `data_raw/taglab/<Plot_Folder>/`.
 3.  Add one row per month-to-month match file in `config/outplant_interval_files.csv`.
-4.  Confirm each config row has the correct plot name, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
+4.  Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
 5.  Confirm `data_raw/metadata/Coordinates_Depths.csv` has marker depths for each plot if depth summaries will be used.
 6.  Render this Quarto report.
 7.  Check the file audit and QA/QC tables first.
@@ -84,7 +84,7 @@ source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
 
 ### Workflow
 
-This report reads the outplant-only TagLab match files listed in `config/outplant_interval_files.csv`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces survivorship, cover, and species-composition outputs.
+This report reads the outplant-only TagLab match files listed in `config/outplant_interval_files.csv`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.
 
 The workflow is designed so future users can add new plots or month pairs by editing the config rather than changing analysis code.
 
@@ -107,9 +107,9 @@ This chunk verifies that every outplant interval file listed in the config exist
 #| label: outplant-file-audit
 
 outplant_file_audit %>%
-  select(plot, month_start, month_end, match_type, file, file_exists) %>%
+  select(plot, plot_section, month_start, month_end, match_type, file, file_exists) %>%
   kable(
-    col.names = c("Plot", "Start month", "End month", "Match type", "File", "File exists")
+    col.names = c("Plot", "Section", "Start month", "End month", "Match type", "File", "File exists")
   )
 ```
 
@@ -120,6 +120,7 @@ This chunk checks whether the TagLab files have missing `Genet` IDs, missing spe
 
 outplant_interval_qa %>%
   select(
+    plot_section,
     month_start,
     month_end,
     n_rows,
@@ -132,7 +133,7 @@ outplant_interval_qa %>%
   ) %>%
   kable(
     col.names = c(
-      "Start month", "End month", "Rows", "Missing Genet", "Missing species",
+      "Section", "Start month", "End month", "Rows", "Missing Genet", "Missing species",
       "Negative start area", "Negative end area", "Actions", "Split/fuse events"
     )
   )
@@ -151,7 +152,7 @@ if (nrow(outplant_unstable_genet_examples) == 0) {
     slice_head(n = 20) %>%
     kable(
       col.names = c(
-        "Plot", "Source file", "Start month", "End month", "Genet",
+        "Plot", "Section", "Section label", "Source file", "Start month", "End month", "Genet",
         "Tag", "Genotype", "Species", "Action", "Start area", "End area"
       )
     )
@@ -165,6 +166,7 @@ This chunk checks whether the same shared month matches between adjacent files a
 
 outplant_shared_month_continuity_qa %>%
   select(
+    plot_section,
     shared_month,
     previous_end_n,
     next_start_n,
@@ -178,7 +180,7 @@ outplant_shared_month_continuity_qa %>%
   mutate(max_abs_area_difference = round(max_abs_area_difference, 4)) %>%
   kable(
     col.names = c(
-      "Shared month", "Previous file end n", "Next file start n",
+      "Section", "Shared month", "Previous file end n", "Next file start n",
       "In both", "Missing from next start", "New in next start",
       "Species mismatches", "Area mismatches", "Max area difference"
     )
@@ -192,6 +194,7 @@ This chunk summarizes cumulative outplant survivorship from the baseline month. 
 
 outplant_cumulative_survival_summary %>%
   select(
+    plot_section_label,
     month,
     baseline_month,
     n_baseline,
@@ -209,7 +212,7 @@ outplant_cumulative_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Plot section", "Month", "Baseline month", "Baseline n", "Deaths this interval",
       "Cumulative deaths", "Surviving from baseline",
       "Cumulative survival (%)", "95% CI low", "95% CI high"
     )
@@ -261,6 +264,7 @@ This chunk reports interval survivorship between adjacent survey months. It is u
 
 outplant_survival_summary %>%
   select(
+    plot_section_label,
     interval_label,
     n_start,
     n_survived,
@@ -277,7 +281,7 @@ outplant_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Plot section", "Interval", "Start n", "Survived n", "Died n", "Born n",
       "Interval survival (%)", "95% CI low", "95% CI high"
     )
   )
@@ -299,14 +303,14 @@ This chunk reports outplant coral cover by month. Cover is calculated as summed 
 #| label: outplant-cover-table
 
 outplant_cover_summary %>%
-  select(month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) %>%
+  select(plot_section_label, month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) %>%
   mutate(
     total_outplant_area_m2 = round(total_outplant_area_m2, 6),
     percent_outplant_cover = round(percent_outplant_cover, 5)
   ) %>%
   kable(
     col.names = c(
-      "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot section", "Month", "Outplants present", "Total outplant area (m2)",
       "Plot area (m2)", "Outplant cover (%)"
     )
   )
@@ -329,6 +333,7 @@ This chunk summarizes species abundance and prevalence among present outplant an
 
 outplant_species_prevalence_summary %>%
   select(
+    plot_section_label,
     month,
     species,
     n_outplants,
@@ -343,7 +348,7 @@ outplant_species_prevalence_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Plot section", "Month", "Species", "Outplant abundance", "Prevalence (%)",
       "Outplant area (m2)", "Share of outplant cover (%)"
     )
   )
@@ -407,6 +412,7 @@ This chunk joins the species prevalence results to the plot-level depth summary.
 outplant_species_depth_summary %>%
   select(
     plot,
+    plot_section,
     month,
     species,
     n_outplants,
@@ -427,7 +433,7 @@ outplant_species_depth_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot", "Month", "Species", "Outplant abundance",
+      "Plot", "Section", "Month", "Species", "Outplant abundance",
       "Prevalence (%)", "Share of outplant cover (%)", "Mean depth (ft)",
       "Min depth (ft)", "Max depth (ft)", "Depth range (ft)"
     )
@@ -606,7 +612,7 @@ This section will point to Plot D processed datasets, summary tables, and figure
 
 ### Overview
 
-Plot E is currently the configured test plot for the outplant-only TagLab match workflow.
+Plot E is currently the configured test plot for the outplant-only TagLab match workflow. Sections 1-0 and 1-1 are analyzed separately.
 
 ### Data Status
 
@@ -617,10 +623,10 @@ The active Plot E files are:
 
 outplant_config %>%
   filter(plot == "Plot E") %>%
-  select(plot, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) %>%
+  select(plot, plot_section, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) %>%
   kable(
     col.names = c(
-      "Plot", "Start month", "End month", "Start date", "End date", "File",
+      "Plot", "Section", "Start month", "End month", "Start date", "End date", "File",
       "Plot length (m)", "Plot width (m)", "Area units"
     )
   )

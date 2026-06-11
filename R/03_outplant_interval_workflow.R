@@ -120,6 +120,14 @@ outplant_normalize_plot_name <- function(x) {
     str_replace("^Plot([A-H])$", "Plot \\1")
 }
 
+outplant_section_label <- function(plot, plot_section) {
+  if_else(
+    is.na(plot_section) | plot_section == "",
+    plot,
+    str_c(plot, " ", plot_section)
+  )
+}
+
 outplant_first_non_missing <- function(x) {
   first(na.omit(x), default = NA)
 }
@@ -179,6 +187,7 @@ outplant_theme <- function(base_size = 12) {
 }
 
 outplant_species_palette <- c(
+  "Acropora cervicornis" = "#CC79A7",
   "Acropora palmata" = "#E69F00",
   "Montastraea cavernosa" = "#8A6FDF",
   "Orbicella annularis" = "#009E73",
@@ -189,13 +198,22 @@ outplant_species_palette <- c(
 )
 
 # Config and file readers -------------------------------------------------------
-# The config stores both file metadata and plot dimensions. Plot dimensions are
-# used to convert total outplant area into percent cover of the 16 x 30 m plot.
+# The config stores file metadata, plot sections, and plot dimensions. Plot
+# sections keep TagLab subsections such as Plot E 1-0 and Plot E 1-1 separate.
 outplant_read_config <- function(path) {
-  read_csv(path, show_col_types = FALSE) %>%
+  raw_config <- read_csv(path, show_col_types = FALSE) %>%
+    clean_names()
+
+  if (!"plot_section" %in% names(raw_config)) {
+    raw_config <- raw_config %>% mutate(plot_section = match_type)
+  }
+
+  raw_config %>%
     clean_names() %>%
     mutate(
       plot = outplant_normalize_plot_name(plot),
+      plot_section = outplant_clean_text(plot_section),
+      plot_section_label = outplant_section_label(plot, plot_section),
       plot_folder = str_squish(plot_folder),
       file_type = str_to_lower(file_type),
       match_type = as.character(match_type),
@@ -204,7 +222,7 @@ outplant_read_config <- function(path) {
       month_end_date = as.Date(month_end_date),
       plot_area_m2 = plot_length_m * plot_width_m
     ) %>%
-    group_by(plot) %>%
+    group_by(plot, plot_section) %>%
     mutate(interval_order = row_number()) %>%
     ungroup()
 }
@@ -215,7 +233,10 @@ outplant_build_file_audit <- function(config) {
       path = file.path("data_raw", "taglab", plot_folder, file),
       file_exists = file.exists(path)
     ) %>%
-    select(plot, month_start, month_end, month_start_date, month_end_date, match_type, file, path, file_exists)
+    select(
+      plot, plot_section, plot_section_label, month_start, month_end,
+      month_start_date, month_end_date, match_type, file, path, file_exists
+    )
 }
 
 outplant_read_taglab_file <- function(plot_folder, file, file_type) {
@@ -236,7 +257,8 @@ outplant_read_taglab_file <- function(plot_folder, file, file_type) {
 
 # Standardization ---------------------------------------------------------------
 # This turns every TagLab match export into the same column names, even if the original file says Area1 (May), Area1 (June), Area1, etc.
-outplant_standardize_interval_file <- function(plot, plot_folder, file, month_start, month_end,
+outplant_standardize_interval_file <- function(plot, plot_section, plot_section_label,
+                                               plot_folder, file, month_start, month_end,
                                                month_start_date, month_end_date, file_type,
                                                match_type, plot_length_m, plot_width_m,
                                                taglab_area_units, plot_area_m2, interval_order) {
@@ -251,6 +273,8 @@ outplant_standardize_interval_file <- function(plot, plot_folder, file, month_st
   df %>%
     transmute(
       plot = .env$plot,
+      plot_section = .env$plot_section,
+      plot_section_label = .env$plot_section_label,
       source_file = .env$file,
       match_type = .env$match_type,
       interval_order = .env$interval_order,
@@ -294,8 +318,10 @@ outplant_standardize_interval_file <- function(plot, plot_folder, file, month_st
 outplant_build_interval_rows <- function(config) {
   config %>%
     select(
-      plot, plot_folder, file, month_start, month_end, month_start_date, month_end_date, file_type, match_type,
-      plot_length_m, plot_width_m, taglab_area_units, plot_area_m2, interval_order
+      plot, plot_section, plot_section_label, plot_folder, file, month_start,
+      month_end, month_start_date, month_end_date, file_type, match_type,
+      plot_length_m, plot_width_m, taglab_area_units, plot_area_m2,
+      interval_order
     ) %>%
     pmap_dfr(outplant_standardize_interval_file)
 }
@@ -306,7 +332,7 @@ outplant_build_interval_rows <- function(config) {
 outplant_build_coral_intervals <- function(interval_rows) {
   interval_rows %>%
     filter(!is.na(genet)) %>%
-    group_by(plot, interval_order, month_start, month_end, genet) %>%
+    group_by(plot, plot_section, plot_section_label, interval_order, month_start, month_end, genet) %>%
     summarise(
       tag = outplant_first_non_missing(tag),
       genotype = outplant_first_non_missing(genotype),
@@ -339,14 +365,16 @@ outplant_build_coral_intervals <- function(interval_rows) {
 
 outplant_build_monthly_observations <- function(coral_intervals) {
   first_interval_by_plot <- coral_intervals %>%
-    group_by(plot) %>%
+    group_by(plot, plot_section, plot_section_label) %>%
     summarise(first_interval_order = min(interval_order, na.rm = TRUE), .groups = "drop")
 
   baseline_obs <- coral_intervals %>%
-    inner_join(first_interval_by_plot, by = "plot") %>%
+    inner_join(first_interval_by_plot, by = c("plot", "plot_section", "plot_section_label")) %>%
     filter(interval_order == first_interval_order) %>%
     transmute(
       plot,
+      plot_section,
+      plot_section_label,
       month = month_start,
       month_order = interval_order,
       survey_date = month_start_date,
@@ -365,6 +393,8 @@ outplant_build_monthly_observations <- function(coral_intervals) {
   end_obs <- coral_intervals %>%
     transmute(
       plot,
+      plot_section,
+      plot_section_label,
       month = month_end,
       month_order = interval_order + 1,
       survey_date = month_end_date,
@@ -384,27 +414,27 @@ outplant_build_monthly_observations <- function(coral_intervals) {
     mutate(
       area = if_else(is.infinite(area), NA_real_, area),
       area_m2 = if_else(is.infinite(area_m2), NA_real_, area_m2),
-      snapshot_object_id = str_c(plot, month_order, observation_source, genet, sep = "__"),
+      snapshot_object_id = str_c(plot_section_label, month_order, observation_source, genet, sep = "__"),
       n_duplicate_observations = 1L
     ) %>%
-    arrange(plot, month_order, genet)
+    arrange(plot, plot_section, month_order, genet)
 }
 
 # Analysis summaries ------------------------------------------------------------
 # Cumulative survivorship is baseline-based: the first survey month is 100%, and later months ask how many baseline Genets are still present. Once a baseline Genet is absent, it remains counted as dead for later months.
 outplant_summarize_cumulative_survival <- function(monthly_observations, coral_intervals) {
   month_lookup <- monthly_observations %>%
-    distinct(plot, month_order, month, survey_date) %>%
-    arrange(plot, month_order)
+    distinct(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
+    arrange(plot, plot_section, month_order)
 
   baseline_genets <- monthly_observations %>%
-    group_by(plot) %>%
+    group_by(plot, plot_section, plot_section_label) %>%
     filter(month_order == min(month_order, na.rm = TRUE), present) %>%
     ungroup() %>%
-    select(plot, baseline_month = month, baseline_date = survey_date, genet, species)
+    select(plot, plot_section, plot_section_label, baseline_month = month, baseline_date = survey_date, genet, species)
 
   baseline_by_plot <- baseline_genets %>%
-    group_by(plot) %>%
+    group_by(plot, plot_section, plot_section_label) %>%
     summarise(
       baseline_month = first(baseline_month),
       baseline_date = first(baseline_date),
@@ -413,18 +443,18 @@ outplant_summarize_cumulative_survival <- function(monthly_observations, coral_i
     )
 
   baseline_tracking <- baseline_genets %>%
-    select(plot, genet, species) %>%
-    inner_join(month_lookup, by = "plot", relationship = "many-to-many") %>%
+    select(plot, plot_section, plot_section_label, genet, species) %>%
+    inner_join(month_lookup, by = c("plot", "plot_section", "plot_section_label"), relationship = "many-to-many") %>%
     left_join(
-      monthly_observations %>% select(plot, month_order, month, survey_date, genet, present, area_m2),
-      by = c("plot", "month_order", "month", "survey_date", "genet")
+      monthly_observations %>% select(plot, plot_section, month_order, month, survey_date, genet, present, area_m2),
+      by = c("plot", "plot_section", "month_order", "month", "survey_date", "genet")
     ) %>%
     mutate(
       present = replace_na(present, FALSE),
       area_m2 = replace_na(area_m2, 0)
     ) %>%
-    arrange(plot, genet, month_order) %>%
-    group_by(plot, genet) %>%
+    arrange(plot, plot_section, genet, month_order) %>%
+    group_by(plot, plot_section, genet) %>%
     mutate(
       surviving_from_baseline = cumall(present),
       died_this_interval = lag(surviving_from_baseline, default = TRUE) & !surviving_from_baseline,
@@ -433,17 +463,17 @@ outplant_summarize_cumulative_survival <- function(monthly_observations, coral_i
     ungroup()
 
   baseline_tracking %>%
-    group_by(plot, month_order, month, survey_date) %>%
+    group_by(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
     summarise(
       n_surviving_from_baseline = sum(surviving_from_baseline, na.rm = TRUE),
       n_died_interval = sum(died_this_interval, na.rm = TRUE),
       baseline_surviving_area_m2 = sum(area_m2, na.rm = TRUE),
       .groups = "drop"
     ) %>%
-    group_by(plot) %>%
+    group_by(plot, plot_section) %>%
     mutate(cumulative_deaths_observed = cumsum(n_died_interval)) %>%
     ungroup() %>%
-    left_join(baseline_by_plot, by = "plot") %>%
+    left_join(baseline_by_plot, by = c("plot", "plot_section", "plot_section_label")) %>%
     mutate(
       percent_cumulative_survival = 100 * n_surviving_from_baseline / n_baseline,
       ci = map2(n_surviving_from_baseline, n_baseline, outplant_binomial_percent_ci)
@@ -453,12 +483,12 @@ outplant_summarize_cumulative_survival <- function(monthly_observations, coral_i
       percent_cumulative_survival_low = percent_survival_low,
       percent_cumulative_survival_high = percent_survival_high
     ) %>%
-    arrange(plot, month_order)
+    arrange(plot, plot_section, month_order)
 }
 
 outplant_summarize_survival <- function(coral_intervals) {
   coral_intervals %>%
-    group_by(plot, interval_order, month_start, month_end) %>%
+    group_by(plot, plot_section, plot_section_label, interval_order, month_start, month_end) %>%
     summarise(
       n_start = sum(present_start, na.rm = TRUE),
       n_survived = sum(survived_interval, na.rm = TRUE),
@@ -470,13 +500,13 @@ outplant_summarize_survival <- function(coral_intervals) {
     mutate(ci = map2(n_survived, n_start, outplant_binomial_percent_ci)) %>%
     unnest_wider(ci) %>%
     mutate(interval_label = str_c(month_start, " to ", month_end)) %>%
-    arrange(plot, interval_order)
+    arrange(plot, plot_section, interval_order)
 }
 
 outplant_summarize_species_survival <- function(coral_intervals) {
   coral_intervals %>%
     filter(!is.na(species)) %>%
-    group_by(plot, interval_order, month_start, month_end, species) %>%
+    group_by(plot, plot_section, plot_section_label, interval_order, month_start, month_end, species) %>%
     summarise(
       n_start = sum(present_start, na.rm = TRUE),
       n_survived = sum(survived_interval, na.rm = TRUE),
@@ -487,13 +517,13 @@ outplant_summarize_species_survival <- function(coral_intervals) {
     mutate(ci = map2(n_survived, n_start, outplant_binomial_percent_ci)) %>%
     unnest_wider(ci) %>%
     mutate(interval_label = str_c(month_start, " to ", month_end)) %>%
-    arrange(plot, interval_order, species)
+    arrange(plot, plot_section, interval_order, species)
 }
 
 outplant_summarize_cover <- function(monthly_observations) {
   monthly_observations %>%
     filter(present) %>%
-    group_by(plot, month_order, month) %>%
+    group_by(plot, plot_section, plot_section_label, month_order, month) %>%
     summarise(
       n_outplants_present = n(),
       total_outplant_area_m2 = sum(area_m2, na.rm = TRUE),
@@ -501,19 +531,19 @@ outplant_summarize_cover <- function(monthly_observations) {
       percent_outplant_cover = 100 * total_outplant_area_m2 / plot_area_m2,
       .groups = "drop"
     ) %>%
-    arrange(plot, month_order)
+    arrange(plot, plot_section, month_order)
 }
 
 outplant_summarize_species_prevalence <- function(monthly_observations) {
   monthly_observations %>%
     filter(present, !is.na(species)) %>%
-    group_by(plot, month_order, month, species) %>%
+    group_by(plot, plot_section, plot_section_label, month_order, month, species) %>%
     summarise(
       n_outplants = n(),
       total_outplant_area_m2 = sum(area_m2, na.rm = TRUE),
       .groups = "drop"
     ) %>%
-    group_by(plot, month_order, month) %>%
+    group_by(plot, plot_section, plot_section_label, month_order, month) %>%
     mutate(
       total_outplants_month = sum(n_outplants),
       percent_prevalence = 100 * n_outplants / total_outplants_month,
@@ -521,7 +551,7 @@ outplant_summarize_species_prevalence <- function(monthly_observations) {
       percent_cover_within_outplants = 100 * total_outplant_area_m2 / total_area_month_m2
     ) %>%
     ungroup() %>%
-    arrange(plot, month_order, species)
+    arrange(plot, plot_section, month_order, species)
 }
 
 outplant_read_depth_metadata <- function(path) {
@@ -576,12 +606,13 @@ outplant_summarize_species_depth <- function(species_prevalence, plot_depth_summ
   species_prevalence %>%
     left_join(plot_depth_summary, by = "plot") %>%
     select(
-      plot, month_order, month, species, n_outplants, percent_prevalence,
-      total_outplant_area_m2, percent_cover_within_outplants,
+      plot, plot_section, plot_section_label, month_order, month, species,
+      n_outplants, percent_prevalence, total_outplant_area_m2,
+      percent_cover_within_outplants,
       mean_depth_ft, min_depth_ft, max_depth_ft, depth_range_ft,
       mean_depth_m, min_depth_m, max_depth_m, depth_range_m
     ) %>%
-    arrange(plot, month_order, species)
+    arrange(plot, plot_section, month_order, species)
 }
 
 outplant_read_temperature_file <- function(path) {
@@ -644,24 +675,24 @@ outplant_summarize_daily_temperature <- function(temperature_observations, cumul
 
 outplant_build_master_tracking_dataset <- function(monthly_observations) {
   month_lookup <- monthly_observations %>%
-    distinct(plot, month_order, month, survey_date) %>%
-    arrange(plot, month_order)
+    distinct(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
+    arrange(plot, plot_section, month_order)
 
   baseline_genets <- monthly_observations %>%
-    group_by(plot) %>%
+    group_by(plot, plot_section, plot_section_label) %>%
     filter(month_order == min(month_order, na.rm = TRUE), present) %>%
     ungroup() %>%
-    select(plot, genet, baseline_species = species)
+    select(plot, plot_section, plot_section_label, genet, baseline_species = species)
 
   baseline_tracking <- baseline_genets %>%
-    inner_join(month_lookup, by = "plot", relationship = "many-to-many") %>%
+    inner_join(month_lookup, by = c("plot", "plot_section", "plot_section_label"), relationship = "many-to-many") %>%
     left_join(
       monthly_observations %>%
         select(
-          plot, month_order, month, genet, observation_source, species,
+          plot, plot_section, month_order, month, genet, observation_source, species,
           survey_date, plot_area_m2, taglab_area_units, area, area_m2, present
         ),
-      by = c("plot", "month_order", "month", "survey_date", "genet")
+      by = c("plot", "plot_section", "month_order", "month", "survey_date", "genet")
     ) %>%
     mutate(
       is_baseline_genet = TRUE,
@@ -670,8 +701,8 @@ outplant_build_master_tracking_dataset <- function(monthly_observations) {
       area = replace_na(area, 0),
       area_m2 = replace_na(area_m2, 0)
     ) %>%
-    arrange(plot, genet, month_order) %>%
-    group_by(plot, genet) %>%
+    arrange(plot, plot_section, genet, month_order) %>%
+    group_by(plot, plot_section, genet) %>%
     mutate(
       surviving_from_baseline = cumall(present),
       died_from_baseline_this_month = lag(surviving_from_baseline, default = TRUE) & !surviving_from_baseline
@@ -679,7 +710,7 @@ outplant_build_master_tracking_dataset <- function(monthly_observations) {
     ungroup()
 
   non_baseline_tracking <- monthly_observations %>%
-    anti_join(baseline_genets, by = c("plot", "genet")) %>%
+    anti_join(baseline_genets, by = c("plot", "plot_section", "genet")) %>%
     mutate(
       baseline_species = NA_character_,
       is_baseline_genet = FALSE,
@@ -692,12 +723,13 @@ outplant_build_master_tracking_dataset <- function(monthly_observations) {
       percent_cover_of_plot = 100 * area_m2 / plot_area_m2
     ) %>%
     select(
-      plot, month_order, month, survey_date, observation_source, genet, species,
-      is_baseline_genet, present, surviving_from_baseline,
+      plot, plot_section, plot_section_label, month_order, month, survey_date,
+      observation_source, genet, species, is_baseline_genet, present,
+      surviving_from_baseline,
       died_from_baseline_this_month, area, area_m2, plot_area_m2,
       percent_cover_of_plot, taglab_area_units
     ) %>%
-    arrange(plot, month_order, genet)
+    arrange(plot, plot_section, month_order, genet)
 }
 
 outplant_build_master_summary_dataset <- function(cumulative_survival, interval_survival, species_interval_survival, cover_summary, species_prevalence) {
@@ -706,6 +738,8 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
       transmute(
         summary_level = "plot_month",
         plot,
+        plot_section,
+        plot_section_label,
         time_label = month,
         month_order,
         month,
@@ -726,6 +760,8 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
       transmute(
         summary_level = "plot_month",
         plot,
+        plot_section,
+        plot_section_label,
         time_label = month,
         month_order,
         month,
@@ -746,6 +782,8 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
       transmute(
         summary_level = "plot_month",
         plot,
+        plot_section,
+        plot_section_label,
         time_label = month,
         month_order,
         month,
@@ -766,6 +804,8 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
       transmute(
         summary_level = "plot_interval",
         plot,
+        plot_section,
+        plot_section_label,
         time_label = interval_label,
         month_order = NA_real_,
         month = NA_character_,
@@ -786,6 +826,8 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
       transmute(
         summary_level = "species_interval",
         plot,
+        plot_section,
+        plot_section_label,
         time_label = interval_label,
         month_order = NA_real_,
         month = NA_character_,
@@ -806,6 +848,8 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
       transmute(
         summary_level = "species_month",
         plot,
+        plot_section,
+        plot_section_label,
         time_label = month,
         month_order,
         month,
@@ -826,6 +870,8 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
       transmute(
         summary_level = "species_month",
         plot,
+        plot_section,
+        plot_section_label,
         time_label = month,
         month_order,
         month,
@@ -843,7 +889,7 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
         notes = str_c("Species area m2: ", round(total_outplant_area_m2, 6))
       )
   ) %>%
-    arrange(plot, summary_level, metric, month_order, interval_order, species)
+    arrange(plot, plot_section, summary_level, metric, month_order, interval_order, species)
 }
 
 outplant_build_qa <- function(interval_rows, monthly_observations, coral_intervals, file_audit) {
@@ -851,6 +897,8 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
     filter(present_end) %>%
     transmute(
       plot,
+      plot_section,
+      plot_section_label,
       shared_month_order = interval_order + 1,
       shared_month = month_end,
       genet,
@@ -862,6 +910,8 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
     filter(present_start) %>%
     transmute(
       plot,
+      plot_section,
+      plot_section_label,
       shared_month_order = interval_order,
       shared_month = month_start,
       genet,
@@ -872,9 +922,9 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
   shared_month_continuity <- full_join(
     shared_month_end,
     shared_month_start,
-    by = c("plot", "shared_month_order", "shared_month", "genet")
+    by = c("plot", "plot_section", "plot_section_label", "shared_month_order", "shared_month", "genet")
   ) %>%
-    group_by(plot, shared_month_order, shared_month) %>%
+    group_by(plot, plot_section, plot_section_label, shared_month_order, shared_month) %>%
     summarise(
       has_previous_end = any(!is.na(area_end_snapshot)),
       has_next_start = any(!is.na(area_start_snapshot)),
@@ -910,7 +960,7 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
   list(
     outplant_file_audit = file_audit,
     outplant_interval_qa = interval_rows %>%
-      group_by(plot, interval_order, month_start, month_end, source_file) %>%
+      group_by(plot, plot_section, plot_section_label, interval_order, month_start, month_end, source_file) %>%
       summarise(
         n_rows = n(),
         n_missing_genet = sum(is.na(genet)),
@@ -924,11 +974,11 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
       ),
     outplant_month_duplicate_qa = monthly_observations %>%
       filter(n_duplicate_observations > 1) %>%
-      select(plot, month, genet, species, n_duplicate_observations, area, area_m2, present),
+      select(plot, plot_section, plot_section_label, month, genet, species, n_duplicate_observations, area, area_m2, present),
     outplant_shared_month_continuity_qa = shared_month_continuity,
     outplant_genet_consistency_qa = interval_rows %>%
       filter(!is.na(genet)) %>%
-      group_by(plot, genet) %>%
+      group_by(plot, plot_section, plot_section_label, genet) %>%
       summarise(
         n_species = n_distinct(species, na.rm = TRUE),
         species_values = str_c(sort(unique(na.omit(species))), collapse = "; "),
@@ -941,7 +991,7 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
       filter(n_species > 1 | n_tags > 1 | n_genotypes > 1),
     outplant_unstable_genet_examples = interval_rows %>%
       filter(!is.na(genet)) %>%
-      group_by(plot, genet) %>%
+      group_by(plot, plot_section, plot_section_label, genet) %>%
       mutate(
         n_species = n_distinct(species, na.rm = TRUE),
         n_tags = n_distinct(tag, na.rm = TRUE),
@@ -950,10 +1000,10 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
       ungroup() %>%
       filter(n_species > 1 | n_tags > 1 | n_genotypes > 1) %>%
       select(
-        plot, source_file, month_start, month_end, genet, tag, genotype,
-        species, action, area_start, area_end
+        plot, plot_section, plot_section_label, source_file, month_start,
+        month_end, genet, tag, genotype, species, action, area_start, area_end
       ) %>%
-      arrange(plot, genet, month_start, source_file)
+      arrange(plot, plot_section, genet, month_start, source_file)
   )
 }
 
@@ -965,7 +1015,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
 
   p <- ggplot(
     survival_plot_data,
-    aes(x = survey_date, y = percent_cumulative_survival, group = plot)
+    aes(x = survey_date, y = percent_cumulative_survival, group = plot_section_label)
   )
 
   has_temperature <- nrow(daily_temperature) > 0
@@ -1003,8 +1053,8 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
       color = "grey25",
       linewidth = 0.5
     ) +
-    geom_line(color = "#2F6F73", linewidth = 0.8) +
-    geom_point(color = "#2F6F73", size = 2.8) +
+    geom_line(aes(color = plot_section_label), linewidth = 0.8) +
+    geom_point(aes(color = plot_section_label), size = 2.8) +
     geom_text(
       aes(label = sprintf("%.1f%%", percent_cumulative_survival)),
       vjust = -1,
@@ -1018,8 +1068,10 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
     labs(
       x = "Survey date",
       y = "Cumulative survivorship",
+      color = "Plot section",
       title = "Outplant cumulative survivorship and temperature through time"
-    )
+    ) +
+    scale_color_brewer(palette = "Dark2")
 
   if (has_temperature) {
     p <- p +
@@ -1034,7 +1086,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
       ) +
       labs(
         subtitle = str_c(
-          "Blue = percent of baseline Genets still present; red = Deep Nursery daily mean temperature"
+          "Sections shown separately; red line = Deep Nursery daily mean temperature"
         )
       )
   } else {
@@ -1061,15 +1113,15 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
 outplant_plot_interval_survival <- function(survival_summary) {
   survival_summary %>%
     mutate(interval_label = fct_reorder(interval_label, interval_order)) %>%
-    ggplot(aes(x = interval_label, y = percent_survival, group = plot)) +
+    ggplot(aes(x = interval_label, y = percent_survival, group = plot_section_label)) +
     geom_errorbar(
       aes(ymin = percent_survival_low, ymax = percent_survival_high),
       width = 0.14,
       color = "grey25",
       linewidth = 0.5
     ) +
-    geom_line(color = "#2F6F73", linewidth = 0.7) +
-    geom_point(color = "#2F6F73", size = 2.8) +
+    geom_line(aes(color = plot_section_label), linewidth = 0.7) +
+    geom_point(aes(color = plot_section_label), size = 2.8) +
     geom_text(aes(label = sprintf("%.1f%%", percent_survival)), vjust = -1, size = 3.4) +
     scale_y_continuous(
       limits = c(0, 100),
@@ -1079,9 +1131,11 @@ outplant_plot_interval_survival <- function(survival_summary) {
     labs(
       x = "Survey interval",
       y = "Interval survivorship",
+      color = "Plot section",
       title = "Outplant interval survivorship",
       subtitle = "Survival between adjacent TagLab match files; bars are exact binomial 95% CIs"
     ) +
+    scale_color_brewer(palette = "Dark2") +
     outplant_theme() +
     theme(axis.text.x = element_text(angle = 25, hjust = 1))
 }
@@ -1089,17 +1143,19 @@ outplant_plot_interval_survival <- function(survival_summary) {
 outplant_plot_cover <- function(cover_summary) {
   cover_summary %>%
     mutate(month = fct_reorder(month, month_order)) %>%
-    ggplot(aes(x = month, y = percent_outplant_cover, group = plot)) +
-    geom_line(color = "#2F6F73", linewidth = 0.7) +
-    geom_point(color = "#2F6F73", size = 2.8) +
+    ggplot(aes(x = month, y = percent_outplant_cover, group = plot_section_label)) +
+    geom_line(aes(color = plot_section_label), linewidth = 0.7) +
+    geom_point(aes(color = plot_section_label), size = 2.8) +
     geom_text(aes(label = sprintf("%.4f%%", percent_outplant_cover)), vjust = -1, size = 3.2) +
     scale_y_continuous(labels = scales::label_percent(scale = 1)) +
     labs(
       x = "Survey month",
       y = "Outplant cover of plot",
+      color = "Plot section",
       title = "Outplant coral cover through time",
       subtitle = "Cover = summed outplant planar area / 480 m2 plot area"
     ) +
+    scale_color_brewer(palette = "Dark2") +
     outplant_theme()
 }
 
@@ -1108,6 +1164,7 @@ outplant_plot_species_prevalence <- function(species_prevalence) {
     mutate(month = fct_reorder(month, month_order)) %>%
     ggplot(aes(x = month, y = percent_prevalence, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
+    facet_wrap(vars(plot_section_label), ncol = 1) +
     scale_fill_manual(values = outplant_species_palette, drop = FALSE) +
     scale_y_continuous(
       labels = scales::label_percent(scale = 1),
@@ -1128,6 +1185,7 @@ outplant_plot_species_cover <- function(species_prevalence) {
     mutate(month = fct_reorder(month, month_order)) %>%
     ggplot(aes(x = month, y = percent_cover_within_outplants, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
+    facet_wrap(vars(plot_section_label), ncol = 1) +
     scale_fill_manual(values = outplant_species_palette, drop = FALSE) +
     scale_y_continuous(
       labels = scales::label_percent(scale = 1),

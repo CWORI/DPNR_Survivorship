@@ -1,1 +1,1 @@
-plot,source_file,month_start,month_end,genet,tag,genotype,species,action,area_start,area_end
+plot,plot_section,plot_section_label,source_file,month_start,month_end,genet,tag,genotype,species,action,area_start,area_end

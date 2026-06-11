@@ -1,1 +1,1 @@
-plot,month,genet,species,n_duplicate_observations,area,area_m2,present
+plot,plot_section,plot_section_label,month,genet,species,n_duplicate_observations,area,area_m2,present

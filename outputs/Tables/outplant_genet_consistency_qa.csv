@@ -1,1 +1,1 @@
-plot,genet,n_species,species_values,n_tags,tag_values,n_genotypes,genotype_values
+plot,plot_section,plot_section_label,genet,n_species,species_values,n_tags,tag_values,n_genotypes,genotype_values
