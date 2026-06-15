@@ -31,16 +31,23 @@ Each plot tab is organized with the same outline so new data can be added withou
 ## SOP
 
 1.  Export TagLab match files for each plot section/month pair using the same batch export process so `Genet` IDs stay consistent across months.
-2.  Place the exported CSV files in `data_raw/taglab/<Plot_Folder>/`.
-3.  Add one row per month-to-month match file in `config/outplant_interval_files.csv`.
-4.  Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
-5.  Confirm `data_raw/metadata/Coordinates_Depths.csv` has marker depths for each plot if depth summaries will be used.
-6.  Render this Quarto report.
-7.  Check the file audit and QA/QC tables first.
-8.  Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.
-9.  Use cumulative survivorship as the main survival result.
-10. Use interval survivorship as a diagnostic for each month-to-month transition.
-11. Open the two master datasets when exporting or sharing results.
+2.  Export Genet Data as CSV name it example, Plot_E_1-0_GenetData_May-April2025 and save in `data_raw/metadata`
+3.  Name Exported tag lab matches Plot\_(Letter) then it will auto populate with the rest of naming
+4.  Place the exported CSV files in `data_raw/taglab/<Plot_Folder>/`.
+5.  Add one row per month-to-month match file in `config/outplant_interval_files.csv`.
+6.  Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
+7.  Confirm `data_raw/metadata/Coordinates_Depths.csv` has marker depths for each plot if depth summaries will be used.
+8.  Render this Quarto report.
+9.  Check the file audit and QA/QC tables first.
+10. Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.
+11. Push Newly Rendered Quatro File to Git hub
+    1.  Press Git in top right corner
+    2.  Press Commit
+    3.  Commit all new changes (hit Ok)
+    4.  
+12. Use cumulative survivorship as the main survival result.
+13. Use interval survivorship as a diagnostic for each month-to-month transition.
+14. Open the two master datasets when exporting or sharing results.
 
 ## Main Work Flow
 

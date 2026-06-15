@@ -4827,6 +4827,8 @@ vertical-align: -.125em;
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
 <li>Export TagLab match files for each plot section/month pair using the same batch export process so <code>Genet</code> IDs stay consistent across months.</li>
+<li>Export Genet Data as CSV name it example, Plot_E_1-0_GenetData_May-April2025 and save in <code>data_raw/metadata</code></li>
+<li>Name Exported tag lab matches Plot_(Letter) then it will auto populate with the rest of naming</li>
 <li>Place the exported CSV files in <code>data_raw/taglab/&lt;Plot_Folder&gt;/</code>.</li>
 <li>Add one row per month-to-month match file in <code>config/outplant_interval_files.csv</code>.</li>
 <li>Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.</li>
@@ -4834,6 +4836,13 @@ vertical-align: -.125em;
 <li>Render this Quarto report.</li>
 <li>Check the file audit and QA/QC tables first.</li>
 <li>Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.</li>
+<li>Push Newly Rendered Quatro File to Git hub
+<ol type="1">
+<li>Press Git in top right corner</li>
+<li>Press Commit</li>
+<li>Commit all new changes (hit Ok)</li>
+<li></li>
+</ol></li>
 <li>Use cumulative survivorship as the main survival result.</li>
 <li>Use interval survivorship as a diagnostic for each month-to-month transition.</li>
 <li>Open the two master datasets when exporting or sharing results.</li>
