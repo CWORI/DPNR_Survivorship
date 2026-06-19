@@ -23,12 +23,12 @@ config.
 
 ## Teams intake copy
 
-Contributors may record proposed rows in the matching config inside the Teams
-intake copy of the project. The project curator should review and copy only the
-new approved rows into the official local Git clone after running `git pull`.
-Do not replace an official local config with the complete Teams copy, and do not
-render or publish the Teams intake copy as though it were the GitHub project.
+Anyone working on TagLab can record new rows in the matching config inside the
+Teams project copy. Once the files are ready, let Spencer know. Spencer will run
+`git pull` and copy the new rows into the local Git project. Copy the new rows
+rather than replacing the whole local config, and don't render or publish the
+Teams copy because it may be a little behind GitHub.
 
-After GitHub changes the config structure or templates, reconcile all pending
-Teams submissions before refreshing the Teams intake configs from GitHub. Never
-overwrite unreviewed contributor rows during that refresh.
+If GitHub changes the config structure or templates, first save any new Teams
+rows that are still waiting. Then refresh the Teams configs from GitHub so
+nobody's work gets overwritten.

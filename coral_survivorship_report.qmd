@@ -30,20 +30,20 @@ Each plot tab is organized with the same outline so new data can be added withou
 
 ## SOP
 
-### Purpose and source-of-truth rules
+### Where everything goes
 
 This workflow uses Teams and GitHub for different jobs:
 
--   **Teams is the raw-data intake and archive.** Staff place new TagLab exports in Teams and can record proposed config rows in the Teams intake copy of `Coral_survivorship_project`.
--   **GitHub is the official analysis project.** The reviewed code, active config files, approved analysis-ready data, rendered `docs/` website, and project history live in `CWORI/DPNR_Survivorship`.
--   **The Teams project copy is an intake copy only.** Do not render from it, treat it as the latest code, or replace the GitHub project with it. The local Git clone must be updated with `git pull` before each analysis update.
--   **Do not place the active local Git repository inside a Teams/OneDrive-synced folder.** Cloud syncing and Git can both change files and create conflicts.
--   Only transfer data to GitHub after confirming that the files are approved for the repository's visibility and do not contain sensitive information.
+-   **Teams is where we drop off and store the original TagLab exports.** New files go there first, and the Teams copy of `Coral_survivorship_project` can be used to record the filenames in the plot config CSVs.
+-   **GitHub is where the working analysis lives.** The code, active config files, approved data, website, and project history are in `CWORI/DPNR_Survivorship`.
+-   The Teams project copy is there to help pass files and config information along. We won't render or publish from that copy because it may be a little behind GitHub.
+-   Keep the active local Git project outside the Teams/OneDrive-synced folders. This keeps cloud syncing and Git from tripping over each other.
+-   Before moving anything to GitHub, make sure it's okay for the repository and doesn't contain anything sensitive.
 
-### Roles
+### Who does what
 
--   **TagLab contributor:** exports the data, uploads it to the correct Teams folder, records the proposed config information, and tells the project curator that the interval is ready.
--   **Project curator:** reviews the submission, transfers approved files and config rows into the local Git project, renders and checks the analysis, and pushes the update to GitHub. Spencer currently fills this role.
+-   **Anyone working on TagLab:** export the data, put it in the right Teams folder, add the file information to the matching Teams config CSV, and let Spencer know it's ready.
+-   **Spencer:** move the ready files and rows into the local Git project, render and check everything, and push the update to GitHub.
 
 ### Step 1: Export matches from TagLab
 
@@ -82,26 +82,26 @@ Within each, keep files separated by plot and plot section. Recommended examples
 -   `Survivorship Exports/Matches/Plot_E/1-1/`
 -   `Survivorship Exports/Genet Data/Plot_E/1-0/`
 
-Before marking a submission ready, confirm:
+Before saying the files are ready, check that:
 
 1.  The file is in the correct `Matches` or `Genet Data` folder.
 2.  The plot and plot section in the filename/folder are correct.
-3.  Both survey dates are visible in the filename or supplied with the submission.
+3.  Both survey dates are visible in the filename or included in the Teams message.
 4.  The file is a CSV and opens with the expected columns.
 5.  The same interval has not already been uploaded.
 6.  Existing exports have not been overwritten or deleted.
 
-### Step 4: Record proposed config rows in the Teams intake copy
+### Step 4: Add the file information to the Teams project copy
 
-Contributors may use the Teams copy of `Coral_survivorship_project` to record which match files are ready. They should edit only the matching plot config under:
+Use the Teams copy of `Coral_survivorship_project` to record which match files are ready. Only edit the matching plot config under:
 
 `config/outplant_interval_files/`
 
 For example, Plot E files belong in `Plot_E.csv`. Add one row for every month-to-month matches file and keep rows grouped by `plot_section` and ordered by `month_start_date`.
 
-Before contributors use the Teams intake configs, the curator should confirm that the Teams copy contains the current `Plot_A.csv` through `Plot_H.csv` structure from GitHub. After code or config-template changes, first reconcile any pending contributor rows, then refresh the Teams intake templates from the latest GitHub version. Never overwrite unreviewed submissions during a refresh.
+Before anyone starts adding rows, Spencer should make sure the Teams copy has the current `Plot_A.csv` through `Plot_H.csv` structure from GitHub. If the config templates change, we'll first copy over any rows that are still waiting, then refresh the Teams templates. That way nobody's work gets overwritten.
 
-Each row must contain:
+Each row needs:
 
 -   `plot`: display name, such as `Plot E`.
 -   `plot_section`: TagLab subsection, such as `1-0` or `1-1`.
@@ -114,11 +114,11 @@ Each row must contain:
 -   `plot_length_m` and `plot_width_m`: plot dimensions in meters.
 -   `taglab_area_units`: units used by the TagLab area export, currently `cm2`.
 
-Do not delete the header, change column names, paste a Genet Data filename into this config, or remove existing rows. Editing the Teams intake config does **not** update the live analysis by itself.
+Please leave the header and column names alone, keep Genet Data filenames out of this config, and don't remove existing rows. Editing the Teams config does **not** update the live analysis by itself.
 
-### Step 5: Notify the project curator
+### Step 5: Let Spencer know the files are ready
 
-Send the curator a short Teams message containing:
+Send Spencer a short Teams message with:
 
 -   plot and plot section;
 -   start and end survey months/dates;
@@ -126,16 +126,17 @@ Send the curator a short Teams message containing:
 -   whether a new Genet Data export was included;
 -   any known annotation, split/fuse, or export concerns.
 
-The curator should not begin the GitHub update until the contributor says the files and proposed config rows are ready for review.
+Once that message is sent, Spencer can move everything into the GitHub project and check it.
 
-### Step 6: Transfer approved files into the local Git project
+### Step 6: Move the ready files into the local Git project
 
-The curator completes these steps on the computer containing the official local clone:
+Spencer completes these steps on the computer with the local Git project:
 
 1.  Open `Coral_survivorship_project` in RStudio.
+
 2.  Pull the latest GitHub version before copying or editing anything:
 
-    ```bash
+    ``` bash
     git pull
     ```
 
@@ -144,8 +145,11 @@ The curator completes these steps on the computer containing the official local 
     `data_raw/taglab/Plot_<letter>/`
 
 4.  Open the appropriate local config file under `config/outplant_interval_files/`.
-5.  Copy the reviewed **new rows** from the Teams intake config into the local config. Do not replace the complete local config with the Teams copy.
+
+5.  Copy the **new rows** from the Teams config into the local config. Copy the rows rather than replacing the whole local config file.
+
 6.  Confirm that each config filename exactly matches the file placed in `data_raw/taglab/`.
+
 7.  Update `data_raw/metadata/Coordinates_Depths.csv` only when reviewed plot-marker metadata have changed.
 
 ### Step 7: Render and validate the Quarto analysis
@@ -161,7 +165,7 @@ The curator completes these steps on the computer containing the official local 
 6.  Confirm the plot section and month order are correct in tables and figures.
 7.  Compare major results with the previous website version and investigate unexplained jumps before publishing.
 
-Do not push the update when a configured file is missing or when identity/continuity errors have not been reviewed.
+If a configured file is missing or the identity/continuity checks look strange, pause and check it before pushing.
 
 ### Step 8: Commit and push the reviewed update to GitHub
 
@@ -174,14 +178,14 @@ Using the RStudio Git pane:
 
 Equivalent Terminal commands are:
 
-```bash
+``` bash
 git status
 git add .
 git commit -m "Describe the plot and interval added"
 git push
 ```
 
-The official repository is `https://github.com/CWORI/DPNR_Survivorship`.
+The GitHub repository is `https://github.com/CWORI/DPNR_Survivorship`.
 
 ### Step 9: Confirm the live website
 
@@ -203,7 +207,7 @@ The official repository is `https://github.com/CWORI/DPNR_Survivorship`.
 -   [ ] Matches CSV uploaded to the correct Teams plot/section folder.
 -   [ ] Optional Genet Data archived separately.
 -   [ ] Proposed row added to the correct Teams intake plot config.
--   [ ] Curator notified that the submission is ready.
+-   [ ] Spencer notified that the files are ready.
 -   [ ] Latest GitHub project pulled locally.
 -   [ ] Approved matches CSV copied into the correct local raw-data folder.
 -   [ ] Reviewed config row copied into the correct local plot CSV.

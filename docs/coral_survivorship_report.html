@@ -4825,22 +4825,22 @@ vertical-align: -.125em;
 <p>Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, depth metadata, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<section id="purpose-and-source-of-truth-rules" class="level3">
-<h3 class="anchored" data-anchor-id="purpose-and-source-of-truth-rules">Purpose and source-of-truth rules</h3>
+<section id="where-everything-goes" class="level3">
+<h3 class="anchored" data-anchor-id="where-everything-goes">Where everything goes</h3>
 <p>This workflow uses Teams and GitHub for different jobs:</p>
 <ul>
-<li><strong>Teams is the raw-data intake and archive.</strong> Staff place new TagLab exports in Teams and can record proposed config rows in the Teams intake copy of <code>Coral_survivorship_project</code>.</li>
-<li><strong>GitHub is the official analysis project.</strong> The reviewed code, active config files, approved analysis-ready data, rendered <code>docs/</code> website, and project history live in <code>CWORI/DPNR_Survivorship</code>.</li>
-<li><strong>The Teams project copy is an intake copy only.</strong> Do not render from it, treat it as the latest code, or replace the GitHub project with it. The local Git clone must be updated with <code>git pull</code> before each analysis update.</li>
-<li><strong>Do not place the active local Git repository inside a Teams/OneDrive-synced folder.</strong> Cloud syncing and Git can both change files and create conflicts.</li>
-<li>Only transfer data to GitHub after confirming that the files are approved for the repository’s visibility and do not contain sensitive information.</li>
+<li><strong>Teams is where we drop off and store the original TagLab exports.</strong> New files go there first, and the Teams copy of <code>Coral_survivorship_project</code> can be used to record the filenames in the plot config CSVs.</li>
+<li><strong>GitHub is where the working analysis lives.</strong> The code, active config files, approved data, website, and project history are in <code>CWORI/DPNR_Survivorship</code>.</li>
+<li>The Teams project copy is there to help pass files and config information along. We won’t render or publish from that copy because it may be a little behind GitHub.</li>
+<li>Keep the active local Git project outside the Teams/OneDrive-synced folders. This keeps cloud syncing and Git from tripping over each other.</li>
+<li>Before moving anything to GitHub, make sure it’s okay for the repository and doesn’t contain anything sensitive.</li>
 </ul>
 </section>
-<section id="roles" class="level3">
-<h3 class="anchored" data-anchor-id="roles">Roles</h3>
+<section id="who-does-what" class="level3">
+<h3 class="anchored" data-anchor-id="who-does-what">Who does what</h3>
 <ul>
-<li><strong>TagLab contributor:</strong> exports the data, uploads it to the correct Teams folder, records the proposed config information, and tells the project curator that the interval is ready.</li>
-<li><strong>Project curator:</strong> reviews the submission, transfers approved files and config rows into the local Git project, renders and checks the analysis, and pushes the update to GitHub. Spencer currently fills this role.</li>
+<li><strong>Anyone working on TagLab:</strong> export the data, put it in the right Teams folder, add the file information to the matching Teams config CSV, and let Spencer know it’s ready.</li>
+<li><strong>Spencer:</strong> move the ready files and rows into the local Git project, render and check everything, and push the update to GitHub.</li>
 </ul>
 </section>
 <section id="step-1-export-matches-from-taglab" class="level3">
@@ -4880,23 +4880,23 @@ vertical-align: -.125em;
 <li><code>Survivorship Exports/Matches/Plot_E/1-1/</code></li>
 <li><code>Survivorship Exports/Genet Data/Plot_E/1-0/</code></li>
 </ul>
-<p>Before marking a submission ready, confirm:</p>
+<p>Before saying the files are ready, check that:</p>
 <ol type="1">
 <li>The file is in the correct <code>Matches</code> or <code>Genet Data</code> folder.</li>
 <li>The plot and plot section in the filename/folder are correct.</li>
-<li>Both survey dates are visible in the filename or supplied with the submission.</li>
+<li>Both survey dates are visible in the filename or included in the Teams message.</li>
 <li>The file is a CSV and opens with the expected columns.</li>
 <li>The same interval has not already been uploaded.</li>
 <li>Existing exports have not been overwritten or deleted.</li>
 </ol>
 </section>
-<section id="step-4-record-proposed-config-rows-in-the-teams-intake-copy" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-record-proposed-config-rows-in-the-teams-intake-copy">Step 4: Record proposed config rows in the Teams intake copy</h3>
-<p>Contributors may use the Teams copy of <code>Coral_survivorship_project</code> to record which match files are ready. They should edit only the matching plot config under:</p>
+<section id="step-4-add-the-file-information-to-the-teams-project-copy" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-add-the-file-information-to-the-teams-project-copy">Step 4: Add the file information to the Teams project copy</h3>
+<p>Use the Teams copy of <code>Coral_survivorship_project</code> to record which match files are ready. Only edit the matching plot config under:</p>
 <p><code>config/outplant_interval_files/</code></p>
 <p>For example, Plot E files belong in <code>Plot_E.csv</code>. Add one row for every month-to-month matches file and keep rows grouped by <code>plot_section</code> and ordered by <code>month_start_date</code>.</p>
-<p>Before contributors use the Teams intake configs, the curator should confirm that the Teams copy contains the current <code>Plot_A.csv</code> through <code>Plot_H.csv</code> structure from GitHub. After code or config-template changes, first reconcile any pending contributor rows, then refresh the Teams intake templates from the latest GitHub version. Never overwrite unreviewed submissions during a refresh.</p>
-<p>Each row must contain:</p>
+<p>Before anyone starts adding rows, Spencer should make sure the Teams copy has the current <code>Plot_A.csv</code> through <code>Plot_H.csv</code> structure from GitHub. If the config templates change, we’ll first copy over any rows that are still waiting, then refresh the Teams templates. That way nobody’s work gets overwritten.</p>
+<p>Each row needs:</p>
 <ul>
 <li><code>plot</code>: display name, such as <code>Plot E</code>.</li>
 <li><code>plot_section</code>: TagLab subsection, such as <code>1-0</code> or <code>1-1</code>.</li>
@@ -4909,11 +4909,11 @@ vertical-align: -.125em;
 <li><code>plot_length_m</code> and <code>plot_width_m</code>: plot dimensions in meters.</li>
 <li><code>taglab_area_units</code>: units used by the TagLab area export, currently <code>cm2</code>.</li>
 </ul>
-<p>Do not delete the header, change column names, paste a Genet Data filename into this config, or remove existing rows. Editing the Teams intake config does <strong>not</strong> update the live analysis by itself.</p>
+<p>Please leave the header and column names alone, keep Genet Data filenames out of this config, and don’t remove existing rows. Editing the Teams config does <strong>not</strong> update the live analysis by itself.</p>
 </section>
-<section id="step-5-notify-the-project-curator" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-notify-the-project-curator">Step 5: Notify the project curator</h3>
-<p>Send the curator a short Teams message containing:</p>
+<section id="step-5-let-spencer-know-the-files-are-ready" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-let-spencer-know-the-files-are-ready">Step 5: Let Spencer know the files are ready</h3>
+<p>Send Spencer a short Teams message with:</p>
 <ul>
 <li>plot and plot section;</li>
 <li>start and end survey months/dates;</li>
@@ -4921,11 +4921,11 @@ vertical-align: -.125em;
 <li>whether a new Genet Data export was included;</li>
 <li>any known annotation, split/fuse, or export concerns.</li>
 </ul>
-<p>The curator should not begin the GitHub update until the contributor says the files and proposed config rows are ready for review.</p>
+<p>Once that message is sent, Spencer can move everything into the GitHub project and check it.</p>
 </section>
-<section id="step-6-transfer-approved-files-into-the-local-git-project" class="level3">
-<h3 class="anchored" data-anchor-id="step-6-transfer-approved-files-into-the-local-git-project">Step 6: Transfer approved files into the local Git project</h3>
-<p>The curator completes these steps on the computer containing the official local clone:</p>
+<section id="step-6-move-the-ready-files-into-the-local-git-project" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-move-the-ready-files-into-the-local-git-project">Step 6: Move the ready files into the local Git project</h3>
+<p>Spencer completes these steps on the computer with the local Git project:</p>
 <ol type="1">
 <li><p>Open <code>Coral_survivorship_project</code> in RStudio.</p></li>
 <li><p>Pull the latest GitHub version before copying or editing anything:</p>
@@ -4933,7 +4933,7 @@ vertical-align: -.125em;
 <li><p>Copy each approved matches CSV from Teams into:</p>
 <p><code>data_raw/taglab/Plot_&lt;letter&gt;/</code></p></li>
 <li><p>Open the appropriate local config file under <code>config/outplant_interval_files/</code>.</p></li>
-<li><p>Copy the reviewed <strong>new rows</strong> from the Teams intake config into the local config. Do not replace the complete local config with the Teams copy.</p></li>
+<li><p>Copy the <strong>new rows</strong> from the Teams config into the local config. Copy the rows rather than replacing the whole local config file.</p></li>
 <li><p>Confirm that each config filename exactly matches the file placed in <code>data_raw/taglab/</code>.</p></li>
 <li><p>Update <code>data_raw/metadata/Coordinates_Depths.csv</code> only when reviewed plot-marker metadata have changed.</p></li>
 </ol>
@@ -4954,7 +4954,7 @@ vertical-align: -.125em;
 <li>Confirm the plot section and month order are correct in tables and figures.</li>
 <li>Compare major results with the previous website version and investigate unexplained jumps before publishing.</li>
 </ol>
-<p>Do not push the update when a configured file is missing or when identity/continuity errors have not been reviewed.</p>
+<p>If a configured file is missing or the identity/continuity checks look strange, pause and check it before pushing.</p>
 </section>
 <section id="step-8-commit-and-push-the-reviewed-update-to-github" class="level3">
 <h3 class="anchored" data-anchor-id="step-8-commit-and-push-the-reviewed-update-to-github">Step 8: Commit and push the reviewed update to GitHub</h3>
@@ -4970,7 +4970,7 @@ vertical-align: -.125em;
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Describe the plot and interval added&quot;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The official repository is <code>https://github.com/CWORI/DPNR_Survivorship</code>.</p>
+<p>The GitHub repository is <code>https://github.com/CWORI/DPNR_Survivorship</code>.</p>
 </section>
 <section id="step-9-confirm-the-live-website" class="level3">
 <h3 class="anchored" data-anchor-id="step-9-confirm-the-live-website">Step 9: Confirm the live website</h3>
@@ -4997,7 +4997,7 @@ vertical-align: -.125em;
 <li><label><input type="checkbox">Matches CSV uploaded to the correct Teams plot/section folder.</label></li>
 <li><label><input type="checkbox">Optional Genet Data archived separately.</label></li>
 <li><label><input type="checkbox">Proposed row added to the correct Teams intake plot config.</label></li>
-<li><label><input type="checkbox">Curator notified that the submission is ready.</label></li>
+<li><label><input type="checkbox">Spencer notified that the files are ready.</label></li>
 <li><label><input type="checkbox">Latest GitHub project pulled locally.</label></li>
 <li><label><input type="checkbox">Approved matches CSV copied into the correct local raw-data folder.</label></li>
 <li><label><input type="checkbox">Reviewed config row copied into the correct local plot CSV.</label></li>
