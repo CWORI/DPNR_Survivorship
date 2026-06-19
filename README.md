@@ -22,7 +22,12 @@ The report and R script automatically find the project folder by looking for `co
 
 ## Adding New Plot or Month Files
 
-1. Add the new TagLab match CSV file to the correct folder inside `data_raw/taglab/`.
-2. Add a matching row to that plot's CSV inside `config/outplant_interval_files/`.
-3. Render `coral_survivorship_report.qmd`.
-4. Check the file audit and QA/QC tables before interpreting the figures.
+1. Contributors upload new TagLab exports to the appropriate Teams folder under `Documents > General > Photogrammetry & Monitoring > Survivorship Exports`.
+2. Contributors record proposed rows in the appropriate plot config inside the Teams intake copy.
+3. The project curator runs `git pull` in the official local clone.
+4. The curator copies approved matches CSVs into the correct folder inside `data_raw/taglab/`.
+5. The curator copies the reviewed new rows into that plot's local CSV inside `config/outplant_interval_files/`.
+6. Render `coral_survivorship_report.qmd`.
+7. Check the file audit and QA/QC tables before committing and pushing the update.
+
+See the detailed **SOP** tab in the rendered website for the complete Teams-to-GitHub handoff procedure.

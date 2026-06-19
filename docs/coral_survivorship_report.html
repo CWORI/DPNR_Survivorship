@@ -4825,63 +4825,223 @@ vertical-align: -.125em;
 <p>Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, depth metadata, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="purpose-and-source-of-truth-rules" class="level3">
+<h3 class="anchored" data-anchor-id="purpose-and-source-of-truth-rules">Purpose and source-of-truth rules</h3>
+<p>This workflow uses Teams and GitHub for different jobs:</p>
+<ul>
+<li><strong>Teams is the raw-data intake and archive.</strong> Staff place new TagLab exports in Teams and can record proposed config rows in the Teams intake copy of <code>Coral_survivorship_project</code>.</li>
+<li><strong>GitHub is the official analysis project.</strong> The reviewed code, active config files, approved analysis-ready data, rendered <code>docs/</code> website, and project history live in <code>CWORI/DPNR_Survivorship</code>.</li>
+<li><strong>The Teams project copy is an intake copy only.</strong> Do not render from it, treat it as the latest code, or replace the GitHub project with it. The local Git clone must be updated with <code>git pull</code> before each analysis update.</li>
+<li><strong>Do not place the active local Git repository inside a Teams/OneDrive-synced folder.</strong> Cloud syncing and Git can both change files and create conflicts.</li>
+<li>Only transfer data to GitHub after confirming that the files are approved for the repository’s visibility and do not contain sensitive information.</li>
+</ul>
+</section>
+<section id="roles" class="level3">
+<h3 class="anchored" data-anchor-id="roles">Roles</h3>
+<ul>
+<li><strong>TagLab contributor:</strong> exports the data, uploads it to the correct Teams folder, records the proposed config information, and tells the project curator that the interval is ready.</li>
+<li><strong>Project curator:</strong> reviews the submission, transfers approved files and config rows into the local Git project, renders and checks the analysis, and pushes the update to GitHub. Spencer currently fills this role.</li>
+</ul>
+</section>
+<section id="step-1-export-matches-from-taglab" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-export-matches-from-taglab">Step 1: Export matches from TagLab</h3>
 <ol type="1">
-<li>Export TagLab match files for each plot section/month pair using the same batch export process so <code>Genet</code> IDs stay consistent across months.</li>
-<li>Export Genet Data as CSV name it example, Plot_E_1-0_GenetData_May-April2025 and save in <code>data_raw/metadata</code></li>
-<li>Name Exported tag lab matches Plot_(Letter) then it will auto populate with the rest of naming</li>
-<li>Place the exported CSV files in <code>data_raw/taglab/&lt;Plot_Folder&gt;/</code>.</li>
-<li>Add one row per month-to-month match file in the appropriate plot CSV under <code>config/outplant_interval_files/</code>.</li>
-<li>Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.</li>
-<li>Confirm <code>data_raw/metadata/Coordinates_Depths.csv</code> has marker depths for each plot if depth summaries will be used.</li>
-<li>Render this Quarto report.</li>
-<li>Check the file audit and QA/QC tables first.</li>
-<li>Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.</li>
-<li>Push Newly Rendered Quatro File to Git hub
+<li>Complete annotations for the relevant plot section and survey months.</li>
+<li>Export all months for that plot section through the same TagLab batch/matching process. This is necessary so numeric <code>Genet</code> IDs remain consistent between adjacent month files.</li>
+<li>Export one matches CSV for each adjacent month pair, such as May-June and June-July.</li>
+<li>Confirm the matches export contains the expected fields: <code>Genet</code>, <code>Blob1</code>, <code>Blob2</code>, <code>Area1</code>, <code>Area2</code>, <code>Class</code>, <code>Action</code>, and <code>Split/Fuse</code>.</li>
+<li>Do not rename columns or manually change area values after export.</li>
+<li>Keep the original TagLab filename when possible. A current example is <code>plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv</code>.</li>
+</ol>
+<p><code>Area1</code> represents the start survey and <code>Area2</code> represents the end survey. Match files are the required inputs for the active outplant-survivorship workflow.</p>
+</section>
+<section id="step-2-export-and-archive-genet-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-export-and-archive-genet-data">Step 2: Export and archive Genet Data</h3>
+<p>Genet Data is optional reference metadata; it is not required for the current outplant match workflow.</p>
 <ol type="1">
-<li>Press Git in top right corner</li>
-<li>Press Commit</li>
-<li>Commit all new changes (hit Ok)</li>
-<li></li>
-</ol></li>
+<li>Export Genet Data when a complete plot-section batch gains new months or when Genet IDs, classes, tags, or other annotations have been corrected.</li>
+<li>Use a descriptive name such as <code>Plot_E_1-0_GenetData_May-August2025.csv</code>.</li>
+<li>Archive it in the Teams <code>Genet Data</code> folder under the appropriate plot and section.</li>
+<li>Do not add it to the matches config or substitute it for a matches export.</li>
+</ol>
+</section>
+<section id="step-3-upload-exports-to-teams" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-upload-exports-to-teams">Step 3: Upload exports to Teams</h3>
+<p>The Teams intake location is:</p>
+<p><code>Documents &gt; General &gt; Photogrammetry &amp; Monitoring &gt; Survivorship Exports</code></p>
+<p>Use the two top-level folders shown there:</p>
+<ul>
+<li><code>Matches</code>: required month-to-month TagLab matches CSVs.</li>
+<li><code>Genet Data</code>: optional reference/archive exports.</li>
+</ul>
+<p>Within each, keep files separated by plot and plot section. Recommended examples are:</p>
+<ul>
+<li><code>Survivorship Exports/Matches/Plot_E/1-0/</code></li>
+<li><code>Survivorship Exports/Matches/Plot_E/1-1/</code></li>
+<li><code>Survivorship Exports/Genet Data/Plot_E/1-0/</code></li>
+</ul>
+<p>Before marking a submission ready, confirm:</p>
+<ol type="1">
+<li>The file is in the correct <code>Matches</code> or <code>Genet Data</code> folder.</li>
+<li>The plot and plot section in the filename/folder are correct.</li>
+<li>Both survey dates are visible in the filename or supplied with the submission.</li>
+<li>The file is a CSV and opens with the expected columns.</li>
+<li>The same interval has not already been uploaded.</li>
+<li>Existing exports have not been overwritten or deleted.</li>
+</ol>
+</section>
+<section id="step-4-record-proposed-config-rows-in-the-teams-intake-copy" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-record-proposed-config-rows-in-the-teams-intake-copy">Step 4: Record proposed config rows in the Teams intake copy</h3>
+<p>Contributors may use the Teams copy of <code>Coral_survivorship_project</code> to record which match files are ready. They should edit only the matching plot config under:</p>
+<p><code>config/outplant_interval_files/</code></p>
+<p>For example, Plot E files belong in <code>Plot_E.csv</code>. Add one row for every month-to-month matches file and keep rows grouped by <code>plot_section</code> and ordered by <code>month_start_date</code>.</p>
+<p>Before contributors use the Teams intake configs, the curator should confirm that the Teams copy contains the current <code>Plot_A.csv</code> through <code>Plot_H.csv</code> structure from GitHub. After code or config-template changes, first reconcile any pending contributor rows, then refresh the Teams intake templates from the latest GitHub version. Never overwrite unreviewed submissions during a refresh.</p>
+<p>Each row must contain:</p>
+<ul>
+<li><code>plot</code>: display name, such as <code>Plot E</code>.</li>
+<li><code>plot_section</code>: TagLab subsection, such as <code>1-0</code> or <code>1-1</code>.</li>
+<li><code>plot_folder</code>: local raw-data folder, such as <code>Plot_E</code>.</li>
+<li><code>file</code>: exact filename, including capitalization and <code>.csv</code>.</li>
+<li><code>month_start</code> and <code>month_end</code>: readable survey-month labels.</li>
+<li><code>month_start_date</code> and <code>month_end_date</code>: dates in <code>YYYY-MM-DD</code> format.</li>
+<li><code>file_type</code>: normally <code>csv</code>.</li>
+<li><code>match_type</code>: normally the same value as <code>plot_section</code>.</li>
+<li><code>plot_length_m</code> and <code>plot_width_m</code>: plot dimensions in meters.</li>
+<li><code>taglab_area_units</code>: units used by the TagLab area export, currently <code>cm2</code>.</li>
+</ul>
+<p>Do not delete the header, change column names, paste a Genet Data filename into this config, or remove existing rows. Editing the Teams intake config does <strong>not</strong> update the live analysis by itself.</p>
+</section>
+<section id="step-5-notify-the-project-curator" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-notify-the-project-curator">Step 5: Notify the project curator</h3>
+<p>Send the curator a short Teams message containing:</p>
+<ul>
+<li>plot and plot section;</li>
+<li>start and end survey months/dates;</li>
+<li>exact matches filename(s);</li>
+<li>whether a new Genet Data export was included;</li>
+<li>any known annotation, split/fuse, or export concerns.</li>
+</ul>
+<p>The curator should not begin the GitHub update until the contributor says the files and proposed config rows are ready for review.</p>
+</section>
+<section id="step-6-transfer-approved-files-into-the-local-git-project" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-transfer-approved-files-into-the-local-git-project">Step 6: Transfer approved files into the local Git project</h3>
+<p>The curator completes these steps on the computer containing the official local clone:</p>
+<ol type="1">
+<li><p>Open <code>Coral_survivorship_project</code> in RStudio.</p></li>
+<li><p>Pull the latest GitHub version before copying or editing anything:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Copy each approved matches CSV from Teams into:</p>
+<p><code>data_raw/taglab/Plot_&lt;letter&gt;/</code></p></li>
+<li><p>Open the appropriate local config file under <code>config/outplant_interval_files/</code>.</p></li>
+<li><p>Copy the reviewed <strong>new rows</strong> from the Teams intake config into the local config. Do not replace the complete local config with the Teams copy.</p></li>
+<li><p>Confirm that each config filename exactly matches the file placed in <code>data_raw/taglab/</code>.</p></li>
+<li><p>Update <code>data_raw/metadata/Coordinates_Depths.csv</code> only when reviewed plot-marker metadata have changed.</p></li>
+</ol>
+</section>
+<section id="step-7-render-and-validate-the-quarto-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-7-render-and-validate-the-quarto-analysis">Step 7: Render and validate the Quarto analysis</h3>
+<ol type="1">
+<li>Open <code>coral_survivorship_report.qmd</code> in RStudio.</li>
+<li>Click <strong>Render</strong>. Rendering rebuilds the processed datasets, tables, figures, and <code>docs/</code> website.</li>
+<li>Review the <strong>File Audit</strong> first. Every configured row must show <code>file_exists = TRUE</code>.</li>
+<li>Review interval QA for missing <code>Genet</code>, missing species, negative areas, and unexpected action or split/fuse labels.</li>
+<li>Review shared-month continuity. Adjacent intervals should normally show:
+<ul>
+<li>zero missing Genets;</li>
+<li>zero unexpected new Genets;</li>
+<li>zero species mismatches.</li>
+</ul></li>
+<li>Confirm the plot section and month order are correct in tables and figures.</li>
+<li>Compare major results with the previous website version and investigate unexplained jumps before publishing.</li>
+</ol>
+<p>Do not push the update when a configured file is missing or when identity/continuity errors have not been reviewed.</p>
+</section>
+<section id="step-8-commit-and-push-the-reviewed-update-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="step-8-commit-and-push-the-reviewed-update-to-github">Step 8: Commit and push the reviewed update to GitHub</h3>
+<p>Using the RStudio Git pane:</p>
+<ol type="1">
+<li>Review all changed files.</li>
+<li>Stage the new raw matches files, changed plot config, updated outputs, and rendered <code>docs/</code> files.</li>
+<li>Commit with a clear message, for example <code>Add Plot E 1-0 August-September interval</code>.</li>
+<li>Push the commit to GitHub.</li>
+</ol>
+<p>Equivalent Terminal commands are:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Describe the plot and interval added&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The official repository is <code>https://github.com/CWORI/DPNR_Survivorship</code>.</p>
+</section>
+<section id="step-9-confirm-the-live-website" class="level3">
+<h3 class="anchored" data-anchor-id="step-9-confirm-the-live-website">Step 9: Confirm the live website</h3>
+<ol type="1">
+<li>Wait briefly for GitHub Pages to publish the updated <code>main/docs</code> content.</li>
+<li>Open <code>https://cwori.github.io/DPNR_Survivorship/</code>.</li>
+<li>Confirm the new plot/section/month appears and that figures and tables load.</li>
+<li>If the website did not update, first confirm that the rendered <code>docs/</code> changes were committed and pushed.</li>
+</ol>
+</section>
+<section id="step-10-use-and-share-the-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="step-10-use-and-share-the-outputs">Step 10: Use and share the outputs</h3>
+<ul>
 <li>Use cumulative survivorship as the main survival result.</li>
 <li>Use interval survivorship as a diagnostic for each month-to-month transition.</li>
-<li>Open the two master datasets when exporting or sharing results.</li>
-</ol>
+<li>Start with <code>data_processed/outplant_master_tracking_dataset.csv</code> for detailed records.</li>
+<li>Start with <code>outputs/Tables/outplant_master_summary_dataset.csv</code> for combined summary results.</li>
+<li>Keep the original Teams exports as the untouched archive even after approved copies are added to GitHub.</li>
+</ul>
+</section>
+<section id="final-update-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="final-update-checklist">Final update checklist</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Matches CSV uploaded to the correct Teams plot/section folder.</label></li>
+<li><label><input type="checkbox">Optional Genet Data archived separately.</label></li>
+<li><label><input type="checkbox">Proposed row added to the correct Teams intake plot config.</label></li>
+<li><label><input type="checkbox">Curator notified that the submission is ready.</label></li>
+<li><label><input type="checkbox">Latest GitHub project pulled locally.</label></li>
+<li><label><input type="checkbox">Approved matches CSV copied into the correct local raw-data folder.</label></li>
+<li><label><input type="checkbox">Reviewed config row copied into the correct local plot CSV.</label></li>
+<li><label><input type="checkbox">Quarto report rendered successfully.</label></li>
+<li><label><input type="checkbox">File audit and QA/QC reviewed.</label></li>
+<li><label><input type="checkbox">Changes committed and pushed to GitHub.</label></li>
+<li><label><input type="checkbox">Live GitHub Pages website checked.</label></li>
+</ul>
+</section>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>This setup chunk loads the packages needed for table formatting and data manipulation, then sources the outplant interval workflow. Sourcing the script here means the report always rebuilds from the latest raw/config files when rendered.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the project folder from the report location. This lets collaborators move</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># the full project folder anywhere on their computer and still render the report.</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>report_path <span class="ot">&lt;-</span> knitr<span class="sc">::</span><span class="fu">current_input</span>(<span class="at">dir =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>report_dir <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(report_path)) {</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dirname</span>(<span class="fu">normalizePath</span>(report_path, <span class="at">mustWork =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">getwd</span>()</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>project_root <span class="ot">&lt;-</span> report_dir</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="fu">file.path</span>(project_root, <span class="st">&quot;config&quot;</span>, <span class="st">&quot;outplant_interval_files&quot;</span>))) {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  parent_dir <span class="ot">&lt;-</span> <span class="fu">dirname</span>(project_root)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">identical</span>(parent_dir, project_root)) {</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Could not find config/outplant_interval_files/. &quot;</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Render this report from inside the Coral_survivorship_project folder.&quot;</span>,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">call. =</span> <span class="cn">FALSE</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  project_root <span class="ot">&lt;-</span> parent_dir</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_knit<span class="sc">$</span><span class="fu">set</span>(<span class="at">root.dir =</span> project_root)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(project_root)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(project_root, <span class="st">&quot;R&quot;</span>, <span class="st">&quot;03_outplant_interval_workflow.R&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the project folder from the report location. This lets collaborators move</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># the full project folder anywhere on their computer and still render the report.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>report_path <span class="ot">&lt;-</span> knitr<span class="sc">::</span><span class="fu">current_input</span>(<span class="at">dir =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>report_dir <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(report_path)) {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dirname</span>(<span class="fu">normalizePath</span>(report_path, <span class="at">mustWork =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">getwd</span>()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>project_root <span class="ot">&lt;-</span> report_dir</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="fu">file.path</span>(project_root, <span class="st">&quot;config&quot;</span>, <span class="st">&quot;outplant_interval_files&quot;</span>))) {</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  parent_dir <span class="ot">&lt;-</span> <span class="fu">dirname</span>(project_root)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">identical</span>(parent_dir, project_root)) {</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Could not find config/outplant_interval_files/. &quot;</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Render this report from inside the Coral_survivorship_project folder.&quot;</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">call. =</span> <span class="cn">FALSE</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  project_root <span class="ot">&lt;-</span> parent_dir</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_knit<span class="sc">$</span><span class="fu">set</span>(<span class="at">root.dir =</span> project_root)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(project_root)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(project_root, <span class="st">&quot;R&quot;</span>, <span class="st">&quot;03_outplant_interval_workflow.R&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="workflow" class="level3">
@@ -4903,11 +5063,11 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>outplant_file_audit <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot, plot_section, month_start, month_end, match_type, file, file_exists) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Match type&quot;</span>, <span class="st">&quot;File&quot;</span>, <span class="st">&quot;File exists&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>outplant_file_audit <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot, plot_section, month_start, month_end, match_type, file, file_exists) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Match type&quot;</span>, <span class="st">&quot;File&quot;</span>, <span class="st">&quot;File exists&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5021,25 +5181,25 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>outplant_interval_qa <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    plot_section,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    month_start,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    month_end,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    n_rows,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    n_missing_genet,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    n_missing_species,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    n_negative_area_start,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    n_negative_area_end,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    actions,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    split_fuse_events</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Rows&quot;</span>, <span class="st">&quot;Missing Genet&quot;</span>, <span class="st">&quot;Missing species&quot;</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Negative start area&quot;</span>, <span class="st">&quot;Negative end area&quot;</span>, <span class="st">&quot;Actions&quot;</span>, <span class="st">&quot;Split/fuse events&quot;</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>outplant_interval_qa <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    plot_section,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    month_start,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    month_end,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    n_rows,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    n_missing_genet,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    n_missing_species,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    n_negative_area_start,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    n_negative_area_end,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    actions,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    split_fuse_events</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Rows&quot;</span>, <span class="st">&quot;Missing Genet&quot;</span>, <span class="st">&quot;Missing species&quot;</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Negative start area&quot;</span>, <span class="st">&quot;Negative end area&quot;</span>, <span class="st">&quot;Actions&quot;</span>, <span class="st">&quot;Split/fuse events&quot;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5186,19 +5346,19 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(outplant_unstable_genet_examples) <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">status =</span> <span class="st">&quot;No cross-file Genet identity conflicts detected.&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="st">&quot;Status&quot;</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  outplant_unstable_genet_examples <span class="sc">%&gt;%</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>(</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Section label&quot;</span>, <span class="st">&quot;Source file&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Genet&quot;</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Tag&quot;</span>, <span class="st">&quot;Genotype&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Action&quot;</span>, <span class="st">&quot;Start area&quot;</span>, <span class="st">&quot;End area&quot;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(outplant_unstable_genet_examples) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">status =</span> <span class="st">&quot;No cross-file Genet identity conflicts detected.&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="st">&quot;Status&quot;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  outplant_unstable_genet_examples <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>(</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Section label&quot;</span>, <span class="st">&quot;Source file&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Genet&quot;</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Tag&quot;</span>, <span class="st">&quot;Genotype&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Action&quot;</span>, <span class="st">&quot;Start area&quot;</span>, <span class="st">&quot;End area&quot;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5219,27 +5379,27 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>outplant_shared_month_continuity_qa <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    plot_section,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    shared_month,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    previous_end_n,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    next_start_n,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    in_both_snapshots,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    missing_from_next_start,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    new_in_next_start,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    species_mismatches,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    area_mismatches,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    max_abs_area_difference</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">max_abs_area_difference =</span> <span class="fu">round</span>(max_abs_area_difference, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Shared month&quot;</span>, <span class="st">&quot;Previous file end n&quot;</span>, <span class="st">&quot;Next file start n&quot;</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;In both&quot;</span>, <span class="st">&quot;Missing from next start&quot;</span>, <span class="st">&quot;New in next start&quot;</span>,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Species mismatches&quot;</span>, <span class="st">&quot;Area mismatches&quot;</span>, <span class="st">&quot;Max area difference&quot;</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outplant_shared_month_continuity_qa <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    plot_section,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    shared_month,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    previous_end_n,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    next_start_n,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    in_both_snapshots,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    missing_from_next_start,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    new_in_next_start,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    species_mismatches,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    area_mismatches,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    max_abs_area_difference</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">max_abs_area_difference =</span> <span class="fu">round</span>(max_abs_area_difference, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Shared month&quot;</span>, <span class="st">&quot;Previous file end n&quot;</span>, <span class="st">&quot;Next file start n&quot;</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;In both&quot;</span>, <span class="st">&quot;Missing from next start&quot;</span>, <span class="st">&quot;New in next start&quot;</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Species mismatches&quot;</span>, <span class="st">&quot;Area mismatches&quot;</span>, <span class="st">&quot;Max area difference&quot;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5362,31 +5522,31 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>outplant_cumulative_survival_summary <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    plot_section_label,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    month,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    baseline_month,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    n_baseline,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    n_died_interval,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    cumulative_deaths_observed,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    n_surviving_from_baseline,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    percent_cumulative_survival,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    percent_cumulative_survival_low,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    percent_cumulative_survival_high</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cumulative_survival =</span> <span class="fu">round</span>(percent_cumulative_survival, <span class="dv">1</span>),</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cumulative_survival_low =</span> <span class="fu">round</span>(percent_cumulative_survival_low, <span class="dv">1</span>),</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cumulative_survival_high =</span> <span class="fu">round</span>(percent_cumulative_survival_high, <span class="dv">1</span>)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Baseline month&quot;</span>, <span class="st">&quot;Baseline n&quot;</span>, <span class="st">&quot;Deaths this interval&quot;</span>,</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Cumulative deaths&quot;</span>, <span class="st">&quot;Surviving from baseline&quot;</span>,</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Cumulative survival (%)&quot;</span>, <span class="st">&quot;95% CI low&quot;</span>, <span class="st">&quot;95% CI high&quot;</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>outplant_cumulative_survival_summary <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    plot_section_label,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    month,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    baseline_month,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    n_baseline,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    n_died_interval,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    cumulative_deaths_observed,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    n_surviving_from_baseline,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    percent_cumulative_survival,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    percent_cumulative_survival_low,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    percent_cumulative_survival_high</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cumulative_survival =</span> <span class="fu">round</span>(percent_cumulative_survival, <span class="dv">1</span>),</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cumulative_survival_low =</span> <span class="fu">round</span>(percent_cumulative_survival_low, <span class="dv">1</span>),</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cumulative_survival_high =</span> <span class="fu">round</span>(percent_cumulative_survival_high, <span class="dv">1</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Baseline month&quot;</span>, <span class="st">&quot;Baseline n&quot;</span>, <span class="st">&quot;Deaths this interval&quot;</span>,</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Cumulative deaths&quot;</span>, <span class="st">&quot;Surviving from baseline&quot;</span>,</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Cumulative survival (%)&quot;</span>, <span class="st">&quot;95% CI low&quot;</span>, <span class="st">&quot;95% CI high&quot;</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5557,27 +5717,27 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outplant_daily_temperature_summary <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">logger_location =</span> <span class="fu">first</span>(logger_location),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_date =</span> <span class="fu">min</span>(date),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_date =</span> <span class="fu">max</span>(date),</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_days =</span> <span class="fu">n</span>(),</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_temperature_c =</span> <span class="fu">mean</span>(mean_temperature_c, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_temperature_c =</span> <span class="fu">min</span>(min_temperature_c, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_temperature_c =</span> <span class="fu">max</span>(max_temperature_c, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_temperature_c =</span> <span class="fu">round</span>(mean_temperature_c, <span class="dv">2</span>),</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_temperature_c =</span> <span class="fu">round</span>(min_temperature_c, <span class="dv">2</span>),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_temperature_c =</span> <span class="fu">round</span>(max_temperature_c, <span class="dv">2</span>)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Logger&quot;</span>, <span class="st">&quot;Start date&quot;</span>, <span class="st">&quot;End date&quot;</span>, <span class="st">&quot;Days&quot;</span>,</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Mean temp (°C)&quot;</span>, <span class="st">&quot;Min temp (°C)&quot;</span>, <span class="st">&quot;Max temp (°C)&quot;</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>outplant_daily_temperature_summary <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">logger_location =</span> <span class="fu">first</span>(logger_location),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_date =</span> <span class="fu">min</span>(date),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_date =</span> <span class="fu">max</span>(date),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_days =</span> <span class="fu">n</span>(),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_temperature_c =</span> <span class="fu">mean</span>(mean_temperature_c, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_temperature_c =</span> <span class="fu">min</span>(min_temperature_c, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_temperature_c =</span> <span class="fu">max</span>(max_temperature_c, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_temperature_c =</span> <span class="fu">round</span>(mean_temperature_c, <span class="dv">2</span>),</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_temperature_c =</span> <span class="fu">round</span>(min_temperature_c, <span class="dv">2</span>),</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_temperature_c =</span> <span class="fu">round</span>(max_temperature_c, <span class="dv">2</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Logger&quot;</span>, <span class="st">&quot;Start date&quot;</span>, <span class="st">&quot;End date&quot;</span>, <span class="st">&quot;Days&quot;</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Mean temp (°C)&quot;</span>, <span class="st">&quot;Min temp (°C)&quot;</span>, <span class="st">&quot;Max temp (°C)&quot;</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5619,7 +5779,7 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>outplant_cumulative_survival_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>outplant_cumulative_survival_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5633,29 +5793,29 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>outplant_survival_summary <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    plot_section_label,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    interval_label,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    n_start,</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    n_survived,</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    n_died,</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    n_born,</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    percent_survival,</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    percent_survival_low,</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    percent_survival_high</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_survival =</span> <span class="fu">round</span>(percent_survival, <span class="dv">1</span>),</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_survival_low =</span> <span class="fu">round</span>(percent_survival_low, <span class="dv">1</span>),</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_survival_high =</span> <span class="fu">round</span>(percent_survival_high, <span class="dv">1</span>)</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Interval&quot;</span>, <span class="st">&quot;Start n&quot;</span>, <span class="st">&quot;Survived n&quot;</span>, <span class="st">&quot;Died n&quot;</span>, <span class="st">&quot;Born n&quot;</span>,</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Interval survival (%)&quot;</span>, <span class="st">&quot;95% CI low&quot;</span>, <span class="st">&quot;95% CI high&quot;</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>outplant_survival_summary <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    plot_section_label,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    interval_label,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    n_start,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    n_survived,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    n_died,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    n_born,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    percent_survival,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    percent_survival_low,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    percent_survival_high</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_survival =</span> <span class="fu">round</span>(percent_survival, <span class="dv">1</span>),</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_survival_low =</span> <span class="fu">round</span>(percent_survival_low, <span class="dv">1</span>),</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_survival_high =</span> <span class="fu">round</span>(percent_survival_high, <span class="dv">1</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Interval&quot;</span>, <span class="st">&quot;Start n&quot;</span>, <span class="st">&quot;Survived n&quot;</span>, <span class="st">&quot;Died n&quot;</span>, <span class="st">&quot;Born n&quot;</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Interval survival (%)&quot;</span>, <span class="st">&quot;95% CI low&quot;</span>, <span class="st">&quot;95% CI high&quot;</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5791,7 +5951,7 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>outplant_survival_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>outplant_survival_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5805,18 +5965,18 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>outplant_cover_summary <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot_section_label, month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_outplant_area_m2 =</span> <span class="fu">round</span>(total_outplant_area_m2, <span class="dv">6</span>),</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_outplant_cover =</span> <span class="fu">round</span>(percent_outplant_cover, <span class="dv">5</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Outplants present&quot;</span>, <span class="st">&quot;Total outplant area (m2)&quot;</span>,</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot area (m2)&quot;</span>, <span class="st">&quot;Outplant cover (%)&quot;</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>outplant_cover_summary <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot_section_label, month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_outplant_area_m2 =</span> <span class="fu">round</span>(total_outplant_area_m2, <span class="dv">6</span>),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_outplant_cover =</span> <span class="fu">round</span>(percent_outplant_cover, <span class="dv">5</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Outplants present&quot;</span>, <span class="st">&quot;Total outplant area (m2)&quot;</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot area (m2)&quot;</span>, <span class="st">&quot;Outplant cover (%)&quot;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -5935,7 +6095,7 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>outplant_cover_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>outplant_cover_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5949,27 +6109,27 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>outplant_species_prevalence_summary <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    plot_section_label,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    month,</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    species,</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    n_outplants,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    percent_prevalence,</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    total_outplant_area_m2,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    percent_cover_within_outplants</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_prevalence =</span> <span class="fu">round</span>(percent_prevalence, <span class="dv">1</span>),</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_outplant_area_m2 =</span> <span class="fu">round</span>(total_outplant_area_m2, <span class="dv">6</span>),</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cover_within_outplants =</span> <span class="fu">round</span>(percent_cover_within_outplants, <span class="dv">1</span>)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Outplant abundance&quot;</span>, <span class="st">&quot;Prevalence (%)&quot;</span>,</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Outplant area (m2)&quot;</span>, <span class="st">&quot;Share of outplant cover (%)&quot;</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>outplant_species_prevalence_summary <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    plot_section_label,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    month,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    species,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    n_outplants,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    percent_prevalence,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    total_outplant_area_m2,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    percent_cover_within_outplants</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_prevalence =</span> <span class="fu">round</span>(percent_prevalence, <span class="dv">1</span>),</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_outplant_area_m2 =</span> <span class="fu">round</span>(total_outplant_area_m2, <span class="dv">6</span>),</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cover_within_outplants =</span> <span class="fu">round</span>(percent_cover_within_outplants, <span class="dv">1</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Outplant abundance&quot;</span>, <span class="st">&quot;Prevalence (%)&quot;</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Outplant area (m2)&quot;</span>, <span class="st">&quot;Share of outplant cover (%)&quot;</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -6470,7 +6630,7 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>outplant_species_prevalence_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>outplant_species_prevalence_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -6484,7 +6644,7 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>outplant_species_cover_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>outplant_species_cover_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -6501,27 +6661,27 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>outplant_plot_depth_summary <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>),</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_m =</span> <span class="fu">round</span>(mean_depth_m, <span class="dv">2</span>),</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_m =</span> <span class="fu">round</span>(min_depth_m, <span class="dv">2</span>),</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_m =</span> <span class="fu">round</span>(max_depth_m, <span class="dv">2</span>),</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_m =</span> <span class="fu">round</span>(depth_range_m, <span class="dv">2</span>),</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">centroid_latitude =</span> <span class="fu">round</span>(centroid_latitude, <span class="dv">6</span>),</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">centroid_longitude =</span> <span class="fu">round</span>(centroid_longitude, <span class="dv">6</span>)</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Depth markers&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>, <span class="st">&quot;Min depth (ft)&quot;</span>,</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span>, <span class="st">&quot;Mean depth (m)&quot;</span>,</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (m)&quot;</span>, <span class="st">&quot;Max depth (m)&quot;</span>, <span class="st">&quot;Depth range (m)&quot;</span>,</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Centroid latitude&quot;</span>, <span class="st">&quot;Centroid longitude&quot;</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>outplant_plot_depth_summary <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_m =</span> <span class="fu">round</span>(mean_depth_m, <span class="dv">2</span>),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_m =</span> <span class="fu">round</span>(min_depth_m, <span class="dv">2</span>),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_m =</span> <span class="fu">round</span>(max_depth_m, <span class="dv">2</span>),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_m =</span> <span class="fu">round</span>(depth_range_m, <span class="dv">2</span>),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">centroid_latitude =</span> <span class="fu">round</span>(centroid_latitude, <span class="dv">6</span>),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">centroid_longitude =</span> <span class="fu">round</span>(centroid_longitude, <span class="dv">6</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Depth markers&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>, <span class="st">&quot;Min depth (ft)&quot;</span>,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span>, <span class="st">&quot;Mean depth (m)&quot;</span>,</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (m)&quot;</span>, <span class="st">&quot;Max depth (m)&quot;</span>, <span class="st">&quot;Depth range (m)&quot;</span>,</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Centroid latitude&quot;</span>, <span class="st">&quot;Centroid longitude&quot;</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -6676,35 +6836,35 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>outplant_species_depth_summary <span class="sc">%&gt;%</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    plot,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    plot_section,</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    month,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    species,</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    n_outplants,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    percent_prevalence,</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    percent_cover_within_outplants,</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    mean_depth_ft,</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    min_depth_ft,</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    max_depth_ft,</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    depth_range_ft</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_prevalence =</span> <span class="fu">round</span>(percent_prevalence, <span class="dv">1</span>),</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cover_within_outplants =</span> <span class="fu">round</span>(percent_cover_within_outplants, <span class="dv">1</span>),</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>)</span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Outplant abundance&quot;</span>,</span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Prevalence (%)&quot;</span>, <span class="st">&quot;Share of outplant cover (%)&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>,</span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (ft)&quot;</span>, <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span></span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>outplant_species_depth_summary <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    plot,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    plot_section,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    month,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    species,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    n_outplants,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    percent_prevalence,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    percent_cover_within_outplants,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    mean_depth_ft,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    min_depth_ft,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    max_depth_ft,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    depth_range_ft</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_prevalence =</span> <span class="fu">round</span>(percent_prevalence, <span class="dv">1</span>),</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent_cover_within_outplants =</span> <span class="fu">round</span>(percent_cover_within_outplants, <span class="dv">1</span>),</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Outplant abundance&quot;</span>,</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Prevalence (%)&quot;</span>, <span class="st">&quot;Share of outplant cover (%)&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>,</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (ft)&quot;</span>, <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -7598,15 +7758,15 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>outplant_config <span class="sc">%&gt;%</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plot <span class="sc">==</span> <span class="st">&quot;Plot E&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot, plot_section, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) <span class="sc">%&gt;%</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Start date&quot;</span>, <span class="st">&quot;End date&quot;</span>, <span class="st">&quot;File&quot;</span>,</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot length (m)&quot;</span>, <span class="st">&quot;Plot width (m)&quot;</span>, <span class="st">&quot;Area units&quot;</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>outplant_config <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plot <span class="sc">==</span> <span class="st">&quot;Plot E&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(plot, plot_section, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) <span class="sc">%&gt;%</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Section&quot;</span>, <span class="st">&quot;Start month&quot;</span>, <span class="st">&quot;End month&quot;</span>, <span class="st">&quot;Start date&quot;</span>, <span class="st">&quot;End date&quot;</span>, <span class="st">&quot;File&quot;</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot length (m)&quot;</span>, <span class="st">&quot;Plot width (m)&quot;</span>, <span class="st">&quot;Area units&quot;</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -7756,37 +7916,37 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>outplant_plot_depth_summary <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plot <span class="sc">==</span> <span class="st">&quot;Plot E&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>),</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_m =</span> <span class="fu">round</span>(mean_depth_m, <span class="dv">2</span>),</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_m =</span> <span class="fu">round</span>(min_depth_m, <span class="dv">2</span>),</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_m =</span> <span class="fu">round</span>(max_depth_m, <span class="dv">2</span>),</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_m =</span> <span class="fu">round</span>(depth_range_m, <span class="dv">2</span>)</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    plot,</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    n_depth_markers,</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    mean_depth_ft,</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    min_depth_ft,</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    max_depth_ft,</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    depth_range_ft,</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    mean_depth_m,</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    min_depth_m,</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    max_depth_m,</span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    depth_range_m</span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Depth markers&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>, <span class="st">&quot;Min depth (ft)&quot;</span>,</span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span>, <span class="st">&quot;Mean depth (m)&quot;</span>,</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (m)&quot;</span>, <span class="st">&quot;Max depth (m)&quot;</span>, <span class="st">&quot;Depth range (m)&quot;</span></span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>outplant_plot_depth_summary <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plot <span class="sc">==</span> <span class="st">&quot;Plot E&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_ft =</span> <span class="fu">round</span>(mean_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_ft =</span> <span class="fu">round</span>(min_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_ft =</span> <span class="fu">round</span>(max_depth_ft, <span class="dv">1</span>),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_ft =</span> <span class="fu">round</span>(depth_range_ft, <span class="dv">1</span>),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_depth_m =</span> <span class="fu">round</span>(mean_depth_m, <span class="dv">2</span>),</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_depth_m =</span> <span class="fu">round</span>(min_depth_m, <span class="dv">2</span>),</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth_m =</span> <span class="fu">round</span>(max_depth_m, <span class="dv">2</span>),</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth_range_m =</span> <span class="fu">round</span>(depth_range_m, <span class="dv">2</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    plot,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    n_depth_markers,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    mean_depth_ft,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    min_depth_ft,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    max_depth_ft,</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    depth_range_ft,</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    mean_depth_m,</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    min_depth_m,</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    max_depth_m,</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    depth_range_m</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Plot&quot;</span>, <span class="st">&quot;Depth markers&quot;</span>, <span class="st">&quot;Mean depth (ft)&quot;</span>, <span class="st">&quot;Min depth (ft)&quot;</span>,</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Max depth (ft)&quot;</span>, <span class="st">&quot;Depth range (ft)&quot;</span>, <span class="st">&quot;Mean depth (m)&quot;</span>,</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Min depth (m)&quot;</span>, <span class="st">&quot;Max depth (m)&quot;</span>, <span class="st">&quot;Depth range (m)&quot;</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">

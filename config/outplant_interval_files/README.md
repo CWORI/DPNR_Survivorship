@@ -20,3 +20,15 @@ the header only until data are available.
 The workflow automatically combines all eight plot config files. A file is not
 included in the analysis until its row has been added to the appropriate plot
 config.
+
+## Teams intake copy
+
+Contributors may record proposed rows in the matching config inside the Teams
+intake copy of the project. The project curator should review and copy only the
+new approved rows into the official local Git clone after running `git pull`.
+Do not replace an official local config with the complete Teams copy, and do not
+render or publish the Teams intake copy as though it were the GitHub project.
+
+After GitHub changes the config structure or templates, reconcile all pending
+Teams submissions before refreshing the Teams intake configs from GitHub. Never
+overwrite unreviewed contributor rows during that refresh.

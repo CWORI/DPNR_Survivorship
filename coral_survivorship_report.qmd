@@ -30,24 +30,187 @@ Each plot tab is organized with the same outline so new data can be added withou
 
 ## SOP
 
-1.  Export TagLab match files for each plot section/month pair using the same batch export process so `Genet` IDs stay consistent across months.
-2.  Export Genet Data as CSV name it example, Plot_E_1-0_GenetData_May-April2025 and save in `data_raw/metadata`
-3.  Name Exported tag lab matches Plot\_(Letter) then it will auto populate with the rest of naming
-4.  Place the exported CSV files in `data_raw/taglab/<Plot_Folder>/`.
-5.  Add one row per month-to-month match file in the appropriate plot CSV under `config/outplant_interval_files/`.
-6.  Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
-7.  Confirm `data_raw/metadata/Coordinates_Depths.csv` has marker depths for each plot if depth summaries will be used.
-8.  Render this Quarto report.
-9.  Check the file audit and QA/QC tables first.
-10. Confirm the shared-month continuity table has zero missing Genets, zero unexpected new Genets, and zero species mismatches.
-11. Push Newly Rendered Quatro File to Git hub
-    1.  Press Git in top right corner
-    2.  Press Commit
-    3.  Commit all new changes (hit Ok)
-    4.  
-12. Use cumulative survivorship as the main survival result.
-13. Use interval survivorship as a diagnostic for each month-to-month transition.
-14. Open the two master datasets when exporting or sharing results.
+### Purpose and source-of-truth rules
+
+This workflow uses Teams and GitHub for different jobs:
+
+-   **Teams is the raw-data intake and archive.** Staff place new TagLab exports in Teams and can record proposed config rows in the Teams intake copy of `Coral_survivorship_project`.
+-   **GitHub is the official analysis project.** The reviewed code, active config files, approved analysis-ready data, rendered `docs/` website, and project history live in `CWORI/DPNR_Survivorship`.
+-   **The Teams project copy is an intake copy only.** Do not render from it, treat it as the latest code, or replace the GitHub project with it. The local Git clone must be updated with `git pull` before each analysis update.
+-   **Do not place the active local Git repository inside a Teams/OneDrive-synced folder.** Cloud syncing and Git can both change files and create conflicts.
+-   Only transfer data to GitHub after confirming that the files are approved for the repository's visibility and do not contain sensitive information.
+
+### Roles
+
+-   **TagLab contributor:** exports the data, uploads it to the correct Teams folder, records the proposed config information, and tells the project curator that the interval is ready.
+-   **Project curator:** reviews the submission, transfers approved files and config rows into the local Git project, renders and checks the analysis, and pushes the update to GitHub. Spencer currently fills this role.
+
+### Step 1: Export matches from TagLab
+
+1.  Complete annotations for the relevant plot section and survey months.
+2.  Export all months for that plot section through the same TagLab batch/matching process. This is necessary so numeric `Genet` IDs remain consistent between adjacent month files.
+3.  Export one matches CSV for each adjacent month pair, such as May-June and June-July.
+4.  Confirm the matches export contains the expected fields: `Genet`, `Blob1`, `Blob2`, `Area1`, `Area2`, `Class`, `Action`, and `Split/Fuse`.
+5.  Do not rename columns or manually change area values after export.
+6.  Keep the original TagLab filename when possible. A current example is `plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv`.
+
+`Area1` represents the start survey and `Area2` represents the end survey. Match files are the required inputs for the active outplant-survivorship workflow.
+
+### Step 2: Export and archive Genet Data
+
+Genet Data is optional reference metadata; it is not required for the current outplant match workflow.
+
+1.  Export Genet Data when a complete plot-section batch gains new months or when Genet IDs, classes, tags, or other annotations have been corrected.
+2.  Use a descriptive name such as `Plot_E_1-0_GenetData_May-August2025.csv`.
+3.  Archive it in the Teams `Genet Data` folder under the appropriate plot and section.
+4.  Do not add it to the matches config or substitute it for a matches export.
+
+### Step 3: Upload exports to Teams
+
+The Teams intake location is:
+
+`Documents > General > Photogrammetry & Monitoring > Survivorship Exports`
+
+Use the two top-level folders shown there:
+
+-   `Matches`: required month-to-month TagLab matches CSVs.
+-   `Genet Data`: optional reference/archive exports.
+
+Within each, keep files separated by plot and plot section. Recommended examples are:
+
+-   `Survivorship Exports/Matches/Plot_E/1-0/`
+-   `Survivorship Exports/Matches/Plot_E/1-1/`
+-   `Survivorship Exports/Genet Data/Plot_E/1-0/`
+
+Before marking a submission ready, confirm:
+
+1.  The file is in the correct `Matches` or `Genet Data` folder.
+2.  The plot and plot section in the filename/folder are correct.
+3.  Both survey dates are visible in the filename or supplied with the submission.
+4.  The file is a CSV and opens with the expected columns.
+5.  The same interval has not already been uploaded.
+6.  Existing exports have not been overwritten or deleted.
+
+### Step 4: Record proposed config rows in the Teams intake copy
+
+Contributors may use the Teams copy of `Coral_survivorship_project` to record which match files are ready. They should edit only the matching plot config under:
+
+`config/outplant_interval_files/`
+
+For example, Plot E files belong in `Plot_E.csv`. Add one row for every month-to-month matches file and keep rows grouped by `plot_section` and ordered by `month_start_date`.
+
+Before contributors use the Teams intake configs, the curator should confirm that the Teams copy contains the current `Plot_A.csv` through `Plot_H.csv` structure from GitHub. After code or config-template changes, first reconcile any pending contributor rows, then refresh the Teams intake templates from the latest GitHub version. Never overwrite unreviewed submissions during a refresh.
+
+Each row must contain:
+
+-   `plot`: display name, such as `Plot E`.
+-   `plot_section`: TagLab subsection, such as `1-0` or `1-1`.
+-   `plot_folder`: local raw-data folder, such as `Plot_E`.
+-   `file`: exact filename, including capitalization and `.csv`.
+-   `month_start` and `month_end`: readable survey-month labels.
+-   `month_start_date` and `month_end_date`: dates in `YYYY-MM-DD` format.
+-   `file_type`: normally `csv`.
+-   `match_type`: normally the same value as `plot_section`.
+-   `plot_length_m` and `plot_width_m`: plot dimensions in meters.
+-   `taglab_area_units`: units used by the TagLab area export, currently `cm2`.
+
+Do not delete the header, change column names, paste a Genet Data filename into this config, or remove existing rows. Editing the Teams intake config does **not** update the live analysis by itself.
+
+### Step 5: Notify the project curator
+
+Send the curator a short Teams message containing:
+
+-   plot and plot section;
+-   start and end survey months/dates;
+-   exact matches filename(s);
+-   whether a new Genet Data export was included;
+-   any known annotation, split/fuse, or export concerns.
+
+The curator should not begin the GitHub update until the contributor says the files and proposed config rows are ready for review.
+
+### Step 6: Transfer approved files into the local Git project
+
+The curator completes these steps on the computer containing the official local clone:
+
+1.  Open `Coral_survivorship_project` in RStudio.
+2.  Pull the latest GitHub version before copying or editing anything:
+
+    ```bash
+    git pull
+    ```
+
+3.  Copy each approved matches CSV from Teams into:
+
+    `data_raw/taglab/Plot_<letter>/`
+
+4.  Open the appropriate local config file under `config/outplant_interval_files/`.
+5.  Copy the reviewed **new rows** from the Teams intake config into the local config. Do not replace the complete local config with the Teams copy.
+6.  Confirm that each config filename exactly matches the file placed in `data_raw/taglab/`.
+7.  Update `data_raw/metadata/Coordinates_Depths.csv` only when reviewed plot-marker metadata have changed.
+
+### Step 7: Render and validate the Quarto analysis
+
+1.  Open `coral_survivorship_report.qmd` in RStudio.
+2.  Click **Render**. Rendering rebuilds the processed datasets, tables, figures, and `docs/` website.
+3.  Review the **File Audit** first. Every configured row must show `file_exists = TRUE`.
+4.  Review interval QA for missing `Genet`, missing species, negative areas, and unexpected action or split/fuse labels.
+5.  Review shared-month continuity. Adjacent intervals should normally show:
+    -   zero missing Genets;
+    -   zero unexpected new Genets;
+    -   zero species mismatches.
+6.  Confirm the plot section and month order are correct in tables and figures.
+7.  Compare major results with the previous website version and investigate unexplained jumps before publishing.
+
+Do not push the update when a configured file is missing or when identity/continuity errors have not been reviewed.
+
+### Step 8: Commit and push the reviewed update to GitHub
+
+Using the RStudio Git pane:
+
+1.  Review all changed files.
+2.  Stage the new raw matches files, changed plot config, updated outputs, and rendered `docs/` files.
+3.  Commit with a clear message, for example `Add Plot E 1-0 August-September interval`.
+4.  Push the commit to GitHub.
+
+Equivalent Terminal commands are:
+
+```bash
+git status
+git add .
+git commit -m "Describe the plot and interval added"
+git push
+```
+
+The official repository is `https://github.com/CWORI/DPNR_Survivorship`.
+
+### Step 9: Confirm the live website
+
+1.  Wait briefly for GitHub Pages to publish the updated `main/docs` content.
+2.  Open `https://cwori.github.io/DPNR_Survivorship/`.
+3.  Confirm the new plot/section/month appears and that figures and tables load.
+4.  If the website did not update, first confirm that the rendered `docs/` changes were committed and pushed.
+
+### Step 10: Use and share the outputs
+
+-   Use cumulative survivorship as the main survival result.
+-   Use interval survivorship as a diagnostic for each month-to-month transition.
+-   Start with `data_processed/outplant_master_tracking_dataset.csv` for detailed records.
+-   Start with `outputs/Tables/outplant_master_summary_dataset.csv` for combined summary results.
+-   Keep the original Teams exports as the untouched archive even after approved copies are added to GitHub.
+
+### Final update checklist
+
+-   [ ] Matches CSV uploaded to the correct Teams plot/section folder.
+-   [ ] Optional Genet Data archived separately.
+-   [ ] Proposed row added to the correct Teams intake plot config.
+-   [ ] Curator notified that the submission is ready.
+-   [ ] Latest GitHub project pulled locally.
+-   [ ] Approved matches CSV copied into the correct local raw-data folder.
+-   [ ] Reviewed config row copied into the correct local plot CSV.
+-   [ ] Quarto report rendered successfully.
+-   [ ] File audit and QA/QC reviewed.
+-   [ ] Changes committed and pushed to GitHub.
+-   [ ] Live GitHub Pages website checked.
 
 ## Main Work Flow
 
