@@ -34,7 +34,7 @@ Each plot tab is organized with the same outline so new data can be added withou
 2.  Export Genet Data as CSV name it example, Plot_E_1-0_GenetData_May-April2025 and save in `data_raw/metadata`
 3.  Name Exported tag lab matches Plot\_(Letter) then it will auto populate with the rest of naming
 4.  Place the exported CSV files in `data_raw/taglab/<Plot_Folder>/`.
-5.  Add one row per month-to-month match file in `config/outplant_interval_files.csv`.
+5.  Add one row per month-to-month match file in the appropriate plot CSV under `config/outplant_interval_files/`.
 6.  Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.
 7.  Confirm `data_raw/metadata/Coordinates_Depths.csv` has marker depths for each plot if depth summaries will be used.
 8.  Render this Quarto report.
@@ -71,11 +71,11 @@ report_dir <- if (!is.null(report_path)) {
 }
 
 project_root <- report_dir
-while (!file.exists(file.path(project_root, "config", "outplant_interval_files.csv"))) {
+while (!dir.exists(file.path(project_root, "config", "outplant_interval_files"))) {
   parent_dir <- dirname(project_root)
   if (identical(parent_dir, project_root)) {
     stop(
-      "Could not find config/outplant_interval_files.csv. ",
+      "Could not find config/outplant_interval_files/. ",
       "Render this report from inside the Coral_survivorship_project folder.",
       call. = FALSE
     )
@@ -91,7 +91,7 @@ source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
 
 ### Workflow
 
-This report reads the outplant-only TagLab match files listed in `config/outplant_interval_files.csv`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.
+This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under `config/outplant_interval_files/`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.
 
 The workflow is designed so future users can add new plots or month pairs by editing the config rather than changing analysis code.
 
@@ -106,7 +106,7 @@ Survivorship is treated as apparent persistence through a TagLab interval: an ou
 
 ### Outplant-Only Plot E Workflow
 
-This is the main test workflow for the outplant-only TagLab match files. It treats `Area1` as the start-month area and `Area2` as the end-month area, and calculates cover using the configured 16 by 30 m plot area. The same-batch TagLab exports use `Genet` as the across-month tracking ID. If a `Genet` has multiple blob rows in one interval, those rows are collapsed into one tracked outplant before survivorship is calculated. The area unit is read from `config/outplant_interval_files.csv`; the current test assumes TagLab areas are in square centimeters.
+This is the main test workflow for the outplant-only TagLab match files. It treats `Area1` as the start-month area and `Area2` as the end-month area, and calculates cover using the configured 16 by 30 m plot area. The same-batch TagLab exports use `Genet` as the across-month tracking ID. If a `Genet` has multiple blob rows in one interval, those rows are collapsed into one tracked outplant before survivorship is calculated. The area unit is read from the appropriate plot CSV under `config/outplant_interval_files/`; the current test assumes TagLab areas are in square centimeters.
 
 This chunk verifies that every outplant interval file listed in the config exists. This is the first place to check when adding new files for other plots or months.
 
@@ -455,7 +455,7 @@ Plot A is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
-No Plot A outplant match files are currently configured. Add Plot A rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+No Plot A outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_A.csv`, then render this report to populate this tab through the same workflow.
 
 ### Depth Metadata
 
@@ -497,7 +497,7 @@ Plot B is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
-No Plot B outplant match files are currently configured. Add Plot B rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+No Plot B outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_B.csv`, then render this report to populate this tab through the same workflow.
 
 ### Depth Metadata
 
@@ -539,7 +539,7 @@ Plot C is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
-No Plot C outplant match files are currently configured. Add Plot C rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+No Plot C outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_C.csv`, then render this report to populate this tab through the same workflow.
 
 ### Depth Metadata
 
@@ -581,7 +581,7 @@ Plot D is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
-No Plot D outplant match files are currently configured. Add Plot D rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+No Plot D outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_D.csv`, then render this report to populate this tab through the same workflow.
 
 ### Depth Metadata
 
@@ -715,7 +715,7 @@ Plot F is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
-No Plot F outplant match files are currently configured. Add Plot F rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+No Plot F outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_F.csv`, then render this report to populate this tab through the same workflow.
 
 ### Depth Metadata
 
@@ -757,7 +757,7 @@ Plot G is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
-No Plot G outplant match files are currently configured. Add Plot G rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+No Plot G outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_G.csv`, then render this report to populate this tab through the same workflow.
 
 ### Depth Metadata
 
@@ -799,7 +799,7 @@ Plot H is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
-No Plot H outplant match files are currently configured. Add Plot H rows to `config/outplant_interval_files.csv`, then render this report to populate this tab through the same workflow.
+No Plot H outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_H.csv`, then render this report to populate this tab through the same workflow.
 
 ### Depth Metadata
 

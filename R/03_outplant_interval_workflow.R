@@ -4,7 +4,8 @@ library(janitor)
 # Project root -----------------------------------------------------------------
 # This lets the script run after the project folder has been moved to another
 # computer. It searches upward from likely starting folders until it finds the
-# config file that defines this project, then sets the working directory there.
+# plot-specific config folder that defines this project, then sets the working
+# directory there.
 outplant_find_project_root <- function() {
   source_path <- tryCatch(normalizePath(sys.frame(1)$ofile, mustWork = TRUE), error = function(e) NA_character_)
   rscript_arg <- commandArgs(trailingOnly = FALSE) %>%
@@ -31,7 +32,7 @@ outplant_find_project_root <- function() {
     current_dir <- candidate_dir
 
     repeat {
-      if (file.exists(file.path(current_dir, "config", "outplant_interval_files.csv"))) {
+      if (dir.exists(file.path(current_dir, "config", "outplant_interval_files"))) {
         return(current_dir)
       }
 
@@ -45,7 +46,8 @@ outplant_find_project_root <- function() {
 
   stop(
     "Could not find the project folder. Open the Coral_survivorship_project folder ",
-    "or set your working directory to the folder that contains config/outplant_interval_files.csv.",
+    "or set your working directory to the folder that contains ",
+    "config/outplant_interval_files/.",
     call. = FALSE
   )
 }
@@ -59,10 +61,12 @@ setwd(outplant_project_root)
 
 
 ##### User-editable config ##### ----------------------------------------------------------
-# To run this workflow on a new plot or new month, add rows to this config file. (config/outplant_interval_files.csv) with the name of the plot matches csv's you want to analyse. 
+# To run this workflow on a new plot or month, add rows to that plot's CSV in
+# config/outplant_interval_files/. Keeping one config per plot makes it easy to
+# see which TagLab match files have already been entered.
 # The script should not need edits as long as the TagLab export has the same
 # general columns: Genet, Blob1, Blob2, Area1, Area2, Class, Action, Split/Fuse.
-outplant_config_path <- file.path("config", "outplant_interval_files.csv")
+outplant_config_path <- file.path("config", "outplant_interval_files")
 outplant_depth_path <- file.path("data_raw", "metadata", "Coordinates_Depths.csv")
 outplant_temperature_path <- file.path(
   "data_raw", "Temperature", "2025",
@@ -201,14 +205,52 @@ outplant_species_palette <- c(
 # The config stores file metadata, plot sections, and plot dimensions. Plot
 # sections keep TagLab subsections such as Plot E 1-0 and Plot E 1-1 separate.
 outplant_read_config <- function(path) {
-  raw_config <- read_csv(path, show_col_types = FALSE) %>%
-    clean_names()
+  config_files <- list.files(
+    path,
+    pattern = "^Plot_[A-H]\\.csv$",
+    full.names = TRUE
+  ) %>%
+    sort()
+
+  if (length(config_files) == 0) {
+    stop(
+      "No plot config files were found in ", path,
+      ". Expected Plot_A.csv through Plot_H.csv.",
+      call. = FALSE
+    )
+  }
+
+  raw_config <- map_dfr(config_files, function(config_file) {
+    read_csv(
+      config_file,
+      show_col_types = FALSE,
+      col_types = cols(.default = col_character())
+    ) %>%
+      clean_names() %>%
+      mutate(config_file = basename(config_file))
+  })
+
+  required_columns <- c(
+    "plot", "plot_section", "plot_folder", "file", "month_start",
+    "month_end", "month_start_date", "month_end_date", "file_type",
+    "match_type", "plot_length_m", "plot_width_m", "taglab_area_units"
+  )
+  missing_columns <- setdiff(required_columns, names(raw_config))
+
+  if (length(missing_columns) > 0) {
+    stop(
+      "Plot config files are missing required columns: ",
+      paste(missing_columns, collapse = ", "),
+      call. = FALSE
+    )
+  }
 
   if (!"plot_section" %in% names(raw_config)) {
     raw_config <- raw_config %>% mutate(plot_section = match_type)
   }
 
   raw_config %>%
+    filter(!is.na(file), str_squish(file) != "") %>%
     clean_names() %>%
     mutate(
       plot = outplant_normalize_plot_name(plot),
@@ -218,10 +260,13 @@ outplant_read_config <- function(path) {
       file_type = str_to_lower(file_type),
       match_type = as.character(match_type),
       taglab_area_units = str_to_lower(taglab_area_units),
+      plot_length_m = parse_double(plot_length_m),
+      plot_width_m = parse_double(plot_width_m),
       month_start_date = as.Date(month_start_date),
       month_end_date = as.Date(month_end_date),
       plot_area_m2 = plot_length_m * plot_width_m
     ) %>%
+    arrange(factor(plot, levels = paste("Plot", LETTERS[1:8])), plot_section, month_start_date) %>%
     group_by(plot, plot_section) %>%
     mutate(interval_order = row_number()) %>%
     ungroup()

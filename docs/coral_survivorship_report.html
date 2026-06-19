@@ -4830,7 +4830,7 @@ vertical-align: -.125em;
 <li>Export Genet Data as CSV name it example, Plot_E_1-0_GenetData_May-April2025 and save in <code>data_raw/metadata</code></li>
 <li>Name Exported tag lab matches Plot_(Letter) then it will auto populate with the rest of naming</li>
 <li>Place the exported CSV files in <code>data_raw/taglab/&lt;Plot_Folder&gt;/</code>.</li>
-<li>Add one row per month-to-month match file in <code>config/outplant_interval_files.csv</code>.</li>
+<li>Add one row per month-to-month match file in the appropriate plot CSV under <code>config/outplant_interval_files/</code>.</li>
 <li>Confirm each config row has the correct plot name, plot section, plot folder, filename, start month, end month, file type, plot dimensions, and TagLab area units.</li>
 <li>Confirm <code>data_raw/metadata/Coordinates_Depths.csv</code> has marker depths for each plot if depth summaries will be used.</li>
 <li>Render this Quarto report.</li>
@@ -4866,11 +4866,11 @@ vertical-align: -.125em;
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>project_root <span class="ot">&lt;-</span> report_dir</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">!</span><span class="fu">file.exists</span>(<span class="fu">file.path</span>(project_root, <span class="st">&quot;config&quot;</span>, <span class="st">&quot;outplant_interval_files.csv&quot;</span>))) {</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="fu">file.path</span>(project_root, <span class="st">&quot;config&quot;</span>, <span class="st">&quot;outplant_interval_files&quot;</span>))) {</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  parent_dir <span class="ot">&lt;-</span> <span class="fu">dirname</span>(project_root)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">identical</span>(parent_dir, project_root)) {</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Could not find config/outplant_interval_files.csv. &quot;</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Could not find config/outplant_interval_files/. &quot;</span>,</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Render this report from inside the Coral_survivorship_project folder.&quot;</span>,</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">call. =</span> <span class="cn">FALSE</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    )</span>
@@ -4886,7 +4886,7 @@ vertical-align: -.125em;
 </div>
 <section id="workflow" class="level3">
 <h3 class="anchored" data-anchor-id="workflow">Workflow</h3>
-<p>This report reads the outplant-only TagLab match files listed in <code>config/outplant_interval_files.csv</code>, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked <code>Genet</code> per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.</p>
+<p>This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under <code>config/outplant_interval_files/</code>, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked <code>Genet</code> per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.</p>
 <p>The workflow is designed so future users can add new plots or month pairs by editing the config rather than changing analysis code.</p>
 <p>The two recommended outplant datasets to open first are:</p>
 <ul>
@@ -4898,7 +4898,7 @@ vertical-align: -.125em;
 </section>
 <section id="outplant-only-plot-e-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="outplant-only-plot-e-workflow">Outplant-Only Plot E Workflow</h3>
-<p>This is the main test workflow for the outplant-only TagLab match files. It treats <code>Area1</code> as the start-month area and <code>Area2</code> as the end-month area, and calculates cover using the configured 16 by 30 m plot area. The same-batch TagLab exports use <code>Genet</code> as the across-month tracking ID. If a <code>Genet</code> has multiple blob rows in one interval, those rows are collapsed into one tracked outplant before survivorship is calculated. The area unit is read from <code>config/outplant_interval_files.csv</code>; the current test assumes TagLab areas are in square centimeters.</p>
+<p>This is the main test workflow for the outplant-only TagLab match files. It treats <code>Area1</code> as the start-month area and <code>Area2</code> as the end-month area, and calculates cover using the configured 16 by 30 m plot area. The same-batch TagLab exports use <code>Genet</code> as the across-month tracking ID. If a <code>Genet</code> has multiple blob rows in one interval, those rows are collapsed into one tracked outplant before survivorship is calculated. The area unit is read from the appropriate plot CSV under <code>config/outplant_interval_files/</code>; the current test assumes TagLab areas are in square centimeters.</p>
 <p>This chunk verifies that every outplant interval file listed in the config exists. This is the first place to check when adding new files for other plots or months.</p>
 <div class="cell">
 <details class="code-fold">
@@ -4934,60 +4934,6 @@ vertical-align: -.125em;
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv</td>
-<td style="text-align: left;">TRUE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv</td>
-<td style="text-align: left;">TRUE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv</td>
-<td style="text-align: left;">TRUE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">September</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv</td>
-<td style="text-align: left;">TRUE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">September</td>
-<td style="text-align: left;">October</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv</td>
-<td style="text-align: left;">TRUE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">October</td>
-<td style="text-align: left;">November</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv</td>
-<td style="text-align: left;">TRUE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">1-0</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">June</td>
@@ -5011,6 +4957,60 @@ vertical-align: -.125em;
 <td style="text-align: left;">August</td>
 <td style="text-align: left;">1-0</td>
 <td style="text-align: left;">PlotC_1-0_Coki_PlotE_20250711_1-0-Coki_PlotE_20250804_1-0.csv</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">November</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 </tbody>
@@ -7426,7 +7426,7 @@ vertical-align: -.125em;
 </section>
 <section id="data-status" class="level3">
 <h3 class="anchored" data-anchor-id="data-status">Data Status</h3>
-<p>No Plot A outplant match files are currently configured. Add Plot A rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+<p>No Plot A outplant match files are currently configured. Add rows to <code>config/outplant_interval_files/Plot_A.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
 <section id="depth-metadata" class="level3">
 <h3 class="anchored" data-anchor-id="depth-metadata">Depth Metadata</h3>
@@ -7468,7 +7468,7 @@ vertical-align: -.125em;
 </section>
 <section id="data-status-1" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-1">Data Status</h3>
-<p>No Plot B outplant match files are currently configured. Add Plot B rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+<p>No Plot B outplant match files are currently configured. Add rows to <code>config/outplant_interval_files/Plot_B.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
 <section id="depth-metadata-1" class="level3">
 <h3 class="anchored" data-anchor-id="depth-metadata-1">Depth Metadata</h3>
@@ -7510,7 +7510,7 @@ vertical-align: -.125em;
 </section>
 <section id="data-status-2" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-2">Data Status</h3>
-<p>No Plot C outplant match files are currently configured. Add Plot C rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+<p>No Plot C outplant match files are currently configured. Add rows to <code>config/outplant_interval_files/Plot_C.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
 <section id="depth-metadata-2" class="level3">
 <h3 class="anchored" data-anchor-id="depth-metadata-2">Depth Metadata</h3>
@@ -7552,7 +7552,7 @@ vertical-align: -.125em;
 </section>
 <section id="data-status-3" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-3">Data Status</h3>
-<p>No Plot D outplant match files are currently configured. Add Plot D rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+<p>No Plot D outplant match files are currently configured. Add rows to <code>config/outplant_interval_files/Plot_D.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
 <section id="depth-metadata-3" class="level3">
 <h3 class="anchored" data-anchor-id="depth-metadata-3">Depth Metadata</h3>
@@ -7639,78 +7639,6 @@ vertical-align: -.125em;
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">2025-05-07</td>
-<td style="text-align: left;">2025-06-09</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">cm2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">2025-06-09</td>
-<td style="text-align: left;">2025-07-11</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">cm2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">2025-07-11</td>
-<td style="text-align: left;">2025-08-04</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">cm2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">September</td>
-<td style="text-align: left;">2025-08-04</td>
-<td style="text-align: left;">2025-09-08</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">cm2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">September</td>
-<td style="text-align: left;">October</td>
-<td style="text-align: left;">2025-09-08</td>
-<td style="text-align: left;">2025-10-14</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">cm2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">October</td>
-<td style="text-align: left;">November</td>
-<td style="text-align: left;">2025-10-14</td>
-<td style="text-align: left;">2025-11-06</td>
-<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">cm2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">1-0</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">June</td>
@@ -7741,6 +7669,78 @@ vertical-align: -.125em;
 <td style="text-align: left;">2025-07-11</td>
 <td style="text-align: left;">2025-08-04</td>
 <td style="text-align: left;">PlotC_1-0_Coki_PlotE_20250711_1-0-Coki_PlotE_20250804_1-0.csv</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">cm2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">2025-05-07</td>
+<td style="text-align: left;">2025-06-09</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">cm2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">2025-06-09</td>
+<td style="text-align: left;">2025-07-11</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">cm2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">2025-07-11</td>
+<td style="text-align: left;">2025-08-04</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">cm2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">2025-08-04</td>
+<td style="text-align: left;">2025-09-08</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">cm2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">September</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">2025-09-08</td>
+<td style="text-align: left;">2025-10-14</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">cm2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">October</td>
+<td style="text-align: left;">November</td>
+<td style="text-align: left;">2025-10-14</td>
+<td style="text-align: left;">2025-11-06</td>
+<td style="text-align: left;">plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv</td>
 <td style="text-align: right;">16</td>
 <td style="text-align: right;">30</td>
 <td style="text-align: left;">cm2</td>
@@ -7870,7 +7870,7 @@ vertical-align: -.125em;
 </section>
 <section id="data-status-5" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-5">Data Status</h3>
-<p>No Plot F outplant match files are currently configured. Add Plot F rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+<p>No Plot F outplant match files are currently configured. Add rows to <code>config/outplant_interval_files/Plot_F.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
 <section id="depth-metadata-5" class="level3">
 <h3 class="anchored" data-anchor-id="depth-metadata-5">Depth Metadata</h3>
@@ -7912,7 +7912,7 @@ vertical-align: -.125em;
 </section>
 <section id="data-status-6" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-6">Data Status</h3>
-<p>No Plot G outplant match files are currently configured. Add Plot G rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+<p>No Plot G outplant match files are currently configured. Add rows to <code>config/outplant_interval_files/Plot_G.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
 <section id="depth-metadata-6" class="level3">
 <h3 class="anchored" data-anchor-id="depth-metadata-6">Depth Metadata</h3>
@@ -7954,7 +7954,7 @@ vertical-align: -.125em;
 </section>
 <section id="data-status-7" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-7">Data Status</h3>
-<p>No Plot H outplant match files are currently configured. Add Plot H rows to <code>config/outplant_interval_files.csv</code>, then render this report to populate this tab through the same workflow.</p>
+<p>No Plot H outplant match files are currently configured. Add rows to <code>config/outplant_interval_files/Plot_H.csv</code>, then render this report to populate this tab through the same workflow.</p>
 </section>
 <section id="depth-metadata-7" class="level3">
 <h3 class="anchored" data-anchor-id="depth-metadata-7">Depth Metadata</h3>
