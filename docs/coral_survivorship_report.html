@@ -4839,19 +4839,19 @@ vertical-align: -.125em;
 <section id="who-does-what" class="level3">
 <h3 class="anchored" data-anchor-id="who-does-what">Who does what</h3>
 <ul>
-<li><strong>Anyone working on TagLab:</strong> export the data, put it in the right Teams folder, add the file information to the matching Teams config CSV, and let Spencer know it’s ready.</li>
-<li><strong>Spencer:</strong> move the ready files and rows into the local Git project, render and check everything, and push the update to GitHub.</li>
+<li><strong>Anyone working on TagLab:</strong> export the data, put it in the right Teams folder, add the file information to the matching Teams config CSV, and let the Coder know it’s ready.</li>
+<li><strong>Coder:</strong> move the ready files and rows into the local Git project, render and check everything, and push the update to GitHub.</li>
 </ul>
 </section>
 <section id="step-1-export-matches-from-taglab" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-export-matches-from-taglab">Step 1: Export matches from TagLab</h3>
 <ol type="1">
-<li>Complete annotations for the relevant plot section and survey months.</li>
+<li>Complete annotations and Genet Matching for the relevant plot section and survey months. Make Sure to Add Tag ID from Matches Time Point 1.</li>
 <li>Export all months for that plot section through the same TagLab batch/matching process. This is necessary so numeric <code>Genet</code> IDs remain consistent between adjacent month files.</li>
 <li>Export one matches CSV for each adjacent month pair, such as May-June and June-July.</li>
-<li>Confirm the matches export contains the expected fields: <code>Genet</code>, <code>Blob1</code>, <code>Blob2</code>, <code>Area1</code>, <code>Area2</code>, <code>Class</code>, <code>Action</code>, and <code>Split/Fuse</code>.</li>
+<li>Confirm the matches export contains the expected fields: <code>Genet</code>, <code>Blob1</code>, <code>Blob2</code>, <code>Area1</code>, <code>Area2</code>, <code>Class</code>, <code>Action, Tag ID</code>, and <code>Split/Fuse</code>.</li>
 <li>Do not rename columns or manually change area values after export.</li>
-<li>Keep the original TagLab filename when possible. A current example is <code>plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv</code>.</li>
+<li>Make Sure the File Name keeps the two dates. A current example is <code>1-1_PlotE_Matches_20250507_20250609.csv</code>.</li>
 </ol>
 <p><code>Area1</code> represents the start survey and <code>Area2</code> represents the end survey. Match files are the required inputs for the active outplant-survivorship workflow.</p>
 </section>
@@ -4868,7 +4868,7 @@ vertical-align: -.125em;
 <section id="step-3-upload-exports-to-teams" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-upload-exports-to-teams">Step 3: Upload exports to Teams</h3>
 <p>The Teams intake location is:</p>
-<p><code>Documents &gt; General &gt; Photogrammetry &amp; Monitoring &gt; Survivorship Exports</code></p>
+<p><code>DPNR &gt; Documents &gt; General &gt; Photogrammetry &amp; Monitoring &gt; Survivorship Exports</code></p>
 <p>Use the two top-level folders shown there:</p>
 <ul>
 <li><code>Matches</code>: required month-to-month TagLab matches CSVs.</li>
@@ -4880,12 +4880,14 @@ vertical-align: -.125em;
 <li><code>Survivorship Exports/Matches/Plot_E/1-1/</code></li>
 <li><code>Survivorship Exports/Genet Data/Plot_E/1-0/</code></li>
 </ul>
+<p>If you are updating the matches files because you have annotated a new month, remove all of the old one and replace with all new files so that the Genet ID’s remain constant.</p>
 <p>Before saying the files are ready, check that:</p>
 <ol type="1">
 <li>The file is in the correct <code>Matches</code> or <code>Genet Data</code> folder.</li>
 <li>The plot and plot section in the filename/folder are correct.</li>
 <li>Both survey dates are visible in the filename or included in the Teams message.</li>
 <li>The file is a CSV and opens with the expected columns.</li>
+<li><strong>Previous Files of the same Matches are deleted, DO NOT keep the same file matches if you make a new batch of matches!</strong></li>
 <li>The same interval has not already been uploaded.</li>
 <li>Existing exports have not been overwritten or deleted.</li>
 </ol>
@@ -4895,7 +4897,7 @@ vertical-align: -.125em;
 <p>Use the Teams copy of <code>Coral_survivorship_project</code> to record which match files are ready. Only edit the matching plot config under:</p>
 <p><code>config/outplant_interval_files/</code></p>
 <p>For example, Plot E files belong in <code>Plot_E.csv</code>. Add one row for every month-to-month matches file and keep rows grouped by <code>plot_section</code> and ordered by <code>month_start_date</code>.</p>
-<p>Before anyone starts adding rows, Spencer should make sure the Teams copy has the current <code>Plot_A.csv</code> through <code>Plot_H.csv</code> structure from GitHub. If the config templates change, we’ll first copy over any rows that are still waiting, then refresh the Teams templates. That way nobody’s work gets overwritten.</p>
+<p>Before anyone starts adding rows, The Coder should make sure the Teams copy has the current <code>Plot_A.csv</code> through <code>Plot_H.csv</code> structure from GitHub. If the config templates change, we’ll first copy over any rows that are still waiting, then refresh the Teams templates. That way nobody’s work gets overwritten.</p>
 <p>Each row needs:</p>
 <ul>
 <li><code>plot</code>: display name, such as <code>Plot E</code>.</li>
@@ -4911,9 +4913,9 @@ vertical-align: -.125em;
 </ul>
 <p>Please leave the header and column names alone, keep Genet Data filenames out of this config, and don’t remove existing rows. Editing the Teams config does <strong>not</strong> update the live analysis by itself.</p>
 </section>
-<section id="step-5-let-spencer-know-the-files-are-ready" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-let-spencer-know-the-files-are-ready">Step 5: Let Spencer know the files are ready</h3>
-<p>Send Spencer a short Teams message with:</p>
+<section id="step-5-let-coder-know-the-files-are-ready" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-let-coder-know-the-files-are-ready">Step 5: Let Coder know the files are ready</h3>
+<p>Send Coder a short Teams message with:</p>
 <ul>
 <li>plot and plot section;</li>
 <li>start and end survey months/dates;</li>
@@ -4921,11 +4923,11 @@ vertical-align: -.125em;
 <li>whether a new Genet Data export was included;</li>
 <li>any known annotation, split/fuse, or export concerns.</li>
 </ul>
-<p>Once that message is sent, Spencer can move everything into the GitHub project and check it.</p>
+<p>Once that message is sent, Coder can move everything into the GitHub project and check it.</p>
 </section>
 <section id="step-6-move-the-ready-files-into-the-local-git-project" class="level3">
 <h3 class="anchored" data-anchor-id="step-6-move-the-ready-files-into-the-local-git-project">Step 6: Move the ready files into the local Git project</h3>
-<p>Spencer completes these steps on the computer with the local Git project:</p>
+<p>Coder completes these steps on the computer with the local Git project:</p>
 <ol type="1">
 <li><p>Open <code>Coral_survivorship_project</code> in RStudio.</p></li>
 <li><p>Pull the latest GitHub version before copying or editing anything:</p>
@@ -4965,12 +4967,13 @@ vertical-align: -.125em;
 <li>Commit with a clear message, for example <code>Add Plot E 1-0 August-September interval</code>.</li>
 <li>Push the commit to GitHub.</li>
 </ol>
-<p>Equivalent Terminal commands are:</p>
+<p>Equivalent R-Studio Terminal commands if that is easier for you are:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Describe the plot and interval added&quot;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The GitHub repository is <code>https://github.com/CWORI/DPNR_Survivorship</code>.</p>
+<p>Please make sure this is the repository you are adding too!</p>
 </section>
 <section id="step-9-confirm-the-live-website" class="level3">
 <h3 class="anchored" data-anchor-id="step-9-confirm-the-live-website">Step 9: Confirm the live website</h3>

@@ -42,17 +42,17 @@ This workflow uses Teams and GitHub for different jobs:
 
 ### Who does what
 
--   **Anyone working on TagLab:** export the data, put it in the right Teams folder, add the file information to the matching Teams config CSV, and let Spencer know it's ready.
--   **Spencer:** move the ready files and rows into the local Git project, render and check everything, and push the update to GitHub.
+-   **Anyone working on TagLab:** export the data, put it in the right Teams folder, add the file information to the matching Teams config CSV, and let the Coder know it's ready.
+-   **Coder:** move the ready files and rows into the local Git project, render and check everything, and push the update to GitHub.
 
 ### Step 1: Export matches from TagLab
 
-1.  Complete annotations for the relevant plot section and survey months.
+1.  Complete annotations and Genet Matching for the relevant plot section and survey months. Make Sure to Add Tag ID from Matches Time Point 1.
 2.  Export all months for that plot section through the same TagLab batch/matching process. This is necessary so numeric `Genet` IDs remain consistent between adjacent month files.
 3.  Export one matches CSV for each adjacent month pair, such as May-June and June-July.
-4.  Confirm the matches export contains the expected fields: `Genet`, `Blob1`, `Blob2`, `Area1`, `Area2`, `Class`, `Action`, and `Split/Fuse`.
+4.  Confirm the matches export contains the expected fields: `Genet`, `Blob1`, `Blob2`, `Area1`, `Area2`, `Class`, `Action, Tag ID`, and `Split/Fuse`.
 5.  Do not rename columns or manually change area values after export.
-6.  Keep the original TagLab filename when possible. A current example is `plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv`.
+6.  Make Sure the File Name keeps the two dates. A current example is `1-1_PlotE_Matches_20250507_20250609.csv`.
 
 `Area1` represents the start survey and `Area2` represents the end survey. Match files are the required inputs for the active outplant-survivorship workflow.
 
@@ -69,7 +69,7 @@ Genet Data is optional reference metadata; it is not required for the current ou
 
 The Teams intake location is:
 
-`Documents > General > Photogrammetry & Monitoring > Survivorship Exports`
+`DPNR > Documents > General > Photogrammetry & Monitoring > Survivorship Exports`
 
 Use the two top-level folders shown there:
 
@@ -82,14 +82,17 @@ Within each, keep files separated by plot and plot section. Recommended examples
 -   `Survivorship Exports/Matches/Plot_E/1-1/`
 -   `Survivorship Exports/Genet Data/Plot_E/1-0/`
 
+If you are updating the matches files because you have annotated a new month, remove all of the old one and replace with all new files so that the Genet ID's remain constant.
+
 Before saying the files are ready, check that:
 
 1.  The file is in the correct `Matches` or `Genet Data` folder.
 2.  The plot and plot section in the filename/folder are correct.
 3.  Both survey dates are visible in the filename or included in the Teams message.
 4.  The file is a CSV and opens with the expected columns.
-5.  The same interval has not already been uploaded.
-6.  Existing exports have not been overwritten or deleted.
+5.  **Previous Files of the same Matches are deleted, DO NOT keep the same file matches if you make a new batch of matches!**
+6.  The same interval has not already been uploaded.
+7.  Existing exports have not been overwritten or deleted.
 
 ### Step 4: Add the file information to the Teams project copy
 
@@ -99,7 +102,7 @@ Use the Teams copy of `Coral_survivorship_project` to record which match files a
 
 For example, Plot E files belong in `Plot_E.csv`. Add one row for every month-to-month matches file and keep rows grouped by `plot_section` and ordered by `month_start_date`.
 
-Before anyone starts adding rows, Spencer should make sure the Teams copy has the current `Plot_A.csv` through `Plot_H.csv` structure from GitHub. If the config templates change, we'll first copy over any rows that are still waiting, then refresh the Teams templates. That way nobody's work gets overwritten.
+Before anyone starts adding rows, The Coder should make sure the Teams copy has the current `Plot_A.csv` through `Plot_H.csv` structure from GitHub. If the config templates change, we'll first copy over any rows that are still waiting, then refresh the Teams templates. That way nobody's work gets overwritten.
 
 Each row needs:
 
@@ -116,9 +119,9 @@ Each row needs:
 
 Please leave the header and column names alone, keep Genet Data filenames out of this config, and don't remove existing rows. Editing the Teams config does **not** update the live analysis by itself.
 
-### Step 5: Let Spencer know the files are ready
+### Step 5: Let Coder know the files are ready
 
-Send Spencer a short Teams message with:
+Send Coder a short Teams message with:
 
 -   plot and plot section;
 -   start and end survey months/dates;
@@ -126,11 +129,11 @@ Send Spencer a short Teams message with:
 -   whether a new Genet Data export was included;
 -   any known annotation, split/fuse, or export concerns.
 
-Once that message is sent, Spencer can move everything into the GitHub project and check it.
+Once that message is sent, Coder can move everything into the GitHub project and check it.
 
 ### Step 6: Move the ready files into the local Git project
 
-Spencer completes these steps on the computer with the local Git project:
+Coder completes these steps on the computer with the local Git project:
 
 1.  Open `Coral_survivorship_project` in RStudio.
 
@@ -176,7 +179,7 @@ Using the RStudio Git pane:
 3.  Commit with a clear message, for example `Add Plot E 1-0 August-September interval`.
 4.  Push the commit to GitHub.
 
-Equivalent Terminal commands are:
+Equivalent R-Studio Terminal commands if that is easier for you are:
 
 ``` bash
 git status
@@ -186,6 +189,8 @@ git push
 ```
 
 The GitHub repository is `https://github.com/CWORI/DPNR_Survivorship`.
+
+Please make sure this is the repository you are adding too!
 
 ### Step 9: Confirm the live website
 
