@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DPNR Outplant Analyses</title>
+<title>All Coral Cover – DPNR Outplant Analyses</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -96,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Analysis Report</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./all_coral_cover.html"> 
+    <a class="nav-link active" href="./all_coral_cover.html" aria-current="page"> 
 <span class="menu-text">All Coral Cover</span></a>
   </li>  
 </ul>
@@ -115,8 +115,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#start-here" id="toc-start-here" class="nav-link active" data-scroll-target="#start-here">Start Here</a></li>
-  <li><a href="#recommended-outputs" id="toc-recommended-outputs" class="nav-link" data-scroll-target="#recommended-outputs">Recommended Outputs</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#plot-status" id="toc-plot-status" class="nav-link" data-scroll-target="#plot-status">Plot Status</a></li>
+  <li><a href="#coral-cover-through-time" id="toc-coral-cover-through-time" class="nav-link" data-scroll-target="#coral-cover-through-time">Coral Cover Through Time</a></li>
+  <li><a href="#cover-by-species" id="toc-cover-by-species" class="nav-link" data-scroll-target="#cover-by-species">Cover by Species</a></li>
+  <li><a href="#qaqc" id="toc-qaqc" class="nav-link" data-scroll-target="#qaqc">QA/QC</a></li>
+  <li><a href="#downloads" id="toc-downloads" class="nav-link" data-scroll-target="#downloads">Downloads</a></li>
+  <li><a href="#adding-another-plot" id="toc-adding-another-plot" class="nav-link" data-scroll-target="#adding-another-plot">Adding Another Plot</a></li>
   </ul>
 </nav>
     </div>
@@ -125,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DPNR Outplant Analyses</h1>
+<h1 class="title">All Coral Cover</h1>
 </div>
 
 
@@ -142,22 +147,496 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This website contains the DPNR coral outplant monitoring workflow and rendered analysis report.</p>
-<section id="start-here" class="level2">
-<h2 class="anchored" data-anchor-id="start-here">Start Here</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This section contains whole-plot coral cover results for <strong>all coral annotations</strong>, not just tracked outplants. Every plot uses the same workflow and appears on this page as soon as its survey workbooks are added to <code>data_raw/All_Coral/</code> and its plot config is completed under <code>config/all_coral_survey_files/</code>.</p>
+<p>The current practice dataset is Plot E. Plots A through H will remain together in this one All Coral Cover section as more surveys are added.</p>
+</section>
+<section id="plot-status" class="level2">
+<h2 class="anchored" data-anchor-id="plot-status">Plot Status</h2>
+<p>This table shows which plots currently have whole-plot survey files configured. A plot will populate the figures and tables below automatically after its config rows and Excel workbooks are added.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: right;">Surveys</th>
+<th style="text-align: left;">First survey</th>
+<th style="text-align: left;">Latest survey</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot A</td>
+<td style="text-align: left;">Not configured</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot B</td>
+<td style="text-align: left;">Not configured</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot C</td>
+<td style="text-align: left;">Not configured</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot D</td>
+<td style="text-align: left;">Not configured</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">Configured</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">2025-07-24</td>
+<td style="text-align: left;">2025-12-04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot F</td>
+<td style="text-align: left;">Not configured</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot G</td>
+<td style="text-align: left;">Not configured</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot H</td>
+<td style="text-align: left;">Not configured</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="coral-cover-through-time" class="level2">
+<h2 class="anchored" data-anchor-id="coral-cover-through-time">Coral Cover Through Time</h2>
+<p>Percent coral cover is calculated as the summed area of all coral annotations divided by the configured plot area. Labels classified as <code>Empty</code> are excluded.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="all_coral_cover_files/figure-html/all-coral-cover-plot-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 17%">
+<col style="width: 16%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: left;">Survey date</th>
+<th style="text-align: right;">Annotations</th>
+<th style="text-align: right;">Coral classes</th>
+<th style="text-align: right;">Coral area (m2)</th>
+<th style="text-align: right;">Plot area (m2)</th>
+<th style="text-align: right;">Coral cover (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-07-24</td>
+<td style="text-align: right;">2865</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">6.336</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">1.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-08-04</td>
+<td style="text-align: right;">2811</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6.180</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">1.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-09-08</td>
+<td style="text-align: right;">2795</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6.388</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">1.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-10-14</td>
+<td style="text-align: right;">2703</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6.425</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">1.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-11-06</td>
+<td style="text-align: right;">2706</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6.266</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">1.31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: right;">2531</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6.245</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">1.30</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="cover-by-species" class="level2">
+<h2 class="anchored" data-anchor-id="cover-by-species">Cover by Species</h2>
+<p>This figure shows how much of each plot is covered by the largest coral classes through time. The eight largest classes across the configured surveys are shown separately and the remaining classes are grouped as <code>Other coral classes</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="all_coral_cover_files/figure-html/all-coral-species-cover-plot-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The table below lists the ten coral classes with the most annotated area in each plot’s latest survey.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 11%">
+<col style="width: 20%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: left;">Survey date</th>
+<th style="text-align: left;">Coral class</th>
+<th style="text-align: right;">Annotations</th>
+<th style="text-align: right;">Area (m2)</th>
+<th style="text-align: right;">Plot cover (%)</th>
+<th style="text-align: right;">Share of coral cover (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">188</td>
+<td style="text-align: right;">1.372</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">22.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Porites astreoides</td>
+<td style="text-align: right;">808</td>
+<td style="text-align: right;">1.245</td>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">19.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Siderastrea siderea</td>
+<td style="text-align: right;">265</td>
+<td style="text-align: right;">0.924</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">14.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Montastrea cavernosa</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: right;">0.576</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">9.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">111</td>
+<td style="text-align: right;">0.572</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">9.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">294</td>
+<td style="text-align: right;">0.329</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">5.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0.231</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">3.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Madracis decactis</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">3.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Orbicella sp.</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">0.193</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">3.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">Siderastrea radians</td>
+<td style="text-align: right;">191</td>
+<td style="text-align: right;">0.142</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">2.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="qaqc" class="level2">
+<h2 class="anchored" data-anchor-id="qaqc">QA/QC</h2>
+<p>Check this section before interpreting or publishing new surveys. Date mismatches indicate that a workbook’s TagLab date does not match the survey date recorded in the config. Missing sections indicate that an expected photomosaic section was not found.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: left;">Survey date</th>
+<th style="text-align: left;">Workbook</th>
+<th style="text-align: left;">Sheet</th>
+<th style="text-align: left;">File exists</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-07-24</td>
+<td style="text-align: left;">07.24.25 Data.xlsx</td>
+<td style="text-align: left;">Raw Data</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-08-04</td>
+<td style="text-align: left;">08.04.25 Data.xlsx</td>
+<td style="text-align: left;">Raw Data</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-09-08</td>
+<td style="text-align: left;">09.08.2025 Data.xlsx</td>
+<td style="text-align: left;">Raw Data</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-10-14</td>
+<td style="text-align: left;">10.14.2025 Data.xlsx</td>
+<td style="text-align: left;">Raw Data</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-11-06</td>
+<td style="text-align: left;">11.06.2025 Data.xlsx</td>
+<td style="text-align: left;">Raw Data</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">12.04.2025 Data.xlsx</td>
+<td style="text-align: left;">Raw Data</td>
+<td style="text-align: left;">TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Plot</th>
+<th style="text-align: left;">Survey date</th>
+<th style="text-align: left;">Observed sections</th>
+<th style="text-align: left;">Missing sections</th>
+<th style="text-align: left;">TagLab dates</th>
+<th style="text-align: right;">Date mismatches</th>
+<th style="text-align: right;">Missing class</th>
+<th style="text-align: right;">Missing area</th>
+<th style="text-align: right;">Duplicate annotation IDs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-07-24</td>
+<td style="text-align: left;">0-0; 0-1; 1-0; 1-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2025-07-24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-08-04</td>
+<td style="text-align: left;">0-0; 0-1; 1-0; 1-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2025-08-04</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-09-08</td>
+<td style="text-align: left;">0-0; 0-1; 1-0; 1-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2025-09-08; 2025-11-06</td>
+<td style="text-align: right;">1195</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-10-14</td>
+<td style="text-align: left;">0-0; 0-1; 1-0; 1-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2025-10-14</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-11-06</td>
+<td style="text-align: left;">0-0; 0-1; 1-0; 1-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2025-11-06</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: left;">0-0; 0-1; 1-0; 1-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2025-12-04</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="downloads" class="level2">
+<h2 class="anchored" data-anchor-id="downloads">Downloads</h2>
 <ul>
-<li>Open the <a href="./coral_survivorship_report.html">Analysis Report</a> to view survivorship, cover, and species-composition results.</li>
-<li>Open <a href="./all_coral_cover.html">All Coral Cover</a> to view whole-plot coral cover for all coral annotations across the configured plots.</li>
-<li>Edit the plot-specific files under <code>config/outplant_interval_files/</code> for outplant matches or <code>config/all_coral_survey_files/</code> for whole-plot coral surveys.</li>
-<li>Render the website after adding or changing data.</li>
+<li>Detailed observations: <code>data_processed/all_corals/all_coral_observations.csv.gz</code></li>
+<li>Cover summary: <code>outputs/Tables/all_corals/all_coral_cover_summary.csv</code></li>
+<li>Species cover summary: <code>outputs/Tables/all_corals/all_coral_species_cover_summary.csv</code></li>
+<li>Survey QA: <code>outputs/Tables/all_corals/all_coral_survey_qa.csv</code></li>
+<li>Section QA: <code>outputs/Tables/all_corals/all_coral_section_qa.csv</code></li>
+<li>File audit: <code>outputs/Tables/all_corals/all_coral_file_audit.csv</code></li>
 </ul>
 </section>
-<section id="recommended-outputs" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-outputs">Recommended Outputs</h2>
-<ul>
-<li><code>data_processed/outplant_master_tracking_dataset.csv</code></li>
-<li><code>outputs/Tables/outplant_master_summary_dataset.csv</code></li>
-</ul>
+<section id="adding-another-plot" class="level2">
+<h2 class="anchored" data-anchor-id="adding-another-plot">Adding Another Plot</h2>
+<ol type="1">
+<li>Put the reviewed Excel workbooks under <code>data_raw/All_Coral/Plot_&lt;letter&gt;/&lt;year&gt;/</code>.</li>
+<li>Add one row per survey to <code>config/all_coral_survey_files/Plot_&lt;letter&gt;.csv</code>.</li>
+<li>Render the Quarto website.</li>
+<li>Check the file audit and QA/QC tables before publishing.</li>
+</ol>
+<p>No new Quarto page or navigation item is needed for later plots; they will join this section automatically.</p>
 
 
 </section>

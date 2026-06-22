@@ -1,0 +1,204 @@
+---
+title: "All Coral Cover"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    embed-resources: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This section contains whole-plot coral cover results for **all coral annotations**, not just tracked outplants. Every plot uses the same workflow and appears on this page as soon as its survey workbooks are added to `data_raw/All_Coral/` and its plot config is completed under `config/all_coral_survey_files/`.
+
+The current practice dataset is Plot E. Plots A through H will remain together in this one All Coral Cover section as more surveys are added.
+
+```{r}
+#| label: all-coral-setup
+
+library(tidyverse)
+library(knitr)
+
+report_path <- knitr::current_input(dir = TRUE)
+report_dir <- if (!is.null(report_path)) {
+  dirname(normalizePath(report_path, mustWork = TRUE))
+} else {
+  getwd()
+}
+
+project_root <- report_dir
+while (!dir.exists(file.path(project_root, "config", "all_coral_survey_files"))) {
+  parent_dir <- dirname(project_root)
+  if (identical(parent_dir, project_root)) {
+    stop(
+      "Could not find config/all_coral_survey_files/. ",
+      "Render this page from inside Coral_survivorship_project.",
+      call. = FALSE
+    )
+  }
+  project_root <- parent_dir
+}
+
+knitr::opts_knit$set(root.dir = project_root)
+setwd(project_root)
+source(file.path(project_root, "R", "04_all_coral_cover_workflow.R"))
+```
+
+## Plot Status
+
+This table shows which plots currently have whole-plot survey files configured. A plot will populate the figures and tables below automatically after its config rows and Excel workbooks are added.
+
+```{r}
+#| label: all-coral-plot-status
+
+plot_status <- tibble(plot = paste("Plot", LETTERS[1:8])) %>%
+  left_join(
+    all_coral_config %>%
+      group_by(plot) %>%
+      summarise(
+        surveys = n(),
+        first_survey = min(survey_date),
+        latest_survey = max(survey_date),
+        .groups = "drop"
+      ),
+    by = "plot"
+  ) %>%
+  mutate(
+    status = if_else(is.na(surveys), "Not configured", "Configured"),
+    surveys = replace_na(surveys, 0L)
+  ) %>%
+  select(plot, status, surveys, first_survey, latest_survey)
+
+plot_status %>%
+  kable(
+    col.names = c("Plot", "Status", "Surveys", "First survey", "Latest survey")
+  )
+```
+
+## Coral Cover Through Time
+
+Percent coral cover is calculated as the summed area of all coral annotations divided by the configured plot area. Labels classified as `Empty` are excluded.
+
+```{r}
+#| label: all-coral-cover-plot
+#| fig-width: 9
+#| fig-height: 5
+
+all_coral_cover_plot
+```
+
+```{r}
+#| label: all-coral-cover-table
+
+all_coral_cover_summary %>%
+  mutate(
+    total_coral_area_m2 = round(total_coral_area_m2, 3),
+    percent_coral_cover = round(percent_coral_cover, 2)
+  ) %>%
+  select(
+    plot, survey_date, n_annotations, n_species_classes,
+    total_coral_area_m2, plot_area_m2, percent_coral_cover
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Survey date", "Annotations", "Coral classes",
+      "Coral area (m2)", "Plot area (m2)", "Coral cover (%)"
+    )
+  )
+```
+
+## Cover by Species
+
+This figure shows how much of each plot is covered by the largest coral classes through time. The eight largest classes across the configured surveys are shown separately and the remaining classes are grouped as `Other coral classes`.
+
+```{r}
+#| label: all-coral-species-cover-plot
+#| fig-width: 10
+#| fig-height: 6
+
+all_coral_species_cover_plot
+```
+
+The table below lists the ten coral classes with the most annotated area in each plot's latest survey.
+
+```{r}
+#| label: all-coral-latest-species-table
+
+latest_species_cover <- all_coral_species_cover_summary %>%
+  group_by(plot) %>%
+  filter(survey_date == max(survey_date)) %>%
+  slice_max(species_area_m2, n = 10, with_ties = FALSE) %>%
+  ungroup() %>%
+  mutate(
+    species_area_m2 = round(species_area_m2, 3),
+    percent_plot_cover = round(percent_plot_cover, 2),
+    percent_of_coral_cover = round(percent_of_coral_cover, 1)
+  ) %>%
+  select(
+    plot, survey_date, species, n_annotations, species_area_m2,
+    percent_plot_cover, percent_of_coral_cover
+  )
+
+latest_species_cover %>%
+  kable(
+    col.names = c(
+      "Plot", "Survey date", "Coral class", "Annotations", "Area (m2)",
+      "Plot cover (%)", "Share of coral cover (%)"
+    )
+  )
+```
+
+## QA/QC
+
+Check this section before interpreting or publishing new surveys. Date mismatches indicate that a workbook's TagLab date does not match the survey date recorded in the config. Missing sections indicate that an expected photomosaic section was not found.
+
+```{r}
+#| label: all-coral-file-audit
+
+all_coral_file_audit %>%
+  select(plot, survey_date, file, sheet, file_exists) %>%
+  kable(
+    col.names = c("Plot", "Survey date", "Workbook", "Sheet", "File exists")
+  )
+```
+
+```{r}
+#| label: all-coral-survey-qa
+
+all_coral_survey_qa %>%
+  select(
+    plot, survey_date, observed_sections, missing_sections,
+    taglab_dates, n_date_mismatches, n_missing_species,
+    n_missing_area, n_duplicate_annotation_ids
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Survey date", "Observed sections", "Missing sections",
+      "TagLab dates", "Date mismatches", "Missing class", "Missing area",
+      "Duplicate annotation IDs"
+    )
+  )
+```
+
+## Downloads
+
+-   Detailed observations: `data_processed/all_corals/all_coral_observations.csv.gz`
+-   Cover summary: `outputs/Tables/all_corals/all_coral_cover_summary.csv`
+-   Species cover summary: `outputs/Tables/all_corals/all_coral_species_cover_summary.csv`
+-   Survey QA: `outputs/Tables/all_corals/all_coral_survey_qa.csv`
+-   Section QA: `outputs/Tables/all_corals/all_coral_section_qa.csv`
+-   File audit: `outputs/Tables/all_corals/all_coral_file_audit.csv`
+
+## Adding Another Plot
+
+1. Put the reviewed Excel workbooks under `data_raw/All_Coral/Plot_<letter>/<year>/`.
+2. Add one row per survey to `config/all_coral_survey_files/Plot_<letter>.csv`.
+3. Render the Quarto website.
+4. Check the file audit and QA/QC tables before publishing.
+
+No new Quarto page or navigation item is needed for later plots; they will join this section automatically.

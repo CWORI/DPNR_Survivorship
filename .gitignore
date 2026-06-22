@@ -6,10 +6,18 @@
 # Quarto/R temporary files
 *_cache/
 *_files/
+!docs/all_coral_cover_files/
+!docs/all_coral_cover_files/**
+!docs/coral_survivorship_report_files/
+!docs/coral_survivorship_report_files/**
 !config/outplant_interval_files/
 !config/outplant_interval_files/*.csv
 !config/outplant_interval_files/README.md
+!config/all_coral_survey_files/
+!config/all_coral_survey_files/*.csv
+!config/all_coral_survey_files/README.md
 *.knit.md
+data_processed/all_corals/all_coral_observations.csv
 
 # OS/editor backups
 *.tmp

@@ -10,10 +10,12 @@ website:
         text: Home
       - href: coral_survivorship_report.qmd
         text: Analysis Report
+      - href: all_coral_cover.qmd
+        text: All Coral Cover
 
 format:
   html:
     theme: cosmo
     toc: true
     code-fold: true
-    embed-resources: true
+    embed-resources: false
