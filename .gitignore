@@ -6,6 +6,7 @@
 # Quarto/R temporary files
 *_cache/
 *_files/
+Quatro/
 !docs/all_coral_cover_files/
 !docs/all_coral_cover_files/**
 !docs/coral_survivorship_report_files/
@@ -25,12 +26,16 @@ data_processed/all_corals/all_coral_observations.csv
 *~
 
 # Keep the GitHub repo focused on the active outplant workflow.
-# These old/raw folders can stay on the local computer but are not needed
-# for the current Plot E same-batch outplant analysis.
+# These old/raw folders can stay on the local computer unless their reviewed
+# match files are listed in the active interval configs.
 data_raw/metadata/*
 !data_raw/metadata/
 !data_raw/metadata/Coordinates_Depths.csv
 data_raw/taglab/Plot_C/
+!data_raw/taglab/Plot_C/
+!data_raw/taglab/Plot_C/*.csv
+!data_raw/taglab/Plot_G/
+!data_raw/taglab/Plot_G/*.csv
 data_raw/taglab/Plot_E/0-0_*.csv
 data_raw/taglab/Plot_E/1-0_*.csv
 data_raw/taglab/Plot_E/1-1_PlotE_Matches_*.csv

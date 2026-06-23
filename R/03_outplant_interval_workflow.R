@@ -468,15 +468,40 @@ outplant_build_monthly_observations <- function(coral_intervals) {
 # Analysis summaries ------------------------------------------------------------
 # Cumulative survivorship is baseline-based: the first survey month is 100%, and later months ask how many baseline Genets are still present. Once a baseline Genet is absent, it remains counted as dead for later months.
 outplant_summarize_cumulative_survival <- function(monthly_observations, coral_intervals) {
-  month_lookup <- monthly_observations %>%
-    distinct(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
-    arrange(plot, plot_section, month_order)
+  baseline_month_lookup <- monthly_observations %>%
+    filter(present) %>%
+    group_by(plot, plot_section, plot_section_label) %>%
+    slice_min(month_order, n = 1, with_ties = FALSE) %>%
+    ungroup() %>%
+    transmute(
+      plot,
+      plot_section,
+      plot_section_label,
+      baseline_month_order = month_order,
+      baseline_month = month,
+      baseline_date = survey_date
+    )
 
   baseline_genets <- monthly_observations %>%
-    group_by(plot, plot_section, plot_section_label) %>%
-    filter(month_order == min(month_order, na.rm = TRUE), present) %>%
-    ungroup() %>%
-    select(plot, plot_section, plot_section_label, baseline_month = month, baseline_date = survey_date, genet, species)
+    inner_join(
+      baseline_month_lookup,
+      by = c("plot", "plot_section", "plot_section_label")
+    ) %>%
+    filter(month_order == baseline_month_order, present) %>%
+    select(
+      plot, plot_section, plot_section_label, baseline_month_order,
+      baseline_month, baseline_date, genet, species
+    )
+
+  month_lookup <- monthly_observations %>%
+    distinct(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
+    inner_join(
+      baseline_month_lookup %>%
+        select(plot, plot_section, plot_section_label, baseline_month_order),
+      by = c("plot", "plot_section", "plot_section_label")
+    ) %>%
+    filter(month_order >= baseline_month_order) %>%
+    arrange(plot, plot_section, month_order)
 
   baseline_by_plot <- baseline_genets %>%
     group_by(plot, plot_section, plot_section_label) %>%
@@ -719,14 +744,33 @@ outplant_summarize_daily_temperature <- function(temperature_observations, cumul
 }
 
 outplant_build_master_tracking_dataset <- function(monthly_observations) {
+  baseline_month_lookup <- monthly_observations %>%
+    filter(present) %>%
+    group_by(plot, plot_section, plot_section_label) %>%
+    slice_min(month_order, n = 1, with_ties = FALSE) %>%
+    ungroup() %>%
+    transmute(
+      plot,
+      plot_section,
+      plot_section_label,
+      baseline_month_order = month_order
+    )
+
   month_lookup <- monthly_observations %>%
     distinct(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
+    inner_join(
+      baseline_month_lookup,
+      by = c("plot", "plot_section", "plot_section_label")
+    ) %>%
+    filter(month_order >= baseline_month_order) %>%
     arrange(plot, plot_section, month_order)
 
   baseline_genets <- monthly_observations %>%
-    group_by(plot, plot_section, plot_section_label) %>%
-    filter(month_order == min(month_order, na.rm = TRUE), present) %>%
-    ungroup() %>%
+    inner_join(
+      baseline_month_lookup,
+      by = c("plot", "plot_section", "plot_section_label")
+    ) %>%
+    filter(month_order == baseline_month_order, present) %>%
     select(plot, plot_section, plot_section_label, genet, baseline_species = species)
 
   baseline_tracking <- baseline_genets %>%
@@ -1155,8 +1199,55 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
     )
 }
 
+outplant_add_monitoring_labels <- function(summary_data) {
+  summary_data %>%
+    arrange(plot, plot_section, month_order) %>%
+    group_by(plot, plot_section, plot_section_label) %>%
+    mutate(
+      monitoring_step = row_number(),
+      monitoring_label = if_else(
+        monitoring_step == 1,
+        str_c("Baseline\n", month),
+        str_c("Follow-up ", monitoring_step - 1, "\n", month)
+      )
+    ) %>%
+    ungroup()
+}
+
+outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary) {
+  cumulative_survival_summary %>%
+    outplant_add_monitoring_labels() %>%
+    mutate(monitoring_label = fct_reorder(monitoring_label, monitoring_step)) %>%
+    ggplot(aes(x = monitoring_label, y = percent_cumulative_survival, group = plot_section_label)) +
+    geom_errorbar(
+      aes(ymin = percent_cumulative_survival_low, ymax = percent_cumulative_survival_high),
+      width = 0.12,
+      color = "grey25",
+      linewidth = 0.5
+    ) +
+    geom_line(aes(color = plot_section_label), linewidth = 0.7) +
+    geom_point(aes(color = plot_section_label), size = 2.8) +
+    geom_text(aes(label = sprintf("%.1f%%", percent_cumulative_survival)), vjust = -1, size = 3.4) +
+    facet_wrap(vars(plot), scales = "free_x") +
+    scale_y_continuous(
+      limits = c(0, 100),
+      labels = scales::label_percent(scale = 1),
+      expand = expansion(mult = c(0.02, 0.08))
+    ) +
+    labs(
+      x = "Monitoring step",
+      y = "Cumulative survivorship",
+      color = "Plot section",
+      title = "Short-monitoring cumulative survivorship",
+      subtitle = "Plot C and Plot G are shown by baseline/follow-up step so their early results are not stretched across the full date axis"
+    ) +
+    scale_color_brewer(palette = "Dark2") +
+    outplant_theme()
+}
+
 outplant_plot_interval_survival <- function(survival_summary) {
   survival_summary %>%
+    filter(n_start > 0, !is.na(percent_survival)) %>%
     mutate(interval_label = fct_reorder(interval_label, interval_order)) %>%
     ggplot(aes(x = interval_label, y = percent_survival, group = plot_section_label)) +
     geom_errorbar(
@@ -1181,6 +1272,43 @@ outplant_plot_interval_survival <- function(survival_summary) {
       subtitle = "Survival between adjacent TagLab match files; bars are exact binomial 95% CIs"
     ) +
     scale_color_brewer(palette = "Dark2") +
+    outplant_theme() +
+    theme(axis.text.x = element_text(angle = 25, hjust = 1))
+}
+
+outplant_plot_short_interval_survival <- function(survival_summary) {
+  survival_summary %>%
+    filter(n_start > 0, !is.na(percent_survival)) %>%
+    mutate(interval_label = fct_reorder(interval_label, interval_order)) %>%
+    ggplot(aes(x = interval_label, y = percent_survival, fill = plot_section_label)) +
+    geom_col(position = position_dodge(width = 0.72), width = 0.64, color = "white") +
+    geom_errorbar(
+      aes(ymin = percent_survival_low, ymax = percent_survival_high),
+      position = position_dodge(width = 0.72),
+      width = 0.16,
+      color = "grey25",
+      linewidth = 0.5
+    ) +
+    geom_text(
+      aes(label = sprintf("%.1f%%", percent_survival)),
+      position = position_dodge(width = 0.72),
+      vjust = -0.6,
+      size = 3.4
+    ) +
+    facet_wrap(vars(plot), scales = "free_x") +
+    scale_y_continuous(
+      limits = c(0, 100),
+      labels = scales::label_percent(scale = 1),
+      expand = expansion(mult = c(0.02, 0.1))
+    ) +
+    labs(
+      x = "Survey interval",
+      y = "Interval survivorship",
+      fill = "Plot section",
+      title = "Short-monitoring interval survivorship",
+      subtitle = "Intervals that start before outplanting are omitted from the figure because survival cannot be estimated when start n = 0"
+    ) +
+    scale_fill_brewer(palette = "Dark2") +
     outplant_theme() +
     theme(axis.text.x = element_text(angle = 25, hjust = 1))
 }

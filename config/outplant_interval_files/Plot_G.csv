@@ -1,1 +1,7 @@
 plot,plot_section,plot_folder,file,month_start,month_end,month_start_date,month_end_date,file_type,match_type,plot_length_m,plot_width_m,taglab_area_units
+Plot G,0-0,Plot_G,0-0_PlotG_Matches_November_April.csv,November,April,2025-11-07,2026-04-24,csv,0-0,16,30,cm2
+Plot G,0-0,Plot_G,0-0_PlotG_matches_April_May.csv,April,May,2026-04-24,2026-05-26,csv,0-0,16,30,cm2
+Plot G,0-1,Plot_G,0-1_PlotG_Matches_November_April.csv,November,April,2025-11-07,2026-04-24,csv,0-1,16,30,cm2
+Plot G,0-1,Plot_G,0-1_PlotG_Matches_April_May.csv,April,May,2026-04-24,2026-05-26,csv,0-1,16,30,cm2
+Plot G,1-0,Plot_G,Coki_PlotG_Survivorship_Coki_PlotG_20251107_1-0-Coki_PlotG_20260424_1-0.csv,November,April,2025-11-07,2026-04-24,csv,1-0,16,30,cm2
+Plot G,1-0,Plot_G,Coki_PlotG_Survivorship_Coki_PlotG_20260424_1-0-Coki_PlotG_20260526_1-0.csv,April,May,2026-04-24,2026-05-26,csv,1-0,16,30,cm2

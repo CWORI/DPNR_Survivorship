@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - coral_survivorship_report.qmd
+    - all_coral_cover.qmd
 
 website:
   title: "DPNR Outplant Analyses"

@@ -3,14 +3,60 @@ title: "DPNR Outplant Analyses"
 format:
   html:
     theme: cosmo
-    toc: true
+    toc: false
     code-fold: true
     embed-resources: false
+    include-in-header:
+      text: |
+        <style>
+        .presentation-hidden {
+          display: none !important;
+        }
+        #TOC {
+          display: none !important;
+        }
+        </style>
 execute:
-  echo: true
+  echo: false
   warning: false
   message: false
 ---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(knitr)
+
+# Find the project folder from the report location. This lets collaborators move
+# the full project folder anywhere on their computer and still render the report.
+report_path <- knitr::current_input(dir = TRUE)
+report_dir <- if (!is.null(report_path)) {
+  dirname(normalizePath(report_path, mustWork = TRUE))
+} else {
+  getwd()
+}
+
+project_root <- report_dir
+while (!dir.exists(file.path(project_root, "config", "outplant_interval_files"))) {
+  parent_dir <- dirname(project_root)
+  if (identical(parent_dir, project_root)) {
+    stop(
+      "Could not find config/outplant_interval_files/. ",
+      "Render this report from inside the Coral_survivorship_project folder.",
+      call. = FALSE
+    )
+  }
+  project_root <- parent_dir
+}
+
+knitr::opts_knit$set(root.dir = project_root)
+setwd(project_root)
+
+source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
+```
 
 ## Select the Plot that you would like to view
 
@@ -221,46 +267,9 @@ Please make sure this is the repository you are adding too!
 -   [ ] Changes committed and pushed to GitHub.
 -   [ ] Live GitHub Pages website checked.
 
-## Main Work Flow
+## Analysis Report
 
-This setup chunk loads the packages needed for table formatting and data manipulation, then sources the outplant interval workflow. Sourcing the script here means the report always rebuilds from the latest raw/config files when rendered.
-
-```{r}
-#| label: setup
-#| message: false
-#| warning: false
-
-library(tidyverse)
-library(knitr)
-
-# Find the project folder from the report location. This lets collaborators move
-# the full project folder anywhere on their computer and still render the report.
-report_path <- knitr::current_input(dir = TRUE)
-report_dir <- if (!is.null(report_path)) {
-  dirname(normalizePath(report_path, mustWork = TRUE))
-} else {
-  getwd()
-}
-
-project_root <- report_dir
-while (!dir.exists(file.path(project_root, "config", "outplant_interval_files"))) {
-  parent_dir <- dirname(project_root)
-  if (identical(parent_dir, project_root)) {
-    stop(
-      "Could not find config/outplant_interval_files/. ",
-      "Render this report from inside the Coral_survivorship_project folder.",
-      call. = FALSE
-    )
-  }
-  project_root <- parent_dir
-}
-
-knitr::opts_knit$set(root.dir = project_root)
-setwd(project_root)
-
-source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
-```
-
+::: {.presentation-hidden}
 ### Workflow
 
 This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under `config/outplant_interval_files/`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.
@@ -366,7 +375,8 @@ outplant_shared_month_continuity_qa %>%
   )
 ```
 
-This chunk summarizes cumulative outplant survivorship from the baseline month. May is treated as 100%, and later months report how many original May `Genet` IDs are still present.
+This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot section uses its first month with present outplants as the baseline, and later months report how many original baseline `Genet` IDs are still present.
+:::
 
 ```{r}
 #| label: outplant-cumulative-survival-table
@@ -398,6 +408,7 @@ outplant_cumulative_survival_summary %>%
   )
 ```
 
+::: {.presentation-hidden}
 This chunk summarizes the Deep Nursery temperature logger data used in the cumulative survivorship figure. The logger is slightly deeper than the outplant site but close enough for this practice overlay.
 
 ```{r}
@@ -425,18 +436,40 @@ outplant_daily_temperature_summary %>%
     )
   )
 ```
+:::
 
-This chunk plots cumulative outplant survivorship from the baseline month. The red line shows daily mean temperature on the secondary y-axis.
+::: {.presentation-hidden}
+Plot E has enough monthly observations to work well as a date-based time series. Plot C and Plot G are early monitoring series, so they are shown separately with baseline/follow-up positions instead of being stretched across the full calendar axis.
+:::
+
+### Plot E Cumulative Survivorship
 
 ```{r}
-#| label: outplant-cumulative-survival-plot
+#| label: outplant-plot-e-cumulative-survival-plot
 #| fig-width: 9
 #| fig-height: 4.8
 
-outplant_cumulative_survival_plot
+outplant_plot_cumulative_survival(
+  outplant_cumulative_survival_summary %>% filter(plot == "Plot E"),
+  outplant_daily_temperature_summary
+)
 ```
 
-This chunk reports interval survivorship between adjacent survey months. It is useful as a diagnostic because a later interval can be 100% even if cumulative survivorship has already declined.
+### Plot C and Plot G Cumulative Survivorship
+
+```{r}
+#| label: outplant-short-cumulative-survival-plot
+#| fig-width: 9
+#| fig-height: 4.8
+
+outplant_plot_short_cumulative_survival(
+  outplant_cumulative_survival_summary %>% filter(plot %in% c("Plot C", "Plot G"))
+)
+```
+
+::: {.presentation-hidden}
+This chunk reports interval survivorship between adjacent survey months. It is useful as a diagnostic because a later interval can be 100% even if cumulative survivorship has already declined. Intervals that start before outplanting can have `n_start = 0`; those rows remain in the table but are omitted from interval survival figures because survival cannot be estimated from zero starting corals.
+:::
 
 ```{r}
 #| label: outplant-interval-survival-table
@@ -466,17 +499,37 @@ outplant_survival_summary %>%
   )
 ```
 
-This chunk plots interval survivorship between adjacent survey months. This is why October-to-November can be 100% even when cumulative survivorship is lower.
+::: {.presentation-hidden}
+Plot E interval survivorship is shown as a time series. Plot C and Plot G are shown with compact bars for their current post-baseline intervals.
+:::
+
+### Plot E Interval Survivorship
 
 ```{r}
-#| label: outplant-interval-survival-plot
+#| label: outplant-plot-e-interval-survival-plot
 #| fig-width: 9
 #| fig-height: 4.8
 
-outplant_survival_plot
+outplant_plot_interval_survival(
+  outplant_survival_summary %>% filter(plot == "Plot E")
+)
 ```
 
+### Plot C and Plot G Interval Survivorship
+
+```{r}
+#| label: outplant-short-interval-survival-plot
+#| fig-width: 9
+#| fig-height: 4.8
+
+outplant_plot_short_interval_survival(
+  outplant_survival_summary %>% filter(plot %in% c("Plot C", "Plot G"))
+)
+```
+
+::: {.presentation-hidden}
 This chunk reports outplant coral cover by month. Cover is calculated as summed outplant area divided by the 480 m2 plot area.
+:::
 
 ```{r}
 #| label: outplant-cover-table
@@ -495,7 +548,9 @@ outplant_cover_summary %>%
   )
 ```
 
+::: {.presentation-hidden}
 This chunk plots outplant cover through time. Because outplants are small relative to a 480 m2 plot, the percent cover values are expected to be very small.
+:::
 
 ```{r}
 #| label: outplant-cover-plot
@@ -505,7 +560,9 @@ This chunk plots outplant cover through time. Because outplants are small relati
 outplant_cover_plot
 ```
 
+::: {.presentation-hidden}
 This chunk summarizes species abundance and prevalence among present outplant annotations in each monthly snapshot. `n_outplants` is the abundance count, and `percent_prevalence` is that species' share of present outplants for that month.
+:::
 
 ```{r}
 #| label: outplant-species-prevalence-table
@@ -533,7 +590,9 @@ outplant_species_prevalence_summary %>%
   )
 ```
 
+::: {.presentation-hidden}
 This chunk plots species prevalence through time using counts of present outplant annotations.
+:::
 
 ```{r}
 #| label: outplant-species-prevalence-plot
@@ -543,7 +602,9 @@ This chunk plots species prevalence through time using counts of present outplan
 outplant_species_prevalence_plot
 ```
 
+::: {.presentation-hidden}
 This chunk plots each species' share of total outplant cover through time. It complements prevalence because a species can have fewer annotations but more cover.
+:::
 
 ```{r}
 #| label: outplant-species-cover-plot
@@ -553,6 +614,7 @@ This chunk plots each species' share of total outplant cover through time. It co
 outplant_species_cover_plot
 ```
 
+::: {.presentation-hidden}
 ### Plot Depth Metadata
 
 This chunk summarizes the corner-marker depth metadata for every plot listed in `data_raw/metadata/Coordinates_Depths.csv`. These values describe the plot-level depth context and should not be interpreted as exact depths for individual coral colonies.
@@ -618,6 +680,7 @@ outplant_species_depth_summary %>%
     )
   )
 ```
+:::
 
 ## Plot A
 
@@ -707,43 +770,298 @@ This section will point to Plot B processed datasets, summary tables, and figure
 
 ### Overview
 
-Plot C is included as a placeholder for future outplant match-file analyses.
+Plot C now includes outplant match-file analyses for sections 0-0 and 1-0. The November survey is pre-outplanting, April is the outplanting baseline, and the June survey is the first post-outplant monitoring interval in the current config.
 
 ### Data Status
 
-No Plot C outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_C.csv`, then render this report to populate this tab through the same workflow.
+The active Plot C files are:
+
+```{r}
+#| label: plot-c-configured-files
+
+outplant_config %>%
+  filter(plot == "Plot C") %>%
+  select(plot, plot_section, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) %>%
+  kable(
+    col.names = c(
+      "Plot", "Section", "Start month", "End month", "Start date", "End date", "File",
+      "Plot length (m)", "Plot width (m)", "Area units"
+    )
+  )
+```
 
 ### Depth Metadata
 
-This section will show Plot C corner-marker depth summaries and plot-level depth-gradient context once Plot C outplant match files are configured.
+```{r}
+#| label: plot-c-depth-summary
+
+outplant_plot_depth_summary %>%
+  filter(plot == "Plot C") %>%
+  mutate(
+    mean_depth_ft = round(mean_depth_ft, 1),
+    min_depth_ft = round(min_depth_ft, 1),
+    max_depth_ft = round(max_depth_ft, 1),
+    depth_range_ft = round(depth_range_ft, 1),
+    mean_depth_m = round(mean_depth_m, 2),
+    min_depth_m = round(min_depth_m, 2),
+    max_depth_m = round(max_depth_m, 2),
+    depth_range_m = round(depth_range_m, 2)
+  ) %>%
+  select(
+    plot,
+    n_depth_markers,
+    mean_depth_ft,
+    min_depth_ft,
+    max_depth_ft,
+    depth_range_ft,
+    mean_depth_m,
+    min_depth_m,
+    max_depth_m,
+    depth_range_m
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Depth markers", "Mean depth (ft)", "Min depth (ft)",
+      "Max depth (ft)", "Depth range (ft)", "Mean depth (m)",
+      "Min depth (m)", "Max depth (m)", "Depth range (m)"
+    )
+  )
+```
 
 ### QA/QC
 
-This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot C data are added.
+```{r}
+#| label: plot-c-file-audit
+
+outplant_file_audit %>%
+  filter(plot == "Plot C") %>%
+  select(plot, plot_section, month_start, month_end, match_type, file, file_exists) %>%
+  kable(
+    col.names = c("Plot", "Section", "Start month", "End month", "Match type", "File", "File exists")
+  )
+```
+
+```{r}
+#| label: plot-c-interval-qa
+
+outplant_interval_qa %>%
+  filter(plot == "Plot C") %>%
+  select(
+    plot_section,
+    month_start,
+    month_end,
+    n_rows,
+    n_missing_genet,
+    n_missing_species,
+    n_negative_area_start,
+    n_negative_area_end,
+    actions,
+    split_fuse_events
+  ) %>%
+  kable(
+    col.names = c(
+      "Section", "Start month", "End month", "Rows", "Missing Genet", "Missing species",
+      "Negative start area", "Negative end area", "Actions", "Split/fuse events"
+    )
+  )
+```
+
+```{r}
+#| label: plot-c-shared-month-continuity
+
+outplant_shared_month_continuity_qa %>%
+  filter(plot == "Plot C") %>%
+  select(
+    plot_section,
+    shared_month,
+    previous_end_n,
+    next_start_n,
+    in_both_snapshots,
+    missing_from_next_start,
+    new_in_next_start,
+    species_mismatches,
+    area_mismatches,
+    max_abs_area_difference
+  ) %>%
+  mutate(max_abs_area_difference = round(max_abs_area_difference, 4)) %>%
+  kable(
+    col.names = c(
+      "Section", "Shared month", "Previous file end n", "Next file start n",
+      "In both", "Missing from next start", "New in next start",
+      "Species mismatches", "Area mismatches", "Max area difference"
+    )
+  )
+```
 
 ### Cumulative Survivorship
 
-This section will show the percentage of baseline Plot C outplants still present through time.
+```{r}
+#| label: plot-c-cumulative-survival-table
+
+outplant_cumulative_survival_summary %>%
+  filter(plot == "Plot C") %>%
+  select(
+    plot_section_label,
+    month,
+    baseline_month,
+    n_baseline,
+    n_died_interval,
+    cumulative_deaths_observed,
+    n_surviving_from_baseline,
+    percent_cumulative_survival,
+    percent_cumulative_survival_low,
+    percent_cumulative_survival_high
+  ) %>%
+  mutate(
+    percent_cumulative_survival = round(percent_cumulative_survival, 1),
+    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
+    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Cumulative deaths", "Surviving from baseline",
+      "Cumulative survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+```{r}
+#| label: plot-c-cumulative-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_cumulative_survival(
+  outplant_cumulative_survival_summary %>% filter(plot == "Plot C"),
+  outplant_daily_temperature_summary
+)
+```
 
 ### Interval Survivorship
 
-This section will show month-to-month Plot C survivorship between adjacent TagLab match files.
+```{r}
+#| label: plot-c-interval-survival-table
+
+outplant_survival_summary %>%
+  filter(plot == "Plot C") %>%
+  select(
+    plot_section_label,
+    interval_label,
+    n_start,
+    n_survived,
+    n_died,
+    n_born,
+    percent_survival,
+    percent_survival_low,
+    percent_survival_high
+  ) %>%
+  mutate(
+    percent_survival = round(percent_survival, 1),
+    percent_survival_low = round(percent_survival_low, 1),
+    percent_survival_high = round(percent_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Interval survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+```{r}
+#| label: plot-c-interval-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_interval_survival(
+  outplant_survival_summary %>% filter(plot == "Plot C")
+)
+```
 
 ### Coral Cover
 
-This section will show Plot C outplant cover through time using the configured plot area.
+```{r}
+#| label: plot-c-cover-table
+
+outplant_cover_summary %>%
+  filter(plot == "Plot C") %>%
+  select(plot_section_label, month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) %>%
+  mutate(
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_outplant_cover = round(percent_outplant_cover, 5)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot area (m2)", "Outplant cover (%)"
+    )
+  )
+```
+
+```{r}
+#| label: plot-c-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_cover(
+  outplant_cover_summary %>% filter(plot == "Plot C")
+)
+```
 
 ### Species Prevalence
 
-This section will show Plot C outplant abundance and prevalence by species through time.
+```{r}
+#| label: plot-c-species-prevalence-table
+
+outplant_species_prevalence_summary %>%
+  filter(plot == "Plot C") %>%
+  select(
+    plot_section_label,
+    month,
+    species,
+    n_outplants,
+    percent_prevalence,
+    total_outplant_area_m2,
+    percent_cover_within_outplants
+  ) %>%
+  mutate(
+    percent_prevalence = round(percent_prevalence, 1),
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_cover_within_outplants = round(percent_cover_within_outplants, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Outplant area (m2)", "Share of outplant cover (%)"
+    )
+  )
+```
+
+```{r}
+#| label: plot-c-species-prevalence-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_species_prevalence(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot C")
+)
+```
 
 ### Species Cover Composition
 
-This section will show each species' share of total Plot C outplant cover through time.
+```{r}
+#| label: plot-c-species-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_species_cover(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot C")
+)
+```
 
 ### Downloads
 
-This section will point to Plot C processed datasets, summary tables, and figures after Plot C data are configured.
+Use the master tracking dataset and master summary dataset listed in the Home tab for Plot C results.
 
 ## Plot D
 
@@ -925,43 +1243,297 @@ This section will point to Plot F processed datasets, summary tables, and figure
 
 ### Overview
 
-Plot G is included as a placeholder for future outplant match-file analyses.
+Plot G now includes outplant match-file analyses for sections 0-0, 0-1, and 1-0. The November survey is pre-outplanting, April is the outplanting baseline, and May is the first post-outplant monitoring interval in the current config.
 
 ### Data Status
 
-No Plot G outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_G.csv`, then render this report to populate this tab through the same workflow.
+The active Plot G files are:
+
+```{r}
+#| label: plot-g-configured-files
+
+outplant_config %>%
+  filter(plot == "Plot G") %>%
+  select(plot, plot_section, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) %>%
+  kable(
+    col.names = c(
+      "Plot", "Section", "Start month", "End month", "Start date", "End date", "File",
+      "Plot length (m)", "Plot width (m)", "Area units"
+    )
+  )
+```
 
 ### Depth Metadata
 
-This section will show Plot G corner-marker depth summaries and plot-level depth-gradient context once Plot G outplant match files are configured.
+```{r}
+#| label: plot-g-depth-summary
+
+outplant_plot_depth_summary %>%
+  filter(plot == "Plot G") %>%
+  mutate(
+    mean_depth_ft = round(mean_depth_ft, 1),
+    min_depth_ft = round(min_depth_ft, 1),
+    max_depth_ft = round(max_depth_ft, 1),
+    depth_range_ft = round(depth_range_ft, 1),
+    mean_depth_m = round(mean_depth_m, 2),
+    min_depth_m = round(min_depth_m, 2),
+    max_depth_m = round(max_depth_m, 2),
+    depth_range_m = round(depth_range_m, 2)
+  ) %>%
+  select(
+    plot,
+    n_depth_markers,
+    mean_depth_ft,
+    min_depth_ft,
+    max_depth_ft,
+    depth_range_ft,
+    mean_depth_m,
+    min_depth_m,
+    max_depth_m,
+    depth_range_m
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Depth markers", "Mean depth (ft)", "Min depth (ft)",
+      "Max depth (ft)", "Depth range (ft)", "Mean depth (m)",
+      "Min depth (m)", "Max depth (m)", "Depth range (m)"
+    )
+  )
+```
 
 ### QA/QC
 
-This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot G data are added.
+```{r}
+#| label: plot-g-file-audit
+
+outplant_file_audit %>%
+  filter(plot == "Plot G") %>%
+  select(plot, plot_section, month_start, month_end, match_type, file, file_exists) %>%
+  kable(
+    col.names = c("Plot", "Section", "Start month", "End month", "Match type", "File", "File exists")
+  )
+```
+
+```{r}
+#| label: plot-g-interval-qa
+
+outplant_interval_qa %>%
+  filter(plot == "Plot G") %>%
+  select(
+    plot_section,
+    month_start,
+    month_end,
+    n_rows,
+    n_missing_genet,
+    n_missing_species,
+    n_negative_area_start,
+    n_negative_area_end,
+    actions,
+    split_fuse_events
+  ) %>%
+  kable(
+    col.names = c(
+      "Section", "Start month", "End month", "Rows", "Missing Genet", "Missing species",
+      "Negative start area", "Negative end area", "Actions", "Split/fuse events"
+    )
+  )
+```
+
+```{r}
+#| label: plot-g-shared-month-continuity
+
+outplant_shared_month_continuity_qa %>%
+  filter(plot == "Plot G") %>%
+  select(
+    plot_section,
+    shared_month,
+    previous_end_n,
+    next_start_n,
+    in_both_snapshots,
+    missing_from_next_start,
+    new_in_next_start,
+    species_mismatches,
+    area_mismatches,
+    max_abs_area_difference
+  ) %>%
+  mutate(max_abs_area_difference = round(max_abs_area_difference, 4)) %>%
+  kable(
+    col.names = c(
+      "Section", "Shared month", "Previous file end n", "Next file start n",
+      "In both", "Missing from next start", "New in next start",
+      "Species mismatches", "Area mismatches", "Max area difference"
+    )
+  )
+```
 
 ### Cumulative Survivorship
 
-This section will show the percentage of baseline Plot G outplants still present through time.
+```{r}
+#| label: plot-g-cumulative-survival-table
+
+outplant_cumulative_survival_summary %>%
+  filter(plot == "Plot G") %>%
+  select(
+    plot_section_label,
+    month,
+    baseline_month,
+    n_baseline,
+    n_died_interval,
+    cumulative_deaths_observed,
+    n_surviving_from_baseline,
+    percent_cumulative_survival,
+    percent_cumulative_survival_low,
+    percent_cumulative_survival_high
+  ) %>%
+  mutate(
+    percent_cumulative_survival = round(percent_cumulative_survival, 1),
+    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
+    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Cumulative deaths", "Surviving from baseline",
+      "Cumulative survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+```{r}
+#| label: plot-g-cumulative-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_short_cumulative_survival(
+  outplant_cumulative_survival_summary %>% filter(plot == "Plot G")
+)
+```
 
 ### Interval Survivorship
 
-This section will show month-to-month Plot G survivorship between adjacent TagLab match files.
+```{r}
+#| label: plot-g-interval-survival-table
+
+outplant_survival_summary %>%
+  filter(plot == "Plot G") %>%
+  select(
+    plot_section_label,
+    interval_label,
+    n_start,
+    n_survived,
+    n_died,
+    n_born,
+    percent_survival,
+    percent_survival_low,
+    percent_survival_high
+  ) %>%
+  mutate(
+    percent_survival = round(percent_survival, 1),
+    percent_survival_low = round(percent_survival_low, 1),
+    percent_survival_high = round(percent_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Interval survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+```{r}
+#| label: plot-g-interval-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_short_interval_survival(
+  outplant_survival_summary %>% filter(plot == "Plot G")
+)
+```
 
 ### Coral Cover
 
-This section will show Plot G outplant cover through time using the configured plot area.
+```{r}
+#| label: plot-g-cover-table
+
+outplant_cover_summary %>%
+  filter(plot == "Plot G") %>%
+  select(plot_section_label, month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) %>%
+  mutate(
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_outplant_cover = round(percent_outplant_cover, 5)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot area (m2)", "Outplant cover (%)"
+    )
+  )
+```
+
+```{r}
+#| label: plot-g-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_cover(
+  outplant_cover_summary %>% filter(plot == "Plot G")
+)
+```
 
 ### Species Prevalence
 
-This section will show Plot G outplant abundance and prevalence by species through time.
+```{r}
+#| label: plot-g-species-prevalence-table
+
+outplant_species_prevalence_summary %>%
+  filter(plot == "Plot G") %>%
+  select(
+    plot_section_label,
+    month,
+    species,
+    n_outplants,
+    percent_prevalence,
+    total_outplant_area_m2,
+    percent_cover_within_outplants
+  ) %>%
+  mutate(
+    percent_prevalence = round(percent_prevalence, 1),
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_cover_within_outplants = round(percent_cover_within_outplants, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot section", "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Outplant area (m2)", "Share of outplant cover (%)"
+    )
+  )
+```
+
+```{r}
+#| label: plot-g-species-prevalence-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_species_prevalence(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot G")
+)
+```
 
 ### Species Cover Composition
 
-This section will show each species' share of total Plot G outplant cover through time.
+```{r}
+#| label: plot-g-species-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_species_cover(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot G")
+)
+```
 
 ### Downloads
 
-This section will point to Plot G processed datasets, summary tables, and figures after Plot G data are configured.
+Use the master tracking dataset and master summary dataset listed in the Home tab for Plot G results.
 
 ## Plot H
 
