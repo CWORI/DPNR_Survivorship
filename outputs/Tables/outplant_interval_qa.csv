@@ -1,4 +1,8 @@
 plot,plot_section,plot_section_label,interval_order,month_start,month_end,source_file,n_rows,n_missing_genet,n_missing_species,n_missing_tag,n_negative_area_start,n_negative_area_end,actions,split_fuse_events
+Plot C,0-0,Plot C 0-0,1,November,April,Plot_C_Coki_PlotC_Survivorship_20251103_0-0-Coki_PlotC_Survivorship_20260403_0-0.csv,344,0,0,344,0,0,born,none
+Plot C,0-0,Plot C 0-0,2,April,June,Plot_C_Coki_PlotC_Survivorship_20260403_0-0-Coki_PlotC_Survivorship_20260606_0-0.csv,342,0,0,342,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot C,1-0,Plot C 1-0,1,November,April,Plot_C_Coki_PlotC_Survivorship_20251103_1-0-Coki_PlotC_Survivorship_20260403_1-0.csv,253,0,0,253,0,0,born,none
+Plot C,1-0,Plot C 1-0,2,April,June,Plot_C_Coki_PlotC_Survivorship_20260403_1-0-Coki_PlotC_Survivorship_20260606_1-0.csv,238,0,0,238,0,0,born; dead; grow; same; shrink,n/s; none
 Plot E,1-0,Plot E 1-0,1,May,June,PlotC_1-0_Coki_PlotE_20250507_1-0-Coki_PlotE_20250609_1-0.csv,272,0,0,272,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
 Plot E,1-0,Plot E 1-0,2,June,July,PlotC_1-0_Coki_PlotE_20250609_1-0-Coki_PlotE_20250711_1-0.csv,218,0,0,218,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
 Plot E,1-0,Plot E 1-0,3,July,August,PlotC_1-0_Coki_PlotE_20250711_1-0-Coki_PlotE_20250804_1-0.csv,177,0,0,177,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
@@ -8,3 +12,9 @@ Plot E,1-1,Plot E 1-1,3,July,August,plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki
 Plot E,1-1,Plot E 1-1,4,August,September,plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,62,0,0,62,0,0,grow; n/s; same; shrink,fuse; n/s
 Plot E,1-1,Plot E 1-1,5,September,October,plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,59,0,0,59,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
 Plot E,1-1,Plot E 1-1,6,October,November,plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,57,0,0,57,0,0,born; grow; n/s; same; shrink,fuse; n/s; none
+Plot G,0-0,Plot G 0-0,1,November,April,0-0_PlotG_Matches_November_April.csv,21,0,0,21,0,0,born,none
+Plot G,0-0,Plot G 0-0,2,April,May,0-0_PlotG_matches_April_May.csv,21,0,0,21,0,0,grow; same; shrink,n/s
+Plot G,0-1,Plot G 0-1,1,November,April,0-1_PlotG_Matches_November_April.csv,3,0,0,3,0,0,born,none
+Plot G,0-1,Plot G 0-1,2,April,May,0-1_PlotG_Matches_April_May.csv,3,0,0,3,0,0,grow; same; shrink,n/s
+Plot G,1-0,Plot G 1-0,1,November,April,Coki_PlotG_Survivorship_Coki_PlotG_20251107_1-0-Coki_PlotG_20260424_1-0.csv,21,0,0,21,0,0,born,none
+Plot G,1-0,Plot G 1-0,2,April,May,Coki_PlotG_Survivorship_Coki_PlotG_20260424_1-0-Coki_PlotG_20260526_1-0.csv,21,0,0,21,0,0,grow; same; shrink,n/s

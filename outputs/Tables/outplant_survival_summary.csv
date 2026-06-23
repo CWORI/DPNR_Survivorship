@@ -1,4 +1,8 @@
 plot,plot_section,plot_section_label,interval_order,month_start,month_end,n_start,n_survived,n_died,n_born,percent_survival,percent_survival_low,percent_survival_high,interval_label
+Plot C,0-0,Plot C 0-0,1,November,April,0,0,0,301,NA,NA,NA,November to April
+Plot C,0-0,Plot C 0-0,2,April,June,298,296,2,0,99.32885906040268,97.5967682157907,99.91861812521256,April to June
+Plot C,1-0,Plot C 1-0,1,November,April,0,0,0,253,NA,NA,NA,November to April
+Plot C,1-0,Plot C 1-0,2,April,June,237,233,4,1,98.31223628691983,95.73527412862622,99.5382750455382,April to June
 Plot E,1-0,Plot E 1-0,1,May,June,210,181,29,3,86.19047619047619,80.77289224099478,90.5525595718134,May to June
 Plot E,1-0,Plot E 1-0,2,June,July,174,163,11,1,93.67816091954023,88.9701710377391,96.80220932431857,June to July
 Plot E,1-0,Plot E 1-0,3,July,August,170,167,3,0,98.23529411764706,94.92961647676886,99.63458615464728,July to August
@@ -8,3 +12,9 @@ Plot E,1-1,Plot E 1-1,3,July,August,54,53,1,2,98.14814814814815,90.1084840492148
 Plot E,1-1,Plot E 1-1,4,August,September,55,55,0,0,100,93.51292391745754,100,August to September
 Plot E,1-1,Plot E 1-1,5,September,October,55,54,1,0,98.18181818181819,90.28089842507467,99.95397821512043,September to October
 Plot E,1-1,Plot E 1-1,6,October,November,54,54,0,2,100,93.39684857555783,100,October to November
+Plot G,0-0,Plot G 0-0,1,November,April,0,0,0,21,NA,NA,NA,November to April
+Plot G,0-0,Plot G 0-0,2,April,May,21,21,0,0,100,83.89023847809204,100,April to May
+Plot G,0-1,Plot G 0-1,1,November,April,0,0,0,3,NA,NA,NA,November to April
+Plot G,0-1,Plot G 0-1,2,April,May,3,3,0,0,100,29.240177382128667,100,April to May
+Plot G,1-0,Plot G 1-0,1,November,April,0,0,0,21,NA,NA,NA,November to April
+Plot G,1-0,Plot G 1-0,2,April,May,21,21,0,0,100,83.89023847809204,100,April to May

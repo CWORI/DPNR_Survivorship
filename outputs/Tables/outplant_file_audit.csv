@@ -1,4 +1,8 @@
 plot,plot_section,plot_section_label,month_start,month_end,month_start_date,month_end_date,match_type,file,path,file_exists
+Plot C,0-0,Plot C 0-0,November,April,2025-11-03,2026-04-03,0-0,Plot_C_Coki_PlotC_Survivorship_20251103_0-0-Coki_PlotC_Survivorship_20260403_0-0.csv,data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20251103_0-0-Coki_PlotC_Survivorship_20260403_0-0.csv,TRUE
+Plot C,0-0,Plot C 0-0,April,June,2026-04-03,2026-06-06,0-0,Plot_C_Coki_PlotC_Survivorship_20260403_0-0-Coki_PlotC_Survivorship_20260606_0-0.csv,data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20260403_0-0-Coki_PlotC_Survivorship_20260606_0-0.csv,TRUE
+Plot C,1-0,Plot C 1-0,November,April,2025-11-03,2026-04-03,1-0,Plot_C_Coki_PlotC_Survivorship_20251103_1-0-Coki_PlotC_Survivorship_20260403_1-0.csv,data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20251103_1-0-Coki_PlotC_Survivorship_20260403_1-0.csv,TRUE
+Plot C,1-0,Plot C 1-0,April,June,2026-04-03,2026-06-06,1-0,Plot_C_Coki_PlotC_Survivorship_20260403_1-0-Coki_PlotC_Survivorship_20260606_1-0.csv,data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20260403_1-0-Coki_PlotC_Survivorship_20260606_1-0.csv,TRUE
 Plot E,1-0,Plot E 1-0,May,June,2025-05-07,2025-06-09,1-0,PlotC_1-0_Coki_PlotE_20250507_1-0-Coki_PlotE_20250609_1-0.csv,data_raw/taglab/Plot_E/PlotC_1-0_Coki_PlotE_20250507_1-0-Coki_PlotE_20250609_1-0.csv,TRUE
 Plot E,1-0,Plot E 1-0,June,July,2025-06-09,2025-07-11,1-0,PlotC_1-0_Coki_PlotE_20250609_1-0-Coki_PlotE_20250711_1-0.csv,data_raw/taglab/Plot_E/PlotC_1-0_Coki_PlotE_20250609_1-0-Coki_PlotE_20250711_1-0.csv,TRUE
 Plot E,1-0,Plot E 1-0,July,August,2025-07-11,2025-08-04,1-0,PlotC_1-0_Coki_PlotE_20250711_1-0-Coki_PlotE_20250804_1-0.csv,data_raw/taglab/Plot_E/PlotC_1-0_Coki_PlotE_20250711_1-0-Coki_PlotE_20250804_1-0.csv,TRUE
@@ -8,3 +12,9 @@ Plot E,1-1,Plot E 1-1,July,August,2025-07-11,2025-08-04,1-1,plotE1-1Matches_Coki
 Plot E,1-1,Plot E 1-1,August,September,2025-08-04,2025-09-08,1-1,plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,TRUE
 Plot E,1-1,Plot E 1-1,September,October,2025-09-08,2025-10-14,1-1,plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,TRUE
 Plot E,1-1,Plot E 1-1,October,November,2025-10-14,2025-11-06,1-1,plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,TRUE
+Plot G,0-0,Plot G 0-0,November,April,2025-11-07,2026-04-24,0-0,0-0_PlotG_Matches_November_April.csv,data_raw/taglab/Plot_G/0-0_PlotG_Matches_November_April.csv,TRUE
+Plot G,0-0,Plot G 0-0,April,May,2026-04-24,2026-05-26,0-0,0-0_PlotG_matches_April_May.csv,data_raw/taglab/Plot_G/0-0_PlotG_matches_April_May.csv,TRUE
+Plot G,0-1,Plot G 0-1,November,April,2025-11-07,2026-04-24,0-1,0-1_PlotG_Matches_November_April.csv,data_raw/taglab/Plot_G/0-1_PlotG_Matches_November_April.csv,TRUE
+Plot G,0-1,Plot G 0-1,April,May,2026-04-24,2026-05-26,0-1,0-1_PlotG_Matches_April_May.csv,data_raw/taglab/Plot_G/0-1_PlotG_Matches_April_May.csv,TRUE
+Plot G,1-0,Plot G 1-0,November,April,2025-11-07,2026-04-24,1-0,Coki_PlotG_Survivorship_Coki_PlotG_20251107_1-0-Coki_PlotG_20260424_1-0.csv,data_raw/taglab/Plot_G/Coki_PlotG_Survivorship_Coki_PlotG_20251107_1-0-Coki_PlotG_20260424_1-0.csv,TRUE
+Plot G,1-0,Plot G 1-0,April,May,2026-04-24,2026-05-26,1-0,Coki_PlotG_Survivorship_Coki_PlotG_20260424_1-0-Coki_PlotG_20260526_1-0.csv,data_raw/taglab/Plot_G/Coki_PlotG_Survivorship_Coki_PlotG_20260424_1-0-Coki_PlotG_20260526_1-0.csv,TRUE
