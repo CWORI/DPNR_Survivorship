@@ -23,3 +23,8 @@ format:
     toc: true
     code-fold: true
     embed-resources: false
+    fig-format: svg
+
+knitr:
+  opts_chunk:
+    dev: "svglite"
