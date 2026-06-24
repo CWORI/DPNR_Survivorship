@@ -568,9 +568,20 @@ outplant_summarize_cumulative_survival <- function(monthly_observations, coral_i
 }
 
 outplant_summarize_cumulative_survival_by_plot <- function(section_cumulative_survival) {
+  complete_plot_months <- section_cumulative_survival %>%
+    distinct(plot, plot_section, plot_section_label) %>%
+    group_by(plot) %>%
+    summarise(
+      expected_plot_sections = n_distinct(plot_section),
+      expected_plot_section_labels = str_c(sort(unique(plot_section_label)), collapse = "; "),
+      .groups = "drop"
+    )
+
   section_cumulative_survival %>%
     group_by(plot, month_order, month, survey_date) %>%
     summarise(
+      n_plot_sections = n_distinct(plot_section),
+      plot_section_labels = str_c(sort(unique(plot_section_label)), collapse = "; "),
       plot_section = "all",
       plot_section_label = first(plot),
       baseline_month = str_c(sort(unique(baseline_month)), collapse = "; "),
@@ -582,6 +593,8 @@ outplant_summarize_cumulative_survival_by_plot <- function(section_cumulative_su
       baseline_surviving_area_m2 = sum(baseline_surviving_area_m2, na.rm = TRUE),
       .groups = "drop"
     ) %>%
+    left_join(complete_plot_months, by = "plot") %>%
+    filter(n_plot_sections == expected_plot_sections) %>%
     mutate(
       percent_cumulative_survival = 100 * n_surviving_from_baseline / n_baseline,
       ci = map2(n_surviving_from_baseline, n_baseline, outplant_binomial_percent_ci)

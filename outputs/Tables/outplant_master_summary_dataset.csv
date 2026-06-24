@@ -51,16 +51,10 @@ plot_month,Plot E,all,Plot E,May,1,May,NA,NA,NA,NA,cumulative_deaths,0,count,0,2
 plot_month,Plot E,all,Plot E,June,2,June,NA,NA,NA,NA,cumulative_deaths,35,count,35,271,NA,NA,Baseline month: May
 plot_month,Plot E,all,Plot E,July,3,July,NA,NA,NA,NA,cumulative_deaths,54,count,54,271,NA,NA,Baseline month: May
 plot_month,Plot E,all,Plot E,August,4,August,NA,NA,NA,NA,cumulative_deaths,58,count,58,271,NA,NA,Baseline month: May
-plot_month,Plot E,all,Plot E,September,5,September,NA,NA,NA,NA,cumulative_deaths,8,count,8,61,NA,NA,Baseline month: May
-plot_month,Plot E,all,Plot E,October,6,October,NA,NA,NA,NA,cumulative_deaths,8,count,8,61,NA,NA,Baseline month: May
-plot_month,Plot E,all,Plot E,November,7,November,NA,NA,NA,NA,cumulative_deaths,8,count,8,61,NA,NA,Baseline month: May
 plot_month,Plot E,all,Plot E,May,1,May,NA,NA,NA,NA,cumulative_survivorship,100,percent,271,271,98.64801244081264,100,Baseline month: May
 plot_month,Plot E,all,Plot E,June,2,June,NA,NA,NA,NA,cumulative_survivorship,87.08487084870849,percent,236,271,82.49830371178574,90.83667907025146,Baseline month: May
 plot_month,Plot E,all,Plot E,July,3,July,NA,NA,NA,NA,cumulative_survivorship,80.07380073800738,percent,217,271,74.81475306197578,84.66180636190914,Baseline month: May
 plot_month,Plot E,all,Plot E,August,4,August,NA,NA,NA,NA,cumulative_survivorship,78.59778597785977,percent,213,271,73.22956518890139,83.3286711222492,Baseline month: May
-plot_month,Plot E,all,Plot E,September,5,September,NA,NA,NA,NA,cumulative_survivorship,86.88524590163935,percent,53,61,75.78413113166378,94.16394941602594,Baseline month: May
-plot_month,Plot E,all,Plot E,October,6,October,NA,NA,NA,NA,cumulative_survivorship,86.88524590163935,percent,53,61,75.78413113166378,94.16394941602594,Baseline month: May
-plot_month,Plot E,all,Plot E,November,7,November,NA,NA,NA,NA,cumulative_survivorship,86.88524590163935,percent,53,61,75.78413113166378,94.16394941602594,Baseline month: May
 plot_month,Plot E,all,Plot E,May,1,May,NA,NA,NA,NA,outplant_cover,0.05876536458333333,percent_of_plot,271,NA,NA,NA,Total area m2: 0.282074
 plot_month,Plot E,all,Plot E,June,2,June,NA,NA,NA,NA,outplant_cover,0.05839677083333336,percent_of_plot,239,NA,NA,NA,Total area m2: 0.280305
 plot_month,Plot E,all,Plot E,July,3,July,NA,NA,NA,NA,outplant_cover,0.07547010416666668,percent_of_plot,218,NA,NA,NA,Total area m2: 0.362257

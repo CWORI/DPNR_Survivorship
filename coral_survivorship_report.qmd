@@ -375,7 +375,7 @@ outplant_shared_month_continuity_qa %>%
   )
 ```
 
-This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot uses the first month with present outplants as the baseline for each monitored subsection, then combines the monitored subsections into one plot-level result. If one subsection has not been monitored through a later month, that later month only uses the subsections with data instead of counting the unmonitored subsection as dead.
+This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot uses the first month with present outplants as the baseline for each monitored subsection, then combines subsections only for months where every configured subsection for that plot is represented. Months with partial subsection coverage are kept in the section-level QA outputs, but are excluded from the full-plot cumulative curve so the denominator does not change through time.
 :::
 
 ```{r}
