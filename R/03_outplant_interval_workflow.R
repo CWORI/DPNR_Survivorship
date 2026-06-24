@@ -404,6 +404,17 @@ outplant_build_coral_intervals <- function(interval_rows) {
     )
 }
 
+outplant_combine_plot_sections <- function(section_coral_intervals) {
+  section_coral_intervals %>%
+    mutate(
+      source_plot_section = plot_section,
+      source_plot_section_label = plot_section_label,
+      genet = str_c(plot_section, genet, sep = "__"),
+      plot_section = "all",
+      plot_section_label = plot
+    )
+}
+
 # Month-level observations ------------------------------------------------------
 # Cover and species prevalence are month-level questions. This uses one snapshot
 # per month: the start side of the first interval for the baseline month, and the end side of each interval for all later months. That avoids double-counting the same survey month from two adjacent files.
@@ -556,6 +567,33 @@ outplant_summarize_cumulative_survival <- function(monthly_observations, coral_i
     arrange(plot, plot_section, month_order)
 }
 
+outplant_summarize_cumulative_survival_by_plot <- function(section_cumulative_survival) {
+  section_cumulative_survival %>%
+    group_by(plot, month_order, month, survey_date) %>%
+    summarise(
+      plot_section = "all",
+      plot_section_label = first(plot),
+      baseline_month = str_c(sort(unique(baseline_month)), collapse = "; "),
+      baseline_date = min(baseline_date, na.rm = TRUE),
+      n_baseline = sum(n_baseline, na.rm = TRUE),
+      n_died_interval = sum(n_died_interval, na.rm = TRUE),
+      cumulative_deaths_observed = sum(cumulative_deaths_observed, na.rm = TRUE),
+      n_surviving_from_baseline = sum(n_surviving_from_baseline, na.rm = TRUE),
+      baseline_surviving_area_m2 = sum(baseline_surviving_area_m2, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    mutate(
+      percent_cumulative_survival = 100 * n_surviving_from_baseline / n_baseline,
+      ci = map2(n_surviving_from_baseline, n_baseline, outplant_binomial_percent_ci)
+    ) %>%
+    unnest_wider(ci) %>%
+    rename(
+      percent_cumulative_survival_low = percent_survival_low,
+      percent_cumulative_survival_high = percent_survival_high
+    ) %>%
+    arrange(plot, month_order)
+}
+
 outplant_summarize_survival <- function(coral_intervals) {
   coral_intervals %>%
     group_by(plot, plot_section, plot_section_label, interval_order, month_start, month_end) %>%
@@ -573,6 +611,26 @@ outplant_summarize_survival <- function(coral_intervals) {
     arrange(plot, plot_section, interval_order)
 }
 
+outplant_summarize_survival_by_plot <- function(section_survival) {
+  section_survival %>%
+    group_by(plot, interval_order, month_start, month_end, interval_label) %>%
+    summarise(
+      plot_section = "all",
+      plot_section_label = first(plot),
+      n_start = sum(n_start, na.rm = TRUE),
+      n_survived = sum(n_survived, na.rm = TRUE),
+      n_died = sum(n_died, na.rm = TRUE),
+      n_born = sum(n_born, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    mutate(
+      percent_survival = 100 * n_survived / n_start,
+      ci = map2(n_survived, n_start, outplant_binomial_percent_ci)
+    ) %>%
+    unnest_wider(ci) %>%
+    arrange(plot, interval_order)
+}
+
 outplant_summarize_species_survival <- function(coral_intervals) {
   coral_intervals %>%
     filter(!is.na(species)) %>%
@@ -588,6 +646,25 @@ outplant_summarize_species_survival <- function(coral_intervals) {
     unnest_wider(ci) %>%
     mutate(interval_label = str_c(month_start, " to ", month_end)) %>%
     arrange(plot, plot_section, interval_order, species)
+}
+
+outplant_summarize_species_survival_by_plot <- function(section_species_survival) {
+  section_species_survival %>%
+    group_by(plot, interval_order, month_start, month_end, interval_label, species) %>%
+    summarise(
+      plot_section = "all",
+      plot_section_label = first(plot),
+      n_start = sum(n_start, na.rm = TRUE),
+      n_survived = sum(n_survived, na.rm = TRUE),
+      n_died = sum(n_died, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    mutate(
+      percent_survival = 100 * n_survived / n_start,
+      ci = map2(n_survived, n_start, outplant_binomial_percent_ci)
+    ) %>%
+    unnest_wider(ci) %>%
+    arrange(plot, interval_order, species)
 }
 
 outplant_summarize_cover <- function(monthly_observations) {
@@ -1157,7 +1234,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
     labs(
       x = "Survey date",
       y = "Cumulative survivorship",
-      color = "Plot section",
+      color = "Plot",
       title = "Outplant cumulative survivorship and temperature through time"
     ) +
     scale_color_brewer(palette = "Dark2")
@@ -1175,7 +1252,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
       ) +
       labs(
         subtitle = str_c(
-          "Sections shown separately; red line = Deep Nursery daily mean temperature"
+          "Plots shown separately; red line = Deep Nursery daily mean temperature"
         )
       )
   } else {
@@ -1237,7 +1314,7 @@ outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary)
     labs(
       x = "Monitoring step",
       y = "Cumulative survivorship",
-      color = "Plot section",
+      color = "Plot",
       title = "Short-monitoring cumulative survivorship",
       subtitle = "Plot C and Plot G are shown by baseline/follow-up step so their early results are not stretched across the full date axis"
     ) +
@@ -1267,7 +1344,7 @@ outplant_plot_interval_survival <- function(survival_summary) {
     labs(
       x = "Survey interval",
       y = "Interval survivorship",
-      color = "Plot section",
+      color = "Plot",
       title = "Outplant interval survivorship",
       subtitle = "Survival between adjacent TagLab match files; bars are exact binomial 95% CIs"
     ) +
@@ -1304,7 +1381,7 @@ outplant_plot_short_interval_survival <- function(survival_summary) {
     labs(
       x = "Survey interval",
       y = "Interval survivorship",
-      fill = "Plot section",
+      fill = "Plot",
       title = "Short-monitoring interval survivorship",
       subtitle = "Intervals that start before outplanting are omitted from the figure because survival cannot be estimated when start n = 0"
     ) +
@@ -1324,7 +1401,7 @@ outplant_plot_cover <- function(cover_summary) {
     labs(
       x = "Survey month",
       y = "Outplant cover of plot",
-      color = "Plot section",
+      color = "Plot",
       title = "Outplant coral cover through time",
       subtitle = "Cover = summed outplant planar area / 480 m2 plot area"
     ) +
@@ -1383,20 +1460,27 @@ outplant_depth_metadata <- outplant_read_depth_metadata(outplant_depth_path)
 outplant_plot_depth_summary <- outplant_summarize_plot_depth(outplant_depth_metadata)
 outplant_file_audit <- outplant_build_file_audit(outplant_config)
 outplant_interval_rows <- outplant_build_interval_rows(outplant_config)
-outplant_coral_intervals <- outplant_build_coral_intervals(outplant_interval_rows)
+outplant_section_coral_intervals <- outplant_build_coral_intervals(outplant_interval_rows)
+outplant_section_monthly_observations <- outplant_build_monthly_observations(outplant_section_coral_intervals)
+outplant_coral_intervals <- outplant_combine_plot_sections(outplant_section_coral_intervals)
 outplant_monthly_observations <- outplant_build_monthly_observations(outplant_coral_intervals)
 
-outplant_cumulative_survival_summary <- outplant_summarize_cumulative_survival(
-  outplant_monthly_observations,
-  outplant_coral_intervals
+outplant_section_cumulative_survival_summary <- outplant_summarize_cumulative_survival(
+  outplant_section_monthly_observations,
+  outplant_section_coral_intervals
+)
+outplant_cumulative_survival_summary <- outplant_summarize_cumulative_survival_by_plot(
+  outplant_section_cumulative_survival_summary
 )
 outplant_temperature_observations <- outplant_read_temperature_file(outplant_temperature_path)
 outplant_daily_temperature_summary <- outplant_summarize_daily_temperature(
   outplant_temperature_observations,
   outplant_cumulative_survival_summary
 )
-outplant_survival_summary <- outplant_summarize_survival(outplant_coral_intervals)
-outplant_species_survival_summary <- outplant_summarize_species_survival(outplant_coral_intervals)
+outplant_section_survival_summary <- outplant_summarize_survival(outplant_section_coral_intervals)
+outplant_survival_summary <- outplant_summarize_survival_by_plot(outplant_section_survival_summary)
+outplant_section_species_survival_summary <- outplant_summarize_species_survival(outplant_section_coral_intervals)
+outplant_species_survival_summary <- outplant_summarize_species_survival_by_plot(outplant_section_species_survival_summary)
 outplant_cover_summary <- outplant_summarize_cover(outplant_monthly_observations)
 outplant_species_prevalence_summary <- outplant_summarize_species_prevalence(outplant_monthly_observations)
 outplant_species_depth_summary <- outplant_summarize_species_depth(
@@ -1415,8 +1499,8 @@ outplant_master_summary_dataset <- outplant_build_master_summary_dataset(
 
 outplant_qa_tables <- outplant_build_qa(
   outplant_interval_rows,
-  outplant_monthly_observations,
-  outplant_coral_intervals,
+  outplant_section_monthly_observations,
+  outplant_section_coral_intervals,
   outplant_file_audit
 )
 list2env(outplant_qa_tables, envir = environment())
@@ -1435,6 +1519,8 @@ outplant_write_named_csvs(outplant_qa_tables, outplant_table_dir)
 outplant_write_named_csvs(
   list(
     outplant_interval_rows = outplant_interval_rows,
+    outplant_section_coral_intervals = outplant_section_coral_intervals,
+    outplant_section_monthly_observations = outplant_section_monthly_observations,
     outplant_coral_intervals = outplant_coral_intervals,
     outplant_monthly_observations = outplant_monthly_observations,
     outplant_master_tracking_dataset = outplant_master_tracking_dataset,
@@ -1447,8 +1533,11 @@ outplant_write_named_csvs(
 outplant_write_named_csvs(
   list(
     outplant_cumulative_survival_summary = outplant_cumulative_survival_summary,
+    outplant_section_cumulative_survival_summary = outplant_section_cumulative_survival_summary,
     outplant_survival_summary = outplant_survival_summary,
+    outplant_section_survival_summary = outplant_section_survival_summary,
     outplant_species_survival_summary = outplant_species_survival_summary,
+    outplant_section_species_survival_summary = outplant_section_species_survival_summary,
     outplant_cover_summary = outplant_cover_summary,
     outplant_species_prevalence_summary = outplant_species_prevalence_summary,
     outplant_plot_depth_summary = outplant_plot_depth_summary,

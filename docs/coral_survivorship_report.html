@@ -182,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, and the tables and figures rebuild automatically.</p>
-<p>The current test case is Plot E, with TagLab subsections tracked separately. Section 1-1 currently runs from May through November, and section 1-0 currently runs from May through August. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, species cover composition, temperature, and plot-level depth metadata.</p>
+<p>The active outplant workflow now combines TagLab subsections into one plot-level result for each plot letter. Section-level information is still used for file intake and QA/QC, but survivorship, cover, species prevalence, and species cover composition are summarized as Plot C, Plot E, Plot G, and so on.</p>
 <p>The two recommended datasets to open first are:</p>
 <ul>
 <li><code>data_processed/outplant_master_tracking_dataset.csv</code>: one row per tracked <code>Genet</code> per month, including presence, area, cover contribution, and baseline-survival status.</li>
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="presentation-hidden">
 <section id="workflow" class="level3">
 <h3 class="anchored" data-anchor-id="workflow">Workflow</h3>
-<p>This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under <code>config/outplant_interval_files/</code>, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked <code>Genet</code> per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.</p>
+<p>This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under <code>config/outplant_interval_files/</code>, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked <code>Genet</code> per interval, and produces plot-level survivorship, cover, and species-composition outputs. TagLab subsections remain available for QA/QC, but the main analysis combines them into one result per plot letter.</p>
 <p>The workflow is designed so future users can add new plots or month pairs by editing the config rather than changing analysis code.</p>
 <p>The two recommended outplant datasets to open first are:</p>
 <ul>
@@ -1053,27 +1053,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot section uses its first month with present outplants as the baseline, and later months report how many original baseline <code>Genet</code> IDs are still present.</p>
+<p>This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot uses the first month with present outplants as the baseline for each monitored subsection, then combines the monitored subsections into one plot-level result. If one subsection has not been monitored through a later month, that later month only uses the subsections with data instead of counting the unmonitored subsection as dead.</p>
 </section>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 8%">
+<col style="width: 4%">
 <col style="width: 6%">
 <col style="width: 9%">
-<col style="width: 6%">
+<col style="width: 7%">
 <col style="width: 13%">
 <col style="width: 11%">
 <col style="width: 15%">
 <col style="width: 15%">
-<col style="width: 6%">
+<col style="width: 7%">
 <col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: left;">Baseline month</th>
 <th style="text-align: right;">Baseline n</th>
@@ -1087,151 +1087,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">301</td>
+<td style="text-align: right;">554</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">301</td>
+<td style="text-align: right;">554</td>
 <td style="text-align: right;">100.0</td>
-<td style="text-align: right;">98.8</td>
+<td style="text-align: right;">99.3</td>
 <td style="text-align: right;">100.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">301</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">293</td>
-<td style="text-align: right;">97.3</td>
-<td style="text-align: right;">94.8</td>
-<td style="text-align: right;">98.8</td>
+<td style="text-align: right;">554</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">526</td>
+<td style="text-align: right;">94.9</td>
+<td style="text-align: right;">92.8</td>
+<td style="text-align: right;">96.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">253</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: right;">271</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">253</td>
+<td style="text-align: right;">271</td>
 <td style="text-align: right;">100.0</td>
 <td style="text-align: right;">98.6</td>
 <td style="text-align: right;">100.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">233</td>
-<td style="text-align: right;">92.1</td>
-<td style="text-align: right;">88.1</td>
-<td style="text-align: right;">95.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">98.3</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">May</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: right;">181</td>
-<td style="text-align: right;">86.2</td>
-<td style="text-align: right;">80.8</td>
-<td style="text-align: right;">90.6</td>
+<td style="text-align: right;">271</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">236</td>
+<td style="text-align: right;">87.1</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">90.8</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">July</td>
 <td style="text-align: left;">May</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">47</td>
-<td style="text-align: right;">163</td>
-<td style="text-align: right;">77.6</td>
-<td style="text-align: right;">71.4</td>
-<td style="text-align: right;">83.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">160</td>
-<td style="text-align: right;">76.2</td>
-<td style="text-align: right;">69.8</td>
-<td style="text-align: right;">81.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">94.1</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">55</td>
-<td style="text-align: right;">90.2</td>
-<td style="text-align: right;">79.8</td>
-<td style="text-align: right;">96.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">7</td>
+<td style="text-align: right;">271</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: right;">54</td>
-<td style="text-align: right;">88.5</td>
-<td style="text-align: right;">77.8</td>
-<td style="text-align: right;">95.3</td>
+<td style="text-align: right;">217</td>
+<td style="text-align: right;">80.1</td>
+<td style="text-align: right;">74.8</td>
+<td style="text-align: right;">84.7</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">August</td>
 <td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">86.9</td>
-<td style="text-align: right;">75.8</td>
-<td style="text-align: right;">94.2</td>
+<td style="text-align: right;">271</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">213</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">73.2</td>
+<td style="text-align: right;">83.3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: right;">61</td>
@@ -1243,7 +1171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">94.2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: right;">61</td>
@@ -1255,7 +1183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">94.2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: right;">61</td>
@@ -1267,75 +1195,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">94.2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">100.0</td>
-<td style="text-align: right;">83.9</td>
+<td style="text-align: right;">92.1</td>
 <td style="text-align: right;">100.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">100.0</td>
-<td style="text-align: right;">83.9</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">29.2</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">29.2</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">83.9</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">83.9</td>
+<td style="text-align: right;">92.1</td>
 <td style="text-align: right;">100.0</td>
 </tr>
 </tbody>
@@ -1415,19 +1295,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 18%">
-<col style="width: 7%">
-<col style="width: 9%">
-<col style="width: 6%">
 <col style="width: 6%">
 <col style="width: 19%">
-<col style="width: 9%">
+<col style="width: 7%">
 <col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Interval</th>
 <th style="text-align: right;">Start n</th>
 <th style="text-align: right;">Survived n</th>
@@ -1440,117 +1320,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">November to April</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">301</td>
+<td style="text-align: right;">554</td>
 <td style="text-align: right;">NaN</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April to June</td>
-<td style="text-align: right;">298</td>
-<td style="text-align: right;">296</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">99.3</td>
+<td style="text-align: right;">535</td>
+<td style="text-align: right;">529</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">98.9</td>
 <td style="text-align: right;">97.6</td>
-<td style="text-align: right;">99.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">November to April</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">NaN</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April to June</td>
-<td style="text-align: right;">237</td>
-<td style="text-align: right;">233</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">98.3</td>
-<td style="text-align: right;">95.7</td>
-<td style="text-align: right;">99.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">May to June</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">181</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">86.2</td>
-<td style="text-align: right;">80.8</td>
-<td style="text-align: right;">90.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">June to July</td>
-<td style="text-align: right;">174</td>
-<td style="text-align: right;">163</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">93.7</td>
-<td style="text-align: right;">89.0</td>
-<td style="text-align: right;">96.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">July to August</td>
-<td style="text-align: right;">170</td>
-<td style="text-align: right;">167</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">98.2</td>
-<td style="text-align: right;">94.9</td>
 <td style="text-align: right;">99.6</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">May to June</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">55</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">90.2</td>
-<td style="text-align: right;">79.8</td>
-<td style="text-align: right;">96.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">June to July</td>
-<td style="text-align: right;">55</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">98.2</td>
-<td style="text-align: right;">90.3</td>
-<td style="text-align: right;">100.0</td>
+<td style="text-align: right;">271</td>
+<td style="text-align: right;">236</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">87.1</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">90.8</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">July to August</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: right;">53</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June to July</td>
+<td style="text-align: right;">229</td>
+<td style="text-align: right;">217</td>
+<td style="text-align: right;">12</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">98.1</td>
-<td style="text-align: right;">90.1</td>
-<td style="text-align: right;">100.0</td>
+<td style="text-align: right;">94.8</td>
+<td style="text-align: right;">91.0</td>
+<td style="text-align: right;">97.3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July to August</td>
+<td style="text-align: right;">224</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">98.2</td>
+<td style="text-align: right;">95.5</td>
+<td style="text-align: right;">99.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">August to September</td>
 <td style="text-align: right;">55</td>
 <td style="text-align: right;">55</td>
@@ -1560,8 +1385,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">93.5</td>
 <td style="text-align: right;">100.0</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September to October</td>
 <td style="text-align: right;">55</td>
 <td style="text-align: right;">54</td>
@@ -1571,8 +1396,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">90.3</td>
 <td style="text-align: right;">100.0</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October to November</td>
 <td style="text-align: right;">54</td>
 <td style="text-align: right;">54</td>
@@ -1582,70 +1407,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">93.4</td>
 <td style="text-align: right;">100.0</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<tr class="odd">
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">November to April</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">NaN</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
-<td style="text-align: left;">April to May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">83.9</td>
-<td style="text-align: right;">100.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">November to April</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">NaN</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April to May</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">100.0</td>
-<td style="text-align: right;">29.2</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">November to April</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">NaN</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April to May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">83.9</td>
+<td style="text-align: right;">92.1</td>
 <td style="text-align: right;">100.0</td>
 </tr>
 </tbody>
@@ -1686,16 +1467,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 13%">
+<col style="width: 7%">
 <col style="width: 10%">
-<col style="width: 18%">
-<col style="width: 25%">
-<col style="width: 15%">
 <col style="width: 19%">
+<col style="width: 26%">
+<col style="width: 15%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: right;">Outplants present</th>
 <th style="text-align: right;">Total outplant area (m2)</th>
@@ -1705,103 +1486,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">301</td>
-<td style="text-align: right;">0.196416</td>
+<td style="text-align: right;">554</td>
+<td style="text-align: right;">0.362963</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.04092</td>
+<td style="text-align: right;">0.07562</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
-<td style="text-align: right;">296</td>
-<td style="text-align: right;">0.601924</td>
+<td style="text-align: right;">530</td>
+<td style="text-align: right;">0.728634</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.12540</td>
+<td style="text-align: right;">0.15180</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">0.166547</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.03470</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: right;">234</td>
-<td style="text-align: right;">0.126709</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.02640</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">May</td>
-<td style="text-align: right;">210</td>
-<td style="text-align: right;">0.219992</td>
+<td style="text-align: right;">271</td>
+<td style="text-align: right;">0.282074</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.04583</td>
+<td style="text-align: right;">0.05877</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">June</td>
-<td style="text-align: right;">184</td>
-<td style="text-align: right;">0.225128</td>
+<td style="text-align: right;">239</td>
+<td style="text-align: right;">0.280305</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.04690</td>
+<td style="text-align: right;">0.05840</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">July</td>
-<td style="text-align: right;">164</td>
-<td style="text-align: right;">0.249760</td>
+<td style="text-align: right;">218</td>
+<td style="text-align: right;">0.362257</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.05203</td>
+<td style="text-align: right;">0.07547</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">August</td>
-<td style="text-align: right;">167</td>
-<td style="text-align: right;">0.191067</td>
+<td style="text-align: right;">222</td>
+<td style="text-align: right;">0.311661</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.03981</td>
+<td style="text-align: right;">0.06493</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">0.062082</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.01293</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: right;">55</td>
-<td style="text-align: right;">0.055176</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.01150</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: right;">0.112497</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.02344</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: right;">55</td>
-<td style="text-align: right;">0.120594</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.02512</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: right;">55</td>
 <td style="text-align: right;">0.078416</td>
@@ -1809,7 +1542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.01634</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: right;">54</td>
 <td style="text-align: right;">0.078395</td>
@@ -1817,7 +1550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.01633</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: right;">56</td>
 <td style="text-align: right;">0.075911</td>
@@ -1825,52 +1558,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.01581</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.028342</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0.059005</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00590</td>
+<td style="text-align: right;">0.01229</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.028128</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0.059253</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00586</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.004271</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00089</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.004190</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00087</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.026392</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00550</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.026936</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00561</td>
+<td style="text-align: right;">0.01234</td>
 </tr>
 </tbody>
 </table>
@@ -1895,17 +1596,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 7%">
-<col style="width: 17%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 18%">
 <col style="width: 15%">
-<col style="width: 11%">
+<col style="width: 12%">
 <col style="width: 15%">
-<col style="width: 22%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: left;">Species</th>
 <th style="text-align: right;">Outplant abundance</th>
@@ -1916,511 +1617,295 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">26.6</td>
-<td style="text-align: right;">0.034268</td>
-<td style="text-align: right;">17.4</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">30.5</td>
+<td style="text-align: right;">0.077037</td>
+<td style="text-align: right;">21.2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: right;">0.022764</td>
-<td style="text-align: right;">11.6</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">0.047191</td>
+<td style="text-align: right;">13.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: right;">8.3</td>
+<td style="text-align: right;">4.5</td>
 <td style="text-align: right;">0.041344</td>
-<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">11.4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">12.0</td>
-<td style="text-align: right;">0.018376</td>
-<td style="text-align: right;">9.4</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: right;">22.4</td>
+<td style="text-align: right;">0.085694</td>
+<td style="text-align: right;">23.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">154</td>
-<td style="text-align: right;">51.2</td>
-<td style="text-align: right;">0.079642</td>
-<td style="text-align: right;">40.5</td>
+<td style="text-align: right;">192</td>
+<td style="text-align: right;">34.7</td>
+<td style="text-align: right;">0.111674</td>
+<td style="text-align: right;">30.8</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Unidentified coral</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.2</td>
 <td style="text-align: right;">0.000023</td>
 <td style="text-align: right;">0.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">27.0</td>
-<td style="text-align: right;">0.032588</td>
-<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">167</td>
+<td style="text-align: right;">31.5</td>
+<td style="text-align: right;">0.064634</td>
+<td style="text-align: right;">8.9</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">0.338428</td>
-<td style="text-align: right;">56.2</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">0.360947</td>
+<td style="text-align: right;">49.5</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">23</td>
-<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">4.3</td>
 <td style="text-align: right;">0.149702</td>
-<td style="text-align: right;">24.9</td>
+<td style="text-align: right;">20.5</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">12.2</td>
-<td style="text-align: right;">0.019649</td>
-<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">22.3</td>
+<td style="text-align: right;">0.069852</td>
+<td style="text-align: right;">9.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">50.7</td>
-<td style="text-align: right;">0.061558</td>
-<td style="text-align: right;">10.2</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">34.0</td>
+<td style="text-align: right;">0.083498</td>
+<td style="text-align: right;">11.5</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">89</td>
-<td style="text-align: right;">35.2</td>
-<td style="text-align: right;">0.042769</td>
-<td style="text-align: right;">25.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">0.024428</td>
-<td style="text-align: right;">14.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">88</td>
-<td style="text-align: right;">34.8</td>
-<td style="text-align: right;">0.067319</td>
-<td style="text-align: right;">40.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">0.032031</td>
-<td style="text-align: right;">19.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">87</td>
-<td style="text-align: right;">37.2</td>
-<td style="text-align: right;">0.032046</td>
-<td style="text-align: right;">25.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">0.022519</td>
-<td style="text-align: right;">17.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">82</td>
-<td style="text-align: right;">35.0</td>
-<td style="text-align: right;">0.050203</td>
-<td style="text-align: right;">39.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">12.8</td>
-<td style="text-align: right;">0.021941</td>
-<td style="text-align: right;">17.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Acropora cervicornis</td>
 <td style="text-align: right;">14</td>
-<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">5.2</td>
 <td style="text-align: right;">0.008782</td>
-<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">3.1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: right;">20.5</td>
-<td style="text-align: right;">0.067831</td>
-<td style="text-align: right;">30.8</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">20.3</td>
+<td style="text-align: right;">0.106123</td>
+<td style="text-align: right;">37.6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">83</td>
-<td style="text-align: right;">39.5</td>
-<td style="text-align: right;">0.084196</td>
-<td style="text-align: right;">38.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">12.4</td>
-<td style="text-align: right;">0.017617</td>
-<td style="text-align: right;">8.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">21.0</td>
-<td style="text-align: right;">0.041566</td>
-<td style="text-align: right;">18.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Acropora cervicornis</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">6.5</td>
-<td style="text-align: right;">0.009198</td>
-<td style="text-align: right;">4.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">10.3</td>
-<td style="text-align: right;">0.028355</td>
-<td style="text-align: right;">12.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">83</td>
-<td style="text-align: right;">45.1</td>
-<td style="text-align: right;">0.113508</td>
-<td style="text-align: right;">50.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">14.1</td>
-<td style="text-align: right;">0.018532</td>
-<td style="text-align: right;">8.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">23.9</td>
-<td style="text-align: right;">0.055535</td>
-<td style="text-align: right;">24.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Acropora cervicornis</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">7.3</td>
-<td style="text-align: right;">0.010906</td>
-<td style="text-align: right;">4.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">7.9</td>
-<td style="text-align: right;">0.020568</td>
-<td style="text-align: right;">8.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">69</td>
-<td style="text-align: right;">42.1</td>
-<td style="text-align: right;">0.110681</td>
-<td style="text-align: right;">44.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">15.9</td>
-<td style="text-align: right;">0.027029</td>
-<td style="text-align: right;">10.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">26.8</td>
-<td style="text-align: right;">0.080576</td>
-<td style="text-align: right;">32.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Acropora cervicornis</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">7.2</td>
-<td style="text-align: right;">0.007899</td>
-<td style="text-align: right;">4.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">0.025270</td>
-<td style="text-align: right;">13.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">75</td>
-<td style="text-align: right;">44.9</td>
-<td style="text-align: right;">0.077612</td>
+<td style="text-align: right;">110</td>
 <td style="text-align: right;">40.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">15.6</td>
-<td style="text-align: right;">0.019540</td>
-<td style="text-align: right;">10.2</td>
+<td style="text-align: right;">0.098274</td>
+<td style="text-align: right;">34.8</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-0</td>
-<td style="text-align: left;">August</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">10.7</td>
+<td style="text-align: right;">0.019506</td>
+<td style="text-align: right;">6.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">May</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">26.3</td>
-<td style="text-align: right;">0.060746</td>
-<td style="text-align: right;">31.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">19.7</td>
-<td style="text-align: right;">0.038293</td>
-<td style="text-align: right;">61.7</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">23.2</td>
+<td style="text-align: right;">0.049389</td>
+<td style="text-align: right;">17.5</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">44.3</td>
-<td style="text-align: right;">0.014078</td>
-<td style="text-align: right;">22.7</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Acropora cervicornis</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">0.009198</td>
+<td style="text-align: right;">3.3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">May</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">10.5</td>
+<td style="text-align: right;">0.056790</td>
+<td style="text-align: right;">20.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">0.128647</td>
+<td style="text-align: right;">45.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">0.001889</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">12.1</td>
+<td style="text-align: right;">0.020567</td>
+<td style="text-align: right;">7.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">26.4</td>
+<td style="text-align: right;">0.065103</td>
+<td style="text-align: right;">23.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Acropora cervicornis</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">0.010906</td>
 <td style="text-align: right;">3.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">31.1</td>
-<td style="text-align: right;">0.007823</td>
-<td style="text-align: right;">12.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">10.9</td>
-<td style="text-align: right;">0.028435</td>
-<td style="text-align: right;">51.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">49.1</td>
-<td style="text-align: right;">0.015139</td>
-<td style="text-align: right;">27.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">0.002035</td>
-<td style="text-align: right;">3.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">34.5</td>
-<td style="text-align: right;">0.009567</td>
-<td style="text-align: right;">17.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">July</td>
 <td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">11.1</td>
-<td style="text-align: right;">0.084362</td>
-<td style="text-align: right;">75.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">48.1</td>
-<td style="text-align: right;">0.016846</td>
-<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">0.104931</td>
+<td style="text-align: right;">29.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">0.001735</td>
-<td style="text-align: right;">1.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">43.6</td>
+<td style="text-align: right;">0.127526</td>
 <td style="text-align: right;">35.2</td>
-<td style="text-align: right;">0.009554</td>
-<td style="text-align: right;">8.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">10.9</td>
-<td style="text-align: right;">0.091739</td>
-<td style="text-align: right;">76.1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">45.5</td>
-<td style="text-align: right;">0.016474</td>
-<td style="text-align: right;">13.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">August</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July</td>
 <td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">0.002094</td>
-<td style="text-align: right;">1.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">34.5</td>
-<td style="text-align: right;">0.009570</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: right;">0.028763</td>
 <td style="text-align: right;">7.9</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">28.9</td>
+<td style="text-align: right;">0.090130</td>
+<td style="text-align: right;">24.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Acropora cervicornis</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">0.007899</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">0.117010</td>
+<td style="text-align: right;">37.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">45.0</td>
+<td style="text-align: right;">0.094086</td>
+<td style="text-align: right;">30.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">13.1</td>
+<td style="text-align: right;">0.021633</td>
+<td style="text-align: right;">6.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">28.4</td>
+<td style="text-align: right;">0.070316</td>
+<td style="text-align: right;">22.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">August</td>
 <td style="text-align: left;">Orbicella sp.</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">0.9</td>
 <td style="text-align: right;">0.000718</td>
-<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">0.2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Acropora palmata</td>
 <td style="text-align: right;">6</td>
@@ -2429,7 +1914,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">52.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella annularis</td>
 <td style="text-align: right;">25</td>
@@ -2438,7 +1923,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">31.2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">3</td>
@@ -2447,7 +1932,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">2.9</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella franksi</td>
 <td style="text-align: right;">19</td>
@@ -2456,7 +1941,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">12.8</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella sp.</td>
 <td style="text-align: right;">2</td>
@@ -2465,7 +1950,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Acropora palmata</td>
 <td style="text-align: right;">6</td>
@@ -2474,7 +1959,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">50.7</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella annularis</td>
 <td style="text-align: right;">25</td>
@@ -2483,7 +1968,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">32.9</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">3</td>
@@ -2492,7 +1977,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">3.3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella franksi</td>
 <td style="text-align: right;">19</td>
@@ -2501,7 +1986,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">12.8</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella sp.</td>
 <td style="text-align: right;">1</td>
@@ -2510,7 +1995,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Acropora palmata</td>
 <td style="text-align: right;">6</td>
@@ -2519,7 +2004,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">56.3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella annularis</td>
 <td style="text-align: right;">25</td>
@@ -2528,7 +2013,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">25.7</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">3</td>
@@ -2537,7 +2022,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">3.2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella franksi</td>
 <td style="text-align: right;">19</td>
@@ -2546,7 +2031,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">13.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E 1-1</td>
+<td style="text-align: left;">Plot E</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella sp.</td>
 <td style="text-align: right;">3</td>
@@ -2555,112 +2040,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">1.3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.012811</td>
-<td style="text-align: right;">45.2</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">37.8</td>
+<td style="text-align: right;">0.029420</td>
+<td style="text-align: right;">49.9</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.015530</td>
-<td style="text-align: right;">54.8</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">62.2</td>
+<td style="text-align: right;">0.029585</td>
+<td style="text-align: right;">50.1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.013129</td>
-<td style="text-align: right;">46.7</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">37.8</td>
+<td style="text-align: right;">0.030114</td>
+<td style="text-align: right;">50.8</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.014998</td>
-<td style="text-align: right;">53.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.002189</td>
-<td style="text-align: right;">51.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.002082</td>
-<td style="text-align: right;">48.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.002446</td>
-<td style="text-align: right;">58.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.001744</td>
-<td style="text-align: right;">41.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">42.9</td>
-<td style="text-align: right;">0.014420</td>
-<td style="text-align: right;">54.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">57.1</td>
-<td style="text-align: right;">0.011973</td>
-<td style="text-align: right;">45.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">42.9</td>
-<td style="text-align: right;">0.014539</td>
-<td style="text-align: right;">54.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">57.1</td>
-<td style="text-align: right;">0.012398</td>
-<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">62.2</td>
+<td style="text-align: right;">0.029140</td>
+<td style="text-align: right;">49.2</td>
 </tr>
 </tbody>
 </table>
@@ -2879,12 +2292,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">26.6</td>
-<td style="text-align: right;">17.4</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">30.5</td>
+<td style="text-align: right;">21.2</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2892,12 +2305,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: right;">11.6</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">13.0</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2905,12 +2318,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: right;">8.3</td>
-<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">11.4</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2918,12 +2331,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">12.0</td>
-<td style="text-align: right;">9.4</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: right;">22.4</td>
+<td style="text-align: right;">23.6</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2931,12 +2344,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">154</td>
-<td style="text-align: right;">51.2</td>
-<td style="text-align: right;">40.5</td>
+<td style="text-align: right;">192</td>
+<td style="text-align: right;">34.7</td>
+<td style="text-align: right;">30.8</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2944,11 +2357,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Unidentified coral</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.2</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
@@ -2957,12 +2370,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">27.0</td>
-<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">167</td>
+<td style="text-align: right;">31.5</td>
+<td style="text-align: right;">8.9</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2970,12 +2383,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">56.2</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">49.5</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2983,12 +2396,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">23</td>
-<td style="text-align: right;">7.8</td>
-<td style="text-align: right;">24.9</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">20.5</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -2996,12 +2409,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">12.2</td>
-<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">22.3</td>
+<td style="text-align: right;">9.6</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -3009,116 +2422,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">50.7</td>
-<td style="text-align: right;">10.2</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">89</td>
-<td style="text-align: right;">35.2</td>
-<td style="text-align: right;">25.7</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">14.7</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">88</td>
-<td style="text-align: right;">34.8</td>
-<td style="text-align: right;">40.4</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">19.2</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">87</td>
-<td style="text-align: right;">37.2</td>
-<td style="text-align: right;">25.3</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">17.8</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">82</td>
-<td style="text-align: right;">35.0</td>
-<td style="text-align: right;">39.6</td>
-<td style="text-align: right;">33.5</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">23</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">12.8</td>
-<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">34.0</td>
+<td style="text-align: right;">11.5</td>
 <td style="text-align: right;">33.5</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">45</td>
@@ -3126,12 +2435,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Acropora cervicornis</td>
 <td style="text-align: right;">14</td>
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">3.1</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3139,12 +2448,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: right;">20.5</td>
-<td style="text-align: right;">30.8</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">20.3</td>
+<td style="text-align: right;">37.6</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3152,220 +2461,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">83</td>
-<td style="text-align: right;">39.5</td>
-<td style="text-align: right;">38.3</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">12.4</td>
-<td style="text-align: right;">8.0</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">21.0</td>
-<td style="text-align: right;">18.9</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Acropora cervicornis</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">6.5</td>
-<td style="text-align: right;">4.1</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">10.3</td>
-<td style="text-align: right;">12.6</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">83</td>
-<td style="text-align: right;">45.1</td>
-<td style="text-align: right;">50.4</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">14.1</td>
-<td style="text-align: right;">8.2</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">23.9</td>
-<td style="text-align: right;">24.7</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Acropora cervicornis</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">7.3</td>
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">7.9</td>
-<td style="text-align: right;">8.2</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">69</td>
-<td style="text-align: right;">42.1</td>
-<td style="text-align: right;">44.3</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">15.9</td>
-<td style="text-align: right;">10.8</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">26.8</td>
-<td style="text-align: right;">32.3</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Acropora cervicornis</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">7.2</td>
-<td style="text-align: right;">4.1</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">13.2</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">75</td>
-<td style="text-align: right;">44.9</td>
+<td style="text-align: right;">110</td>
 <td style="text-align: right;">40.6</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">15.6</td>
-<td style="text-align: right;">10.2</td>
+<td style="text-align: right;">34.8</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3373,25 +2474,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">August</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">May</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">10.7</td>
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">May</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">26.3</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">19.7</td>
-<td style="text-align: right;">61.7</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">23.2</td>
+<td style="text-align: right;">17.5</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3399,12 +2500,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">44.3</td>
-<td style="text-align: right;">22.7</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Acropora cervicornis</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.3</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3412,11 +2513,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">May</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">10.5</td>
+<td style="text-align: right;">20.3</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">45.9</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">12.1</td>
+<td style="text-align: right;">7.3</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">June</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">26.4</td>
+<td style="text-align: right;">23.2</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Acropora cervicornis</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">5.5</td>
 <td style="text-align: right;">3.0</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
@@ -3425,90 +2578,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">31.1</td>
-<td style="text-align: right;">12.6</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">10.9</td>
-<td style="text-align: right;">51.5</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">49.1</td>
-<td style="text-align: right;">27.4</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">3.7</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">34.5</td>
-<td style="text-align: right;">17.3</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">July</td>
 <td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">11.1</td>
-<td style="text-align: right;">75.0</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">48.1</td>
-<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">29.0</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3516,38 +2591,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">July</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">43.6</td>
 <td style="text-align: right;">35.2</td>
-<td style="text-align: right;">8.5</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Acropora palmata</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">10.9</td>
-<td style="text-align: right;">76.1</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3555,37 +2604,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">45.5</td>
-<td style="text-align: right;">13.7</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">August</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">July</td>
 <td style="text-align: left;">Orbicella faveolata</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">20</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">34.5</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">13.3</td>
 <td style="text-align: right;">7.9</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
@@ -3594,12 +2617,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
-<td style="text-align: left;">August</td>
-<td style="text-align: left;">Orbicella sp.</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">3.6</td>
-<td style="text-align: right;">0.6</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">July</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">28.9</td>
+<td style="text-align: right;">24.9</td>
 <td style="text-align: right;">31.8</td>
 <td style="text-align: right;">22</td>
 <td style="text-align: right;">42</td>
@@ -3607,7 +2630,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Acropora cervicornis</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Acropora palmata</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">37.5</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella annularis</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">45.0</td>
+<td style="text-align: right;">30.2</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella faveolata</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">13.1</td>
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella franksi</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">28.4</td>
+<td style="text-align: right;">22.6</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">August</td>
+<td style="text-align: left;">Orbicella sp.</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plot E</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Acropora palmata</td>
 <td style="text-align: right;">6</td>
@@ -3620,7 +2721,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella annularis</td>
 <td style="text-align: right;">25</td>
@@ -3633,7 +2734,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">3</td>
@@ -3646,7 +2747,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella franksi</td>
 <td style="text-align: right;">19</td>
@@ -3659,7 +2760,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">September</td>
 <td style="text-align: left;">Orbicella sp.</td>
 <td style="text-align: right;">2</td>
@@ -3672,7 +2773,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Acropora palmata</td>
 <td style="text-align: right;">6</td>
@@ -3685,7 +2786,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella annularis</td>
 <td style="text-align: right;">25</td>
@@ -3698,7 +2799,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">3</td>
@@ -3711,7 +2812,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella franksi</td>
 <td style="text-align: right;">19</td>
@@ -3724,7 +2825,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">October</td>
 <td style="text-align: left;">Orbicella sp.</td>
 <td style="text-align: right;">1</td>
@@ -3737,7 +2838,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Acropora palmata</td>
 <td style="text-align: right;">6</td>
@@ -3750,7 +2851,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella annularis</td>
 <td style="text-align: right;">25</td>
@@ -3763,7 +2864,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">3</td>
@@ -3776,7 +2877,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella franksi</td>
 <td style="text-align: right;">19</td>
@@ -3789,7 +2890,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">1-1</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">November</td>
 <td style="text-align: left;">Orbicella sp.</td>
 <td style="text-align: right;">3</td>
@@ -3802,12 +2903,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">45.2</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">37.8</td>
+<td style="text-align: right;">49.9</td>
 <td style="text-align: right;">29.0</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">38</td>
@@ -3815,12 +2916,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">54.8</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">62.2</td>
+<td style="text-align: right;">50.1</td>
 <td style="text-align: right;">29.0</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">38</td>
@@ -3828,12 +2929,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">46.7</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">37.8</td>
+<td style="text-align: right;">50.8</td>
 <td style="text-align: right;">29.0</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">38</td>
@@ -3841,116 +2942,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-0</td>
+<td style="text-align: left;">all</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">53.3</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">51.2</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">48.8</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">58.4</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">41.6</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">42.9</td>
-<td style="text-align: right;">54.6</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">57.1</td>
-<td style="text-align: right;">45.4</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">42.9</td>
-<td style="text-align: right;">54.0</td>
-<td style="text-align: right;">29.0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">18</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G</td>
-<td style="text-align: left;">1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">57.1</td>
-<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">62.2</td>
+<td style="text-align: right;">49.2</td>
 <td style="text-align: right;">29.0</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">38</td>
@@ -4049,7 +3046,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
 <section id="overview-2" class="level3">
 <h3 class="anchored" data-anchor-id="overview-2">Overview</h3>
-<p>Plot C now includes outplant match-file analyses for sections 0-0 and 1-0. The November survey is pre-outplanting, April is the outplanting baseline, and the June survey is the first post-outplant monitoring interval in the current config.</p>
+<p>Plot C now includes outplant match-file analyses for sections 0-0 and 1-0, combined into one Plot C result. The November survey is pre-outplanting, April is the outplanting baseline, and the June survey is the first post-outplant monitoring interval in the current config.</p>
 </section>
 <section id="data-status-2" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-2">Data Status</h3>
@@ -4399,20 +3396,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 14%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 7%">
 <col style="width: 8%">
-<col style="width: 3%">
-<col style="width: 9%">
-<col style="width: 7%">
-<col style="width: 13%">
-<col style="width: 11%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 7%">
-<col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: left;">Baseline month</th>
 <th style="text-align: right;">Baseline n</th>
@@ -4426,52 +3423,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">301</td>
+<td style="text-align: right;">554</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">301</td>
+<td style="text-align: right;">554</td>
 <td style="text-align: right;">100.0</td>
-<td style="text-align: right;">98.8</td>
-<td style="text-align: right;">100.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">301</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">293</td>
-<td style="text-align: right;">97.3</td>
-<td style="text-align: right;">94.8</td>
-<td style="text-align: right;">98.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">98.6</td>
+<td style="text-align: right;">99.3</td>
 <td style="text-align: right;">100.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">233</td>
-<td style="text-align: right;">92.1</td>
-<td style="text-align: right;">88.1</td>
-<td style="text-align: right;">95.1</td>
+<td style="text-align: right;">554</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">526</td>
+<td style="text-align: right;">94.9</td>
+<td style="text-align: right;">92.8</td>
+<td style="text-align: right;">96.6</td>
 </tr>
 </tbody>
 </table>
@@ -4493,19 +3466,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 16%">
+<col style="width: 6%">
+<col style="width: 17%">
 <col style="width: 7%">
 <col style="width: 10%">
 <col style="width: 6%">
 <col style="width: 6%">
-<col style="width: 20%">
+<col style="width: 21%">
 <col style="width: 10%">
 <col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Interval</th>
 <th style="text-align: right;">Start n</th>
 <th style="text-align: right;">Survived n</th>
@@ -4518,48 +3491,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">November to April</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">301</td>
+<td style="text-align: right;">554</td>
 <td style="text-align: right;">NaN</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April to June</td>
-<td style="text-align: right;">298</td>
-<td style="text-align: right;">296</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">99.3</td>
-<td style="text-align: right;">97.6</td>
-<td style="text-align: right;">99.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">November to April</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">NaN</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April to June</td>
-<td style="text-align: right;">237</td>
-<td style="text-align: right;">233</td>
-<td style="text-align: right;">4</td>
+<td style="text-align: right;">535</td>
+<td style="text-align: right;">529</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">98.3</td>
-<td style="text-align: right;">95.7</td>
-<td style="text-align: right;">99.5</td>
+<td style="text-align: right;">98.9</td>
+<td style="text-align: right;">97.6</td>
+<td style="text-align: right;">99.6</td>
 </tr>
 </tbody>
 </table>
@@ -4581,16 +3532,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 13%">
+<col style="width: 7%">
 <col style="width: 6%">
-<col style="width: 18%">
-<col style="width: 26%">
-<col style="width: 15%">
-<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 27%">
+<col style="width: 16%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: right;">Outplants present</th>
 <th style="text-align: right;">Total outplant area (m2)</th>
@@ -4600,36 +3551,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">301</td>
-<td style="text-align: right;">0.196416</td>
+<td style="text-align: right;">554</td>
+<td style="text-align: right;">0.362963</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.04092</td>
+<td style="text-align: right;">0.07562</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
-<td style="text-align: right;">296</td>
-<td style="text-align: right;">0.601924</td>
+<td style="text-align: right;">530</td>
+<td style="text-align: right;">0.728634</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.12540</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">0.166547</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.03470</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: right;">234</td>
-<td style="text-align: right;">0.126709</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.02640</td>
+<td style="text-align: right;">0.15180</td>
 </tr>
 </tbody>
 </table>
@@ -4651,17 +3586,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 5%">
 <col style="width: 18%">
-<col style="width: 15%">
+<col style="width: 16%">
 <col style="width: 12%">
-<col style="width: 15%">
-<col style="width: 22%">
+<col style="width: 16%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: left;">Species</th>
 <th style="text-align: right;">Outplant abundance</th>
@@ -4672,175 +3607,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">26.6</td>
-<td style="text-align: right;">0.034268</td>
-<td style="text-align: right;">17.4</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">30.5</td>
+<td style="text-align: right;">0.077037</td>
+<td style="text-align: right;">21.2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: right;">0.022764</td>
-<td style="text-align: right;">11.6</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">0.047191</td>
+<td style="text-align: right;">13.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: right;">8.3</td>
+<td style="text-align: right;">4.5</td>
 <td style="text-align: right;">0.041344</td>
-<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">11.4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">12.0</td>
-<td style="text-align: right;">0.018376</td>
-<td style="text-align: right;">9.4</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: right;">22.4</td>
+<td style="text-align: right;">0.085694</td>
+<td style="text-align: right;">23.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">154</td>
-<td style="text-align: right;">51.2</td>
-<td style="text-align: right;">0.079642</td>
-<td style="text-align: right;">40.5</td>
+<td style="text-align: right;">192</td>
+<td style="text-align: right;">34.7</td>
+<td style="text-align: right;">0.111674</td>
+<td style="text-align: right;">30.8</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Unidentified coral</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.2</td>
 <td style="text-align: right;">0.000023</td>
 <td style="text-align: right;">0.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">27.0</td>
-<td style="text-align: right;">0.032588</td>
-<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">167</td>
+<td style="text-align: right;">31.5</td>
+<td style="text-align: right;">0.064634</td>
+<td style="text-align: right;">8.9</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">0.338428</td>
-<td style="text-align: right;">56.2</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">0.360947</td>
+<td style="text-align: right;">49.5</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella faveolata</td>
 <td style="text-align: right;">23</td>
-<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">4.3</td>
 <td style="text-align: right;">0.149702</td>
-<td style="text-align: right;">24.9</td>
+<td style="text-align: right;">20.5</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">12.2</td>
-<td style="text-align: right;">0.019649</td>
-<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">22.3</td>
+<td style="text-align: right;">0.069852</td>
+<td style="text-align: right;">9.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot C 0-0</td>
+<td style="text-align: left;">Plot C</td>
 <td style="text-align: left;">June</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">50.7</td>
-<td style="text-align: right;">0.061558</td>
-<td style="text-align: right;">10.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">89</td>
-<td style="text-align: right;">35.2</td>
-<td style="text-align: right;">0.042769</td>
-<td style="text-align: right;">25.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">0.024428</td>
-<td style="text-align: right;">14.7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">88</td>
-<td style="text-align: right;">34.8</td>
-<td style="text-align: right;">0.067319</td>
-<td style="text-align: right;">40.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">0.032031</td>
-<td style="text-align: right;">19.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Montastraea cavernosa</td>
-<td style="text-align: right;">87</td>
-<td style="text-align: right;">37.2</td>
-<td style="text-align: right;">0.032046</td>
-<td style="text-align: right;">25.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">15.0</td>
-<td style="text-align: right;">0.022519</td>
-<td style="text-align: right;">17.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Orbicella franksi</td>
-<td style="text-align: right;">82</td>
-<td style="text-align: right;">35.0</td>
-<td style="text-align: right;">0.050203</td>
-<td style="text-align: right;">39.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot C 1-0</td>
-<td style="text-align: left;">June</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">12.8</td>
-<td style="text-align: right;">0.021941</td>
-<td style="text-align: right;">17.3</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">34.0</td>
+<td style="text-align: right;">0.083498</td>
+<td style="text-align: right;">11.5</td>
 </tr>
 </tbody>
 </table>
@@ -4918,7 +3781,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
 <section id="overview-4" class="level3">
 <h3 class="anchored" data-anchor-id="overview-4">Overview</h3>
-<p>Plot E is currently the configured test plot for the outplant-only TagLab match workflow. Sections 1-0 and 1-1 are analyzed separately.</p>
+<p>Plot E is currently the longest configured plot for the outplant-only TagLab match workflow. Sections 1-0 and 1-1 remain visible in QA/QC, but the survivorship and cover results are combined into one Plot E result.</p>
 </section>
 <section id="data-status-4" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-4">Data Status</h3>
@@ -5190,7 +4053,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-10" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-10-tab">
 <section id="overview-6" class="level3">
 <h3 class="anchored" data-anchor-id="overview-6">Overview</h3>
-<p>Plot G now includes outplant match-file analyses for sections 0-0, 0-1, and 1-0. The November survey is pre-outplanting, April is the outplanting baseline, and May is the first post-outplant monitoring interval in the current config.</p>
+<p>Plot G now includes outplant match-file analyses for sections 0-0, 0-1, and 1-0, combined into one Plot G result. The November survey is pre-outplanting, April is the outplanting baseline, and May is the first post-outplant monitoring interval in the current config.</p>
 </section>
 <section id="data-status-6" class="level3">
 <h3 class="anchored" data-anchor-id="data-status-6">Data Status</h3>
@@ -5618,20 +4481,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 14%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 7%">
 <col style="width: 8%">
-<col style="width: 3%">
-<col style="width: 9%">
-<col style="width: 7%">
-<col style="width: 13%">
-<col style="width: 11%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 7%">
-<col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: left;">Baseline month</th>
 <th style="text-align: right;">Baseline n</th>
@@ -5645,75 +4508,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">100</td>
-<td style="text-align: right;">83.9</td>
+<td style="text-align: right;">92.1</td>
 <td style="text-align: right;">100</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">100</td>
-<td style="text-align: right;">83.9</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">29.2</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">29.2</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">83.9</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">83.9</td>
+<td style="text-align: right;">92.1</td>
 <td style="text-align: right;">100</td>
 </tr>
 </tbody>
@@ -5736,19 +4551,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 16%">
+<col style="width: 6%">
+<col style="width: 17%">
 <col style="width: 7%">
 <col style="width: 10%">
 <col style="width: 6%">
 <col style="width: 6%">
-<col style="width: 20%">
+<col style="width: 21%">
 <col style="width: 10%">
 <col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Interval</th>
 <th style="text-align: right;">Start n</th>
 <th style="text-align: right;">Survived n</th>
@@ -5761,69 +4576,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">November to April</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">NaN</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April to May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">45</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">100</td>
-<td style="text-align: right;">83.9</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">November to April</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">NaN</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April to May</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">29.2</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">November to April</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">NaN</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April to May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">83.9</td>
+<td style="text-align: right;">92.1</td>
 <td style="text-align: right;">100</td>
 </tr>
 </tbody>
@@ -5846,16 +4617,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 13%">
+<col style="width: 7%">
 <col style="width: 6%">
-<col style="width: 18%">
-<col style="width: 26%">
-<col style="width: 15%">
-<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 27%">
+<col style="width: 16%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: right;">Outplants present</th>
 <th style="text-align: right;">Total outplant area (m2)</th>
@@ -5865,52 +4636,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.028342</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0.059005</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00590</td>
+<td style="text-align: right;">0.01229</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.028128</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0.059253</td>
 <td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00586</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.004271</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00089</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.004190</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00087</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.026392</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00550</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">0.026936</td>
-<td style="text-align: right;">480</td>
-<td style="text-align: right;">0.00561</td>
+<td style="text-align: right;">0.01234</td>
 </tr>
 </tbody>
 </table>
@@ -5932,17 +4671,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 10%">
+<col style="width: 6%">
 <col style="width: 5%">
+<col style="width: 17%">
 <col style="width: 16%">
-<col style="width: 15%">
-<col style="width: 12%">
-<col style="width: 15%">
-<col style="width: 23%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Plot section</th>
+<th style="text-align: left;">Plot</th>
 <th style="text-align: left;">Month</th>
 <th style="text-align: left;">Species</th>
 <th style="text-align: right;">Outplant abundance</th>
@@ -5953,112 +4692,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.012811</td>
-<td style="text-align: right;">45.2</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">37.8</td>
+<td style="text-align: right;">0.029420</td>
+<td style="text-align: right;">49.9</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.015530</td>
-<td style="text-align: right;">54.8</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">62.2</td>
+<td style="text-align: right;">0.029585</td>
+<td style="text-align: right;">50.1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.013129</td>
-<td style="text-align: right;">46.7</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">37.8</td>
+<td style="text-align: right;">0.030114</td>
+<td style="text-align: right;">50.8</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plot G 0-0</td>
+<td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.014998</td>
-<td style="text-align: right;">53.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.002189</td>
-<td style="text-align: right;">51.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.002082</td>
-<td style="text-align: right;">48.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">0.002446</td>
-<td style="text-align: right;">58.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 0-1</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">66.7</td>
-<td style="text-align: right;">0.001744</td>
-<td style="text-align: right;">41.6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">42.9</td>
-<td style="text-align: right;">0.014420</td>
-<td style="text-align: right;">54.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">April</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">57.1</td>
-<td style="text-align: right;">0.011973</td>
-<td style="text-align: right;">45.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Orbicella annularis</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">42.9</td>
-<td style="text-align: right;">0.014539</td>
-<td style="text-align: right;">54.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot G 1-0</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: left;">Porites porites</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">57.1</td>
-<td style="text-align: right;">0.012398</td>
-<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">62.2</td>
+<td style="text-align: right;">0.029140</td>
+<td style="text-align: right;">49.2</td>
 </tr>
 </tbody>
 </table>

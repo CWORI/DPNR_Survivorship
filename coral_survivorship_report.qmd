@@ -65,7 +65,7 @@ source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
 
 This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, and the tables and figures rebuild automatically.
 
-The current test case is Plot E, with TagLab subsections tracked separately. Section 1-1 currently runs from May through November, and section 1-0 currently runs from May through August. The analysis tracks outplant survivorship, interval survival, coral cover, species prevalence, species cover composition, temperature, and plot-level depth metadata.
+The active outplant workflow now combines TagLab subsections into one plot-level result for each plot letter. Section-level information is still used for file intake and QA/QC, but survivorship, cover, species prevalence, and species cover composition are summarized as Plot C, Plot E, Plot G, and so on.
 
 The two recommended datasets to open first are:
 
@@ -272,7 +272,7 @@ Please make sure this is the repository you are adding too!
 ::: {.presentation-hidden}
 ### Workflow
 
-This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under `config/outplant_interval_files/`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces survivorship, cover, and species-composition outputs. Plot sections are analyzed separately so sections such as Plot E 1-0 and Plot E 1-1 do not get combined accidentally.
+This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under `config/outplant_interval_files/`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces plot-level survivorship, cover, and species-composition outputs. TagLab subsections remain available for QA/QC, but the main analysis combines them into one result per plot letter.
 
 The workflow is designed so future users can add new plots or month pairs by editing the config rather than changing analysis code.
 
@@ -375,7 +375,7 @@ outplant_shared_month_continuity_qa %>%
   )
 ```
 
-This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot section uses its first month with present outplants as the baseline, and later months report how many original baseline `Genet` IDs are still present.
+This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot uses the first month with present outplants as the baseline for each monitored subsection, then combines the monitored subsections into one plot-level result. If one subsection has not been monitored through a later month, that later month only uses the subsections with data instead of counting the unmonitored subsection as dead.
 :::
 
 ```{r}
@@ -401,7 +401,7 @@ outplant_cumulative_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
       "Cumulative deaths", "Surviving from baseline",
       "Cumulative survival (%)", "95% CI low", "95% CI high"
     )
@@ -493,7 +493,7 @@ outplant_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
       "Interval survival (%)", "95% CI low", "95% CI high"
     )
   )
@@ -542,7 +542,7 @@ outplant_cover_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot", "Month", "Outplants present", "Total outplant area (m2)",
       "Plot area (m2)", "Outplant cover (%)"
     )
   )
@@ -584,7 +584,7 @@ outplant_species_prevalence_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Plot", "Month", "Species", "Outplant abundance", "Prevalence (%)",
       "Outplant area (m2)", "Share of outplant cover (%)"
     )
   )
@@ -770,7 +770,7 @@ This section will point to Plot B processed datasets, summary tables, and figure
 
 ### Overview
 
-Plot C now includes outplant match-file analyses for sections 0-0 and 1-0. The November survey is pre-outplanting, April is the outplanting baseline, and the June survey is the first post-outplant monitoring interval in the current config.
+Plot C now includes outplant match-file analyses for sections 0-0 and 1-0, combined into one Plot C result. The November survey is pre-outplanting, April is the outplanting baseline, and the June survey is the first post-outplant monitoring interval in the current config.
 
 ### Data Status
 
@@ -919,7 +919,7 @@ outplant_cumulative_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
       "Cumulative deaths", "Surviving from baseline",
       "Cumulative survival (%)", "95% CI low", "95% CI high"
     )
@@ -962,7 +962,7 @@ outplant_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
       "Interval survival (%)", "95% CI low", "95% CI high"
     )
   )
@@ -992,7 +992,7 @@ outplant_cover_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot", "Month", "Outplants present", "Total outplant area (m2)",
       "Plot area (m2)", "Outplant cover (%)"
     )
   )
@@ -1031,7 +1031,7 @@ outplant_species_prevalence_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Plot", "Month", "Species", "Outplant abundance", "Prevalence (%)",
       "Outplant area (m2)", "Share of outplant cover (%)"
     )
   )
@@ -1109,7 +1109,7 @@ This section will point to Plot D processed datasets, summary tables, and figure
 
 ### Overview
 
-Plot E is currently the configured test plot for the outplant-only TagLab match workflow. Sections 1-0 and 1-1 are analyzed separately.
+Plot E is currently the longest configured plot for the outplant-only TagLab match workflow. Sections 1-0 and 1-1 remain visible in QA/QC, but the survivorship and cover results are combined into one Plot E result.
 
 ### Data Status
 
@@ -1243,7 +1243,7 @@ This section will point to Plot F processed datasets, summary tables, and figure
 
 ### Overview
 
-Plot G now includes outplant match-file analyses for sections 0-0, 0-1, and 1-0. The November survey is pre-outplanting, April is the outplanting baseline, and May is the first post-outplant monitoring interval in the current config.
+Plot G now includes outplant match-file analyses for sections 0-0, 0-1, and 1-0, combined into one Plot G result. The November survey is pre-outplanting, April is the outplanting baseline, and May is the first post-outplant monitoring interval in the current config.
 
 ### Data Status
 
@@ -1392,7 +1392,7 @@ outplant_cumulative_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
       "Cumulative deaths", "Surviving from baseline",
       "Cumulative survival (%)", "95% CI low", "95% CI high"
     )
@@ -1434,7 +1434,7 @@ outplant_survival_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
       "Interval survival (%)", "95% CI low", "95% CI high"
     )
   )
@@ -1464,7 +1464,7 @@ outplant_cover_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot", "Month", "Outplants present", "Total outplant area (m2)",
       "Plot area (m2)", "Outplant cover (%)"
     )
   )
@@ -1503,7 +1503,7 @@ outplant_species_prevalence_summary %>%
   ) %>%
   kable(
     col.names = c(
-      "Plot section", "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Plot", "Month", "Species", "Outplant abundance", "Prevalence (%)",
       "Outplant area (m2)", "Share of outplant cover (%)"
     )
   )
