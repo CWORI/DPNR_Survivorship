@@ -1053,7 +1053,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot uses the first month with present outplants as the baseline for each monitored subsection, then combines the monitored subsections into one plot-level result. If one subsection has not been monitored through a later month, that later month only uses the subsections with data instead of counting the unmonitored subsection as dead.</p>
+<p>This chunk summarizes cumulative outplant survivorship from the baseline month. Each plot uses the first month with present outplants as the baseline for each monitored subsection, then combines subsections only for months where every configured subsection for that plot is represented. Months with partial subsection coverage are kept in the section-level QA outputs, but are excluded from the full-plot cumulative curve so the denominator does not change through time.</p>
 </section>
 </div>
 <div class="cell">
@@ -1061,7 +1061,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 4%">
-<col style="width: 6%">
+<col style="width: 4%">
 <col style="width: 9%">
 <col style="width: 7%">
 <col style="width: 13%">
@@ -1159,42 +1159,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">83.3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">September</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">86.9</td>
-<td style="text-align: right;">75.8</td>
-<td style="text-align: right;">94.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">October</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">86.9</td>
-<td style="text-align: right;">75.8</td>
-<td style="text-align: right;">94.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plot E</td>
-<td style="text-align: left;">November</td>
-<td style="text-align: left;">May</td>
-<td style="text-align: right;">61</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">86.9</td>
-<td style="text-align: right;">75.8</td>
-<td style="text-align: right;">94.2</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">April</td>
 <td style="text-align: left;">April</td>
@@ -1206,7 +1170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">92.1</td>
 <td style="text-align: right;">100.0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Plot G</td>
 <td style="text-align: left;">May</td>
 <td style="text-align: left;">April</td>
