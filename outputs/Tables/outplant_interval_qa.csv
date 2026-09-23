@@ -1,6 +1,6 @@
 plot,plot_section,plot_section_label,interval_order,month_start,month_end,source_file,n_rows,n_missing_genet,n_missing_species,n_missing_tag,n_negative_area_start,n_negative_area_end,actions,split_fuse_events
 Plot A,0-0,Plot A 0-0,1,November,April,0-0_Coki_PlotA_Matches_20251114_20260421.csv,24,0,0,24,0,0,born,none
-Plot A,0-0,Plot A 0-0,2,April,June,0-0_Coki_PlotA_Matches_20260421_20260622.csv,24,0,0,24,0,0,dead,none
+Plot A,0-0,Plot A 0-0,2,April,June,0-0_Coki_PlotA_Matches_20260421_20260622.csv,24,0,0,24,0,0,grow; same; shrink,n/s
 Plot A,0-0,Plot A 0-0,3,June,August,0-0_Coki_PlotA_Matches_20260622_20260812.csv,24,0,0,24,0,0,grow; same,n/s
 Plot A,1-0,Plot A 1-0,1,November,April,1-0_Coki_PlotA_Survivorship_20251114_1-0-Coki_PlotA_Survivorship_20260421_1-0.csv,19,0,0,19,0,0,born,none
 Plot A,1-0,Plot A 1-0,2,April,June,1-0_Coki_PlotA_Survivorship_20260421_1-0-Coki_PlotA_Survivorship_20260622_1-0.csv,19,0,0,19,0,0,grow; same; shrink,n/s

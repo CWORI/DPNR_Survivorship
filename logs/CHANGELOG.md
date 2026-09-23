@@ -24,3 +24,11 @@
 - Replaced the homepage introductory sentence with plain language.
 - Replaced administrative metrics with baseline outplant total and monitored plot count.
 - Added dynamic cards for each plot's latest complete-section survivorship, baseline/survivor counts, and survey date; documented scope and partial-coverage limitations.
+
+## 2026-09-23 — Plot A 0-0 TagLab correction
+
+- Replaced the active Plot A 0-0 series with the corrected TagLab exports supplied in `Downloads/0-0/`.
+- Archived the superseded April–June and June–August exports in `archive/2026-09-23_plot_a_0-0_pre_correction/`.
+- Updated the intake manifest paths and SHA-256 hashes. The corrected shared April and June snapshots match exactly in Genet, species, and area.
+- Rebuilt the derived datasets and website. Plot A now retains 43 of 43 baseline outplants through August (100% cumulative survivorship); cover is 0.0111% in April, 0.0116% in June, and 0.0157% in August.
+- Validation confirmed that no non-Plot-A output-table rows changed and the project pre-push check passed.

@@ -35,15 +35,15 @@
 <polyline points='50.17,103.74 218.86,103.74 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='50.17,85.91 218.86,85.91 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='50.17,68.07 218.86,68.07 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<rect x='71.64' y='107.89' width='49.07' height='31.53' style='stroke-width: 1.16; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #1B9E77;' />
+<rect x='71.64' y='68.07' width='49.07' height='71.35' style='stroke-width: 1.16; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #1B9E77;' />
 <rect x='148.32' y='68.07' width='49.07' height='71.35' style='stroke-width: 1.16; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #1B9E77;' />
-<polyline points='90.05,96.52 102.31,96.52 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='96.18,96.52 96.18,118.67 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='90.05,118.67 102.31,118.67 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
+<polyline points='90.05,68.07 102.31,68.07 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
+<polyline points='96.18,68.07 96.18,73.93 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
+<polyline points='90.05,73.93 102.31,73.93 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
 <polyline points='166.72,68.07 178.99,68.07 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
 <polyline points='172.86,68.07 172.86,73.93 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
 <polyline points='166.72,73.93 178.99,73.93 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<text x='96.18' y='103.73' text-anchor='middle' style='font-size: 9.67px; font-family: "Arial";' textLength='27.42px' lengthAdjust='spacingAndGlyphs'>44.2%</text>
+<text x='96.18' y='63.90' text-anchor='middle' style='font-size: 9.67px; font-family: "Arial";' textLength='32.80px' lengthAdjust='spacingAndGlyphs'>100.0%</text>
 <text x='172.86' y='63.90' text-anchor='middle' style='font-size: 9.67px; font-family: "Arial";' textLength='32.80px' lengthAdjust='spacingAndGlyphs'>100.0%</text>
 </g>
 <g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHwzNDUuNjA=)'>

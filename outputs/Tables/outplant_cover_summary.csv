@@ -1,6 +1,6 @@
 plot,plot_section,plot_section_label,month_order,month,n_outplants_present,total_outplant_area_m2,plot_area_m2,percent_outplant_cover
 Plot A,all,Plot A,2,April,43,0.053387000000000004,480,0.011122291666666667
-Plot A,all,Plot A,3,June,19,0.022451999999999996,480,0.004677499999999999
+Plot A,all,Plot A,3,June,43,0.05565925000000001,480,0.011595677083333335
 Plot A,all,Plot A,4,August,43,0.0754965,480,0.0157284375
 Plot B,all,Plot B,2,April,43,0.05622525000000001,480,0.011713593750000003
 Plot B,all,Plot B,3,June,75,0.08043375000000003,480,0.016757031250000005

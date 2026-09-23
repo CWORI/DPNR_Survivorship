@@ -1,7 +1,7 @@
 plot,month_order,month,survey_date,n_plot_sections,plot_section_labels,plot_section,plot_section_label,baseline_month,baseline_date,n_baseline,n_died_interval,cumulative_deaths_observed,n_surviving_from_baseline,baseline_surviving_area_m2,expected_plot_sections,expected_plot_section_labels,percent_cumulative_survival,percent_cumulative_survival_low,percent_cumulative_survival_high
 Plot A,2,April,2026-04-21,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,0,0,43,0.053387000000000004,2,Plot A 0-0; Plot A 1-0,100,91.77888788458614,100
-Plot A,3,June,2026-06-22,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,24,24,19,0.022451999999999996,2,Plot A 0-0; Plot A 1-0,44.18604651162791,29.078117788106457,60.12461353915182
-Plot A,4,August,2026-08-12,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,0,24,19,0.030498499999999998,2,Plot A 0-0; Plot A 1-0,44.18604651162791,29.078117788106457,60.12461353915182
+Plot A,3,June,2026-06-22,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,0,0,43,0.05565924999999999,2,Plot A 0-0; Plot A 1-0,100,91.77888788458614,100
+Plot A,4,August,2026-08-12,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,0,0,43,0.0754965,2,Plot A 0-0; Plot A 1-0,100,91.77888788458614,100
 Plot B,2,April,2026-04-22,2,Plot B 0-0; Plot B 1-0,all,Plot B,April,2026-04-22,43,0,0,43,0.056225250000000004,2,Plot B 0-0; Plot B 1-0,100,91.77888788458614,100
 Plot B,3,June,2026-06-09,2,Plot B 0-0; Plot B 1-0,all,Plot B,April,2026-04-22,43,0,0,43,0.05944000000000001,2,Plot B 0-0; Plot B 1-0,100,91.77888788458614,100
 Plot B,4,August,2026-08-07,2,Plot B 0-0; Plot B 1-0,all,Plot B,April,2026-04-22,43,0,0,43,0.06890450000000001,2,Plot B 0-0; Plot B 1-0,100,91.77888788458614,100

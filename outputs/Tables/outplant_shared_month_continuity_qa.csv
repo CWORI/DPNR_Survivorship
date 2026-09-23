@@ -1,5 +1,6 @@
 plot,plot_section,plot_section_label,shared_month_order,shared_month,previous_end_n,next_start_n,in_both_snapshots,missing_from_next_start,new_in_next_start,species_mismatches,area_mismatches,max_abs_area_difference
 Plot A,0-0,Plot A 0-0,2,April,24,24,24,0,0,0,0,0
+Plot A,0-0,Plot A 0-0,3,June,24,24,24,0,0,0,0,0
 Plot A,1-0,Plot A 1-0,2,April,19,19,19,0,0,0,0,0
 Plot A,1-0,Plot A 1-0,3,June,19,19,19,0,0,0,0,0
 Plot B,0-0,Plot B 0-0,2,April,22,22,22,0,0,0,0,0

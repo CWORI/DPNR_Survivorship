@@ -1,6 +1,6 @@
 plot,interval_order,month_start,month_end,interval_label,plot_section,plot_section_label,n_start,n_survived,n_died,n_born,percent_survival,percent_survival_low,percent_survival_high
 Plot A,1,November,April,November to April,all,Plot A,0,0,0,43,NA,NA,NA
-Plot A,2,April,June,April to June,all,Plot A,43,19,24,0,44.18604651162791,29.078117788106457,60.12461353915182
+Plot A,2,April,June,April to June,all,Plot A,43,43,0,0,100,91.77888788458614,100
 Plot A,3,June,August,June to August,all,Plot A,43,43,0,0,100,91.77888788458614,100
 Plot B,1,November,April,November to April,all,Plot B,0,0,0,43,NA,NA,NA
 Plot B,2,April,June,April to June,all,Plot B,43,43,0,32,100,91.77888788458614,100

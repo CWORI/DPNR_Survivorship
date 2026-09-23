@@ -1,8 +1,8 @@
 plot,plot_section,plot_section_label,interval_order,month_start,month_end,species,n_start,n_survived,n_died,percent_survival,percent_survival_low,percent_survival_high,interval_label
 Plot A,0-0,Plot A 0-0,1,November,April,Orbicella annularis,0,0,0,NA,NA,NA,November to April
 Plot A,0-0,Plot A 0-0,1,November,April,Porites porites,0,0,0,NA,NA,NA,November to April
-Plot A,0-0,Plot A 0-0,2,April,June,Orbicella annularis,12,0,12,0,0,26.46484693970511,April to June
-Plot A,0-0,Plot A 0-0,2,April,June,Porites porites,12,0,12,0,0,26.46484693970511,April to June
+Plot A,0-0,Plot A 0-0,2,April,June,Orbicella annularis,12,12,0,100,73.53515306029489,100,April to June
+Plot A,0-0,Plot A 0-0,2,April,June,Porites porites,12,12,0,100,73.53515306029489,100,April to June
 Plot A,0-0,Plot A 0-0,3,June,August,Orbicella annularis,12,12,0,100,73.53515306029489,100,June to August
 Plot A,0-0,Plot A 0-0,3,June,August,Porites porites,12,12,0,100,73.53515306029489,100,June to August
 Plot A,1-0,Plot A 1-0,1,November,April,Orbicella annularis,0,0,0,NA,NA,NA,November to April
