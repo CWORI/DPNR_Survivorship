@@ -1,0 +1,255 @@
+Rendering project: /Users/spencerparr/Desktop/CWORI_RStudio/Coral_survivorship_project
+[1/3] index.qmd
+[2/3] all_coral_cover.qmd
+
+
+processing file: all_coral_cover.qmd
+1/17                                 
+2/17 [all-coral-setup]               
+3/17                                 
+4/17 [all-coral-plot-status]         
+5/17                                 
+6/17 [all-coral-cover-plot]          
+7/17                                 
+8/17 [all-coral-cover-table]         
+9/17                                 
+10/17 [all-coral-species-cover-plot]  
+11/17                                 
+12/17 [all-coral-latest-species-table]
+13/17                                 
+14/17 [all-coral-file-audit]          
+15/17                                 
+16/17 [all-coral-survey-qa]           
+17/17                                 
+output file: all_coral_cover.knit.md
+
+[3/3] coral_survivorship_report.qmd
+
+
+processing file: coral_survivorship_report.qmd
+1/215                                           
+2/215 [setup]                                   
+3/215                                           
+4/215 [current-intake-qa]                       
+5/215                                           
+6/215 [current-section-coverage]                
+7/215                                           
+8/215 [outplant-file-audit]                     
+9/215                                           
+10/215 [outplant-interval-qa]                    
+11/215                                           
+12/215 [outplant-unstable-genet-examples]        
+13/215                                           
+14/215 [outplant-shared-month-continuity]        
+15/215                                           
+16/215 [outplant-cumulative-survival-table]      
+17/215                                           
+18/215 [outplant-temperature-summary]            
+19/215                                           
+20/215 [outplant-plot-e-cumulative-survival-plot]
+21/215                                           
+22/215 [outplant-short-cumulative-survival-plot] 
+23/215                                           
+24/215 [outplant-interval-survival-table]        
+25/215                                           
+26/215 [outplant-plot-e-interval-survival-plot]  
+27/215                                           
+28/215 [outplant-short-interval-survival-plot]   
+29/215                                           
+30/215 [outplant-cover-table]                    
+31/215                                           
+32/215 [outplant-cover-plot]                     
+33/215                                           
+34/215 [outplant-species-prevalence-table]       
+35/215                                           
+36/215 [outplant-species-prevalence-plot]        
+37/215                                           
+38/215 [outplant-species-cover-plot]             
+39/215                                           
+40/215 [outplant-plot-depth-summary]             
+41/215                                           
+42/215 [outplant-species-depth-summary]          
+43/215                                           
+44/215 [plot-a-configured-files]                 
+45/215                                           
+46/215 [plot-a-depth-summary]                    
+47/215                                           
+48/215 [plot-a-file-audit]                       
+49/215                                           
+50/215 [plot-a-interval-qa]                      
+51/215                                           
+52/215 [plot-a-shared-month-continuity]          
+53/215                                           
+54/215 [plot-a-cumulative-survival-table]        
+55/215                                           
+56/215 [plot-a-cumulative-survival-plot]         
+57/215                                           
+58/215 [plot-a-interval-survival-table]          
+59/215                                           
+60/215 [plot-a-interval-survival-plot]           
+61/215                                           
+62/215 [plot-a-cover-table]                      
+63/215                                           
+64/215 [plot-a-cover-plot]                       
+65/215                                           
+66/215 [plot-a-species-prevalence-table]         
+67/215                                           
+68/215 [plot-a-species-prevalence-plot]          
+69/215                                           
+70/215 [plot-a-species-cover-plot]               
+71/215                                           
+72/215 [plot-b-configured-files]                 
+73/215                                           
+74/215 [plot-b-depth-summary]                    
+75/215                                           
+76/215 [plot-b-file-audit]                       
+77/215                                           
+78/215 [plot-b-interval-qa]                      
+79/215                                           
+80/215 [plot-b-shared-month-continuity]          
+81/215                                           
+82/215 [plot-b-cumulative-survival-table]        
+83/215                                           
+84/215 [plot-b-cumulative-survival-plot]         
+85/215                                           
+86/215 [plot-b-interval-survival-table]          
+87/215                                           
+88/215 [plot-b-interval-survival-plot]           
+89/215                                           
+90/215 [plot-b-cover-table]                      
+91/215                                           
+92/215 [plot-b-cover-plot]                       
+93/215                                           
+94/215 [plot-b-species-prevalence-table]         
+95/215                                           
+96/215 [plot-b-species-prevalence-plot]          
+97/215                                           
+98/215 [plot-b-species-cover-plot]               
+99/215                                           
+100/215 [plot-c-configured-files]                 
+101/215                                           
+102/215 [plot-c-depth-summary]                    
+103/215                                           
+104/215 [plot-c-file-audit]                       
+105/215                                           
+106/215 [plot-c-interval-qa]                      
+107/215                                           
+108/215 [plot-c-shared-month-continuity]          
+109/215                                           
+110/215 [plot-c-cumulative-survival-table]        
+111/215                                           
+112/215 [plot-c-cumulative-survival-plot]         
+113/215                                           
+114/215 [plot-c-interval-survival-table]          
+115/215                                           
+116/215 [plot-c-interval-survival-plot]           
+117/215                                           
+118/215 [plot-c-cover-table]                      
+119/215                                           
+120/215 [plot-c-cover-plot]                       
+121/215                                           
+122/215 [plot-c-species-prevalence-table]         
+123/215                                           
+124/215 [plot-c-species-prevalence-plot]          
+125/215                                           
+126/215 [plot-c-species-cover-plot]               
+127/215                                           
+128/215 [plot-d-configured-files]                 
+129/215                                           
+130/215 [plot-d-depth-summary]                    
+131/215                                           
+132/215 [plot-d-file-audit]                       
+133/215                                           
+134/215 [plot-d-interval-qa]                      
+135/215                                           
+136/215 [plot-d-shared-month-continuity]          
+137/215                                           
+138/215 [plot-d-cumulative-survival-table]        
+139/215                                           
+140/215 [plot-d-cumulative-survival-plot]         
+141/215                                           
+142/215 [plot-d-interval-survival-table]          
+143/215                                           
+144/215 [plot-d-interval-survival-plot]           
+145/215                                           
+146/215 [plot-d-cover-table]                      
+147/215                                           
+148/215 [plot-d-cover-plot]                       
+149/215                                           
+150/215 [plot-d-species-prevalence-table]         
+151/215                                           
+152/215 [plot-d-species-prevalence-plot]          
+153/215                                           
+154/215 [plot-d-species-cover-plot]               
+155/215                                           
+156/215 [plot-e-configured-files]                 
+157/215                                           
+158/215 [plot-e-depth-summary]                    
+159/215                                           
+160/215 [plot-g-configured-files]                 
+161/215                                           
+162/215 [plot-g-depth-summary]                    
+163/215                                           
+164/215 [plot-g-file-audit]                       
+165/215                                           
+166/215 [plot-g-interval-qa]                      
+167/215                                           
+168/215 [plot-g-shared-month-continuity]          
+169/215                                           
+170/215 [plot-g-cumulative-survival-table]        
+171/215                                           
+172/215 [plot-g-cumulative-survival-plot]         
+173/215                                           
+174/215 [plot-g-interval-survival-table]          
+175/215                                           
+176/215 [plot-g-interval-survival-plot]           
+177/215                                           
+178/215 [plot-g-cover-table]                      
+179/215                                           
+180/215 [plot-g-cover-plot]                       
+181/215                                           
+182/215 [plot-g-species-prevalence-table]         
+183/215                                           
+184/215 [plot-g-species-prevalence-plot]          
+185/215                                           
+186/215 [plot-g-species-cover-plot]               
+187/215                                           
+188/215 [plot-h-configured-files]                 
+189/215                                           
+190/215 [plot-h-depth-summary]                    
+191/215                                           
+192/215 [plot-h-file-audit]                       
+193/215                                           
+194/215 [plot-h-interval-qa]                      
+195/215                                           
+196/215 [plot-h-shared-month-continuity]          
+197/215                                           
+198/215 [plot-h-cumulative-survival-table]        
+199/215                                           
+200/215 [plot-h-cumulative-survival-plot]         
+201/215                                           
+202/215 [plot-h-interval-survival-table]          
+203/215                                           
+204/215 [plot-h-interval-survival-plot]           
+205/215                                           
+206/215 [plot-h-cover-table]                      
+207/215                                           
+208/215 [plot-h-cover-plot]                       
+209/215                                           
+210/215 [plot-h-species-prevalence-table]         
+211/215                                           
+212/215 [plot-h-species-prevalence-plot]          
+213/215                                           
+214/215 [plot-h-species-cover-plot]               
+215/215                                           
+output file: coral_survivorship_report.knit.md
+
+
+Output created: docs/index.html
+
+
+Rendered the pretty homepage successfully.
+Open this file to preview it locally:
+/Users/spencerparr/Desktop/CWORI_RStudio/Coral_survivorship_project/docs/index.html
+
+To update the public GitHub Pages site, commit and push the changed files.

@@ -1343,7 +1343,7 @@ outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary)
       y = "Cumulative survivorship",
       color = "Plot",
       title = "Short-monitoring cumulative survivorship",
-      subtitle = "Plot C and Plot G are shown by baseline/follow-up step so their early results are not stretched across the full date axis"
+      subtitle = "Short monitoring series are shown by baseline/follow-up step"
     ) +
     scale_color_brewer(palette = "Dark2") +
     outplant_theme()

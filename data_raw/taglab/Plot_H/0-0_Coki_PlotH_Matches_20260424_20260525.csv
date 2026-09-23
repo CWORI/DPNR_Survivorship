@@ -1,0 +1,9 @@
+Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
+0,0,0,20.08,21.4275,Orbicella_annularis,grow,n/s
+2,2,2,22.2025,24.01,Orbicella_annularis,grow,n/s
+6,6,6,8.5225,9.645,Porites_porites,grow,n/s
+1,1,1,14.55,14.6925,Orbicella_annularis,same,n/s
+3,3,3,12.5925,13.185,Orbicella_annularis,same,n/s
+7,7,7,5.2675,5.2375,Porites_porites,same,n/s
+4,4,4,11.6,11.025,Porites_porites,shrink,n/s
+5,5,5,9.2375,8.175,Porites_porites,shrink,n/s

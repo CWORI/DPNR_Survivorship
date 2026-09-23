@@ -1,1 +1,6 @@
 plot,plot_section,plot_section_label,genet,n_species,species_values,n_tags,tag_values,n_genotypes,genotype_values
+Plot E,0-0,Plot E 0-0,1,2,Orbicella annularis; Orbicella faveolata,0,,0,
+Plot E,0-0,Plot E 0-0,36,2,Empty; Orbicella annularis,0,,0,
+Plot E,0-0,Plot E 0-0,7,2,Orbicella faveolata; Orbicella franksi,0,,0,
+Plot E,0-1,Plot E 0-1,114,2,Acropora palmata; Orbicella annularis,0,,0,
+Plot E,0-1,Plot E 0-1,41,2,Acropora palmata; Unidentified coral,0,,0,

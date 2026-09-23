@@ -1,0 +1,167 @@
+Project: /Users/spencerparr/Desktop/CWORI_RStudio/Coral_survivorship_project
+Git remote origin: ssh://git@ssh.github.com:443/CWORI/DPNR_Survivorship.git
+
+Git status:
+## main...origin/main
+ M .gitignore
+ M R/03_outplant_interval_workflow.R
+ M README.md
+ M config/outplant_interval_files/Plot_A.csv
+ M config/outplant_interval_files/Plot_B.csv
+ M config/outplant_interval_files/Plot_C.csv
+ M config/outplant_interval_files/Plot_D.csv
+ M config/outplant_interval_files/Plot_E.csv
+ M config/outplant_interval_files/Plot_G.csv
+ M config/outplant_interval_files/Plot_H.csv
+ M coral_survivorship_report.qmd
+ M data_processed/outplant_coral_intervals.csv
+ M data_processed/outplant_interval_rows.csv
+ M data_processed/outplant_master_tracking_dataset.csv
+ M data_processed/outplant_monthly_observations.csv
+ M data_processed/outplant_section_coral_intervals.csv
+ M data_processed/outplant_section_monthly_observations.csv
+ D data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20251103_0-0-Coki_PlotC_Survivorship_20260403_0-0.csv
+ D data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20251103_1-0-Coki_PlotC_Survivorship_20260403_1-0.csv
+ D data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20260403_0-0-Coki_PlotC_Survivorship_20260606_0-0.csv
+ D data_raw/taglab/Plot_C/Plot_C_Coki_PlotC_Survivorship_20260403_1-0-Coki_PlotC_Survivorship_20260606_1-0.csv
+ D data_raw/taglab/Plot_E/PlotC_1-0_Coki_PlotE_20250507_1-0-Coki_PlotE_20250609_1-0.csv
+ D data_raw/taglab/Plot_E/PlotC_1-0_Coki_PlotE_20250609_1-0-Coki_PlotE_20250711_1-0.csv
+ D data_raw/taglab/Plot_E/PlotC_1-0_Coki_PlotE_20250711_1-0-Coki_PlotE_20250804_1-0.csv
+ D data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv
+ D data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv
+ D data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv
+ D data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv
+ D data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv
+ D data_raw/taglab/Plot_E/plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv
+ D data_raw/taglab/Plot_G/0-0_PlotG_Matches_November_April.csv
+ D data_raw/taglab/Plot_G/0-0_PlotG_matches_April_May.csv
+ D data_raw/taglab/Plot_G/0-1_PlotG_Matches_April_May.csv
+ D data_raw/taglab/Plot_G/0-1_PlotG_Matches_November_April.csv
+ D data_raw/taglab/Plot_G/Coki_PlotG_Survivorship_Coki_PlotG_20251107_1-0-Coki_PlotG_20260424_1-0.csv
+ D data_raw/taglab/Plot_G/Coki_PlotG_Survivorship_Coki_PlotG_20260424_1-0-Coki_PlotG_20260526_1-0.csv
+ D docs/.nojekyll
+ M docs/coral_survivorship_report.html
+ M docs/coral_survivorship_report_files/figure-html/outplant-cover-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/outplant-plot-e-cumulative-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/outplant-plot-e-interval-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/outplant-short-cumulative-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/outplant-short-interval-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/outplant-species-cover-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/outplant-species-prevalence-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-c-cover-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-c-cumulative-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-c-interval-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-c-species-cover-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-c-species-prevalence-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-g-cover-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-g-cumulative-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-g-interval-survival-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-g-species-cover-plot-1.svg
+ M docs/coral_survivorship_report_files/figure-html/plot-g-species-prevalence-plot-1.svg
+ M docs/index.html
+ M docs/search.json
+ M index.qmd
+ M outputs/Figures/outplant_cover_plot.png
+ M outputs/Figures/outplant_cumulative_survival_plot.png
+ M outputs/Figures/outplant_species_cover_plot.png
+ M outputs/Figures/outplant_species_prevalence_plot.png
+ M outputs/Figures/outplant_survival_plot.png
+ M outputs/Tables/outplant_cover_summary.csv
+ M outputs/Tables/outplant_cumulative_survival_summary.csv
+ M outputs/Tables/outplant_file_audit.csv
+ M outputs/Tables/outplant_genet_consistency_qa.csv
+ M outputs/Tables/outplant_interval_qa.csv
+ M outputs/Tables/outplant_master_summary_dataset.csv
+ M outputs/Tables/outplant_section_cumulative_survival_summary.csv
+ M outputs/Tables/outplant_section_species_survival_summary.csv
+ M outputs/Tables/outplant_section_survival_summary.csv
+ M outputs/Tables/outplant_shared_month_continuity_qa.csv
+ M outputs/Tables/outplant_species_depth_summary.csv
+ M outputs/Tables/outplant_species_prevalence_summary.csv
+ M outputs/Tables/outplant_species_survival_summary.csv
+ M outputs/Tables/outplant_survival_summary.csv
+ M outputs/Tables/outplant_unstable_genet_examples.csv
+?? archive/
+?? data_raw/taglab/Plot_A/
+?? data_raw/taglab/Plot_B/
+?? data_raw/taglab/Plot_C/0-0_Coki_PlotC_Matches_20251103_20260403.csv
+?? data_raw/taglab/Plot_C/0-0_Coki_PlotC_Matches_20260403_20260606.csv
+?? data_raw/taglab/Plot_C/0-0_Coki_PlotC_Matches_20260606_20260805.csv
+?? data_raw/taglab/Plot_C/1-0_Coki_PlotC_Matches_20251103_20260403.csv
+?? data_raw/taglab/Plot_C/1-0_Coki_PlotC_Matches_20260403_20260606.csv
+?? data_raw/taglab/Plot_C/1-0_Coki_PlotC_Survivorship_20260606_20260805.csv
+?? data_raw/taglab/Plot_D/
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250507_20250609.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250609_20250711.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250711_20250804.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250804_20250908.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250908_20251014.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20251014_20251106.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20251106_20251204.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20251204_20260120.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20260120_20260216.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20260216_20260325.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20260325_20260409.csv
+?? data_raw/taglab/Plot_E/0-0_PlotE_Matches_20260409_20260504.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20250507_20250609.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20250609_20250711.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20250711_20250804.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20250804_20250908.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20250908_20251014.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20251014_20251106.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20251106_20251204.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20251204_20260120.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20260120_20260216.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20260216_20260325.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20260325_20260409.csv
+?? data_raw/taglab/Plot_E/0-1_PlotE_Matches_20260409_20260504.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20250507_20250609.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20250609_20250711.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20250711_20250804.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20250804_20250908.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20250908_20251014.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20251014_20251106.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20251106_20251204.csv
+?? data_raw/taglab/Plot_E/1-0_PlotE_Matches_20251204_20260120.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20250507_20250609.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20250609_20250711.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20250711_20250804.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20250804_20250908.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20250908_20251014.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20251014_20251106.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20251106_20251204.csv
+?? data_raw/taglab/Plot_E/1-1_PlotE_Matches_20251204_20260120.csv
+?? data_raw/taglab/Plot_G/0-0_Coki_PlotG_Matches_20251107_20260424.csv
+?? data_raw/taglab/Plot_G/0-0_Coki_PlotG_Matches_20260424_20260526.csv
+?? data_raw/taglab/Plot_G/0-0_Coki_PlotG_Matches_20260526_20260813.csv
+?? data_raw/taglab/Plot_G/0-1_Coki_PlotG_Matches_20251107_20260424.csv
+?? data_raw/taglab/Plot_G/0-1_Coki_PlotG_Matches_20260424_20260526.csv
+?? data_raw/taglab/Plot_G/0-1_Coki_PlotG_Matches_20260526_20260813.csv
+?? data_raw/taglab/Plot_G/1-0_Coki_PlotG_20260526_1-0-Coki_PlotG_20260813_1-0.csv
+?? data_raw/taglab/Plot_G/1-0_Coki_PlotG_Matches_20251107_20260424.csv
+?? data_raw/taglab/Plot_G/1-0_Coki_PlotG_Matches_20260424_20260526.csv
+?? data_raw/taglab/Plot_H/
+?? data_raw/taglab/README.md
+?? docs/coral_survivorship_report_files/figure-html/plot-a-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-a-cumulative-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-a-interval-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-a-species-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-a-species-prevalence-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-b-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-b-cumulative-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-b-interval-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-b-species-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-b-species-prevalence-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-d-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-d-cumulative-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-d-interval-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-d-species-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-d-species-prevalence-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-h-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-h-cumulative-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-h-interval-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-h-species-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-h-species-prevalence-plot-1.svg
+?? logs/
+
+Pre-push check passed. Review, stage, commit, and push when ready.

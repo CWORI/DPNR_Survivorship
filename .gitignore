@@ -45,3 +45,6 @@ data_raw/Temperature/**
 !data_raw/Temperature/2025/21706349 Deep Nurser 2025-11-20 14_38_59 AST (Data AST).csv
 
 /.quarto/
+
+# All reviewed match exports from the September 2026 intake are active.
+!data_raw/taglab/Plot_*/*.csv

@@ -1,1 +1,7 @@
 plot,plot_section,plot_folder,file,month_start,month_end,month_start_date,month_end_date,file_type,match_type,plot_length_m,plot_width_m,taglab_area_units
+Plot D,0-0,Plot_D,0-0_Coki_PlotD_Matches_20251105_20260416.csv,November,April,2025-11-05,2026-04-16,csv,0-0,16,30,cm2
+Plot D,0-0,Plot_D,0-0_Coki_PlotD_Matches_20260416_20260608.csv,April,June,2026-04-16,2026-06-08,csv,0-0,16,30,cm2
+Plot D,0-1,Plot_D,0-1_Coki_PlotD_Matches_20251105_20260416.csv,November,April,2025-11-05,2026-04-16,csv,0-1,16,30,cm2
+Plot D,0-1,Plot_D,0-1_Coki_PlotD_Matches_20260416_20260608.csv,April,June,2026-04-16,2026-06-08,csv,0-1,16,30,cm2
+Plot D,1-0,Plot_D,1-0_Coki_PlotD_Matches_20251105_20260416.csv,November,April,2025-11-05,2026-04-16,csv,1-0,16,30,cm2
+Plot D,1-0,Plot_D,1-0_Coki_PlotD_Matches_20260416_20260608.csv,April,June,2026-04-16,2026-06-08,csv,1-0,16,30,cm2

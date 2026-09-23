@@ -20,17 +20,17 @@ toc: false
 <a class="site-button site-button--secondary" href="all_coral_cover.html">View All Coral Cover</a>
 </div>
 <div class="site-hero__chips" aria-label="Current report scope">
-<span>Plot C</span>
-<span>Plot E</span>
-<span>Plot G</span>
-<span>QA checked</span>
+<span>Plots A–E, G, H</span>
+<span>82 match files</span>
+<span>Updated September 23, 2026</span>
+<span>Section coverage varies</span>
 </div>
 </div>
 </section>
 
 <section class="home-band home-band--metrics" aria-label="Project snapshot">
 <div class="metric-strip">
-<div class="metric-tile metric-tile--teal"><span>3</span><p>active outplant plots</p></div>
+<div class="metric-tile metric-tile--teal"><span>7</span><p>active outplant plots</p></div>
 <div class="metric-tile metric-tile--coral"><span>8</span><p>plot config templates</p></div>
 <div class="metric-tile metric-tile--gold"><span>2</span><p>analysis workflows</p></div>
 <div class="metric-tile metric-tile--blue"><span>1</span><p>GitHub-ready site</p></div>

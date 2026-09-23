@@ -35,10 +35,12 @@
 <polyline points='50.17,177.38 443.41,177.38 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='50.17,121.40 443.41,121.40 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='50.17,65.41 443.41,65.41 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<rect x='93.07' y='65.41' width='128.70' height='84.60' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<rect x='93.07' y='150.01' width='128.70' height='139.34' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
-<rect x='271.82' y='65.41' width='128.70' height='84.60' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<rect x='271.82' y='150.01' width='128.70' height='139.34' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
+<rect x='79.67' y='65.41' width='88.48' height='89.58' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='79.67' y='154.99' width='88.48' height='134.37' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
+<rect x='202.55' y='65.41' width='88.48' height='89.58' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='202.55' y='154.99' width='88.48' height='134.37' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
+<rect x='325.44' y='65.41' width='88.48' height='86.52' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='325.44' y='151.94' width='88.48' height='137.42' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzMjQuMDA=)'>
 </g>
@@ -53,10 +55,12 @@
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzMjQuMDA=)'>
 <polyline points='50.17,289.36 443.41,289.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<polyline points='157.42,292.35 157.42,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='336.16,292.35 336.16,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<text x='157.42' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>April</text>
-<text x='336.16' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='18.12px' lengthAdjust='spacingAndGlyphs'>May</text>
+<polyline points='123.91,292.35 123.91,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='246.79,292.35 246.79,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='369.68,292.35 369.68,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text x='123.91' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>April</text>
+<text x='246.79' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='18.12px' lengthAdjust='spacingAndGlyphs'>May</text>
+<text x='369.68' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='29.87px' lengthAdjust='spacingAndGlyphs'>August</text>
 <polyline points='50.17,289.36 50.17,60.93 ' style='stroke-width: 1.16; stroke-linecap: square;' />
 <text x='44.79' y='292.80' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='13.87px' lengthAdjust='spacingAndGlyphs'>0%</text>
 <text x='44.79' y='236.81' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>25%</text>

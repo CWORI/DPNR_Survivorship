@@ -1,20 +1,83 @@
 plot,plot_section,plot_section_label,interval_order,month_start,month_end,source_file,n_rows,n_missing_genet,n_missing_species,n_missing_tag,n_negative_area_start,n_negative_area_end,actions,split_fuse_events
-Plot C,0-0,Plot C 0-0,1,November,April,Plot_C_Coki_PlotC_Survivorship_20251103_0-0-Coki_PlotC_Survivorship_20260403_0-0.csv,344,0,0,344,0,0,born,none
-Plot C,0-0,Plot C 0-0,2,April,June,Plot_C_Coki_PlotC_Survivorship_20260403_0-0-Coki_PlotC_Survivorship_20260606_0-0.csv,342,0,0,342,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
-Plot C,1-0,Plot C 1-0,1,November,April,Plot_C_Coki_PlotC_Survivorship_20251103_1-0-Coki_PlotC_Survivorship_20260403_1-0.csv,253,0,0,253,0,0,born,none
-Plot C,1-0,Plot C 1-0,2,April,June,Plot_C_Coki_PlotC_Survivorship_20260403_1-0-Coki_PlotC_Survivorship_20260606_1-0.csv,238,0,0,238,0,0,born; dead; grow; same; shrink,n/s; none
-Plot E,1-0,Plot E 1-0,1,May,June,PlotC_1-0_Coki_PlotE_20250507_1-0-Coki_PlotE_20250609_1-0.csv,272,0,0,272,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
-Plot E,1-0,Plot E 1-0,2,June,July,PlotC_1-0_Coki_PlotE_20250609_1-0-Coki_PlotE_20250711_1-0.csv,218,0,0,218,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
-Plot E,1-0,Plot E 1-0,3,July,August,PlotC_1-0_Coki_PlotE_20250711_1-0-Coki_PlotE_20250804_1-0.csv,177,0,0,177,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
-Plot E,1-1,Plot E 1-1,1,May,June,plotE1-1Matches_Coki_PlotE_20250507_1-1-Coki_PlotE_20250609_1-1.csv,76,0,0,76,0,0,dead; grow; same; shrink,n/s; none
-Plot E,1-1,Plot E 1-1,2,June,July,plotE1-1Matches_Coki_PlotE_20250609_1-1-Coki_PlotE_20250711_1-1.csv,70,0,0,70,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
-Plot E,1-1,Plot E 1-1,3,July,August,plotE1-1Matches_Coki_PlotE_20250711_1-1-Coki_PlotE_20250804_1-1.csv,65,0,0,65,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
-Plot E,1-1,Plot E 1-1,4,August,September,plotE1-1Matches_Coki_PlotE_20250804_1-1-Coki_PlotE_20250908_1-1.csv,62,0,0,62,0,0,grow; n/s; same; shrink,fuse; n/s
-Plot E,1-1,Plot E 1-1,5,September,October,plotE1-1Matches_Coki_PlotE_20250908_1-1-Coki_PlotE_20251014_1-1.csv,59,0,0,59,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
-Plot E,1-1,Plot E 1-1,6,October,November,plotE1-1Matches_Coki_PlotE_20251014_1-1-Coki_PlotE_20251106_1-1.csv,57,0,0,57,0,0,born; grow; n/s; same; shrink,fuse; n/s; none
-Plot G,0-0,Plot G 0-0,1,November,April,0-0_PlotG_Matches_November_April.csv,21,0,0,21,0,0,born,none
-Plot G,0-0,Plot G 0-0,2,April,May,0-0_PlotG_matches_April_May.csv,21,0,0,21,0,0,grow; same; shrink,n/s
-Plot G,0-1,Plot G 0-1,1,November,April,0-1_PlotG_Matches_November_April.csv,3,0,0,3,0,0,born,none
-Plot G,0-1,Plot G 0-1,2,April,May,0-1_PlotG_Matches_April_May.csv,3,0,0,3,0,0,grow; same; shrink,n/s
-Plot G,1-0,Plot G 1-0,1,November,April,Coki_PlotG_Survivorship_Coki_PlotG_20251107_1-0-Coki_PlotG_20260424_1-0.csv,21,0,0,21,0,0,born,none
-Plot G,1-0,Plot G 1-0,2,April,May,Coki_PlotG_Survivorship_Coki_PlotG_20260424_1-0-Coki_PlotG_20260526_1-0.csv,21,0,0,21,0,0,grow; same; shrink,n/s
+Plot A,0-0,Plot A 0-0,1,November,April,0-0_Coki_PlotA_Matches_20251114_20260421.csv,24,0,0,24,0,0,born,none
+Plot A,0-0,Plot A 0-0,2,April,June,0-0_Coki_PlotA_Matches_20260421_20260622.csv,24,0,0,24,0,0,dead,none
+Plot A,0-0,Plot A 0-0,3,June,August,0-0_Coki_PlotA_Matches_20260622_20260812.csv,24,0,0,24,0,0,grow; same,n/s
+Plot A,1-0,Plot A 1-0,1,November,April,1-0_Coki_PlotA_Survivorship_20251114_1-0-Coki_PlotA_Survivorship_20260421_1-0.csv,19,0,0,19,0,0,born,none
+Plot A,1-0,Plot A 1-0,2,April,June,1-0_Coki_PlotA_Survivorship_20260421_1-0-Coki_PlotA_Survivorship_20260622_1-0.csv,19,0,0,19,0,0,grow; same; shrink,n/s
+Plot A,1-0,Plot A 1-0,3,June,August,1-0_Coki_PlotA_Survivorship_20260622_1-0-Coki_PlotA_Survivorship_20260812_1-0.csv,19,0,0,19,0,0,grow; same,n/s
+Plot B,0-0,Plot B 0-0,1,November,April,0-0_PlotB_Matches_20251103_20260422.csv,22,0,0,22,0,0,born,none
+Plot B,0-0,Plot B 0-0,2,April,June,0-0_PlotB_Matches_20260422_20260609.csv,54,0,0,54,0,0,born; grow; same; shrink,n/s; none
+Plot B,0-0,Plot B 0-0,3,June,August,0-0_PlotB_Matches_20260609_20260807.csv,54,0,0,54,0,0,grow; same; shrink,n/s
+Plot B,1-0,Plot B 1-0,1,November,April,1-0_PlotB_Matches_20251103_20260422.csv,21,0,0,21,0,0,born,none
+Plot B,1-0,Plot B 1-0,2,April,June,1-0_PlotB_Matches_20260422_20260609.csv,21,0,0,21,0,0,grow; same; shrink,n/s
+Plot B,1-0,Plot B 1-0,3,June,August,1-0_PlotB_Matches_20260609_20260807.csv,21,0,0,21,0,0,grow; same; shrink,n/s
+Plot C,0-0,Plot C 0-0,1,November,April,0-0_Coki_PlotC_Matches_20251103_20260403.csv,344,0,0,344,0,0,born,none
+Plot C,0-0,Plot C 0-0,2,April,June,0-0_Coki_PlotC_Matches_20260403_20260606.csv,342,0,0,342,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot C,0-0,Plot C 0-0,3,June,August,0-0_Coki_PlotC_Matches_20260606_20260805.csv,300,0,0,300,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot C,1-0,Plot C 1-0,1,November,April,1-0_Coki_PlotC_Matches_20251103_20260403.csv,253,0,0,253,0,0,born,none
+Plot C,1-0,Plot C 1-0,2,April,June,1-0_Coki_PlotC_Matches_20260403_20260606.csv,238,0,0,238,0,0,born; dead; grow; same; shrink,n/s; none
+Plot C,1-0,Plot C 1-0,3,June,August,1-0_Coki_PlotC_Survivorship_20260606_20260805.csv,249,0,0,249,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot D,0-0,Plot D 0-0,1,November,April,0-0_Coki_PlotD_Matches_20251105_20260416.csv,234,0,0,234,0,0,born,none
+Plot D,0-0,Plot D 0-0,2,April,June,0-0_Coki_PlotD_Matches_20260416_20260608.csv,234,0,0,234,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot D,0-1,Plot D 0-1,1,November,April,0-1_Coki_PlotD_Matches_20251105_20260416.csv,1,0,0,1,0,0,born,none
+Plot D,0-1,Plot D 0-1,2,April,June,0-1_Coki_PlotD_Matches_20260416_20260608.csv,1,0,0,1,0,0,grow,none
+Plot D,1-0,Plot D 1-0,1,November,April,1-0_Coki_PlotD_Matches_20251105_20260416.csv,101,0,0,101,0,0,born,none
+Plot D,1-0,Plot D 1-0,2,April,June,1-0_Coki_PlotD_Matches_20260416_20260608.csv,101,0,0,101,0,0,grow; same; shrink,fuse; none
+Plot E,0-0,Plot E 0-0,1,May,June,0-0_PlotE_Matches_20250507_20250609.csv,238,0,0,238,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-0,Plot E 0-0,2,June,July,0-0_PlotE_Matches_20250609_20250711.csv,234,0,0,234,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-0,Plot E 0-0,3,July,August,0-0_PlotE_Matches_20250711_20250804.csv,207,0,0,207,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-0,Plot E 0-0,4,August,September,0-0_PlotE_Matches_20250804_20250908.csv,176,0,0,176,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-0,Plot E 0-0,5,September,October,0-0_PlotE_Matches_20250908_20251014.csv,159,0,0,159,0,0,born; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-0,Plot E 0-0,6,October,November,0-0_PlotE_Matches_20251014_20251106.csv,136,0,0,136,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-0,Plot E 0-0,7,November,December,0-0_PlotE_Matches_20251106_20251204.csv,137,0,0,137,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-0,Plot E 0-0,8,December,January,0-0_PlotE_Matches_20251204_20260120.csv,116,0,0,116,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-0,Plot E 0-0,9,January,February,0-0_PlotE_Matches_20260120_20260216.csv,98,0,0,98,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-0,Plot E 0-0,10,February,March,0-0_PlotE_Matches_20260216_20260325.csv,85,0,0,85,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-0,Plot E 0-0,11,March,April,0-0_PlotE_Matches_20260325_20260409.csv,350,0,0,350,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-0,Plot E 0-0,12,April,May,0-0_PlotE_Matches_20260409_20260504.csv,358,0,0,358,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-1,Plot E 0-1,1,May,June,0-1_PlotE_Matches_20250507_20250609.csv,215,0,0,215,0,0,grow; n/s; same; shrink,fuse; n/s
+Plot E,0-1,Plot E 0-1,2,June,July,0-1_PlotE_Matches_20250609_20250711.csv,208,0,0,208,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-1,Plot E 0-1,3,July,August,0-1_PlotE_Matches_20250711_20250804.csv,193,0,0,193,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-1,Plot E 0-1,4,August,September,0-1_PlotE_Matches_20250804_20250908.csv,180,0,0,180,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-1,Plot E 0-1,5,September,October,0-1_PlotE_Matches_20250908_20251014.csv,165,0,0,165,0,0,grow; n/s; same; shrink,fuse; n/s
+Plot E,0-1,Plot E 0-1,6,October,November,0-1_PlotE_Matches_20251014_20251106.csv,156,0,0,156,0,0,grow; n/s; same; shrink,fuse; n/s
+Plot E,0-1,Plot E 0-1,7,November,December,0-1_PlotE_Matches_20251106_20251204.csv,154,0,0,154,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-1,Plot E 0-1,8,December,January,0-1_PlotE_Matches_20251204_20260120.csv,144,0,0,144,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-1,Plot E 0-1,9,January,February,0-1_PlotE_Matches_20260120_20260216.csv,132,0,0,132,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,0-1,Plot E 0-1,10,February,March,0-1_PlotE_Matches_20260216_20260325.csv,114,0,0,114,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-1,Plot E 0-1,11,March,April,0-1_PlotE_Matches_20260325_20260409.csv,258,0,0,258,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,0-1,Plot E 0-1,12,April,May,0-1_PlotE_Matches_20260409_20260504.csv,248,0,0,248,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,1-0,Plot E 1-0,1,May,June,1-0_PlotE_Matches_20250507_20250609.csv,272,0,0,272,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,1-0,Plot E 1-0,2,June,July,1-0_PlotE_Matches_20250609_20250711.csv,222,0,0,222,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-0,Plot E 1-0,3,July,August,1-0_PlotE_Matches_20250711_20250804.csv,177,0,0,177,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-0,Plot E 1-0,4,August,September,1-0_PlotE_Matches_20250804_20250908.csv,168,0,0,168,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,1-0,Plot E 1-0,5,September,October,1-0_PlotE_Matches_20250908_20251014.csv,149,0,0,149,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,1-0,Plot E 1-0,6,October,November,1-0_PlotE_Matches_20251014_20251106.csv,139,0,0,139,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-0,Plot E 1-0,7,November,December,1-0_PlotE_Matches_20251106_20251204.csv,141,0,0,141,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-0,Plot E 1-0,8,December,January,1-0_PlotE_Matches_20251204_20260120.csv,121,0,0,121,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
+Plot E,1-1,Plot E 1-1,1,May,June,1-1_PlotE_Matches_20250507_20250609.csv,76,0,0,76,0,0,dead; grow; same; shrink,n/s; none
+Plot E,1-1,Plot E 1-1,2,June,July,1-1_PlotE_Matches_20250609_20250711.csv,70,0,0,70,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-1,Plot E 1-1,3,July,August,1-1_PlotE_Matches_20250711_20250804.csv,65,0,0,65,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-1,Plot E 1-1,4,August,September,1-1_PlotE_Matches_20250804_20250908.csv,62,0,0,62,0,0,grow; n/s; same; shrink,fuse; n/s
+Plot E,1-1,Plot E 1-1,5,September,October,1-1_PlotE_Matches_20250908_20251014.csv,59,0,0,59,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-1,Plot E 1-1,6,October,November,1-1_PlotE_Matches_20251014_20251106.csv,57,0,0,57,0,0,born; grow; n/s; same; shrink,fuse; n/s; none
+Plot E,1-1,Plot E 1-1,7,November,December,1-1_PlotE_Matches_20251106_20251204.csv,57,0,0,57,0,0,grow; n/s; same; shrink,fuse; n/s; split
+Plot E,1-1,Plot E 1-1,8,December,January,1-1_PlotE_Matches_20251204_20260120.csv,55,0,0,55,0,0,grow; n/s; same; shrink,fuse; n/s
+Plot G,0-0,Plot G 0-0,1,November,April,0-0_Coki_PlotG_Matches_20251107_20260424.csv,21,0,0,21,0,0,born,none
+Plot G,0-0,Plot G 0-0,2,April,May,0-0_Coki_PlotG_Matches_20260424_20260526.csv,21,0,0,21,0,0,grow; same; shrink,n/s
+Plot G,0-0,Plot G 0-0,3,May,August,0-0_Coki_PlotG_Matches_20260526_20260813.csv,21,0,0,21,0,0,grow; same; shrink,n/s
+Plot G,0-1,Plot G 0-1,1,November,April,0-1_Coki_PlotG_Matches_20251107_20260424.csv,3,0,0,3,0,0,born,none
+Plot G,0-1,Plot G 0-1,2,April,May,0-1_Coki_PlotG_Matches_20260424_20260526.csv,3,0,0,3,0,0,grow; same; shrink,n/s
+Plot G,0-1,Plot G 0-1,3,May,August,0-1_Coki_PlotG_Matches_20260526_20260813.csv,3,0,0,3,0,0,grow,n/s
+Plot G,1-0,Plot G 1-0,1,November,April,1-0_Coki_PlotG_Matches_20251107_20260424.csv,21,0,0,21,0,0,born,none
+Plot G,1-0,Plot G 1-0,2,April,May,1-0_Coki_PlotG_Matches_20260424_20260526.csv,21,0,0,21,0,0,grow; same; shrink,n/s
+Plot G,1-0,Plot G 1-0,3,May,August,1-0_Coki_PlotG_20260526_1-0-Coki_PlotG_20260813_1-0.csv,20,0,0,20,0,0,grow; same; shrink,n/s
+Plot H,0-0,Plot H 0-0,1,November,April,0-0_Coki_PlotH_Matches_20251107_20260424.csv,8,0,0,8,0,0,born,none
+Plot H,0-0,Plot H 0-0,2,April,May,0-0_Coki_PlotH_Matches_20260424_20260525.csv,8,0,0,8,0,0,grow; same; shrink,n/s
+Plot H,0-0,Plot H 0-0,3,May,August,0-0_Coki_PlotH_Matches_20260525_20260813.csv,8,0,0,8,0,0,grow; same; shrink,n/s
+Plot H,0-1,Plot H 0-1,1,November,April,0-1_Coki_PlotH_20251107_0-1-Coki_PlotH_20260424_0-1.csv,3,0,0,3,0,0,born,none
+Plot H,0-1,Plot H 0-1,2,April,May,0-1_Coki_PlotH_20260424_0-1-Coki_PlotH_20260525_0-1.csv,3,0,0,3,0,0,grow; same,n/s
+Plot H,0-1,Plot H 0-1,3,May,August,0-1_Coki_PlotH_20260525_0-1-Coki_PlotH_20260813_0-1.csv,3,0,0,3,0,0,grow; shrink,n/s
+Plot H,1-0,Plot H 1-0,1,November,April,1-0_Coki_PlotH_20251107_1-0-Coki_PlotH_20260424_1-0.csv,28,0,0,28,0,0,born,none
+Plot H,1-0,Plot H 1-0,2,April,May,1-0_Coki_PlotH_20260424_1-0-Coki_PlotH_20260525_1-0.csv,31,0,0,31,0,0,grow; n/s; same; shrink,fuse; n/s
+Plot H,1-0,Plot H 1-0,3,May,August,1-0_Coki_PlotH_20260525_1-0-Coki_PlotH_20260813_1-0.csv,32,0,0,32,0,0,dead; grow; n/s; same; shrink,n/s; none; split

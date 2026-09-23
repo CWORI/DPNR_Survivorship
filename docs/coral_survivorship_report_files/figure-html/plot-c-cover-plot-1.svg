@@ -35,11 +35,13 @@
 <polyline points='63.51,176.42 496.73,176.42 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='63.51,121.75 496.73,121.75 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='63.51,67.09 496.73,67.09 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='181.66,53.59 378.58,278.13 ' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
-<circle cx='181.66' cy='53.59' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
-<circle cx='378.58' cy='278.13' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
-<text x='181.66' y='47.07' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0756%</text>
-<text x='378.58' y='271.61' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0653%</text>
+<polyline points='144.74,53.59 280.12,278.13 415.50,213.96 ' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
+<circle cx='144.74' cy='53.59' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
+<circle cx='280.12' cy='278.13' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
+<circle cx='415.50' cy='213.96' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
+<text x='144.74' y='47.07' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0756%</text>
+<text x='280.12' y='271.61' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0653%</text>
+<text x='415.50' y='207.44' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0683%</text>
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzMjQuMDA=)'>
 <polyline points='63.51,289.36 63.51,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
@@ -54,10 +56,12 @@
 <polyline points='60.52,121.75 63.51,121.75 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
 <polyline points='60.52,67.09 63.51,67.09 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
 <polyline points='63.51,289.36 496.73,289.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<polyline points='181.66,292.35 181.66,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='378.58,292.35 378.58,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<text x='181.66' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>April</text>
-<text x='378.58' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='20.80px' lengthAdjust='spacingAndGlyphs'>June</text>
+<polyline points='144.74,292.35 144.74,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='280.12,292.35 280.12,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='415.50,292.35 415.50,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text x='144.74' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>April</text>
+<text x='280.12' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='20.80px' lengthAdjust='spacingAndGlyphs'>June</text>
+<text x='415.50' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='29.87px' lengthAdjust='spacingAndGlyphs'>August</text>
 <text x='280.12' y='315.37' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='80.02px' lengthAdjust='spacingAndGlyphs'>Survey month</text>
 <text transform='translate(14.62,165.86) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='124.67px' lengthAdjust='spacingAndGlyphs'>Outplant cover of plot</text>
 <rect x='508.69' y='142.61' width='61.33' height='46.50' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />

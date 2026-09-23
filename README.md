@@ -57,3 +57,28 @@ Rscript scripts/pre_push_check.R
 ```
 
 The check confirms the expected GitHub remote, important rendered pages, main output tables, and QA file-audit results. It also prints the current Git status so it is clear what still needs to be staged or committed.
+
+## September 23, 2026 data refresh
+
+The active TagLab inputs are the 82 user-supplied exports in `data_raw/taglab/`:
+42 from `Downloads/Matches/` and 40 Plot E exports from
+`OneDrive_1_9-23-2026.zip`. All input bytes are preserved; source paths, row counts,
+and SHA-256 hashes are recorded in `logs/2026-09-23_data_intake.csv`.
+Superseded C, E, and G inputs and the previous configs are retained only in
+`archive/2026-09-23_superseded/`; the workflow never reads that directory.
+
+Plots A, B, C, G, and H extend through August 2026; D extends through June 2026.
+Plot E sections 0-0 and 0-1 extend through May 2026, while 1-0 and 1-1 end in
+January 2026. Full-plot cumulative survival requires all configured sections;
+later E cover, interval survival, and species summaries use only available
+sections. Plot F has no supplied exports. No observations were fabricated.
+
+The user confirmed 16 by 30 m plot dimensions (480 m²). The existing cm² TagLab
+area convention is retained. See `data_raw/taglab/README.md` for fields and caveats.
+The website now includes populated tabs for all seven available plots; the
+all-coral and temperature sources were not replaced because no updates were supplied.
+
+QA found five Plot E Genets with changing species labels and shared-month
+continuity differences. These are preserved and exposed in the report, not
+silently corrected. Rerun with `bash scripts/render_site.sh`, then run
+`Rscript scripts/pre_push_check.R` before publishing.
