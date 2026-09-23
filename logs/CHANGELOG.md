@@ -18,3 +18,9 @@
 - Removed the two requested homepage metric tiles and the Publish Check card; adjusted the remaining cards to two columns.
 - Preserved source data and the existing numerical analysis.
 - Validation: successful three-page render and pre-push check; 49 report images loaded, 16 detail panels initially collapsed, Plot E source-file dropdown tested. Raw data and numerical output tables remain unchanged.
+
+## 2026-09-23 — Homepage monitoring overview
+
+- Replaced the homepage introductory sentence with plain language.
+- Replaced administrative metrics with baseline outplant total and monitored plot count.
+- Added dynamic cards for each plot's latest complete-section survivorship, baseline/survivor counts, and survey date; documented scope and partial-coverage limitations.

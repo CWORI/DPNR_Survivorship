@@ -666,3 +666,21 @@ button:focus,
   font-weight: 600;
   padding: 0.65rem 0;
 }
+
+.plot-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.plot-overview-card {
+  background: var(--cwori-panel);
+  border: 1px solid var(--cwori-border);
+  border-top: 4px solid var(--cwori-teal);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+.plot-overview-card h3 { margin: 0 0 1rem; }
+.plot-overview-value { font-size: 2.25rem; font-weight: 800; line-height: 1.15; }
+.plot-overview-value span { display: block; font-size: 1rem; font-weight: 400; }
+.plot-overview-date, .overview-note { font-size: 0.95rem; }
+.overview-note { margin-top: 1rem; }

@@ -1,0 +1,16 @@
+Project: /Users/spencerparr/Desktop/CWORI_RStudio/Coral_survivorship_project
+Git remote origin: ssh://git@ssh.github.com:443/CWORI/DPNR_Survivorship.git
+
+Git status:
+## main...origin/main
+ M README.md
+ M docs/index.html
+ M docs/search.json
+ M docs/site_libs/bootstrap/bootstrap.min.css
+ M index.qmd
+ M logs/CHANGELOG.md
+ M styles.scss
+?? logs/2026-09-23_homepage_check.log
+?? logs/2026-09-23_homepage_render.log
+
+Pre-push check passed. Review, stage, commit, and push when ready.

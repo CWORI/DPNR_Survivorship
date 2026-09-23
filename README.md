@@ -93,3 +93,9 @@ include non-outplanted colonies. Amber bars indicate partial section coverage;
 missing sections are not filled with zeros. Plot F remains unavailable because
 no match data were supplied. The homepage omits the workflow/site-count tiles
 and the Publish Check card; the local validation script remains available.
+
+The homepage rebuilds the existing Matches workflow and summarizes the latest
+complete-section cumulative-survival result per plot. Its overall count sums
+baseline Genets once per plot; it is not the historical number of planted
+fragments or a count of later additions. Cards show survey dates, baseline counts,
+survivor counts, and percentages. Different plots can have different latest dates.

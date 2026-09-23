@@ -4,6 +4,22 @@ page-layout: full
 toc: false
 ---
 
+```{r}
+#| label: homepage-overview-data
+#| include: false
+
+# Rebuild from configured Matches so the homepage cannot use stale summaries
+# when Quarto renders it before the detailed report.
+source("R/03_outplant_interval_workflow.R")
+home_latest <- outplant_cumulative_survival_summary |>
+  dplyr::group_by(plot) |>
+  dplyr::slice_max(survey_date, n = 1, with_ties = FALSE) |>
+  dplyr::ungroup() |>
+  dplyr::arrange(plot)
+home_baseline_total <- sum(home_latest$n_baseline)
+home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = TRUE)
+```
+
 <style>
 #title-block-header {
   display: none;
@@ -14,7 +30,7 @@ toc: false
 <div class="site-hero__content">
 <p class="site-kicker">Coral outplant monitoring</p>
 <h1 id="home-title">DPNR Outplant Analyses</h1>
-<p class="site-hero__lede">A field-ready reporting hub for coral survivorship, outplant cover, species composition, and whole-plot coral-cover checks.</p>
+<p class="site-hero__lede">See how outplanted corals are surviving and growing across our monitoring plots.</p>
 <div class="site-hero__actions" aria-label="Primary pages">
 <a class="site-button site-button--primary" href="coral_survivorship_report.html">Open Analysis Report</a>
 <a class="site-button site-button--secondary" href="all_coral_cover.html">View All Coral Cover</a>
@@ -28,11 +44,38 @@ toc: false
 </div>
 </section>
 
-<section class="home-band home-band--metrics" aria-label="Project snapshot">
+<section class="home-band home-band--metrics" aria-label="Outplant overview">
 <div class="metric-strip">
-<div class="metric-tile metric-tile--teal"><span>7</span><p>active outplant plots</p></div>
-<div class="metric-tile metric-tile--coral"><span>8</span><p>plot config templates</p></div>
+<div class="metric-tile metric-tile--teal"><span>`r home_count(home_baseline_total)`</span><p>outplants tracked at baseline</p></div>
+<div class="metric-tile metric-tile--coral"><span>`r nrow(home_latest)`</span><p>plots with monitoring data</p></div>
 </div>
+</section>
+
+<section class="home-band" aria-label="Survivorship by plot">
+<div class="home-section-heading">
+<h2>How each plot is doing</h2>
+<p>Survivorship is the percentage of baseline outplants still present at the latest survey with all configured sections represented.</p>
+</div>
+
+```{r}
+#| label: homepage-plot-cards
+#| echo: false
+#| results: asis
+
+cat('<div class="plot-overview-grid">')
+for (i in seq_len(nrow(home_latest))) {
+  plot_row <- home_latest[i, ]
+  cat(sprintf(
+    '<article class="plot-overview-card"><h3>%s</h3><p class="plot-overview-value">%.1f%%<span>survivorship</span></p><p><strong>%s</strong> of <strong>%s</strong> baseline outplants remain.</p><p class="plot-overview-date">Survey: %s</p></article>',
+    plot_row$plot, plot_row$percent_cumulative_survival,
+    home_count(plot_row$n_surviving_from_baseline), home_count(plot_row$n_baseline),
+    format(as.Date(plot_row$survey_date), "%d %b %Y")
+  ))
+}
+cat('</div>')
+```
+
+<p class="overview-note">Counts represent tracked Genets in the Matches data, not every fragment ever planted or later additions. Survey dates differ between plots. Plot E uses January 2026 because later surveys cover only part of the plot. Plot F has no supplied monitoring data. <a href="coral_survivorship_report.html">See the report for data-quality flags and full results.</a></p>
 </section>
 
 <section class="home-band home-band--intro" aria-label="Project overview">
