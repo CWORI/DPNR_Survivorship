@@ -9,3 +9,4 @@
 - Retained the existing analytical methods and cm² convention, with user-confirmed 16 × 30 m plot dimensions.
 - Preserved existing all-coral, temperature, and metadata inputs; none were superseded by this intake.
 - Rebuilt derived data, figures, tables, and the Quarto website. See the dated render and validation logs for observed outcomes.
+- Preserved `docs/.nojekyll` after Quarto cleanup and updated the render helper to recreate the GitHub Pages marker on future renders.

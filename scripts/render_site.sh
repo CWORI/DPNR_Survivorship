@@ -16,6 +16,9 @@ cd "${PROJECT_ROOT}"
 echo "Rendering project: ${PROJECT_ROOT}"
 "${QUARTO}" render
 
+# Quarto cleans docs during rendering; retain the GitHub Pages static-site marker.
+touch "${PROJECT_ROOT}/docs/.nojekyll"
+
 if [[ ! -f "${INDEX_HTML}" ]]; then
   echo "Render finished, but docs/index.html was not found."
   exit 1
