@@ -648,3 +648,21 @@ button:focus,
     padding: 0.85rem;
   }
 }
+
+// Two remaining homepage cards after the requested cleanup.
+.home-grid--two,
+.home-band--metrics .metric-strip {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 600px) {
+  .home-grid--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tab-content details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.65rem 0;
+}

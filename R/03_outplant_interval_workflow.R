@@ -1436,6 +1436,43 @@ outplant_plot_cover <- function(cover_summary) {
     outplant_theme()
 }
 
+# Bars sum the observed outplant area across species. Exact dates distinguish
+# surveys in the same named month in different years. Partial coverage remains
+# observed data and is labelled rather than filled with fabricated section values.
+outplant_plot_total_cover_bars <- function(cover_summary, section_observations, config) {
+  coverage <- section_observations %>%
+    distinct(plot, plot_section, month_order, survey_date) %>%
+    count(plot, month_order, survey_date, name = "observed_sections") %>%
+    left_join(
+      config %>% distinct(plot, plot_section) %>% count(plot, name = "expected_sections"),
+      by = "plot"
+    )
+
+  cover_summary %>%
+    left_join(coverage, by = c("plot", "month_order")) %>%
+    arrange(survey_date) %>%
+    mutate(
+      survey_label = factor(format(as.Date(survey_date), "%d %b %Y"),
+                            levels = unique(format(as.Date(survey_date), "%d %b %Y"))),
+      coverage_label = if_else(observed_sections == expected_sections,
+                               "All configured sections", "Partial section coverage")
+    ) %>%
+    ggplot(aes(x = survey_label, y = percent_outplant_cover, fill = coverage_label)) +
+    geom_col(width = 0.72) +
+    scale_fill_manual(values = c("All configured sections" = "#237C83",
+                                "Partial section coverage" = "#D58A37")) +
+    scale_y_continuous(labels = scales::label_percent(scale = 1),
+                       expand = expansion(mult = c(0, 0.08))) +
+    labs(
+      title = "Total outplant coral cover over time",
+      subtitle = "Summed observed outplant area across species / 480 m² plot area",
+      x = "Survey date", y = "Outplant cover of plot", fill = "Survey coverage",
+      caption = "Partial surveys include only available sections; missing sections are not zero cover."
+    ) +
+    outplant_theme() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "bottom")
+}
+
 outplant_plot_species_prevalence <- function(species_prevalence) {
   species_prevalence %>%
     mutate(month = fct_reorder(month, month_order)) %>%

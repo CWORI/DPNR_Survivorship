@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='648.00pt' height='396.00pt' viewBox='0 0 648.00 396.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw2NDguMDB8MC4wMHwzOTYuMDA='>
+    <rect x='0.00' y='0.00' width='648.00' height='396.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHwzOTYuMDA=)'>
+<rect x='-0.000000000000064' y='-0.00000000000011' width='648.00' height='396.00' style='stroke-width: 1.16; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNTguMTd8NjQyLjAyfDQyLjM2fDI2OS4zNQ=='>
+    <rect x='58.17' y='42.36' width='583.85' height='226.98' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNTguMTd8NjQyLjAyfDQyLjM2fDI2OS4zNQ==)'>
+<rect x='58.17' y='42.36' width='583.85' height='226.98' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='58.17,269.35 642.02,269.35 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='58.17,214.94 642.02,214.94 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='58.17,160.54 642.02,160.54 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='58.17,106.13 642.02,106.13 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='58.17,51.72 642.02,51.72 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<rect x='101.96' y='141.89' width='131.37' height='127.46' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #237C83;' />
+<rect x='284.41' y='87.01' width='131.37' height='182.33' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #237C83;' />
+<rect x='466.87' y='59.18' width='131.37' height='210.17' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #237C83;' />
+</g>
+<g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHwzOTYuMDA=)'>
+<polyline points='58.17,269.35 58.17,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<text x='52.79' y='272.79' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='32.54px' lengthAdjust='spacingAndGlyphs'>0.000%</text>
+<text x='52.79' y='218.38' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='32.54px' lengthAdjust='spacingAndGlyphs'>0.005%</text>
+<text x='52.79' y='163.98' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='32.54px' lengthAdjust='spacingAndGlyphs'>0.010%</text>
+<text x='52.79' y='109.57' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='32.54px' lengthAdjust='spacingAndGlyphs'>0.015%</text>
+<text x='52.79' y='55.17' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='32.54px' lengthAdjust='spacingAndGlyphs'>0.020%</text>
+<polyline points='55.18,269.35 58.17,269.35 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='55.18,214.94 58.17,214.94 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='55.18,160.54 58.17,160.54 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='55.18,106.13 58.17,106.13 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='55.18,51.72 58.17,51.72 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='58.17,269.35 642.02,269.35 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<polyline points='167.64,272.33 167.64,269.35 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='350.10,272.33 350.10,269.35 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='532.55,272.33 532.55,269.35 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text transform='translate(172.51,279.59) rotate(-45)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.27px' lengthAdjust='spacingAndGlyphs'>22 Apr 2026</text>
+<text transform='translate(354.96,279.59) rotate(-45)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.80px' lengthAdjust='spacingAndGlyphs'>09 Jun 2026</text>
+<text transform='translate(537.42,279.59) rotate(-45)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='54.41px' lengthAdjust='spacingAndGlyphs'>07 Aug 2026</text>
+<text x='350.10' y='331.20' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='68.04px' lengthAdjust='spacingAndGlyphs'>Survey date</text>
+<text transform='translate(14.62,155.85) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='124.67px' lengthAdjust='spacingAndGlyphs'>Outplant cover of plot</text>
+<rect x='233.48' y='345.80' width='233.24' height='29.24' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='239.46' y='364.74' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='96.07px' lengthAdjust='spacingAndGlyphs'>Survey coverage</text>
+<rect x='341.50' y='351.78' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='342.28' y='352.55' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #237C83;' />
+<text x='364.76' y='363.86' style='font-size: 9.60px; font-family: "Arial";' textLength='95.98px' lengthAdjust='spacingAndGlyphs'>All configured sections</text>
+<text x='58.17' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='354.17px' lengthAdjust='spacingAndGlyphs'>Summed observed outplant area across species / 480 m² plot area</text>
+<text x='58.17' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='237.18px' lengthAdjust='spacingAndGlyphs'>Total outplant coral cover over time</text>
+<text x='642.02' y='387.90' text-anchor='end' style='font-size: 9.60px; font-family: "Arial";' textLength='352.94px' lengthAdjust='spacingAndGlyphs'>Partial surveys include only available sections; missing sections are not zero cover.</text>
+</g>
+</svg>

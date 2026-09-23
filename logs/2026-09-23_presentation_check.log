@@ -1,0 +1,31 @@
+Project: /Users/spencerparr/Desktop/CWORI_RStudio/Coral_survivorship_project
+Git remote origin: ssh://git@ssh.github.com:443/CWORI/DPNR_Survivorship.git
+
+Git status:
+## main...origin/main
+ M R/03_outplant_interval_workflow.R
+ M README.md
+ M coral_survivorship_report.qmd
+ M docs/coral_survivorship_report.html
+ M docs/index.html
+ M docs/search.json
+ M docs/site_libs/bootstrap/bootstrap.min.css
+ M index.qmd
+ M logs/CHANGELOG.md
+ M styles.scss
+?? docs/coral_survivorship_report_files/figure-html/plot-a-total-cover-bars-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-b-total-cover-bars-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-c-total-cover-bars-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-d-total-cover-bars-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-e-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-e-cumulative-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-e-interval-survival-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-e-species-cover-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-e-species-prevalence-plot-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-e-total-cover-bars-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-g-total-cover-bars-1.svg
+?? docs/coral_survivorship_report_files/figure-html/plot-h-total-cover-bars-1.svg
+?? logs/2026-09-23_presentation_check.log
+?? logs/2026-09-23_presentation_render.log
+
+Pre-push check passed. Review, stage, commit, and push when ready.

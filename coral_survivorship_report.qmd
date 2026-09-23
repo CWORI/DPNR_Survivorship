@@ -734,6 +734,9 @@ Plot A combines the supplied TagLab sections into one plot-level result. Survey 
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 The active Plot A files are:
 
 ```{r}
@@ -749,6 +752,8 @@ outplant_config %>%
     )
   )
 ```
+
+</details>
 
 ### Depth Metadata
 
@@ -789,6 +794,9 @@ outplant_plot_depth_summary %>%
 ```
 
 ### QA/QC
+
+<details>
+<summary>View quality checks</summary>
 
 ```{r}
 #| label: plot-a-file-audit
@@ -852,6 +860,8 @@ outplant_shared_month_continuity_qa %>%
     )
   )
 ```
+
+</details>
 
 ### Cumulative Survivorship
 
@@ -971,6 +981,21 @@ outplant_plot_cover(
 )
 ```
 
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-a-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+#| fig-alt: "Bar chart of summed outplant coral cover for Plot A by survey date, distinguishing complete and partial section coverage."
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot A"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot A"),
+  outplant_config %>% filter(plot == "Plot A")
+)
+```
+
 ### Species Prevalence
 
 ```{r}
@@ -1036,6 +1061,9 @@ Plot B combines the supplied TagLab sections into one plot-level result. Survey 
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 The active Plot B files are:
 
 ```{r}
@@ -1051,6 +1079,8 @@ outplant_config %>%
     )
   )
 ```
+
+</details>
 
 ### Depth Metadata
 
@@ -1091,6 +1121,9 @@ outplant_plot_depth_summary %>%
 ```
 
 ### QA/QC
+
+<details>
+<summary>View quality checks</summary>
 
 ```{r}
 #| label: plot-b-file-audit
@@ -1154,6 +1187,8 @@ outplant_shared_month_continuity_qa %>%
     )
   )
 ```
+
+</details>
 
 ### Cumulative Survivorship
 
@@ -1273,6 +1308,21 @@ outplant_plot_cover(
 )
 ```
 
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-b-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+#| fig-alt: "Bar chart of summed outplant coral cover for Plot B by survey date, distinguishing complete and partial section coverage."
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot B"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot B"),
+  outplant_config %>% filter(plot == "Plot B")
+)
+```
+
 ### Species Prevalence
 
 ```{r}
@@ -1338,6 +1388,9 @@ Plot C now includes outplant match-file analyses for sections 0-0 and 1-0, combi
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 The active Plot C files are:
 
 ```{r}
@@ -1353,6 +1406,8 @@ outplant_config %>%
     )
   )
 ```
+
+</details>
 
 ### Depth Metadata
 
@@ -1393,6 +1448,9 @@ outplant_plot_depth_summary %>%
 ```
 
 ### QA/QC
+
+<details>
+<summary>View quality checks</summary>
 
 ```{r}
 #| label: plot-c-file-audit
@@ -1456,6 +1514,8 @@ outplant_shared_month_continuity_qa %>%
     )
   )
 ```
+
+</details>
 
 ### Cumulative Survivorship
 
@@ -1575,6 +1635,21 @@ outplant_plot_cover(
 )
 ```
 
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-c-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+#| fig-alt: "Bar chart of summed outplant coral cover for Plot C by survey date, distinguishing complete and partial section coverage."
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot C"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot C"),
+  outplant_config %>% filter(plot == "Plot C")
+)
+```
+
 ### Species Prevalence
 
 ```{r}
@@ -1640,6 +1715,9 @@ Plot D combines the supplied TagLab sections into one plot-level result. Survey 
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 The active Plot D files are:
 
 ```{r}
@@ -1655,6 +1733,8 @@ outplant_config %>%
     )
   )
 ```
+
+</details>
 
 ### Depth Metadata
 
@@ -1695,6 +1775,9 @@ outplant_plot_depth_summary %>%
 ```
 
 ### QA/QC
+
+<details>
+<summary>View quality checks</summary>
 
 ```{r}
 #| label: plot-d-file-audit
@@ -1758,6 +1841,8 @@ outplant_shared_month_continuity_qa %>%
     )
   )
 ```
+
+</details>
 
 ### Cumulative Survivorship
 
@@ -1877,6 +1962,21 @@ outplant_plot_cover(
 )
 ```
 
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-d-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+#| fig-alt: "Bar chart of summed outplant coral cover for Plot D by survey date, distinguishing complete and partial section coverage."
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot D"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot D"),
+  outplant_config %>% filter(plot == "Plot D")
+)
+```
+
 ### Species Prevalence
 
 ```{r}
@@ -1942,6 +2042,9 @@ Plot E is currently the longest configured plot for the outplant-only TagLab mat
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 The active Plot E files are:
 
 ```{r}
@@ -1958,9 +2061,9 @@ outplant_config %>%
   )
 ```
 
-### Depth Metadata
+</details>
 
-The Plot E depth summary is based on the four corner markers in `data_raw/metadata/Coordinates_Depths.csv`. These depths describe the plot-level setting for the active outplant workflow.
+### Depth Metadata
 
 ```{r}
 #| label: plot-e-depth-summary
@@ -2000,27 +2103,259 @@ outplant_plot_depth_summary %>%
 
 ### QA/QC
 
-The full Plot E QA/QC tables are shown in the Main Work Flow tab. These include file checks, interval QA, Genet consistency, and shared-month continuity.
+<details>
+<summary>View quality checks</summary>
+
+```{r}
+#| label: plot-e-file-audit
+
+outplant_file_audit %>%
+  filter(plot == "Plot E") %>%
+  select(plot, plot_section, month_start, month_end, match_type, file, file_exists) %>%
+  kable(
+    col.names = c("Plot", "Section", "Start month", "End month", "Match type", "File", "File exists")
+  )
+```
+
+```{r}
+#| label: plot-e-interval-qa
+
+outplant_interval_qa %>%
+  filter(plot == "Plot E") %>%
+  select(
+    plot_section,
+    month_start,
+    month_end,
+    n_rows,
+    n_missing_genet,
+    n_missing_species,
+    n_negative_area_start,
+    n_negative_area_end,
+    actions,
+    split_fuse_events
+  ) %>%
+  kable(
+    col.names = c(
+      "Section", "Start month", "End month", "Rows", "Missing Genet", "Missing species",
+      "Negative start area", "Negative end area", "Actions", "Split/fuse events"
+    )
+  )
+```
+
+```{r}
+#| label: plot-e-shared-month-continuity
+
+outplant_shared_month_continuity_qa %>%
+  filter(plot == "Plot E") %>%
+  select(
+    plot_section,
+    shared_month,
+    previous_end_n,
+    next_start_n,
+    in_both_snapshots,
+    missing_from_next_start,
+    new_in_next_start,
+    species_mismatches,
+    area_mismatches,
+    max_abs_area_difference
+  ) %>%
+  mutate(max_abs_area_difference = round(max_abs_area_difference, 4)) %>%
+  kable(
+    col.names = c(
+      "Section", "Shared month", "Previous file end n", "Next file start n",
+      "In both", "Missing from next start", "New in next start",
+      "Species mismatches", "Area mismatches", "Max area difference"
+    )
+  )
+```
+
+</details>
 
 ### Cumulative Survivorship
 
-The Plot E cumulative survivorship table and figure are shown in the Main Work Flow tab.
+```{r}
+#| label: plot-e-cumulative-survival-table
+
+outplant_cumulative_survival_summary %>%
+  filter(plot == "Plot E") %>%
+  select(
+    plot_section_label,
+    month,
+    baseline_month,
+    n_baseline,
+    n_died_interval,
+    cumulative_deaths_observed,
+    n_surviving_from_baseline,
+    percent_cumulative_survival,
+    percent_cumulative_survival_low,
+    percent_cumulative_survival_high
+  ) %>%
+  mutate(
+    percent_cumulative_survival = round(percent_cumulative_survival, 1),
+    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
+    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
+      "Cumulative deaths", "Surviving from baseline",
+      "Cumulative survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+```{r}
+#| label: plot-e-cumulative-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+#| fig-alt: "Line plot of Plot E cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+
+outplant_plot_cumulative_survival(
+  outplant_cumulative_survival_summary %>% filter(plot == "Plot E"),
+  outplant_daily_temperature_summary
+)
+```
 
 ### Interval Survivorship
 
-The Plot E interval survivorship table and figure are shown in the Main Work Flow tab.
+```{r}
+#| label: plot-e-interval-survival-table
+
+outplant_survival_summary %>%
+  filter(plot == "Plot E") %>%
+  select(
+    plot_section_label,
+    interval_label,
+    n_start,
+    n_survived,
+    n_died,
+    n_born,
+    percent_survival,
+    percent_survival_low,
+    percent_survival_high
+  ) %>%
+  mutate(
+    percent_survival = round(percent_survival, 1),
+    percent_survival_low = round(percent_survival_low, 1),
+    percent_survival_high = round(percent_survival_high, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
+      "Interval survival (%)", "95% CI low", "95% CI high"
+    )
+  )
+```
+
+```{r}
+#| label: plot-e-interval-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+#| fig-alt: "Line plot of Plot E interval survivorship between adjacent survey months with confidence intervals."
+
+outplant_plot_interval_survival(
+  outplant_survival_summary %>% filter(plot == "Plot E")
+)
+```
 
 ### Coral Cover
 
-The Plot E outplant cover table and figure are shown in the Main Work Flow tab.
+```{r}
+#| label: plot-e-cover-table
+
+outplant_cover_summary %>%
+  filter(plot == "Plot E") %>%
+  select(plot_section_label, month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) %>%
+  mutate(
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_outplant_cover = round(percent_outplant_cover, 5)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Month", "Outplants present", "Total outplant area (m2)",
+      "Plot area (m2)", "Outplant cover (%)"
+    )
+  )
+```
+
+```{r}
+#| label: plot-e-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+#| fig-alt: "Line plot of Plot E outplant cover through time as a percent of plot area."
+
+outplant_plot_cover(
+  outplant_cover_summary %>% filter(plot == "Plot E")
+)
+```
+
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-e-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+#| fig-alt: "Bar chart of summed outplant coral cover for Plot E by survey date, distinguishing complete and partial section coverage."
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot E"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot E"),
+  outplant_config %>% filter(plot == "Plot E")
+)
+```
 
 ### Species Prevalence
 
-The Plot E species prevalence table and figure are shown in the Main Work Flow tab.
+```{r}
+#| label: plot-e-species-prevalence-table
+
+outplant_species_prevalence_summary %>%
+  filter(plot == "Plot E") %>%
+  select(
+    plot_section_label,
+    month,
+    species,
+    n_outplants,
+    percent_prevalence,
+    total_outplant_area_m2,
+    percent_cover_within_outplants
+  ) %>%
+  mutate(
+    percent_prevalence = round(percent_prevalence, 1),
+    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+    percent_cover_within_outplants = round(percent_cover_within_outplants, 1)
+  ) %>%
+  kable(
+    col.names = c(
+      "Plot", "Month", "Species", "Outplant abundance", "Prevalence (%)",
+      "Outplant area (m2)", "Share of outplant cover (%)"
+    )
+  )
+```
+
+```{r}
+#| label: plot-e-species-prevalence-plot
+#| fig-width: 8
+#| fig-height: 4.5
+#| fig-alt: "Stacked bar plot of Plot E outplant species prevalence by survey month."
+
+outplant_plot_species_prevalence(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot E")
+)
+```
 
 ### Species Cover Composition
 
-The Plot E species cover-composition figure is shown in the Main Work Flow tab.
+```{r}
+#| label: plot-e-species-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+#| fig-alt: "Stacked bar plot of Plot E outplant cover composition by species and survey month."
+
+outplant_plot_species_cover(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot E")
+)
+```
 
 ### Downloads
 
@@ -2034,7 +2369,12 @@ Plot F is included as a placeholder for future outplant match-file analyses.
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 No Plot F outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_F.csv`, then render this report to populate this tab through the same workflow.
+
+</details>
 
 ### Depth Metadata
 
@@ -2042,7 +2382,12 @@ This section will show Plot F corner-marker depth summaries and plot-level depth
 
 ### QA/QC
 
+<details>
+<summary>View quality checks</summary>
+
 This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot F data are added.
+
+</details>
 
 ### Cumulative Survivorship
 
@@ -2076,6 +2421,9 @@ Plot G now includes outplant match-file analyses for sections 0-0, 0-1, and 1-0,
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 The active Plot G files are:
 
 ```{r}
@@ -2091,6 +2439,8 @@ outplant_config %>%
     )
   )
 ```
+
+</details>
 
 ### Depth Metadata
 
@@ -2131,6 +2481,9 @@ outplant_plot_depth_summary %>%
 ```
 
 ### QA/QC
+
+<details>
+<summary>View quality checks</summary>
 
 ```{r}
 #| label: plot-g-file-audit
@@ -2194,6 +2547,8 @@ outplant_shared_month_continuity_qa %>%
     )
   )
 ```
+
+</details>
 
 ### Cumulative Survivorship
 
@@ -2312,6 +2667,21 @@ outplant_plot_cover(
 )
 ```
 
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-g-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+#| fig-alt: "Bar chart of summed outplant coral cover for Plot G by survey date, distinguishing complete and partial section coverage."
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot G"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot G"),
+  outplant_config %>% filter(plot == "Plot G")
+)
+```
+
 ### Species Prevalence
 
 ```{r}
@@ -2377,6 +2747,9 @@ Plot H combines the supplied TagLab sections into one plot-level result. Survey 
 
 ### Data Status
 
+<details>
+<summary>View source files and survey dates</summary>
+
 The active Plot H files are:
 
 ```{r}
@@ -2392,6 +2765,8 @@ outplant_config %>%
     )
   )
 ```
+
+</details>
 
 ### Depth Metadata
 
@@ -2432,6 +2807,9 @@ outplant_plot_depth_summary %>%
 ```
 
 ### QA/QC
+
+<details>
+<summary>View quality checks</summary>
 
 ```{r}
 #| label: plot-h-file-audit
@@ -2495,6 +2873,8 @@ outplant_shared_month_continuity_qa %>%
     )
   )
 ```
+
+</details>
 
 ### Cumulative Survivorship
 
@@ -2611,6 +2991,21 @@ outplant_cover_summary %>%
 
 outplant_plot_cover(
   outplant_cover_summary %>% filter(plot == "Plot H")
+)
+```
+
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-h-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+#| fig-alt: "Bar chart of summed outplant coral cover for Plot H by survey date, distinguishing complete and partial section coverage."
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot H"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot H"),
+  outplant_config %>% filter(plot == "Plot H")
 )
 ```
 

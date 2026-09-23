@@ -82,3 +82,14 @@ QA found five Plot E Genets with changing species labels and shared-month
 continuity differences. These are preserved and exposed in the report, not
 silently corrected. Rerun with `bash scripts/render_site.sh`, then run
 `Rscript scripts/pre_push_check.R` before publishing.
+
+## Website presentation
+
+Each populated plot tab displays its own figures, including Plot E. Source-file
+lists and QA/QC tables are collapsed in expandable details. Each available plot
+also has a total **outplant** cover bar chart by exact survey date, calculated
+from the existing summed outplant areas divided by 480 m². These charts do not
+include non-outplanted colonies. Amber bars indicate partial section coverage;
+missing sections are not filled with zeros. Plot F remains unavailable because
+no match data were supplied. The homepage omits the workflow/site-count tiles
+and the Publish Check card; the local validation script remains available.
