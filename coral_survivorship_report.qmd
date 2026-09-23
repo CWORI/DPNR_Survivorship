@@ -639,7 +639,7 @@ This chunk plots species prevalence through time using counts of present outplan
 ```{r}
 #| label: outplant-species-prevalence-plot
 #| fig-width: 8
-#| fig-height: 4.8
+#| fig-height: 10
 #| fig-alt: "Stacked bar plot of outplant species prevalence by survey month, showing each species as a share of present outplant annotations."
 
 outplant_species_prevalence_plot
@@ -652,7 +652,7 @@ This chunk plots each species' share of total outplant cover through time. It co
 ```{r}
 #| label: outplant-species-cover-plot
 #| fig-width: 8
-#| fig-height: 4.8
+#| fig-height: 10
 #| fig-alt: "Stacked bar plot of outplant cover composition by survey month, showing each species as a share of summed outplant cover."
 
 outplant_species_cover_plot

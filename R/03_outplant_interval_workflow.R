@@ -711,13 +711,13 @@ outplant_summarize_cover <- function(monthly_observations) {
 outplant_summarize_species_prevalence <- function(monthly_observations) {
   monthly_observations %>%
     filter(present, !is.na(species)) %>%
-    group_by(plot, plot_section, plot_section_label, month_order, month, species) %>%
+    group_by(plot, plot_section, plot_section_label, month_order, month, survey_date, species) %>%
     summarise(
       n_outplants = n(),
       total_outplant_area_m2 = sum(area_m2, na.rm = TRUE),
       .groups = "drop"
     ) %>%
-    group_by(plot, plot_section, plot_section_label, month_order, month) %>%
+    group_by(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
     mutate(
       total_outplants_month = sum(n_outplants),
       percent_prevalence = 100 * n_outplants / total_outplants_month,
@@ -1334,9 +1334,10 @@ outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary)
     geom_text(aes(label = sprintf("%.1f%%", percent_cumulative_survival)), vjust = -1, size = 3.4) +
     facet_wrap(vars(plot), scales = "free_x") +
     scale_y_continuous(
-      limits = c(0, 100),
+      limits = c(0, 118),
+      breaks = c(0, 25, 50, 75, 100),
       labels = scales::label_percent(scale = 1),
-      expand = expansion(mult = c(0.02, 0.08))
+      expand = expansion(mult = c(0.02, 0.02))
     ) +
     labs(
       x = "Monitoring step",
@@ -1401,9 +1402,10 @@ outplant_plot_short_interval_survival <- function(survival_summary) {
     ) +
     facet_wrap(vars(plot), scales = "free_x") +
     scale_y_continuous(
-      limits = c(0, 100),
+      limits = c(0, 118),
+      breaks = c(0, 25, 50, 75, 100),
       labels = scales::label_percent(scale = 1),
-      expand = expansion(mult = c(0.02, 0.1))
+      expand = expansion(mult = c(0.02, 0.02))
     ) +
     labs(
       x = "Survey interval",
@@ -1475,44 +1477,62 @@ outplant_plot_total_cover_bars <- function(cover_summary, section_observations, 
 
 outplant_plot_species_prevalence <- function(species_prevalence) {
   species_prevalence %>%
-    mutate(month = fct_reorder(month, month_order)) %>%
-    ggplot(aes(x = month, y = percent_prevalence, fill = species)) +
+    arrange(survey_date) %>%
+    mutate(
+      survey_label = factor(
+        format(as.Date(survey_date), "%d %b %Y"),
+        levels = unique(format(as.Date(survey_date), "%d %b %Y"))
+      )
+    ) %>%
+    ggplot(aes(x = survey_label, y = percent_prevalence, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
-    facet_wrap(vars(plot_section_label), ncol = 1) +
+    facet_wrap(vars(plot_section_label), ncol = 1, scales = "free_x") +
     scale_fill_manual(values = outplant_species_palette, drop = FALSE) +
     scale_y_continuous(
+      breaks = c(0, 50, 100),
       labels = scales::label_percent(scale = 1),
       expand = expansion(mult = c(0, 0.02))
     ) +
+    coord_cartesian(ylim = c(0, 100)) +
     labs(
-      x = "Survey month",
+      x = "Survey date",
       y = "Species prevalence",
       fill = "Species",
       title = "Outplant species prevalence through time",
       subtitle = "Percent of present outplant annotations by species"
     ) +
-    outplant_theme()
+    outplant_theme() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
 }
 
 outplant_plot_species_cover <- function(species_prevalence) {
   species_prevalence %>%
-    mutate(month = fct_reorder(month, month_order)) %>%
-    ggplot(aes(x = month, y = percent_cover_within_outplants, fill = species)) +
+    arrange(survey_date) %>%
+    mutate(
+      survey_label = factor(
+        format(as.Date(survey_date), "%d %b %Y"),
+        levels = unique(format(as.Date(survey_date), "%d %b %Y"))
+      )
+    ) %>%
+    ggplot(aes(x = survey_label, y = percent_cover_within_outplants, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
-    facet_wrap(vars(plot_section_label), ncol = 1) +
+    facet_wrap(vars(plot_section_label), ncol = 1, scales = "free_x") +
     scale_fill_manual(values = outplant_species_palette, drop = FALSE) +
     scale_y_continuous(
+      breaks = c(0, 50, 100),
       labels = scales::label_percent(scale = 1),
       expand = expansion(mult = c(0, 0.02))
     ) +
+    coord_cartesian(ylim = c(0, 100)) +
     labs(
-      x = "Survey month",
+      x = "Survey date",
       y = "Share of outplant cover",
       fill = "Species",
       title = "Outplant cover composition through time",
       subtitle = "Percent of summed outplant planar area by species"
     ) +
-    outplant_theme()
+    outplant_theme() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
 }
 
 # Main pipeline -----------------------------------------------------------------

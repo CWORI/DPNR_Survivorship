@@ -32,3 +32,10 @@
 - Updated the intake manifest paths and SHA-256 hashes. The corrected shared April and June snapshots match exactly in Genet, species, and area.
 - Rebuilt the derived datasets and website. Plot A now retains 43 of 43 baseline outplants through August (100% cumulative survivorship); cover is 0.0111% in April, 0.0116% in June, and 0.0157% in August.
 - Validation confirmed that no non-Plot-A output-table rows changed and the project pre-push check passed.
+
+## 2026-09-23 — Chart label readability
+
+- Added vertical space above the short-monitoring survivorship charts so percentage labels remain visible, including values at 100%.
+- Reworked the overview species prevalence and cover charts to use exact survey dates, plot-specific date axes, and uncluttered 0%, 50%, and 100% ticks.
+- Increased the rendered height of both overview species figures so all seven plot panels and their labels are readable.
+- Rebuilt the workflow outputs and website; the project pre-push check passed.
