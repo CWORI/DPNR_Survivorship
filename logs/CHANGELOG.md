@@ -39,3 +39,8 @@
 - Reworked the overview species prevalence and cover charts to use exact survey dates, plot-specific date axes, and uncluttered 0%, 50%, and 100% ticks.
 - Increased the rendered height of both overview species figures so all seven plot panels and their labels are readable.
 - Rebuilt the workflow outputs and website; the project pre-push check passed.
+
+## 2026-09-23 — Complete species color palette
+
+- Added fixed colors for `Diploria labyrinthiformis`, `Pseudodiploria strigosa`, `Unidentified coral`, and `Empty` while retaining all existing species colors.
+- Rebuilt the figures and website so every observed coral-label category has an explicit color.

@@ -193,12 +193,16 @@ outplant_theme <- function(base_size = 12) {
 outplant_species_palette <- c(
   "Acropora cervicornis" = "#CC79A7",
   "Acropora palmata" = "#E69F00",
+  "Diploria labyrinthiformis" = "#4D4D4D",
   "Montastraea cavernosa" = "#8A6FDF",
   "Orbicella annularis" = "#009E73",
   "Orbicella faveolata" = "#0072B2",
   "Orbicella franksi" = "#D55E00",
   "Orbicella sp." = "#56B4E9",
-  "Porites porites" = "#F0E442"
+  "Porites porites" = "#F0E442",
+  "Pseudodiploria strigosa" = "#A6761D",
+  "Unidentified coral" = "#999999",
+  "Empty" = "#E6E6E6"
 )
 
 # Config and file readers -------------------------------------------------------

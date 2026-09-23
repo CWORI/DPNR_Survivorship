@@ -38,7 +38,7 @@
 <rect x='78.11' y='138.97' width='83.80' height='5.60' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0072B2;' />
 <rect x='78.11' y='144.58' width='83.80' height='42.39' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
 <rect x='78.11' y='186.96' width='83.80' height='66.21' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
-<rect x='78.11' y='253.17' width='83.80' height='0.35' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #7F7F7F;' />
+<rect x='78.11' y='253.17' width='83.80' height='0.35' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #999999;' />
 <rect x='194.49' y='64.71' width='83.80' height='61.23' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6FDF;' />
 <rect x='194.49' y='125.94' width='83.80' height='15.40' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
 <rect x='194.49' y='141.33' width='83.80' height='5.13' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0072B2;' />
@@ -78,23 +78,26 @@
 <polyline points='47.18,64.71 50.17,64.71 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
 <text x='236.39' y='315.37' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='68.04px' lengthAdjust='spacingAndGlyphs'>Survey date</text>
 <text transform='translate(14.62,157.23) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='111.41px' lengthAdjust='spacingAndGlyphs'>Species prevalence</text>
-<rect x='434.56' y='99.42' width='135.46' height='115.62' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<text x='440.54' y='115.36' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='45.37px' lengthAdjust='spacingAndGlyphs'>Species</text>
-<rect x='440.54' y='122.66' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='440.90' y='123.02' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6FDF;' />
-<rect x='440.54' y='139.94' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='440.90' y='140.30' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<rect x='440.54' y='157.22' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='440.90' y='157.58' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0072B2;' />
-<rect x='440.54' y='174.50' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='440.90' y='174.86' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
-<rect x='440.54' y='191.78' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='440.90' y='192.14' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
-<text x='463.80' y='134.74' style='font-size: 9.60px; font-family: "Arial";' textLength='100.25px' lengthAdjust='spacingAndGlyphs'>Montastraea cavernosa</text>
-<text x='463.80' y='152.02' style='font-size: 9.60px; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella annularis</text>
-<text x='463.80' y='169.30' style='font-size: 9.60px; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella faveolata</text>
-<text x='463.80' y='186.58' style='font-size: 9.60px; font-family: "Arial";' textLength='68.77px' lengthAdjust='spacingAndGlyphs'>Orbicella franksi</text>
-<text x='463.80' y='203.86' style='font-size: 9.60px; font-family: "Arial";' textLength='61.32px' lengthAdjust='spacingAndGlyphs'>Porites porites</text>
+<rect x='434.56' y='90.78' width='135.46' height='132.90' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='440.54' y='106.72' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='45.37px' lengthAdjust='spacingAndGlyphs'>Species</text>
+<rect x='440.54' y='114.02' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='440.90' y='114.38' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6FDF;' />
+<rect x='440.54' y='131.30' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='440.90' y='131.66' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='440.54' y='148.58' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='440.90' y='148.94' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0072B2;' />
+<rect x='440.54' y='165.86' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='440.90' y='166.22' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
+<rect x='440.54' y='183.14' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='440.90' y='183.50' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0E442;' />
+<rect x='440.54' y='200.42' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='440.90' y='200.78' width='16.57' height='16.57' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #999999;' />
+<text x='463.80' y='126.10' style='font-size: 9.60px; font-family: "Arial";' textLength='100.25px' lengthAdjust='spacingAndGlyphs'>Montastraea cavernosa</text>
+<text x='463.80' y='143.38' style='font-size: 9.60px; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella annularis</text>
+<text x='463.80' y='160.66' style='font-size: 9.60px; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella faveolata</text>
+<text x='463.80' y='177.94' style='font-size: 9.60px; font-family: "Arial";' textLength='68.77px' lengthAdjust='spacingAndGlyphs'>Orbicella franksi</text>
+<text x='463.80' y='195.22' style='font-size: 9.60px; font-family: "Arial";' textLength='61.32px' lengthAdjust='spacingAndGlyphs'>Porites porites</text>
+<text x='463.80' y='212.50' style='font-size: 9.60px; font-family: "Arial";' textLength='74.12px' lengthAdjust='spacingAndGlyphs'>Unidentified coral</text>
 <text x='50.17' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='269.50px' lengthAdjust='spacingAndGlyphs'>Percent of present outplant annotations by species</text>
 <text x='50.17' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='279.17px' lengthAdjust='spacingAndGlyphs'>Outplant species prevalence through time</text>
 </g>
