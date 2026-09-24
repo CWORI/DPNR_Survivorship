@@ -1,0 +1,62 @@
+plot,survey_date,change_source,area_change_m2
+Plot A,2026-04-21,New or returned coverage,0.053387000000000004
+Plot A,2026-06-22,Tracked coral growth/shrinkage,0.0022722500000000017
+Plot A,2026-08-12,Tracked coral growth/shrinkage,0.01983725
+Plot B,2026-04-22,New or returned coverage,0.05622525000000001
+Plot B,2026-06-09,New or returned coverage,0.02099375
+Plot B,2026-06-09,Tracked coral growth/shrinkage,0.0032147500000000028
+Plot B,2026-08-07,Tracked coral growth/shrinkage,0.012279
+Plot C,2026-04-03,New or returned coverage,0.36296299999999965
+Plot C,2026-06-06,Lost or missing coverage,-0.026083500000000003
+Plot C,2026-06-06,New or returned coverage,0.0040115
+Plot C,2026-06-06,Tracked coral growth/shrinkage,-0.027218000000000016
+Plot C,2026-08-05,Lost or missing coverage,-0.014997
+Plot C,2026-08-05,New or returned coverage,0.022713749999999998
+Plot C,2026-08-05,Tracked coral growth/shrinkage,0.006369749999999994
+Plot D,2026-04-16,New or returned coverage,0.22224750000000004
+Plot D,2026-06-08,Lost or missing coverage,-0.010840500000000001
+Plot D,2026-06-08,Tracked coral growth/shrinkage,0.0019667500000000076
+Plot E,2025-06-09,Lost or missing coverage,-0.04951699999999999
+Plot E,2025-06-09,Tracked coral growth/shrinkage,0.03815650000000003
+Plot E,2025-07-11,Lost or missing coverage,-0.036636499999999995
+Plot E,2025-07-11,New or returned coverage,0.009167749999999999
+Plot E,2025-07-11,Tracked coral growth/shrinkage,0.018285249999999992
+Plot E,2025-08-04,Lost or missing coverage,-0.010964
+Plot E,2025-08-04,New or returned coverage,0.0028840000000000003
+Plot E,2025-08-04,Tracked coral growth/shrinkage,0.030735499999999995
+Plot E,2025-09-08,Lost or missing coverage,-0.0063975
+Plot E,2025-09-08,New or returned coverage,2.8999999999999997e-5
+Plot E,2025-09-08,Tracked coral growth/shrinkage,0.039080500000000004
+Plot E,2025-10-14,Lost or missing coverage,-0.005487
+Plot E,2025-10-14,New or returned coverage,8.1e-5
+Plot E,2025-10-14,Tracked coral growth/shrinkage,0.007177500000000004
+Plot E,2025-11-06,Lost or missing coverage,-4.0275e-4
+Plot E,2025-11-06,New or returned coverage,7.4825e-4
+Plot E,2025-11-06,Tracked coral growth/shrinkage,-0.0189805
+Plot E,2025-12-04,Lost or missing coverage,-0.0055965
+Plot E,2025-12-04,New or returned coverage,3.6875e-4
+Plot E,2025-12-04,Tracked coral growth/shrinkage,0.038544000000000016
+Plot E,2026-01-20,Lost or missing coverage,-0.00282775
+Plot E,2026-01-20,New or returned coverage,0.0015487500000000002
+Plot E,2026-01-20,Tracked coral growth/shrinkage,-0.006573749999999984
+Plot E,2026-02-16,Lost or missing coverage,-0.257805
+Plot E,2026-02-16,Tracked coral growth/shrinkage,0.007254749999999995
+Plot E,2026-03-25,Lost or missing coverage,-0.040518
+Plot E,2026-03-25,New or returned coverage,0.0014269999999999999
+Plot E,2026-03-25,Tracked coral growth/shrinkage,0.029590750000000006
+Plot E,2026-04-09,Lost or missing coverage,-0.0072857500000000006
+Plot E,2026-04-09,New or returned coverage,0.34135924999999967
+Plot E,2026-04-09,Tracked coral growth/shrinkage,-0.004149750000000002
+Plot E,2026-05-04,Lost or missing coverage,-0.0011922500000000002
+Plot E,2026-05-04,New or returned coverage,0.00815525
+Plot E,2026-05-04,Tracked coral growth/shrinkage,-0.023352750000000005
+Plot G,2026-04-24,New or returned coverage,0.05900500000000001
+Plot G,2026-05-26,Tracked coral growth/shrinkage,2.4825000000000097e-4
+Plot G,2026-08-13,Lost or missing coverage,-0.0017885000000000002
+Plot G,2026-08-13,Tracked coral growth/shrinkage,0.005147749999999999
+Plot H,2026-04-24,New or returned coverage,0.04926449999999998
+Plot H,2026-05-25,New or returned coverage,0.0044405
+Plot H,2026-05-25,Tracked coral growth/shrinkage,0.0032760000000000003
+Plot H,2026-08-13,Lost or missing coverage,-0.0027670000000000004
+Plot H,2026-08-13,New or returned coverage,0.0021485
+Plot H,2026-08-13,Tracked coral growth/shrinkage,-0.0017375

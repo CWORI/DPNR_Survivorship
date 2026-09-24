@@ -44,3 +44,10 @@
 
 - Added fixed colors for `Diploria labyrinthiformis`, `Pseudodiploria strigosa`, `Unidentified coral`, and `Empty` while retaining all existing species colors.
 - Rebuilt the figures and website so every observed coral-label category has an explicit color.
+
+## 2026-09-24 — Area-source and species-area figures
+
+- Changed cumulative-survivorship date labels from month/day to month/year.
+- Added absolute outplant-area line charts by species to the overview and every populated plot tab.
+- Added change-source charts that reconcile total-area changes into tracked-coral growth or shrinkage, lost or missing coverage, and new or returned coverage.
+- Documented that genotype-area charts cannot yet be calculated because all 7,468 present-outplant records have blank genotype fields.

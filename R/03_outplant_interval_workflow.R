@@ -1259,7 +1259,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
     ) +
     scale_x_date(
       date_breaks = "1 month",
-      date_labels = "%b %d",
+      date_labels = "%b %Y",
       expand = expansion(mult = c(0.04, 0.08))
     ) +
     labs(
@@ -1539,6 +1539,136 @@ outplant_plot_species_cover <- function(species_prevalence) {
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
 }
 
+# Absolute area complements the composition chart by showing whether each
+# species is gaining or losing measured planar area rather than only its share
+# of the current total.
+outplant_summarize_species_area <- function(monthly_observations) {
+  monthly_observations %>%
+    filter(present, !is.na(species)) %>%
+    group_by(plot, plot_section_label, survey_date, species) %>%
+    summarise(
+      n_outplants = n_distinct(genet),
+      total_outplant_area_m2 = sum(area_m2, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    arrange(plot, survey_date, species)
+}
+
+outplant_plot_species_area <- function(species_area) {
+  survey_breaks <- if (n_distinct(species_area$plot) > 1) "4 months" else "2 months"
+
+  p <- species_area %>%
+    ggplot(aes(
+      x = survey_date,
+      y = total_outplant_area_m2,
+      color = species,
+      group = species
+    )) +
+    geom_line(linewidth = 0.8) +
+    geom_point(size = 2.6) +
+    scale_color_manual(values = outplant_species_palette, drop = FALSE) +
+    scale_x_date(date_labels = "%b %Y", date_breaks = survey_breaks) +
+    scale_y_continuous(
+      breaks = scales::breaks_pretty(n = 3),
+      labels = scales::label_number(accuracy = 0.001)
+    ) +
+    labs(
+      x = "Survey month",
+      y = "Observed outplant area (m²)",
+      color = "Species",
+      title = "Outplanted coral area by species",
+      subtitle = "Summed measured planar area of present outplants"
+    ) +
+    outplant_theme() +
+    theme(axis.text.x = element_text(angle = 35, hjust = 1))
+
+  if (n_distinct(species_area$plot) > 1) {
+    p <- p + facet_wrap(vars(plot), scales = "free")
+  }
+
+  p
+}
+
+# Each interval's net area change is partitioned into change among corals that
+# are present at both surveys, area lost when a coral disappears, and area from
+# a coral that first appears at the later survey. Missing plot sections can also
+# change observed totals, so the labels retain that survey-coverage caveat.
+outplant_summarize_cover_change_source <- function(monthly_observations) {
+  monthly_observations %>%
+    group_by(plot, survey_date, genet) %>%
+    summarise(
+      present = any(present, na.rm = TRUE),
+      area_m2 = sum(area_m2[present], na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    group_by(plot) %>%
+    complete(survey_date, genet, fill = list(present = FALSE, area_m2 = 0)) %>%
+    ungroup() %>%
+    arrange(plot, genet, survey_date) %>%
+    group_by(plot, genet) %>%
+    mutate(
+      previous_date = lag(survey_date),
+      previous_present = lag(present),
+      previous_area_m2 = lag(area_m2),
+      change_source = case_when(
+        previous_present & present ~ "Tracked coral growth/shrinkage",
+        !previous_present & present ~ "New or returned coverage",
+        previous_present & !present ~ "Lost or missing coverage",
+        TRUE ~ NA_character_
+      ),
+      area_change_m2 = case_when(
+        previous_present & present ~ area_m2 - previous_area_m2,
+        !previous_present & present ~ area_m2,
+        previous_present & !present ~ -previous_area_m2,
+        TRUE ~ NA_real_
+      )
+    ) %>%
+    ungroup() %>%
+    filter(!is.na(previous_date), !is.na(change_source)) %>%
+    group_by(plot, survey_date, change_source) %>%
+    summarise(area_change_m2 = sum(area_change_m2, na.rm = TRUE), .groups = "drop") %>%
+    arrange(plot, survey_date, change_source)
+}
+
+outplant_plot_cover_change_source <- function(cover_change_source) {
+  p <- cover_change_source %>%
+    arrange(survey_date) %>%
+    mutate(
+      survey_label = factor(
+        format(survey_date, "%b %Y"),
+        levels = unique(format(survey_date, "%b %Y"))
+      )
+    ) %>%
+    ggplot(aes(x = survey_label, y = area_change_m2, fill = change_source)) +
+    geom_col(position = "stack", width = 0.72) +
+    geom_hline(yintercept = 0, color = "grey25", linewidth = 0.4) +
+    scale_fill_manual(values = c(
+      "Tracked coral growth/shrinkage" = "#009E73",
+      "New or returned coverage" = "#56B4E9",
+      "Lost or missing coverage" = "#D55E00"
+    )) +
+    scale_y_continuous(
+      breaks = scales::breaks_pretty(n = 3),
+      labels = scales::label_number(accuracy = 0.001)
+    ) +
+    labs(
+      x = "Later survey month",
+      y = "Change in observed area (m²)",
+      fill = "Source of change",
+      title = "What changed total outplant area?",
+      subtitle = "Positive values add area; negative values remove area"
+    ) +
+    outplant_theme() +
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
+    theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom")
+
+  if (n_distinct(cover_change_source$plot) > 1) {
+    p <- p + facet_wrap(vars(plot), scales = "free")
+  }
+
+  p
+}
+
 # Main pipeline -----------------------------------------------------------------
 # Running this script rebuilds all outplant-only interval outputs.
 outplant_setup_output_dirs()
@@ -1571,6 +1701,8 @@ outplant_section_species_survival_summary <- outplant_summarize_species_survival
 outplant_species_survival_summary <- outplant_summarize_species_survival_by_plot(outplant_section_species_survival_summary)
 outplant_cover_summary <- outplant_summarize_cover(outplant_monthly_observations)
 outplant_species_prevalence_summary <- outplant_summarize_species_prevalence(outplant_monthly_observations)
+outplant_species_area_summary <- outplant_summarize_species_area(outplant_monthly_observations)
+outplant_cover_change_source_summary <- outplant_summarize_cover_change_source(outplant_monthly_observations)
 outplant_species_depth_summary <- outplant_summarize_species_depth(
   outplant_species_prevalence_summary,
   outplant_plot_depth_summary
@@ -1601,6 +1733,8 @@ outplant_survival_plot <- outplant_plot_interval_survival(outplant_survival_summ
 outplant_cover_plot <- outplant_plot_cover(outplant_cover_summary)
 outplant_species_prevalence_plot <- outplant_plot_species_prevalence(outplant_species_prevalence_summary)
 outplant_species_cover_plot <- outplant_plot_species_cover(outplant_species_prevalence_summary)
+outplant_species_area_plot <- outplant_plot_species_area(outplant_species_area_summary)
+outplant_cover_change_source_plot <- outplant_plot_cover_change_source(outplant_cover_change_source_summary)
 
 outplant_write_named_csvs(outplant_qa_tables, outplant_table_dir)
 
@@ -1628,6 +1762,8 @@ outplant_write_named_csvs(
     outplant_section_species_survival_summary = outplant_section_species_survival_summary,
     outplant_cover_summary = outplant_cover_summary,
     outplant_species_prevalence_summary = outplant_species_prevalence_summary,
+    outplant_species_area_summary = outplant_species_area_summary,
+    outplant_cover_change_source_summary = outplant_cover_change_source_summary,
     outplant_plot_depth_summary = outplant_plot_depth_summary,
     outplant_species_depth_summary = outplant_species_depth_summary,
     outplant_daily_temperature_summary = outplant_daily_temperature_summary,
@@ -1642,7 +1778,9 @@ outplant_save_named_plots(
     outplant_survival_plot = outplant_survival_plot,
     outplant_cover_plot = outplant_cover_plot,
     outplant_species_prevalence_plot = outplant_species_prevalence_plot,
-    outplant_species_cover_plot = outplant_species_cover_plot
+    outplant_species_cover_plot = outplant_species_cover_plot,
+    outplant_species_area_plot = outplant_species_area_plot,
+    outplant_cover_change_source_plot = outplant_cover_change_source_plot
   ),
   outplant_figure_dir,
   width = 8,

@@ -94,6 +94,14 @@ missing sections are not filled with zeros. Plot F remains unavailable because
 no match data were supplied. The homepage omits the workflow/site-count tiles
 and the Publish Check card; the local validation script remains available.
 
+Each plot tab also shows absolute measured outplant area by species and partitions
+the observed change between surveys into tracked-coral growth or shrinkage, lost
+or missing coverage, and new or returned coverage. The partition sums exactly to
+the observed total-area change. It cannot distinguish a new deployment from a
+newly matched annotation or a plot section returning after a partial survey.
+Genotype charts are not generated because the current TagLab exports contain no
+non-missing genotype values.
+
 The homepage rebuilds the existing Matches workflow and summarizes the latest
 complete-section cumulative-survival result per plot. Its overall count sums
 baseline Genets once per plot; it is not the historical number of planted

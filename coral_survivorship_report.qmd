@@ -658,7 +658,37 @@ This chunk plots each species' share of total outplant cover through time. It co
 outplant_species_cover_plot
 ```
 
-::: {.presentation-hidden}
+### Outplanted Coral Area by Species
+
+Unlike the composition chart above, this figure shows absolute measured area. It therefore shows whether each species is gaining or losing area even when its percentage of the total stays similar.
+
+```{r}
+#| label: outplant-species-area-plot
+#| fig-width: 10
+#| fig-height: 8
+#| fig-alt: "Line charts of measured outplant coral area through time by species and plot."
+
+outplant_species_area_plot
+```
+
+### Growth, Loss, and Newly Observed Outplants
+
+This separates each interval's observed area change into growth or shrinkage of corals tracked at both surveys, area that disappears, and area that newly appears. Newly appearing area may be a new outplant, a newly matched annotation, or a plot section returning after a partial survey; the match files alone cannot distinguish those causes.
+
+```{r}
+#| label: outplant-cover-change-source-plot
+#| fig-width: 10
+#| fig-height: 8
+#| fig-alt: "Bar charts separating outplant area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_cover_change_source_plot
+```
+
+### Area by Genotype
+
+The current TagLab exports include a `genotype` column, but all 7,468 present-outplant records have that field blank. A genotype-area figure cannot be calculated until a genotype value or a Genet-to-genotype lookup table is supplied.
+
+::: presentation-hidden
 ### Plot Depth Metadata
 
 This chunk summarizes the corner-marker depth metadata for every plot listed in `data_raw/metadata/Coordinates_Depths.csv`. These values describe the plot-level depth context and should not be interpreted as exact depths for individual coral colonies.
@@ -1049,6 +1079,32 @@ outplant_plot_species_cover(
 )
 ```
 
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-a-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+#| fig-alt: "Line chart of Plot A measured outplant area through time by species."
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot A")
+)
+```
+
+### Growth Versus New or Lost Outplants
+
+```{r}
+#| label: plot-a-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+#| fig-alt: "Bar chart separating Plot A area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot A")
+)
+```
+
 ### Downloads
 
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot A results.
@@ -1373,6 +1429,32 @@ outplant_plot_species_prevalence(
 
 outplant_plot_species_cover(
   outplant_species_prevalence_summary %>% filter(plot == "Plot B")
+)
+```
+
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-b-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+#| fig-alt: "Line chart of Plot B measured outplant area through time by species."
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot B")
+)
+```
+
+### Growth Versus New or Lost Outplants
+
+```{r}
+#| label: plot-b-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+#| fig-alt: "Bar chart separating Plot B area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot B")
 )
 ```
 
@@ -1703,6 +1785,32 @@ outplant_plot_species_cover(
 )
 ```
 
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-c-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+#| fig-alt: "Line chart of Plot C measured outplant area through time by species."
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot C")
+)
+```
+
+### Growth Versus New or Lost Outplants
+
+```{r}
+#| label: plot-c-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+#| fig-alt: "Bar chart separating Plot C area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot C")
+)
+```
+
 ### Downloads
 
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot C results.
@@ -2030,6 +2138,32 @@ outplant_plot_species_cover(
 )
 ```
 
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-d-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+#| fig-alt: "Line chart of Plot D measured outplant area through time by species."
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot D")
+)
+```
+
+### Growth Versus New or Lost Outplants
+
+```{r}
+#| label: plot-d-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+#| fig-alt: "Bar chart separating Plot D area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot D")
+)
+```
+
 ### Downloads
 
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot D results.
@@ -2354,6 +2488,32 @@ outplant_plot_species_prevalence(
 
 outplant_plot_species_cover(
   outplant_species_prevalence_summary %>% filter(plot == "Plot E")
+)
+```
+
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-e-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+#| fig-alt: "Line chart of Plot E measured outplant area through time by species."
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot E")
+)
+```
+
+### Growth Versus New or Lost Outplants
+
+```{r}
+#| label: plot-e-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+#| fig-alt: "Bar chart separating Plot E area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot E")
 )
 ```
 
@@ -2735,6 +2895,32 @@ outplant_plot_species_cover(
 )
 ```
 
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-g-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+#| fig-alt: "Line chart of Plot G measured outplant area through time by species."
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot G")
+)
+```
+
+### Growth Versus New or Lost Outplants
+
+```{r}
+#| label: plot-g-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+#| fig-alt: "Bar chart separating Plot G area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot G")
+)
+```
+
 ### Downloads
 
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot G results.
@@ -3062,8 +3248,33 @@ outplant_plot_species_cover(
 )
 ```
 
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-h-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+#| fig-alt: "Line chart of Plot H measured outplant area through time by species."
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot H")
+)
+```
+
+### Growth Versus New or Lost Outplants
+
+```{r}
+#| label: plot-h-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+#| fig-alt: "Bar chart separating Plot H area change into growth or shrinkage, lost area, and newly observed outplants."
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot H")
+)
+```
+
 ### Downloads
 
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot H results.
-
-:::
+:::::::::::::::
