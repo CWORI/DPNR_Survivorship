@@ -29,11 +29,15 @@ was written to `docs/index.html`.
 ## Main Files
 
 - `coral_survivorship_report.qmd`: Quarto report with tabs, figures, tables, and code dropdowns.
+- `interactive_map.qmd`: interactive GPS map of Coki A-H with monitoring summaries.
 - `R/03_outplant_interval_workflow.R`: main analysis workflow.
+- `R/05_interactive_coki_map.R`: builds the Coki polygons, popup summaries, and map outputs.
 - `config/outplant_interval_files/`: one user-editable TagLab match-file list per plot (`Plot_A.csv` through `Plot_H.csv`).
 - `data_raw/taglab/`: raw TagLab match files.
 - `data_processed/outplant_master_tracking_dataset.csv`: recommended detailed output dataset.
 - `outputs/Tables/outplant_master_summary_dataset.csv`: recommended summary output dataset.
+- `data_processed/coki_plot_polygons.geojson`: reusable GPS-defined Coki boundaries.
+- `outputs/Tables/coki_interactive_map_summary.csv`: monitoring values displayed in the map popups.
 
 ## Adding New Plot or Month Files
 
@@ -107,3 +111,13 @@ complete-section cumulative-survival result per plot. Its overall count sums
 baseline Genets once per plot; it is not the historical number of planted
 fragments or a count of later additions. Cards show survey dates, baseline counts,
 survivor counts, and percentages. Different plots can have different latest dates.
+
+## Interactive Coki map
+
+The website includes a zoomable map of Coki A-H built from the four GPS corner
+markers supplied for each Coki. Clicking a boundary shows the latest outplant
+count, species counts, observed outplant area, percent of the confirmed 480 m²
+Coki area, survey coverage, and the latest complete-section cumulative
+survivorship result. Coki F has a mapped boundary but no monitoring summary
+because no Matches files are configured for it. The source coordinates and
+their limitations are documented in `data_raw/metadata/README.md`.

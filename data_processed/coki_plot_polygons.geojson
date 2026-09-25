@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "coki_plot_polygons",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "plot": "Plot A", "display_name": "Coki A" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.86406, 18.35094 ], [ -64.86403, 18.35075 ], [ -64.8643, 18.35075 ], [ -64.8643, 18.35086 ], [ -64.86406, 18.35094 ] ] ] } },
+{ "type": "Feature", "properties": { "plot": "Plot B", "display_name": "Coki B" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.864589, 18.350825 ], [ -64.864572, 18.350694 ], [ -64.8643, 18.35075 ], [ -64.8643, 18.35086 ], [ -64.864589, 18.350825 ] ] ] } },
+{ "type": "Feature", "properties": { "plot": "Plot C", "display_name": "Coki C" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.864589, 18.350825 ], [ -64.864572, 18.350694 ], [ -64.864818, 18.35061 ], [ -64.864868, 18.35074 ], [ -64.864589, 18.350825 ] ] ] } },
+{ "type": "Feature", "properties": { "plot": "Plot D", "display_name": "Coki D" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.86506802, 18.35068703 ], [ -64.86506299, 18.350538 ], [ -64.864818, 18.35061 ], [ -64.864868, 18.35074 ], [ -64.86506802, 18.35068703 ] ] ] } },
+{ "type": "Feature", "properties": { "plot": "Plot E", "display_name": "Coki E" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.86506802, 18.35068703 ], [ -64.86506299, 18.350538 ], [ -64.86529903, 18.35045803 ], [ -64.86534798, 18.35058703 ], [ -64.86506802, 18.35068703 ] ] ] } },
+{ "type": "Feature", "properties": { "plot": "Plot F", "display_name": "Coki F" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.86562, 18.35045 ], [ -64.86559, 18.35036 ], [ -64.86529903, 18.35045803 ], [ -64.86534798, 18.35058703 ], [ -64.86562, 18.35045 ] ] ] } },
+{ "type": "Feature", "properties": { "plot": "Plot G", "display_name": "Coki G" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.86562, 18.35045 ], [ -64.86559, 18.35036 ], [ -64.86586, 18.35027 ], [ -64.86594, 18.35039 ], [ -64.86562, 18.35045 ] ] ] } },
+{ "type": "Feature", "properties": { "plot": "Plot H", "display_name": "Coki H" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -64.86616, 18.3503 ], [ -64.86609, 18.35016 ], [ -64.86586, 18.35027 ], [ -64.86594, 18.35039 ], [ -64.86616, 18.3503 ] ] ] } }
+]
+}

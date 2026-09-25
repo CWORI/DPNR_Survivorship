@@ -1,0 +1,9 @@
+plot,display_name,latest_survey_date,n_outplants,observed_outplant_area_m2,outplant_cover_percent,species_breakdown,observed_sections,expected_sections,coverage_status,survival_survey_date,baseline_outplants,surviving_outplants,cumulative_survivorship_percent
+Plot A,Coki A,2026-08-12,43,0.07549649999999995,0.01572843749999999,Porites porites: 24; Orbicella annularis: 19,2,2,All configured sections,2026-08-12,43,43,100
+Plot B,Coki B,2026-08-07,75,0.09271274999999994,0.019315156249999986,Porites porites: 27; Orbicella annularis: 24; Montastraea cavernosa: 23; Pseudodiploria strigosa: 1,2,2,All configured sections,2026-08-07,43,43,100
+Plot C,Coki C,2026-08-05,498,0.32775949999999976,0.06828322916666661,Montastraea cavernosa: 165; Porites porites: 160; Orbicella franksi: 120; Orbicella annularis: 38; Orbicella faveolata: 15,2,2,All configured sections,2026-08-05,539,475,88.12615955473099
+Plot D,Coki D,2026-06-08,282,0.21337374999999997,0.04445286458333333,Porites porites: 157; Orbicella annularis: 65; Montastraea cavernosa: 47; Orbicella franksi: 11; Unidentified coral: 2,3,3,All configured sections,2026-06-08,315,282,89.52380952380952
+Plot E,Coki E,2026-05-04,574,0.7230125000000003,0.1506276041666667,Orbicella annularis: 233; Pseudodiploria strigosa: 135; Montastraea cavernosa: 60; Orbicella franksi: 53; Diploria labyrinthiformis: 45; Orbicella faveolata: 42; Acropora palmata: 5; Acropora cervicornis: 1,2,4,Partial coverage: 2 of 4 sections,2026-01-20,443,309,69.75169300225734
+Plot F,Coki F,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Plot G,Coki G,2026-08-13,44,0.06261249999999995,0.013044270833333321,Porites porites: 27; Orbicella annularis: 17,3,3,All configured sections,2026-08-13,45,44,97.77777777777776
+Plot H,Coki H,2026-08-13,40,0.05462499999999996,0.011380208333333326,Porites porites: 22; Orbicella annularis: 18,3,3,All configured sections,2026-08-13,38,36,94.73684210526316

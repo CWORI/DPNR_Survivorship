@@ -62,3 +62,11 @@
 - Reframed the area-change chart around the requested biological questions: area added by outplanting, area gained through coral growth, and area lost through shrinkage or mortality.
 - Calculated outplant-added area from 1,528 TagLab `born` records; none had appeared in an earlier interval.
 - Verified that the three components sum to the measured interval-area change, within floating-point precision.
+
+## 2026-09-25 — Interactive Coki map
+
+- Added a zoomable Leaflet map of Coki A-H using the four supplied GPS corner markers for each boundary.
+- Added satellite and street-map layers, persistent Coki labels, optional corner markers, hover highlighting, and clickable monitoring summaries.
+- Popup summaries report the latest outplant count and species counts, observed outplant area, percent of the confirmed 480 m² Coki area, survey coverage, and latest complete-section cumulative survivorship.
+- Preserved all supplied control and reference-site coordinates in the reviewed metadata CSV; the website polygon layer uses Coki A-H only.
+- Added reusable GeoJSON and CSV map outputs and included them in the pre-push validation.

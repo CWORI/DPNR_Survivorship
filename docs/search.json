@@ -21,6 +21,20 @@
     "text": "Use Analysis Report for the presentation-ready summary figures and tables.\nUse the individual Plot A–E, Plot G, and Plot H tabs when checking plot-specific files, QA/QC, and downloads.\nUse SOP when adding new TagLab exports or preparing a GitHub update."
   },
   {
+    "objectID": "interactive_map.html",
+    "href": "interactive_map.html",
+    "title": "Interactive Coki Map",
+    "section": "",
+    "text": "Zoom in to inspect the GPS-defined boundaries. Click a Coki polygon for its latest outplant count, species composition, observed outplant area, percent cover, and cumulative survivorship. Corner markers can be shown or hidden from the layer control.\n\n\n\n\n\n\nThe default satellite layer provides the clearest view of the reef setting. The street-map layer is available as a lighter alternative. Polygon boundaries connect markers M1, M2, M3, and M4 in the field-layout order provided with the coordinates.\n\n\n\nOutplants present and species counts use the latest available TagLab snapshot for that Coki.\nObserved outplant area is the summed planar area of those present outplants.\nOutplant cover divides observed outplant area by the confirmed 480 m² Coki area.\nCumulative survivorship uses the latest survey with complete configured-section coverage. This can be earlier than the cover snapshot when later monitoring is partial.\nCoki F has coordinates but no configured outplant monitoring files, so its popup reports that data are unavailable.\n\nThe map uses field GPS coordinates as supplied. Consumer GPS uncertainty and underwater marker placement mean the polygons are monitoring boundaries, not legal survey boundaries."
+  },
+  {
+    "objectID": "interactive_map.html#coki-ah",
+    "href": "interactive_map.html#coki-ah",
+    "title": "Interactive Coki Map",
+    "section": "",
+    "text": "Zoom in to inspect the GPS-defined boundaries. Click a Coki polygon for its latest outplant count, species composition, observed outplant area, percent cover, and cumulative survivorship. Corner markers can be shown or hidden from the layer control.\n\n\n\n\n\n\nThe default satellite layer provides the clearest view of the reef setting. The street-map layer is available as a lighter alternative. Polygon boundaries connect markers M1, M2, M3, and M4 in the field-layout order provided with the coordinates.\n\n\n\nOutplants present and species counts use the latest available TagLab snapshot for that Coki.\nObserved outplant area is the summed planar area of those present outplants.\nOutplant cover divides observed outplant area by the confirmed 480 m² Coki area.\nCumulative survivorship uses the latest survey with complete configured-section coverage. This can be earlier than the cover snapshot when later monitoring is partial.\nCoki F has coordinates but no configured outplant monitoring files, so its popup reports that data are unavailable.\n\nThe map uses field GPS coordinates as supplied. Consumer GPS uncertainty and underwater marker placement mean the polygons are monitoring boundaries, not legal survey boundaries."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "DPNR Outplant Analyses",

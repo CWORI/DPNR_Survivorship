@@ -684,3 +684,33 @@ button:focus,
 .plot-overview-value span { display: block; font-size: 1rem; font-weight: 400; }
 .plot-overview-date, .overview-note { font-size: 0.95rem; }
 .overview-note { margin-top: 1rem; }
+/* Interactive Coki map ----------------------------------------------------- */
+.leaflet-container {
+  border: 1px solid rgba(17, 62, 68, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 12px 34px rgba(17, 62, 68, 0.12);
+}
+
+.coki-map-popup {
+  min-width: 285px;
+  color: #173a3f;
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.coki-map-popup h3 {
+  margin: 0 0 0.45rem;
+  color: #0f6465;
+  font-size: 1.25rem;
+}
+
+.coki-map-popup p {
+  margin: 0.5rem 0;
+}
+
+.coki-map-popup ul {
+  columns: 2;
+  column-gap: 1.25rem;
+  margin: 0.2rem 0 0.65rem;
+  padding-left: 1.1rem;
+}
