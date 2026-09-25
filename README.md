@@ -94,11 +94,11 @@ missing sections are not filled with zeros. Plot F remains unavailable because
 no match data were supplied. The homepage omits the workflow/site-count tiles
 and the Publish Check card; the local validation script remains available.
 
-Each plot tab also shows absolute measured outplant area by species and partitions
-the observed change between surveys into tracked-coral growth or shrinkage, lost
-or missing coverage, and new or returned coverage. The partition sums exactly to
-the observed total-area change. It cannot distinguish a new deployment from a
-newly matched annotation or a plot section returning after a partial survey.
+Each Coki tab also shows absolute measured outplant area by species and partitions
+each monitoring cycle into area added by TagLab `born` outplants, area gained from
+growth, and area lost through shrinkage or mortality. The partition sums exactly
+to the measured interval-area change. All current `born` Genets are first
+appearances, but the classification does not independently verify deployment logs.
 Genotype charts are not generated because the current TagLab exports contain no
 non-missing genotype values.
 

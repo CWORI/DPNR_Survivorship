@@ -56,3 +56,9 @@
 
 - Changed public website tabs, headings, prose, table labels, legends, facets, and axes from Plot A–H to Coki A–H.
 - Preserved the internal `Plot A` data identifiers, config filenames, raw-data paths, and code examples so the analysis workflow continues to match the existing files.
+
+## 2026-09-25 — Outplant-cycle area sources
+
+- Reframed the area-change chart around the requested biological questions: area added by outplanting, area gained through coral growth, and area lost through shrinkage or mortality.
+- Calculated outplant-added area from 1,528 TagLab `born` records; none had appeared in an earlier interval.
+- Verified that the three components sum to the measured interval-area change, within floating-point precision.

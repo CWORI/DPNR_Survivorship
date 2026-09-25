@@ -671,9 +671,9 @@ Unlike the composition chart above, this figure shows absolute measured area. It
 outplant_species_area_plot
 ```
 
-### Growth, Loss, and Newly Observed Outplants
+### Area Added by Outplanting Versus Coral Growth
 
-This separates each interval's observed area change into growth or shrinkage of corals tracked at both surveys, area that disappears, and area that newly appears. Newly appearing area may be a new outplant, a newly matched annotation, or a plot section returning after a partial survey; the match files alone cannot distinguish those causes.
+This separates each monitoring cycle into area added by outplanting, area gained as surviving corals grow, and area lost through shrinkage or mortality. TagLab marks all 1,528 first appearances as `born`, and none had been present in an earlier interval. The blue bars therefore represent measured area introduced during an outplant cycle. This classification follows the TagLab match records and does not independently verify field deployment logs.
 
 ```{r}
 #| label: outplant-cover-change-source-plot
@@ -1092,7 +1092,7 @@ outplant_plot_species_area(
 )
 ```
 
-### Growth Versus New or Lost Outplants
+### Area Added by Outplanting Versus Coral Growth
 
 ```{r}
 #| label: plot-a-cover-change-source-plot
@@ -1445,7 +1445,7 @@ outplant_plot_species_area(
 )
 ```
 
-### Growth Versus New or Lost Outplants
+### Area Added by Outplanting Versus Coral Growth
 
 ```{r}
 #| label: plot-b-cover-change-source-plot
@@ -1798,7 +1798,7 @@ outplant_plot_species_area(
 )
 ```
 
-### Growth Versus New or Lost Outplants
+### Area Added by Outplanting Versus Coral Growth
 
 ```{r}
 #| label: plot-c-cover-change-source-plot
@@ -2151,7 +2151,7 @@ outplant_plot_species_area(
 )
 ```
 
-### Growth Versus New or Lost Outplants
+### Area Added by Outplanting Versus Coral Growth
 
 ```{r}
 #| label: plot-d-cover-change-source-plot
@@ -2504,7 +2504,7 @@ outplant_plot_species_area(
 )
 ```
 
-### Growth Versus New or Lost Outplants
+### Area Added by Outplanting Versus Coral Growth
 
 ```{r}
 #| label: plot-e-cover-change-source-plot
@@ -2908,7 +2908,7 @@ outplant_plot_species_area(
 )
 ```
 
-### Growth Versus New or Lost Outplants
+### Area Added by Outplanting Versus Coral Growth
 
 ```{r}
 #| label: plot-g-cover-change-source-plot
@@ -3261,7 +3261,7 @@ outplant_plot_species_area(
 )
 ```
 
-### Growth Versus New or Lost Outplants
+### Area Added by Outplanting Versus Coral Growth
 
 ```{r}
 #| label: plot-h-cover-change-source-plot

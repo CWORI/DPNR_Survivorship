@@ -30,23 +30,22 @@
 </defs>
 <g clip-path='url(#cpNDkuNjR8NTcwLjAyfDQyLjM2fDIzOC45OA==)'>
 <rect x='49.64' y='42.36' width='520.38' height='196.62' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<polyline points='49.64,207.15 570.02,207.15 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='49.64,121.27 570.02,121.27 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<rect x='88.67' y='51.30' width='117.09' height='155.85' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
-<rect x='251.29' y='218.84' width='117.09' height='11.20' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
-<rect x='251.29' y='205.43' width='117.09' height='1.72' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
-<rect x='251.29' y='207.15' width='117.09' height='11.69' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<rect x='413.91' y='207.15' width='117.09' height='6.44' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
-<rect x='413.91' y='194.67' width='117.09' height='9.75' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
-<rect x='413.91' y='204.42' width='117.09' height='2.74' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<line x1='49.64' y1='207.15' x2='570.02' y2='207.15' style='stroke-width: 0.85; stroke: #404040; stroke-linecap: butt;' />
+<polyline points='49.64,209.41 570.02,209.41 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='49.64,122.29 570.02,122.29 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<rect x='88.67' y='51.30' width='117.09' height='158.11' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
+<rect x='251.29' y='201.32' width='117.09' height='0.17' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
+<rect x='251.29' y='201.48' width='117.09' height='7.92' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='251.29' y='209.41' width='117.09' height='20.63' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
+<rect x='413.91' y='197.16' width='117.09' height='12.24' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='413.91' y='209.41' width='117.09' height='13.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
+<line x1='49.64' y1='209.41' x2='570.02' y2='209.41' style='stroke-width: 0.85; stroke: #404040; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)'>
 <polyline points='49.64,238.98 49.64,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<text x='44.26' y='210.59' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.000</text>
-<text x='44.26' y='124.72' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.200</text>
-<polyline points='46.65,207.15 49.64,207.15 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='46.65,121.27 49.64,121.27 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text x='44.26' y='212.85' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.000</text>
+<text x='44.26' y='125.73' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.200</text>
+<polyline points='46.65,209.41 49.64,209.41 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='46.65,122.29 49.64,122.29 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
 <polyline points='49.64,238.98 570.02,238.98 ' style='stroke-width: 1.16; stroke-linecap: square;' />
 <polyline points='147.21,241.97 147.21,238.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
 <polyline points='309.83,241.97 309.83,238.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
@@ -56,18 +55,18 @@
 <text transform='translate(476.40,250.00) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='41.08px' lengthAdjust='spacingAndGlyphs'>Aug 2026</text>
 <text x='309.83' y='286.92' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='111.37px' lengthAdjust='spacingAndGlyphs'>Later survey month</text>
 <text transform='translate(14.62,140.67) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='168.72px' lengthAdjust='spacingAndGlyphs'>Change in observed area (m²)</text>
-<rect x='101.91' y='301.53' width='415.85' height='52.49' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<text x='107.88' y='332.10' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='100.69px' lengthAdjust='spacingAndGlyphs'>Source of change</text>
-<rect x='214.55' y='307.51' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='215.33' y='308.28' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
-<rect x='377.61' y='307.51' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='378.39' y='308.28' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
-<rect x='214.55' y='330.76' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='215.33' y='331.54' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<text x='237.81' y='319.59' style='font-size: 9.60px; font-family: "Arial";' textLength='106.63px' lengthAdjust='spacingAndGlyphs'>Lost or missing coverage</text>
-<text x='400.87' y='319.59' style='font-size: 9.60px; font-family: "Arial";' textLength='110.91px' lengthAdjust='spacingAndGlyphs'>New or returned coverage</text>
-<text x='237.81' y='342.85' style='font-size: 9.60px; font-family: "Arial";' textLength='133.83px' lengthAdjust='spacingAndGlyphs'>Tracked coral growth/shrinkage</text>
-<text x='49.64' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='291.48px' lengthAdjust='spacingAndGlyphs'>Positive values add area; negative values remove area</text>
-<text x='49.64' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='229.34px' lengthAdjust='spacingAndGlyphs'>What changed total outplant area?</text>
+<rect x='119.67' y='301.53' width='380.31' height='52.49' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='125.65' y='332.10' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='69.38px' lengthAdjust='spacingAndGlyphs'>Area source</text>
+<rect x='201.01' y='307.51' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='201.78' y='308.28' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
+<rect x='342.25' y='307.51' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='343.02' y='308.28' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='201.01' y='330.76' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='201.78' y='331.54' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
+<text x='224.27' y='319.59' style='font-size: 9.60px; font-family: "Arial";' textLength='112.00px' lengthAdjust='spacingAndGlyphs'>Area added by outplanting</text>
+<text x='365.51' y='319.59' style='font-size: 9.60px; font-family: "Arial";' textLength='128.51px' lengthAdjust='spacingAndGlyphs'>Area gained from coral growth</text>
+<text x='224.27' y='342.85' style='font-size: 9.60px; font-family: "Arial";' textLength='37.86px' lengthAdjust='spacingAndGlyphs'>Area lost</text>
+<text x='49.64' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='534.95px' lengthAdjust='spacingAndGlyphs'>Blue is area added by outplanting; green is area gained from growth; orange is shrinkage or mortality</text>
+<text x='49.64' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='349.09px' lengthAdjust='spacingAndGlyphs'>Outplanting, growth, and losses by monitoring cycle</text>
 </g>
 </svg>

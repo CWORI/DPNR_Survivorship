@@ -1615,42 +1615,29 @@ outplant_plot_species_area <- function(species_area) {
   p
 }
 
-# Each interval's net area change is partitioned into change among corals that
-# are present at both surveys, area lost when a coral disappears, and area from
-# a coral that first appears at the later survey. Missing plot sections can also
-# change observed totals, so the labels retain that survey-coverage caveat.
-outplant_summarize_cover_change_source <- function(monthly_observations) {
-  monthly_observations %>%
-    group_by(plot, survey_date, genet) %>%
-    summarise(
-      present = any(present, na.rm = TRUE),
-      area_m2 = sum(area_m2[present], na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    group_by(plot) %>%
-    complete(survey_date, genet, fill = list(present = FALSE, area_m2 = 0)) %>%
-    ungroup() %>%
-    arrange(plot, genet, survey_date) %>%
-    group_by(plot, genet) %>%
+# TagLab marks first appearances as action = born. None of the current born
+# Genets were present in an earlier interval, so their end area represents the
+# observed area introduced in that outplant cycle. Survivors contribute their
+# measured net growth or shrinkage, and deaths contribute negative lost area.
+outplant_summarize_cover_change_source <- function(coral_intervals) {
+  coral_intervals %>%
     mutate(
-      previous_date = lag(survey_date),
-      previous_present = lag(present),
-      previous_area_m2 = lag(area_m2),
+      survey_date = month_end_date,
       change_source = case_when(
-        previous_present & present ~ "Tracked coral growth/shrinkage",
-        !previous_present & present ~ "New or returned coverage",
-        previous_present & !present ~ "Lost or missing coverage",
+        born_interval ~ "Area added by outplanting",
+        survived_interval & area_end_m2 >= area_start_m2 ~ "Area gained from coral growth",
+        survived_interval & area_end_m2 < area_start_m2 ~ "Area lost",
+        died_interval ~ "Area lost",
         TRUE ~ NA_character_
       ),
       area_change_m2 = case_when(
-        previous_present & present ~ area_m2 - previous_area_m2,
-        !previous_present & present ~ area_m2,
-        previous_present & !present ~ -previous_area_m2,
+        born_interval ~ area_end_m2,
+        survived_interval ~ area_end_m2 - area_start_m2,
+        died_interval ~ -area_start_m2,
         TRUE ~ NA_real_
       )
     ) %>%
-    ungroup() %>%
-    filter(!is.na(previous_date), !is.na(change_source)) %>%
+    filter(!is.na(change_source)) %>%
     group_by(plot, survey_date, change_source) %>%
     summarise(area_change_m2 = sum(area_change_m2, na.rm = TRUE), .groups = "drop") %>%
     arrange(plot, survey_date, change_source)
@@ -1670,9 +1657,9 @@ outplant_plot_cover_change_source <- function(cover_change_source) {
     geom_col(position = "stack", width = 0.72) +
     geom_hline(yintercept = 0, color = "grey25", linewidth = 0.4) +
     scale_fill_manual(values = c(
-      "Tracked coral growth/shrinkage" = "#009E73",
-      "New or returned coverage" = "#56B4E9",
-      "Lost or missing coverage" = "#D55E00"
+      "Area added by outplanting" = "#56B4E9",
+      "Area gained from coral growth" = "#009E73",
+      "Area lost" = "#D55E00"
     )) +
     scale_y_continuous(
       breaks = scales::breaks_pretty(n = 3),
@@ -1681,9 +1668,9 @@ outplant_plot_cover_change_source <- function(cover_change_source) {
     labs(
       x = "Later survey month",
       y = "Change in observed area (m²)",
-      fill = "Source of change",
-      title = "What changed total outplant area?",
-      subtitle = "Positive values add area; negative values remove area"
+      fill = "Area source",
+      title = "Outplanting, growth, and losses by monitoring cycle",
+      subtitle = "Blue is area added by outplanting; green is area gained from growth; orange is shrinkage or mortality"
     ) +
     outplant_theme() +
     guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
@@ -1729,7 +1716,7 @@ outplant_species_survival_summary <- outplant_summarize_species_survival_by_plot
 outplant_cover_summary <- outplant_summarize_cover(outplant_monthly_observations)
 outplant_species_prevalence_summary <- outplant_summarize_species_prevalence(outplant_monthly_observations)
 outplant_species_area_summary <- outplant_summarize_species_area(outplant_monthly_observations)
-outplant_cover_change_source_summary <- outplant_summarize_cover_change_source(outplant_monthly_observations)
+outplant_cover_change_source_summary <- outplant_summarize_cover_change_source(outplant_coral_intervals)
 outplant_species_depth_summary <- outplant_summarize_species_depth(
   outplant_species_prevalence_summary,
   outplant_plot_depth_summary
