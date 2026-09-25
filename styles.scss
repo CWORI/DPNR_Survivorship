@@ -26,6 +26,19 @@ $font-family-sans-serif: "Avenir Next", "Segoe UI", system-ui, -apple-system, sa
   --cwori-warm: #fff7e6;
 }
 
+.home-band--map .leaflet.html-widget {
+  height: min(72vh, 760px) !important;
+  min-height: 620px;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .home-band--map .leaflet.html-widget {
+    height: 620px !important;
+    min-height: 620px;
+  }
+}
+
 body {
   line-height: 1.6;
   background:

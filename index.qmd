@@ -11,6 +11,7 @@ toc: false
 # Rebuild from configured Matches so the homepage cannot use stale summaries
 # when Quarto renders it before the detailed report.
 source("R/03_outplant_interval_workflow.R")
+source("R/05_interactive_coki_map.R")
 home_latest <- outplant_cumulative_survival_summary |>
   dplyr::group_by(plot) |>
   dplyr::slice_max(survey_date, n = 1, with_ties = FALSE) |>
@@ -49,6 +50,25 @@ home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = T
 <div class="metric-tile metric-tile--teal"><span>`r home_count(home_baseline_total)`</span><p>outplants tracked at baseline</p></div>
 <div class="metric-tile metric-tile--coral"><span>`r nrow(home_latest)`</span><p>plots with monitoring data</p></div>
 </div>
+</section>
+
+<section class="home-band home-band--map" aria-label="Interactive Coki map">
+<div class="home-section-heading">
+<p class="site-kicker">Explore the site</p>
+<h2>Interactive Coki map</h2>
+<p>Zoom in to inspect the GPS-defined boundaries. Click a Coki to see its latest outplant count, species counts, observed area, percent cover, survey coverage, and survivorship.</p>
+</div>
+
+```{r}
+#| label: homepage-coki-map
+#| echo: false
+#| fig-width: 13
+#| fig-height: 10
+
+coki_interactive_map
+```
+
+<p class="overview-note">Use the layer control to switch between satellite imagery and the street map or hide the corner markers. The satellite layer stays visible beyond its native resolution by enlarging the closest available imagery. GPS-defined boundaries are monitoring references rather than legal survey boundaries.</p>
 </section>
 
 <section class="home-band" aria-label="Survivorship by plot">

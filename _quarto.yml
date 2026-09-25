@@ -5,7 +5,6 @@ project:
     - index.qmd
     - coral_survivorship_report.qmd
     - all_coral_cover.qmd
-    - interactive_map.qmd
 
 website:
   title: "DPNR Outplant Analyses"
@@ -17,8 +16,6 @@ website:
         text: Analysis Report
       - href: all_coral_cover.qmd
         text: All Coral Cover
-      - href: interactive_map.qmd
-        text: Interactive Map
 
 format:
   html:

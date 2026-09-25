@@ -176,8 +176,16 @@ map_bounds <- st_bbox(coki_polygons)
 coki_interactive_map <- leaflet(
   options = leafletOptions(minZoom = 15, maxZoom = 22, zoomControl = TRUE)
 ) |>
-  addProviderTiles(providers$Esri.WorldImagery, group = "Satellite imagery") |>
-  addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Street map") |>
+  addProviderTiles(
+    providers$Esri.WorldImagery,
+    group = "Satellite imagery",
+    options = tileOptions(maxZoom = 22, maxNativeZoom = 19)
+  ) |>
+  addProviderTiles(
+    providers$OpenStreetMap.Mapnik,
+    group = "Street map",
+    options = tileOptions(maxZoom = 22, maxNativeZoom = 19)
+  ) |>
   addPolygons(
     data = coki_polygons,
     group = "Coki boundaries",

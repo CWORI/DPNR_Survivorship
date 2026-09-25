@@ -29,7 +29,7 @@ was written to `docs/index.html`.
 ## Main Files
 
 - `coral_survivorship_report.qmd`: Quarto report with tabs, figures, tables, and code dropdowns.
-- `interactive_map.qmd`: interactive GPS map of Coki A-H with monitoring summaries.
+- `index.qmd`: homepage with the interactive GPS map of Coki A-H and monitoring summaries.
 - `R/03_outplant_interval_workflow.R`: main analysis workflow.
 - `R/05_interactive_coki_map.R`: builds the Coki polygons, popup summaries, and map outputs.
 - `config/outplant_interval_files/`: one user-editable TagLab match-file list per plot (`Plot_A.csv` through `Plot_H.csv`).
@@ -114,7 +114,7 @@ survivor counts, and percentages. Different plots can have different latest date
 
 ## Interactive Coki map
 
-The website includes a zoomable map of Coki A-H built from the four GPS corner
+The website homepage includes a zoomable map of Coki A-H built from the four GPS corner
 markers supplied for each Coki. Clicking a boundary shows the latest outplant
 count, species counts, observed outplant area, percent of the confirmed 480 m²
 Coki area, survey coverage, and the latest complete-section cumulative

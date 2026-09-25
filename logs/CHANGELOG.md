@@ -70,3 +70,9 @@
 - Popup summaries report the latest outplant count and species counts, observed outplant area, percent of the confirmed 480 m² Coki area, survey coverage, and latest complete-section cumulative survivorship.
 - Preserved all supplied control and reference-site coordinates in the reviewed metadata CSV; the website polygon layer uses Coki A-H only.
 - Added reusable GeoJSON and CSV map outputs and included them in the pre-push validation.
+
+## 2026-09-25 — Homepage map presentation
+
+- Moved the interactive Coki map onto the homepage and removed its separate navigation tab.
+- Increased the map height to provide a larger, more square viewing area.
+- Kept satellite imagery visible past its native zoom limit by enlarging the highest-resolution available tiles instead of requesting unavailable tiles that display as gray.
