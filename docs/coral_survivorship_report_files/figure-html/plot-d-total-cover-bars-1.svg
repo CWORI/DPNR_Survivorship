@@ -59,13 +59,13 @@
 <text transform='translate(218.39,280.73) rotate(-45)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.27px' lengthAdjust='spacingAndGlyphs'>16 Apr 2026</text>
 <text transform='translate(486.20,280.73) rotate(-45)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.80px' lengthAdjust='spacingAndGlyphs'>08 Jun 2026</text>
 <text x='347.43' y='331.20' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='68.04px' lengthAdjust='spacingAndGlyphs'>Survey date</text>
-<text transform='translate(14.62,156.42) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='124.67px' lengthAdjust='spacingAndGlyphs'>Outplant cover of plot</text>
+<text transform='translate(14.62,156.42) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='128.69px' lengthAdjust='spacingAndGlyphs'>Outplant cover of Coki</text>
 <rect x='230.81' y='345.80' width='233.24' height='29.24' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
 <text x='236.79' y='364.74' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='96.07px' lengthAdjust='spacingAndGlyphs'>Survey coverage</text>
 <rect x='338.84' y='351.78' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
 <rect x='339.61' y='352.55' width='15.73' height='15.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #237C83;' />
 <text x='362.09' y='363.86' style='font-size: 9.60px; font-family: "Arial";' textLength='95.98px' lengthAdjust='spacingAndGlyphs'>All configured sections</text>
-<text x='52.84' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='354.17px' lengthAdjust='spacingAndGlyphs'>Summed observed outplant area across species / 480 m² plot area</text>
+<text x='52.84' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='358.83px' lengthAdjust='spacingAndGlyphs'>Summed observed outplant area across species / 480 m² Coki area</text>
 <text x='52.84' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='237.18px' lengthAdjust='spacingAndGlyphs'>Total outplant coral cover over time</text>
 <text x='642.02' y='387.90' text-anchor='end' style='font-size: 9.60px; font-family: "Arial";' textLength='352.94px' lengthAdjust='spacingAndGlyphs'>Partial surveys include only available sections; missing sections are not zero cover.</text>
 </g>

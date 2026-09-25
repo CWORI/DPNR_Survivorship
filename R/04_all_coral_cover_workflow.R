@@ -293,7 +293,7 @@ all_coral_species_cover_summary <- all_coral_observations %>%
 
 # Figures ----------------------------------------------------------------------
 all_coral_cover_plot <- ggplot(
-  all_coral_cover_summary,
+  all_coral_cover_summary %>% mutate(plot = str_replace(plot, "^Plot ", "Coki ")),
   aes(x = survey_date, y = percent_coral_cover, color = plot, group = plot)
 ) +
   geom_line(linewidth = 0.9) +
@@ -307,11 +307,11 @@ all_coral_cover_plot <- ggplot(
   scale_x_date(date_breaks = "1 month", date_labels = "%b\n%Y") +
   scale_y_continuous(labels = scales::label_number(accuracy = 0.1), expand = expansion(mult = c(0.05, 0.16))) +
   labs(
-    title = "Whole-plot coral cover through time",
+    title = "Whole-Coki coral cover through time",
     subtitle = "All TagLab coral annotations; Empty labels excluded",
     x = "Survey date",
     y = "Coral cover (%)",
-    color = "Plot"
+    color = "Coki"
   ) +
   all_coral_plot_theme()
 
@@ -322,7 +322,10 @@ all_coral_top_species <- all_coral_species_cover_summary %>%
   pull(species)
 
 all_coral_species_plot_data <- all_coral_species_cover_summary %>%
-  mutate(species_group = if_else(species %in% all_coral_top_species, species, "Other coral classes")) %>%
+  mutate(
+    plot = str_replace(plot, "^Plot ", "Coki "),
+    species_group = if_else(species %in% all_coral_top_species, species, "Other coral classes")
+  ) %>%
   group_by(plot, survey_date, species_group) %>%
   summarise(percent_plot_cover = sum(percent_plot_cover), .groups = "drop")
 
@@ -338,7 +341,7 @@ all_coral_species_cover_plot <- ggplot(
     title = "Coral cover by species through time",
     subtitle = "Eight largest species groups shown separately",
     x = "Survey date",
-    y = "Plot cover (%)",
+    y = "Coki cover (%)",
     fill = "Species"
   ) +
   all_coral_plot_theme()

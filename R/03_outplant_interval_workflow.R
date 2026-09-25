@@ -205,6 +205,10 @@ outplant_species_palette <- c(
   "Empty" = "#E6E6E6"
 )
 
+outplant_coki_label <- function(x) {
+  str_replace(x, "^Plot ", "Coki ")
+}
+
 # Config and file readers -------------------------------------------------------
 # The config stores file metadata, plot sections, and plot dimensions. Plot
 # sections keep TagLab subsections such as Plot E 1-0 and Plot E 1-1 separate.
@@ -1208,7 +1212,10 @@ outplant_build_qa <- function(interval_rows, monthly_observations, coral_interva
 # These figures are designed for reports: minimal styling, labels that show the units, and no hidden denominator changes.
 outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily_temperature = tibble()) {
   survival_plot_data <- cumulative_survival_summary %>%
-    mutate(survey_date = as.Date(survey_date))
+    mutate(
+      survey_date = as.Date(survey_date),
+      plot_section_label = outplant_coki_label(plot_section_label)
+    )
 
   p <- ggplot(
     survival_plot_data,
@@ -1265,7 +1272,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
     labs(
       x = "Survey date",
       y = "Cumulative survivorship",
-      color = "Plot",
+      color = "Coki",
       title = "Outplant cumulative survivorship and temperature through time"
     ) +
     scale_color_brewer(palette = "Dark2")
@@ -1283,7 +1290,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
       ) +
       labs(
         subtitle = str_c(
-          "Plots shown separately; red line = Deep Nursery daily mean temperature"
+          "Coki sites shown separately; red line = Deep Nursery daily mean temperature"
         )
       )
   } else {
@@ -1325,7 +1332,11 @@ outplant_add_monitoring_labels <- function(summary_data) {
 outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary) {
   cumulative_survival_summary %>%
     outplant_add_monitoring_labels() %>%
-    mutate(monitoring_label = fct_reorder(monitoring_label, monitoring_step)) %>%
+    mutate(
+      monitoring_label = fct_reorder(monitoring_label, monitoring_step),
+      plot = outplant_coki_label(plot),
+      plot_section_label = outplant_coki_label(plot_section_label)
+    ) %>%
     ggplot(aes(x = monitoring_label, y = percent_cumulative_survival, group = plot_section_label)) +
     geom_errorbar(
       aes(ymin = percent_cumulative_survival_low, ymax = percent_cumulative_survival_high),
@@ -1346,7 +1357,7 @@ outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary)
     labs(
       x = "Monitoring step",
       y = "Cumulative survivorship",
-      color = "Plot",
+      color = "Coki",
       title = "Short-monitoring cumulative survivorship",
       subtitle = "Short monitoring series are shown by baseline/follow-up step"
     ) +
@@ -1357,7 +1368,10 @@ outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary)
 outplant_plot_interval_survival <- function(survival_summary) {
   survival_summary %>%
     filter(n_start > 0, !is.na(percent_survival)) %>%
-    mutate(interval_label = fct_reorder(interval_label, interval_order)) %>%
+    mutate(
+      interval_label = fct_reorder(interval_label, interval_order),
+      plot_section_label = outplant_coki_label(plot_section_label)
+    ) %>%
     ggplot(aes(x = interval_label, y = percent_survival, group = plot_section_label)) +
     geom_errorbar(
       aes(ymin = percent_survival_low, ymax = percent_survival_high),
@@ -1376,7 +1390,7 @@ outplant_plot_interval_survival <- function(survival_summary) {
     labs(
       x = "Survey interval",
       y = "Interval survivorship",
-      color = "Plot",
+      color = "Coki",
       title = "Outplant interval survivorship",
       subtitle = "Survival between adjacent TagLab match files; bars are exact binomial 95% CIs"
     ) +
@@ -1388,7 +1402,11 @@ outplant_plot_interval_survival <- function(survival_summary) {
 outplant_plot_short_interval_survival <- function(survival_summary) {
   survival_summary %>%
     filter(n_start > 0, !is.na(percent_survival)) %>%
-    mutate(interval_label = fct_reorder(interval_label, interval_order)) %>%
+    mutate(
+      interval_label = fct_reorder(interval_label, interval_order),
+      plot = outplant_coki_label(plot),
+      plot_section_label = outplant_coki_label(plot_section_label)
+    ) %>%
     ggplot(aes(x = interval_label, y = percent_survival, fill = plot_section_label)) +
     geom_col(position = position_dodge(width = 0.72), width = 0.64, color = "white") +
     geom_errorbar(
@@ -1414,7 +1432,7 @@ outplant_plot_short_interval_survival <- function(survival_summary) {
     labs(
       x = "Survey interval",
       y = "Interval survivorship",
-      fill = "Plot",
+      fill = "Coki",
       title = "Short-monitoring interval survivorship",
       subtitle = "Intervals that start before outplanting are omitted from the figure because survival cannot be estimated when start n = 0"
     ) +
@@ -1425,7 +1443,10 @@ outplant_plot_short_interval_survival <- function(survival_summary) {
 
 outplant_plot_cover <- function(cover_summary) {
   cover_summary %>%
-    mutate(month = fct_reorder(month, month_order)) %>%
+    mutate(
+      month = fct_reorder(month, month_order),
+      plot_section_label = outplant_coki_label(plot_section_label)
+    ) %>%
     ggplot(aes(x = month, y = percent_outplant_cover, group = plot_section_label)) +
     geom_line(aes(color = plot_section_label), linewidth = 0.7) +
     geom_point(aes(color = plot_section_label), size = 2.8) +
@@ -1433,10 +1454,10 @@ outplant_plot_cover <- function(cover_summary) {
     scale_y_continuous(labels = scales::label_percent(scale = 1)) +
     labs(
       x = "Survey month",
-      y = "Outplant cover of plot",
-      color = "Plot",
+      y = "Outplant cover of Coki",
+      color = "Coki",
       title = "Outplant coral cover through time",
-      subtitle = "Cover = summed outplant planar area / 480 m2 plot area"
+      subtitle = "Cover = summed outplant planar area / 480 m2 Coki area"
     ) +
     scale_color_brewer(palette = "Dark2") +
     outplant_theme()
@@ -1471,8 +1492,8 @@ outplant_plot_total_cover_bars <- function(cover_summary, section_observations, 
                        expand = expansion(mult = c(0, 0.08))) +
     labs(
       title = "Total outplant coral cover over time",
-      subtitle = "Summed observed outplant area across species / 480 m² plot area",
-      x = "Survey date", y = "Outplant cover of plot", fill = "Survey coverage",
+      subtitle = "Summed observed outplant area across species / 480 m² Coki area",
+      x = "Survey date", y = "Outplant cover of Coki", fill = "Survey coverage",
       caption = "Partial surveys include only available sections; missing sections are not zero cover."
     ) +
     outplant_theme() +
@@ -1486,7 +1507,8 @@ outplant_plot_species_prevalence <- function(species_prevalence) {
       survey_label = factor(
         format(as.Date(survey_date), "%d %b %Y"),
         levels = unique(format(as.Date(survey_date), "%d %b %Y"))
-      )
+      ),
+      plot_section_label = outplant_coki_label(plot_section_label)
     ) %>%
     ggplot(aes(x = survey_label, y = percent_prevalence, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
@@ -1516,7 +1538,8 @@ outplant_plot_species_cover <- function(species_prevalence) {
       survey_label = factor(
         format(as.Date(survey_date), "%d %b %Y"),
         levels = unique(format(as.Date(survey_date), "%d %b %Y"))
-      )
+      ),
+      plot_section_label = outplant_coki_label(plot_section_label)
     ) %>%
     ggplot(aes(x = survey_label, y = percent_cover_within_outplants, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
@@ -1556,6 +1579,9 @@ outplant_summarize_species_area <- function(monthly_observations) {
 
 outplant_plot_species_area <- function(species_area) {
   survey_breaks <- if (n_distinct(species_area$plot) > 1) "4 months" else "2 months"
+
+  species_area <- species_area %>%
+    mutate(plot = outplant_coki_label(plot))
 
   p <- species_area %>%
     ggplot(aes(
@@ -1634,6 +1660,7 @@ outplant_plot_cover_change_source <- function(cover_change_source) {
   p <- cover_change_source %>%
     arrange(survey_date) %>%
     mutate(
+      plot = outplant_coki_label(plot),
       survey_label = factor(
         format(survey_date, "%b %Y"),
         levels = unique(format(survey_date, "%b %Y"))

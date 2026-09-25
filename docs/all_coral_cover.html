@@ -642,6 +642,39 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const excluded = new Set(["CODE", "PRE", "SCRIPT", "STYLE", "TEXTAREA"]);
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+
+  while (walker.nextNode()) {
+    nodes.push(walker.currentNode);
+  }
+
+  for (const node of nodes) {
+    let parent = node.parentElement;
+    let skip = false;
+
+    while (parent) {
+      if (excluded.has(parent.tagName)) {
+        skip = true;
+        break;
+      }
+      parent = parent.parentElement;
+    }
+
+    if (skip) continue;
+
+    node.nodeValue = node.nodeValue
+      .replace(/\bPlots? ([A-H])\b/g, "Coki $1")
+      .replace(/\bPlots\b/g, "Coki sites")
+      .replace(/\bplots\b/g, "Coki sites")
+      .replace(/\bPlot\b/g, "Coki")
+      .replace(/\bplot\b/g, "Coki");
+  }
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

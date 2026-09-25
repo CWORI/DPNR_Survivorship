@@ -51,3 +51,8 @@
 - Added absolute outplant-area line charts by species to the overview and every populated plot tab.
 - Added change-source charts that reconcile total-area changes into tracked-coral growth or shrinkage, lost or missing coverage, and new or returned coverage.
 - Documented that genotype-area charts cannot yet be calculated because all 7,468 present-outplant records have blank genotype fields.
+
+## 2026-09-25 — Coki display names
+
+- Changed public website tabs, headings, prose, table labels, legends, facets, and axes from Plot A–H to Coki A–H.
+- Preserved the internal `Plot A` data identifiers, config filenames, raw-data paths, and code examples so the analysis workflow continues to match the existing files.

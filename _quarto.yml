@@ -22,6 +22,7 @@ format:
     theme:
       - cosmo
       - styles.scss
+    include-after-body: site-labels.html
     toc: true
     code-fold: true
     embed-resources: false
