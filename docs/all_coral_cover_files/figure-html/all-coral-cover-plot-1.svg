@@ -50,16 +50,18 @@
 <text x='30.81' y='253.94' text-anchor='end' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='12.23px' lengthAdjust='spacingAndGlyphs'>1.3</text>
 <text x='30.81' y='163.90' text-anchor='end' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='12.23px' lengthAdjust='spacingAndGlyphs'>1.3</text>
 <text x='30.81' y='73.85' text-anchor='end' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='12.23px' lengthAdjust='spacingAndGlyphs'>1.3</text>
-<text x='89.43' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='15.66px' lengthAdjust='spacingAndGlyphs'>Aug</text>
-<text x='89.43' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
-<text x='203.05' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='15.66px' lengthAdjust='spacingAndGlyphs'>Sep</text>
-<text x='203.05' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
-<text x='313.00' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='13.68px' lengthAdjust='spacingAndGlyphs'>Oct</text>
-<text x='313.00' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
-<text x='426.62' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='15.65px' lengthAdjust='spacingAndGlyphs'>Nov</text>
-<text x='426.62' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
-<text x='536.57' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='15.65px' lengthAdjust='spacingAndGlyphs'>Dec</text>
-<text x='536.57' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
+<text x='60.11' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='23.48px' lengthAdjust='spacingAndGlyphs'>24 Jul</text>
+<text x='60.11' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
+<text x='100.43' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='27.89px' lengthAdjust='spacingAndGlyphs'>04 Aug</text>
+<text x='100.43' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
+<text x='228.70' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='27.89px' lengthAdjust='spacingAndGlyphs'>08 Sep</text>
+<text x='228.70' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
+<text x='360.65' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='25.91px' lengthAdjust='spacingAndGlyphs'>14 Oct</text>
+<text x='360.65' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
+<text x='444.94' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='27.88px' lengthAdjust='spacingAndGlyphs'>06 Nov</text>
+<text x='444.94' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
+<text x='547.56' y='329.97' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='27.88px' lengthAdjust='spacingAndGlyphs'>04 Dec</text>
+<text x='547.56' y='339.48' text-anchor='middle' style='font-size: 8.80px;fill: #262626; font-family: "Arial";' textLength='19.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
 <text x='303.84' y='352.09' text-anchor='middle' style='font-size: 11.00px; font-weight: bold; font-family: "Arial";' textLength='62.38px' lengthAdjust='spacingAndGlyphs'>Survey date</text>
 <text transform='translate(13.40,179.33) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-weight: bold; font-family: "Arial";' textLength='80.72px' lengthAdjust='spacingAndGlyphs'>Coral cover (%)</text>
 <text x='588.38' y='171.90' style='font-size: 11.00px; font-family: "Arial";' textLength='22.00px' lengthAdjust='spacingAndGlyphs'>Coki</text>

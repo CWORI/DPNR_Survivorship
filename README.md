@@ -100,6 +100,10 @@ include non-outplanted colonies. Amber bars indicate partial section coverage;
 missing sections are not filled with zeros. The homepage omits the workflow/site-count tiles
 and the Publish Check card; the local validation script remains available.
 
+All time-based figure axes use exact survey dates in day-month-year format.
+This keeps multiple surveys from the same named month at separate x positions,
+including Coki F surveys on May 1 and May 27, 2026.
+
 Each Coki tab also shows absolute measured outplant area by species and partitions
 each monitoring cycle into area added by TagLab `born` outplants, area gained from
 growth, and area lost through shrinkage or mortality. The partition sums exactly

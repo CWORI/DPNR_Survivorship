@@ -24,35 +24,35 @@
 <rect x='0.00' y='0.00' width='576.00' height='360.00' style='stroke-width: 1.16; stroke: #FFFFFF; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpNDkuNjR8NTcwLjAyfDQyLjM2fDIzOS45MA=='>
-    <rect x='49.64' y='42.36' width='520.38' height='197.54' />
+  <clipPath id='cpNDkuNjR8NTcwLjAyfDQyLjM2fDIzMi4yNQ=='>
+    <rect x='49.64' y='42.36' width='520.38' height='189.89' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNDkuNjR8NTcwLjAyfDQyLjM2fDIzOS45MA==)'>
-<rect x='49.64' y='42.36' width='520.38' height='197.54' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<polyline points='49.64,213.38 570.02,213.38 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='49.64,140.47 570.02,140.47 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='49.64,67.56 570.02,67.56 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<rect x='106.41' y='51.34' width='170.31' height='162.04' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
-<rect x='342.95' y='202.31' width='170.31' height='11.07' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<rect x='342.95' y='213.38' width='170.31' height='17.54' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
-<line x1='49.64' y1='213.38' x2='570.02' y2='213.38' style='stroke-width: 0.85; stroke: #404040; stroke-linecap: butt;' />
+<g clip-path='url(#cpNDkuNjR8NTcwLjAyfDQyLjM2fDIzMi4yNQ==)'>
+<rect x='49.64' y='42.36' width='520.38' height='189.89' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='49.64,206.76 570.02,206.76 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='49.64,136.67 570.02,136.67 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='49.64,66.59 570.02,66.59 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<rect x='106.41' y='50.99' width='170.31' height='155.76' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
+<rect x='342.95' y='196.12' width='170.31' height='10.64' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='342.95' y='206.76' width='170.31' height='16.86' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
+<line x1='49.64' y1='206.76' x2='570.02' y2='206.76' style='stroke-width: 0.85; stroke: #404040; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)'>
-<polyline points='49.64,239.90 49.64,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<text x='44.26' y='216.82' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.000</text>
-<text x='44.26' y='143.91' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.100</text>
-<text x='44.26' y='71.00' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.200</text>
-<polyline points='46.65,213.38 49.64,213.38 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='46.65,140.47 49.64,140.47 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='46.65,67.56 49.64,67.56 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='49.64,239.90 570.02,239.90 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<polyline points='191.56,242.89 191.56,239.90 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='428.10,242.89 428.10,239.90 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<text transform='translate(195.51,250.92) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='38.94px' lengthAdjust='spacingAndGlyphs'>Apr 2026</text>
-<text transform='translate(432.05,250.92) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='39.47px' lengthAdjust='spacingAndGlyphs'>Jun 2026</text>
-<text x='309.83' y='286.92' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='111.37px' lengthAdjust='spacingAndGlyphs'>Later survey month</text>
-<text transform='translate(14.62,141.13) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='168.72px' lengthAdjust='spacingAndGlyphs'>Change in observed area (m²)</text>
+<polyline points='49.64,232.25 49.64,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<text x='44.26' y='210.20' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.000</text>
+<text x='44.26' y='140.11' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.100</text>
+<text x='44.26' y='70.03' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.200</text>
+<polyline points='46.65,206.76 49.64,206.76 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='46.65,136.67 49.64,136.67 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='46.65,66.59 49.64,66.59 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='49.64,232.25 570.02,232.25 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<polyline points='191.56,235.24 191.56,232.25 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='428.10,235.24 428.10,232.25 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text transform='translate(195.51,243.27) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.27px' lengthAdjust='spacingAndGlyphs'>16 Apr 2026</text>
+<text transform='translate(432.05,243.27) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.80px' lengthAdjust='spacingAndGlyphs'>08 Jun 2026</text>
+<text x='309.83' y='286.92' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='99.39px' lengthAdjust='spacingAndGlyphs'>Later survey date</text>
+<text transform='translate(14.62,137.31) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='168.72px' lengthAdjust='spacingAndGlyphs'>Change in observed area (m²)</text>
 <rect x='119.67' y='301.53' width='380.31' height='52.49' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
 <text x='125.65' y='332.10' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='69.38px' lengthAdjust='spacingAndGlyphs'>Area source</text>
 <rect x='201.01' y='307.51' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />

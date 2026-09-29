@@ -24,44 +24,46 @@
 <rect x='0.00' y='0.00' width='576.00' height='324.00' style='stroke-width: 1.16; stroke: #FFFFFF; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpNjMuNTF8NDk1LjE0fDQyLjM2fDI4OS4zNg=='>
-    <rect x='63.51' y='42.36' width='431.63' height='246.99' />
+  <clipPath id='cpNjMuNTF8NDk1LjE0fDQyLjM2fDI1OS4xNw=='>
+    <rect x='63.51' y='42.36' width='431.63' height='216.81' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNjMuNTF8NDk1LjE0fDQyLjM2fDI4OS4zNg==)'>
-<rect x='63.51' y='42.36' width='431.63' height='246.99' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<polyline points='63.51,267.42 495.14,267.42 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='63.51,187.32 495.14,187.32 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='63.51,107.21 495.14,107.21 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='181.23,175.87 181.23,278.13 377.42,53.59 ' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
-<circle cx='181.23' cy='175.87' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
-<circle cx='181.23' cy='278.13' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
-<circle cx='377.42' cy='53.59' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
-<text x='181.23' y='169.35' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0101%</text>
-<text x='181.23' y='271.61' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0094%</text>
-<text x='377.42' y='47.07' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0108%</text>
+<g clip-path='url(#cpNjMuNTF8NDk1LjE0fDQyLjM2fDI1OS4xNw==)'>
+<rect x='63.51' y='42.36' width='431.63' height='216.81' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='63.51,239.92 495.14,239.92 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='63.51,169.60 495.14,169.60 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='63.51,99.29 495.14,99.29 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='82.61,159.55 172.08,249.32 464.58,52.22 ' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
+<circle cx='82.61' cy='159.55' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
+<circle cx='172.08' cy='249.32' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
+<circle cx='464.58' cy='52.22' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
+<text x='82.61' y='153.03' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0101%</text>
+<text x='172.08' y='242.80' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0094%</text>
+<text x='464.58' y='45.69' text-anchor='middle' style='font-size: 9.10px; font-family: "Arial";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>0.0108%</text>
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzMjQuMDA=)'>
-<polyline points='63.51,289.36 63.51,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<text x='58.13' y='270.87' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='37.87px' lengthAdjust='spacingAndGlyphs'>0.0095%</text>
-<text x='58.13' y='190.76' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='37.87px' lengthAdjust='spacingAndGlyphs'>0.0100%</text>
-<text x='58.13' y='110.65' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='37.87px' lengthAdjust='spacingAndGlyphs'>0.0105%</text>
-<polyline points='60.52,267.42 63.51,267.42 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='60.52,187.32 63.51,187.32 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='60.52,107.21 63.51,107.21 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='63.51,289.36 495.14,289.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<polyline points='181.23,292.35 181.23,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='377.42,292.35 377.42,289.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<text x='181.23' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='18.12px' lengthAdjust='spacingAndGlyphs'>May</text>
-<text x='377.42' y='301.62' text-anchor='middle' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='29.87px' lengthAdjust='spacingAndGlyphs'>August</text>
-<text x='279.32' y='315.37' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='80.02px' lengthAdjust='spacingAndGlyphs'>Survey month</text>
-<text transform='translate(14.62,165.86) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='128.69px' lengthAdjust='spacingAndGlyphs'>Outplant cover of Coki</text>
-<rect x='507.10' y='142.61' width='62.93' height='46.50' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<text x='513.07' y='158.55' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='26.01px' lengthAdjust='spacingAndGlyphs'>Coki</text>
-<rect x='513.07' y='165.85' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<line x1='514.80' y1='174.49' x2='528.63' y2='174.49' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
-<circle cx='521.71' cy='174.49' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
-<text x='536.33' y='177.93' style='font-size: 9.60px; font-family: "Arial";' textLength='27.71px' lengthAdjust='spacingAndGlyphs'>Coki F</text>
+<polyline points='63.51,259.17 63.51,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<text x='58.13' y='243.36' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='37.87px' lengthAdjust='spacingAndGlyphs'>0.0095%</text>
+<text x='58.13' y='173.05' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='37.87px' lengthAdjust='spacingAndGlyphs'>0.0100%</text>
+<text x='58.13' y='102.73' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='37.87px' lengthAdjust='spacingAndGlyphs'>0.0105%</text>
+<polyline points='60.52,239.92 63.51,239.92 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='60.52,169.60 63.51,169.60 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='60.52,99.29 63.51,99.29 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='63.51,259.17 495.14,259.17 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<polyline points='82.61,262.16 82.61,259.17 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='172.08,262.16 172.08,259.17 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='464.58,262.16 464.58,259.17 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text transform='translate(86.55,270.19) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='55.46px' lengthAdjust='spacingAndGlyphs'>01 May 2026</text>
+<text transform='translate(176.03,270.19) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='55.46px' lengthAdjust='spacingAndGlyphs'>27 May 2026</text>
+<text transform='translate(468.53,270.19) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='54.41px' lengthAdjust='spacingAndGlyphs'>20 Aug 2026</text>
+<text x='279.32' y='315.37' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='68.04px' lengthAdjust='spacingAndGlyphs'>Survey date</text>
+<text transform='translate(14.62,150.77) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='128.69px' lengthAdjust='spacingAndGlyphs'>Outplant cover of Coki</text>
+<rect x='507.10' y='127.52' width='62.93' height='46.50' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='513.07' y='143.46' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='26.01px' lengthAdjust='spacingAndGlyphs'>Coki</text>
+<rect x='513.07' y='150.76' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<line x1='514.80' y1='159.40' x2='528.63' y2='159.40' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
+<circle cx='521.71' cy='159.40' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
+<text x='536.33' y='162.84' style='font-size: 9.60px; font-family: "Arial";' textLength='27.71px' lengthAdjust='spacingAndGlyphs'>Coki F</text>
 <text x='63.51' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='306.49px' lengthAdjust='spacingAndGlyphs'>Cover = summed outplant planar area / 480 m2 Coki area</text>
 <text x='63.51' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='225.48px' lengthAdjust='spacingAndGlyphs'>Outplant coral cover through time</text>
 </g>

@@ -631,7 +631,10 @@ outplant_summarize_cumulative_survival_by_plot <- function(section_cumulative_su
 
 outplant_summarize_survival <- function(coral_intervals) {
   coral_intervals %>%
-    group_by(plot, plot_section, plot_section_label, interval_order, month_start, month_end) %>%
+    group_by(
+      plot, plot_section, plot_section_label, interval_order,
+      month_start, month_end, month_start_date, month_end_date
+    ) %>%
     summarise(
       n_start = sum(present_start, na.rm = TRUE),
       n_survived = sum(survived_interval, na.rm = TRUE),
@@ -642,13 +645,21 @@ outplant_summarize_survival <- function(coral_intervals) {
     ) %>%
     mutate(ci = map2(n_survived, n_start, outplant_binomial_percent_ci)) %>%
     unnest_wider(ci) %>%
-    mutate(interval_label = str_c(month_start, " to ", month_end)) %>%
+    mutate(
+      interval_label = str_c(
+        format(month_start_date, "%d %b %Y"), " to ",
+        format(month_end_date, "%d %b %Y")
+      )
+    ) %>%
     arrange(plot, plot_section, interval_order)
 }
 
 outplant_summarize_survival_by_plot <- function(section_survival) {
   section_survival %>%
-    group_by(plot, interval_order, month_start, month_end, interval_label) %>%
+    group_by(
+      plot, interval_order, month_start, month_end,
+      month_start_date, month_end_date, interval_label
+    ) %>%
     summarise(
       plot_section = "all",
       plot_section_label = first(plot),
@@ -669,7 +680,10 @@ outplant_summarize_survival_by_plot <- function(section_survival) {
 outplant_summarize_species_survival <- function(coral_intervals) {
   coral_intervals %>%
     filter(!is.na(species)) %>%
-    group_by(plot, plot_section, plot_section_label, interval_order, month_start, month_end, species) %>%
+    group_by(
+      plot, plot_section, plot_section_label, interval_order,
+      month_start, month_end, month_start_date, month_end_date, species
+    ) %>%
     summarise(
       n_start = sum(present_start, na.rm = TRUE),
       n_survived = sum(survived_interval, na.rm = TRUE),
@@ -679,13 +693,21 @@ outplant_summarize_species_survival <- function(coral_intervals) {
     ) %>%
     mutate(ci = map2(n_survived, n_start, outplant_binomial_percent_ci)) %>%
     unnest_wider(ci) %>%
-    mutate(interval_label = str_c(month_start, " to ", month_end)) %>%
+    mutate(
+      interval_label = str_c(
+        format(month_start_date, "%d %b %Y"), " to ",
+        format(month_end_date, "%d %b %Y")
+      )
+    ) %>%
     arrange(plot, plot_section, interval_order, species)
 }
 
 outplant_summarize_species_survival_by_plot <- function(section_species_survival) {
   section_species_survival %>%
-    group_by(plot, interval_order, month_start, month_end, interval_label, species) %>%
+    group_by(
+      plot, interval_order, month_start, month_end,
+      month_start_date, month_end_date, interval_label, species
+    ) %>%
     summarise(
       plot_section = "all",
       plot_section_label = first(plot),
@@ -705,7 +727,7 @@ outplant_summarize_species_survival_by_plot <- function(section_species_survival
 outplant_summarize_cover <- function(monthly_observations) {
   monthly_observations %>%
     filter(present) %>%
-    group_by(plot, plot_section, plot_section_label, month_order, month) %>%
+    group_by(plot, plot_section, plot_section_label, month_order, month, survey_date) %>%
     summarise(
       n_outplants_present = n(),
       total_outplant_area_m2 = sum(area_m2, na.rm = TRUE),
@@ -1265,8 +1287,8 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
       size = 3.4
     ) +
     scale_x_date(
-      date_breaks = "1 month",
-      date_labels = "%b %Y",
+      breaks = sort(unique(survival_plot_data$survey_date)),
+      date_labels = "%d %b %Y",
       expand = expansion(mult = c(0.04, 0.08))
     ) +
     labs(
@@ -1322,8 +1344,11 @@ outplant_add_monitoring_labels <- function(summary_data) {
       monitoring_step = row_number(),
       monitoring_label = if_else(
         monitoring_step == 1,
-        str_c("Baseline\n", month),
-        str_c("Follow-up ", monitoring_step - 1, "\n", month)
+        str_c("Baseline\n", format(as.Date(survey_date), "%d %b %Y")),
+        str_c(
+          "Follow-up ", monitoring_step - 1, "\n",
+          format(as.Date(survey_date), "%d %b %Y")
+        )
       )
     ) %>%
     ungroup()
@@ -1444,23 +1469,29 @@ outplant_plot_short_interval_survival <- function(survival_summary) {
 outplant_plot_cover <- function(cover_summary) {
   cover_summary %>%
     mutate(
-      month = fct_reorder(month, month_order),
+      survey_date = as.Date(survey_date),
       plot_section_label = outplant_coki_label(plot_section_label)
     ) %>%
-    ggplot(aes(x = month, y = percent_outplant_cover, group = plot_section_label)) +
+    ggplot(aes(x = survey_date, y = percent_outplant_cover, group = plot_section_label)) +
     geom_line(aes(color = plot_section_label), linewidth = 0.7) +
     geom_point(aes(color = plot_section_label), size = 2.8) +
     geom_text(aes(label = sprintf("%.4f%%", percent_outplant_cover)), vjust = -1, size = 3.2) +
+    scale_x_date(
+      breaks = sort(unique(as.Date(cover_summary$survey_date))),
+      date_labels = "%d %b %Y",
+      expand = expansion(mult = c(0.05, 0.08))
+    ) +
     scale_y_continuous(labels = scales::label_percent(scale = 1)) +
     labs(
-      x = "Survey month",
+      x = "Survey date",
       y = "Outplant cover of Coki",
       color = "Coki",
       title = "Outplant coral cover through time",
       subtitle = "Cover = summed outplant planar area / 480 m2 Coki area"
     ) +
     scale_color_brewer(palette = "Dark2") +
-    outplant_theme()
+    outplant_theme() +
+    theme(axis.text.x = element_text(angle = 35, hjust = 1))
 }
 
 # Bars sum the observed outplant area across species. Exact dates distinguish
@@ -1476,7 +1507,7 @@ outplant_plot_total_cover_bars <- function(cover_summary, section_observations, 
     )
 
   cover_summary %>%
-    left_join(coverage, by = c("plot", "month_order")) %>%
+    left_join(coverage, by = c("plot", "month_order", "survey_date")) %>%
     arrange(survey_date) %>%
     mutate(
       survey_label = factor(format(as.Date(survey_date), "%d %b %Y"),
@@ -1593,13 +1624,16 @@ outplant_plot_species_area <- function(species_area) {
     geom_line(linewidth = 0.8) +
     geom_point(size = 2.6) +
     scale_color_manual(values = outplant_species_palette, drop = FALSE) +
-    scale_x_date(date_labels = "%b %Y", date_breaks = survey_breaks) +
+    scale_x_date(
+      breaks = sort(unique(as.Date(species_area$survey_date))),
+      date_labels = "%d %b %Y"
+    ) +
     scale_y_continuous(
       breaks = scales::breaks_pretty(n = 3),
       labels = scales::label_number(accuracy = 0.001)
     ) +
     labs(
-      x = "Survey month",
+      x = "Survey date",
       y = "Observed outplant area (m²)",
       color = "Species",
       title = "Outplanted coral area by species",
@@ -1649,8 +1683,8 @@ outplant_plot_cover_change_source <- function(cover_change_source) {
     mutate(
       plot = outplant_coki_label(plot),
       survey_label = factor(
-        format(survey_date, "%b %Y"),
-        levels = unique(format(survey_date, "%b %Y"))
+        format(survey_date, "%d %b %Y"),
+        levels = unique(format(survey_date, "%d %b %Y"))
       )
     ) %>%
     ggplot(aes(x = survey_label, y = area_change_m2, fill = change_source)) +
@@ -1666,7 +1700,7 @@ outplant_plot_cover_change_source <- function(cover_change_source) {
       labels = scales::label_number(accuracy = 0.001)
     ) +
     labs(
-      x = "Later survey month",
+      x = "Later survey date",
       y = "Change in observed area (m²)",
       fill = "Area source",
       title = "Outplanting, growth, and losses by monitoring cycle",

@@ -304,7 +304,10 @@ all_coral_cover_plot <- ggplot(
     size = 3,
     show.legend = FALSE
   ) +
-  scale_x_date(date_breaks = "1 month", date_labels = "%b\n%Y") +
+  scale_x_date(
+    breaks = sort(unique(all_coral_cover_summary$survey_date)),
+    date_labels = "%d %b\n%Y"
+  ) +
   scale_y_continuous(labels = scales::label_number(accuracy = 0.1), expand = expansion(mult = c(0.05, 0.16))) +
   labs(
     title = "Whole-Coki coral cover through time",
@@ -335,7 +338,10 @@ all_coral_species_cover_plot <- ggplot(
 ) +
   geom_area(alpha = 0.9, color = "white", linewidth = 0.15) +
   facet_wrap(~ plot, scales = "free_x") +
-  scale_x_date(date_breaks = "2 months", date_labels = "%b\n%Y") +
+  scale_x_date(
+    breaks = sort(unique(all_coral_species_plot_data$survey_date)),
+    date_labels = "%d %b\n%Y"
+  ) +
   scale_y_continuous(labels = scales::label_number(accuracy = 0.1), expand = expansion(mult = c(0, 0.05))) +
   labs(
     title = "Coral cover by species through time",

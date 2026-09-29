@@ -1,7 +1,7 @@
 summary_level,plot,plot_section,plot_section_label,time_label,month_order,month,interval_order,month_start,month_end,species,metric,value,units,n,denominator,ci_low,ci_high,notes
-plot_interval,Plot A,all,Plot A,November to April,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 43
-plot_interval,Plot A,all,Plot A,April to June,NA,NA,2,April,June,NA,interval_survivorship,100,percent,43,43,91.77888788458614,100,Deaths: 0; births/new detections: 0
-plot_interval,Plot A,all,Plot A,June to August,NA,NA,3,June,August,NA,interval_survivorship,100,percent,43,43,91.77888788458614,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot A,all,Plot A,14 Nov 2025 to 21 Apr 2026,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 43
+plot_interval,Plot A,all,Plot A,21 Apr 2026 to 22 Jun 2026,NA,NA,2,April,June,NA,interval_survivorship,100,percent,43,43,91.77888788458614,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot A,all,Plot A,22 Jun 2026 to 12 Aug 2026,NA,NA,3,June,August,NA,interval_survivorship,100,percent,43,43,91.77888788458614,100,Deaths: 0; births/new detections: 0
 plot_month,Plot A,all,Plot A,April,2,April,NA,NA,NA,NA,cumulative_deaths,0,count,0,43,NA,NA,Baseline month: April
 plot_month,Plot A,all,Plot A,June,3,June,NA,NA,NA,NA,cumulative_deaths,0,count,0,43,NA,NA,Baseline month: April
 plot_month,Plot A,all,Plot A,August,4,August,NA,NA,NA,NA,cumulative_deaths,0,count,0,43,NA,NA,Baseline month: April
@@ -11,12 +11,12 @@ plot_month,Plot A,all,Plot A,August,4,August,NA,NA,NA,NA,cumulative_survivorship
 plot_month,Plot A,all,Plot A,April,2,April,NA,NA,NA,NA,outplant_cover,0.011122291666666667,percent_of_plot,43,NA,NA,NA,Total area m2: 0.053387
 plot_month,Plot A,all,Plot A,June,3,June,NA,NA,NA,NA,outplant_cover,0.011595677083333335,percent_of_plot,43,NA,NA,NA,Total area m2: 0.055659
 plot_month,Plot A,all,Plot A,August,4,August,NA,NA,NA,NA,outplant_cover,0.0157284375,percent_of_plot,43,NA,NA,NA,Total area m2: 0.075496
-species_interval,Plot A,all,Plot A,November to April,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot A,all,Plot A,November to April,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot A,all,Plot A,April to June,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
-species_interval,Plot A,all,Plot A,April to June,NA,NA,2,April,June,Porites porites,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
-species_interval,Plot A,all,Plot A,June to August,NA,NA,3,June,August,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
-species_interval,Plot A,all,Plot A,June to August,NA,NA,3,June,August,Porites porites,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
+species_interval,Plot A,all,Plot A,14 Nov 2025 to 21 Apr 2026,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot A,all,Plot A,14 Nov 2025 to 21 Apr 2026,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot A,all,Plot A,21 Apr 2026 to 22 Jun 2026,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot A,all,Plot A,21 Apr 2026 to 22 Jun 2026,NA,NA,2,April,June,Porites porites,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
+species_interval,Plot A,all,Plot A,22 Jun 2026 to 12 Aug 2026,NA,NA,3,June,August,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot A,all,Plot A,22 Jun 2026 to 12 Aug 2026,NA,NA,3,June,August,Porites porites,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
 species_month,Plot A,all,Plot A,April,2,April,NA,NA,NA,Orbicella annularis,species_cover_share,63.49204862607003,percent_of_outplant_cover,19,43,NA,NA,Species area m2: 0.033897
 species_month,Plot A,all,Plot A,April,2,April,NA,NA,NA,Porites porites,species_cover_share,36.50795137392997,percent_of_outplant_cover,24,43,NA,NA,Species area m2: 0.01949
 species_month,Plot A,all,Plot A,June,3,June,NA,NA,NA,Orbicella annularis,species_cover_share,63.64126358152509,percent_of_outplant_cover,19,43,NA,NA,Species area m2: 0.035422
@@ -29,9 +29,9 @@ species_month,Plot A,all,Plot A,June,3,June,NA,NA,NA,Orbicella annularis,species
 species_month,Plot A,all,Plot A,June,3,June,NA,NA,NA,Porites porites,species_prevalence,55.81395348837209,percent_of_present_outplants,24,43,NA,NA,Species area m2: 0.020237
 species_month,Plot A,all,Plot A,August,4,August,NA,NA,NA,Orbicella annularis,species_prevalence,44.18604651162791,percent_of_present_outplants,19,43,NA,NA,Species area m2: 0.047463
 species_month,Plot A,all,Plot A,August,4,August,NA,NA,NA,Porites porites,species_prevalence,55.81395348837209,percent_of_present_outplants,24,43,NA,NA,Species area m2: 0.028034
-plot_interval,Plot B,all,Plot B,November to April,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 43
-plot_interval,Plot B,all,Plot B,April to June,NA,NA,2,April,June,NA,interval_survivorship,100,percent,43,43,91.77888788458614,100,Deaths: 0; births/new detections: 32
-plot_interval,Plot B,all,Plot B,June to August,NA,NA,3,June,August,NA,interval_survivorship,100,percent,75,75,95.20049359448578,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot B,all,Plot B,03 Nov 2025 to 22 Apr 2026,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 43
+plot_interval,Plot B,all,Plot B,22 Apr 2026 to 09 Jun 2026,NA,NA,2,April,June,NA,interval_survivorship,100,percent,43,43,91.77888788458614,100,Deaths: 0; births/new detections: 32
+plot_interval,Plot B,all,Plot B,09 Jun 2026 to 07 Aug 2026,NA,NA,3,June,August,NA,interval_survivorship,100,percent,75,75,95.20049359448578,100,Deaths: 0; births/new detections: 0
 plot_month,Plot B,all,Plot B,April,2,April,NA,NA,NA,NA,cumulative_deaths,0,count,0,43,NA,NA,Baseline month: April
 plot_month,Plot B,all,Plot B,June,3,June,NA,NA,NA,NA,cumulative_deaths,0,count,0,43,NA,NA,Baseline month: April
 plot_month,Plot B,all,Plot B,August,4,August,NA,NA,NA,NA,cumulative_deaths,0,count,0,43,NA,NA,Baseline month: April
@@ -41,16 +41,16 @@ plot_month,Plot B,all,Plot B,August,4,August,NA,NA,NA,NA,cumulative_survivorship
 plot_month,Plot B,all,Plot B,April,2,April,NA,NA,NA,NA,outplant_cover,0.011713593750000003,percent_of_plot,43,NA,NA,NA,Total area m2: 0.056225
 plot_month,Plot B,all,Plot B,June,3,June,NA,NA,NA,NA,outplant_cover,0.016757031250000005,percent_of_plot,75,NA,NA,NA,Total area m2: 0.080434
 plot_month,Plot B,all,Plot B,August,4,August,NA,NA,NA,NA,outplant_cover,0.019315156250000007,percent_of_plot,75,NA,NA,NA,Total area m2: 0.092713
-species_interval,Plot B,all,Plot B,November to April,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot B,all,Plot B,November to April,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot B,all,Plot B,April to June,NA,NA,2,April,June,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot B,all,Plot B,April to June,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
-species_interval,Plot B,all,Plot B,April to June,NA,NA,2,April,June,Porites porites,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
-species_interval,Plot B,all,Plot B,April to June,NA,NA,2,April,June,Pseudodiploria strigosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot B,all,Plot B,June to August,NA,NA,3,June,August,Montastraea cavernosa,species_interval_survivorship,100,percent,23,23,85.18148710847757,100,Deaths: 0
-species_interval,Plot B,all,Plot B,June to August,NA,NA,3,June,August,Orbicella annularis,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
-species_interval,Plot B,all,Plot B,June to August,NA,NA,3,June,August,Porites porites,species_interval_survivorship,100,percent,27,27,87.22971323845677,100,Deaths: 0
-species_interval,Plot B,all,Plot B,June to August,NA,NA,3,June,August,Pseudodiploria strigosa,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
+species_interval,Plot B,all,Plot B,03 Nov 2025 to 22 Apr 2026,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot B,all,Plot B,03 Nov 2025 to 22 Apr 2026,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot B,all,Plot B,22 Apr 2026 to 09 Jun 2026,NA,NA,2,April,June,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot B,all,Plot B,22 Apr 2026 to 09 Jun 2026,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot B,all,Plot B,22 Apr 2026 to 09 Jun 2026,NA,NA,2,April,June,Porites porites,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
+species_interval,Plot B,all,Plot B,22 Apr 2026 to 09 Jun 2026,NA,NA,2,April,June,Pseudodiploria strigosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot B,all,Plot B,09 Jun 2026 to 07 Aug 2026,NA,NA,3,June,August,Montastraea cavernosa,species_interval_survivorship,100,percent,23,23,85.18148710847757,100,Deaths: 0
+species_interval,Plot B,all,Plot B,09 Jun 2026 to 07 Aug 2026,NA,NA,3,June,August,Orbicella annularis,species_interval_survivorship,100,percent,24,24,85.75264022774743,100,Deaths: 0
+species_interval,Plot B,all,Plot B,09 Jun 2026 to 07 Aug 2026,NA,NA,3,June,August,Porites porites,species_interval_survivorship,100,percent,27,27,87.22971323845677,100,Deaths: 0
+species_interval,Plot B,all,Plot B,09 Jun 2026 to 07 Aug 2026,NA,NA,3,June,August,Pseudodiploria strigosa,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
 species_month,Plot B,all,Plot B,April,2,April,NA,NA,NA,Orbicella annularis,species_cover_share,63.57108238736154,percent_of_outplant_cover,19,43,NA,NA,Species area m2: 0.035743
 species_month,Plot B,all,Plot B,April,2,April,NA,NA,NA,Porites porites,species_cover_share,36.42891761263845,percent_of_outplant_cover,24,43,NA,NA,Species area m2: 0.020482
 species_month,Plot B,all,Plot B,June,3,June,NA,NA,NA,Montastraea cavernosa,species_cover_share,15.833216777782956,percent_of_outplant_cover,23,75,NA,NA,Species area m2: 0.012735
@@ -71,9 +71,9 @@ species_month,Plot B,all,Plot B,August,4,August,NA,NA,NA,Montastraea cavernosa,s
 species_month,Plot B,all,Plot B,August,4,August,NA,NA,NA,Orbicella annularis,species_prevalence,32,percent_of_present_outplants,24,75,NA,NA,Species area m2: 0.048998
 species_month,Plot B,all,Plot B,August,4,August,NA,NA,NA,Porites porites,species_prevalence,36,percent_of_present_outplants,27,75,NA,NA,Species area m2: 0.029134
 species_month,Plot B,all,Plot B,August,4,August,NA,NA,NA,Pseudodiploria strigosa,species_prevalence,1.3333333333333333,percent_of_present_outplants,1,75,NA,NA,Species area m2: 0.000722
-plot_interval,Plot C,all,Plot C,November to April,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 539
-plot_interval,Plot C,all,Plot C,April to June,NA,NA,2,April,June,NA,interval_survivorship,98.84615384615384,percent,514,520,97.50557773684572,99.5754140674933,Deaths: 6; births/new detections: 1
-plot_interval,Plot C,all,Plot C,June to August,NA,NA,3,June,August,NA,interval_survivorship,94.67680608365019,percent,498,526,92.39812820977386,96.43399523856442,Deaths: 28; births/new detections: 0
+plot_interval,Plot C,all,Plot C,03 Nov 2025 to 03 Apr 2026,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 539
+plot_interval,Plot C,all,Plot C,03 Apr 2026 to 06 Jun 2026,NA,NA,2,April,June,NA,interval_survivorship,98.84615384615384,percent,514,520,97.50557773684572,99.5754140674933,Deaths: 6; births/new detections: 1
+plot_interval,Plot C,all,Plot C,06 Jun 2026 to 05 Aug 2026,NA,NA,3,June,August,NA,interval_survivorship,94.67680608365019,percent,498,526,92.39812820977386,96.43399523856442,Deaths: 28; births/new detections: 0
 plot_month,Plot C,all,Plot C,April,2,April,NA,NA,NA,NA,cumulative_deaths,0,count,0,539,NA,NA,Baseline month: April
 plot_month,Plot C,all,Plot C,June,3,June,NA,NA,NA,NA,cumulative_deaths,28,count,28,539,NA,NA,Baseline month: April
 plot_month,Plot C,all,Plot C,August,4,August,NA,NA,NA,NA,cumulative_deaths,64,count,64,539,NA,NA,Baseline month: April
@@ -83,23 +83,23 @@ plot_month,Plot C,all,Plot C,August,4,August,NA,NA,NA,NA,cumulative_survivorship
 plot_month,Plot C,all,Plot C,April,2,April,NA,NA,NA,NA,outplant_cover,0.0756172916666666,percent_of_plot,539,NA,NA,NA,Total area m2: 0.362963
 plot_month,Plot C,all,Plot C,June,3,June,NA,NA,NA,NA,outplant_cover,0.06534854166666669,percent_of_plot,515,NA,NA,NA,Total area m2: 0.313673
 plot_month,Plot C,all,Plot C,August,4,August,NA,NA,NA,NA,outplant_cover,0.06828322916666664,percent_of_plot,498,NA,NA,NA,Total area m2: 0.327759
-species_interval,Plot C,all,Plot C,November to April,NA,NA,1,November,April,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot C,all,Plot C,November to April,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot C,all,Plot C,November to April,NA,NA,1,November,April,Orbicella faveolata,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot C,all,Plot C,November to April,NA,NA,1,November,April,Orbicella franksi,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot C,all,Plot C,November to April,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot C,all,Plot C,November to April,NA,NA,1,November,April,Unidentified coral,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot C,all,Plot C,April to June,NA,NA,2,April,June,Montastraea cavernosa,species_interval_survivorship,99.4047619047619,percent,167,168,96.72831959371155,99.98493101168594,Deaths: 1
-species_interval,Plot C,all,Plot C,April to June,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,97.67441860465117,percent,42,43,87.71095172986604,99.94113870684068,Deaths: 1
-species_interval,Plot C,all,Plot C,April to June,NA,NA,2,April,June,Orbicella faveolata,species_interval_survivorship,100,percent,14,14,76.83642383498835,100,Deaths: 0
-species_interval,Plot C,all,Plot C,April to June,NA,NA,2,April,June,Orbicella franksi,species_interval_survivorship,99.1304347826087,percent,114,115,95.25030531150047,99.97798693802639,Deaths: 1
-species_interval,Plot C,all,Plot C,April to June,NA,NA,2,April,June,Porites porites,species_interval_survivorship,98.88268156424581,percent,177,179,96.02233827049108,99.8643999721408,Deaths: 2
-species_interval,Plot C,all,Plot C,April to June,NA,NA,2,April,June,Unidentified coral,species_interval_survivorship,0,percent,0,1,0,97.5,Deaths: 1
-species_interval,Plot C,all,Plot C,June to August,NA,NA,3,June,August,Montastraea cavernosa,species_interval_survivorship,99.39759036144578,percent,165,166,96.68944340878002,99.98474947145455,Deaths: 1
-species_interval,Plot C,all,Plot C,June to August,NA,NA,3,June,August,Orbicella annularis,species_interval_survivorship,92.6829268292683,percent,38,41,80.0754021623337,98.46485284665833,Deaths: 3
-species_interval,Plot C,all,Plot C,June to August,NA,NA,3,June,August,Orbicella faveolata,species_interval_survivorship,100,percent,15,15,78.19806390894661,100,Deaths: 0
-species_interval,Plot C,all,Plot C,June to August,NA,NA,3,June,August,Orbicella franksi,species_interval_survivorship,99.17355371900827,percent,120,121,95.48138854792165,99.97907838062461,Deaths: 1
-species_interval,Plot C,all,Plot C,June to August,NA,NA,3,June,August,Porites porites,species_interval_survivorship,87.43169398907104,percent,160,183,81.74026072974051,91.8632469087454,Deaths: 23
+species_interval,Plot C,all,Plot C,03 Nov 2025 to 03 Apr 2026,NA,NA,1,November,April,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot C,all,Plot C,03 Nov 2025 to 03 Apr 2026,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot C,all,Plot C,03 Nov 2025 to 03 Apr 2026,NA,NA,1,November,April,Orbicella faveolata,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot C,all,Plot C,03 Nov 2025 to 03 Apr 2026,NA,NA,1,November,April,Orbicella franksi,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot C,all,Plot C,03 Nov 2025 to 03 Apr 2026,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot C,all,Plot C,03 Nov 2025 to 03 Apr 2026,NA,NA,1,November,April,Unidentified coral,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot C,all,Plot C,03 Apr 2026 to 06 Jun 2026,NA,NA,2,April,June,Montastraea cavernosa,species_interval_survivorship,99.4047619047619,percent,167,168,96.72831959371155,99.98493101168594,Deaths: 1
+species_interval,Plot C,all,Plot C,03 Apr 2026 to 06 Jun 2026,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,97.67441860465117,percent,42,43,87.71095172986604,99.94113870684068,Deaths: 1
+species_interval,Plot C,all,Plot C,03 Apr 2026 to 06 Jun 2026,NA,NA,2,April,June,Orbicella faveolata,species_interval_survivorship,100,percent,14,14,76.83642383498835,100,Deaths: 0
+species_interval,Plot C,all,Plot C,03 Apr 2026 to 06 Jun 2026,NA,NA,2,April,June,Orbicella franksi,species_interval_survivorship,99.1304347826087,percent,114,115,95.25030531150047,99.97798693802639,Deaths: 1
+species_interval,Plot C,all,Plot C,03 Apr 2026 to 06 Jun 2026,NA,NA,2,April,June,Porites porites,species_interval_survivorship,98.88268156424581,percent,177,179,96.02233827049108,99.8643999721408,Deaths: 2
+species_interval,Plot C,all,Plot C,03 Apr 2026 to 06 Jun 2026,NA,NA,2,April,June,Unidentified coral,species_interval_survivorship,0,percent,0,1,0,97.5,Deaths: 1
+species_interval,Plot C,all,Plot C,06 Jun 2026 to 05 Aug 2026,NA,NA,3,June,August,Montastraea cavernosa,species_interval_survivorship,99.39759036144578,percent,165,166,96.68944340878002,99.98474947145455,Deaths: 1
+species_interval,Plot C,all,Plot C,06 Jun 2026 to 05 Aug 2026,NA,NA,3,June,August,Orbicella annularis,species_interval_survivorship,92.6829268292683,percent,38,41,80.0754021623337,98.46485284665833,Deaths: 3
+species_interval,Plot C,all,Plot C,06 Jun 2026 to 05 Aug 2026,NA,NA,3,June,August,Orbicella faveolata,species_interval_survivorship,100,percent,15,15,78.19806390894661,100,Deaths: 0
+species_interval,Plot C,all,Plot C,06 Jun 2026 to 05 Aug 2026,NA,NA,3,June,August,Orbicella franksi,species_interval_survivorship,99.17355371900827,percent,120,121,95.48138854792165,99.97907838062461,Deaths: 1
+species_interval,Plot C,all,Plot C,06 Jun 2026 to 05 Aug 2026,NA,NA,3,June,August,Porites porites,species_interval_survivorship,87.43169398907104,percent,160,183,81.74026072974051,91.8632469087454,Deaths: 23
 species_month,Plot C,all,Plot C,April,2,April,NA,NA,NA,Montastraea cavernosa,species_cover_share,21.224408548529738,percent_of_outplant_cover,169,539,NA,NA,Species area m2: 0.077037
 species_month,Plot C,all,Plot C,April,2,April,NA,NA,NA,Orbicella annularis,species_cover_share,13.001669591666374,percent_of_outplant_cover,43,539,NA,NA,Species area m2: 0.047191
 species_month,Plot C,all,Plot C,April,2,April,NA,NA,NA,Orbicella faveolata,species_cover_share,11.39076159277943,percent_of_outplant_cover,16,539,NA,NA,Species area m2: 0.041344
@@ -132,24 +132,24 @@ species_month,Plot C,all,Plot C,August,4,August,NA,NA,NA,Orbicella annularis,spe
 species_month,Plot C,all,Plot C,August,4,August,NA,NA,NA,Orbicella faveolata,species_prevalence,3.0120481927710845,percent_of_present_outplants,15,498,NA,NA,Species area m2: 0.049966
 species_month,Plot C,all,Plot C,August,4,August,NA,NA,NA,Orbicella franksi,species_prevalence,24.096385542168676,percent_of_present_outplants,120,498,NA,NA,Species area m2: 0.08389
 species_month,Plot C,all,Plot C,August,4,August,NA,NA,NA,Porites porites,species_prevalence,32.1285140562249,percent_of_present_outplants,160,498,NA,NA,Species area m2: 0.080297
-plot_interval,Plot D,all,Plot D,November to April,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 315
-plot_interval,Plot D,all,Plot D,April to June,NA,NA,2,April,June,NA,interval_survivorship,89.52380952380952,percent,282,315,85.60277402667134,92.67823380545272,Deaths: 33; births/new detections: 0
+plot_interval,Plot D,all,Plot D,05 Nov 2025 to 16 Apr 2026,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 315
+plot_interval,Plot D,all,Plot D,16 Apr 2026 to 08 Jun 2026,NA,NA,2,April,June,NA,interval_survivorship,89.52380952380952,percent,282,315,85.60277402667134,92.67823380545272,Deaths: 33; births/new detections: 0
 plot_month,Plot D,all,Plot D,April,2,April,NA,NA,NA,NA,cumulative_deaths,0,count,0,315,NA,NA,Baseline month: April
 plot_month,Plot D,all,Plot D,June,3,June,NA,NA,NA,NA,cumulative_deaths,33,count,33,315,NA,NA,Baseline month: April
 plot_month,Plot D,all,Plot D,April,2,April,NA,NA,NA,NA,cumulative_survivorship,100,percent,315,315,98.8357575265714,100,Baseline month: April
 plot_month,Plot D,all,Plot D,June,3,June,NA,NA,NA,NA,cumulative_survivorship,89.52380952380952,percent,282,315,85.60277402667134,92.67823380545272,Baseline month: April
 plot_month,Plot D,all,Plot D,April,2,April,NA,NA,NA,NA,outplant_cover,0.04630156250000001,percent_of_plot,315,NA,NA,NA,Total area m2: 0.222248
 plot_month,Plot D,all,Plot D,June,3,June,NA,NA,NA,NA,outplant_cover,0.044452864583333335,percent_of_plot,282,NA,NA,NA,Total area m2: 0.213374
-species_interval,Plot D,all,Plot D,November to April,NA,NA,1,November,April,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot D,all,Plot D,November to April,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot D,all,Plot D,November to April,NA,NA,1,November,April,Orbicella franksi,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot D,all,Plot D,November to April,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot D,all,Plot D,November to April,NA,NA,1,November,April,Unidentified coral,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot D,all,Plot D,April to June,NA,NA,2,April,June,Montastraea cavernosa,species_interval_survivorship,100,percent,47,47,92.45142663089413,100,Deaths: 0
-species_interval,Plot D,all,Plot D,April to June,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,100,percent,65,65,94.48283656811867,100,Deaths: 0
-species_interval,Plot D,all,Plot D,April to June,NA,NA,2,April,June,Orbicella franksi,species_interval_survivorship,100,percent,11,11,71.50858470818456,100,Deaths: 0
-species_interval,Plot D,all,Plot D,April to June,NA,NA,2,April,June,Porites porites,species_interval_survivorship,82.63157894736842,percent,157,190,76.48214864228981,87.73252309324015,Deaths: 33
-species_interval,Plot D,all,Plot D,April to June,NA,NA,2,April,June,Unidentified coral,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
+species_interval,Plot D,all,Plot D,05 Nov 2025 to 16 Apr 2026,NA,NA,1,November,April,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot D,all,Plot D,05 Nov 2025 to 16 Apr 2026,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot D,all,Plot D,05 Nov 2025 to 16 Apr 2026,NA,NA,1,November,April,Orbicella franksi,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot D,all,Plot D,05 Nov 2025 to 16 Apr 2026,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot D,all,Plot D,05 Nov 2025 to 16 Apr 2026,NA,NA,1,November,April,Unidentified coral,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot D,all,Plot D,16 Apr 2026 to 08 Jun 2026,NA,NA,2,April,June,Montastraea cavernosa,species_interval_survivorship,100,percent,47,47,92.45142663089413,100,Deaths: 0
+species_interval,Plot D,all,Plot D,16 Apr 2026 to 08 Jun 2026,NA,NA,2,April,June,Orbicella annularis,species_interval_survivorship,100,percent,65,65,94.48283656811867,100,Deaths: 0
+species_interval,Plot D,all,Plot D,16 Apr 2026 to 08 Jun 2026,NA,NA,2,April,June,Orbicella franksi,species_interval_survivorship,100,percent,11,11,71.50858470818456,100,Deaths: 0
+species_interval,Plot D,all,Plot D,16 Apr 2026 to 08 Jun 2026,NA,NA,2,April,June,Porites porites,species_interval_survivorship,82.63157894736842,percent,157,190,76.48214864228981,87.73252309324015,Deaths: 33
+species_interval,Plot D,all,Plot D,16 Apr 2026 to 08 Jun 2026,NA,NA,2,April,June,Unidentified coral,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
 species_month,Plot D,all,Plot D,April,2,April,NA,NA,NA,Montastraea cavernosa,species_cover_share,6.173522761785847,percent_of_outplant_cover,47,315,NA,NA,Species area m2: 0.013721
 species_month,Plot D,all,Plot D,April,2,April,NA,NA,NA,Orbicella annularis,species_cover_share,38.86545405460129,percent_of_outplant_cover,65,315,NA,NA,Species area m2: 0.086378
 species_month,Plot D,all,Plot D,April,2,April,NA,NA,NA,Orbicella franksi,species_cover_share,11.434099371196528,percent_of_outplant_cover,11,315,NA,NA,Species area m2: 0.025412
@@ -170,18 +170,18 @@ species_month,Plot D,all,Plot D,June,3,June,NA,NA,NA,Orbicella annularis,species
 species_month,Plot D,all,Plot D,June,3,June,NA,NA,NA,Orbicella franksi,species_prevalence,3.900709219858156,percent_of_present_outplants,11,282,NA,NA,Species area m2: 0.025512
 species_month,Plot D,all,Plot D,June,3,June,NA,NA,NA,Porites porites,species_prevalence,55.673758865248224,percent_of_present_outplants,157,282,NA,NA,Species area m2: 0.080645
 species_month,Plot D,all,Plot D,June,3,June,NA,NA,NA,Unidentified coral,species_prevalence,0.7092198581560284,percent_of_present_outplants,2,282,NA,NA,Species area m2: 0.001885
-plot_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,NA,interval_survivorship,91.19638826185101,percent,404,443,88.16171169361375,93.6649026394098,Deaths: 39; births/new detections: 0
-plot_interval,Plot E,all,Plot E,June to July,NA,NA,2,June,July,NA,interval_survivorship,93.81188118811882,percent,379,404,91.00038567828648,95.95570741317462,Deaths: 25; births/new detections: 0
-plot_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,NA,interval_survivorship,97.35449735449735,percent,368,378,95.18875303130501,98.7242471453738,Deaths: 10; births/new detections: 3
-plot_interval,Plot E,all,Plot E,August to September,NA,NA,4,August,September,NA,interval_survivorship,96.2059620596206,percent,355,369,93.71613004650489,97.91051247910512,Deaths: 14; births/new detections: 1
-plot_interval,Plot E,all,Plot E,September to October,NA,NA,5,September,October,NA,interval_survivorship,99.42196531791907,percent,344,346,97.92764579184932,99.92992049982169,Deaths: 2; births/new detections: 0
-plot_interval,Plot E,all,Plot E,October to November,NA,NA,6,October,November,NA,interval_survivorship,99.4186046511628,percent,342,344,97.91568871680302,99.92951261070533,Deaths: 2; births/new detections: 4
-plot_interval,Plot E,all,Plot E,November to December,NA,NA,7,November,December,NA,interval_survivorship,95.38904899135447,percent,331,347,92.6199545962852,97.34180697615055,Deaths: 16; births/new detections: 1
-plot_interval,Plot E,all,Plot E,December to January,NA,NA,8,December,January,NA,interval_survivorship,98.48024316109422,percent,324,329,96.48921733909724,99.504745531273,Deaths: 5; births/new detections: 3
-plot_interval,Plot E,all,Plot E,January to February,NA,NA,9,January,February,NA,interval_survivorship,95.83333333333333,percent,161,168,91.60374951891302,98.30862314706275,Deaths: 7; births/new detections: 0
-plot_interval,Plot E,all,Plot E,February to March,NA,NA,10,February,March,NA,interval_survivorship,88.96103896103897,percent,137,154,82.91453716406495,93.4364251374911,Deaths: 17; births/new detections: 1
-plot_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,NA,interval_survivorship,91.91176470588235,percent,125,136,85.98880545306147,95.8932041124462,Deaths: 11; births/new detections: 444
-plot_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,NA,interval_survivorship,98.24253075571177,percent,559,569,96.79176067215988,99.15408921401475,Deaths: 10; births/new detections: 15
+plot_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,NA,interval_survivorship,91.19638826185101,percent,404,443,88.16171169361375,93.6649026394098,Deaths: 39; births/new detections: 0
+plot_interval,Plot E,all,Plot E,09 Jun 2025 to 11 Jul 2025,NA,NA,2,June,July,NA,interval_survivorship,93.81188118811882,percent,379,404,91.00038567828648,95.95570741317462,Deaths: 25; births/new detections: 0
+plot_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,NA,interval_survivorship,97.35449735449735,percent,368,378,95.18875303130501,98.7242471453738,Deaths: 10; births/new detections: 3
+plot_interval,Plot E,all,Plot E,04 Aug 2025 to 08 Sep 2025,NA,NA,4,August,September,NA,interval_survivorship,96.2059620596206,percent,355,369,93.71613004650489,97.91051247910512,Deaths: 14; births/new detections: 1
+plot_interval,Plot E,all,Plot E,08 Sep 2025 to 14 Oct 2025,NA,NA,5,September,October,NA,interval_survivorship,99.42196531791907,percent,344,346,97.92764579184932,99.92992049982169,Deaths: 2; births/new detections: 0
+plot_interval,Plot E,all,Plot E,14 Oct 2025 to 06 Nov 2025,NA,NA,6,October,November,NA,interval_survivorship,99.4186046511628,percent,342,344,97.91568871680302,99.92951261070533,Deaths: 2; births/new detections: 4
+plot_interval,Plot E,all,Plot E,06 Nov 2025 to 04 Dec 2025,NA,NA,7,November,December,NA,interval_survivorship,95.38904899135447,percent,331,347,92.6199545962852,97.34180697615055,Deaths: 16; births/new detections: 1
+plot_interval,Plot E,all,Plot E,04 Dec 2025 to 20 Jan 2026,NA,NA,8,December,January,NA,interval_survivorship,98.48024316109422,percent,324,329,96.48921733909724,99.504745531273,Deaths: 5; births/new detections: 3
+plot_interval,Plot E,all,Plot E,20 Jan 2026 to 16 Feb 2026,NA,NA,9,January,February,NA,interval_survivorship,95.83333333333333,percent,161,168,91.60374951891302,98.30862314706275,Deaths: 7; births/new detections: 0
+plot_interval,Plot E,all,Plot E,16 Feb 2026 to 25 Mar 2026,NA,NA,10,February,March,NA,interval_survivorship,88.96103896103897,percent,137,154,82.91453716406495,93.4364251374911,Deaths: 17; births/new detections: 1
+plot_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,NA,interval_survivorship,91.91176470588235,percent,125,136,85.98880545306147,95.8932041124462,Deaths: 11; births/new detections: 444
+plot_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,NA,interval_survivorship,98.24253075571177,percent,559,569,96.79176067215988,99.15408921401475,Deaths: 10; births/new detections: 15
 plot_month,Plot E,all,Plot E,May,1,May,NA,NA,NA,NA,cumulative_deaths,0,count,0,443,NA,NA,Baseline month: May
 plot_month,Plot E,all,Plot E,June,2,June,NA,NA,NA,NA,cumulative_deaths,39,count,39,443,NA,NA,Baseline month: May
 plot_month,Plot E,all,Plot E,July,3,July,NA,NA,NA,NA,cumulative_deaths,69,count,69,443,NA,NA,Baseline month: May
@@ -213,83 +213,83 @@ plot_month,Plot E,all,Plot E,February,10,February,NA,NA,NA,NA,outplant_cover,0.0
 plot_month,Plot E,all,Plot E,March,11,March,NA,NA,NA,NA,outplant_cover,0.08530802083333335,percent_of_plot,138,NA,NA,NA,Total area m2: 0.409479
 plot_month,Plot E,all,Plot E,April,12,April,NA,NA,NA,NA,outplant_cover,0.15404213541666675,percent_of_plot,569,NA,NA,NA,Total area m2: 0.739402
 plot_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,NA,outplant_cover,0.15062760416666673,percent_of_plot,574,NA,NA,NA,Total area m2: 0.723013
-species_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,Acropora cervicornis,species_interval_survivorship,84.61538461538461,percent,11,13,54.55289443234423,98.07933280174716,Deaths: 2
-species_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,Acropora palmata,species_interval_survivorship,66.29213483146067,percent,59,89,55.49227114721334,75.97348462219134,Deaths: 30
-species_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,Orbicella annularis,species_interval_survivorship,97.47899159663865,percent,232,238,94.59386834834238,99.0693384472489,Deaths: 6
-species_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,Orbicella faveolata,species_interval_survivorship,98.21428571428571,percent,55,56,90.44740973676603,99.95479984694792,Deaths: 1
-species_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,Orbicella sp.,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
-species_interval,Plot E,all,Plot E,May to June,NA,NA,1,May,June,Unidentified coral,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
-species_interval,Plot E,all,Plot E,June to July,NA,NA,2,June,July,Acropora cervicornis,species_interval_survivorship,100,percent,11,11,71.50858470818456,100,Deaths: 0
-species_interval,Plot E,all,Plot E,June to July,NA,NA,2,June,July,Acropora palmata,species_interval_survivorship,78.46153846153847,percent,51,65,66.51126854524476,87.694692475782,Deaths: 14
-species_interval,Plot E,all,Plot E,June to July,NA,NA,2,June,July,Orbicella annularis,species_interval_survivorship,97.3568281938326,percent,221,227,94.33599689732249,99.02395798200992,Deaths: 6
-species_interval,Plot E,all,Plot E,June to July,NA,NA,2,June,July,Orbicella faveolata,species_interval_survivorship,90.9090909090909,percent,50,55,80.0460384229499,96.98191321541869,Deaths: 5
-species_interval,Plot E,all,Plot E,June to July,NA,NA,2,June,July,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,June to July,NA,NA,2,June,July,Orbicella sp.,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
-species_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,Acropora cervicornis,species_interval_survivorship,100,percent,11,11,71.50858470818456,100,Deaths: 0
-species_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,Acropora palmata,species_interval_survivorship,84.31372549019608,percent,43,51,71.41237132684408,92.97591665426911,Deaths: 8
-species_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,Empty,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
-species_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,Orbicella annularis,species_interval_survivorship,99.08256880733946,percent,216,218,96.72539971464234,99.88870107739714,Deaths: 2
-species_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,Orbicella faveolata,species_interval_survivorship,100,percent,51,51,93.02229692504613,100,Deaths: 0
-species_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,July to August,NA,NA,3,July,August,Orbicella sp.,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
-species_interval,Plot E,all,Plot E,August to September,NA,NA,4,August,September,Acropora cervicornis,species_interval_survivorship,81.81818181818181,percent,9,11,48.224414763982736,97.71688017000403,Deaths: 2
-species_interval,Plot E,all,Plot E,August to September,NA,NA,4,August,September,Acropora palmata,species_interval_survivorship,97.61904761904762,percent,41,42,87.43414428250078,99.93973766983964,Deaths: 1
-species_interval,Plot E,all,Plot E,August to September,NA,NA,4,August,September,Orbicella annularis,species_interval_survivorship,95.41284403669725,percent,208,218,91.72604634103985,97.77866750237774,Deaths: 10
-species_interval,Plot E,all,Plot E,August to September,NA,NA,4,August,September,Orbicella faveolata,species_interval_survivorship,98,percent,49,50,89.35304542885001,99.94937720169592,Deaths: 1
-species_interval,Plot E,all,Plot E,August to September,NA,NA,4,August,September,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,August to September,NA,NA,4,August,September,Orbicella sp.,species_interval_survivorship,100,percent,4,4,39.763536438352546,100,Deaths: 0
-species_interval,Plot E,all,Plot E,September to October,NA,NA,5,September,October,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
-species_interval,Plot E,all,Plot E,September to October,NA,NA,5,September,October,Acropora palmata,species_interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0
-species_interval,Plot E,all,Plot E,September to October,NA,NA,5,September,October,Orbicella annularis,species_interval_survivorship,99.49748743718592,percent,198,199,97.23212870836184,99.9872782927028,Deaths: 1
-species_interval,Plot E,all,Plot E,September to October,NA,NA,5,September,October,Orbicella faveolata,species_interval_survivorship,100,percent,49,49,92.74807363357226,100,Deaths: 0
-species_interval,Plot E,all,Plot E,September to October,NA,NA,5,September,October,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,September to October,NA,NA,5,September,October,Orbicella sp.,species_interval_survivorship,75,percent,3,4,19.41204496832434,99.36905367902902,Deaths: 1
-species_interval,Plot E,all,Plot E,October to November,NA,NA,6,October,November,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
-species_interval,Plot E,all,Plot E,October to November,NA,NA,6,October,November,Acropora palmata,species_interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0
-species_interval,Plot E,all,Plot E,October to November,NA,NA,6,October,November,Orbicella annularis,species_interval_survivorship,98.98989898989899,percent,196,198,96.39899348939205,99.87743713557735,Deaths: 2
-species_interval,Plot E,all,Plot E,October to November,NA,NA,6,October,November,Orbicella faveolata,species_interval_survivorship,100,percent,49,49,92.74807363357226,100,Deaths: 0
-species_interval,Plot E,all,Plot E,October to November,NA,NA,6,October,November,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,October to November,NA,NA,6,October,November,Orbicella sp.,species_interval_survivorship,100,percent,3,3,29.240177382128667,100,Deaths: 0
-species_interval,Plot E,all,Plot E,November to December,NA,NA,7,November,December,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
-species_interval,Plot E,all,Plot E,November to December,NA,NA,7,November,December,Acropora palmata,species_interval_survivorship,95.1219512195122,percent,39,41,83.46666465821698,99.40368817589572,Deaths: 2
-species_interval,Plot E,all,Plot E,November to December,NA,NA,7,November,December,Orbicella annularis,species_interval_survivorship,93.46733668341709,percent,186,199,89.08800540303147,96.47607685878208,Deaths: 13
-species_interval,Plot E,all,Plot E,November to December,NA,NA,7,November,December,Orbicella faveolata,species_interval_survivorship,97.95918367346938,percent,48,49,89.1458236031593,99.94834435024067,Deaths: 1
-species_interval,Plot E,all,Plot E,November to December,NA,NA,7,November,December,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,November to December,NA,NA,7,November,December,Orbicella sp.,species_interval_survivorship,100,percent,5,5,47.81762498950186,100,Deaths: 0
-species_interval,Plot E,all,Plot E,December to January,NA,NA,8,December,January,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
-species_interval,Plot E,all,Plot E,December to January,NA,NA,8,December,January,Acropora palmata,species_interval_survivorship,100,percent,38,38,90.74872385841218,100,Deaths: 0
-species_interval,Plot E,all,Plot E,December to January,NA,NA,8,December,January,Orbicella annularis,species_interval_survivorship,98.3695652173913,percent,181,184,95.30934372042707,99.6624947498734,Deaths: 3
-species_interval,Plot E,all,Plot E,December to January,NA,NA,8,December,January,Orbicella faveolata,species_interval_survivorship,100,percent,49,49,92.74807363357226,100,Deaths: 0
-species_interval,Plot E,all,Plot E,December to January,NA,NA,8,December,January,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
-species_interval,Plot E,all,Plot E,December to January,NA,NA,8,December,January,Orbicella sp.,species_interval_survivorship,60,percent,3,5,14.663279963467321,94.72550494736831,Deaths: 2
-species_interval,Plot E,all,Plot E,January to February,NA,NA,9,January,February,Acropora cervicornis,species_interval_survivorship,50,percent,2,4,6.7585986488543,93.2414013511457,Deaths: 2
-species_interval,Plot E,all,Plot E,January to February,NA,NA,9,January,February,Acropora palmata,species_interval_survivorship,92,percent,23,25,73.96941578947857,99.01604099812025,Deaths: 2
-species_interval,Plot E,all,Plot E,January to February,NA,NA,9,January,February,Orbicella annularis,species_interval_survivorship,97.3913043478261,percent,112,115,92.56537655898012,99.45875909721029,Deaths: 3
-species_interval,Plot E,all,Plot E,January to February,NA,NA,9,January,February,Orbicella faveolata,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
-species_interval,Plot E,all,Plot E,January to February,NA,NA,9,January,February,Orbicella franksi,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
-species_interval,Plot E,all,Plot E,February to March,NA,NA,10,February,March,Acropora cervicornis,species_interval_survivorship,50,percent,1,2,1.2579117093425058,98.74208829065749,Deaths: 1
-species_interval,Plot E,all,Plot E,February to March,NA,NA,10,February,March,Acropora palmata,species_interval_survivorship,45,percent,9,20,23.057789677592414,68.47218669594514,Deaths: 11
-species_interval,Plot E,all,Plot E,February to March,NA,NA,10,February,March,Diploria labyrinthiformis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot E,all,Plot E,February to March,NA,NA,10,February,March,Orbicella annularis,species_interval_survivorship,95.37037037037037,percent,103,108,89.52619054516794,98.47990766945507,Deaths: 5
-species_interval,Plot E,all,Plot E,February to March,NA,NA,10,February,March,Orbicella faveolata,species_interval_survivorship,100,percent,21,21,83.89023847809204,100,Deaths: 0
-species_interval,Plot E,all,Plot E,February to March,NA,NA,10,February,March,Orbicella franksi,species_interval_survivorship,100,percent,3,3,29.240177382128667,100,Deaths: 0
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Acropora cervicornis,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Acropora palmata,species_interval_survivorship,66.66666666666667,percent,6,9,29.92950562085404,92.51453685803082,Deaths: 3
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Diploria labyrinthiformis,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Orbicella annularis,species_interval_survivorship,92.07920792079207,percent,93,101,84.98837989949124,96.51830896012052,Deaths: 8
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Orbicella faveolata,species_interval_survivorship,100,percent,21,21,83.89023847809204,100,Deaths: 0
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Orbicella franksi,species_interval_survivorship,100,percent,3,3,29.240177382128667,100,Deaths: 0
-species_interval,Plot E,all,Plot E,March to April,NA,NA,11,March,April,Pseudodiploria strigosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Acropora cervicornis,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Acropora palmata,species_interval_survivorship,83.33333333333333,percent,5,6,35.87654210023252,99.57892554855106,Deaths: 1
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Diploria labyrinthiformis,species_interval_survivorship,100,percent,33,33,89.42371899254208,100,Deaths: 0
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Montastraea cavernosa,species_interval_survivorship,100,percent,60,60,94.0370507713833,100,Deaths: 0
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Orbicella annularis,species_interval_survivorship,96.65271966527196,percent,231,239,93.51130626579436,98.54401205514108,Deaths: 8
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Orbicella faveolata,species_interval_survivorship,100,percent,42,42,91.59161450596449,100,Deaths: 0
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Orbicella franksi,species_interval_survivorship,100,percent,53,53,93.27654536936988,100,Deaths: 0
-species_interval,Plot E,all,Plot E,April to May,NA,NA,12,April,May,Pseudodiploria strigosa,species_interval_survivorship,99.25925925925925,percent,134,135,95.9420640883913,99.98124782659966,Deaths: 1
+species_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,Acropora cervicornis,species_interval_survivorship,84.61538461538461,percent,11,13,54.55289443234423,98.07933280174716,Deaths: 2
+species_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,Acropora palmata,species_interval_survivorship,66.29213483146067,percent,59,89,55.49227114721334,75.97348462219134,Deaths: 30
+species_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,Orbicella annularis,species_interval_survivorship,97.47899159663865,percent,232,238,94.59386834834238,99.0693384472489,Deaths: 6
+species_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,Orbicella faveolata,species_interval_survivorship,98.21428571428571,percent,55,56,90.44740973676603,99.95479984694792,Deaths: 1
+species_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,Orbicella sp.,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
+species_interval,Plot E,all,Plot E,07 May 2025 to 09 Jun 2025,NA,NA,1,May,June,Unidentified coral,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Jun 2025 to 11 Jul 2025,NA,NA,2,June,July,Acropora cervicornis,species_interval_survivorship,100,percent,11,11,71.50858470818456,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Jun 2025 to 11 Jul 2025,NA,NA,2,June,July,Acropora palmata,species_interval_survivorship,78.46153846153847,percent,51,65,66.51126854524476,87.694692475782,Deaths: 14
+species_interval,Plot E,all,Plot E,09 Jun 2025 to 11 Jul 2025,NA,NA,2,June,July,Orbicella annularis,species_interval_survivorship,97.3568281938326,percent,221,227,94.33599689732249,99.02395798200992,Deaths: 6
+species_interval,Plot E,all,Plot E,09 Jun 2025 to 11 Jul 2025,NA,NA,2,June,July,Orbicella faveolata,species_interval_survivorship,90.9090909090909,percent,50,55,80.0460384229499,96.98191321541869,Deaths: 5
+species_interval,Plot E,all,Plot E,09 Jun 2025 to 11 Jul 2025,NA,NA,2,June,July,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Jun 2025 to 11 Jul 2025,NA,NA,2,June,July,Orbicella sp.,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
+species_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,Acropora cervicornis,species_interval_survivorship,100,percent,11,11,71.50858470818456,100,Deaths: 0
+species_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,Acropora palmata,species_interval_survivorship,84.31372549019608,percent,43,51,71.41237132684408,92.97591665426911,Deaths: 8
+species_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,Empty,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
+species_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,Orbicella annularis,species_interval_survivorship,99.08256880733946,percent,216,218,96.72539971464234,99.88870107739714,Deaths: 2
+species_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,Orbicella faveolata,species_interval_survivorship,100,percent,51,51,93.02229692504613,100,Deaths: 0
+species_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,11 Jul 2025 to 04 Aug 2025,NA,NA,3,July,August,Orbicella sp.,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
+species_interval,Plot E,all,Plot E,04 Aug 2025 to 08 Sep 2025,NA,NA,4,August,September,Acropora cervicornis,species_interval_survivorship,81.81818181818181,percent,9,11,48.224414763982736,97.71688017000403,Deaths: 2
+species_interval,Plot E,all,Plot E,04 Aug 2025 to 08 Sep 2025,NA,NA,4,August,September,Acropora palmata,species_interval_survivorship,97.61904761904762,percent,41,42,87.43414428250078,99.93973766983964,Deaths: 1
+species_interval,Plot E,all,Plot E,04 Aug 2025 to 08 Sep 2025,NA,NA,4,August,September,Orbicella annularis,species_interval_survivorship,95.41284403669725,percent,208,218,91.72604634103985,97.77866750237774,Deaths: 10
+species_interval,Plot E,all,Plot E,04 Aug 2025 to 08 Sep 2025,NA,NA,4,August,September,Orbicella faveolata,species_interval_survivorship,98,percent,49,50,89.35304542885001,99.94937720169592,Deaths: 1
+species_interval,Plot E,all,Plot E,04 Aug 2025 to 08 Sep 2025,NA,NA,4,August,September,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,04 Aug 2025 to 08 Sep 2025,NA,NA,4,August,September,Orbicella sp.,species_interval_survivorship,100,percent,4,4,39.763536438352546,100,Deaths: 0
+species_interval,Plot E,all,Plot E,08 Sep 2025 to 14 Oct 2025,NA,NA,5,September,October,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
+species_interval,Plot E,all,Plot E,08 Sep 2025 to 14 Oct 2025,NA,NA,5,September,October,Acropora palmata,species_interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0
+species_interval,Plot E,all,Plot E,08 Sep 2025 to 14 Oct 2025,NA,NA,5,September,October,Orbicella annularis,species_interval_survivorship,99.49748743718592,percent,198,199,97.23212870836184,99.9872782927028,Deaths: 1
+species_interval,Plot E,all,Plot E,08 Sep 2025 to 14 Oct 2025,NA,NA,5,September,October,Orbicella faveolata,species_interval_survivorship,100,percent,49,49,92.74807363357226,100,Deaths: 0
+species_interval,Plot E,all,Plot E,08 Sep 2025 to 14 Oct 2025,NA,NA,5,September,October,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,08 Sep 2025 to 14 Oct 2025,NA,NA,5,September,October,Orbicella sp.,species_interval_survivorship,75,percent,3,4,19.41204496832434,99.36905367902902,Deaths: 1
+species_interval,Plot E,all,Plot E,14 Oct 2025 to 06 Nov 2025,NA,NA,6,October,November,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
+species_interval,Plot E,all,Plot E,14 Oct 2025 to 06 Nov 2025,NA,NA,6,October,November,Acropora palmata,species_interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0
+species_interval,Plot E,all,Plot E,14 Oct 2025 to 06 Nov 2025,NA,NA,6,October,November,Orbicella annularis,species_interval_survivorship,98.98989898989899,percent,196,198,96.39899348939205,99.87743713557735,Deaths: 2
+species_interval,Plot E,all,Plot E,14 Oct 2025 to 06 Nov 2025,NA,NA,6,October,November,Orbicella faveolata,species_interval_survivorship,100,percent,49,49,92.74807363357226,100,Deaths: 0
+species_interval,Plot E,all,Plot E,14 Oct 2025 to 06 Nov 2025,NA,NA,6,October,November,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,14 Oct 2025 to 06 Nov 2025,NA,NA,6,October,November,Orbicella sp.,species_interval_survivorship,100,percent,3,3,29.240177382128667,100,Deaths: 0
+species_interval,Plot E,all,Plot E,06 Nov 2025 to 04 Dec 2025,NA,NA,7,November,December,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
+species_interval,Plot E,all,Plot E,06 Nov 2025 to 04 Dec 2025,NA,NA,7,November,December,Acropora palmata,species_interval_survivorship,95.1219512195122,percent,39,41,83.46666465821698,99.40368817589572,Deaths: 2
+species_interval,Plot E,all,Plot E,06 Nov 2025 to 04 Dec 2025,NA,NA,7,November,December,Orbicella annularis,species_interval_survivorship,93.46733668341709,percent,186,199,89.08800540303147,96.47607685878208,Deaths: 13
+species_interval,Plot E,all,Plot E,06 Nov 2025 to 04 Dec 2025,NA,NA,7,November,December,Orbicella faveolata,species_interval_survivorship,97.95918367346938,percent,48,49,89.1458236031593,99.94834435024067,Deaths: 1
+species_interval,Plot E,all,Plot E,06 Nov 2025 to 04 Dec 2025,NA,NA,7,November,December,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,06 Nov 2025 to 04 Dec 2025,NA,NA,7,November,December,Orbicella sp.,species_interval_survivorship,100,percent,5,5,47.81762498950186,100,Deaths: 0
+species_interval,Plot E,all,Plot E,04 Dec 2025 to 20 Jan 2026,NA,NA,8,December,January,Acropora cervicornis,species_interval_survivorship,100,percent,9,9,66.37328831200571,100,Deaths: 0
+species_interval,Plot E,all,Plot E,04 Dec 2025 to 20 Jan 2026,NA,NA,8,December,January,Acropora palmata,species_interval_survivorship,100,percent,38,38,90.74872385841218,100,Deaths: 0
+species_interval,Plot E,all,Plot E,04 Dec 2025 to 20 Jan 2026,NA,NA,8,December,January,Orbicella annularis,species_interval_survivorship,98.3695652173913,percent,181,184,95.30934372042707,99.6624947498734,Deaths: 3
+species_interval,Plot E,all,Plot E,04 Dec 2025 to 20 Jan 2026,NA,NA,8,December,January,Orbicella faveolata,species_interval_survivorship,100,percent,49,49,92.74807363357226,100,Deaths: 0
+species_interval,Plot E,all,Plot E,04 Dec 2025 to 20 Jan 2026,NA,NA,8,December,January,Orbicella franksi,species_interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0
+species_interval,Plot E,all,Plot E,04 Dec 2025 to 20 Jan 2026,NA,NA,8,December,January,Orbicella sp.,species_interval_survivorship,60,percent,3,5,14.663279963467321,94.72550494736831,Deaths: 2
+species_interval,Plot E,all,Plot E,20 Jan 2026 to 16 Feb 2026,NA,NA,9,January,February,Acropora cervicornis,species_interval_survivorship,50,percent,2,4,6.7585986488543,93.2414013511457,Deaths: 2
+species_interval,Plot E,all,Plot E,20 Jan 2026 to 16 Feb 2026,NA,NA,9,January,February,Acropora palmata,species_interval_survivorship,92,percent,23,25,73.96941578947857,99.01604099812025,Deaths: 2
+species_interval,Plot E,all,Plot E,20 Jan 2026 to 16 Feb 2026,NA,NA,9,January,February,Orbicella annularis,species_interval_survivorship,97.3913043478261,percent,112,115,92.56537655898012,99.45875909721029,Deaths: 3
+species_interval,Plot E,all,Plot E,20 Jan 2026 to 16 Feb 2026,NA,NA,9,January,February,Orbicella faveolata,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
+species_interval,Plot E,all,Plot E,20 Jan 2026 to 16 Feb 2026,NA,NA,9,January,February,Orbicella franksi,species_interval_survivorship,100,percent,2,2,15.811388300841905,100,Deaths: 0
+species_interval,Plot E,all,Plot E,16 Feb 2026 to 25 Mar 2026,NA,NA,10,February,March,Acropora cervicornis,species_interval_survivorship,50,percent,1,2,1.2579117093425058,98.74208829065749,Deaths: 1
+species_interval,Plot E,all,Plot E,16 Feb 2026 to 25 Mar 2026,NA,NA,10,February,March,Acropora palmata,species_interval_survivorship,45,percent,9,20,23.057789677592414,68.47218669594514,Deaths: 11
+species_interval,Plot E,all,Plot E,16 Feb 2026 to 25 Mar 2026,NA,NA,10,February,March,Diploria labyrinthiformis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot E,all,Plot E,16 Feb 2026 to 25 Mar 2026,NA,NA,10,February,March,Orbicella annularis,species_interval_survivorship,95.37037037037037,percent,103,108,89.52619054516794,98.47990766945507,Deaths: 5
+species_interval,Plot E,all,Plot E,16 Feb 2026 to 25 Mar 2026,NA,NA,10,February,March,Orbicella faveolata,species_interval_survivorship,100,percent,21,21,83.89023847809204,100,Deaths: 0
+species_interval,Plot E,all,Plot E,16 Feb 2026 to 25 Mar 2026,NA,NA,10,February,March,Orbicella franksi,species_interval_survivorship,100,percent,3,3,29.240177382128667,100,Deaths: 0
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Acropora cervicornis,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Acropora palmata,species_interval_survivorship,66.66666666666667,percent,6,9,29.92950562085404,92.51453685803082,Deaths: 3
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Diploria labyrinthiformis,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Montastraea cavernosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Orbicella annularis,species_interval_survivorship,92.07920792079207,percent,93,101,84.98837989949124,96.51830896012052,Deaths: 8
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Orbicella faveolata,species_interval_survivorship,100,percent,21,21,83.89023847809204,100,Deaths: 0
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Orbicella franksi,species_interval_survivorship,100,percent,3,3,29.240177382128667,100,Deaths: 0
+species_interval,Plot E,all,Plot E,25 Mar 2026 to 09 Apr 2026,NA,NA,11,March,April,Pseudodiploria strigosa,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Acropora cervicornis,species_interval_survivorship,100,percent,1,1,2.500000000000002,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Acropora palmata,species_interval_survivorship,83.33333333333333,percent,5,6,35.87654210023252,99.57892554855106,Deaths: 1
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Diploria labyrinthiformis,species_interval_survivorship,100,percent,33,33,89.42371899254208,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Montastraea cavernosa,species_interval_survivorship,100,percent,60,60,94.0370507713833,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Orbicella annularis,species_interval_survivorship,96.65271966527196,percent,231,239,93.51130626579436,98.54401205514108,Deaths: 8
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Orbicella faveolata,species_interval_survivorship,100,percent,42,42,91.59161450596449,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Orbicella franksi,species_interval_survivorship,100,percent,53,53,93.27654536936988,100,Deaths: 0
+species_interval,Plot E,all,Plot E,09 Apr 2026 to 04 May 2026,NA,NA,12,April,May,Pseudodiploria strigosa,species_interval_survivorship,99.25925925925925,percent,134,135,95.9420640883913,99.98124782659966,Deaths: 1
 species_month,Plot E,all,Plot E,May,1,May,NA,NA,NA,Acropora cervicornis,species_cover_share,4.018332373697404,percent_of_outplant_cover,13,443,NA,NA,Species area m2: 0.025159
 species_month,Plot E,all,Plot E,May,1,May,NA,NA,NA,Acropora palmata,species_cover_share,39.26127465738602,percent_of_outplant_cover,89,443,NA,NA,Species area m2: 0.245817
 species_month,Plot E,all,Plot E,May,1,May,NA,NA,NA,Orbicella annularis,species_cover_share,32.64805212540059,percent_of_outplant_cover,238,443,NA,NA,Species area m2: 0.204411
@@ -458,9 +458,9 @@ species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Orbicella annularis,species_
 species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Orbicella faveolata,species_prevalence,7.317073170731708,percent_of_present_outplants,42,574,NA,NA,Species area m2: 0.10698
 species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Orbicella franksi,species_prevalence,9.233449477351916,percent_of_present_outplants,53,574,NA,NA,Species area m2: 0.051267
 species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Pseudodiploria strigosa,species_prevalence,23.519163763066203,percent_of_present_outplants,135,574,NA,NA,Species area m2: 0.079861
-plot_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 41
-plot_interval,Plot F,all,Plot F,May to May,NA,NA,2,May,May,NA,interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0; births/new detections: 0
-plot_interval,Plot F,all,Plot F,May to August,NA,NA,3,May,August,NA,interval_survivorship,92.6829268292683,percent,38,41,80.0754021623337,98.46485284665833,Deaths: 3; births/new detections: 0
+plot_interval,Plot F,all,Plot F,06 Nov 2025 to 01 May 2026,NA,NA,1,November,May,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 41
+plot_interval,Plot F,all,Plot F,01 May 2026 to 27 May 2026,NA,NA,2,May,May,NA,interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot F,all,Plot F,27 May 2026 to 20 Aug 2026,NA,NA,3,May,August,NA,interval_survivorship,92.6829268292683,percent,38,41,80.0754021623337,98.46485284665833,Deaths: 3; births/new detections: 0
 plot_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,NA,cumulative_deaths,0,count,0,41,NA,NA,Baseline month: May
 plot_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,NA,cumulative_deaths,1,count,1,41,NA,NA,Baseline month: May
 plot_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,NA,cumulative_deaths,4,count,4,41,NA,NA,Baseline month: May
@@ -470,13 +470,13 @@ plot_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,NA,cumulative_survivorship
 plot_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,NA,outplant_cover,0.010071458333333333,percent_of_plot,41,NA,NA,NA,Total area m2: 0.048343
 plot_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,NA,outplant_cover,0.009433177083333332,percent_of_plot,41,NA,NA,NA,Total area m2: 0.045279
 plot_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,NA,outplant_cover,0.010834687499999995,percent_of_plot,38,NA,NA,NA,Total area m2: 0.052006
-species_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,Orbicella sp.,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot F,all,Plot F,May to May,NA,NA,2,May,May,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
-species_interval,Plot F,all,Plot F,May to May,NA,NA,2,May,May,Porites porites,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
-species_interval,Plot F,all,Plot F,May to August,NA,NA,3,May,August,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
-species_interval,Plot F,all,Plot F,May to August,NA,NA,3,May,August,Porites porites,species_interval_survivorship,86.36363636363636,percent,19,22,65.08779027425918,97.09441488712534,Deaths: 3
+species_interval,Plot F,all,Plot F,06 Nov 2025 to 01 May 2026,NA,NA,1,November,May,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot F,all,Plot F,06 Nov 2025 to 01 May 2026,NA,NA,1,November,May,Orbicella sp.,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot F,all,Plot F,06 Nov 2025 to 01 May 2026,NA,NA,1,November,May,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot F,all,Plot F,01 May 2026 to 27 May 2026,NA,NA,2,May,May,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot F,all,Plot F,01 May 2026 to 27 May 2026,NA,NA,2,May,May,Porites porites,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
+species_interval,Plot F,all,Plot F,27 May 2026 to 20 Aug 2026,NA,NA,3,May,August,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot F,all,Plot F,27 May 2026 to 20 Aug 2026,NA,NA,3,May,August,Porites porites,species_interval_survivorship,86.36363636363636,percent,19,22,65.08779027425918,97.09441488712534,Deaths: 3
 species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Orbicella annularis,species_cover_share,62.11395651904102,percent_of_outplant_cover,18,41,NA,NA,Species area m2: 0.030028
 species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Orbicella sp.,species_cover_share,4.576153734770287,percent_of_outplant_cover,1,41,NA,NA,Species area m2: 0.002212
 species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Porites porites,species_cover_share,33.30988974618869,percent_of_outplant_cover,22,41,NA,NA,Species area m2: 0.016103
@@ -491,9 +491,9 @@ species_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,Orbicella annularis,species_p
 species_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,Porites porites,species_prevalence,53.65853658536585,percent_of_present_outplants,22,41,NA,NA,Species area m2: 0.016466
 species_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,Orbicella annularis,species_prevalence,50,percent_of_present_outplants,19,38,NA,NA,Species area m2: 0.036284
 species_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,Porites porites,species_prevalence,50,percent_of_present_outplants,19,38,NA,NA,Species area m2: 0.015722
-plot_interval,Plot G,all,Plot G,November to April,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 45
-plot_interval,Plot G,all,Plot G,April to May,NA,NA,2,April,May,NA,interval_survivorship,100,percent,45,45,92.12948995931569,100,Deaths: 0; births/new detections: 0
-plot_interval,Plot G,all,Plot G,May to August,NA,NA,3,May,August,NA,interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot G,all,Plot G,07 Nov 2025 to 24 Apr 2026,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 45
+plot_interval,Plot G,all,Plot G,24 Apr 2026 to 26 May 2026,NA,NA,2,April,May,NA,interval_survivorship,100,percent,45,45,92.12948995931569,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot G,all,Plot G,26 May 2026 to 13 Aug 2026,NA,NA,3,May,August,NA,interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0; births/new detections: 0
 plot_month,Plot G,all,Plot G,April,2,April,NA,NA,NA,NA,cumulative_deaths,0,count,0,45,NA,NA,Baseline month: April
 plot_month,Plot G,all,Plot G,May,3,May,NA,NA,NA,NA,cumulative_deaths,0,count,0,45,NA,NA,Baseline month: April
 plot_month,Plot G,all,Plot G,August,4,August,NA,NA,NA,NA,cumulative_deaths,1,count,1,45,NA,NA,Baseline month: April
@@ -503,12 +503,12 @@ plot_month,Plot G,all,Plot G,August,4,August,NA,NA,NA,NA,cumulative_survivorship
 plot_month,Plot G,all,Plot G,April,2,April,NA,NA,NA,NA,outplant_cover,0.012292708333333336,percent_of_plot,45,NA,NA,NA,Total area m2: 0.059005
 plot_month,Plot G,all,Plot G,May,3,May,NA,NA,NA,NA,outplant_cover,0.012344427083333331,percent_of_plot,45,NA,NA,NA,Total area m2: 0.059253
 plot_month,Plot G,all,Plot G,August,4,August,NA,NA,NA,NA,outplant_cover,0.013044270833333331,percent_of_plot,44,NA,NA,NA,Total area m2: 0.062612
-species_interval,Plot G,all,Plot G,November to April,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot G,all,Plot G,November to April,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot G,all,Plot G,April to May,NA,NA,2,April,May,Orbicella annularis,species_interval_survivorship,100,percent,18,18,81.46980318621478,100,Deaths: 0
-species_interval,Plot G,all,Plot G,April to May,NA,NA,2,April,May,Porites porites,species_interval_survivorship,100,percent,27,27,87.22971323845677,100,Deaths: 0
-species_interval,Plot G,all,Plot G,May to August,NA,NA,3,May,August,Orbicella annularis,species_interval_survivorship,100,percent,17,17,80.49356770309069,100,Deaths: 0
-species_interval,Plot G,all,Plot G,May to August,NA,NA,3,May,August,Porites porites,species_interval_survivorship,100,percent,27,27,87.22971323845677,100,Deaths: 0
+species_interval,Plot G,all,Plot G,07 Nov 2025 to 24 Apr 2026,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot G,all,Plot G,07 Nov 2025 to 24 Apr 2026,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot G,all,Plot G,24 Apr 2026 to 26 May 2026,NA,NA,2,April,May,Orbicella annularis,species_interval_survivorship,100,percent,18,18,81.46980318621478,100,Deaths: 0
+species_interval,Plot G,all,Plot G,24 Apr 2026 to 26 May 2026,NA,NA,2,April,May,Porites porites,species_interval_survivorship,100,percent,27,27,87.22971323845677,100,Deaths: 0
+species_interval,Plot G,all,Plot G,26 May 2026 to 13 Aug 2026,NA,NA,3,May,August,Orbicella annularis,species_interval_survivorship,100,percent,17,17,80.49356770309069,100,Deaths: 0
+species_interval,Plot G,all,Plot G,26 May 2026 to 13 Aug 2026,NA,NA,3,May,August,Porites porites,species_interval_survivorship,100,percent,27,27,87.22971323845677,100,Deaths: 0
 species_month,Plot G,all,Plot G,April,2,April,NA,NA,NA,Orbicella annularis,species_cover_share,52.160410134734335,percent_of_outplant_cover,18,45,NA,NA,Species area m2: 0.030777
 species_month,Plot G,all,Plot G,April,2,April,NA,NA,NA,Porites porites,species_cover_share,47.83958986526567,percent_of_outplant_cover,27,45,NA,NA,Species area m2: 0.028228
 species_month,Plot G,all,Plot G,May,3,May,NA,NA,NA,Orbicella annularis,species_cover_share,52.85364093952653,percent_of_outplant_cover,18,45,NA,NA,Species area m2: 0.031318
@@ -521,9 +521,9 @@ species_month,Plot G,all,Plot G,May,3,May,NA,NA,NA,Orbicella annularis,species_p
 species_month,Plot G,all,Plot G,May,3,May,NA,NA,NA,Porites porites,species_prevalence,60,percent_of_present_outplants,27,45,NA,NA,Species area m2: 0.027936
 species_month,Plot G,all,Plot G,August,4,August,NA,NA,NA,Orbicella annularis,species_prevalence,38.63636363636363,percent_of_present_outplants,17,44,NA,NA,Species area m2: 0.032146
 species_month,Plot G,all,Plot G,August,4,August,NA,NA,NA,Porites porites,species_prevalence,61.36363636363637,percent_of_present_outplants,27,44,NA,NA,Species area m2: 0.030467
-plot_interval,Plot H,all,Plot H,November to April,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 38
-plot_interval,Plot H,all,Plot H,April to May,NA,NA,2,April,May,NA,interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0; births/new detections: 0
-plot_interval,Plot H,all,Plot H,May to August,NA,NA,3,May,August,NA,interval_survivorship,95.23809523809524,percent,40,42,83.83580403083461,99.418017516449,Deaths: 2; births/new detections: 0
+plot_interval,Plot H,all,Plot H,07 Nov 2025 to 24 Apr 2026,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 38
+plot_interval,Plot H,all,Plot H,24 Apr 2026 to 25 May 2026,NA,NA,2,April,May,NA,interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot H,all,Plot H,25 May 2026 to 13 Aug 2026,NA,NA,3,May,August,NA,interval_survivorship,95.23809523809524,percent,40,42,83.83580403083461,99.418017516449,Deaths: 2; births/new detections: 0
 plot_month,Plot H,all,Plot H,April,2,April,NA,NA,NA,NA,cumulative_deaths,0,count,0,38,NA,NA,Baseline month: April
 plot_month,Plot H,all,Plot H,May,3,May,NA,NA,NA,NA,cumulative_deaths,0,count,0,38,NA,NA,Baseline month: April
 plot_month,Plot H,all,Plot H,August,4,August,NA,NA,NA,NA,cumulative_deaths,2,count,2,38,NA,NA,Baseline month: April
@@ -533,12 +533,12 @@ plot_month,Plot H,all,Plot H,August,4,August,NA,NA,NA,NA,cumulative_survivorship
 plot_month,Plot H,all,Plot H,April,2,April,NA,NA,NA,NA,outplant_cover,0.010263437499999997,percent_of_plot,38,NA,NA,NA,Total area m2: 0.049264
 plot_month,Plot H,all,Plot H,May,3,May,NA,NA,NA,NA,outplant_cover,0.011871041666666665,percent_of_plot,41,NA,NA,NA,Total area m2: 0.056981
 plot_month,Plot H,all,Plot H,August,4,August,NA,NA,NA,NA,outplant_cover,0.011380208333333332,percent_of_plot,40,NA,NA,NA,Total area m2: 0.054625
-species_interval,Plot H,all,Plot H,November to April,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot H,all,Plot H,November to April,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
-species_interval,Plot H,all,Plot H,April to May,NA,NA,2,April,May,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
-species_interval,Plot H,all,Plot H,April to May,NA,NA,2,April,May,Porites porites,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
-species_interval,Plot H,all,Plot H,May to August,NA,NA,3,May,August,Orbicella annularis,species_interval_survivorship,90,percent,18,20,68.30172859809177,98.76514728297052,Deaths: 2
-species_interval,Plot H,all,Plot H,May to August,NA,NA,3,May,August,Porites porites,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
+species_interval,Plot H,all,Plot H,07 Nov 2025 to 24 Apr 2026,NA,NA,1,November,April,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot H,all,Plot H,07 Nov 2025 to 24 Apr 2026,NA,NA,1,November,April,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot H,all,Plot H,24 Apr 2026 to 25 May 2026,NA,NA,2,April,May,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot H,all,Plot H,24 Apr 2026 to 25 May 2026,NA,NA,2,April,May,Porites porites,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
+species_interval,Plot H,all,Plot H,25 May 2026 to 13 Aug 2026,NA,NA,3,May,August,Orbicella annularis,species_interval_survivorship,90,percent,18,20,68.30172859809177,98.76514728297052,Deaths: 2
+species_interval,Plot H,all,Plot H,25 May 2026 to 13 Aug 2026,NA,NA,3,May,August,Porites porites,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
 species_month,Plot H,all,Plot H,April,2,April,NA,NA,NA,Orbicella annularis,species_cover_share,65.38937774665327,percent_of_outplant_cover,18,38,NA,NA,Species area m2: 0.032214
 species_month,Plot H,all,Plot H,April,2,April,NA,NA,NA,Porites porites,species_cover_share,34.61062225334673,percent_of_outplant_cover,20,38,NA,NA,Species area m2: 0.017051
 species_month,Plot H,all,Plot H,May,3,May,NA,NA,NA,Orbicella annularis,species_cover_share,64.8391569119531,percent_of_outplant_cover,19,41,NA,NA,Species area m2: 0.036946

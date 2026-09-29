@@ -83,3 +83,9 @@
 - Preserved the supplied CSV bytes and recorded source paths, raw row counts, and SHA-256 hashes in `2026-09-29_plot_f_data_intake.csv`.
 - Populated Coki F across the report, homepage summary, figures, tables, and interactive-map popup.
 - Retained ten comma-only rows and two empty trailing columns in the supplied August 0-1 source file; generated QA reports these as missing rows.
+
+## 2026-09-29 — Exact survey-date axes
+
+- Changed every time-based outplant and all-coral figure to label the x-axis with exact day-month-year survey dates.
+- Added survey dates to the outplant cover summary so surveys in the same named month remain separate.
+- Changed interval labels to show exact start and end dates and changed short-monitoring labels to show the exact survey date.
