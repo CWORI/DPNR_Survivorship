@@ -19,10 +19,12 @@ Plot C,1-0,Plot C 1-0,2,April,June,1-0_Coki_PlotC_Matches_20260403_20260606.csv,
 Plot C,1-0,Plot C 1-0,3,June,August,1-0_Coki_PlotC_Survivorship_20260606_20260805.csv,249,0,0,249,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
 Plot D,0-0,Plot D 0-0,1,November,April,0-0_Coki_PlotD_Matches_20251105_20260416.csv,234,0,0,234,0,0,born,none
 Plot D,0-0,Plot D 0-0,2,April,June,0-0_Coki_PlotD_Matches_20260416_20260608.csv,234,0,0,234,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
+Plot D,0-0,Plot D 0-0,3,June,August,0-0_Coki_PlotD_Matches_20260608_20260806.csv,197,0,0,197,0,0,dead; grow; same; shrink,n/s; none
 Plot D,0-1,Plot D 0-1,1,November,April,0-1_Coki_PlotD_Matches_20251105_20260416.csv,1,0,0,1,0,0,born,none
 Plot D,0-1,Plot D 0-1,2,April,June,0-1_Coki_PlotD_Matches_20260416_20260608.csv,1,0,0,1,0,0,grow,none
 Plot D,1-0,Plot D 1-0,1,November,April,1-0_Coki_PlotD_Matches_20251105_20260416.csv,101,0,0,101,0,0,born,none
 Plot D,1-0,Plot D 1-0,2,April,June,1-0_Coki_PlotD_Matches_20260416_20260608.csv,101,0,0,101,0,0,grow; same; shrink,fuse; none
+Plot D,1-0,Plot D 1-0,3,June,August,1-0_Coki_PlotD_Matches_20260608_20260806.csv,84,0,0,84,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
 Plot E,0-0,Plot E 0-0,1,May,June,0-0_PlotE_Matches_20250507_20250609.csv,238,0,0,238,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none; split
 Plot E,0-0,Plot E 0-0,2,June,July,0-0_PlotE_Matches_20250609_20250711.csv,234,0,0,234,0,0,dead; grow; n/s; same; shrink,fuse; n/s; none
 Plot E,0-0,Plot E 0-0,3,July,August,0-0_PlotE_Matches_20250711_20250804.csv,207,0,0,207,0,0,born; dead; grow; n/s; same; shrink,fuse; n/s; none

@@ -54,7 +54,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 34,35,29,2.3725,2.5875,Montastrea_cavernosa,grow,none
 35,36,30,2.5025,2.9675,Montastrea_cavernosa,grow,none
 39,40,34,22.49,24.0975,Orbicella_annularis,grow,none
-41,42,36,7.535,9.7475,Unidentified_coral,grow,none
+41,42,36,7.535,9.7475,Porites_porites,grow,none
 43,44,38,0.895,4.2075,Porites_porites,grow,n/s
 44,45,40,2.5425,3.03,Porites_porites,grow,none
 45,46,39,1.365,2.67,Porites_porites,grow,none
@@ -103,7 +103,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 36,37,31,2.3475,2.4375,Montastrea_cavernosa,same,none
 37,38,32,18.3925,19.2725,Orbicella_annularis,same,none
 38,39,33,21.4925,21.8625,Orbicella_annularis,same,none
-40,41,35,9.265,9.105,Unidentified_coral,same,none
+40,41,35,9.265,9.105,Porites_porites,same,none
 50,52,45,3.5775,3.7475,Porites_porites,same,none
 61,63,56,27.205,26.65,Orbicella_annularis,same,none
 63,65,58,10.075,9.9025,Porites_porites,same,none

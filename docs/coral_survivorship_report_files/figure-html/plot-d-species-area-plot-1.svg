@@ -24,65 +24,64 @@
 <rect x='0.00' y='0.00' width='576.00' height='345.60' style='stroke-width: 1.16; stroke: #FFFFFF; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpNDkuNjR8NDIyLjYxfDQyLjM2fDI4Mi4zMA=='>
-    <rect x='49.64' y='42.36' width='372.97' height='239.94' />
+  <clipPath id='cpNDkuNjR8NDIyLjYxfDQyLjM2fDI4MS4zOA=='>
+    <rect x='49.64' y='42.36' width='372.97' height='239.02' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNDkuNjR8NDIyLjYxfDQyLjM2fDI4Mi4zMA==)'>
-<rect x='49.64' y='42.36' width='372.97' height='239.94' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<polyline points='49.64,275.32 422.61,275.32 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='49.64,158.52 422.61,158.52 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='66.59,243.27 405.66,243.56 ' style='stroke-width: 1.71; stroke: #8A6FDF; stroke-linecap: butt;' />
-<polyline points='66.59,73.54 405.66,61.02 ' style='stroke-width: 1.71; stroke: #009E73; stroke-linecap: butt;' />
-<polyline points='66.59,215.96 405.66,215.72 ' style='stroke-width: 1.71; stroke: #D55E00; stroke-linecap: butt;' />
-<polyline points='66.59,53.27 405.66,86.94 ' style='stroke-width: 1.71; stroke: #F0E442; stroke-linecap: butt;' />
-<polyline points='66.59,271.39 405.66,270.91 ' style='stroke-width: 1.71; stroke: #999999; stroke-linecap: butt;' />
-<circle cx='66.59' cy='243.27' r='3.16' style='stroke-width: 0.77; stroke: #8A6FDF; fill: #8A6FDF;' />
-<circle cx='66.59' cy='73.54' r='3.16' style='stroke-width: 0.77; stroke: #009E73; fill: #009E73;' />
-<circle cx='66.59' cy='215.96' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
-<circle cx='66.59' cy='53.27' r='3.16' style='stroke-width: 0.77; stroke: #F0E442; fill: #F0E442;' />
-<circle cx='66.59' cy='271.39' r='3.16' style='stroke-width: 0.77; stroke: #999999; fill: #999999;' />
-<circle cx='405.66' cy='243.56' r='3.16' style='stroke-width: 0.77; stroke: #8A6FDF; fill: #8A6FDF;' />
-<circle cx='405.66' cy='61.02' r='3.16' style='stroke-width: 0.77; stroke: #009E73; fill: #009E73;' />
-<circle cx='405.66' cy='215.72' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
-<circle cx='405.66' cy='86.94' r='3.16' style='stroke-width: 0.77; stroke: #F0E442; fill: #F0E442;' />
-<circle cx='405.66' cy='270.91' r='3.16' style='stroke-width: 0.77; stroke: #999999; fill: #999999;' />
+<g clip-path='url(#cpNDkuNjR8NDIyLjYxfDQyLjM2fDI4MS4zOA==)'>
+<rect x='49.64' y='42.36' width='372.97' height='239.02' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='49.64,173.75 422.61,173.75 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='49.64,44.81 422.61,44.81 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='66.59,267.31 227.04,267.64 405.66,270.51 ' style='stroke-width: 1.71; stroke: #8A6FDF; stroke-linecap: butt;' />
+<polyline points='66.59,79.94 227.04,66.12 405.66,81.23 ' style='stroke-width: 1.71; stroke: #009E73; stroke-linecap: butt;' />
+<polyline points='66.59,237.16 227.04,236.90 405.66,234.20 ' style='stroke-width: 1.71; stroke: #D55E00; stroke-linecap: butt;' />
+<polyline points='66.59,53.23 227.04,89.86 405.66,121.47 ' style='stroke-width: 1.71; stroke: #F0E442; stroke-linecap: butt;' />
+<circle cx='66.59' cy='267.31' r='3.16' style='stroke-width: 0.77; stroke: #8A6FDF; fill: #8A6FDF;' />
+<circle cx='66.59' cy='79.94' r='3.16' style='stroke-width: 0.77; stroke: #009E73; fill: #009E73;' />
+<circle cx='66.59' cy='237.16' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='66.59' cy='53.23' r='3.16' style='stroke-width: 0.77; stroke: #F0E442; fill: #F0E442;' />
+<circle cx='227.04' cy='267.64' r='3.16' style='stroke-width: 0.77; stroke: #8A6FDF; fill: #8A6FDF;' />
+<circle cx='227.04' cy='66.12' r='3.16' style='stroke-width: 0.77; stroke: #009E73; fill: #009E73;' />
+<circle cx='227.04' cy='236.90' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='227.04' cy='89.86' r='3.16' style='stroke-width: 0.77; stroke: #F0E442; fill: #F0E442;' />
+<circle cx='405.66' cy='270.51' r='3.16' style='stroke-width: 0.77; stroke: #8A6FDF; fill: #8A6FDF;' />
+<circle cx='405.66' cy='81.23' r='3.16' style='stroke-width: 0.77; stroke: #009E73; fill: #009E73;' />
+<circle cx='405.66' cy='234.20' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='405.66' cy='121.47' r='3.16' style='stroke-width: 0.77; stroke: #F0E442; fill: #F0E442;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNDUuNjA=)'>
-<polyline points='49.64,282.30 49.64,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<text x='44.26' y='278.76' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.000</text>
-<text x='44.26' y='161.96' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.050</text>
-<polyline points='46.65,275.32 49.64,275.32 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='46.65,158.52 49.64,158.52 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='49.64,282.30 422.61,282.30 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<polyline points='66.59,285.29 66.59,282.30 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='405.66,285.29 405.66,282.30 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<text transform='translate(70.54,293.32) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.27px' lengthAdjust='spacingAndGlyphs'>16 Apr 2026</text>
-<text transform='translate(409.60,293.32) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.80px' lengthAdjust='spacingAndGlyphs'>08 Jun 2026</text>
+<polyline points='49.64,281.38 49.64,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<text x='44.26' y='177.19' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.050</text>
+<text x='44.26' y='48.26' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.100</text>
+<polyline points='46.65,173.75 49.64,173.75 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='46.65,44.81 49.64,44.81 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='49.64,281.38 422.61,281.38 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<polyline points='66.59,284.37 66.59,281.38 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='227.04,284.37 227.04,281.38 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='405.66,284.37 405.66,281.38 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text transform='translate(70.54,292.40) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.27px' lengthAdjust='spacingAndGlyphs'>16 Apr 2026</text>
+<text transform='translate(230.99,292.40) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.80px' lengthAdjust='spacingAndGlyphs'>08 Jun 2026</text>
+<text transform='translate(409.60,292.40) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='54.41px' lengthAdjust='spacingAndGlyphs'>06 Aug 2026</text>
 <text x='236.12' y='336.97' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='68.04px' lengthAdjust='spacingAndGlyphs'>Survey date</text>
-<text transform='translate(14.62,162.33) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='160.04px' lengthAdjust='spacingAndGlyphs'>Observed outplant area (m²)</text>
-<rect x='434.56' y='104.52' width='135.46' height='115.62' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<text x='440.54' y='120.46' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='45.37px' lengthAdjust='spacingAndGlyphs'>Species</text>
-<rect x='440.54' y='127.76' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<line x1='442.27' y1='136.40' x2='456.09' y2='136.40' style='stroke-width: 1.71; stroke: #8A6FDF; stroke-linecap: butt;' />
-<circle cx='449.18' cy='136.40' r='3.16' style='stroke-width: 0.77; stroke: #8A6FDF; fill: #8A6FDF;' />
-<rect x='440.54' y='145.04' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<line x1='442.27' y1='153.68' x2='456.09' y2='153.68' style='stroke-width: 1.71; stroke: #009E73; stroke-linecap: butt;' />
-<circle cx='449.18' cy='153.68' r='3.16' style='stroke-width: 0.77; stroke: #009E73; fill: #009E73;' />
-<rect x='440.54' y='162.32' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<line x1='442.27' y1='170.96' x2='456.09' y2='170.96' style='stroke-width: 1.71; stroke: #D55E00; stroke-linecap: butt;' />
-<circle cx='449.18' cy='170.96' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
-<rect x='440.54' y='179.60' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<line x1='442.27' y1='188.24' x2='456.09' y2='188.24' style='stroke-width: 1.71; stroke: #F0E442; stroke-linecap: butt;' />
-<circle cx='449.18' cy='188.24' r='3.16' style='stroke-width: 0.77; stroke: #F0E442; fill: #F0E442;' />
-<rect x='440.54' y='196.88' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<line x1='442.27' y1='205.52' x2='456.09' y2='205.52' style='stroke-width: 1.71; stroke: #999999; stroke-linecap: butt;' />
-<circle cx='449.18' cy='205.52' r='3.16' style='stroke-width: 0.77; stroke: #999999; fill: #999999;' />
-<text x='463.80' y='139.85' style='font-size: 9.60px; font-family: "Arial";' textLength='100.25px' lengthAdjust='spacingAndGlyphs'>Montastraea cavernosa</text>
-<text x='463.80' y='157.13' style='font-size: 9.60px; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella annularis</text>
-<text x='463.80' y='174.41' style='font-size: 9.60px; font-family: "Arial";' textLength='68.77px' lengthAdjust='spacingAndGlyphs'>Orbicella franksi</text>
-<text x='463.80' y='191.69' style='font-size: 9.60px; font-family: "Arial";' textLength='61.32px' lengthAdjust='spacingAndGlyphs'>Porites porites</text>
-<text x='463.80' y='208.97' style='font-size: 9.60px; font-family: "Arial";' textLength='74.12px' lengthAdjust='spacingAndGlyphs'>Unidentified coral</text>
+<text transform='translate(14.62,161.87) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='160.04px' lengthAdjust='spacingAndGlyphs'>Observed outplant area (m²)</text>
+<rect x='434.56' y='112.70' width='135.46' height='98.34' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='440.54' y='128.64' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='45.37px' lengthAdjust='spacingAndGlyphs'>Species</text>
+<rect x='440.54' y='135.94' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<line x1='442.27' y1='144.58' x2='456.09' y2='144.58' style='stroke-width: 1.71; stroke: #8A6FDF; stroke-linecap: butt;' />
+<circle cx='449.18' cy='144.58' r='3.16' style='stroke-width: 0.77; stroke: #8A6FDF; fill: #8A6FDF;' />
+<rect x='440.54' y='153.22' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<line x1='442.27' y1='161.86' x2='456.09' y2='161.86' style='stroke-width: 1.71; stroke: #009E73; stroke-linecap: butt;' />
+<circle cx='449.18' cy='161.86' r='3.16' style='stroke-width: 0.77; stroke: #009E73; fill: #009E73;' />
+<rect x='440.54' y='170.50' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<line x1='442.27' y1='179.14' x2='456.09' y2='179.14' style='stroke-width: 1.71; stroke: #D55E00; stroke-linecap: butt;' />
+<circle cx='449.18' cy='179.14' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<rect x='440.54' y='187.78' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<line x1='442.27' y1='196.42' x2='456.09' y2='196.42' style='stroke-width: 1.71; stroke: #F0E442; stroke-linecap: butt;' />
+<circle cx='449.18' cy='196.42' r='3.16' style='stroke-width: 0.77; stroke: #F0E442; fill: #F0E442;' />
+<text x='463.80' y='148.03' style='font-size: 9.60px; font-family: "Arial";' textLength='100.25px' lengthAdjust='spacingAndGlyphs'>Montastraea cavernosa</text>
+<text x='463.80' y='165.31' style='font-size: 9.60px; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella annularis</text>
+<text x='463.80' y='182.59' style='font-size: 9.60px; font-family: "Arial";' textLength='68.77px' lengthAdjust='spacingAndGlyphs'>Orbicella franksi</text>
+<text x='463.80' y='199.87' style='font-size: 9.60px; font-family: "Arial";' textLength='61.32px' lengthAdjust='spacingAndGlyphs'>Porites porites</text>
 <text x='49.64' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='277.49px' lengthAdjust='spacingAndGlyphs'>Summed measured planar area of present outplants</text>
 <text x='49.64' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='219.33px' lengthAdjust='spacingAndGlyphs'>Outplanted coral area by species</text>
 </g>

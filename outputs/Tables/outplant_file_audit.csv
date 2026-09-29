@@ -19,10 +19,12 @@ Plot C,1-0,Plot C 1-0,April,June,2026-04-03,2026-06-06,1-0,1-0_Coki_PlotC_Matche
 Plot C,1-0,Plot C 1-0,June,August,2026-06-06,2026-08-05,1-0,1-0_Coki_PlotC_Survivorship_20260606_20260805.csv,data_raw/taglab/Plot_C/1-0_Coki_PlotC_Survivorship_20260606_20260805.csv,TRUE
 Plot D,0-0,Plot D 0-0,November,April,2025-11-05,2026-04-16,0-0,0-0_Coki_PlotD_Matches_20251105_20260416.csv,data_raw/taglab/Plot_D/0-0_Coki_PlotD_Matches_20251105_20260416.csv,TRUE
 Plot D,0-0,Plot D 0-0,April,June,2026-04-16,2026-06-08,0-0,0-0_Coki_PlotD_Matches_20260416_20260608.csv,data_raw/taglab/Plot_D/0-0_Coki_PlotD_Matches_20260416_20260608.csv,TRUE
+Plot D,0-0,Plot D 0-0,June,August,2026-06-08,2026-08-06,0-0,0-0_Coki_PlotD_Matches_20260608_20260806.csv,data_raw/taglab/Plot_D/0-0_Coki_PlotD_Matches_20260608_20260806.csv,TRUE
 Plot D,0-1,Plot D 0-1,November,April,2025-11-05,2026-04-16,0-1,0-1_Coki_PlotD_Matches_20251105_20260416.csv,data_raw/taglab/Plot_D/0-1_Coki_PlotD_Matches_20251105_20260416.csv,TRUE
 Plot D,0-1,Plot D 0-1,April,June,2026-04-16,2026-06-08,0-1,0-1_Coki_PlotD_Matches_20260416_20260608.csv,data_raw/taglab/Plot_D/0-1_Coki_PlotD_Matches_20260416_20260608.csv,TRUE
 Plot D,1-0,Plot D 1-0,November,April,2025-11-05,2026-04-16,1-0,1-0_Coki_PlotD_Matches_20251105_20260416.csv,data_raw/taglab/Plot_D/1-0_Coki_PlotD_Matches_20251105_20260416.csv,TRUE
 Plot D,1-0,Plot D 1-0,April,June,2026-04-16,2026-06-08,1-0,1-0_Coki_PlotD_Matches_20260416_20260608.csv,data_raw/taglab/Plot_D/1-0_Coki_PlotD_Matches_20260416_20260608.csv,TRUE
+Plot D,1-0,Plot D 1-0,June,August,2026-06-08,2026-08-06,1-0,1-0_Coki_PlotD_Matches_20260608_20260806.csv,data_raw/taglab/Plot_D/1-0_Coki_PlotD_Matches_20260608_20260806.csv,TRUE
 Plot E,0-0,Plot E 0-0,May,June,2025-05-07,2025-06-09,0-0,0-0_PlotE_Matches_20250507_20250609.csv,data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250507_20250609.csv,TRUE
 Plot E,0-0,Plot E 0-0,June,July,2025-06-09,2025-07-11,0-0,0-0_PlotE_Matches_20250609_20250711.csv,data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250609_20250711.csv,TRUE
 Plot E,0-0,Plot E 0-0,July,August,2025-07-11,2025-08-04,0-0,0-0_PlotE_Matches_20250711_20250804.csv,data_raw/taglab/Plot_E/0-0_PlotE_Matches_20250711_20250804.csv,TRUE

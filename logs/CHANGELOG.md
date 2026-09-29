@@ -96,3 +96,10 @@
 - Replaced the supplied Plot F section 1-0 baseline export with the corrected file.
 - Corrected Genet 35 from `Orbicella sp.` to `Orbicella annularis`; all other supplied fields and rows are unchanged.
 - Updated the intake SHA-256 hash and rebuilt the website outputs.
+
+## 2026-09-29 — Plot D data update
+
+- Replaced the supplied Plot D Matches exports for sections 0-0, 0-1, and 1-0 with the updated files.
+- Added the June 8 to August 6, 2026 interval for sections 0-0 and 1-0; no August interval was supplied for section 0-1, so August remains a partial-section survey.
+- Recorded source paths, raw row counts, and SHA-256 hashes in `2026-09-29_plot_d_data_intake.csv`.
+- Rebuilt the website outputs, figures, tables, homepage summary, and interactive-map popup.
