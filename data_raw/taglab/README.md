@@ -12,7 +12,14 @@ from OneDrive_1_9-23-2026.zip, totaling 9,329 raw rows. See
 `logs/2026-09-23_data_intake.csv` for exact source-to-active-path mapping and hashes.
 Old exports are in `archive/2026-09-23_superseded/`, outside the active input path.
 A/B/C/G/H end in August 2026, D in June 2026. E spans May 2025–May 2026, but
-sections 1-0 and 1-1 stop in January 2026. F has no supplied match files.
+sections 1-0 and 1-1 stop in January 2026.
+
+September 29, 2026: added nine user-supplied Plot F exports for sections 0-0,
+0-1, and 1-0, spanning November 6, 2025 through August 20, 2026. Exact source
+paths, row counts, and hashes are recorded in
+`logs/2026-09-29_plot_f_data_intake.csv`. One 0-1 export contains two empty
+trailing columns and ten comma-only rows; the raw source is preserved and the
+generated QA table reports ten comma-only rows as missing values.
 
 ## Fields and units
 

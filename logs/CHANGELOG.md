@@ -76,3 +76,10 @@
 - Moved the interactive Coki map onto the homepage and removed its separate navigation tab.
 - Increased the map height to provide a larger, more square viewing area.
 - Kept satellite imagery visible past its native zoom limit by enlarging the highest-resolution available tiles instead of requesting unavailable tiles that display as gray.
+
+## 2026-09-29 — Plot F data update
+
+- Added nine supplied Plot F Matches exports for sections 0-0, 0-1, and 1-0, covering November 6, 2025 through August 20, 2026.
+- Preserved the supplied CSV bytes and recorded source paths, raw row counts, and SHA-256 hashes in `2026-09-29_plot_f_data_intake.csv`.
+- Populated Coki F across the report, homepage summary, figures, tables, and interactive-map popup.
+- Retained ten comma-only rows and two empty trailing columns in the supplied August 0-1 source file; generated QA reports these as missing rows.

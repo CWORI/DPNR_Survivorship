@@ -22,6 +22,9 @@ Plot E,9,January,February,January to February,all,Plot E,168,161,7,0,95.83333333
 Plot E,10,February,March,February to March,all,Plot E,154,137,17,1,88.96103896103897,82.91453716406495,93.4364251374911
 Plot E,11,March,April,March to April,all,Plot E,136,125,11,444,91.91176470588235,85.98880545306147,95.8932041124462
 Plot E,12,April,May,April to May,all,Plot E,569,559,10,15,98.24253075571177,96.79176067215988,99.15408921401475
+Plot F,1,November,May,November to May,all,Plot F,0,0,0,41,NA,NA,NA
+Plot F,2,May,May,May to May,all,Plot F,41,41,0,0,100,91.39561637059715,100
+Plot F,3,May,August,May to August,all,Plot F,41,38,3,0,92.6829268292683,80.0754021623337,98.46485284665833
 Plot G,1,November,April,November to April,all,Plot G,0,0,0,45,NA,NA,NA
 Plot G,2,April,May,April to May,all,Plot G,45,45,0,0,100,92.12948995931569,100
 Plot G,3,May,August,May to August,all,Plot G,44,44,0,0,100,91.95800602364241,100

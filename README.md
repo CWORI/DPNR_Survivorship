@@ -64,10 +64,12 @@ The check confirms the expected GitHub remote, important rendered pages, main ou
 
 ## September 23, 2026 data refresh
 
-The active TagLab inputs are the 82 user-supplied exports in `data_raw/taglab/`:
-42 from `Downloads/Matches/` and 40 Plot E exports from
-`OneDrive_1_9-23-2026.zip`. All input bytes are preserved; source paths, row counts,
-and SHA-256 hashes are recorded in `logs/2026-09-23_data_intake.csv`.
+The active TagLab inputs are 91 user-supplied exports in `data_raw/taglab/`:
+42 from `Downloads/Matches/`, 40 Plot E exports from
+`OneDrive_1_9-23-2026.zip`, and nine Plot F exports supplied on September 29.
+All input bytes are preserved; source paths, row counts, and SHA-256 hashes are
+recorded in `logs/2026-09-23_data_intake.csv` and
+`logs/2026-09-29_plot_f_data_intake.csv`.
 Superseded C, E, and G inputs and the previous configs are retained only in
 `archive/2026-09-23_superseded/`; the workflow never reads that directory.
 
@@ -75,11 +77,12 @@ Plots A, B, C, G, and H extend through August 2026; D extends through June 2026.
 Plot E sections 0-0 and 0-1 extend through May 2026, while 1-0 and 1-1 end in
 January 2026. Full-plot cumulative survival requires all configured sections;
 later E cover, interval survival, and species summaries use only available
-sections. Plot F has no supplied exports. No observations were fabricated.
+sections. Plot F was added on September 29, 2026 with three configured sections
+through August 20, 2026. No observations were fabricated.
 
 The user confirmed 16 by 30 m plot dimensions (480 m²). The existing cm² TagLab
 area convention is retained. See `data_raw/taglab/README.md` for fields and caveats.
-The website now includes populated tabs for all seven available plots; the
+The website now includes populated tabs for all eight plots; the
 all-coral and temperature sources were not replaced because no updates were supplied.
 
 QA found five Plot E Genets with changing species labels and shared-month
@@ -94,8 +97,7 @@ lists and QA/QC tables are collapsed in expandable details. Each available plot
 also has a total **outplant** cover bar chart by exact survey date, calculated
 from the existing summed outplant areas divided by 480 m². These charts do not
 include non-outplanted colonies. Amber bars indicate partial section coverage;
-missing sections are not filled with zeros. Plot F remains unavailable because
-no match data were supplied. The homepage omits the workflow/site-count tiles
+missing sections are not filled with zeros. The homepage omits the workflow/site-count tiles
 and the Publish Check card; the local validation script remains available.
 
 Each Coki tab also shows absolute measured outplant area by species and partitions
@@ -118,6 +120,5 @@ The website homepage includes a zoomable map of Coki A-H built from the four GPS
 markers supplied for each Coki. Clicking a boundary shows the latest outplant
 count, species counts, observed outplant area, percent of the confirmed 480 m²
 Coki area, survey coverage, and the latest complete-section cumulative
-survivorship result. Coki F has a mapped boundary but no monitoring summary
-because no Matches files are configured for it. The source coordinates and
+survivorship result. The source coordinates and
 their limitations are documented in `data_raw/metadata/README.md`.

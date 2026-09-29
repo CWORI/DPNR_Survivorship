@@ -65,11 +65,11 @@ source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
 ::: panel-tabset
 ## Home
 
-Data refreshed September 23, 2026: 82 match files across seven plots. Plot F has no supplied match files. Plot E has partial section coverage after January 2026; see its Data Status before comparing later results.
+Data refreshed September 29, 2026: 91 match files across all eight plots. Plot E has partial section coverage after January 2026; see its Data Status before comparing later results.
 
 This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, review the QA/QC checks, and the tables and figures rebuild automatically.
 
-The active outplant workflow now combines TagLab subsections into one plot-level result for each plot letter. Section-level information is still used for file intake and QA/QC, but survivorship, cover, species prevalence, and species cover composition are summarized for plots A, B, C, D, E, G, and H.
+The active outplant workflow now combines TagLab subsections into one plot-level result for each plot letter. Section-level information is still used for file intake and QA/QC, but survivorship, cover, species prevalence, and species cover composition are summarized for plots A through H.
 
 ::: {.callout-note appearance="simple"}
 ### Current data checks
@@ -99,7 +99,7 @@ outplant_config %>%
 ## Start with these tabs
 
 -   Use **Analysis Report** for the presentation-ready summary figures and tables.
--   Use the individual **Plot A–E**, **Plot G**, and **Plot H** tabs when checking plot-specific files, QA/QC, and downloads.
+-   Use the individual **Plot A–H** tabs when checking plot-specific files, QA/QC, and downloads.
 -   Use **SOP** when adding new TagLab exports or preparing a GitHub update.
 :::
 
@@ -2525,53 +2525,218 @@ Use the master tracking dataset and master summary dataset listed in the Home ta
 
 ### Overview
 
-Plot F is included as a placeholder for future outplant match-file analyses.
+Plot F includes sections 0-0, 0-1, and 1-0. The supplied surveys span November 6, 2025 through August 20, 2026. All three configured sections cover the same survey dates, so the combined figures represent the complete supplied Plot F dataset.
 
 ### Data Status
 
 <details>
 <summary>View source files and survey dates</summary>
 
-No Plot F outplant match files are currently configured. Add rows to `config/outplant_interval_files/Plot_F.csv`, then render this report to populate this tab through the same workflow.
+The active Plot F files are:
+
+```{r}
+#| label: plot-f-configured-files
+
+outplant_config %>%
+  filter(plot == "Plot F") %>%
+  select(plot, plot_section, month_start, month_end, month_start_date, month_end_date, file, plot_length_m, plot_width_m, taglab_area_units) %>%
+  kable(
+    col.names = c(
+      "Plot", "Section", "Start month", "End month", "Start date", "End date", "File",
+      "Plot length (m)", "Plot width (m)", "Area units"
+    )
+  )
+```
 
 </details>
 
 ### Depth Metadata
 
-This section will show Plot F corner-marker depth summaries and plot-level depth-gradient context once Plot F outplant match files are configured.
+```{r}
+#| label: plot-f-depth-summary
+
+outplant_plot_depth_summary %>%
+  filter(plot == "Plot F") %>%
+  mutate(across(ends_with("_ft"), ~ round(.x, 1)), across(ends_with("_m"), ~ round(.x, 2))) %>%
+  kable()
+```
 
 ### QA/QC
 
 <details>
 <summary>View quality checks</summary>
 
-This section will summarize file checks, missing values, split/fuse labels, Genet consistency, and shared-month continuity once Plot F data are added.
+```{r}
+#| label: plot-f-file-audit
+
+outplant_file_audit %>%
+  filter(plot == "Plot F") %>%
+  select(plot, plot_section, month_start, month_end, match_type, file, file_exists) %>%
+  kable()
+```
+
+```{r}
+#| label: plot-f-interval-qa
+
+outplant_interval_qa %>%
+  filter(plot == "Plot F") %>%
+  select(plot_section, month_start, month_end, n_rows, n_missing_genet, n_missing_species,
+         n_negative_area_start, n_negative_area_end, actions, split_fuse_events) %>%
+  kable()
+```
+
+```{r}
+#| label: plot-f-shared-month-continuity
+
+outplant_shared_month_continuity_qa %>%
+  filter(plot == "Plot F") %>%
+  mutate(max_abs_area_difference = round(max_abs_area_difference, 4)) %>%
+  kable()
+```
 
 </details>
 
 ### Cumulative Survivorship
 
-This section will show the percentage of baseline Plot F outplants still present through time.
+```{r}
+#| label: plot-f-cumulative-survival-table
+
+outplant_cumulative_survival_summary %>%
+  filter(plot == "Plot F") %>%
+  mutate(across(starts_with("percent_"), ~ round(.x, 1))) %>%
+  kable()
+```
+
+```{r}
+#| label: plot-f-cumulative-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_cumulative_survival(
+  outplant_cumulative_survival_summary %>% filter(plot == "Plot F"),
+  outplant_daily_temperature_summary
+)
+```
 
 ### Interval Survivorship
 
-This section will show month-to-month Plot F survivorship between adjacent TagLab match files.
+```{r}
+#| label: plot-f-interval-survival-table
+
+outplant_survival_summary %>%
+  filter(plot == "Plot F") %>%
+  mutate(across(starts_with("percent_"), ~ round(.x, 1))) %>%
+  kable()
+```
+
+```{r}
+#| label: plot-f-interval-survival-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_interval_survival(
+  outplant_survival_summary %>% filter(plot == "Plot F")
+)
+```
 
 ### Coral Cover
 
-This section will show Plot F outplant cover through time using the configured plot area.
+```{r}
+#| label: plot-f-cover-table
+
+outplant_cover_summary %>%
+  filter(plot == "Plot F") %>%
+  mutate(total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+         percent_outplant_cover = round(percent_outplant_cover, 5)) %>%
+  kable()
+```
+
+```{r}
+#| label: plot-f-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_cover(
+  outplant_cover_summary %>% filter(plot == "Plot F")
+)
+```
+
+### Total Outplant Coral Cover Over Time
+
+```{r}
+#| label: plot-f-total-cover-bars
+#| fig-width: 9
+#| fig-height: 5.5
+
+outplant_plot_total_cover_bars(
+  outplant_cover_summary %>% filter(plot == "Plot F"),
+  outplant_section_monthly_observations %>% filter(plot == "Plot F"),
+  outplant_config %>% filter(plot == "Plot F")
+)
+```
 
 ### Species Prevalence
 
-This section will show Plot F outplant abundance and prevalence by species through time.
+```{r}
+#| label: plot-f-species-prevalence-table
+
+outplant_species_prevalence_summary %>%
+  filter(plot == "Plot F") %>%
+  mutate(percent_prevalence = round(percent_prevalence, 1),
+         total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+         percent_cover_within_outplants = round(percent_cover_within_outplants, 1)) %>%
+  kable()
+```
+
+```{r}
+#| label: plot-f-species-prevalence-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_species_prevalence(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot F")
+)
+```
 
 ### Species Cover Composition
 
-This section will show each species' share of total Plot F outplant cover through time.
+```{r}
+#| label: plot-f-species-cover-plot
+#| fig-width: 8
+#| fig-height: 4.5
+
+outplant_plot_species_cover(
+  outplant_species_prevalence_summary %>% filter(plot == "Plot F")
+)
+```
+
+### Outplanted Coral Area by Species
+
+```{r}
+#| label: plot-f-species-area-plot
+#| fig-width: 8
+#| fig-height: 4.8
+
+outplant_plot_species_area(
+  outplant_species_area_summary %>% filter(plot == "Plot F")
+)
+```
+
+### Area Added by Outplanting Versus Coral Growth
+
+```{r}
+#| label: plot-f-cover-change-source-plot
+#| fig-width: 8
+#| fig-height: 5
+
+outplant_plot_cover_change_source(
+  outplant_cover_change_source_summary %>% filter(plot == "Plot F")
+)
+```
 
 ### Downloads
 
-This section will point to Plot F processed datasets, summary tables, and figures after Plot F data are configured.
+Use the master tracking dataset and master summary dataset listed in the Home tab for Plot F results.
 
 ## Plot G
 

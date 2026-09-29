@@ -37,9 +37,9 @@ home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = T
 <a class="site-button site-button--secondary" href="all_coral_cover.html">View All Coral Cover</a>
 </div>
 <div class="site-hero__chips" aria-label="Current report scope">
-<span>Plots A–E, G, H</span>
-<span>82 match files</span>
-<span>Updated September 23, 2026</span>
+<span>Plots A–H</span>
+<span>91 match files</span>
+<span>Updated September 29, 2026</span>
 <span>Section coverage varies</span>
 </div>
 </div>
@@ -95,7 +95,7 @@ for (i in seq_len(nrow(home_latest))) {
 cat('</div>')
 ```
 
-<p class="overview-note">Counts represent tracked Genets in the Matches data, not every fragment ever planted or later additions. Survey dates differ between plots. Plot E uses January 2026 because later surveys cover only part of the plot. Plot F has no supplied monitoring data. <a href="coral_survivorship_report.html">See the report for data-quality flags and full results.</a></p>
+<p class="overview-note">Counts represent tracked Genets in the Matches data, not every fragment ever planted or later additions. Survey dates differ between plots. Plot E uses January 2026 because later surveys cover only part of the plot. <a href="coral_survivorship_report.html">See the report for data-quality flags and full results.</a></p>
 </section>
 
 <section class="home-band home-band--intro" aria-label="Project overview">

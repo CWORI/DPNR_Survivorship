@@ -458,6 +458,39 @@ species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Orbicella annularis,species_
 species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Orbicella faveolata,species_prevalence,7.317073170731708,percent_of_present_outplants,42,574,NA,NA,Species area m2: 0.10698
 species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Orbicella franksi,species_prevalence,9.233449477351916,percent_of_present_outplants,53,574,NA,NA,Species area m2: 0.051267
 species_month,Plot E,all,Plot E,May,13,May,NA,NA,NA,Pseudodiploria strigosa,species_prevalence,23.519163763066203,percent_of_present_outplants,135,574,NA,NA,Species area m2: 0.079861
+plot_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 41
+plot_interval,Plot F,all,Plot F,May to May,NA,NA,2,May,May,NA,interval_survivorship,100,percent,41,41,91.39561637059715,100,Deaths: 0; births/new detections: 0
+plot_interval,Plot F,all,Plot F,May to August,NA,NA,3,May,August,NA,interval_survivorship,92.6829268292683,percent,38,41,80.0754021623337,98.46485284665833,Deaths: 3; births/new detections: 0
+plot_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,NA,cumulative_deaths,0,count,0,41,NA,NA,Baseline month: May
+plot_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,NA,cumulative_deaths,1,count,1,41,NA,NA,Baseline month: May
+plot_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,NA,cumulative_deaths,4,count,4,41,NA,NA,Baseline month: May
+plot_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,NA,cumulative_survivorship,100,percent,41,41,91.39561637059715,100,Baseline month: May
+plot_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,NA,cumulative_survivorship,97.5609756097561,percent,40,41,87.14459796158536,99.93826831067135,Baseline month: May
+plot_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,NA,cumulative_survivorship,90.2439024390244,percent,37,41,76.86854506905388,97.27725332016391,Baseline month: May
+plot_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,NA,outplant_cover,0.010071458333333333,percent_of_plot,41,NA,NA,NA,Total area m2: 0.048343
+plot_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,NA,outplant_cover,0.009433177083333332,percent_of_plot,41,NA,NA,NA,Total area m2: 0.045279
+plot_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,NA,outplant_cover,0.010834687499999995,percent_of_plot,38,NA,NA,NA,Total area m2: 0.052006
+species_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,Orbicella annularis,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,Orbicella sp.,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot F,all,Plot F,November to May,NA,NA,1,November,May,Porites porites,species_interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0
+species_interval,Plot F,all,Plot F,May to May,NA,NA,2,May,May,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot F,all,Plot F,May to May,NA,NA,2,May,May,Porites porites,species_interval_survivorship,100,percent,22,22,84.56274871844255,100,Deaths: 0
+species_interval,Plot F,all,Plot F,May to August,NA,NA,3,May,August,Orbicella annularis,species_interval_survivorship,100,percent,19,19,82.35330881930348,100,Deaths: 0
+species_interval,Plot F,all,Plot F,May to August,NA,NA,3,May,August,Porites porites,species_interval_survivorship,86.36363636363636,percent,19,22,65.08779027425918,97.09441488712534,Deaths: 3
+species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Orbicella annularis,species_cover_share,62.11395651904102,percent_of_outplant_cover,18,41,NA,NA,Species area m2: 0.030028
+species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Orbicella sp.,species_cover_share,4.576153734770287,percent_of_outplant_cover,1,41,NA,NA,Species area m2: 0.002212
+species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Porites porites,species_cover_share,33.30988974618869,percent_of_outplant_cover,22,41,NA,NA,Species area m2: 0.016103
+species_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,Orbicella annularis,species_cover_share,63.63345240921614,percent_of_outplant_cover,19,41,NA,NA,Species area m2: 0.028813
+species_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,Porites porites,species_cover_share,36.36654759078386,percent_of_outplant_cover,22,41,NA,NA,Species area m2: 0.016466
+species_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,Orbicella annularis,species_cover_share,69.76868276080874,percent_of_outplant_cover,19,38,NA,NA,Species area m2: 0.036284
+species_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,Porites porites,species_cover_share,30.23131723919126,percent_of_outplant_cover,19,38,NA,NA,Species area m2: 0.015722
+species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Orbicella annularis,species_prevalence,43.90243902439025,percent_of_present_outplants,18,41,NA,NA,Species area m2: 0.030028
+species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Orbicella sp.,species_prevalence,2.4390243902439024,percent_of_present_outplants,1,41,NA,NA,Species area m2: 0.002212
+species_month,Plot F,all,Plot F,May,2,May,NA,NA,NA,Porites porites,species_prevalence,53.65853658536585,percent_of_present_outplants,22,41,NA,NA,Species area m2: 0.016103
+species_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,Orbicella annularis,species_prevalence,46.34146341463415,percent_of_present_outplants,19,41,NA,NA,Species area m2: 0.028813
+species_month,Plot F,all,Plot F,May,3,May,NA,NA,NA,Porites porites,species_prevalence,53.65853658536585,percent_of_present_outplants,22,41,NA,NA,Species area m2: 0.016466
+species_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,Orbicella annularis,species_prevalence,50,percent_of_present_outplants,19,38,NA,NA,Species area m2: 0.036284
+species_month,Plot F,all,Plot F,August,4,August,NA,NA,NA,Porites porites,species_prevalence,50,percent_of_present_outplants,19,38,NA,NA,Species area m2: 0.015722
 plot_interval,Plot G,all,Plot G,November to April,NA,NA,1,November,April,NA,interval_survivorship,NA,percent,0,0,NA,NA,Deaths: 0; births/new detections: 45
 plot_interval,Plot G,all,Plot G,April to May,NA,NA,2,April,May,NA,interval_survivorship,100,percent,45,45,92.12948995931569,100,Deaths: 0; births/new detections: 0
 plot_interval,Plot G,all,Plot G,May to August,NA,NA,3,May,August,NA,interval_survivorship,100,percent,44,44,91.95800602364241,100,Deaths: 0; births/new detections: 0

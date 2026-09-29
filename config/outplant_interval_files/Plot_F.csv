@@ -1,1 +1,10 @@
 plot,plot_section,plot_folder,file,month_start,month_end,month_start_date,month_end_date,file_type,match_type,plot_length_m,plot_width_m,taglab_area_units
+Plot F,0-0,Plot_F,0-0_PlotF_Matches_20251106_20260501.csv,November,May,2025-11-06,2026-05-01,csv,0-0,16,30,cm2
+Plot F,0-0,Plot_F,0-0_PlotF_Matches_20260501_20260527.csv,May,May,2026-05-01,2026-05-27,csv,0-0,16,30,cm2
+Plot F,0-0,Plot_F,0-0_PlotF_Matches_20260527_20260820.csv,May,August,2026-05-27,2026-08-20,csv,0-0,16,30,cm2
+Plot F,0-1,Plot_F,0-1_PlotF_Matches_20251106_20260501.csv,November,May,2025-11-06,2026-05-01,csv,0-1,16,30,cm2
+Plot F,0-1,Plot_F,0-1_PlotF_Matches_20260501_20260527.csv,May,May,2026-05-01,2026-05-27,csv,0-1,16,30,cm2
+Plot F,0-1,Plot_F,0-1_PlotF_Matches_20260527_20260820.csv,May,August,2026-05-27,2026-08-20,csv,0-1,16,30,cm2
+Plot F,1-0,Plot_F,1-0_Coki_PlotF_Matches_20251106_20260501.csv,November,May,2025-11-06,2026-05-01,csv,1-0,16,30,cm2
+Plot F,1-0,Plot_F,1-0_Coki_PlotF_Matches_20260501_20260527.csv,May,May,2026-05-01,2026-05-27,csv,1-0,16,30,cm2
+Plot F,1-0,Plot_F,1-0_Coki_PlotF_Matches_20260527_20260820.csv,May,August,2026-05-27,2026-08-20,csv,1-0,16,30,cm2
