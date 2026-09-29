@@ -1,5 +1,13 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // Figure filenames are stable across Quarto renders. Add a release version so
+  // browsers do not reuse an older SVG after chart axes or labels change.
+  for (const image of document.querySelectorAll('img[src*="/figure-html/"]')) {
+    const figureUrl = new URL(image.getAttribute("src"), document.baseURI);
+    figureUrl.searchParams.set("v", "20260929-exact-dates");
+    image.src = figureUrl.href;
+  }
+
   const excluded = new Set(["CODE", "PRE", "SCRIPT", "STYLE", "TEXTAREA"]);
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const nodes = [];

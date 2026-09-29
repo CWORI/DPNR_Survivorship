@@ -89,3 +89,4 @@
 - Changed every time-based outplant and all-coral figure to label the x-axis with exact day-month-year survey dates.
 - Added survey dates to the outplant cover summary so surveys in the same named month remain separate.
 - Changed interval labels to show exact start and end dates and changed short-monitoring labels to show the exact survey date.
+- Added a version query to rendered figure URLs so browsers replace cached month-only SVGs with the corrected exact-date figures.
