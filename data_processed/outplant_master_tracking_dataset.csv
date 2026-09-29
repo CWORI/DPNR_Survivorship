@@ -9398,7 +9398,7 @@ Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__27,Porites porites,TRUE,TRU
 Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__28,Orbicella annularis,TRUE,TRUE,TRUE,FALSE,19.8725,0.00198725,480,4.1401041666666664e-4,cm2
 Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__29,Orbicella annularis,TRUE,TRUE,TRUE,FALSE,19.915,0.0019914999999999998,480,4.1489583333333325e-4,cm2
 Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__3,Porites porites,TRUE,TRUE,TRUE,FALSE,2.195,2.195e-4,480,4.572916666666667e-5,cm2
-Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__35,Orbicella sp.,TRUE,TRUE,TRUE,FALSE,22.1225,0.00221225,480,4.608854166666666e-4,cm2
+Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__35,Orbicella annularis,TRUE,TRUE,TRUE,FALSE,22.1225,0.00221225,480,4.608854166666666e-4,cm2
 Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__36,Porites porites,TRUE,TRUE,TRUE,FALSE,6.85,6.85e-4,480,1.427083333333333e-4,cm2
 Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__4,Porites porites,TRUE,TRUE,TRUE,FALSE,9.1,9.1e-4,480,1.8958333333333332e-4,cm2
 Plot F,all,Plot F,2,May,2026-05-01,interval_end,1-0__5,Porites porites,TRUE,TRUE,TRUE,FALSE,6.9675,6.9675e-4,480,1.4515625e-4,cm2
@@ -9440,7 +9440,7 @@ Plot F,all,Plot F,3,May,2026-05-27,interval_end,1-0__28,Orbicella annularis,TRUE
 Plot F,all,Plot F,3,May,2026-05-27,interval_end,1-0__29,Orbicella annularis,TRUE,TRUE,TRUE,FALSE,18.2325,0.0018232500000000002,480,3.7984375000000003e-4,cm2
 Plot F,all,Plot F,3,May,2026-05-27,interval_end,1-0__3,Porites porites,TRUE,TRUE,TRUE,FALSE,3.2175,3.2175e-4,480,6.703124999999999e-5,cm2
 Plot F,all,Plot F,3,May,2026-05-27,interval_end,1-0__34,Orbicella annularis,FALSE,TRUE,NA,FALSE,21.5025,0.0021502500000000003,480,4.4796875000000007e-4,cm2
-Plot F,all,Plot F,3,May,2026-05-27,NA,1-0__35,Orbicella sp.,TRUE,FALSE,FALSE,TRUE,0,0,NA,NA,NA
+Plot F,all,Plot F,3,May,2026-05-27,NA,1-0__35,Orbicella annularis,TRUE,FALSE,FALSE,TRUE,0,0,NA,NA,NA
 Plot F,all,Plot F,3,May,2026-05-27,interval_end,1-0__36,Porites porites,TRUE,TRUE,TRUE,FALSE,8.685,8.685e-4,480,1.809375e-4,cm2
 Plot F,all,Plot F,3,May,2026-05-27,interval_end,1-0__4,Porites porites,TRUE,TRUE,TRUE,FALSE,8.095,8.095000000000001e-4,480,1.6864583333333334e-4,cm2
 Plot F,all,Plot F,3,May,2026-05-27,interval_end,1-0__5,Porites porites,TRUE,TRUE,TRUE,FALSE,7.3,7.3e-4,480,1.5208333333333333e-4,cm2
@@ -9482,7 +9482,7 @@ Plot F,all,Plot F,4,August,2026-08-20,interval_end,1-0__28,Orbicella annularis,T
 Plot F,all,Plot F,4,August,2026-08-20,interval_end,1-0__29,Orbicella annularis,TRUE,TRUE,TRUE,FALSE,20.5075,0.00205075,480,4.2723958333333334e-4,cm2
 Plot F,all,Plot F,4,August,2026-08-20,interval_end,1-0__3,Porites porites,TRUE,TRUE,TRUE,FALSE,2.0675,2.0674999999999998e-4,480,4.307291666666666e-5,cm2
 Plot F,all,Plot F,4,August,2026-08-20,interval_end,1-0__34,Orbicella annularis,FALSE,TRUE,NA,FALSE,28.215,0.0028215,480,5.878124999999999e-4,cm2
-Plot F,all,Plot F,4,August,2026-08-20,NA,1-0__35,Orbicella sp.,TRUE,FALSE,FALSE,FALSE,0,0,NA,NA,NA
+Plot F,all,Plot F,4,August,2026-08-20,NA,1-0__35,Orbicella annularis,TRUE,FALSE,FALSE,FALSE,0,0,NA,NA,NA
 Plot F,all,Plot F,4,August,2026-08-20,interval_end,1-0__36,Porites porites,TRUE,TRUE,TRUE,FALSE,10.47,0.001047,480,2.18125e-4,cm2
 Plot F,all,Plot F,4,August,2026-08-20,interval_end,1-0__4,Porites porites,TRUE,TRUE,TRUE,FALSE,9.3475,9.3475e-4,480,1.9473958333333333e-4,cm2
 Plot F,all,Plot F,4,August,2026-08-20,interval_end,1-0__5,Porites porites,TRUE,FALSE,FALSE,TRUE,0,0,480,0,cm2

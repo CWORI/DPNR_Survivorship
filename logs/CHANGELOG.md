@@ -90,3 +90,9 @@
 - Added survey dates to the outplant cover summary so surveys in the same named month remain separate.
 - Changed interval labels to show exact start and end dates and changed short-monitoring labels to show the exact survey date.
 - Added a version query to rendered figure URLs so browsers replace cached month-only SVGs with the corrected exact-date figures.
+
+## 2026-09-29 — Plot F species correction
+
+- Replaced the supplied Plot F section 1-0 baseline export with the corrected file.
+- Corrected Genet 35 from `Orbicella sp.` to `Orbicella annularis`; all other supplied fields and rows are unchanged.
+- Updated the intake SHA-256 hash and rebuilt the website outputs.

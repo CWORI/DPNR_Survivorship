@@ -8412,7 +8412,7 @@ Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__27,NA,NA,Porites por
 Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__28,NA,NA,Orbicella annularis,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__28,1
 Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__29,NA,NA,Orbicella annularis,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__29,1
 Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__3,NA,NA,Porites porites,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__3,1
-Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__35,NA,NA,Orbicella sp.,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__35,1
+Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__35,NA,NA,Orbicella annularis,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__35,1
 Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__36,NA,NA,Porites porites,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__36,1
 Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__4,NA,NA,Porites porites,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__4,1
 Plot F,all,Plot F,November,1,2025-11-06,baseline_start,1-0__5,NA,NA,Porites porites,480,cm2,0,0,FALSE,Plot F__1__baseline_start__1-0__5,1
@@ -8453,7 +8453,7 @@ Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__27,NA,NA,Porites porites,48
 Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__28,NA,NA,Orbicella annularis,480,cm2,19.8725,0.00198725,TRUE,Plot F__2__interval_end__1-0__28,1
 Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__29,NA,NA,Orbicella annularis,480,cm2,19.915,0.0019914999999999998,TRUE,Plot F__2__interval_end__1-0__29,1
 Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__3,NA,NA,Porites porites,480,cm2,2.195,2.195e-4,TRUE,Plot F__2__interval_end__1-0__3,1
-Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__35,NA,NA,Orbicella sp.,480,cm2,22.1225,0.00221225,TRUE,Plot F__2__interval_end__1-0__35,1
+Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__35,NA,NA,Orbicella annularis,480,cm2,22.1225,0.00221225,TRUE,Plot F__2__interval_end__1-0__35,1
 Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__36,NA,NA,Porites porites,480,cm2,6.85,6.85e-4,TRUE,Plot F__2__interval_end__1-0__36,1
 Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__4,NA,NA,Porites porites,480,cm2,9.1,9.1e-4,TRUE,Plot F__2__interval_end__1-0__4,1
 Plot F,all,Plot F,May,2,2026-05-01,interval_end,1-0__5,NA,NA,Porites porites,480,cm2,6.9675,6.9675e-4,TRUE,Plot F__2__interval_end__1-0__5,1
