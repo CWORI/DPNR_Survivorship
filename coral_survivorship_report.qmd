@@ -2217,6 +2217,27 @@ plot_e_cohort_survival <- plot_e_cohort_tracking |>
 write_csv(plot_e_cohort_survival,
           file.path(outplant_table_dir, "plot_e_outplant_cohort_survival.csv"))
 
+# Audit original-cohort losses without inventing replacement IDs or deaths.
+plot_e_recorded_deaths <- outplant_coral_intervals |>
+  filter(plot == "Plot E", died_interval,
+         str_detect(actions, "(^|; )dead($|;)")) |>
+  group_by(genet) |>
+  summarise(first_recorded_death = min(month_end_date), .groups = "drop")
+plot_e_tracking_audit <- plot_e_cohort_tracking |>
+  filter(cohort == "2025 original outplants") |>
+  left_join(plot_e_recorded_deaths, by = "genet") |>
+  mutate(tracking_status = case_when(
+    present %in% TRUE ~ "Observed present",
+    !is.na(first_recorded_death) & first_recorded_death <= survey_date ~ "Recorded dead",
+    TRUE ~ "Unresolved absence"
+  ))
+plot_e_tracking_status <- plot_e_tracking_audit |>
+  count(survey_date, tracking_status, name = "n_genets")
+write_csv(plot_e_tracking_audit,
+          file.path(outplant_table_dir, "plot_e_original_genet_tracking_audit.csv"))
+write_csv(plot_e_tracking_status,
+          file.path(outplant_table_dir, "plot_e_original_genet_tracking_status.csv"))
+
 plot_e_baseline_area <- plot_e_observations |>
   filter(survey_date == plot_e_original_date, present) |>
   summarise(area_change_m2 = sum(area_m2)) |>
@@ -2399,7 +2420,8 @@ outplant_cumulative_survival_summary %>%
 
 outplant_plot_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot == "Plot E")
-) + labs(title = "Coki E cumulative survivorship")
+) + labs(title = "Coki E cumulative survivorship",
+         subtitle = "Original Genet retention; unresolved tracking absences are not confirmed mortality")
 ```
 
 ### 2025 Outplant Session: Before April 2026
@@ -2415,12 +2437,15 @@ plot_e_cohort_survival |>
   ggplot(aes(survey_date, percent_survival, color = cohort, group = cohort)) +
   geom_line(linewidth = 0.8) +
   geom_point(size = 2.6) +
+  geom_text(aes(label = sprintf("%.1f%%", percent_survival)),
+            vjust = -0.8, size = 3.2, show.legend = FALSE) +
   scale_color_manual(values = c("2025 original outplants" = "#0072B2",
                                 "April 2026 additions" = "#D55E00")) +
   scale_x_date(date_labels = "%d %b %Y",
                breaks = sort(unique(plot_e_cohort_survival$survey_date[
                  plot_e_cohort_survival$survey_date <= plot_e_pre_april_date]))) +
-  scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1)) +
+  scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1),
+                     expand = expansion(mult = c(0.02, 0.10))) +
   labs(x = "Survey date", y = "Cohort survivorship", color = "Outplant cohort",
        title = "Coki E: 2025 Outplant Session: Before April 2026",
        subtitle = "Each cohort retains its own initial denominator; 2025 survival is not reset in April") +
@@ -2441,17 +2466,32 @@ plot_e_cohort_survival |>
   ggplot(aes(survey_date, percent_survival, color = cohort, group = cohort)) +
   geom_line(linewidth = 0.8) +
   geom_point(size = 2.6) +
+  geom_text(aes(label = sprintf("%.1f%%", percent_survival)),
+            vjust = -0.8, size = 3.2, show.legend = FALSE) +
   scale_color_manual(values = c("2025 original outplants" = "#0072B2",
                                 "April 2026 additions" = "#D55E00")) +
   scale_x_date(date_labels = "%d %b %Y",
                breaks = sort(unique(plot_e_cohort_survival$survey_date[
                  plot_e_cohort_survival$survey_date >= plot_e_april_date]))) +
-  scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1)) +
+  scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1),
+                     expand = expansion(mult = c(0.02, 0.10))) +
   labs(x = "Survey date", y = "Cohort survivorship", color = "Outplant cohort",
        title = "Coki E: April 2026 Onward: Both Outplant Cohorts",
        subtitle = "Each cohort retains its own initial denominator; 2025 survival is not reset in April") +
   outplant_theme() +
   theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom")
+```
+
+### Original Genet Tracking Check
+
+The decline measures retention of the original IDs, not confirmed mortality alone. At September 1, 2026, 137 of the 412 original Genets are observed present, 227 have an explicit TagLab `dead` record, and 48 are absent without an explicit death record. These 48 are unresolved tracking losses, not confirmed deaths. No original IDs disappear and later reappear, and matching blob IDs at shared survey dates have consistent Genet IDs; changing the permanent-loss rule would not change this original-cohort curve. Resolving the 48 absences requires reviewing the source TagLab projects or a verified ID crosswalk.
+
+```{r}
+#| label: plot-e-original-tracking-status
+plot_e_tracking_status |>
+  tidyr::pivot_wider(names_from = tracking_status, values_from = n_genets,
+                     values_fill = 0) |>
+  kable()
 ```
 
 ### Interval Survivorship

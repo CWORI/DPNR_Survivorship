@@ -133,3 +133,13 @@ Rerun with `quarto render coral_survivorship_report.qmd`; the shared pipeline
 rebuilds its existing outputs, with non-E analysis definitions unchanged.
 
 Validation: report rendered successfully. Original cohort counts match main cumulative survival at every survey. All tracked non-E plot-level output-table rows match HEAD. E species SVG legends omit Empty/unidentified categories; E main SVG has no temperature; April SVG includes both cohort labels. QA retains 24 E Genets with changing species labels and shared-survey continuity flags.
+
+## October 16, 2026: Original Genet tracking audit
+
+Checked all shared-survey blob IDs: no conflicting Genet assignments. No
+original-cohort Genets reappear after absence. At the last survey, 137 of 412
+original IDs are present, 227 have explicit dead records, and 48 are unresolved
+absences. The report now distinguishes these statuses and exports per-ID and
+per-survey tracking audits under outputs/Tables/plot_e_original_genet_tracking*.csv.
+No unsupported ID remapping or imputed survival was applied. Added percentage
+labels to every point in both E cohort figures.

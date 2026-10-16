@@ -177,7 +177,7 @@
 <line x1='514.26' y1='163.20' x2='528.09' y2='163.20' style='stroke-width: 1.71; stroke: #1B9E77; stroke-linecap: butt;' />
 <circle cx='521.17' cy='163.20' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
 <text x='535.79' y='166.64' style='font-size: 9.60px; font-family: "Arial";' textLength='28.25px' lengthAdjust='spacingAndGlyphs'>Coki E</text>
-<text x='50.17' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='577.61px' lengthAdjust='spacingAndGlyphs'>Percent of baseline Genets still present after collapsing repeated blob rows; bars are exact binomial 95% CIs</text>
+<text x='50.17' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='438.18px' lengthAdjust='spacingAndGlyphs'>Original Genet retention; unresolved tracking absences are not confirmed mortality</text>
 <text x='50.17' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='208.43px' lengthAdjust='spacingAndGlyphs'>Coki E cumulative survivorship</text>
 </g>
 </svg>

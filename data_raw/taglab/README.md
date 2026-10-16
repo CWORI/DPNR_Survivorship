@@ -75,3 +75,13 @@ The initial blue area bar uses measured standing area on May 7, 2025, not
 unavailable deployment-day measurements. Later bars retain interval changes.
 Rerun with `quarto render coral_survivorship_report.qmd`; the shared pipeline
 rebuilds its existing outputs, with non-E analysis definitions unchanged.
+
+## October 16, 2026: Original Genet tracking audit
+
+Checked all shared-survey blob IDs: no conflicting Genet assignments. No
+original-cohort Genets reappear after absence. At the last survey, 137 of 412
+original IDs are present, 227 have explicit dead records, and 48 are unresolved
+absences. The report now distinguishes these statuses and exports per-ID and
+per-survey tracking audits under outputs/Tables/plot_e_original_genet_tracking*.csv.
+No unsupported ID remapping or imputed survival was applied. Added percentage
+labels to every point in both E cohort figures.
