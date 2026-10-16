@@ -2172,11 +2172,63 @@ Use the master tracking dataset and master summary dataset listed in the Home ta
 
 ### Overview
 
-Plot E is currently the longest configured plot for the outplant-only TagLab match workflow. Sections 0-0, 0-1, 1-0, and 1-1 are included. All four sections extend through January 20, 2026; only 0-0 and 0-1 continue through May 4, 2026. Full-plot cumulative survivorship stops in January. Later cover, interval-survival, and species summaries describe only the available sections and must not be interpreted as complete-plot changes.
+Coki E includes all four sections through September 1, 2026 (64 match files). The original cohort is defined by presence at the first survey on May 7, 2025. April additions are Genets first observed on April 9, 2026 and absent from every earlier survey; TagLab first appearance is an operational cohort definition, not independent verification of deployment identity.
+
+```{r}
+#| label: plot-e-cohort-setup
+
+# Settings: survey dates bracket the April 3, 7, and 9 deployment-log entries.
+plot_e_original_date <- as.Date("2025-05-07")
+plot_e_april_date <- as.Date("2026-04-09")
+plot_e_pre_april_date <- as.Date("2026-03-25")
+plot_e_observations <- outplant_monthly_observations |> filter(plot == "Plot E")
+
+# Exclusions affect only E species composition; raw labels and survival remain intact.
+plot_e_species_observations <- plot_e_observations |>
+  filter(!is.na(species), !species %in% c("Empty", "Unidentified coral"))
+plot_e_species_summary <- outplant_summarize_species_prevalence(plot_e_species_observations)
+plot_e_species_area <- outplant_summarize_species_area(plot_e_species_observations)
+plot_e_species_labels <- sort(unique(plot_e_species_summary$species))
+
+# Section-prefixed Genets prevent collisions between subsections.
+plot_e_cohorts <- plot_e_observations |>
+  filter(present) |>
+  group_by(genet) |>
+  summarise(first_present = min(survey_date), .groups = "drop") |>
+  filter(first_present %in% c(plot_e_original_date, plot_e_april_date)) |>
+  mutate(cohort = if_else(first_present == plot_e_original_date,
+                         "2025 original outplants", "April 2026 additions"))
+
+# Follow each cohort across every subsequent survey. As in the main analysis,
+# an absent Genet is no longer surviving; later reappearances do not reverse loss.
+plot_e_cohort_tracking <- plot_e_cohorts |>
+  cross_join(plot_e_observations |> distinct(survey_date)) |>
+  filter(survey_date >= first_present) |>
+  left_join(plot_e_observations |> select(genet, survey_date, present),
+            by = c("genet", "survey_date")) |>
+  arrange(genet, survey_date) |>
+  group_by(genet) |>
+  mutate(surviving = cumall(coalesce(present, FALSE))) |>
+  ungroup()
+plot_e_cohort_survival <- plot_e_cohort_tracking |>
+  group_by(cohort, first_present, survey_date) |>
+  summarise(n_baseline = n(), n_surviving = sum(surviving), .groups = "drop") |>
+  mutate(percent_survival = 100 * n_surviving / n_baseline)
+write_csv(plot_e_cohort_survival,
+          file.path(outplant_table_dir, "plot_e_outplant_cohort_survival.csv"))
+
+plot_e_baseline_area <- plot_e_observations |>
+  filter(survey_date == plot_e_original_date, present) |>
+  summarise(area_change_m2 = sum(area_m2)) |>
+  mutate(plot = "Plot E", survey_date = plot_e_original_date,
+         change_source = "Area added by outplanting")
+```
+
 
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot E files are:
@@ -2238,6 +2290,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -2342,12 +2395,63 @@ outplant_cumulative_survival_summary %>%
 #| label: plot-e-cumulative-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot E cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+#| fig-alt: "Line plot of Plot E cumulative outplant survivorship over survey dates with confidence intervals."
 
 outplant_plot_cumulative_survival(
-  outplant_cumulative_survival_summary %>% filter(plot == "Plot E"),
-  outplant_daily_temperature_summary
-)
+  outplant_cumulative_survival_summary %>% filter(plot == "Plot E")
+) + labs(title = "Coki E cumulative survivorship")
+```
+
+### 2025 Outplant Session: Before April 2026
+
+```{r}
+#| label: plot-e-original-cohort-survival
+#| fig-width: 9
+#| fig-height: 5
+#| fig-alt: "Coki E survivorship by outplant cohort: 2025 Outplant Session: Before April 2026."
+
+plot_e_cohort_survival |>
+  filter(survey_date <= plot_e_pre_april_date) |>
+  ggplot(aes(survey_date, percent_survival, color = cohort, group = cohort)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2.6) +
+  scale_color_manual(values = c("2025 original outplants" = "#0072B2",
+                                "April 2026 additions" = "#D55E00")) +
+  scale_x_date(date_labels = "%d %b %Y",
+               breaks = sort(unique(plot_e_cohort_survival$survey_date[
+                 plot_e_cohort_survival$survey_date <= plot_e_pre_april_date]))) +
+  scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1)) +
+  labs(x = "Survey date", y = "Cohort survivorship", color = "Outplant cohort",
+       title = "Coki E: 2025 Outplant Session: Before April 2026",
+       subtitle = "Each cohort retains its own initial denominator; 2025 survival is not reset in April") +
+  outplant_theme() +
+  theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom")
+```
+
+### April 2026 Onward: Both Outplant Cohorts
+
+```{r}
+#| label: plot-e-april-cohort-survival
+#| fig-width: 9
+#| fig-height: 5
+#| fig-alt: "Coki E survivorship by outplant cohort: April 2026 Onward: Both Outplant Cohorts."
+
+plot_e_cohort_survival |>
+  filter(survey_date >= plot_e_april_date) |>
+  ggplot(aes(survey_date, percent_survival, color = cohort, group = cohort)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2.6) +
+  scale_color_manual(values = c("2025 original outplants" = "#0072B2",
+                                "April 2026 additions" = "#D55E00")) +
+  scale_x_date(date_labels = "%d %b %Y",
+               breaks = sort(unique(plot_e_cohort_survival$survey_date[
+                 plot_e_cohort_survival$survey_date >= plot_e_april_date]))) +
+  scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1)) +
+  labs(x = "Survey date", y = "Cohort survivorship", color = "Outplant cohort",
+       title = "Coki E: April 2026 Onward: Both Outplant Cohorts",
+       subtitle = "Each cohort retains its own initial denominator; 2025 survival is not reset in April") +
+  outplant_theme() +
+  theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom")
 ```
 
 ### Interval Survivorship
@@ -2443,7 +2547,7 @@ outplant_plot_total_cover_bars(
 ```{r}
 #| label: plot-e-species-prevalence-table
 
-outplant_species_prevalence_summary %>%
+plot_e_species_summary %>%
   filter(plot == "Plot E") %>%
   select(
     plot_section_label,
@@ -2474,9 +2578,11 @@ outplant_species_prevalence_summary %>%
 #| fig-alt: "Stacked bar plot of Plot E outplant species prevalence by survey month."
 
 outplant_plot_species_prevalence(
-  outplant_species_prevalence_summary %>% filter(plot == "Plot E")
-)
+  plot_e_species_summary
+) + scale_fill_manual(values = outplant_species_palette, limits = plot_e_species_labels)
 ```
+
+Empty and unidentified labels are excluded from the three species figures and the species table; percentages use the retained identified annotations. Unused palette categories are omitted from legends. Raw records remain unchanged.
 
 ### Species Cover Composition
 
@@ -2487,8 +2593,8 @@ outplant_plot_species_prevalence(
 #| fig-alt: "Stacked bar plot of Plot E outplant cover composition by species and survey month."
 
 outplant_plot_species_cover(
-  outplant_species_prevalence_summary %>% filter(plot == "Plot E")
-)
+  plot_e_species_summary
+) + scale_fill_manual(values = outplant_species_palette, limits = plot_e_species_labels)
 ```
 
 ### Outplanted Coral Area by Species
@@ -2500,11 +2606,13 @@ outplant_plot_species_cover(
 #| fig-alt: "Line chart of Plot E measured outplant area through time by species."
 
 outplant_plot_species_area(
-  outplant_species_area_summary %>% filter(plot == "Plot E")
-)
+  plot_e_species_area
+) + scale_color_manual(values = outplant_species_palette, limits = plot_e_species_labels)
 ```
 
 ### Area Added by Outplanting Versus Coral Growth
+
+The initial blue bar is measured standing area at the first 2025 survey, used as the original-outplant baseline. Deployment-day area was not measured here. Later blue bars represent newly observed TagLab outplants.
 
 ```{r}
 #| label: plot-e-cover-change-source-plot
@@ -2513,8 +2621,10 @@ outplant_plot_species_area(
 #| fig-alt: "Bar chart separating Plot E area change into growth or shrinkage, lost area, and newly observed outplants."
 
 outplant_plot_cover_change_source(
-  outplant_cover_change_source_summary %>% filter(plot == "Plot E")
-)
+  bind_rows(plot_e_baseline_area,
+            outplant_cover_change_source_summary %>% filter(plot == "Plot E"))
+) + labs(x = "Survey date",
+         subtitle = "First blue bar: original outplant area measured 7 May 2025; later bars partition interval changes")
 ```
 
 ### Downloads

@@ -103,3 +103,33 @@
 - Added the June 8 to August 6, 2026 interval for sections 0-0 and 1-0; no August interval was supplied for section 0-1, so August remains a partial-section survey.
 - Recorded source paths, raw row counts, and SHA-256 hashes in `2026-09-29_plot_d_data_intake.csv`.
 - Rebuilt the website outputs, figures, tables, homepage summary, and interactive-map popup.
+
+## October 16, 2026: Coki E refresh
+
+Coki E now uses 64 user-supplied matches exports from
+`/Users/spencerparr/Downloads/OneDrive_1_10-16-2026/`, including corrected
+1-1 filenames. All four sections extend from May 7, 2025 to September 1, 2026.
+SHA-256 hashes and row counts are in `logs/2026-10-16_plot_e_data_intake.csv`.
+The previous E raw inputs and config are preserved in
+`archive/2026-10-16_plot_e_pre_refresh/`.
+
+Only the E report section has revised figures. Its main survival chart omits
+temperature. The first session chart ends March 25, 2026. The second starts
+April 9 and compares the original May 7 baseline Genets with Genets first
+observed April 9 and never present earlier. These are operational TagLab
+cohorts; deployment identity is not independently verified. Original-cohort
+survival retains the 2025 denominator in April. Both use the existing absorbing
+loss convention (absence ends survival, even if a Genet reappears). IDs are
+section-prefixed. Cohort counts and percentages are exported to
+`outputs/Tables/plot_e_outplant_cohort_survival.csv` by the report.
+
+E species figures/table exclude Empty and unidentified labels, recalculate
+composition percentages, and show only observed legend categories. Raw records
+and overall survival/cover calculations retain those labels. The original
+plotting palette used `drop = FALSE`, which displayed unused categories.
+The initial blue area bar uses measured standing area on May 7, 2025, not
+unavailable deployment-day measurements. Later bars retain interval changes.
+Rerun with `quarto render coral_survivorship_report.qmd`; the shared pipeline
+rebuilds its existing outputs, with non-E analysis definitions unchanged.
+
+Validation: report rendered successfully. Original cohort counts match main cumulative survival at every survey. All tracked non-E plot-level output-table rows match HEAD. E species SVG legends omit Empty/unidentified categories; E main SVG has no temperature; April SVG includes both cohort labels. QA retains 24 E Genets with changing species labels and shared-survey continuity flags.

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='648.00pt' height='360.00pt' viewBox='0 0 648.00 360.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw2NDguMDB8MC4wMHwzNjAuMDA='>
+    <rect x='0.00' y='0.00' width='648.00' height='360.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHwzNjAuMDA=)'>
+<rect x='0.00' y='0.000000000000057' width='648.00' height='360.00' style='stroke-width: 1.16; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNTAuMTd8NjQyLjAyfDQyLjM2fDI1My45OA=='>
+    <rect x='50.17' y='42.36' width='591.85' height='211.62' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNTAuMTd8NjQyLjAyfDQyLjM2fDI1My45OA==)'>
+<rect x='50.17' y='42.36' width='591.85' height='211.62' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='50.17,244.36 642.02,244.36 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='50.17,196.27 642.02,196.27 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='50.17,148.17 642.02,148.17 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='50.17,100.08 642.02,100.08 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='50.17,51.98 642.02,51.98 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='77.08,150.04 169.84,156.11 284.87,165.45 437.01,173.86 518.64,179.93 615.12,180.39 ' style='stroke-width: 1.71; stroke: #0072B2; stroke-linecap: butt;' />
+<polyline points='77.08,51.98 169.84,53.80 284.87,66.32 437.01,77.21 518.64,80.48 615.12,84.83 ' style='stroke-width: 1.71; stroke: #D55E00; stroke-linecap: butt;' />
+<circle cx='77.08' cy='150.04' r='3.16' style='stroke-width: 0.77; stroke: #0072B2; fill: #0072B2;' />
+<circle cx='169.84' cy='156.11' r='3.16' style='stroke-width: 0.77; stroke: #0072B2; fill: #0072B2;' />
+<circle cx='284.87' cy='165.45' r='3.16' style='stroke-width: 0.77; stroke: #0072B2; fill: #0072B2;' />
+<circle cx='437.01' cy='173.86' r='3.16' style='stroke-width: 0.77; stroke: #0072B2; fill: #0072B2;' />
+<circle cx='518.64' cy='179.93' r='3.16' style='stroke-width: 0.77; stroke: #0072B2; fill: #0072B2;' />
+<circle cx='615.12' cy='180.39' r='3.16' style='stroke-width: 0.77; stroke: #0072B2; fill: #0072B2;' />
+<circle cx='77.08' cy='51.98' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='169.84' cy='53.80' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='284.87' cy='66.32' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='437.01' cy='77.21' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='518.64' cy='80.48' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<circle cx='615.12' cy='84.83' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+</g>
+<g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHwzNjAuMDA=)'>
+<polyline points='50.17,253.98 50.17,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<text x='44.79' y='247.81' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='13.87px' lengthAdjust='spacingAndGlyphs'>0%</text>
+<text x='44.79' y='199.71' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>25%</text>
+<text x='44.79' y='151.61' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>50%</text>
+<text x='44.79' y='103.52' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='19.20px' lengthAdjust='spacingAndGlyphs'>75%</text>
+<text x='44.79' y='55.42' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.54px' lengthAdjust='spacingAndGlyphs'>100%</text>
+<polyline points='47.18,244.36 50.17,244.36 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='47.18,196.27 50.17,196.27 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='47.18,148.17 50.17,148.17 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='47.18,100.08 50.17,100.08 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='47.18,51.98 50.17,51.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='50.17,253.98 642.02,253.98 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<polyline points='77.08,256.97 77.08,253.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='169.84,256.97 169.84,253.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='284.87,256.97 284.87,253.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='437.01,256.97 437.01,253.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='518.64,256.97 518.64,253.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='615.12,256.97 615.12,253.98 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<text transform='translate(81.02,265.00) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.27px' lengthAdjust='spacingAndGlyphs'>09 Apr 2026</text>
+<text transform='translate(173.79,265.00) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='55.46px' lengthAdjust='spacingAndGlyphs'>04 May 2026</text>
+<text transform='translate(288.82,265.00) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.80px' lengthAdjust='spacingAndGlyphs'>04 Jun 2026</text>
+<text transform='translate(440.96,265.00) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='49.60px' lengthAdjust='spacingAndGlyphs'>15 Jul 2026</text>
+<text transform='translate(522.59,265.00) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='54.41px' lengthAdjust='spacingAndGlyphs'>06 Aug 2026</text>
+<text transform='translate(619.07,265.00) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='54.41px' lengthAdjust='spacingAndGlyphs'>01 Sep 2026</text>
+<text x='346.10' y='310.18' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='68.04px' lengthAdjust='spacingAndGlyphs'>Survey date</text>
+<text transform='translate(14.62,148.17) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='114.69px' lengthAdjust='spacingAndGlyphs'>Cohort survivorship</text>
+<rect x='175.49' y='324.79' width='341.21' height='29.24' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='181.47' y='343.72' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='89.99px' lengthAdjust='spacingAndGlyphs'>Outplant cohort</text>
+<rect x='277.44' y='330.76' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<line x1='279.17' y1='339.40' x2='292.99' y2='339.40' style='stroke-width: 1.71; stroke: #0072B2; stroke-linecap: butt;' />
+<circle cx='286.08' cy='339.40' r='3.16' style='stroke-width: 0.77; stroke: #0072B2; fill: #0072B2;' />
+<rect x='403.21' y='330.76' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<line x1='404.93' y1='339.40' x2='418.76' y2='339.40' style='stroke-width: 1.71; stroke: #D55E00; stroke-linecap: butt;' />
+<circle cx='411.85' cy='339.40' r='3.16' style='stroke-width: 0.77; stroke: #D55E00; fill: #D55E00;' />
+<text x='300.70' y='342.85' style='font-size: 9.60px; font-family: "Arial";' textLength='96.53px' lengthAdjust='spacingAndGlyphs'>2025 original outplants</text>
+<text x='426.46' y='342.85' style='font-size: 9.60px; font-family: "Arial";' textLength='84.26px' lengthAdjust='spacingAndGlyphs'>April 2026 additions</text>
+<text x='50.17' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='424.17px' lengthAdjust='spacingAndGlyphs'>Each cohort retains its own initial denominator; 2025 survival is not reset in April</text>
+<text x='50.17' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='334.32px' lengthAdjust='spacingAndGlyphs'>Coki E: April 2026 Onward: Both Outplant Cohorts</text>
+</g>
+</svg>

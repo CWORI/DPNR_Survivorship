@@ -47,3 +47,31 @@ before interpreting Genet-based cumulative survival. All raw values are retained
 Full-plot cumulative survival includes only dates with every configured section.
 Other E summaries after January 2026 describe available sections only; missing
 sections are not zero cover or mortality. Source data are not imputed.
+
+## October 16, 2026: Coki E refresh
+
+Coki E now uses 64 user-supplied matches exports from
+`/Users/spencerparr/Downloads/OneDrive_1_10-16-2026/`, including corrected
+1-1 filenames. All four sections extend from May 7, 2025 to September 1, 2026.
+SHA-256 hashes and row counts are in `logs/2026-10-16_plot_e_data_intake.csv`.
+The previous E raw inputs and config are preserved in
+`archive/2026-10-16_plot_e_pre_refresh/`.
+
+Only the E report section has revised figures. Its main survival chart omits
+temperature. The first session chart ends March 25, 2026. The second starts
+April 9 and compares the original May 7 baseline Genets with Genets first
+observed April 9 and never present earlier. These are operational TagLab
+cohorts; deployment identity is not independently verified. Original-cohort
+survival retains the 2025 denominator in April. Both use the existing absorbing
+loss convention (absence ends survival, even if a Genet reappears). IDs are
+section-prefixed. Cohort counts and percentages are exported to
+`outputs/Tables/plot_e_outplant_cohort_survival.csv` by the report.
+
+E species figures/table exclude Empty and unidentified labels, recalculate
+composition percentages, and show only observed legend categories. Raw records
+and overall survival/cover calculations retain those labels. The original
+plotting palette used `drop = FALSE`, which displayed unused categories.
+The initial blue area bar uses measured standing area on May 7, 2025, not
+unavailable deployment-day measurements. Later bars retain interval changes.
+Rerun with `quarto render coral_survivorship_report.qmd`; the shared pipeline
+rebuilds its existing outputs, with non-E analysis definitions unchanged.
