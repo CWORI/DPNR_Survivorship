@@ -2379,7 +2379,7 @@ outplant_shared_month_continuity_qa %>%
 
 </details>
 
-### Cumulative Survivorship
+### Survivorship by Outplant Session
 
 ```{r}
 #| label: plot-e-cumulative-survival-table
@@ -2414,14 +2414,45 @@ outplant_cumulative_survival_summary %>%
 
 ```{r}
 #| label: plot-e-cumulative-survival-plot
-#| fig-width: 8
-#| fig-height: 4.5
-#| fig-alt: "Line plot of Plot E cumulative outplant survivorship over survey dates with confidence intervals."
+#| fig-width: 10
+#| fig-height: 5.5
+#| fig-alt: "Coki E survivorship shown separately for the 2025 and April 2026 outplant sessions. September 2026 original-ID retention is 33.3% for the 2025 cohort and 82.9% for the April 2026 cohort; 33.3% does not describe all outplants."
 
-outplant_plot_cumulative_survival(
-  outplant_cumulative_survival_summary %>% filter(plot == "Plot E")
-) + labs(title = "Coki E cumulative survivorship",
-         subtitle = "Original Genet retention; unresolved tracking absences are not confirmed mortality")
+plot_e_latest_cohorts <- plot_e_cohort_survival |>
+  group_by(cohort) |>
+  slice_max(survey_date, n = 1, with_ties = FALSE) |>
+  ungroup() |>
+  mutate(endpoint_label = sprintf("%s: %.1f%%\n%s of %s initial IDs", cohort,
+                                  percent_survival, n_surviving, n_baseline))
+
+plot_e_cohort_survival |>
+  ggplot(aes(survey_date, percent_survival, color = cohort, group = cohort)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2.6) +
+  geom_text(aes(label = sprintf("%.1f%%", percent_survival)),
+            vjust = -0.9, size = 3, show.legend = FALSE) +
+  geom_label(data = plot_e_latest_cohorts, aes(label = endpoint_label),
+             hjust = -0.08, size = 3.3, show.legend = FALSE) +
+  scale_color_manual(values = c("2025 original outplants" = "#0072B2",
+                                "April 2026 additions" = "#D55E00")) +
+  scale_x_date(date_labels = "%b %Y",
+               breaks = sort(unique(c(seq(min(plot_e_cohort_survival$survey_date),
+                                          max(plot_e_cohort_survival$survey_date), by = "3 months"),
+                                      max(plot_e_cohort_survival$survey_date)))),
+               expand = expansion(mult = c(0.03, 0.50))) +
+  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 25),
+                     labels = scales::label_percent(scale = 1),
+                     expand = expansion(mult = c(0.02, 0.08))) +
+  labs(x = "Survey date", y = "Initial Genet IDs retained (%)", color = "Outplant session",
+       title = "Coki E: survivorship by outplant session",
+       subtitle = "Each session starts at 100% of its own initial count; April additions are tracked separately",
+       caption = paste("33.3% applies only to the original 2025 cohort, not all Coki E outplants.",
+                       "ID retention includes unresolved tracking losses and is not confirmed mortality.",
+                       "The two cohorts have different monitoring durations.", sep = "\n")) +
+  outplant_theme() +
+  theme(legend.position = "bottom", plot.caption = element_text(hjust = 0),
+        axis.text.x = element_text(angle = 35, hjust = 1))
+
 ```
 
 ### 2025 Outplant Session: Before April 2026

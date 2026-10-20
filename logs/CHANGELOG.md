@@ -143,3 +143,11 @@ absences. The report now distinguishes these statuses and exports per-ID and
 per-survey tracking audits under outputs/Tables/plot_e_original_genet_tracking*.csv.
 No unsupported ID remapping or imputed survival was applied. Added percentage
 labels to every point in both E cohort figures.
+
+## October 20, 2026: Clarify Coki E survivorship overview
+
+Replaced the E main single-cohort survival figure with separate 2025 and April
+2026 cohort lines. Latest labels show retained IDs, each cohort denominator, and
+percentages. Captions clarify that 33.3% describes the 2025 cohort only, that
+tracking losses are not confirmed mortality, and monitoring durations differ.
+No cohort calculations or raw data were changed.
