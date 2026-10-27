@@ -90,7 +90,7 @@ tibble(
 ) %>% kable(col.names = c("Check", "Count"))
 ```
 
-Shared-month differences compare the same survey in adjacent exports. They are review flags, not inferred deaths or corrected records. The existing workflow uses the previous interval's end snapshot for monthly observations; cumulative survivorship depends on consistent Genet identities. Review the QA/QC tables before interpreting these estimates.
+Shared-month differences compare the same survey in adjacent exports. They are review flags, not inferred deaths or corrected records. The existing workflow uses the previous interval's end snapshot for monthly observations; cumulative survivorship follows documented object-to-object connections. Review the QA/QC tables before interpreting these estimates.
 
 ### Survey coverage by section
 
@@ -371,7 +371,7 @@ outplant_interval_qa %>%
   )
 ```
 
-This chunk checks whether the same `Genet` number maps to different species, tags, or genotypes across files. If the table says no conflicts were detected, the same-batch export is behaving much better for individual-level survivorship.
+This chunk checks whether the same `Genet` number maps to different species, tags, or genotypes across files. These metadata checks are diagnostics; object-to-object correspondences determine lineage survival.
 
 ```{r}
 #| label: outplant-unstable-genet-examples
