@@ -37,12 +37,6 @@
 <polyline points='50.17,90.33 493.54,90.33 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <rect x='106.60' y='90.33' width='128.98' height='144.39' style='stroke-width: 1.16; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #1B9E77;' />
 <rect x='308.13' y='90.33' width='128.98' height='144.39' style='stroke-width: 1.16; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #1B9E77;' />
-<polyline points='154.97,90.33 187.22,90.33 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='171.09,90.33 171.09,101.70 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='154.97,101.70 187.22,101.70 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='356.50,90.33 388.75,90.33 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='372.62,90.33 372.62,101.94 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='356.50,101.94 388.75,101.94 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
 <text x='171.09' y='86.17' text-anchor='middle' style='font-size: 9.67px; font-family: "Arial";' textLength='32.80px' lengthAdjust='spacingAndGlyphs'>100.0%</text>
 <text x='372.62' y='86.17' text-anchor='middle' style='font-size: 9.67px; font-family: "Arial";' textLength='32.80px' lengthAdjust='spacingAndGlyphs'>100.0%</text>
 </g>

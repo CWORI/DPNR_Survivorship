@@ -1,0 +1,9 @@
+original_individual_id,section,original_april_object_id,last_connected_survey_before_first_gap,first_missing_connection_survey,source_object_ids_at_first_gap,first_survey_with_no_tracked_living_descendant,matches_file_at_first_gap,review_status
+0-1__2026-04-09__96,0-1,96,2026-04-09,2026-05-04,96,2026-05-04,0-1_PlotE_Matches_20260409_20260504.csv,Not reviewed
+0-1__2026-04-09__103,0-1,103,2026-04-09,2026-05-04,103,2026-05-04,0-1_PlotE_Matches_20260409_20260504.csv,Not reviewed
+1-0__2026-04-09__531,1-0,531,2026-04-09,2026-05-04,531,2026-05-04,1-0_PlotE_Matches_20260409_20260504.csv,Not reviewed
+0-0__2026-04-09__253,0-0,253,2026-05-04,2026-06-04,320,2026-06-04,0-0_PlotE_Matches_20260504_20260604.csv,Not reviewed
+0-0__2026-04-09__273,0-0,273,2026-06-04,2026-07-15,329,2026-07-15,0-0_PlotE_Matches_20260604_20260715.csv,Not reviewed
+0-1__2026-04-09__242,0-1,242,2026-06-04,2026-07-15,95,2026-07-15,0-1_PlotE_Matches_20260604_20260715.csv,Not reviewed
+1-0__2026-04-09__340,1-0,340,2026-07-15,2026-08-06,334,2026-08-06,1-0_PlotE_Matches_20260715_20260806.csv,Not reviewed
+1-0__2026-04-09__589,1-0,589,2026-07-15,2026-08-06,540,2026-08-06,1-0_PlotE_Matches_20260715_20260806.csv,Not reviewed

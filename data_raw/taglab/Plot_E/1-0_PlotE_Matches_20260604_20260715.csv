@@ -1,9 +1,9 @@
 Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
-814,-1,544,0.0,3.685,Diploria_labyrinthiformis,born,none
-815,-1,555,0.0,0.735,Diploria_labyrinthiformis,born,none
-816,-1,559,0.0,2.795,Diploria_labyrinthiformis,born,none
-817,-1,621,0.0,4.4075,Orbicella_annularis,born,none
-818,-1,622,0.0,3.6975,Orbicella_annularis,born,none
+812,-1,544,0.0,3.685,Diploria_labyrinthiformis,born,none
+813,-1,555,0.0,0.735,Diploria_labyrinthiformis,born,none
+814,-1,559,0.0,2.795,Diploria_labyrinthiformis,born,none
+815,-1,621,0.0,4.4075,Orbicella_annularis,born,none
+816,-1,622,0.0,3.6975,Orbicella_annularis,born,none
 10,4,-1,2.7025,0.0,Orbicella_annularis,dead,none
 386,219,-1,0.8875,0.0,Orbicella_annularis,dead,none
 403,236,-1,1.0175,0.0,Orbicella_annularis,dead,none
@@ -50,7 +50,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 234,47,46,6.23,6.65,Orbicella_annularis,grow,n/s
 244,58,57,1.2025,1.31,Orbicella_annularis,grow,n/s
 252,67,66,0.4125,0.4925,Orbicella_faveolata,grow,n/s
-807,70,70,3.755,4.775,Pseudodiploria_strigosa,grow,n/s
+806,70,70,3.755,4.775,Pseudodiploria_strigosa,grow,n/s
 258,72,72,5.185,5.805,Pseudodiploria_strigosa,grow,n/s
 257,73,73,2.7025,3.4575,Pseudodiploria_strigosa,grow,n/s
 261,76,75,5.6175,6.0225,Pseudodiploria_strigosa,grow,n/s
@@ -215,7 +215,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 743,570,539,6.12,7.2075,Diploria_labyrinthiformis,grow,n/s
 744,572,540,0.64,2.9425,Diploria_labyrinthiformis,grow,n/s
 746,574,543,4.76,5.3525,Diploria_labyrinthiformis,grow,n/s
-810,575,592,4.81,6.325,Orbicella_faveolata,grow,n/s
+808,575,592,4.81,6.325,Orbicella_faveolata,grow,n/s
 750,577,548,4.24,4.8475,Diploria_labyrinthiformis,grow,n/s
 751,579,552,4.8875,5.4975,Diploria_labyrinthiformis,grow,n/s
 752,580,547,1.55,6.245,Diploria_labyrinthiformis,grow,n/s
@@ -263,7 +263,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 143,642,610,1.0675,1.4975,Orbicella_annularis,grow,n/s
 803,646,616,21.095,24.4625,Orbicella_annularis,grow,n/s
 802,647,615,23.685,29.165,Diploria_labyrinthiformis,grow,n/s
-809,648,617,9.6,13.905,Orbicella_faveolata,grow,n/s
+150,648,617,9.6,13.905,Orbicella_faveolata,grow,n/s
 8,2,2,42.625,23.3375,Orbicella_annularis,n/s,split
 8,2,3,42.625,7.025,Orbicella_annularis,n/s,split
 349,171,170,8.2675,14.175,Orbicella_franksi,n/s,fuse
@@ -325,7 +325,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 289,105,102,20.2025,20.9975,Orbicella_annularis,same,n/s
 291,106,105,5.6925,5.9425,Montastrea_cavernosa,same,n/s
 293,108,107,3.165,3.14,Montastrea_cavernosa,same,n/s
-808,109,108,15.0375,15.0375,Orbicella_faveolata,same,n/s
+807,109,108,15.0375,15.0375,Orbicella_faveolata,same,n/s
 294,110,109,18.4875,18.15,Pseudodiploria_strigosa,same,n/s
 13,112,111,36.785,37.265,Orbicella_annularis,same,n/s
 14,113,112,93.1675,91.9,Orbicella_annularis,same,n/s
@@ -459,7 +459,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 142,643,611,1.1725,1.1525,Orbicella_annularis,same,n/s
 801,645,614,18.5275,18.41,Orbicella_annularis,same,n/s
 57,649,619,12.0725,12.1125,Orbicella_franksi,same,n/s
-812,650,483,15.165,15.83,Orbicella_annularis,same,n/s
+810,650,483,15.165,15.83,Orbicella_annularis,same,n/s
 194,7,7,6.7675,6.425,Montastrea_cavernosa,shrink,n/s
 196,10,10,5.805,5.305,Montastrea_cavernosa,shrink,n/s
 198,11,11,3.6875,3.44,Montastrea_cavernosa,shrink,n/s
@@ -622,7 +622,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 606,436,406,5.4525,4.625,Orbicella_franksi,shrink,n/s
 805,440,408,5.3675,2.835,Orbicella_franksi,shrink,n/s
 611,442,411,3.0,2.5,Orbicella_annularis,shrink,n/s
-806,453,415,2.9775,1.4875,Orbicella_franksi,shrink,n/s
+110,453,415,2.9775,1.4875,Orbicella_franksi,shrink,n/s
 619,457,424,29.535,27.8625,Orbicella_annularis,shrink,n/s
 624,462,431,29.4575,27.5525,Orbicella_annularis,shrink,n/s
 634,463,426,30.6225,23.7575,Orbicella_annularis,shrink,n/s
@@ -647,7 +647,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 727,553,523,5.795,5.415,Montastrea_cavernosa,shrink,n/s
 733,557,527,7.5475,6.835,Montastrea_cavernosa,shrink,n/s
 734,559,529,5.5225,4.78,Montastrea_cavernosa,shrink,n/s
-811,578,595,3.9425,3.3125,Orbicella_faveolata,shrink,n/s
+809,578,595,3.9425,3.3125,Orbicella_faveolata,shrink,n/s
 759,585,553,7.8475,7.3975,Orbicella_annularis,shrink,n/s
 764,590,560,5.52,4.2775,Orbicella_annularis,shrink,n/s
 770,595,566,5.8925,4.6325,Orbicella_annularis,shrink,n/s

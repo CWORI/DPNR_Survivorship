@@ -1,5 +1,5 @@
 Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
-309,48,-1,0.8975,0.0,Orbicella_annularis,dead,none
+302,48,-1,0.8975,0.0,Orbicella_annularis,dead,none
 242,99,-1,6.3675,0.0,Pseudodiploria_strigosa,dead,none
 246,103,-1,1.9375,0.0,Pseudodiploria_strigosa,dead,none
 247,104,-1,4.8125,0.0,Pseudodiploria_strigosa,dead,none
@@ -14,16 +14,16 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 10,27,27,5.495,6.37,Orbicella_annularis,grow,n/s
 153,31,31,24.9225,32.4825,Orbicella_annularis,grow,n/s
 176,34,34,16.665,18.8375,Orbicella_annularis,grow,n/s
-297,36,36,6.0425,7.41,Orbicella_annularis,grow,n/s
-298,37,37,3.92,4.2925,Orbicella_annularis,grow,n/s
-299,38,38,6.855,7.625,Orbicella_annularis,grow,n/s
-300,39,39,5.605,6.21,Orbicella_annularis,grow,n/s
-301,40,40,13.3575,14.42,Orbicella_annularis,grow,n/s
-302,41,41,5.9925,7.45,Orbicella_annularis,grow,n/s
-303,42,42,7.265,7.875,Orbicella_annularis,grow,n/s
-307,43,43,2.345,3.485,Orbicella_annularis,grow,n/s
+15,36,36,6.0425,7.41,Orbicella_annularis,grow,n/s
+16,37,37,3.92,4.2925,Orbicella_annularis,grow,n/s
+17,38,38,6.855,7.625,Orbicella_annularis,grow,n/s
+18,39,39,5.605,6.21,Orbicella_annularis,grow,n/s
+19,40,40,13.3575,14.42,Orbicella_annularis,grow,n/s
+20,41,41,5.9925,7.45,Orbicella_annularis,grow,n/s
+21,42,42,7.265,7.875,Orbicella_annularis,grow,n/s
+300,43,43,2.345,3.485,Orbicella_annularis,grow,n/s
 23,45,44,22.8175,25.8125,Orbicella_annularis,grow,n/s
-310,49,48,0.8475,1.125,Orbicella_annularis,grow,n/s
+303,49,48,0.8475,1.125,Orbicella_annularis,grow,n/s
 206,51,50,17.1525,18.105,Orbicella_annularis,grow,n/s
 29,53,52,44.51,47.0825,Orbicella_annularis,grow,n/s
 38,54,53,72.9275,77.0375,Orbicella_annularis,grow,n/s
@@ -49,7 +49,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 44,81,79,1.26,1.6725,Orbicella_annularis,grow,n/s
 226,84,83,21.99,23.245,Orbicella_annularis,grow,n/s
 236,92,91,7.1525,7.5425,Pseudodiploria_strigosa,grow,n/s
-305,93,92,3.9125,4.2975,Pseudodiploria_strigosa,grow,n/s
+298,93,92,3.9125,4.2975,Pseudodiploria_strigosa,grow,n/s
 238,94,93,5.285,5.97,Pseudodiploria_strigosa,grow,n/s
 244,101,99,4.635,5.305,Pseudodiploria_strigosa,grow,n/s
 248,105,101,4.905,5.36,Pseudodiploria_strigosa,grow,n/s
@@ -109,7 +109,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 211,59,58,1.8825,1.8425,Pseudodiploria_strigosa,same,n/s
 219,68,67,2.6525,2.6525,Pseudodiploria_strigosa,same,n/s
 227,83,82,7.675,7.9225,Pseudodiploria_strigosa,same,n/s
-304,86,85,6.0575,6.2675,Pseudodiploria_strigosa,same,n/s
+297,86,85,6.0575,6.2675,Pseudodiploria_strigosa,same,n/s
 232,88,87,7.81,7.74,Pseudodiploria_strigosa,same,n/s
 233,89,88,3.475,3.475,Pseudodiploria_strigosa,same,n/s
 234,90,89,5.5075,5.5075,Pseudodiploria_strigosa,same,n/s
@@ -119,7 +119,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 249,106,103,4.465,4.4,Pseudodiploria_strigosa,same,n/s
 47,109,106,316.3575,312.42,Acropora_palmata,same,n/s
 49,111,107,26.15,25.24,Orbicella_annularis,same,n/s
-306,112,108,8.845,9.215,Orbicella_annularis,same,n/s
+299,112,108,8.845,9.215,Orbicella_annularis,same,n/s
 56,115,111,57.02,55.5275,Acropora_palmata,same,n/s
 256,117,113,4.7375,4.57,Montastrea_cavernosa,same,n/s
 257,118,114,5.7575,5.5275,Montastrea_cavernosa,same,n/s
@@ -133,7 +133,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 270,134,132,5.9925,5.7325,Montastrea_cavernosa,same,n/s
 280,145,141,9.7725,10.19,Orbicella_faveolata,same,n/s
 91,161,157,26.1925,26.375,Orbicella_annularis,same,n/s
-106,165,162,401.7,414.495,Acropora_palmata,same,n/s
+106,165,162,401.7,414.495,Orbicella_annularis,same,n/s
 112,166,163,17.9325,17.2875,Acropora_palmata,same,n/s
 112,167,164,18.4025,18.135,Acropora_palmata,same,n/s
 134,1,1,26.74,20.735,Pseudodiploria_strigosa,shrink,n/s
@@ -145,7 +145,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 148,21,21,6.145,3.6875,Pseudodiploria_strigosa,shrink,n/s
 149,22,22,5.45,4.7875,Pseudodiploria_strigosa,shrink,n/s
 9,26,26,9.0225,8.1825,Orbicella_annularis,shrink,n/s
-308,44,45,2.5975,2.0825,Orbicella_annularis,shrink,n/s
+301,44,45,2.5975,2.0825,Orbicella_annularis,shrink,n/s
 203,46,47,18.245,17.2175,Orbicella_annularis,shrink,n/s
 39,58,57,21.365,20.1775,Orbicella_annularis,shrink,n/s
 41,73,72,7.2625,4.16,Orbicella_annularis,shrink,n/s

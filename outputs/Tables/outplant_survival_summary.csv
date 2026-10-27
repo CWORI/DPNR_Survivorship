@@ -1,38 +1,38 @@
-plot,interval_order,month_start,month_end,month_start_date,month_end_date,interval_label,plot_section,plot_section_label,n_start,n_survived,n_died,n_born,percent_survival,percent_survival_low,percent_survival_high
-Plot A,1,November,April,2025-11-14,2026-04-21,14 Nov 2025 to 21 Apr 2026,all,Plot A,0,0,0,43,NA,NA,NA
-Plot A,2,April,June,2026-04-21,2026-06-22,21 Apr 2026 to 22 Jun 2026,all,Plot A,43,43,0,0,100,91.77888788458614,100
-Plot A,3,June,August,2026-06-22,2026-08-12,22 Jun 2026 to 12 Aug 2026,all,Plot A,43,43,0,0,100,91.77888788458614,100
-Plot B,1,November,April,2025-11-03,2026-04-22,03 Nov 2025 to 22 Apr 2026,all,Plot B,0,0,0,43,NA,NA,NA
-Plot B,2,April,June,2026-04-22,2026-06-09,22 Apr 2026 to 09 Jun 2026,all,Plot B,43,43,0,32,100,91.77888788458614,100
-Plot B,3,June,August,2026-06-09,2026-08-07,09 Jun 2026 to 07 Aug 2026,all,Plot B,75,75,0,0,100,95.20049359448578,100
-Plot C,1,November,April,2025-11-03,2026-04-03,03 Nov 2025 to 03 Apr 2026,all,Plot C,0,0,0,539,NA,NA,NA
-Plot C,2,April,June,2026-04-03,2026-06-06,03 Apr 2026 to 06 Jun 2026,all,Plot C,520,514,6,1,98.84615384615384,97.50557773684572,99.5754140674933
-Plot C,3,June,August,2026-06-06,2026-08-05,06 Jun 2026 to 05 Aug 2026,all,Plot C,526,498,28,0,94.67680608365019,92.39812820977386,96.43399523856442
-Plot D,1,November,April,2025-11-05,2026-04-16,05 Nov 2025 to 16 Apr 2026,all,Plot D,0,0,0,308,NA,NA,NA
-Plot D,2,April,June,2026-04-16,2026-06-08,16 Apr 2026 to 08 Jun 2026,all,Plot D,308,275,33,0,89.28571428571429,85.28298425214419,92.50915804043561
-Plot D,3,June,August,2026-06-08,2026-08-06,08 Jun 2026 to 06 Aug 2026,all,Plot D,274,253,21,0,92.33576642335767,88.52288334041289,95.19331071933061
-Plot E,1,May,June,2025-05-07,2025-06-09,07 May 2025 to 09 Jun 2025,all,Plot E,412,373,39,0,90.53398058252426,87.2870621491775,93.18196274736673
-Plot E,2,June,July,2025-06-09,2025-07-11,09 Jun 2025 to 11 Jul 2025,all,Plot E,373,348,25,0,93.2975871313673,90.2646749550501,95.61592436098131
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,all,Plot E,347,337,10,3,97.11815561959654,94.76417078873018,98.6095727948782
-Plot E,4,August,September,2025-08-04,2025-09-08,04 Aug 2025 to 08 Sep 2025,all,Plot E,338,324,14,1,95.85798816568047,93.14800104077197,97.7173207275268
-Plot E,5,September,October,2025-09-08,2025-10-14,08 Sep 2025 to 14 Oct 2025,all,Plot E,315,313,2,0,99.36507936507937,97.72539056563872,99.92301546409657
-Plot E,6,October,November,2025-10-14,2025-11-06,14 Oct 2025 to 06 Nov 2025,all,Plot E,313,311,2,3,99.36102236421725,97.71097762302591,99.92252295262276
-Plot E,7,November,December,2025-11-06,2025-12-04,06 Nov 2025 to 04 Dec 2025,all,Plot E,315,299,16,1,94.92063492063492,91.88232386505204,97.06918419484805
-Plot E,8,December,January,2025-12-04,2026-01-20,04 Dec 2025 to 20 Jan 2026,all,Plot E,297,289,8,3,97.3063973063973,94.76171929513451,98.83007369649461
-Plot E,9,January,February,2026-01-20,2026-02-16,20 Jan 2026 to 16 Feb 2026,all,Plot E,291,276,15,0,94.84536082474227,91.6406324515908,97.08663748114454
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,all,Plot E,268,235,33,4,87.68656716417911,83.1438215545441,91.3703484337598
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,all,Plot E,229,209,20,1060,91.26637554585153,86.83393935290967,94.58355767634976
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,all,Plot E,1260,1247,13,17,98.96825396825396,98.24214502312375,99.44952718091555
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,all,Plot E,1272,1184,88,3,93.08176100628931,91.54575531937887,94.41473325996911
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,all,Plot E,1176,1097,79,7,93.28231292517007,91.69778894560328,94.64581171396395
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,all,Plot E,1100,1069,31,9,97.18181818181819,96.02352318763431,98.07732445110487
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,all,Plot E,1077,1051,26,1,97.58588672237697,96.48266811875946,98.41710035385078
-Plot F,1,November,May,2025-11-06,2026-05-01,06 Nov 2025 to 01 May 2026,all,Plot F,0,0,0,41,NA,NA,NA
-Plot F,2,May,May,2026-05-01,2026-05-27,01 May 2026 to 27 May 2026,all,Plot F,41,41,0,0,100,91.39561637059715,100
-Plot F,3,May,August,2026-05-27,2026-08-20,27 May 2026 to 20 Aug 2026,all,Plot F,41,38,3,0,92.6829268292683,80.0754021623337,98.46485284665833
-Plot G,1,November,April,2025-11-07,2026-04-24,07 Nov 2025 to 24 Apr 2026,all,Plot G,0,0,0,45,NA,NA,NA
-Plot G,2,April,May,2026-04-24,2026-05-26,24 Apr 2026 to 26 May 2026,all,Plot G,45,45,0,0,100,92.12948995931569,100
-Plot G,3,May,August,2026-05-26,2026-08-13,26 May 2026 to 13 Aug 2026,all,Plot G,44,44,0,0,100,91.95800602364241,100
-Plot H,1,November,April,2025-11-07,2026-04-24,07 Nov 2025 to 24 Apr 2026,all,Plot H,0,0,0,38,NA,NA,NA
-Plot H,2,April,May,2026-04-24,2026-05-25,24 Apr 2026 to 25 May 2026,all,Plot H,41,41,0,0,100,91.39561637059715,100
-Plot H,3,May,August,2026-05-25,2026-08-13,25 May 2026 to 13 Aug 2026,all,Plot H,42,40,2,0,95.23809523809524,83.83580403083461,99.418017516449
+plot,interval_order,month_start,month_end,month_start_date,month_end_date,n_start,n_survived,n_died,n_unresolved,n_born,plot_section,plot_section_label,percent_survival,percent_survival_low,percent_survival_high,interval_label,method
+Plot A,1,November,April,2025-11-14,2026-04-21,0,0,0,0,43,all,Plot A,NA,NA,NA,14 Nov 2025 to 21 Apr 2026,Source-object descendant retention
+Plot A,2,April,June,2026-04-21,2026-06-22,43,43,0,0,0,all,Plot A,100,NA,NA,21 Apr 2026 to 22 Jun 2026,Source-object descendant retention
+Plot A,3,June,August,2026-06-22,2026-08-12,43,43,0,0,0,all,Plot A,100,NA,NA,22 Jun 2026 to 12 Aug 2026,Source-object descendant retention
+Plot B,1,November,April,2025-11-03,2026-04-22,0,0,0,0,43,all,Plot B,NA,NA,NA,03 Nov 2025 to 22 Apr 2026,Source-object descendant retention
+Plot B,2,April,June,2026-04-22,2026-06-09,43,43,0,0,32,all,Plot B,100,NA,NA,22 Apr 2026 to 09 Jun 2026,Source-object descendant retention
+Plot B,3,June,August,2026-06-09,2026-08-07,75,75,0,0,0,all,Plot B,100,NA,NA,09 Jun 2026 to 07 Aug 2026,Source-object descendant retention
+Plot C,1,November,April,2025-11-03,2026-04-03,0,0,0,0,597,all,Plot C,NA,NA,NA,03 Nov 2025 to 03 Apr 2026,Source-object descendant retention
+Plot C,2,April,June,2026-04-03,2026-06-06,579,573,6,0,1,all,Plot C,98.96373056994818,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
+Plot C,3,June,August,2026-06-06,2026-08-05,542,514,28,0,0,all,Plot C,94.8339483394834,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
+Plot D,1,November,April,2025-11-05,2026-04-16,0,0,0,0,336,all,Plot D,NA,NA,NA,05 Nov 2025 to 16 Apr 2026,Source-object descendant retention
+Plot D,2,April,June,2026-04-16,2026-06-08,336,303,33,0,0,all,Plot D,90.17857142857143,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
+Plot D,3,June,August,2026-06-08,2026-08-06,281,260,21,0,0,all,Plot D,92.52669039145907,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,1,May,June,2025-05-07,2025-06-09,796,757,39,0,1,all,Plot E,95.10050251256281,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
+Plot E,2,June,July,2025-06-09,2025-07-11,733,702,31,0,0,all,Plot E,95.77080491132332,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
+Plot E,3,July,August,2025-07-11,2025-08-04,623,613,10,0,4,all,Plot E,98.3948635634029,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention
+Plot E,4,August,September,2025-08-04,2025-09-08,586,569,17,0,1,all,Plot E,97.09897610921502,NA,NA,04 Aug 2025 to 08 Sep 2025,Source-object descendant retention
+Plot E,5,September,October,2025-09-08,2025-10-14,532,520,12,0,0,all,Plot E,97.74436090225564,NA,NA,08 Sep 2025 to 14 Oct 2025,Source-object descendant retention
+Plot E,6,October,November,2025-10-14,2025-11-06,479,476,3,0,4,all,Plot E,99.37369519832986,NA,NA,14 Oct 2025 to 06 Nov 2025,Source-object descendant retention
+Plot E,7,November,December,2025-11-06,2025-12-04,476,460,16,0,1,all,Plot E,96.63865546218487,NA,NA,06 Nov 2025 to 04 Dec 2025,Source-object descendant retention
+Plot E,8,December,January,2025-12-04,2026-01-20,422,409,13,0,4,all,Plot E,96.91943127962085,NA,NA,04 Dec 2025 to 20 Jan 2026,Source-object descendant retention
+Plot E,9,January,February,2026-01-20,2026-02-16,392,374,18,0,0,all,Plot E,95.40816326530613,NA,NA,20 Jan 2026 to 16 Feb 2026,Source-object descendant retention
+Plot E,10,February,March,2026-02-16,2026-03-25,355,308,47,0,4,all,Plot E,86.7605633802817,NA,NA,16 Feb 2026 to 25 Mar 2026,Source-object descendant retention
+Plot E,11,March,April,2026-03-25,2026-04-09,296,269,27,0,1102,all,Plot E,90.87837837837837,NA,NA,25 Mar 2026 to 09 Apr 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,1354,1340,14,0,17,all,Plot E,98.96602658788774,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,1349,1253,96,0,3,all,Plot E,92.88361749444033,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,1236,1156,80,0,7,all,Plot E,93.52750809061489,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,1150,1115,35,0,9,all,Plot E,96.95652173913044,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,1126,1098,28,0,0,all,Plot E,97.51332149200711,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot F,1,November,May,2025-11-06,2026-05-01,0,0,0,0,41,all,Plot F,NA,NA,NA,06 Nov 2025 to 01 May 2026,Source-object descendant retention
+Plot F,2,May,May,2026-05-01,2026-05-27,41,41,0,0,0,all,Plot F,100,NA,NA,01 May 2026 to 27 May 2026,Source-object descendant retention
+Plot F,3,May,August,2026-05-27,2026-08-20,41,38,3,0,0,all,Plot F,92.6829268292683,NA,NA,27 May 2026 to 20 Aug 2026,Source-object descendant retention
+Plot G,1,November,April,2025-11-07,2026-04-24,0,0,0,0,45,all,Plot G,NA,NA,NA,07 Nov 2025 to 24 Apr 2026,Source-object descendant retention
+Plot G,2,April,May,2026-04-24,2026-05-26,45,45,0,0,0,all,Plot G,100,NA,NA,24 Apr 2026 to 26 May 2026,Source-object descendant retention
+Plot G,3,May,August,2026-05-26,2026-08-13,44,44,0,0,0,all,Plot G,100,NA,NA,26 May 2026 to 13 Aug 2026,Source-object descendant retention
+Plot H,1,November,April,2025-11-07,2026-04-24,0,0,0,0,39,all,Plot H,NA,NA,NA,07 Nov 2025 to 24 Apr 2026,Source-object descendant retention
+Plot H,2,April,May,2026-04-24,2026-05-25,42,42,0,0,0,all,Plot H,100,NA,NA,24 Apr 2026 to 25 May 2026,Source-object descendant retention
+Plot H,3,May,August,2026-05-25,2026-08-13,42,40,2,0,0,all,Plot H,95.23809523809524,NA,NA,25 May 2026 to 13 Aug 2026,Source-object descendant retention

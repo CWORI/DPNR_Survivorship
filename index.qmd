@@ -18,6 +18,9 @@ home_latest <- outplant_cumulative_survival_summary |>
   dplyr::ungroup() |>
   dplyr::arrange(plot)
 home_baseline_total <- sum(home_latest$n_baseline)
+home_e_april <- outplant_object_lineage_survival |>
+  dplyr::filter(plot == "Plot E", cohort == "April 2026 additions") |>
+  dplyr::slice_max(survey_date, n = 1, with_ties = FALSE)
 home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = TRUE)
 ```
 
@@ -38,8 +41,8 @@ home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = T
 </div>
 <div class="site-hero__chips" aria-label="Current report scope">
 <span>Plots A–H</span>
-<span>91 match files</span>
-<span>Updated September 29, 2026</span>
+<span>`r nrow(outplant_config)` match files</span>
+<span>Updated October 27, 2026</span>
 <span>Section coverage varies</span>
 </div>
 </div>
@@ -47,7 +50,7 @@ home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = T
 
 <section class="home-band home-band--metrics" aria-label="Outplant overview">
 <div class="metric-strip">
-<div class="metric-tile metric-tile--teal"><span>`r home_count(home_baseline_total)`</span><p>outplants tracked at baseline</p></div>
+<div class="metric-tile metric-tile--teal"><span>`r home_count(home_baseline_total)`</span><p>original annotations tracked at baseline</p></div>
 <div class="metric-tile metric-tile--coral"><span>`r nrow(home_latest)`</span><p>plots with monitoring data</p></div>
 </div>
 </section>
@@ -74,7 +77,7 @@ coki_interactive_map
 <section class="home-band" aria-label="Survivorship by plot">
 <div class="home-section-heading">
 <h2>How each plot is doing</h2>
-<p>Survivorship is the percentage of baseline outplants still present at the latest survey with all configured sections represented.</p>
+<p>Each original annotation counts once through documented splits and fusions. The percentages below describe the initial observed cohort at the latest complete-section survey. Missing connections remain unresolved, rather than being recorded as deaths. Coki E’s 2026 additions are shown separately.</p>
 </div>
 
 ```{r}
@@ -85,17 +88,22 @@ coki_interactive_map
 cat('<div class="plot-overview-grid">')
 for (i in seq_len(nrow(home_latest))) {
   plot_row <- home_latest[i, ]
+  april_note <- if (plot_row$plot == "Plot E" && nrow(home_e_april) == 1L) {
+    sprintf('<p>April 2026 cohort: <strong>%.1f%%</strong> with a living descendant (%s unresolved).</p>',
+            home_e_april$percent_survival, home_count(home_e_april$n_unresolved))
+  } else ""
   cat(sprintf(
-    '<article class="plot-overview-card"><h3>%s</h3><p class="plot-overview-value">%.1f%%<span>survivorship</span></p><p><strong>%s</strong> of <strong>%s</strong> baseline outplants remain.</p><p class="plot-overview-date">Survey: %s</p></article>',
+    '<article class="plot-overview-card"><h3>%s</h3><p class="plot-overview-value">%.1f%%<span>initial-cohort lineage persistence</span></p><p><strong>%s</strong> of <strong>%s</strong> baseline annotations have a living descendant.</p><p>Unresolved: %s</p><p class="plot-overview-date">Survey: %s</p>%s</article>',
     plot_row$plot, plot_row$percent_cumulative_survival,
-    home_count(plot_row$n_surviving_from_baseline), home_count(plot_row$n_baseline),
-    format(as.Date(plot_row$survey_date), "%d %b %Y")
+    home_count(plot_row$n_surviving_from_baseline), home_count(plot_row$n_baseline), home_count(plot_row$n_unresolved),
+    format(as.Date(plot_row$survey_date), "%d %b %Y"), april_note
   ))
+
 }
 cat('</div>')
 ```
 
-<p class="overview-note">Counts represent tracked Genets in the Matches data, not every fragment ever planted or later additions. Survey dates differ between plots. Plot E uses January 2026 because later surveys cover only part of the plot. <a href="coral_survivorship_report.html">See the report for data-quality flags and full results.</a></p>
+<p class="overview-note">Counts represent original annotated objects with documented living descendants. They may differ from deployed fragment counts. Shared fused descendants retain multiple original histories. Survey dates differ between plots; Coki E includes all four sections through September 2026. <a href="coral_survivorship_report.html">See the report for data-quality flags and full results.</a></p>
 </section>
 
 <section class="home-band home-band--intro" aria-label="Project overview">

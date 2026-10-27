@@ -1,7 +1,6 @@
 plot,plot_section,plot_section_label,genet,n_species,species_values,n_tags,tag_values,n_genotypes,genotype_values
 Plot E,0-0,Plot E 0-0,1,2,Orbicella annularis; Orbicella faveolata,0,,0,
-Plot E,0-0,Plot E 0-0,31,2,Empty; Orbicella annularis,0,,0,
-Plot E,0-0,Plot E 0-0,7,2,Orbicella faveolata; Orbicella franksi,0,,0,
+Plot E,0-0,Plot E 0-0,6,2,Orbicella faveolata; Orbicella franksi,0,,0,
 Plot E,1-0,Plot E 1-0,296,2,Diploria labyrinthiformis; Pseudodiploria strigosa,0,,0,
 Plot E,1-0,Plot E 1-0,504,2,Diploria labyrinthiformis; Pseudodiploria strigosa,0,,0,
 Plot E,1-0,Plot E 1-0,505,2,Diploria labyrinthiformis; Pseudodiploria strigosa,0,,0,

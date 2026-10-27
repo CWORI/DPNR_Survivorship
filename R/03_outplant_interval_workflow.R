@@ -209,6 +209,19 @@ outplant_coki_label <- function(x) {
   str_replace(x, "^Plot ", "Coki ")
 }
 
+# Italicize scientific names while keeping non-taxonomic legend labels roman.
+outplant_format_species_labels <- function(labels) {
+  as.expression(lapply(labels, function(label) {
+    if (label == "Orbicella sp.") {
+      bquote(italic("Orbicella") ~ "sp.")
+    } else if (label %in% c("Empty", "Unidentified coral")) {
+      label
+    } else {
+      bquote(italic(.(label)))
+    }
+  }))
+}
+
 # Config and file readers -------------------------------------------------------
 # The config stores file metadata, plot sections, and plot dimensions. Plot
 # sections keep TagLab subsections such as Plot E 1-0 and Plot E 1-1 separate.
@@ -345,7 +358,13 @@ outplant_standardize_interval_file <- function(plot, plot_section, plot_section_
       blob_end = outplant_clean_text(.data[[blob_end_col]]),
       area_start = as.numeric(.data[[area_start_col]]),
       area_end = as.numeric(.data[[area_end_col]]),
-      species = outplant_clean_species(class),
+      # User-confirmed identification, 2026-10-21: Coki E Orbicella sp./spp.
+      # annotations are O. faveolata. Raw files remain unchanged.
+      species = if_else(
+        .env$plot == "Plot E" & outplant_clean_species(class) %in%
+          c("Orbicella sp.", "Orbicella spp."),
+        "Orbicella faveolata", outplant_clean_species(class)
+      ),
       action = str_to_lower(outplant_clean_text(action)),
       split_fuse = str_to_lower(outplant_clean_text(split_fuse)),
       tag = outplant_clean_text(outplant_safe_character_col(df, "tag")),
@@ -395,7 +414,7 @@ outplant_sum_unique_blob_area <- function(blob, area) {
 }
 
 # Some files can contain repeated rows for the same TagLab Genet because of
-# split/fuse events or multiple blob pieces. Grouping by Genet makes one row per tracked outplant per interval before calculating survivorship.
+# split/fuse events or multiple blob pieces. These Genet summaries support annotation and area diagnostics only; stage 06 calculates object-lineage survivorship.
 outplant_build_coral_intervals <- function(interval_rows) {
   interval_rows %>%
     filter(!is.na(genet)) %>%
@@ -977,7 +996,7 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
         denominator = n_baseline,
         ci_low = percent_cumulative_survival_low,
         ci_high = percent_cumulative_survival_high,
-        notes = str_c("Baseline month: ", baseline_month)
+        notes = str_c("Original-object lineage; baseline month: ", baseline_month, "; unresolved: ", n_unresolved)
       ),
     cumulative_survival %>%
       transmute(
@@ -999,7 +1018,7 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
         denominator = n_baseline,
         ci_low = NA_real_,
         ci_high = NA_real_,
-        notes = str_c("Baseline month: ", baseline_month)
+        notes = str_c("Original-object lineage; baseline month: ", baseline_month, "; unresolved: ", n_unresolved)
       ),
     cover_summary %>%
       transmute(
@@ -1043,7 +1062,7 @@ outplant_build_master_summary_dataset <- function(cumulative_survival, interval_
         denominator = n_start,
         ci_low = percent_survival_low,
         ci_high = percent_survival_high,
-        notes = str_c("Deaths: ", n_died, "; births/new detections: ", n_born)
+        notes = str_c("Source-object retention; recorded deaths: ", n_died, "; unresolved: ", n_unresolved, "; new destination objects: ", n_born)
       ),
     species_interval_survival %>%
       transmute(
@@ -1270,15 +1289,6 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
   }
 
   p <- p +
-    geom_errorbar(
-      aes(
-        ymin = percent_cumulative_survival_low,
-        ymax = percent_cumulative_survival_high
-      ),
-      width = 3,
-      color = "grey25",
-      linewidth = 0.5
-    ) +
     geom_line(aes(color = plot_section_label), linewidth = 0.8) +
     geom_point(aes(color = plot_section_label), size = 2.8) +
     geom_text(
@@ -1293,9 +1303,9 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
     ) +
     labs(
       x = "Survey date",
-      y = "Cumulative survivorship",
+      y = "Original-object lineage persistence (%)",
       color = "Coki",
-      title = "Outplant cumulative survivorship and temperature through time"
+      title = "Original-object lineage persistence through time"
     ) +
     scale_color_brewer(palette = "Dark2")
 
@@ -1323,7 +1333,7 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
         expand = expansion(mult = c(0.02, 0.08))
       ) +
       labs(
-        subtitle = "Percent of baseline Genets still present after collapsing repeated blob rows; bars are exact binomial 95% CIs"
+        subtitle = "Original objects with a documented living descendant; missing links remain unresolved"
       )
   }
 
@@ -1363,12 +1373,6 @@ outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary)
       plot_section_label = outplant_coki_label(plot_section_label)
     ) %>%
     ggplot(aes(x = monitoring_label, y = percent_cumulative_survival, group = plot_section_label)) +
-    geom_errorbar(
-      aes(ymin = percent_cumulative_survival_low, ymax = percent_cumulative_survival_high),
-      width = 0.12,
-      color = "grey25",
-      linewidth = 0.5
-    ) +
     geom_line(aes(color = plot_section_label), linewidth = 0.7) +
     geom_point(aes(color = plot_section_label), size = 2.8) +
     geom_text(aes(label = sprintf("%.1f%%", percent_cumulative_survival)), vjust = -1, size = 3.4) +
@@ -1381,7 +1385,7 @@ outplant_plot_short_cumulative_survival <- function(cumulative_survival_summary)
     ) +
     labs(
       x = "Monitoring step",
-      y = "Cumulative survivorship",
+      y = "Original-object lineage persistence (%)",
       color = "Coki",
       title = "Short-monitoring cumulative survivorship",
       subtitle = "Short monitoring series are shown by baseline/follow-up step"
@@ -1398,12 +1402,6 @@ outplant_plot_interval_survival <- function(survival_summary) {
       plot_section_label = outplant_coki_label(plot_section_label)
     ) %>%
     ggplot(aes(x = interval_label, y = percent_survival, group = plot_section_label)) +
-    geom_errorbar(
-      aes(ymin = percent_survival_low, ymax = percent_survival_high),
-      width = 0.14,
-      color = "grey25",
-      linewidth = 0.5
-    ) +
     geom_line(aes(color = plot_section_label), linewidth = 0.7) +
     geom_point(aes(color = plot_section_label), size = 2.8) +
     geom_text(aes(label = sprintf("%.1f%%", percent_survival)), vjust = -1, size = 3.4) +
@@ -1416,8 +1414,8 @@ outplant_plot_interval_survival <- function(survival_summary) {
       x = "Survey interval",
       y = "Interval survivorship",
       color = "Coki",
-      title = "Outplant interval survivorship",
-      subtitle = "Survival between adjacent TagLab match files; bars are exact binomial 95% CIs"
+      title = "Outplant interval descendant retention",
+      subtitle = "Each source object counts once through documented split/fuse connections"
     ) +
     scale_color_brewer(palette = "Dark2") +
     outplant_theme() +
@@ -1434,13 +1432,6 @@ outplant_plot_short_interval_survival <- function(survival_summary) {
     ) %>%
     ggplot(aes(x = interval_label, y = percent_survival, fill = plot_section_label)) +
     geom_col(position = position_dodge(width = 0.72), width = 0.64, color = "white") +
-    geom_errorbar(
-      aes(ymin = percent_survival_low, ymax = percent_survival_high),
-      position = position_dodge(width = 0.72),
-      width = 0.16,
-      color = "grey25",
-      linewidth = 0.5
-    ) +
     geom_text(
       aes(label = sprintf("%.1f%%", percent_survival)),
       position = position_dodge(width = 0.72),
@@ -1544,7 +1535,7 @@ outplant_plot_species_prevalence <- function(species_prevalence) {
     ggplot(aes(x = survey_label, y = percent_prevalence, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
     facet_wrap(vars(plot_section_label), ncol = 1, scales = "free_x") +
-    scale_fill_manual(values = outplant_species_palette, drop = FALSE) +
+    scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = FALSE) +
     scale_y_continuous(
       breaks = c(0, 50, 100),
       labels = scales::label_percent(scale = 1),
@@ -1575,7 +1566,7 @@ outplant_plot_species_cover <- function(species_prevalence) {
     ggplot(aes(x = survey_label, y = percent_cover_within_outplants, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
     facet_wrap(vars(plot_section_label), ncol = 1, scales = "free_x") +
-    scale_fill_manual(values = outplant_species_palette, drop = FALSE) +
+    scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = FALSE) +
     scale_y_continuous(
       breaks = c(0, 50, 100),
       labels = scales::label_percent(scale = 1),
@@ -1623,7 +1614,7 @@ outplant_plot_species_area <- function(species_area) {
     )) +
     geom_line(linewidth = 0.8) +
     geom_point(size = 2.6) +
-    scale_color_manual(values = outplant_species_palette, drop = FALSE) +
+    scale_color_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = FALSE) +
     scale_x_date(
       breaks = sort(unique(as.Date(species_area$survey_date))),
       date_labels = "%d %b %Y"
@@ -1731,22 +1722,13 @@ outplant_section_monthly_observations <- outplant_build_monthly_observations(out
 outplant_coral_intervals <- outplant_combine_plot_sections(outplant_section_coral_intervals)
 outplant_monthly_observations <- outplant_build_monthly_observations(outplant_coral_intervals)
 
-outplant_section_cumulative_survival_summary <- outplant_summarize_cumulative_survival(
-  outplant_section_monthly_observations,
-  outplant_section_coral_intervals
-)
-outplant_cumulative_survival_summary <- outplant_summarize_cumulative_survival_by_plot(
-  outplant_section_cumulative_survival_summary
-)
+# Stage 06 supplies lineage-based cumulative, interval and species survival.
+source(file.path(outplant_project_root, "R", "06_outplant_object_lineage.R"))
 outplant_temperature_observations <- outplant_read_temperature_file(outplant_temperature_path)
 outplant_daily_temperature_summary <- outplant_summarize_daily_temperature(
   outplant_temperature_observations,
   outplant_cumulative_survival_summary
 )
-outplant_section_survival_summary <- outplant_summarize_survival(outplant_section_coral_intervals)
-outplant_survival_summary <- outplant_summarize_survival_by_plot(outplant_section_survival_summary)
-outplant_section_species_survival_summary <- outplant_summarize_species_survival(outplant_section_coral_intervals)
-outplant_species_survival_summary <- outplant_summarize_species_survival_by_plot(outplant_section_species_survival_summary)
 outplant_cover_summary <- outplant_summarize_cover(outplant_monthly_observations)
 outplant_species_prevalence_summary <- outplant_summarize_species_prevalence(outplant_monthly_observations)
 outplant_species_area_summary <- outplant_summarize_species_area(outplant_monthly_observations)
@@ -1756,7 +1738,7 @@ outplant_species_depth_summary <- outplant_summarize_species_depth(
   outplant_plot_depth_summary
 )
 
-outplant_master_tracking_dataset <- outplant_build_master_tracking_dataset(outplant_monthly_observations)
+outplant_master_tracking_dataset <- outplant_object_lineage_tracking
 outplant_master_summary_dataset <- outplant_build_master_summary_dataset(
   outplant_cumulative_survival_summary,
   outplant_survival_summary,

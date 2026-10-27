@@ -3,6 +3,9 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 40,33,-1,56.68,0.0,Acropora_cervicornis,dead,none
 48,46,-1,25.795,0.0,Orbicella_annularis,dead,none
 50,47,-1,4.015,0.0,Orbicella_annularis,dead,none
+54,50,-1,6.77,0.0,Acropora_palmata,dead,none
+55,51,-1,8.145,0.0,Acropora_palmata,dead,none
+116,52,-1,4.735,0.0,Acropora_palmata,dead,none
 73,64,-1,22.045,0.0,Acropora_palmata,dead,none
 75,65,-1,37.7675,0.0,Acropora_palmata,dead,none
 74,66,-1,66.0925,0.0,Acropora_palmata,dead,none
@@ -62,10 +65,10 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 91,83,56,7.41,26.365,Orbicella_annularis,n/s,fuse
 98,89,65,7.185,23.2,Orbicella_annularis,n/s,fuse
 98,90,65,15.695,23.2,Orbicella_annularis,n/s,fuse
-106,95,70,5.21,6.4175,Acropora_palmata,n/s,fuse
-106,95,72,5.21,435.09,Acropora_palmata,n/s,fuse
-106,97,70,314.18,6.4175,Acropora_palmata,n/s,fuse
-106,97,72,314.18,435.09,Acropora_palmata,n/s,fuse
+106,95,70,5.21,6.4175,Orbicella_annularis,n/s,fuse
+106,95,72,5.21,435.09,Orbicella_annularis,n/s,fuse
+106,97,70,314.18,6.4175,Orbicella_annularis,n/s,fuse
+106,97,72,314.18,435.09,Orbicella_annularis,n/s,fuse
 112,106,81,99.0125,50.6325,Acropora_palmata,n/s,split
 112,106,82,99.0125,37.9725,Acropora_palmata,n/s,split
 1,1,0,23.1375,22.53,Orbicella_annularis,same,n/s

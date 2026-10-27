@@ -1,5 +1,5 @@
 Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
-306,-1,171,0.0,9.5175,Orbicella_annularis,born,none
+299,-1,171,0.0,9.5175,Orbicella_annularis,born,none
 159,35,-1,2.555,0.0,Orbicella_annularis,dead,none
 163,36,-1,1.0575,0.0,Orbicella_annularis,dead,none
 165,37,-1,2.21,0.0,Orbicella_annularis,dead,none
@@ -48,13 +48,13 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 151,31,29,19.885,21.3875,Orbicella_annularis,grow,n/s
 152,32,30,26.645,28.005,Orbicella_annularis,grow,n/s
 153,33,31,26.05,27.825,Orbicella_annularis,grow,n/s
-297,51,36,6.4475,6.8875,Orbicella_annularis,grow,n/s
-298,52,37,4.0575,4.2775,Orbicella_annularis,grow,n/s
+15,51,36,6.4475,6.8875,Orbicella_annularis,grow,n/s
+16,52,37,4.0575,4.2775,Orbicella_annularis,grow,n/s
 186,53,35,12.78,13.5675,Orbicella_annularis,grow,n/s
-300,55,39,5.8425,6.145,Orbicella_annularis,grow,n/s
-301,57,40,13.2525,13.9775,Orbicella_annularis,grow,n/s
-302,59,41,6.2625,6.745,Orbicella_annularis,grow,n/s
-303,60,42,6.79,7.395,Orbicella_annularis,grow,n/s
+18,55,39,5.8425,6.145,Orbicella_annularis,grow,n/s
+19,57,40,13.2525,13.9775,Orbicella_annularis,grow,n/s
+20,59,41,6.2625,6.745,Orbicella_annularis,grow,n/s
+21,60,42,6.79,7.395,Orbicella_annularis,grow,n/s
 206,78,46,15.0275,17.1525,Orbicella_annularis,grow,n/s
 207,79,47,16.51,17.5575,Pseudodiploria_strigosa,grow,n/s
 29,80,48,40.1525,44.7525,Orbicella_annularis,grow,n/s
@@ -72,7 +72,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 226,109,78,20.105,21.2525,Orbicella_annularis,grow,n/s
 227,110,77,6.645,7.2975,Pseudodiploria_strigosa,grow,n/s
 228,111,79,3.4175,3.65,Pseudodiploria_strigosa,grow,n/s
-304,112,80,5.2325,6.1375,Pseudodiploria_strigosa,grow,n/s
+297,112,80,5.2325,6.1375,Pseudodiploria_strigosa,grow,n/s
 238,120,88,5.0825,5.8075,Pseudodiploria_strigosa,grow,n/s
 240,122,91,7.88,8.295,Pseudodiploria_strigosa,grow,n/s
 241,123,92,6.025,6.63,Pseudodiploria_strigosa,grow,n/s
@@ -132,7 +132,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 158,34,32,28.36,29.335,Orbicella_annularis,same,n/s
 176,44,34,15.8475,16.4775,Orbicella_annularis,same,n/s
 179,45,33,13.98,14.47,Orbicella_annularis,same,n/s
-299,54,38,6.85,6.875,Orbicella_annularis,same,n/s
+17,54,38,6.85,6.875,Orbicella_annularis,same,n/s
 203,75,43,17.88,17.7425,Orbicella_annularis,same,n/s
 38,81,49,69.4775,70.0075,Orbicella_annularis,same,n/s
 39,85,53,18.7425,18.7775,Orbicella_annularis,same,n/s
@@ -160,7 +160,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 91,190,154,25.2025,25.415,Orbicella_annularis,same,n/s
 93,191,155,337.1575,337.1575,Acropora_palmata,same,n/s
 100,198,158,368.9625,354.57,Acropora_palmata,same,n/s
-106,201,160,378.27,376.7325,Acropora_palmata,same,n/s
+106,201,160,378.27,376.7325,Orbicella_annularis,same,n/s
 3,4,4,5.0825,4.0425,Orbicella_annularis,shrink,n/s
 137,7,6,7.095,6.7125,Pseudodiploria_strigosa,shrink,n/s
 136,8,5,4.4425,4.16,Pseudodiploria_strigosa,shrink,n/s
@@ -187,7 +187,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 232,114,81,8.745,7.8225,Pseudodiploria_strigosa,shrink,n/s
 235,116,85,4.2325,3.4225,Pseudodiploria_strigosa,shrink,n/s
 236,117,86,8.05,7.6225,Pseudodiploria_strigosa,shrink,n/s
-305,119,87,5.5175,5.0025,Pseudodiploria_strigosa,shrink,n/s
+298,119,87,5.5175,5.0025,Pseudodiploria_strigosa,shrink,n/s
 239,121,90,5.4925,4.34,Pseudodiploria_strigosa,shrink,n/s
 246,129,96,5.6,4.2875,Pseudodiploria_strigosa,shrink,n/s
 247,130,97,6.5225,6.0725,Pseudodiploria_strigosa,shrink,n/s
@@ -203,7 +203,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 289,183,147,8.41,7.5425,Orbicella_faveolata,shrink,n/s
 290,184,148,6.225,5.3375,Orbicella_faveolata,shrink,n/s
 92,192,156,7.56,6.7175,Orbicella_annularis,shrink,n/s
-106,199,159,6.6375,6.075,Acropora_palmata,shrink,n/s
+106,199,159,6.6375,6.075,Orbicella_annularis,shrink,n/s
 130,200,161,3.225,2.5075,Orbicella_annularis,shrink,n/s
 104,202,163,4.4625,2.37,Orbicella_annularis,shrink,n/s
 103,203,162,6.635,5.6775,Orbicella_annularis,shrink,n/s

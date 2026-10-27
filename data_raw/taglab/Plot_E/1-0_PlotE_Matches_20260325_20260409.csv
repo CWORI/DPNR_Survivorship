@@ -651,7 +651,6 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 803,-1,650,0.0,8.425,Orbicella_annularis,born,none
 804,-1,711,0.0,0.3925,Orbicella_faveolata,born,none
 805,-1,712,0.0,75.88,Orbicella_franksi,born,none
-806,-1,713,0.0,4.18,Orbicella_franksi,born,none
 45,18,-1,0.45,0.0,Orbicella_annularis,dead,none
 46,19,-1,7.675,0.0,Orbicella_annularis,dead,none
 48,20,-1,0.4175,0.0,Orbicella_annularis,dead,none
@@ -665,6 +664,11 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 53,29,-1,4.77,0.0,Orbicella_annularis,dead,none
 56,30,-1,7.505,0.0,Orbicella_annularis,dead,none
 53,32,-1,1.5025,0.0,Orbicella_annularis,dead,none
+108,51,-1,54.5175,0.0,Orbicella_franksi,dead,none
+109,52,-1,6.865,0.0,Orbicella_franksi,dead,none
+149,83,-1,2.145,0.0,Acropora_cervicornis,dead,none
+149,84,-1,0.87,0.0,Acropora_cervicornis,dead,none
+147,85,-1,2.29,0.0,Acropora_cervicornis,dead,none
 10,4,653,1.9825,2.575,Orbicella_annularis,grow,n/s
 13,5,656,33.66,36.8675,Orbicella_annularis,grow,n/s
 30,12,661,5.435,6.155,Orbicella_franksi,grow,n/s
@@ -680,6 +684,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 79,42,667,12.655,20.345,Acropora_palmata,grow,n/s
 83,47,680,0.69,0.88,Orbicella_faveolata,grow,n/s
 102,50,668,59.6575,76.4625,Acropora_palmata,grow,n/s
+110,53,713,2.8325,4.18,Orbicella_franksi,grow,n/s
 114,55,686,13.3575,14.74,Orbicella_franksi,grow,n/s
 116,58,684,4.1075,4.7325,Orbicella_franksi,grow,n/s
 117,59,690,29.575,38.6675,Acropora_cervicornis,grow,n/s
@@ -689,6 +694,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 134,71,693,20.1775,24.29,Orbicella_faveolata,grow,n/s
 135,72,694,6.0275,7.5425,Orbicella_faveolata,grow,n/s
 136,73,705,5.13,5.5225,Orbicella_faveolata,grow,n/s
+150,86,714,7.0375,8.15,Orbicella_faveolata,grow,n/s
 8,0,651,2.7675,44.905,Orbicella_annularis,n/s,fuse
 8,1,651,30.0925,44.905,Orbicella_annularis,n/s,fuse
 8,2,651,5.9075,44.905,Orbicella_annularis,n/s,fuse
@@ -733,3 +739,5 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 141,78,700,6.6625,5.78,Orbicella_annularis,shrink,n/s
 143,81,703,1.59,1.2725,Orbicella_annularis,shrink,n/s
 142,82,704,1.35,1.11,Orbicella_annularis,shrink,n/s
+151,87,716,4.9275,3.94,Orbicella_faveolata,shrink,n/s
+152,88,715,5.0025,4.37,Orbicella_faveolata,shrink,n/s

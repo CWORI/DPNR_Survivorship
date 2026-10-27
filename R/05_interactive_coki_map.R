@@ -125,6 +125,7 @@ latest_survival <- read_csv(map_survival_path, show_col_types = FALSE) |>
     survival_survey_date = survey_date,
     baseline_outplants = n_baseline,
     surviving_outplants = n_surviving_from_baseline,
+    unresolved_outplants = n_unresolved,
     cumulative_survivorship_percent = percent_cumulative_survival
   )
 
@@ -135,6 +136,14 @@ coki_map_summary <- coki_polygons |>
   left_join(latest_section_coverage, by = "plot") |>
   left_join(latest_survival, by = "plot") |>
   arrange(plot)
+
+april_latest <- read_csv("outputs/Tables/outplant_object_lineage_survival.csv", show_col_types = FALSE) |>
+  filter(plot == "Plot E", cohort == "April 2026 additions") |>
+  slice_max(survey_date, n = 1, with_ties = FALSE)
+coki_map_summary <- coki_map_summary |>
+  mutate(april_cohort_html = if_else(plot == "Plot E",
+    sprintf("<p><strong>April 2026 cohort lineage persistence:</strong> %.1f%% (%s unresolved)</p>",
+            april_latest$percent_survival, april_latest$n_unresolved), ""))
 
 # 3. Create popup text and attach it to polygons ------------------------------
 coki_map_summary <- coki_map_summary |>
@@ -149,13 +158,14 @@ coki_map_summary <- coki_map_summary |>
         "<div class='coki-map-popup'><h3>", display_name, "</h3>",
         "<p><strong>Latest outplant snapshot:</strong> ", format(latest_survey_date, "%d %b %Y"), "<br>",
         "<strong>Survey coverage:</strong> ", coverage_status, "</p>",
-        "<p><strong>Outplants present:</strong> ", scales::comma(n_outplants), "<br>",
+        "<p><strong>Current annotation groups:</strong> ", scales::comma(n_outplants), "<br>",
         "<strong>Observed outplant area:</strong> ", sprintf("%.4f m²", observed_outplant_area_m2), "<br>",
         "<strong>Outplant cover:</strong> ", sprintf("%.4f%% of the 480 m² Coki", outplant_cover_percent), "</p>",
-        "<p><strong>Species counts</strong></p><ul>", species_breakdown_html, "</ul>",
-        "<p><strong>Cumulative survivorship:</strong> ", sprintf("%.1f%%", cumulative_survivorship_percent),
-        " (", surviving_outplants, " of ", baseline_outplants, ")<br>",
+        "<p><strong>Species annotation-group counts</strong></p><ul>", species_breakdown_html, "</ul>",
+        "<p><strong>Initial-cohort lineage persistence:</strong> ", sprintf("%.1f%%", cumulative_survivorship_percent),
+        " (", surviving_outplants, " of ", baseline_outplants, "; ", unresolved_outplants, " unresolved)<br>",
         "<small>Latest complete-section survivorship survey: ", format(survival_survey_date, "%d %b %Y"), "</small></p>",
+        april_cohort_html,
         "</div>"
       )
     )
@@ -234,5 +244,5 @@ if (file.exists(map_polygon_output_path)) {
 st_write(coki_polygons |> select(plot, display_name), map_polygon_output_path, quiet = TRUE)
 
 coki_map_summary |>
-  select(-species_breakdown_html, -popup_html) |>
+  select(-species_breakdown_html, -popup_html, -april_cohort_html) |>
   write_csv(map_summary_output_path)

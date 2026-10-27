@@ -1,180 +1,138 @@
-plot,interval_order,month_start,month_end,month_start_date,month_end_date,interval_label,species,plot_section,plot_section_label,n_start,n_survived,n_died,percent_survival,percent_survival_low,percent_survival_high
-Plot A,1,November,April,2025-11-14,2026-04-21,14 Nov 2025 to 21 Apr 2026,Orbicella annularis,all,Plot A,0,0,0,NA,NA,NA
-Plot A,1,November,April,2025-11-14,2026-04-21,14 Nov 2025 to 21 Apr 2026,Porites porites,all,Plot A,0,0,0,NA,NA,NA
-Plot A,2,April,June,2026-04-21,2026-06-22,21 Apr 2026 to 22 Jun 2026,Orbicella annularis,all,Plot A,19,19,0,100,82.35330881930348,100
-Plot A,2,April,June,2026-04-21,2026-06-22,21 Apr 2026 to 22 Jun 2026,Porites porites,all,Plot A,24,24,0,100,85.75264022774743,100
-Plot A,3,June,August,2026-06-22,2026-08-12,22 Jun 2026 to 12 Aug 2026,Orbicella annularis,all,Plot A,19,19,0,100,82.35330881930348,100
-Plot A,3,June,August,2026-06-22,2026-08-12,22 Jun 2026 to 12 Aug 2026,Porites porites,all,Plot A,24,24,0,100,85.75264022774743,100
-Plot B,1,November,April,2025-11-03,2026-04-22,03 Nov 2025 to 22 Apr 2026,Orbicella annularis,all,Plot B,0,0,0,NA,NA,NA
-Plot B,1,November,April,2025-11-03,2026-04-22,03 Nov 2025 to 22 Apr 2026,Porites porites,all,Plot B,0,0,0,NA,NA,NA
-Plot B,2,April,June,2026-04-22,2026-06-09,22 Apr 2026 to 09 Jun 2026,Montastraea cavernosa,all,Plot B,0,0,0,NA,NA,NA
-Plot B,2,April,June,2026-04-22,2026-06-09,22 Apr 2026 to 09 Jun 2026,Orbicella annularis,all,Plot B,19,19,0,100,82.35330881930348,100
-Plot B,2,April,June,2026-04-22,2026-06-09,22 Apr 2026 to 09 Jun 2026,Porites porites,all,Plot B,24,24,0,100,85.75264022774743,100
-Plot B,2,April,June,2026-04-22,2026-06-09,22 Apr 2026 to 09 Jun 2026,Pseudodiploria strigosa,all,Plot B,0,0,0,NA,NA,NA
-Plot B,3,June,August,2026-06-09,2026-08-07,09 Jun 2026 to 07 Aug 2026,Montastraea cavernosa,all,Plot B,23,23,0,100,85.18148710847757,100
-Plot B,3,June,August,2026-06-09,2026-08-07,09 Jun 2026 to 07 Aug 2026,Orbicella annularis,all,Plot B,24,24,0,100,85.75264022774743,100
-Plot B,3,June,August,2026-06-09,2026-08-07,09 Jun 2026 to 07 Aug 2026,Porites porites,all,Plot B,27,27,0,100,87.22971323845677,100
-Plot B,3,June,August,2026-06-09,2026-08-07,09 Jun 2026 to 07 Aug 2026,Pseudodiploria strigosa,all,Plot B,1,1,0,100,2.500000000000002,100
-Plot C,1,November,April,2025-11-03,2026-04-03,03 Nov 2025 to 03 Apr 2026,Montastraea cavernosa,all,Plot C,0,0,0,NA,NA,NA
-Plot C,1,November,April,2025-11-03,2026-04-03,03 Nov 2025 to 03 Apr 2026,Orbicella annularis,all,Plot C,0,0,0,NA,NA,NA
-Plot C,1,November,April,2025-11-03,2026-04-03,03 Nov 2025 to 03 Apr 2026,Orbicella faveolata,all,Plot C,0,0,0,NA,NA,NA
-Plot C,1,November,April,2025-11-03,2026-04-03,03 Nov 2025 to 03 Apr 2026,Orbicella franksi,all,Plot C,0,0,0,NA,NA,NA
-Plot C,1,November,April,2025-11-03,2026-04-03,03 Nov 2025 to 03 Apr 2026,Porites porites,all,Plot C,0,0,0,NA,NA,NA
-Plot C,1,November,April,2025-11-03,2026-04-03,03 Nov 2025 to 03 Apr 2026,Unidentified coral,all,Plot C,0,0,0,NA,NA,NA
-Plot C,2,April,June,2026-04-03,2026-06-06,03 Apr 2026 to 06 Jun 2026,Montastraea cavernosa,all,Plot C,168,167,1,99.4047619047619,96.72831959371155,99.98493101168594
-Plot C,2,April,June,2026-04-03,2026-06-06,03 Apr 2026 to 06 Jun 2026,Orbicella annularis,all,Plot C,43,42,1,97.67441860465117,87.71095172986604,99.94113870684068
-Plot C,2,April,June,2026-04-03,2026-06-06,03 Apr 2026 to 06 Jun 2026,Orbicella faveolata,all,Plot C,14,14,0,100,76.83642383498835,100
-Plot C,2,April,June,2026-04-03,2026-06-06,03 Apr 2026 to 06 Jun 2026,Orbicella franksi,all,Plot C,115,114,1,99.1304347826087,95.25030531150047,99.97798693802639
-Plot C,2,April,June,2026-04-03,2026-06-06,03 Apr 2026 to 06 Jun 2026,Porites porites,all,Plot C,179,177,2,98.88268156424581,96.02233827049108,99.8643999721408
-Plot C,2,April,June,2026-04-03,2026-06-06,03 Apr 2026 to 06 Jun 2026,Unidentified coral,all,Plot C,1,0,1,0,0,97.5
-Plot C,3,June,August,2026-06-06,2026-08-05,06 Jun 2026 to 05 Aug 2026,Montastraea cavernosa,all,Plot C,166,165,1,99.39759036144578,96.68944340878002,99.98474947145455
-Plot C,3,June,August,2026-06-06,2026-08-05,06 Jun 2026 to 05 Aug 2026,Orbicella annularis,all,Plot C,41,38,3,92.6829268292683,80.0754021623337,98.46485284665833
-Plot C,3,June,August,2026-06-06,2026-08-05,06 Jun 2026 to 05 Aug 2026,Orbicella faveolata,all,Plot C,15,15,0,100,78.19806390894661,100
-Plot C,3,June,August,2026-06-06,2026-08-05,06 Jun 2026 to 05 Aug 2026,Orbicella franksi,all,Plot C,121,120,1,99.17355371900827,95.48138854792165,99.97907838062461
-Plot C,3,June,August,2026-06-06,2026-08-05,06 Jun 2026 to 05 Aug 2026,Porites porites,all,Plot C,183,160,23,87.43169398907104,81.74026072974051,91.8632469087454
-Plot D,1,November,April,2025-11-05,2026-04-16,05 Nov 2025 to 16 Apr 2026,Montastraea cavernosa,all,Plot D,0,0,0,NA,NA,NA
-Plot D,1,November,April,2025-11-05,2026-04-16,05 Nov 2025 to 16 Apr 2026,Orbicella annularis,all,Plot D,0,0,0,NA,NA,NA
-Plot D,1,November,April,2025-11-05,2026-04-16,05 Nov 2025 to 16 Apr 2026,Orbicella franksi,all,Plot D,0,0,0,NA,NA,NA
-Plot D,1,November,April,2025-11-05,2026-04-16,05 Nov 2025 to 16 Apr 2026,Porites porites,all,Plot D,0,0,0,NA,NA,NA
-Plot D,2,April,June,2026-04-16,2026-06-08,16 Apr 2026 to 08 Jun 2026,Montastraea cavernosa,all,Plot D,47,47,0,100,92.45142663089413,100
-Plot D,2,April,June,2026-04-16,2026-06-08,16 Apr 2026 to 08 Jun 2026,Orbicella annularis,all,Plot D,58,58,0,100,93.83789910960802,100
-Plot D,2,April,June,2026-04-16,2026-06-08,16 Apr 2026 to 08 Jun 2026,Orbicella franksi,all,Plot D,11,11,0,100,71.50858470818456,100
-Plot D,2,April,June,2026-04-16,2026-06-08,16 Apr 2026 to 08 Jun 2026,Porites porites,all,Plot D,192,159,33,82.8125,76.71791849223281,87.86374595317685
-Plot D,3,June,August,2026-06-08,2026-08-06,08 Jun 2026 to 06 Aug 2026,Montastraea cavernosa,all,Plot D,47,47,0,100,92.45142663089413,100
-Plot D,3,June,August,2026-06-08,2026-08-06,08 Jun 2026 to 06 Aug 2026,Orbicella annularis,all,Plot D,57,53,4,92.98245614035088,82.99601800413586,98.05495793052907
-Plot D,3,June,August,2026-06-08,2026-08-06,08 Jun 2026 to 06 Aug 2026,Orbicella franksi,all,Plot D,11,11,0,100,71.50858470818456,100
-Plot D,3,June,August,2026-06-08,2026-08-06,08 Jun 2026 to 06 Aug 2026,Porites porites,all,Plot D,159,142,17,89.30817610062893,83.4337871455217,93.6470546030466
-Plot E,1,May,June,2025-05-07,2025-06-09,07 May 2025 to 09 Jun 2025,Acropora cervicornis,all,Plot E,13,11,2,84.61538461538461,54.55289443234423,98.07933280174716
-Plot E,1,May,June,2025-05-07,2025-06-09,07 May 2025 to 09 Jun 2025,Acropora palmata,all,Plot E,90,60,30,66.66666666666667,55.9450626987195,76.25675725594634
-Plot E,1,May,June,2025-05-07,2025-06-09,07 May 2025 to 09 Jun 2025,Orbicella annularis,all,Plot E,219,213,6,97.26027397260275,94.13245011440601,98.98807197071785
-Plot E,1,May,June,2025-05-07,2025-06-09,07 May 2025 to 09 Jun 2025,Orbicella faveolata,all,Plot E,49,48,1,97.95918367346938,89.1458236031593,99.94834435024067
-Plot E,1,May,June,2025-05-07,2025-06-09,07 May 2025 to 09 Jun 2025,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,1,May,June,2025-05-07,2025-06-09,07 May 2025 to 09 Jun 2025,Orbicella sp.,all,Plot E,2,2,0,100,15.811388300841905,100
-Plot E,2,June,July,2025-06-09,2025-07-11,09 Jun 2025 to 11 Jul 2025,Acropora cervicornis,all,Plot E,11,11,0,100,71.50858470818456,100
-Plot E,2,June,July,2025-06-09,2025-07-11,09 Jun 2025 to 11 Jul 2025,Acropora palmata,all,Plot E,65,51,14,78.46153846153847,66.51126854524476,87.694692475782
-Plot E,2,June,July,2025-06-09,2025-07-11,09 Jun 2025 to 11 Jul 2025,Orbicella annularis,all,Plot E,208,202,6,97.11538461538461,93.82744953796171,98.93419039948877
-Plot E,2,June,July,2025-06-09,2025-07-11,09 Jun 2025 to 11 Jul 2025,Orbicella faveolata,all,Plot E,48,43,5,89.58333333333333,77.34223387162362,96.5301877878804
-Plot E,2,June,July,2025-06-09,2025-07-11,09 Jun 2025 to 11 Jul 2025,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,2,June,July,2025-06-09,2025-07-11,09 Jun 2025 to 11 Jul 2025,Orbicella sp.,all,Plot E,2,2,0,100,15.811388300841905,100
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,Acropora cervicornis,all,Plot E,11,11,0,100,71.50858470818456,100
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,Acropora palmata,all,Plot E,51,43,8,84.31372549019608,71.41237132684408,92.97591665426911
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,Empty,all,Plot E,1,1,0,100,2.500000000000002,100
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,Orbicella annularis,all,Plot E,199,197,2,98.99497487437186,96.416851440432,99.87805420835248
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,Orbicella faveolata,all,Plot E,44,44,0,100,91.95800602364241,100
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,3,July,August,2025-07-11,2025-08-04,11 Jul 2025 to 04 Aug 2025,Orbicella sp.,all,Plot E,2,2,0,100,15.811388300841905,100
-Plot E,4,August,September,2025-08-04,2025-09-08,04 Aug 2025 to 08 Sep 2025,Acropora cervicornis,all,Plot E,11,9,2,81.81818181818181,48.224414763982736,97.71688017000403
-Plot E,4,August,September,2025-08-04,2025-09-08,04 Aug 2025 to 08 Sep 2025,Acropora palmata,all,Plot E,42,41,1,97.61904761904762,87.43414428250078,99.93973766983964
-Plot E,4,August,September,2025-08-04,2025-09-08,04 Aug 2025 to 08 Sep 2025,Orbicella annularis,all,Plot E,199,189,10,94.9748743718593,90.95297590873253,97.56427286837925
-Plot E,4,August,September,2025-08-04,2025-09-08,04 Aug 2025 to 08 Sep 2025,Orbicella faveolata,all,Plot E,43,42,1,97.67441860465117,87.71095172986604,99.94113870684068
-Plot E,4,August,September,2025-08-04,2025-09-08,04 Aug 2025 to 08 Sep 2025,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,4,August,September,2025-08-04,2025-09-08,04 Aug 2025 to 08 Sep 2025,Orbicella sp.,all,Plot E,4,4,0,100,39.763536438352546,100
-Plot E,5,September,October,2025-09-08,2025-10-14,08 Sep 2025 to 14 Oct 2025,Acropora cervicornis,all,Plot E,9,9,0,100,66.37328831200571,100
-Plot E,5,September,October,2025-09-08,2025-10-14,08 Sep 2025 to 14 Oct 2025,Acropora palmata,all,Plot E,41,41,0,100,91.39561637059715,100
-Plot E,5,September,October,2025-09-08,2025-10-14,08 Sep 2025 to 14 Oct 2025,Orbicella annularis,all,Plot E,180,179,1,99.44444444444444,96.94366589918634,99.98593554025771
-Plot E,5,September,October,2025-09-08,2025-10-14,08 Sep 2025 to 14 Oct 2025,Orbicella faveolata,all,Plot E,42,42,0,100,91.59161450596449,100
-Plot E,5,September,October,2025-09-08,2025-10-14,08 Sep 2025 to 14 Oct 2025,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,5,September,October,2025-09-08,2025-10-14,08 Sep 2025 to 14 Oct 2025,Orbicella sp.,all,Plot E,4,3,1,75,19.41204496832434,99.36905367902902
-Plot E,6,October,November,2025-10-14,2025-11-06,14 Oct 2025 to 06 Nov 2025,Acropora cervicornis,all,Plot E,9,9,0,100,66.37328831200571,100
-Plot E,6,October,November,2025-10-14,2025-11-06,14 Oct 2025 to 06 Nov 2025,Acropora palmata,all,Plot E,41,41,0,100,91.39561637059715,100
-Plot E,6,October,November,2025-10-14,2025-11-06,14 Oct 2025 to 06 Nov 2025,Orbicella annularis,all,Plot E,179,177,2,98.88268156424581,96.02233827049108,99.8643999721408
-Plot E,6,October,November,2025-10-14,2025-11-06,14 Oct 2025 to 06 Nov 2025,Orbicella faveolata,all,Plot E,42,42,0,100,91.59161450596449,100
-Plot E,6,October,November,2025-10-14,2025-11-06,14 Oct 2025 to 06 Nov 2025,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,6,October,November,2025-10-14,2025-11-06,14 Oct 2025 to 06 Nov 2025,Orbicella sp.,all,Plot E,3,3,0,100,29.240177382128667,100
-Plot E,7,November,December,2025-11-06,2025-12-04,06 Nov 2025 to 04 Dec 2025,Acropora cervicornis,all,Plot E,9,9,0,100,66.37328831200571,100
-Plot E,7,November,December,2025-11-06,2025-12-04,06 Nov 2025 to 04 Dec 2025,Acropora palmata,all,Plot E,41,39,2,95.1219512195122,83.46666465821698,99.40368817589572
-Plot E,7,November,December,2025-11-06,2025-12-04,06 Nov 2025 to 04 Dec 2025,Orbicella annularis,all,Plot E,179,166,13,92.73743016759776,87.90097422014418,96.07651502134449
-Plot E,7,November,December,2025-11-06,2025-12-04,06 Nov 2025 to 04 Dec 2025,Orbicella faveolata,all,Plot E,42,41,1,97.61904761904762,87.43414428250078,99.93973766983964
-Plot E,7,November,December,2025-11-06,2025-12-04,06 Nov 2025 to 04 Dec 2025,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,7,November,December,2025-11-06,2025-12-04,06 Nov 2025 to 04 Dec 2025,Orbicella sp.,all,Plot E,5,5,0,100,47.81762498950186,100
-Plot E,8,December,January,2025-12-04,2026-01-20,04 Dec 2025 to 20 Jan 2026,Acropora cervicornis,all,Plot E,9,9,0,100,66.37328831200571,100
-Plot E,8,December,January,2025-12-04,2026-01-20,04 Dec 2025 to 20 Jan 2026,Acropora palmata,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,8,December,January,2025-12-04,2026-01-20,04 Dec 2025 to 20 Jan 2026,Orbicella annularis,all,Plot E,163,160,3,98.15950920245399,94.71572937399286,99.61882634500796
-Plot E,8,December,January,2025-12-04,2026-01-20,04 Dec 2025 to 20 Jan 2026,Orbicella faveolata,all,Plot E,42,42,0,100,91.59161450596449,100
-Plot E,8,December,January,2025-12-04,2026-01-20,04 Dec 2025 to 20 Jan 2026,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,8,December,January,2025-12-04,2026-01-20,04 Dec 2025 to 20 Jan 2026,Orbicella sp.,all,Plot E,5,0,5,0,0,52.18237501049814
-Plot E,9,January,February,2026-01-20,2026-02-16,20 Jan 2026 to 16 Feb 2026,Acropora cervicornis,all,Plot E,9,5,4,55.55555555555556,21.200850677886805,86.30043377348335
-Plot E,9,January,February,2026-01-20,2026-02-16,20 Jan 2026 to 16 Feb 2026,Acropora palmata,all,Plot E,40,34,6,85,70.16473331604234,94.28977418454741
-Plot E,9,January,February,2026-01-20,2026-02-16,20 Jan 2026 to 16 Feb 2026,Orbicella annularis,all,Plot E,162,157,5,96.91358024691358,92.9445717247676,98.99040164904972
-Plot E,9,January,February,2026-01-20,2026-02-16,20 Jan 2026 to 16 Feb 2026,Orbicella faveolata,all,Plot E,41,41,0,100,91.39561637059715,100
-Plot E,9,January,February,2026-01-20,2026-02-16,20 Jan 2026 to 16 Feb 2026,Orbicella franksi,all,Plot E,39,39,0,100,90.97488990396657,100
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,Acropora cervicornis,all,Plot E,5,4,1,80,28.35820638819106,99.4949236620532
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,Acropora palmata,all,Plot E,30,14,16,46.666666666666664,28.341807918353716,65.67447618392659
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,Diploria labyrinthiformis,all,Plot E,0,0,0,NA,NA,NA
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,Orbicella annularis,all,Plot E,153,138,15,90.19607843137256,84.34574416297787,94.40831038275928
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,Orbicella faveolata,all,Plot E,40,40,0,100,91.19026971211977,100
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,Orbicella franksi,all,Plot E,40,39,1,97.5,86.84141415172343,99.93672550679506
-Plot E,10,February,March,2026-02-16,2026-03-25,16 Feb 2026 to 25 Mar 2026,Orbicella sp.,all,Plot E,0,0,0,NA,NA,NA
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Acropora cervicornis,all,Plot E,2,2,0,100,15.811388300841905,100
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Acropora palmata,all,Plot E,14,11,3,78.57142857142857,49.20243229515282,95.34207121101326
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Diploria labyrinthiformis,all,Plot E,1,1,0,100,2.500000000000002,100
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Empty,all,Plot E,0,0,0,NA,NA,NA
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Montastraea cavernosa,all,Plot E,0,0,0,NA,NA,NA
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Orbicella annularis,all,Plot E,136,119,17,87.5,80.74202684135578,92.54675505444058
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Orbicella faveolata,all,Plot E,37,37,0,100,90.510941258501,100
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Orbicella franksi,all,Plot E,36,36,0,100,90.26062440855081,100
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Orbicella sp.,all,Plot E,3,3,0,100,29.240177382128667,100
-Plot E,11,March,April,2026-03-25,2026-04-09,25 Mar 2026 to 09 Apr 2026,Pseudodiploria strigosa,all,Plot E,0,0,0,NA,NA,NA
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Acropora cervicornis,all,Plot E,2,1,1,50,1.2579117093425058,98.74208829065749
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Acropora palmata,all,Plot E,11,9,2,81.81818181818181,48.224414763982736,97.71688017000403
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Diploria labyrinthiformis,all,Plot E,81,81,0,100,95.54797375436782,100
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Montastraea cavernosa,all,Plot E,200,200,0,100,98.17246596448638,100
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Orbicella annularis,all,Plot E,479,471,8,98.32985386221294,96.73577196316458,99.27626204282069
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Orbicella faveolata,all,Plot E,79,79,0,100,95.4378747241389,100
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Orbicella franksi,all,Plot E,132,132,0,100,97.24408222765425,100
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Orbicella sp.,all,Plot E,3,3,0,100,29.240177382128667,100
-Plot E,12,April,May,2026-04-09,2026-05-04,09 Apr 2026 to 04 May 2026,Pseudodiploria strigosa,all,Plot E,273,271,2,99.26739926739927,97.37879713944999,99.91115518977361
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Acropora cervicornis,all,Plot E,1,1,0,100,2.500000000000002,100
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Acropora palmata,all,Plot E,9,9,0,100,66.37328831200571,100
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Diploria labyrinthiformis,all,Plot E,93,72,21,77.41935483870968,67.57787275047136,85.44588680550721
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Montastraea cavernosa,all,Plot E,200,198,2,99,96.43453316027603,99.8786650986264
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Orbicella annularis,all,Plot E,480,440,40,91.66666666666667,88.82516446764498,93.97995408414592
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Orbicella faveolata,all,Plot E,80,75,5,93.75,86.0142924702361,97.93969276979897
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Orbicella franksi,all,Plot E,132,132,0,100,97.24408222765425,100
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Orbicella sp.,all,Plot E,3,3,0,100,29.240177382128667,100
-Plot E,13,May,June,2026-05-04,2026-06-04,04 May 2026 to 04 Jun 2026,Pseudodiploria strigosa,all,Plot E,274,254,20,92.7007299270073,88.95180329900501,95.48465875414352
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Acropora cervicornis,all,Plot E,1,1,0,100,2.500000000000002,100
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Acropora palmata,all,Plot E,9,7,2,77.77777777777777,39.99064262836879,97.18550265221018
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Diploria labyrinthiformis,all,Plot E,62,61,1,98.38709677419355,91.33789877930803,99.95917316225427
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Montastraea cavernosa,all,Plot E,197,192,5,97.46192893401015,94.17668003063633,99.17087144500563
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Orbicella annularis,all,Plot E,440,376,64,85.45454545454545,81.80873006857293,88.61463079563677
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Orbicella faveolata,all,Plot E,77,73,4,94.8051948051948,87.2301396247797,98.56664858835389
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Orbicella franksi,all,Plot E,132,130,2,98.48484848484848,94.63400687647395,99.81597852313848
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Orbicella sp.,all,Plot E,3,2,1,66.66666666666667,9.429932405024614,99.15962413403874
-Plot E,14,June,July,2026-06-04,2026-07-15,04 Jun 2026 to 15 Jul 2026,Pseudodiploria strigosa,all,Plot E,255,255,0,100,98.56379387067301,100
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Acropora cervicornis,all,Plot E,1,1,0,100,2.500000000000002,100
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Acropora palmata,all,Plot E,7,6,1,85.71428571428571,42.127680295680484,99.63897031380993
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Diploria labyrinthiformis,all,Plot E,60,59,1,98.33333333333333,91.0600949942513,99.9578125547658
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Montastraea cavernosa,all,Plot E,193,190,3,98.44559585492227,95.5248031524944,99.67829017026796
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Orbicella annularis,all,Plot E,379,362,17,95.51451187335093,92.91527201243636,97.3656534277498
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Orbicella faveolata,all,Plot E,74,71,3,95.94594594594595,88.60627432534373,99.15602436292356
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Orbicella franksi,all,Plot E,130,129,1,99.23076923076923,95.7887260985338,99.98052665939016
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Orbicella sp.,all,Plot E,2,2,0,100,15.811388300841905,100
-Plot E,15,July,August,2026-07-15,2026-08-06,15 Jul 2026 to 06 Aug 2026,Pseudodiploria strigosa,all,Plot E,254,249,5,98.03149606299213,95.46621110233538,99.35781734200634
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Acropora cervicornis,all,Plot E,1,1,0,100,2.500000000000002,100
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Acropora palmata,all,Plot E,6,6,0,100,54.074187356009965,100
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Diploria labyrinthiformis,all,Plot E,83,83,0,100,95.65288478335582,100
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Montastraea cavernosa,all,Plot E,190,188,2,98.94736842105263,96.2494562977404,99.87226624554785
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Orbicella annularis,all,Plot E,366,348,18,95.08196721311475,92.33856288331378,97.05956712445146
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Orbicella faveolata,all,Plot E,71,70,1,98.59154929577464,92.40065838788965,99.96434747253966
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Orbicella franksi,all,Plot E,128,127,1,99.21875,95.72409680857797,99.98022241853383
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Orbicella sp.,all,Plot E,2,2,0,100,15.811388300841905,100
-Plot E,16,August,September,2026-08-06,2026-09-01,06 Aug 2026 to 01 Sep 2026,Pseudodiploria strigosa,all,Plot E,230,226,4,98.26086956521739,95.60724466289831,99.52416359884361
-Plot F,1,November,May,2025-11-06,2026-05-01,06 Nov 2025 to 01 May 2026,Orbicella annularis,all,Plot F,0,0,0,NA,NA,NA
-Plot F,1,November,May,2025-11-06,2026-05-01,06 Nov 2025 to 01 May 2026,Porites porites,all,Plot F,0,0,0,NA,NA,NA
-Plot F,2,May,May,2026-05-01,2026-05-27,01 May 2026 to 27 May 2026,Orbicella annularis,all,Plot F,19,19,0,100,82.35330881930348,100
-Plot F,2,May,May,2026-05-01,2026-05-27,01 May 2026 to 27 May 2026,Porites porites,all,Plot F,22,22,0,100,84.56274871844255,100
-Plot F,3,May,August,2026-05-27,2026-08-20,27 May 2026 to 20 Aug 2026,Orbicella annularis,all,Plot F,19,19,0,100,82.35330881930348,100
-Plot F,3,May,August,2026-05-27,2026-08-20,27 May 2026 to 20 Aug 2026,Porites porites,all,Plot F,22,19,3,86.36363636363636,65.08779027425918,97.09441488712534
-Plot G,1,November,April,2025-11-07,2026-04-24,07 Nov 2025 to 24 Apr 2026,Orbicella annularis,all,Plot G,0,0,0,NA,NA,NA
-Plot G,1,November,April,2025-11-07,2026-04-24,07 Nov 2025 to 24 Apr 2026,Porites porites,all,Plot G,0,0,0,NA,NA,NA
-Plot G,2,April,May,2026-04-24,2026-05-26,24 Apr 2026 to 26 May 2026,Orbicella annularis,all,Plot G,18,18,0,100,81.46980318621478,100
-Plot G,2,April,May,2026-04-24,2026-05-26,24 Apr 2026 to 26 May 2026,Porites porites,all,Plot G,27,27,0,100,87.22971323845677,100
-Plot G,3,May,August,2026-05-26,2026-08-13,26 May 2026 to 13 Aug 2026,Orbicella annularis,all,Plot G,17,17,0,100,80.49356770309069,100
-Plot G,3,May,August,2026-05-26,2026-08-13,26 May 2026 to 13 Aug 2026,Porites porites,all,Plot G,27,27,0,100,87.22971323845677,100
-Plot H,1,November,April,2025-11-07,2026-04-24,07 Nov 2025 to 24 Apr 2026,Orbicella annularis,all,Plot H,0,0,0,NA,NA,NA
-Plot H,1,November,April,2025-11-07,2026-04-24,07 Nov 2025 to 24 Apr 2026,Porites porites,all,Plot H,0,0,0,NA,NA,NA
-Plot H,2,April,May,2026-04-24,2026-05-25,24 Apr 2026 to 25 May 2026,Orbicella annularis,all,Plot H,19,19,0,100,82.35330881930348,100
-Plot H,2,April,May,2026-04-24,2026-05-25,24 Apr 2026 to 25 May 2026,Porites porites,all,Plot H,22,22,0,100,84.56274871844255,100
-Plot H,3,May,August,2026-05-25,2026-08-13,25 May 2026 to 13 Aug 2026,Orbicella annularis,all,Plot H,20,18,2,90,68.30172859809177,98.76514728297052
-Plot H,3,May,August,2026-05-25,2026-08-13,25 May 2026 to 13 Aug 2026,Porites porites,all,Plot H,22,22,0,100,84.56274871844255,100
+plot,interval_order,month_start,month_end,month_start_date,month_end_date,species,n_start,n_survived,n_died,n_unresolved,plot_section,plot_section_label,percent_survival,percent_survival_low,percent_survival_high,interval_label,method
+Plot A,2,April,June,2026-04-21,2026-06-22,Orbicella annularis,19,19,0,0,all,Plot A,100,NA,NA,21 Apr 2026 to 22 Jun 2026,Source-object descendant retention
+Plot A,2,April,June,2026-04-21,2026-06-22,Porites porites,24,24,0,0,all,Plot A,100,NA,NA,21 Apr 2026 to 22 Jun 2026,Source-object descendant retention
+Plot A,3,June,August,2026-06-22,2026-08-12,Orbicella annularis,19,19,0,0,all,Plot A,100,NA,NA,22 Jun 2026 to 12 Aug 2026,Source-object descendant retention
+Plot A,3,June,August,2026-06-22,2026-08-12,Porites porites,24,24,0,0,all,Plot A,100,NA,NA,22 Jun 2026 to 12 Aug 2026,Source-object descendant retention
+Plot B,2,April,June,2026-04-22,2026-06-09,Orbicella annularis,19,19,0,0,all,Plot B,100,NA,NA,22 Apr 2026 to 09 Jun 2026,Source-object descendant retention
+Plot B,2,April,June,2026-04-22,2026-06-09,Porites porites,24,24,0,0,all,Plot B,100,NA,NA,22 Apr 2026 to 09 Jun 2026,Source-object descendant retention
+Plot B,3,June,August,2026-06-09,2026-08-07,Montastraea cavernosa,23,23,0,0,all,Plot B,100,NA,NA,09 Jun 2026 to 07 Aug 2026,Source-object descendant retention
+Plot B,3,June,August,2026-06-09,2026-08-07,Orbicella annularis,24,24,0,0,all,Plot B,100,NA,NA,09 Jun 2026 to 07 Aug 2026,Source-object descendant retention
+Plot B,3,June,August,2026-06-09,2026-08-07,Porites porites,27,27,0,0,all,Plot B,100,NA,NA,09 Jun 2026 to 07 Aug 2026,Source-object descendant retention
+Plot B,3,June,August,2026-06-09,2026-08-07,Pseudodiploria strigosa,1,1,0,0,all,Plot B,100,NA,NA,09 Jun 2026 to 07 Aug 2026,Source-object descendant retention
+Plot C,2,April,June,2026-04-03,2026-06-06,Montastraea cavernosa,168,167,1,0,all,Plot C,99.4047619047619,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
+Plot C,2,April,June,2026-04-03,2026-06-06,Orbicella annularis,61,60,1,0,all,Plot C,98.36065573770492,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
+Plot C,2,April,June,2026-04-03,2026-06-06,Orbicella faveolata,48,48,0,0,all,Plot C,100,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
+Plot C,2,April,June,2026-04-03,2026-06-06,Orbicella franksi,119,118,1,0,all,Plot C,99.15966386554622,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
+Plot C,2,April,June,2026-04-03,2026-06-06,Porites porites,182,180,2,0,all,Plot C,98.9010989010989,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
+Plot C,2,April,June,2026-04-03,2026-06-06,Unidentified coral,1,0,1,0,all,Plot C,0,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
+Plot C,3,June,August,2026-06-06,2026-08-05,Montastraea cavernosa,166,165,1,0,all,Plot C,99.39759036144578,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
+Plot C,3,June,August,2026-06-06,2026-08-05,Orbicella annularis,41,38,3,0,all,Plot C,92.6829268292683,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
+Plot C,3,June,August,2026-06-06,2026-08-05,Orbicella faveolata,25,25,0,0,all,Plot C,100,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
+Plot C,3,June,August,2026-06-06,2026-08-05,Orbicella franksi,124,123,1,0,all,Plot C,99.19354838709677,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
+Plot C,3,June,August,2026-06-06,2026-08-05,Porites porites,186,163,23,0,all,Plot C,87.63440860215054,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
+Plot D,2,April,June,2026-04-16,2026-06-08,Montastraea cavernosa,48,48,0,0,all,Plot D,100,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
+Plot D,2,April,June,2026-04-16,2026-06-08,Orbicella annularis,81,81,0,0,all,Plot D,100,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
+Plot D,2,April,June,2026-04-16,2026-06-08,Orbicella franksi,11,11,0,0,all,Plot D,100,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
+Plot D,2,April,June,2026-04-16,2026-06-08,Porites porites,196,163,33,0,all,Plot D,83.16326530612245,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
+Plot D,3,June,August,2026-06-08,2026-08-06,Montastraea cavernosa,47,47,0,0,all,Plot D,100,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,3,June,August,2026-06-08,2026-08-06,Orbicella annularis,64,60,4,0,all,Plot D,93.75,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,3,June,August,2026-06-08,2026-08-06,Orbicella franksi,11,11,0,0,all,Plot D,100,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,3,June,August,2026-06-08,2026-08-06,Porites porites,159,142,17,0,all,Plot D,89.30817610062893,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,1,May,June,2025-05-07,2025-06-09,Acropora cervicornis,32,30,2,0,all,Plot E,93.75,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
+Plot E,1,May,June,2025-05-07,2025-06-09,Acropora palmata,120,90,30,0,all,Plot E,75,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
+Plot E,1,May,June,2025-05-07,2025-06-09,Orbicella annularis,393,387,6,0,all,Plot E,98.47328244274809,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
+Plot E,1,May,June,2025-05-07,2025-06-09,Orbicella faveolata,154,153,1,0,all,Plot E,99.35064935064935,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
+Plot E,1,May,June,2025-05-07,2025-06-09,Orbicella franksi,97,97,0,0,all,Plot E,100,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
+Plot E,2,June,July,2025-06-09,2025-07-11,Acropora cervicornis,26,26,0,0,all,Plot E,100,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
+Plot E,2,June,July,2025-06-09,2025-07-11,Acropora palmata,96,81,15,0,all,Plot E,84.375,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
+Plot E,2,June,July,2025-06-09,2025-07-11,Orbicella annularis,371,360,11,0,all,Plot E,97.03504043126685,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
+Plot E,2,June,July,2025-06-09,2025-07-11,Orbicella faveolata,149,144,5,0,all,Plot E,96.64429530201342,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
+Plot E,2,June,July,2025-06-09,2025-07-11,Orbicella franksi,91,91,0,0,all,Plot E,100,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
+Plot E,3,July,August,2025-07-11,2025-08-04,Acropora cervicornis,21,21,0,0,all,Plot E,100,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention
+Plot E,3,July,August,2025-07-11,2025-08-04,Acropora palmata,76,68,8,0,all,Plot E,89.47368421052632,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention
+Plot E,3,July,August,2025-07-11,2025-08-04,Orbicella annularis,332,330,2,0,all,Plot E,99.39759036144578,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention
+Plot E,3,July,August,2025-07-11,2025-08-04,Orbicella faveolata,120,120,0,0,all,Plot E,100,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention
+Plot E,3,July,August,2025-07-11,2025-08-04,Orbicella franksi,74,74,0,0,all,Plot E,100,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention
+Plot E,4,August,September,2025-08-04,2025-09-08,Acropora cervicornis,16,14,2,0,all,Plot E,87.5,NA,NA,04 Aug 2025 to 08 Sep 2025,Source-object descendant retention
+Plot E,4,August,September,2025-08-04,2025-09-08,Acropora palmata,63,60,3,0,all,Plot E,95.23809523809524,NA,NA,04 Aug 2025 to 08 Sep 2025,Source-object descendant retention
+Plot E,4,August,September,2025-08-04,2025-09-08,Orbicella annularis,327,316,11,0,all,Plot E,96.63608562691131,NA,NA,04 Aug 2025 to 08 Sep 2025,Source-object descendant retention
+Plot E,4,August,September,2025-08-04,2025-09-08,Orbicella faveolata,112,111,1,0,all,Plot E,99.10714285714286,NA,NA,04 Aug 2025 to 08 Sep 2025,Source-object descendant retention
+Plot E,4,August,September,2025-08-04,2025-09-08,Orbicella franksi,68,68,0,0,all,Plot E,100,NA,NA,04 Aug 2025 to 08 Sep 2025,Source-object descendant retention
+Plot E,5,September,October,2025-09-08,2025-10-14,Acropora cervicornis,9,9,0,0,all,Plot E,100,NA,NA,08 Sep 2025 to 14 Oct 2025,Source-object descendant retention
+Plot E,5,September,October,2025-09-08,2025-10-14,Acropora palmata,55,55,0,0,all,Plot E,100,NA,NA,08 Sep 2025 to 14 Oct 2025,Source-object descendant retention
+Plot E,5,September,October,2025-09-08,2025-10-14,Orbicella annularis,307,296,11,0,all,Plot E,96.41693811074919,NA,NA,08 Sep 2025 to 14 Oct 2025,Source-object descendant retention
+Plot E,5,September,October,2025-09-08,2025-10-14,Orbicella faveolata,98,97,1,0,all,Plot E,98.9795918367347,NA,NA,08 Sep 2025 to 14 Oct 2025,Source-object descendant retention
+Plot E,5,September,October,2025-09-08,2025-10-14,Orbicella franksi,63,63,0,0,all,Plot E,100,NA,NA,08 Sep 2025 to 14 Oct 2025,Source-object descendant retention
+Plot E,6,October,November,2025-10-14,2025-11-06,Acropora cervicornis,9,9,0,0,all,Plot E,100,NA,NA,14 Oct 2025 to 06 Nov 2025,Source-object descendant retention
+Plot E,6,October,November,2025-10-14,2025-11-06,Acropora palmata,52,52,0,0,all,Plot E,100,NA,NA,14 Oct 2025 to 06 Nov 2025,Source-object descendant retention
+Plot E,6,October,November,2025-10-14,2025-11-06,Orbicella annularis,278,275,3,0,all,Plot E,98.92086330935251,NA,NA,14 Oct 2025 to 06 Nov 2025,Source-object descendant retention
+Plot E,6,October,November,2025-10-14,2025-11-06,Orbicella faveolata,81,81,0,0,all,Plot E,100,NA,NA,14 Oct 2025 to 06 Nov 2025,Source-object descendant retention
+Plot E,6,October,November,2025-10-14,2025-11-06,Orbicella franksi,59,59,0,0,all,Plot E,100,NA,NA,14 Oct 2025 to 06 Nov 2025,Source-object descendant retention
+Plot E,7,November,December,2025-11-06,2025-12-04,Acropora cervicornis,9,9,0,0,all,Plot E,100,NA,NA,06 Nov 2025 to 04 Dec 2025,Source-object descendant retention
+Plot E,7,November,December,2025-11-06,2025-12-04,Acropora palmata,50,48,2,0,all,Plot E,96,NA,NA,06 Nov 2025 to 04 Dec 2025,Source-object descendant retention
+Plot E,7,November,December,2025-11-06,2025-12-04,Orbicella annularis,274,261,13,0,all,Plot E,95.25547445255475,NA,NA,06 Nov 2025 to 04 Dec 2025,Source-object descendant retention
+Plot E,7,November,December,2025-11-06,2025-12-04,Orbicella faveolata,85,84,1,0,all,Plot E,98.82352941176471,NA,NA,06 Nov 2025 to 04 Dec 2025,Source-object descendant retention
+Plot E,7,November,December,2025-11-06,2025-12-04,Orbicella franksi,58,58,0,0,all,Plot E,100,NA,NA,06 Nov 2025 to 04 Dec 2025,Source-object descendant retention
+Plot E,8,December,January,2025-12-04,2026-01-20,Acropora cervicornis,10,10,0,0,all,Plot E,100,NA,NA,04 Dec 2025 to 20 Jan 2026,Source-object descendant retention
+Plot E,8,December,January,2025-12-04,2026-01-20,Acropora palmata,39,39,0,0,all,Plot E,100,NA,NA,04 Dec 2025 to 20 Jan 2026,Source-object descendant retention
+Plot E,8,December,January,2025-12-04,2026-01-20,Orbicella annularis,254,246,8,0,all,Plot E,96.85039370078741,NA,NA,04 Dec 2025 to 20 Jan 2026,Source-object descendant retention
+Plot E,8,December,January,2025-12-04,2026-01-20,Orbicella faveolata,70,65,5,0,all,Plot E,92.85714285714286,NA,NA,04 Dec 2025 to 20 Jan 2026,Source-object descendant retention
+Plot E,8,December,January,2025-12-04,2026-01-20,Orbicella franksi,49,49,0,0,all,Plot E,100,NA,NA,04 Dec 2025 to 20 Jan 2026,Source-object descendant retention
+Plot E,9,January,February,2026-01-20,2026-02-16,Acropora cervicornis,10,5,5,0,all,Plot E,50,NA,NA,20 Jan 2026 to 16 Feb 2026,Source-object descendant retention
+Plot E,9,January,February,2026-01-20,2026-02-16,Acropora palmata,40,34,6,0,all,Plot E,85,NA,NA,20 Jan 2026 to 16 Feb 2026,Source-object descendant retention
+Plot E,9,January,February,2026-01-20,2026-02-16,Orbicella annularis,238,232,6,0,all,Plot E,97.47899159663865,NA,NA,20 Jan 2026 to 16 Feb 2026,Source-object descendant retention
+Plot E,9,January,February,2026-01-20,2026-02-16,Orbicella faveolata,57,56,1,0,all,Plot E,98.24561403508773,NA,NA,20 Jan 2026 to 16 Feb 2026,Source-object descendant retention
+Plot E,9,January,February,2026-01-20,2026-02-16,Orbicella franksi,47,47,0,0,all,Plot E,100,NA,NA,20 Jan 2026 to 16 Feb 2026,Source-object descendant retention
+Plot E,10,February,March,2026-02-16,2026-03-25,Acropora cervicornis,6,5,1,0,all,Plot E,83.33333333333333,NA,NA,16 Feb 2026 to 25 Mar 2026,Source-object descendant retention
+Plot E,10,February,March,2026-02-16,2026-03-25,Acropora palmata,34,13,21,0,all,Plot E,38.23529411764706,NA,NA,16 Feb 2026 to 25 Mar 2026,Source-object descendant retention
+Plot E,10,February,March,2026-02-16,2026-03-25,Orbicella annularis,211,188,23,0,all,Plot E,89.0995260663507,NA,NA,16 Feb 2026 to 25 Mar 2026,Source-object descendant retention
+Plot E,10,February,March,2026-02-16,2026-03-25,Orbicella faveolata,56,56,0,0,all,Plot E,100,NA,NA,16 Feb 2026 to 25 Mar 2026,Source-object descendant retention
+Plot E,10,February,March,2026-02-16,2026-03-25,Orbicella franksi,48,46,2,0,all,Plot E,95.83333333333333,NA,NA,16 Feb 2026 to 25 Mar 2026,Source-object descendant retention
+Plot E,11,March,April,2026-03-25,2026-04-09,Acropora cervicornis,5,2,3,0,all,Plot E,40,NA,NA,25 Mar 2026 to 09 Apr 2026,Source-object descendant retention
+Plot E,11,March,April,2026-03-25,2026-04-09,Acropora palmata,14,11,3,0,all,Plot E,78.57142857142857,NA,NA,25 Mar 2026 to 09 Apr 2026,Source-object descendant retention
+Plot E,11,March,April,2026-03-25,2026-04-09,Diploria labyrinthiformis,1,1,0,0,all,Plot E,100,NA,NA,25 Mar 2026 to 09 Apr 2026,Source-object descendant retention
+Plot E,11,March,April,2026-03-25,2026-04-09,Orbicella annularis,178,159,19,0,all,Plot E,89.32584269662921,NA,NA,25 Mar 2026 to 09 Apr 2026,Source-object descendant retention
+Plot E,11,March,April,2026-03-25,2026-04-09,Orbicella faveolata,54,54,0,0,all,Plot E,100,NA,NA,25 Mar 2026 to 09 Apr 2026,Source-object descendant retention
+Plot E,11,March,April,2026-03-25,2026-04-09,Orbicella franksi,44,42,2,0,all,Plot E,95.45454545454545,NA,NA,25 Mar 2026 to 09 Apr 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Acropora cervicornis,2,1,1,0,all,Plot E,50,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Acropora palmata,11,9,2,0,all,Plot E,81.81818181818181,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Diploria labyrinthiformis,81,81,0,0,all,Plot E,100,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Montastraea cavernosa,202,202,0,0,all,Plot E,100,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Orbicella annularis,535,526,9,0,all,Plot E,98.3177570093458,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Orbicella faveolata,106,106,0,0,all,Plot E,100,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Orbicella franksi,141,141,0,0,all,Plot E,100,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,12,April,May,2026-04-09,2026-05-04,Pseudodiploria strigosa,276,274,2,0,all,Plot E,99.27536231884058,NA,NA,09 Apr 2026 to 04 May 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Acropora cervicornis,1,1,0,0,all,Plot E,100,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Acropora palmata,11,11,0,0,all,Plot E,100,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Diploria labyrinthiformis,93,72,21,0,all,Plot E,77.41935483870968,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Montastraea cavernosa,202,200,2,0,all,Plot E,99.00990099009901,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Orbicella annularis,521,476,45,0,all,Plot E,91.36276391554702,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Orbicella faveolata,104,96,8,0,all,Plot E,92.3076923076923,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Orbicella franksi,140,140,0,0,all,Plot E,100,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,13,May,June,2026-05-04,2026-06-04,Pseudodiploria strigosa,277,257,20,0,all,Plot E,92.7797833935018,NA,NA,04 May 2026 to 04 Jun 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Acropora cervicornis,1,1,0,0,all,Plot E,100,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Acropora palmata,11,9,2,0,all,Plot E,81.81818181818181,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Diploria labyrinthiformis,62,61,1,0,all,Plot E,98.38709677419355,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Montastraea cavernosa,197,192,5,0,all,Plot E,97.46192893401015,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Orbicella annularis,470,406,64,0,all,Plot E,86.38297872340425,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Orbicella faveolata,96,90,6,0,all,Plot E,93.75,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Orbicella franksi,141,139,2,0,all,Plot E,98.58156028368795,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,14,June,July,2026-06-04,2026-07-15,Pseudodiploria strigosa,258,258,0,0,all,Plot E,100,NA,NA,04 Jun 2026 to 15 Jul 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Acropora cervicornis,1,1,0,0,all,Plot E,100,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Acropora palmata,9,8,1,0,all,Plot E,88.88888888888889,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Diploria labyrinthiformis,60,59,1,0,all,Plot E,98.33333333333333,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Montastraea cavernosa,193,190,3,0,all,Plot E,98.44559585492227,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Orbicella annularis,404,385,19,0,all,Plot E,95.29702970297029,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Orbicella faveolata,85,80,5,0,all,Plot E,94.11764705882354,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Orbicella franksi,142,141,1,0,all,Plot E,99.29577464788733,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,15,July,August,2026-07-15,2026-08-06,Pseudodiploria strigosa,256,251,5,0,all,Plot E,98.046875,NA,NA,15 Jul 2026 to 06 Aug 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Acropora cervicornis,1,1,0,0,all,Plot E,100,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Acropora palmata,10,9,1,0,all,Plot E,90,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Diploria labyrinthiformis,83,83,0,0,all,Plot E,100,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Montastraea cavernosa,190,188,2,0,all,Plot E,98.94736842105263,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Orbicella annularis,388,370,18,0,all,Plot E,95.36082474226804,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Orbicella faveolata,81,80,1,0,all,Plot E,98.76543209876543,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Orbicella franksi,142,141,1,0,all,Plot E,99.29577464788733,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot E,16,August,September,2026-08-06,2026-09-01,Pseudodiploria strigosa,231,226,5,0,all,Plot E,97.83549783549783,NA,NA,06 Aug 2026 to 01 Sep 2026,Source-object descendant retention
+Plot F,2,May,May,2026-05-01,2026-05-27,Orbicella annularis,19,19,0,0,all,Plot F,100,NA,NA,01 May 2026 to 27 May 2026,Source-object descendant retention
+Plot F,2,May,May,2026-05-01,2026-05-27,Porites porites,22,22,0,0,all,Plot F,100,NA,NA,01 May 2026 to 27 May 2026,Source-object descendant retention
+Plot F,3,May,August,2026-05-27,2026-08-20,Orbicella annularis,19,19,0,0,all,Plot F,100,NA,NA,27 May 2026 to 20 Aug 2026,Source-object descendant retention
+Plot F,3,May,August,2026-05-27,2026-08-20,Porites porites,22,19,3,0,all,Plot F,86.36363636363636,NA,NA,27 May 2026 to 20 Aug 2026,Source-object descendant retention
+Plot G,2,April,May,2026-04-24,2026-05-26,Orbicella annularis,18,18,0,0,all,Plot G,100,NA,NA,24 Apr 2026 to 26 May 2026,Source-object descendant retention
+Plot G,2,April,May,2026-04-24,2026-05-26,Porites porites,27,27,0,0,all,Plot G,100,NA,NA,24 Apr 2026 to 26 May 2026,Source-object descendant retention
+Plot G,3,May,August,2026-05-26,2026-08-13,Orbicella annularis,17,17,0,0,all,Plot G,100,NA,NA,26 May 2026 to 13 Aug 2026,Source-object descendant retention
+Plot G,3,May,August,2026-05-26,2026-08-13,Porites porites,27,27,0,0,all,Plot G,100,NA,NA,26 May 2026 to 13 Aug 2026,Source-object descendant retention
+Plot H,2,April,May,2026-04-24,2026-05-25,Orbicella annularis,19,19,0,0,all,Plot H,100,NA,NA,24 Apr 2026 to 25 May 2026,Source-object descendant retention
+Plot H,2,April,May,2026-04-24,2026-05-25,Porites porites,23,23,0,0,all,Plot H,100,NA,NA,24 Apr 2026 to 25 May 2026,Source-object descendant retention
+Plot H,3,May,August,2026-05-25,2026-08-13,Orbicella annularis,20,18,2,0,all,Plot H,90,NA,NA,25 May 2026 to 13 Aug 2026,Source-object descendant retention
+Plot H,3,May,August,2026-05-25,2026-08-13,Porites porites,22,22,0,0,all,Plot H,100,NA,NA,25 May 2026 to 13 Aug 2026,Source-object descendant retention

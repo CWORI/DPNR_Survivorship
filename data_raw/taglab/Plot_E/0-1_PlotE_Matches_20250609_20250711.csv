@@ -166,7 +166,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 105,632,607,2.2625,2.28,Orbicella_annularis,same,n/s
 107,635,611,4.03,4.15,Orbicella_annularis,same,n/s
 108,637,613,3.5575,3.4925,Orbicella_annularis,same,n/s
-106,648,622,23.0875,22.475,Acropora_palmata,same,n/s
+106,648,622,23.0875,22.475,Orbicella_annularis,same,n/s
 112,668,643,33.175,34.3175,Acropora_palmata,same,n/s
 5,23,43,3.79,3.415,Orbicella_annularis,shrink,n/s
 0,85,74,0.7825,0.65,Orbicella_annularis,shrink,n/s
@@ -200,10 +200,10 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 101,625,600,3.5425,3.2325,Orbicella_sp.,shrink,n/s
 103,629,604,3.2425,2.945,Orbicella_annularis,shrink,n/s
 104,631,605,3.6675,3.19,Orbicella_annularis,shrink,n/s
-106,634,609,46.72,37.69,Acropora_palmata,shrink,n/s
+106,634,609,46.72,37.69,Orbicella_annularis,shrink,n/s
 109,638,614,4.95,4.6525,Orbicella_annularis,shrink,n/s
 110,639,615,5.4875,4.67,Orbicella_annularis,shrink,n/s
-106,640,617,22.2975,20.9025,Acropora_palmata,shrink,n/s
-106,645,621,113.6175,92.0725,Acropora_palmata,shrink,n/s
-106,649,654,15.9425,13.5375,Acropora_palmata,shrink,n/s
-106,651,624,14.7875,11.77,Acropora_palmata,shrink,n/s
+106,640,617,22.2975,20.9025,Orbicella_annularis,shrink,n/s
+106,645,621,113.6175,92.0725,Orbicella_annularis,shrink,n/s
+106,649,654,15.9425,13.5375,Orbicella_annularis,shrink,n/s
+106,651,624,14.7875,11.77,Orbicella_annularis,shrink,n/s

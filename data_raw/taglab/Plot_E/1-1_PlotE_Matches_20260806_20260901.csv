@@ -1,5 +1,4 @@
 Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
-75,-1,2,0.0,4.165,Orbicella_franksi,born,none
 30,23,-1,6.7925,0.0,Acropora_palmata,dead,none
 66,1,1,8.55,9.0575,Orbicella_sp.,grow,n/s
 14,15,11,1.5325,1.8,Orbicella_franksi,grow,n/s
@@ -21,6 +20,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 35,27,25,7.6925,17.8475,Orbicella_franksi,n/s,fuse
 35,28,25,8.585,17.8475,Orbicella_franksi,n/s,fuse
 65,0,0,10.2525,10.4075,Orbicella_sp.,same,n/s
+2,6,2,4.185,4.165,Orbicella_franksi,same,n/s
 8,11,7,6.285,6.365,Orbicella_franksi,same,n/s
 11,13,10,3.415,3.455,Orbicella_franksi,same,n/s
 13,14,9,2.47,2.47,Orbicella_franksi,same,n/s

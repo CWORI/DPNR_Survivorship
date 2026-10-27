@@ -79,10 +79,10 @@
 <rect x='440.54' y='187.78' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
 <line x1='442.27' y1='196.42' x2='456.09' y2='196.42' style='stroke-width: 1.71; stroke: #A6761D; stroke-linecap: butt;' />
 <circle cx='449.18' cy='196.42' r='3.16' style='stroke-width: 0.77; stroke: #A6761D; fill: #A6761D;' />
-<text x='463.80' y='148.03' style='font-size: 9.60px; font-family: "Arial";' textLength='100.25px' lengthAdjust='spacingAndGlyphs'>Montastraea cavernosa</text>
-<text x='463.80' y='165.31' style='font-size: 9.60px; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella annularis</text>
-<text x='463.80' y='182.59' style='font-size: 9.60px; font-family: "Arial";' textLength='61.32px' lengthAdjust='spacingAndGlyphs'>Porites porites</text>
-<text x='463.80' y='199.87' style='font-size: 9.60px; font-family: "Arial";' textLength='99.72px' lengthAdjust='spacingAndGlyphs'>Pseudodiploria strigosa</text>
+<text x='463.80' y='147.93' style='font-size: 9.60px; font-style: italic; font-family: "Arial";' textLength='100.25px' lengthAdjust='spacingAndGlyphs'>Montastraea cavernosa</text>
+<text x='463.80' y='165.30' style='font-size: 9.60px; font-style: italic; font-family: "Arial";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>Orbicella annularis</text>
+<text x='463.80' y='181.58' style='font-size: 9.60px; font-style: italic; font-family: "Arial";' textLength='61.32px' lengthAdjust='spacingAndGlyphs'>Porites porites</text>
+<text x='463.80' y='198.81' style='font-size: 9.60px; font-style: italic; font-family: "Arial";' textLength='99.72px' lengthAdjust='spacingAndGlyphs'>Pseudodiploria strigosa</text>
 <text x='49.64' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='277.49px' lengthAdjust='spacingAndGlyphs'>Summed measured planar area of present outplants</text>
 <text x='49.64' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='219.33px' lengthAdjust='spacingAndGlyphs'>Outplanted coral area by species</text>
 </g>

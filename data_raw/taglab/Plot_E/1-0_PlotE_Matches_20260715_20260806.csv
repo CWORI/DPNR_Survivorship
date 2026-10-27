@@ -1,5 +1,5 @@
 Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
-821,-1,600,0.0,3.1875,Orbicella_annularis,born,none
+819,-1,600,0.0,3.1875,Orbicella_annularis,born,none
 8,2,-1,23.3375,0.0,Orbicella_annularis,dead,none
 8,3,-1,7.025,0.0,Orbicella_annularis,dead,none
 9,4,-1,3.4025,0.0,Orbicella_annularis,dead,none
@@ -13,7 +13,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 329,147,-1,3.615,0.0,Pseudodiploria_strigosa,dead,none
 330,148,-1,2.97,0.0,Pseudodiploria_strigosa,dead,none
 17,160,-1,28.73,0.0,Orbicella_annularis,dead,none
-813,461,-1,5.6225,0.0,Orbicella_annularis,dead,none
+811,461,-1,5.6225,0.0,Orbicella_annularis,dead,none
 1,488,-1,5.405,0.0,Orbicella_annularis,dead,none
 224,618,-1,4.4025,0.0,Montastrea_cavernosa,dead,none
 794,620,-1,1.0225,0.0,Orbicella_annularis,dead,none
@@ -160,7 +160,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 805,408,392,2.835,7.21,Orbicella_franksi,grow,n/s
 609,409,393,19.8,21.475,Pseudodiploria_strigosa,grow,n/s
 611,411,395,2.5,3.735,Orbicella_annularis,grow,n/s
-806,415,398,1.4875,2.7225,Orbicella_franksi,grow,n/s
+110,415,398,1.4875,2.7225,Orbicella_franksi,grow,n/s
 614,416,400,7.3775,7.8025,Orbicella_annularis,grow,n/s
 620,421,405,4.81,5.205,Orbicella_annularis,grow,n/s
 624,427,410,7.775,8.265,Orbicella_annularis,grow,n/s
@@ -219,16 +219,16 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 789,585,565,4.345,5.0825,Orbicella_annularis,grow,n/s
 790,588,567,3.605,5.4975,Orbicella_annularis,grow,n/s
 793,591,571,5.0275,7.1025,Orbicella_annularis,grow,n/s
-810,592,572,6.325,7.09,Orbicella_faveolata,grow,n/s
-811,595,575,3.3125,4.745,Orbicella_faveolata,grow,n/s
+808,592,572,6.325,7.09,Orbicella_faveolata,grow,n/s
+809,595,575,3.3125,4.745,Orbicella_faveolata,grow,n/s
 137,600,580,8.115,9.085,Orbicella_faveolata,grow,n/s
 136,601,581,4.48,6.025,Orbicella_faveolata,grow,n/s
 138,603,583,2.45,2.9475,Orbicella_faveolata,grow,n/s
 141,606,586,6.2525,6.7475,Orbicella_annularis,grow,n/s
 142,611,591,1.1525,2.3925,Orbicella_annularis,grow,n/s
-809,617,597,13.905,31.135,Orbicella_faveolata,grow,n/s
-817,621,56,4.4075,4.6325,Orbicella_annularis,grow,n/s
-818,622,562,3.6975,4.07,Orbicella_annularis,grow,n/s
+150,617,597,13.905,31.135,Orbicella_faveolata,grow,n/s
+815,621,56,4.4075,4.6325,Orbicella_annularis,grow,n/s
+816,622,562,3.6975,4.07,Orbicella_annularis,grow,n/s
 236,49,44,7.8075,16.715,Orbicella_annularis,n/s,fuse
 236,53,44,7.33,16.715,Orbicella_annularis,n/s,fuse
 327,144,137,3.17,10.8475,Pseudodiploria_strigosa,n/s,fuse
@@ -282,7 +282,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 291,105,99,5.9425,5.9525,Montastrea_cavernosa,same,n/s
 292,106,100,2.805,2.8625,Montastrea_cavernosa,same,n/s
 293,107,101,3.14,3.2175,Montastrea_cavernosa,same,n/s
-808,108,102,15.0375,15.0375,Orbicella_faveolata,same,n/s
+807,108,102,15.0375,15.0375,Orbicella_faveolata,same,n/s
 294,109,103,18.15,18.0875,Pseudodiploria_strigosa,same,n/s
 295,110,104,10.59,10.5275,Orbicella_annularis,same,n/s
 13,111,105,37.265,35.97,Orbicella_annularis,same,n/s
@@ -412,7 +412,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 683,476,461,4.2775,4.18,Orbicella_annularis,same,n/s
 686,478,463,4.3125,4.375,Orbicella_annularis,same,n/s
 690,482,467,30.2325,29.53,Orbicella_annularis,same,n/s
-812,483,468,15.83,16.59,Orbicella_annularis,same,n/s
+810,483,468,15.83,16.59,Orbicella_annularis,same,n/s
 695,487,472,29.4225,28.2175,Orbicella_faveolata,same,n/s
 697,489,473,20.855,20.9725,Orbicella_faveolata,same,n/s
 693,491,475,4.005,4.0175,Orbicella_annularis,same,n/s
@@ -463,7 +463,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 213,25,20,4.8225,3.3525,Montastrea_cavernosa,shrink,n/s
 214,26,22,5.2975,5.015,Montastrea_cavernosa,shrink,n/s
 218,30,25,5.525,3.555,Montastrea_cavernosa,shrink,n/s
-807,70,64,4.775,3.955,Pseudodiploria_strigosa,shrink,n/s
+806,70,64,4.775,3.955,Pseudodiploria_strigosa,shrink,n/s
 256,71,65,2.9175,2.0675,Pseudodiploria_strigosa,shrink,n/s
 257,73,67,3.4575,2.675,Pseudodiploria_strigosa,shrink,n/s
 259,74,68,2.89,1.6925,Pseudodiploria_strigosa,shrink,n/s

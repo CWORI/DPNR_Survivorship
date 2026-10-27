@@ -1,7 +1,6 @@
 Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
-807,-1,69,0.0,5.51,Pseudodiploria_strigosa,born,none
-808,-1,109,0.0,15.0375,Orbicella_faveolata,born,none
-809,-1,704,0.0,9.6,Orbicella_faveolata,born,none
+806,-1,69,0.0,5.51,Pseudodiploria_strigosa,born,none
+807,-1,109,0.0,15.0375,Orbicella_faveolata,born,none
 274,85,-1,3.73,0.0,Pseudodiploria_strigosa,dead,none
 79,667,-1,20.345,0.0,Acropora_palmata,dead,none
 117,690,-1,38.6675,0.0,Acropora_cervicornis,dead,none
@@ -250,6 +249,9 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 140,699,691,2.1775,2.5575,Orbicella_annularis,grow,n/s
 143,703,697,1.2725,1.6,Orbicella_annularis,grow,n/s
 142,704,698,1.11,2.4525,Orbicella_annularis,grow,n/s
+150,714,704,8.15,9.6,Orbicella_faveolata,grow,n/s
+152,715,706,4.37,6.2075,Orbicella_faveolata,grow,n/s
+151,716,707,3.94,6.1275,Orbicella_faveolata,grow,n/s
 619,449,484,5.8125,27.92,Orbicella_annularis,n/s,fuse
 624,455,487,7.015,15.0075,Orbicella_annularis,n/s,fuse
 619,456,484,7.1425,27.92,Orbicella_annularis,n/s,fuse
@@ -717,4 +719,4 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 60,710,308,10.1925,9.6075,Orbicella_annularis,shrink,n/s
 804,711,66,0.3925,0.31,Orbicella_faveolata,shrink,n/s
 805,712,496,75.88,57.14,Orbicella_franksi,shrink,n/s
-806,713,502,4.18,2.86,Orbicella_franksi,shrink,n/s
+110,713,502,4.18,2.86,Orbicella_franksi,shrink,n/s

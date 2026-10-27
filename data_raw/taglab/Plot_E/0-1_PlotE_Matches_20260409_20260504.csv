@@ -64,11 +64,16 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 293,161,209,6.5825,7.0225,Orbicella_faveolata,grow,n/s
 5,165,6,4.3075,4.9725,Orbicella_annularis,grow,n/s
 11,169,29,5.145,5.9575,Orbicella_annularis,grow,n/s
+16,180,70,3.8175,4.0425,Orbicella_annularis,grow,n/s
+19,181,75,11.52,12.6275,Orbicella_annularis,grow,n/s
+17,183,72,5.6975,7.165,Orbicella_annularis,grow,n/s
+20,185,77,4.7725,6.02,Orbicella_annularis,grow,n/s
+18,186,74,5.5175,6.9025,Orbicella_annularis,grow,n/s
 71,209,179,6.335,6.71,Orbicella_annularis,grow,n/s
 89,212,210,6.9275,7.5025,Orbicella_annularis,grow,n/s
 90,215,214,6.475,7.535,Orbicella_annularis,grow,n/s
-106,228,224,6.3525,6.6925,Acropora_palmata,grow,n/s
-106,238,228,335.0625,351.8725,Acropora_palmata,grow,n/s
+106,228,224,6.3525,6.6925,Orbicella_annularis,grow,n/s
+106,238,228,335.0625,351.8725,Orbicella_annularis,grow,n/s
 295,240,53,0.1775,0.3025,Orbicella_annularis,grow,n/s
 133,241,14,13.8275,15.455,Diploria_labyrinthiformis,grow,n/s
 11,170,28,17.8625,31.575,Orbicella_annularis,n/s,fuse
@@ -144,6 +149,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 0,178,46,1.0075,0.985,Orbicella_annularis,same,n/s
 29,179,97,40.1275,39.4475,Orbicella_annularis,same,n/s
 38,184,98,68.2475,65.8125,Orbicella_annularis,same,n/s
+21,187,80,6.0775,6.315,Orbicella_annularis,same,n/s
 39,188,102,17.9025,17.1175,Orbicella_annularis,same,n/s
 42,192,120,6.83,6.565,Orbicella_annularis,same,n/s
 42,193,121,20.5975,20.735,Orbicella_annularis,same,n/s
@@ -216,6 +222,7 @@ Genet,Blob1,Blob2,Area1,Area2,Class,Action,Split\Fuse
 4,167,5,15.6975,14.7125,Orbicella_annularis,shrink,n/s
 7,173,24,5.545,5.1825,Orbicella_annularis,shrink,n/s
 9,175,26,7.9675,7.3575,Orbicella_annularis,shrink,n/s
+15,182,69,6.4975,5.8175,Orbicella_annularis,shrink,n/s
 47,190,149,309.6725,287.5925,Acropora_palmata,shrink,n/s
 45,194,123,7.435,5.675,Orbicella_annularis,shrink,n/s
 44,196,124,3.2875,2.7325,Orbicella_annularis,shrink,n/s

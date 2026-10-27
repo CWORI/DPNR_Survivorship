@@ -1,38 +1,38 @@
-plot,month_order,month,survey_date,n_plot_sections,plot_section_labels,plot_section,plot_section_label,baseline_month,baseline_date,n_baseline,n_died_interval,cumulative_deaths_observed,n_surviving_from_baseline,baseline_surviving_area_m2,expected_plot_sections,expected_plot_section_labels,percent_cumulative_survival,percent_cumulative_survival_low,percent_cumulative_survival_high
-Plot A,2,April,2026-04-21,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,0,0,43,0.053387000000000004,2,Plot A 0-0; Plot A 1-0,100,91.77888788458614,100
-Plot A,3,June,2026-06-22,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,0,0,43,0.05565924999999999,2,Plot A 0-0; Plot A 1-0,100,91.77888788458614,100
-Plot A,4,August,2026-08-12,2,Plot A 0-0; Plot A 1-0,all,Plot A,April,2026-04-21,43,0,0,43,0.0754965,2,Plot A 0-0; Plot A 1-0,100,91.77888788458614,100
-Plot B,2,April,2026-04-22,2,Plot B 0-0; Plot B 1-0,all,Plot B,April,2026-04-22,43,0,0,43,0.056225250000000004,2,Plot B 0-0; Plot B 1-0,100,91.77888788458614,100
-Plot B,3,June,2026-06-09,2,Plot B 0-0; Plot B 1-0,all,Plot B,April,2026-04-22,43,0,0,43,0.05944000000000001,2,Plot B 0-0; Plot B 1-0,100,91.77888788458614,100
-Plot B,4,August,2026-08-07,2,Plot B 0-0; Plot B 1-0,all,Plot B,April,2026-04-22,43,0,0,43,0.06890450000000001,2,Plot B 0-0; Plot B 1-0,100,91.77888788458614,100
-Plot C,2,April,2026-04-03,2,Plot C 0-0; Plot C 1-0,all,Plot C,April,2026-04-03,539,0,0,539,0.3629630000000001,2,Plot C 0-0; Plot C 1-0,100,99.31794341707526,100
-Plot C,3,June,2026-06-06,2,Plot C 0-0; Plot C 1-0,all,Plot C,April,2026-04-03,539,28,28,511,0.30966150000000003,2,Plot C 0-0; Plot C 1-0,94.8051948051948,92.5793085192045,96.52069333714681
-Plot C,4,August,2026-08-05,2,Plot C 0-0; Plot C 1-0,all,Plot C,April,2026-04-03,539,36,64,475,0.30058874999999996,2,Plot C 0-0; Plot C 1-0,88.12615955473099,85.09141007103739,90.73453091509658
-Plot D,2,April,2026-04-16,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,all,Plot D,April,2026-04-16,308,0,0,308,0.2222475000000001,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,100,98.80945560154946,100
-Plot D,3,June,2026-06-08,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,all,Plot D,April,2026-04-16,308,33,33,275,0.21337374999999997,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,89.28571428571429,85.28298425214419,92.50915804043561
-Plot E,1,May,2025-05-07,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,0,0,412,0.6261055,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,100,99.10863731242246,100
-Plot E,2,June,2025-06-09,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,39,39,373,0.6147449999999998,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,90.53398058252426,87.2870621491775,93.18196274736673
-Plot E,3,July,2025-07-11,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,30,69,343,0.5963937500000001,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,83.25242718446601,79.28948637127253,86.72944824212937
-Plot E,4,August,2025-08-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,11,80,332,0.6160135,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,80.58252427184466,76.42711498766602,84.2920532665657
-Plot E,5,September,2025-09-08,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,16,96,316,0.6483305,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,76.69902912621359,72.3117164194823,80.69805283197505
-Plot E,6,October,2025-10-14,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,12,108,304,0.6548387499999999,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,73.7864077669903,69.25699129521918,77.97038350984258
-Plot E,7,November,2025-11-06,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,2,110,302,0.63440875,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,73.30097087378641,68.75025753458432,77.51336300773738
-Plot E,8,December,2025-12-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,16,126,286,0.6659564999999998,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,69.41747572815534,64.71892042862852,73.834490199765
-Plot E,9,January,2026-01-20,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,8,134,278,0.658025,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,67.47572815533981,62.71734773050221,71.98086237296053
-Plot E,10,February,2026-02-16,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,14,148,264,0.63979275,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,64.07766990291262,59.23548767757863,68.7160078361663
-Plot E,11,March,2026-03-25,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,37,185,227,0.6051787500000001,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,55.09708737864078,50.150848656778244,59.96960532948377
-Plot E,12,April,2026-04-09,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,25,210,202,0.5916545,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,49.029126213592235,44.102673051036895,53.969619214403764
-Plot E,13,May,2026-05-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,13,223,189,0.559994,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,45.87378640776699,40.98561442557005,50.82163372891107
-Plot E,14,June,2026-06-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,20,243,169,0.5366582499999999,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,41.019417475728154,36.22804416674079,45.94072555237909
-Plot E,15,July,2026-07-15,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,18,261,151,0.5201975000000001,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,36.650485436893206,31.986932344609986,41.50731211049234
-Plot E,16,August,2026-08-06,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,13,274,138,0.4450529999999999,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,33.49514563106796,28.94928593320991,38.28012331175913
-Plot E,17,September,2026-09-01,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,all,Plot E,May,2025-05-07,412,1,275,137,0.440739,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,33.25242718446602,28.716544904240653,38.03095841061332
-Plot F,2,May,2026-05-01,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,all,Plot F,May,2026-05-01,41,0,0,41,0.048343000000000004,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,100,91.39561637059715,100
-Plot F,3,May,2026-05-27,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,all,Plot F,May,2026-05-01,41,1,1,40,0.043129,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,97.5609756097561,87.14459796158536,99.93826831067135
-Plot F,4,August,2026-08-20,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,all,Plot F,May,2026-05-01,41,3,4,37,0.04918499999999999,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,90.2439024390244,76.86854506905388,97.27725332016391
-Plot G,2,April,2026-04-24,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,all,Plot G,April,2026-04-24,45,0,0,45,0.059005,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,100,92.12948995931569,100
-Plot G,3,May,2026-05-26,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,all,Plot G,April,2026-04-24,45,0,0,45,0.05925325000000001,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,100,92.12948995931569,100
-Plot G,4,August,2026-08-13,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,all,Plot G,April,2026-04-24,45,1,1,44,0.0626125,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,97.77777777777777,88.22956685817059,99.94375402845978
-Plot H,2,April,2026-04-24,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,all,Plot H,April,2026-04-24,38,0,0,38,0.049264499999999996,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,100,90.74872385841218,100
-Plot H,3,May,2026-05-25,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,all,Plot H,April,2026-04-24,38,0,0,38,0.052540500000000004,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,100,90.74872385841218,100
-Plot H,4,August,2026-08-13,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,all,Plot H,April,2026-04-24,38,2,2,36,0.04765775,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,94.73684210526316,82.25094096523591,99.35612832849081
+plot,survey_date,n_plot_sections,plot_section_labels,baseline_date,n_baseline,n_died_interval,cumulative_deaths_observed,n_surviving_from_baseline,n_unresolved,expected_plot_sections,plot_section,plot_section_label,month_order,month,baseline_month,percent_cumulative_survival,percent_cumulative_survival_low,percent_cumulative_survival_high,baseline_surviving_area_m2,method
+Plot A,2026-04-21,2,Plot A 0-0; Plot A 1-0,2026-04-21,43,0,0,43,0,2,all,Plot A,1,April,April,100,NA,NA,NA,Original-object lineage persistence
+Plot A,2026-06-22,2,Plot A 0-0; Plot A 1-0,2026-04-21,43,0,0,43,0,2,all,Plot A,2,June,April,100,NA,NA,NA,Original-object lineage persistence
+Plot A,2026-08-12,2,Plot A 0-0; Plot A 1-0,2026-04-21,43,0,0,43,0,2,all,Plot A,3,August,April,100,NA,NA,NA,Original-object lineage persistence
+Plot B,2026-04-22,2,Plot B 0-0; Plot B 1-0,2026-04-22,43,0,0,43,0,2,all,Plot B,1,April,April,100,NA,NA,NA,Original-object lineage persistence
+Plot B,2026-06-09,2,Plot B 0-0; Plot B 1-0,2026-04-22,43,0,0,43,0,2,all,Plot B,2,June,April,100,NA,NA,NA,Original-object lineage persistence
+Plot B,2026-08-07,2,Plot B 0-0; Plot B 1-0,2026-04-22,43,0,0,43,0,2,all,Plot B,3,August,April,100,NA,NA,NA,Original-object lineage persistence
+Plot C,2026-04-03,2,Plot C 0-0; Plot C 1-0,2026-04-03,579,0,0,579,0,2,all,Plot C,1,April,April,100,NA,NA,NA,Original-object lineage persistence
+Plot C,2026-06-06,2,Plot C 0-0; Plot C 1-0,2026-04-03,579,6,6,573,0,2,all,Plot C,2,June,April,98.96373056994818,NA,NA,NA,Original-object lineage persistence
+Plot C,2026-08-05,2,Plot C 0-0; Plot C 1-0,2026-04-03,579,28,34,537,8,2,all,Plot C,3,August,April,92.74611398963731,NA,NA,NA,Original-object lineage persistence
+Plot D,2026-04-16,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,2026-04-16,336,0,0,336,0,3,all,Plot D,1,April,April,100,NA,NA,NA,Original-object lineage persistence
+Plot D,2026-06-08,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,2026-04-16,336,33,33,303,0,3,all,Plot D,2,June,April,90.17857142857143,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-05-07,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,0,0,796,0,4,all,Plot E,1,May,May,100,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-06-09,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,39,39,757,0,4,all,Plot E,2,June,May,95.10050251256281,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-07-11,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,31,70,726,0,4,all,Plot E,3,July,May,91.20603015075378,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-08-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,10,80,716,0,4,all,Plot E,4,August,May,89.94974874371859,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-09-08,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,17,97,699,0,4,all,Plot E,5,September,May,87.8140703517588,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-10-14,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,11,108,688,0,4,all,Plot E,6,October,May,86.4321608040201,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-11-06,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,2,110,686,0,4,all,Plot E,7,November,May,86.18090452261306,NA,NA,NA,Original-object lineage persistence
+Plot E,2025-12-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,17,127,669,0,4,all,Plot E,8,December,May,84.04522613065326,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-01-20,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,8,135,661,0,4,all,Plot E,9,January,May,83.04020100502512,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-02-16,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,28,163,633,0,4,all,Plot E,10,February,May,79.52261306532664,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-03-25,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,64,227,569,0,4,all,Plot E,11,March,May,71.48241206030151,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-04-09,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,43,270,526,0,4,all,Plot E,12,April,May,66.08040201005025,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-05-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,11,281,515,0,4,all,Plot E,13,May,May,64.69849246231156,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-06-04,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,42,323,473,0,4,all,Plot E,14,June,May,59.42211055276382,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-07-15,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,32,355,441,0,4,all,Plot E,15,July,May,55.402010050251256,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-08-06,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,45,400,396,0,4,all,Plot E,16,August,May,49.74874371859296,NA,NA,NA,Original-object lineage persistence
+Plot E,2026-09-01,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,0,400,396,0,4,all,Plot E,17,September,May,49.74874371859296,NA,NA,NA,Original-object lineage persistence
+Plot F,2026-05-01,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,2026-05-01,41,0,0,41,0,3,all,Plot F,1,May,May,100,NA,NA,NA,Original-object lineage persistence
+Plot F,2026-05-27,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,2026-05-01,41,0,0,41,0,3,all,Plot F,2,May,May,100,NA,NA,NA,Original-object lineage persistence
+Plot F,2026-08-20,3,Plot F 0-0; Plot F 0-1; Plot F 1-0,2026-05-01,41,3,3,38,0,3,all,Plot F,3,August,May,92.6829268292683,NA,NA,NA,Original-object lineage persistence
+Plot G,2026-04-24,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,2026-04-24,45,0,0,45,0,3,all,Plot G,1,April,April,100,NA,NA,NA,Original-object lineage persistence
+Plot G,2026-05-26,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,2026-04-24,45,0,0,45,0,3,all,Plot G,2,May,April,100,NA,NA,NA,Original-object lineage persistence
+Plot G,2026-08-13,3,Plot G 0-0; Plot G 0-1; Plot G 1-0,2026-04-24,45,0,0,44,1,3,all,Plot G,3,August,April,97.77777777777777,NA,NA,NA,Original-object lineage persistence
+Plot H,2026-04-24,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,2026-04-24,42,0,0,42,0,3,all,Plot H,1,April,April,100,NA,NA,NA,Original-object lineage persistence
+Plot H,2026-05-25,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,2026-04-24,42,0,0,42,0,3,all,Plot H,2,May,April,100,NA,NA,NA,Original-object lineage persistence
+Plot H,2026-08-13,3,Plot H 0-0; Plot H 0-1; Plot H 1-0,2026-04-24,42,2,2,40,0,3,all,Plot H,3,August,April,95.23809523809524,NA,NA,NA,Original-object lineage persistence

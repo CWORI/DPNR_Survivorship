@@ -62,14 +62,21 @@ source(file.path(project_root, "R", "03_outplant_interval_workflow.R"))
 
 ## Select the Plot that you would like to view
 
-::: panel-tabset
+::::::::::::::: panel-tabset
 ## Home
 
-Data refreshed September 29, 2026: 91 match files across all eight plots. Plot E has partial section coverage after January 2026; see its Data Status before comparing later results.
+Data refreshed October 27, 2026: `r nrow(outplant_config)` configured Matches exports across all eight plots. Original-object lineage tracking now applies to every plot. Only surveys containing every configured section enter plot-level cumulative comparisons.
 
 This report analyzes DPNR coral outplant monitoring data from TagLab match files. The workflow is designed for repeated use: add new plot/month files to the config, render the report, review the QA/QC checks, and the tables and figures rebuild automatically.
 
 The active outplant workflow now combines TagLab subsections into one plot-level result for each plot letter. Section-level information is still used for file intake and QA/QC, but survivorship, cover, species prevalence, and species cover composition are summarized for plots A through H.
+
+
+### How survivorship is tracked
+
+Every plot now follows its **original annotated objects** through the source-to-destination connections in the Matches exports. Each original counts once. After fusion, multiple originals may share a living descendant and remain separate histories. After splitting, an original remains present while any documented descendant is alive. An original is recorded dead only when all its tracked branches end in explicit death records and no connection is unresolved. Missing links remain unresolved and are shown separately from recorded deaths.
+
+This measures documented lineage persistence. It does not establish that every contributor’s tissue survives within a fused colony. Baselines describe the first observed positive-area annotations, which may differ from the number of deployed fragments. Later additions do not enter the initial-cohort denominator; Coki E’s April 2026 additions are shown separately. Interval retention resets to the source objects in each survey pair. Confidence intervals assuming independent originals are omitted because fused histories share descendants. Cover is measured area and does not increase when multiple originals share one object.
 
 ::: {.callout-note appearance="simple"}
 ### Current data checks
@@ -105,7 +112,7 @@ outplant_config %>%
 
 The two recommended datasets to open first are:
 
--   `data_processed/outplant_master_tracking_dataset.csv`: one row per tracked `Genet` per month, including presence, area, cover contribution, and baseline-survival status.
+-   `data_processed/outplant_master_tracking_dataset.csv`: one row per original annotated object and survey, with documented descendants, lineage status, and unresolved-branch flags. Use the plot column together with the original ID as the key. Measured cover remains a separate current-object metric.
 -   `outputs/Tables/outplant_master_summary_dataset.csv`: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.
 
 Each plot tab is organized with the same outline so new data can be added without redesigning the report: overview, data status, depth metadata, QA/QC, cumulative survivorship, interval survivorship, coral cover, species prevalence, species cover composition, and downloads.
@@ -130,7 +137,7 @@ This workflow uses Teams and GitHub for different jobs:
 ### Step 1: Export matches from TagLab
 
 1.  Complete annotations and Genet Matching for the relevant plot section and survey months. Make Sure to Add Tag ID from Matches Time Point 1.
-2.  Export all months for that plot section through the same TagLab batch/matching process. This is necessary so numeric `Genet` IDs remain consistent between adjacent month files.
+2.  Export all months for that plot section through the same TagLab batch/matching process. Review the object correspondences between adjacent surveys; numeric Genet stability alone does not establish continuity.
 3.  Export one matches CSV for each adjacent month pair, such as May-June and June-July.
 4.  Confirm the matches export contains the expected fields: `Genet`, `Blob1`, `Blob2`, `Area1`, `Area2`, `Class`, `Action, Tag ID`, and `Split/Fuse`.
 5.  Do not rename columns or manually change area values after export.
@@ -164,7 +171,7 @@ Within each, keep files separated by plot and plot section. Recommended examples
 -   `Survivorship Exports/Matches/Plot_E/1-1/`
 -   `Survivorship Exports/Genet Data/Plot_E/1-0/`
 
-If you are updating the matches files because you have annotated a new month, remove all of the old one and replace with all new files so that the Genet ID's remain constant.
+If you are updating the matches files because you have annotated a new month, remove all of the old one and replace with all new files so shared-survey object IDs and correspondence tables remain synchronized.
 
 Before saying the files are ready, check that:
 
@@ -306,16 +313,16 @@ Please make sure this is the repository you are adding too!
 
 ## Analysis Report
 
-::: {.presentation-hidden}
+::: presentation-hidden
 ### Workflow
 
-This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under `config/outplant_interval_files/`, standardizes them into common start/end area columns, collapses repeated blob rows to one tracked `Genet` per interval, and produces plot-level survivorship, cover, and species-composition outputs. TagLab subsections remain available for QA/QC, but the main analysis combines them into one result per plot letter.
+This report reads the outplant-only TagLab match files listed in the plot-specific CSVs under `config/outplant_interval_files/`, standardizes them into common start/end area columns, follows directed object correspondences for survivorship, and produces plot-level cover and species-composition outputs. Genet summaries remain annotation diagnostics. TagLab subsections remain available for QA/QC, but the main analysis combines them into one result per plot letter.
 
 The workflow is designed so future users can add new plots or month pairs by editing the config rather than changing analysis code.
 
 The two recommended outplant datasets to open first are:
 
--   `data_processed/outplant_master_tracking_dataset.csv`: one row per tracked `Genet` per month, including presence, area, cover contribution, and baseline-survival status.
+-   `data_processed/outplant_master_tracking_dataset.csv`: one row per original annotated object and survey, with documented descendants, lineage status, and unresolved-branch flags. Use the plot column together with the original ID as the key. Measured cover remains a separate current-object metric.
 -   `outputs/Tables/outplant_master_summary_dataset.csv`: one long-format summary table containing cumulative survivorship, interval survivorship, coral cover, species prevalence, and species cover-share metrics.
 
 The workflow still writes detailed intermediate CSVs for QA/QC and reproducibility, but most users should only need the two files above unless they are debugging the analysis.
@@ -324,7 +331,7 @@ Survivorship is treated as apparent persistence through a TagLab interval: an ou
 
 ### Outplant-Only Workflow
 
-This is the main analysis workflow for the outplant-only TagLab match files. It treats `Area1` as the start-month area and `Area2` as the end-month area, and calculates cover using the configured 16 by 30 m plot area. The same-batch TagLab exports use `Genet` as the across-month tracking ID. If a `Genet` has multiple blob rows in one interval, those rows are collapsed into one tracked outplant before survivorship is calculated. The area unit is read from the appropriate plot CSV under `config/outplant_interval_files/`; the current configuration uses TagLab areas are in square centimeters.
+This is the main analysis workflow for the outplant-only TagLab match files. It treats `Area1` as the start-month area and `Area2` as the end-month area, and calculates cover using the configured 16 by 30 m plot area. Survivorship uses the source and destination object IDs within each section and survey pair. Genet labels may change after fusion and do not determine mortality. Repeated edges do not create extra originals. The area unit is read from the appropriate plot CSV under `config/outplant_interval_files/`; the current configuration uses TagLab areas are in square centimeters.
 
 This chunk verifies that every outplant interval file listed in the config exists. This is the first place to check when adding new files for other plots or months.
 
@@ -418,34 +425,17 @@ This chunk summarizes cumulative outplant survivorship from the baseline month. 
 ```{r}
 #| label: outplant-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_cumulative_survival_summary |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 This chunk summarizes the Deep Nursery temperature logger data used in the cumulative survivorship figure. The logger is slightly deeper than the outplant site but close enough for this practice overlay.
 
 ```{r}
@@ -475,7 +465,7 @@ outplant_daily_temperature_summary %>%
 ```
 :::
 
-::: {.presentation-hidden}
+::: presentation-hidden
 Plot E has enough monthly observations to work well as a date-based time series. Plots A, B, C, D, G, and H are early monitoring series, so they are shown separately with baseline/follow-up positions instead of being stretched across the full calendar axis.
 :::
 
@@ -485,11 +475,10 @@ Plot E has enough monthly observations to work well as a date-based time series.
 #| label: outplant-plot-e-cumulative-survival-plot
 #| fig-width: 9
 #| fig-height: 4.8
-#| fig-alt: "Line plot of Plot E cumulative outplant survivorship over survey dates, with points and confidence intervals for each monitoring month and a red temperature overlay."
+#| fig-alt: "Line plot of Plot E cumulative outplant survivorship over survey dates, with percentages for each monitoring month."
 
 outplant_plot_cumulative_survival(
-  outplant_cumulative_survival_summary %>% filter(plot == "Plot E"),
-  outplant_daily_temperature_summary
+  outplant_cumulative_survival_summary %>% filter(plot == "Plot E")
 )
 ```
 
@@ -499,46 +488,30 @@ outplant_plot_cumulative_survival(
 #| label: outplant-short-cumulative-survival-plot
 #| fig-width: 9
 #| fig-height: 4.8
-#| fig-alt: "Faceted line plot showing Plots A, B, C, D, G, and H cumulative outplant survivorship by baseline and follow-up monitoring step, with confidence intervals."
+#| fig-alt: "Faceted line plot showing Plots A, B, C, D, G, and H cumulative outplant survivorship by baseline and follow-up monitoring step, with percentages at each point."
 
 outplant_plot_short_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot %in% c("Plot A", "Plot B", "Plot C", "Plot D", "Plot G", "Plot H"))
 )
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 This chunk reports interval survivorship between adjacent survey months. It is useful as a diagnostic because a later interval can be 100% even if cumulative survivorship has already declined. Intervals that start before outplanting can have `n_start = 0`; those rows remain in the table but are omitted from interval survival figures because survival cannot be estimated from zero starting corals.
 :::
 
 ```{r}
 #| label: outplant-interval-survival-table
 
-outplant_survival_summary %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 Plot E interval survivorship is shown as a time series. Plots A, B, C, D, G, and H are shown with compact bars for their current post-baseline intervals.
 :::
 
@@ -548,7 +521,7 @@ Plot E interval survivorship is shown as a time series. Plots A, B, C, D, G, and
 #| label: outplant-plot-e-interval-survival-plot
 #| fig-width: 9
 #| fig-height: 4.8
-#| fig-alt: "Line plot of Plot E interval survivorship between adjacent survey months, with percentage labels and confidence intervals."
+#| fig-alt: "Line plot of Plot E interval survivorship between adjacent survey months, with percentage labels for documented source-object retention."
 
 outplant_plot_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot E")
@@ -561,14 +534,14 @@ outplant_plot_interval_survival(
 #| label: outplant-short-interval-survival-plot
 #| fig-width: 9
 #| fig-height: 4.8
-#| fig-alt: "Faceted bar plot showing Plots A, B, C, D, G, and H interval survivorship for post-baseline monitoring intervals, with confidence intervals."
+#| fig-alt: "Faceted bar plot showing Plots A, B, C, D, G, and H interval survivorship for post-baseline monitoring intervals, with percentages at each point."
 
 outplant_plot_short_interval_survival(
   outplant_survival_summary %>% filter(plot %in% c("Plot A", "Plot B", "Plot C", "Plot D", "Plot G", "Plot H"))
 )
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 This chunk reports outplant coral cover by month. Cover is calculated as summed outplant area divided by the 480 m2 plot area.
 :::
 
@@ -589,7 +562,7 @@ outplant_cover_summary %>%
   )
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 This chunk plots outplant cover through time. Because outplants are small relative to a 480 m2 plot, the percent cover values are expected to be very small.
 :::
 
@@ -602,7 +575,7 @@ This chunk plots outplant cover through time. Because outplants are small relati
 outplant_cover_plot
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 This chunk summarizes species abundance and prevalence among present outplant annotations in each monthly snapshot. `n_outplants` is the abundance count, and `percent_prevalence` is that species' share of present outplants for that month.
 :::
 
@@ -632,7 +605,7 @@ outplant_species_prevalence_summary %>%
   )
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 This chunk plots species prevalence through time using counts of present outplant annotations.
 :::
 
@@ -645,7 +618,7 @@ This chunk plots species prevalence through time using counts of present outplan
 outplant_species_prevalence_plot
 ```
 
-::: {.presentation-hidden}
+::: presentation-hidden
 This chunk plots each species' share of total outplant cover through time. It complements prevalence because a species can have fewer annotations but more cover.
 :::
 
@@ -765,6 +738,7 @@ Plot A combines the supplied TagLab sections into one plot-level result. Survey 
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot A files are:
@@ -826,6 +800,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -898,39 +873,21 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-a-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot A") %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_cumulative_survival_summary |> filter(plot == "Plot A") |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
 #| label: plot-a-cumulative-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot A cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+#| fig-alt: "Line plot of Plot A cumulative outplant survivorship over survey dates through documented split/fuse connections."
 
 outplant_plot_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot == "Plot A"),
@@ -943,37 +900,20 @@ outplant_plot_cumulative_survival(
 ```{r}
 #| label: plot-a-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot A") %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |> filter(plot == "Plot A") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
 #| label: plot-a-interval-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot A interval survivorship between adjacent survey months with confidence intervals."
+#| fig-alt: "Line plot of Plot A interval survivorship between adjacent survey months with percentages at each point."
 
 outplant_plot_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot A")
@@ -1118,6 +1058,7 @@ Plot B combines the supplied TagLab sections into one plot-level result. Survey 
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot B files are:
@@ -1179,6 +1120,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -1251,39 +1193,21 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-b-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot B") %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_cumulative_survival_summary |> filter(plot == "Plot B") |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
 #| label: plot-b-cumulative-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot B cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+#| fig-alt: "Line plot of Plot B cumulative outplant survivorship over survey dates through documented split/fuse connections."
 
 outplant_plot_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot == "Plot B"),
@@ -1296,37 +1220,20 @@ outplant_plot_cumulative_survival(
 ```{r}
 #| label: plot-b-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot B") %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |> filter(plot == "Plot B") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
 #| label: plot-b-interval-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot B interval survivorship between adjacent survey months with confidence intervals."
+#| fig-alt: "Line plot of Plot B interval survivorship between adjacent survey months with percentages at each point."
 
 outplant_plot_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot B")
@@ -1471,6 +1378,7 @@ Plot C now includes outplant match-file analyses for sections 0-0 and 1-0, combi
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot C files are:
@@ -1532,6 +1440,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -1604,39 +1513,21 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-c-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot C") %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_cumulative_survival_summary |> filter(plot == "Plot C") |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
 #| label: plot-c-cumulative-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot C cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+#| fig-alt: "Line plot of Plot C cumulative outplant survivorship over survey dates through documented split/fuse connections."
 
 outplant_plot_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot == "Plot C"),
@@ -1649,37 +1540,20 @@ outplant_plot_cumulative_survival(
 ```{r}
 #| label: plot-c-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot C") %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |> filter(plot == "Plot C") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
 #| label: plot-c-interval-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot C interval survivorship between adjacent survey months with confidence intervals."
+#| fig-alt: "Line plot of Plot C interval survivorship between adjacent survey months with percentages at each point."
 
 outplant_plot_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot C")
@@ -1824,6 +1698,7 @@ Plot D combines the supplied TagLab sections into one plot-level result. Survey 
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot D files are:
@@ -1885,6 +1760,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -1957,39 +1833,21 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-d-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot D") %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_cumulative_survival_summary |> filter(plot == "Plot D") |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
 #| label: plot-d-cumulative-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot D cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+#| fig-alt: "Line plot of Plot D cumulative outplant survivorship over survey dates through documented split/fuse connections."
 
 outplant_plot_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot == "Plot D"),
@@ -2002,37 +1860,20 @@ outplant_plot_cumulative_survival(
 ```{r}
 #| label: plot-d-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot D") %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |> filter(plot == "Plot D") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
 #| label: plot-d-interval-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot D interval survivorship between adjacent survey months with confidence intervals."
+#| fig-alt: "Line plot of Plot D interval survivorship between adjacent survey months with percentages at each point."
 
 outplant_plot_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot D")
@@ -2172,8 +2013,9 @@ Use the master tracking dataset and master summary dataset listed in the Home ta
 
 ### Overview
 
-Coki E includes all four sections through September 1, 2026 (64 match files). The original cohort is defined by presence at the first survey on May 7, 2025. April additions are Genets first observed on April 9, 2026 and absent from every earlier survey; TagLab first appearance is an operational cohort definition, not independent verification of deployment identity.
+Coki E includes all four sections through September 1, 2026. The cohort figures track individual original annotated objects through documented object-to-object correspondences. A fusion can preserve multiple original individuals in one descendant; a split counts the original individual once while any descendant remains alive. April additions are destination objects first appearing in the March–April interval without a positive-area source connection; deployment identity is not independently verified.
 
+This is **documented lineage persistence**, not proof that each contributor's tissue survives indefinitely after fusion. Missing connections remain unresolved; no missing edge is invented. Genet-level summaries elsewhere in the report use a different counting unit. The corrected October 27 Matches exports contain 796 positive-area May baseline objects. The October 20 Genet exports list 9 additional May objects absent from the first Matches files; those are not silently included without matching correspondence records. The baseline therefore describes the configured Matches coverage, not a verified complete planting inventory.
 ```{r}
 #| label: plot-e-cohort-setup
 
@@ -2190,53 +2032,11 @@ plot_e_species_summary <- outplant_summarize_species_prevalence(plot_e_species_o
 plot_e_species_area <- outplant_summarize_species_area(plot_e_species_observations)
 plot_e_species_labels <- sort(unique(plot_e_species_summary$species))
 
-# Section-prefixed Genets prevent collisions between subsections.
-plot_e_cohorts <- plot_e_observations |>
-  filter(present) |>
-  group_by(genet) |>
-  summarise(first_present = min(survey_date), .groups = "drop") |>
-  filter(first_present %in% c(plot_e_original_date, plot_e_april_date)) |>
-  mutate(cohort = if_else(first_present == plot_e_original_date,
-                         "2025 original outplants", "April 2026 additions"))
-
-# Follow each cohort across every subsequent survey. As in the main analysis,
-# an absent Genet is no longer surviving; later reappearances do not reverse loss.
-plot_e_cohort_tracking <- plot_e_cohorts |>
-  cross_join(plot_e_observations |> distinct(survey_date)) |>
-  filter(survey_date >= first_present) |>
-  left_join(plot_e_observations |> select(genet, survey_date, present),
-            by = c("genet", "survey_date")) |>
-  arrange(genet, survey_date) |>
-  group_by(genet) |>
-  mutate(surviving = cumall(coalesce(present, FALSE))) |>
-  ungroup()
-plot_e_cohort_survival <- plot_e_cohort_tracking |>
-  group_by(cohort, first_present, survey_date) |>
-  summarise(n_baseline = n(), n_surviving = sum(surviving), .groups = "drop") |>
-  mutate(percent_survival = 100 * n_surviving / n_baseline)
-write_csv(plot_e_cohort_survival,
-          file.path(outplant_table_dir, "plot_e_outplant_cohort_survival.csv"))
-
-# Audit original-cohort losses without inventing replacement IDs or deaths.
-plot_e_recorded_deaths <- outplant_coral_intervals |>
-  filter(plot == "Plot E", died_interval,
-         str_detect(actions, "(^|; )dead($|;)")) |>
-  group_by(genet) |>
-  summarise(first_recorded_death = min(month_end_date), .groups = "drop")
-plot_e_tracking_audit <- plot_e_cohort_tracking |>
-  filter(cohort == "2025 original outplants") |>
-  left_join(plot_e_recorded_deaths, by = "genet") |>
-  mutate(tracking_status = case_when(
-    present %in% TRUE ~ "Observed present",
-    !is.na(first_recorded_death) & first_recorded_death <= survey_date ~ "Recorded dead",
-    TRUE ~ "Unresolved absence"
-  ))
-plot_e_tracking_status <- plot_e_tracking_audit |>
-  count(survey_date, tracking_status, name = "n_genets")
-write_csv(plot_e_tracking_audit,
-          file.path(outplant_table_dir, "plot_e_original_genet_tracking_audit.csv"))
-write_csv(plot_e_tracking_status,
-          file.path(outplant_table_dir, "plot_e_original_genet_tracking_status.csv"))
+# Object-level lineage analysis preserves original individuals through merges.
+plot_e_object_lineage_tracking <- outplant_object_lineage_tracking |> filter(plot == "Plot E")
+plot_e_object_lineage_survival <- outplant_object_lineage_survival |> filter(plot == "Plot E") |> select(-plot)
+plot_e_cohort_survival <- plot_e_object_lineage_survival
+source(file.path(project_root, "R", "07_plot_e_cohort_cover.R"))
 
 plot_e_baseline_area <- plot_e_observations |>
   filter(survey_date == plot_e_original_date, present) |>
@@ -2384,46 +2184,26 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-e-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot E") %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+plot_e_cohort_survival |>
+  select(cohort, survey_date, n_baseline, n_surviving, n_recorded_dead,
+         n_unresolved, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Cohort", "Survey", "Original objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
 #| label: plot-e-cumulative-survival-plot
 #| fig-width: 10
 #| fig-height: 5.5
-#| fig-alt: "Coki E survivorship shown separately for the 2025 and April 2026 outplant sessions. September 2026 original-ID retention is 33.3% for the 2025 cohort and 82.9% for the April 2026 cohort; 33.3% does not describe all outplants."
+#| fig-alt: "Coki E survivorship shown separately for the 2025 and April 2026 outplant sessions. Original objects are followed through documented splits and fusions, with unresolved gaps shown in the accompanying table."
 
 plot_e_latest_cohorts <- plot_e_cohort_survival |>
   group_by(cohort) |>
   slice_max(survey_date, n = 1, with_ties = FALSE) |>
   ungroup() |>
-  mutate(endpoint_label = sprintf("%s: %.1f%%\n%s of %s initial IDs", cohort,
-                                  percent_survival, n_surviving, n_baseline))
+  mutate(endpoint_label = sprintf("%s: %.1f%%", cohort, percent_survival))
 
 plot_e_cohort_survival |>
   ggplot(aes(survey_date, percent_survival, color = cohort, group = cohort)) +
@@ -2432,7 +2212,7 @@ plot_e_cohort_survival |>
   geom_text(aes(label = sprintf("%.1f%%", percent_survival)),
             vjust = -0.9, size = 3, show.legend = FALSE) +
   geom_label(data = plot_e_latest_cohorts, aes(label = endpoint_label),
-             hjust = -0.08, size = 3.3, show.legend = FALSE) +
+             hjust = -0.2, size = 3.3, show.legend = FALSE) +
   scale_color_manual(values = c("2025 original outplants" = "#0072B2",
                                 "April 2026 additions" = "#D55E00")) +
   scale_x_date(date_labels = "%b %Y",
@@ -2443,15 +2223,13 @@ plot_e_cohort_survival |>
   scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 25),
                      labels = scales::label_percent(scale = 1),
                      expand = expansion(mult = c(0.02, 0.08))) +
-  labs(x = "Survey date", y = "Initial Genet IDs retained (%)", color = "Outplant session",
-       title = "Coki E: survivorship by outplant session",
+  labs(x = "Survey date", y = "Original objects with a living descendant (%)", color = "Outplant session",
+       title = "Coki E: original-object lineage persistence",
        subtitle = "Each session starts at 100% of its own initial count; April additions are tracked separately",
-       caption = paste("33.3% applies only to the original 2025 cohort, not all Coki E outplants.",
-                       "ID retention includes unresolved tracking losses and is not confirmed mortality.",
-                       "The two cohorts have different monitoring durations.", sep = "\n")) +
+       caption = NULL) +
   outplant_theme() +
   theme(legend.position = "bottom", plot.caption = element_text(hjust = 0),
-        axis.text.x = element_text(angle = 35, hjust = 1))
+        axis.text.x = element_text(angle = 35, hjust = 1)) + labs(subtitle = NULL)
 
 ```
 
@@ -2477,11 +2255,12 @@ plot_e_cohort_survival |>
                  plot_e_cohort_survival$survey_date <= plot_e_pre_april_date]))) +
   scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1),
                      expand = expansion(mult = c(0.02, 0.10))) +
-  labs(x = "Survey date", y = "Cohort survivorship", color = "Outplant cohort",
+  labs(x = "Survey date", y = "Original-object lineage persistence", color = "Outplant cohort",
        title = "Coki E: 2025 Outplant Session: Before April 2026",
-       subtitle = "Each cohort retains its own initial denominator; 2025 survival is not reset in April") +
+       subtitle = "Each cohort retains its own initial denominator; 2025 lineage persistence is not reset in April") +
   outplant_theme() +
-  theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom")
+  theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom") + labs(subtitle = NULL)
+
 ```
 
 ### April 2026 Onward: Both Outplant Cohorts
@@ -2506,65 +2285,44 @@ plot_e_cohort_survival |>
                  plot_e_cohort_survival$survey_date >= plot_e_april_date]))) +
   scale_y_continuous(limits = c(0, 100), labels = scales::label_percent(scale = 1),
                      expand = expansion(mult = c(0.02, 0.10))) +
-  labs(x = "Survey date", y = "Cohort survivorship", color = "Outplant cohort",
+  labs(x = "Survey date", y = "Original-object lineage persistence", color = "Outplant cohort",
        title = "Coki E: April 2026 Onward: Both Outplant Cohorts",
-       subtitle = "Each cohort retains its own initial denominator; 2025 survival is not reset in April") +
+       subtitle = "Each cohort retains its own initial denominator; 2025 lineage persistence is not reset in April") +
   outplant_theme() +
-  theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom")
+  theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom") + labs(subtitle = NULL)
+
 ```
 
-### Original Genet Tracking Check
+### Object Lineage Tracking Check
 
-The decline measures retention of the original IDs, not confirmed mortality alone. At September 1, 2026, 137 of the 412 original Genets are observed present, 227 have an explicit TagLab `dead` record, and 48 are absent without an explicit death record. These 48 are unresolved tracking losses, not confirmed deaths. No original IDs disappear and later reappear, and matching blob IDs at shared survey dates have consistent Genet IDs; changing the permanent-loss rule would not change this original-cohort curve. Resolving the 48 absences requires reviewing the source TagLab projects or a verified ID crosswalk.
+Each original object has one row per survey in `outputs/Tables/plot_e_object_lineage_tracking.csv`, listing its living descendant IDs, status, and any unresolved branch. A living merged descendant can contribute to multiple original individuals' survival counts but its area is not duplicated in cover calculations. An original individual is recorded dead only when every tracked branch ends in explicit death records and no branch has an unresolved connection. No confidence interval is shown: shared fused descendants create dependence among original individuals.
 
-```{r}
-#| label: plot-e-original-tracking-status
-plot_e_tracking_status |>
-  tidyr::pivot_wider(names_from = tracking_status, values_from = n_genets,
-                     values_fill = 0) |>
-  kable()
-```
+Genet-ID consistency checks are annotation diagnostics; they do not determine lineage survival. The interval figure follows each source object through the next documented survey, counting it once even when it splits or shares a fused descendant.
 
 ### Interval Survivorship
 
 ```{r}
 #| label: plot-e-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot E") %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |> filter(plot == "Plot E") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
 #| label: plot-e-interval-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot E interval survivorship between adjacent survey months with confidence intervals."
+#| fig-alt: "Line plot of Plot E interval survivorship between adjacent survey months with percentages at each point."
 
 outplant_plot_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot E")
-)
+) + labs(subtitle = NULL)
+
 ```
 
 ### Coral Cover
@@ -2572,45 +2330,70 @@ outplant_plot_interval_survival(
 ```{r}
 #| label: plot-e-cover-table
 
-outplant_cover_summary %>%
-  filter(plot == "Plot E") %>%
-  select(plot_section_label, month, n_outplants_present, total_outplant_area_m2, plot_area_m2, percent_outplant_cover) %>%
-  mutate(
-    total_outplant_area_m2 = round(total_outplant_area_m2, 6),
-    percent_outplant_cover = round(percent_outplant_cover, 5)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Outplants present", "Total outplant area (m2)",
-      "Plot area (m2)", "Outplant cover (%)"
-    )
-  )
+plot_e_cohort_cover_display |>
+  mutate(total_outplant_area_m2 = round(total_outplant_area_m2, 6),
+         percent_outplant_cover = round(percent_outplant_cover, 5)) |>
+  kable(col.names = c("Survey date", "Cohort", "Current objects", "Area (m2)",
+                      "Plot area (m2)", "Cover (%)"))
+
 ```
 
 ```{r}
 #| label: plot-e-cover-plot
-#| fig-width: 8
-#| fig-height: 4.5
-#| fig-alt: "Line plot of Plot E outplant cover through time as a percent of plot area."
+#| fig-width: 10
+#| fig-height: 5.5
+#| fig-alt: "Coki E coral cover over time separated into the original 2025 cohort, April 2026 additions, only."
 
-outplant_plot_cover(
-  outplant_cover_summary %>% filter(plot == "Plot E")
-)
+plot_e_cohort_cover_display |>
+  group_by(cohort) |>
+  arrange(survey_date, .by_group = TRUE) |>
+  mutate(label_vjust = if_else(row_number() %% 2L == 0L, 1.6, -0.8)) |>
+  ungroup() |>
+  ggplot(aes(survey_date, percent_outplant_cover, color = cohort, group = cohort)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2.4) +
+  geom_text(aes(label = sprintf("%.4f%%", percent_outplant_cover), vjust = label_vjust),
+            size = 2.7, show.legend = FALSE) +
+  scale_color_manual(values = plot_e_cover_palette,
+                     breaks = c("2025 original outplants", "April 2026 additions"),
+                     labels = c("2025", "2026"), drop = TRUE) +
+  scale_x_date(breaks = sort(unique(plot_e_cohort_cover_summary$survey_date)),
+               date_labels = "%d %b %Y") +
+  scale_y_continuous(limits = c(0, NA), labels = scales::label_percent(scale = 1),
+                     expand = expansion(mult = c(0, 0.13))) +
+  labs(title = "Coki E coral cover by outplant cohort", x = "Survey date",
+       y = "Outplant cover of Coki (%)", color = "Cohort") +
+  outplant_theme() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "bottom") + labs(subtitle = NULL)
+
 ```
 
-### Total Outplant Coral Cover Over Time
+### Tracked-Cohort Coral Cover Over Time
+
+These figures use the **Matches exports**, not the separate all-coral cover dataset. Cover is measured planar area divided by the configured 480 m² plot area. Blue identifies the 2025 cohort and orange the April 2026 additions. Each current object contributes its area once. Only area with a documented connection to one of these cohorts is shown; other measured area is retained in the audit tables but excluded from these figures.
 
 ```{r}
 #| label: plot-e-total-cover-bars
-#| fig-width: 9
+#| fig-width: 10
 #| fig-height: 5.5
-#| fig-alt: "Bar chart of summed outplant coral cover for Plot E by survey date, distinguishing complete and partial section coverage."
+#| fig-alt: "Stacked bars showing Coki E cover contributed by the 2025 and 2026 cohorts."
 
-outplant_plot_total_cover_bars(
-  outplant_cover_summary %>% filter(plot == "Plot E"),
-  outplant_section_monthly_observations %>% filter(plot == "Plot E"),
-  outplant_config %>% filter(plot == "Plot E")
-)
+plot_e_cohort_cover_display |>
+  mutate(survey_label = factor(format(survey_date, "%d %b %Y"),
+                               levels = format(sort(unique(survey_date)), "%d %b %Y"))) |>
+  ggplot(aes(survey_label, percent_outplant_cover, fill = cohort)) +
+  geom_col(position = position_stack(reverse = TRUE), width = 0.72) +
+  scale_fill_manual(values = plot_e_cover_palette,
+                    breaks = c("2025 original outplants", "April 2026 additions"),
+                    labels = c("2025", "2026"), drop = TRUE) +
+  scale_y_continuous(labels = scales::label_percent(scale = 1),
+                     expand = expansion(mult = c(0, 0.08))) +
+  labs(title = "Coki E coral cover by outplant cohort", x = "Survey date",
+       y = "Outplant cover of Coki (%)", fill = "Cohort") +
+  outplant_theme() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "bottom",
+        plot.margin = margin(10, 15, 10, 25)) + labs(subtitle = NULL)
+
 ```
 
 ### Species Prevalence
@@ -2650,7 +2433,8 @@ plot_e_species_summary %>%
 
 outplant_plot_species_prevalence(
   plot_e_species_summary
-) + scale_fill_manual(values = outplant_species_palette, limits = plot_e_species_labels)
+) + scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, limits = plot_e_species_labels) + labs(subtitle = NULL)
+
 ```
 
 Empty and unidentified labels are excluded from the three species figures and the species table; percentages use the retained identified annotations. Unused palette categories are omitted from legends. Raw records remain unchanged.
@@ -2665,20 +2449,32 @@ Empty and unidentified labels are excluded from the three species figures and th
 
 outplant_plot_species_cover(
   plot_e_species_summary
-) + scale_fill_manual(values = outplant_species_palette, limits = plot_e_species_labels)
+) + scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, limits = plot_e_species_labels) + labs(subtitle = NULL)
+
 ```
 
 ### Outplanted Coral Area by Species
 
 ```{r}
 #| label: plot-e-species-area-plot
-#| fig-width: 8
-#| fig-height: 4.8
-#| fig-alt: "Line chart of Plot E measured outplant area through time by species."
+#| fig-width: 10
+#| fig-height: 9
+#| fig-alt: "Measured coral area by species, with separate panels for the 2025 cohort and April 2026 additions."
 
-outplant_plot_species_area(
-  plot_e_species_area
-) + scale_color_manual(values = outplant_species_palette, limits = plot_e_species_labels)
+plot_e_cohort_species_display |>
+  ggplot(aes(survey_date, total_outplant_area_m2, color = species, group = species)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 2) +
+  facet_wrap(vars(cohort), ncol = 1) +
+  scale_color_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = TRUE) +
+  scale_x_date(breaks = sort(unique(plot_e_cohort_species_area$survey_date)),
+               date_labels = "%d %b %Y") +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.001)) +
+  labs(title = "Coki E coral area by species and outplant cohort", x = "Survey date",
+       y = "Observed outplant area (m²)", color = "Species") +
+  outplant_theme() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + labs(subtitle = NULL)
+
 ```
 
 ### Area Added by Outplanting Versus Coral Growth
@@ -2695,7 +2491,8 @@ outplant_plot_cover_change_source(
   bind_rows(plot_e_baseline_area,
             outplant_cover_change_source_summary %>% filter(plot == "Plot E"))
 ) + labs(x = "Survey date",
-         subtitle = "First blue bar: original outplant area measured 7 May 2025; later bars partition interval changes")
+         subtitle = "First blue bar: original outplant area measured 7 May 2025; later bars partition interval changes") + labs(subtitle = NULL)
+
 ```
 
 ### Downloads
@@ -2711,6 +2508,7 @@ Plot F includes sections 0-0, 0-1, and 1-0. The supplied surveys span November 6
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot F files are:
@@ -2745,6 +2543,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -2782,10 +2581,14 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-f-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot F") %>%
-  mutate(across(starts_with("percent_"), ~ round(.x, 1))) %>%
-  kable()
+outplant_cumulative_survival_summary |> filter(plot == "Plot F") |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
@@ -2804,10 +2607,13 @@ outplant_plot_cumulative_survival(
 ```{r}
 #| label: plot-f-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot F") %>%
-  mutate(across(starts_with("percent_"), ~ round(.x, 1))) %>%
-  kable()
+outplant_survival_summary |> filter(plot == "Plot F") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
@@ -2928,6 +2734,7 @@ Plot G now includes outplant match-file analyses for sections 0-0, 0-1, and 1-0,
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot G files are:
@@ -2989,6 +2796,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -3061,39 +2869,21 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-g-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot G") %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_cumulative_survival_summary |> filter(plot == "Plot G") |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
 #| label: plot-g-cumulative-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot G cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+#| fig-alt: "Line plot of Plot G cumulative outplant survivorship over survey dates through documented split/fuse connections."
 
 outplant_plot_short_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot == "Plot G")
@@ -3105,37 +2895,20 @@ outplant_plot_short_cumulative_survival(
 ```{r}
 #| label: plot-g-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot G") %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |> filter(plot == "Plot G") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
 #| label: plot-g-interval-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot G interval survivorship between adjacent survey months with confidence intervals."
+#| fig-alt: "Line plot of Plot G interval survivorship between adjacent survey months with percentages at each point."
 
 outplant_plot_short_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot G")
@@ -3280,6 +3053,7 @@ Plot H combines the supplied TagLab sections into one plot-level result. Survey 
 ### Data Status
 
 <details>
+
 <summary>View source files and survey dates</summary>
 
 The active Plot H files are:
@@ -3341,6 +3115,7 @@ outplant_plot_depth_summary %>%
 ### QA/QC
 
 <details>
+
 <summary>View quality checks</summary>
 
 ```{r}
@@ -3413,39 +3188,21 @@ outplant_shared_month_continuity_qa %>%
 ```{r}
 #| label: plot-h-cumulative-survival-table
 
-outplant_cumulative_survival_summary %>%
-  filter(plot == "Plot H") %>%
-  select(
-    plot_section_label,
-    month,
-    baseline_month,
-    n_baseline,
-    n_died_interval,
-    cumulative_deaths_observed,
-    n_surviving_from_baseline,
-    percent_cumulative_survival,
-    percent_cumulative_survival_low,
-    percent_cumulative_survival_high
-  ) %>%
-  mutate(
-    percent_cumulative_survival = round(percent_cumulative_survival, 1),
-    percent_cumulative_survival_low = round(percent_cumulative_survival_low, 1),
-    percent_cumulative_survival_high = round(percent_cumulative_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Month", "Baseline month", "Baseline n", "Deaths this interval",
-      "Cumulative deaths", "Surviving from baseline",
-      "Cumulative survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_cumulative_survival_summary |> filter(plot == "Plot H") |>
+  select(plot_section_label, survey_date, baseline_date, n_baseline,
+         n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved,
+         percent_cumulative_survival) |>
+  mutate(percent_cumulative_survival = round(percent_cumulative_survival, 1)) |>
+  kable(col.names = c("Plot", "Survey", "Baseline survey", "Original objects",
+                      "Living descendant", "Recorded dead", "Unresolved", "Lineage persistence (%)"))
+
 ```
 
 ```{r}
 #| label: plot-h-cumulative-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot H cumulative outplant survivorship over survey dates with confidence intervals and temperature overlay."
+#| fig-alt: "Line plot of Plot H cumulative outplant survivorship over survey dates through documented split/fuse connections."
 
 outplant_plot_cumulative_survival(
   outplant_cumulative_survival_summary %>% filter(plot == "Plot H"),
@@ -3458,37 +3215,20 @@ outplant_plot_cumulative_survival(
 ```{r}
 #| label: plot-h-interval-survival-table
 
-outplant_survival_summary %>%
-  filter(plot == "Plot H") %>%
-  select(
-    plot_section_label,
-    interval_label,
-    n_start,
-    n_survived,
-    n_died,
-    n_born,
-    percent_survival,
-    percent_survival_low,
-    percent_survival_high
-  ) %>%
-  mutate(
-    percent_survival = round(percent_survival, 1),
-    percent_survival_low = round(percent_survival_low, 1),
-    percent_survival_high = round(percent_survival_high, 1)
-  ) %>%
-  kable(
-    col.names = c(
-      "Plot", "Interval", "Start n", "Survived n", "Died n", "Born n",
-      "Interval survival (%)", "95% CI low", "95% CI high"
-    )
-  )
+outplant_survival_summary |> filter(plot == "Plot H") |>
+  select(plot_section_label, interval_label, n_start, n_survived, n_died,
+         n_unresolved, n_born, percent_survival) |>
+  mutate(percent_survival = round(percent_survival, 1)) |>
+  kable(col.names = c("Plot", "Interval", "Source objects", "Living descendant",
+                      "Recorded dead", "Unresolved", "New destination objects", "Retention (%)"))
+
 ```
 
 ```{r}
 #| label: plot-h-interval-survival-plot
 #| fig-width: 8
 #| fig-height: 4.5
-#| fig-alt: "Line plot of Plot H interval survivorship between adjacent survey months with confidence intervals."
+#| fig-alt: "Line plot of Plot H interval survivorship between adjacent survey months with percentages at each point."
 
 outplant_plot_interval_survival(
   outplant_survival_summary %>% filter(plot == "Plot H")

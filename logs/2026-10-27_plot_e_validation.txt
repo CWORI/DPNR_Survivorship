@@ -1,0 +1,292 @@
+{
+  "snapshot_date": "27 October 2026",
+  "intake_manifest": "2026-10-27_plot_e_data_intake.csv",
+  "checked_records": 20144,
+  "checks": [
+    [
+      "Individual/date descendant sets and statuses disagree with raw-file traversal",
+      0,
+      0
+    ],
+    [
+      "Missing individual/date records versus independent traversal",
+      0,
+      0
+    ],
+    [
+      "Duplicate original/date records",
+      0,
+      0
+    ],
+    [
+      "Raw files differing from intake SHA-256 hashes",
+      0,
+      0
+    ],
+    [
+      "Originals counted as living with no positive-area descendant",
+      0,
+      0
+    ],
+    [
+      "Recorded deaths with an unresolved branch",
+      0,
+      0
+    ]
+  ],
+  "summary": [
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-05-07",
+      "n_baseline": "796",
+      "n_surviving": "796",
+      "n_recorded_dead": "0",
+      "n_unresolved": "0",
+      "percent_survival": "100",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-06-09",
+      "n_baseline": "796",
+      "n_surviving": "757",
+      "n_recorded_dead": "39",
+      "n_unresolved": "0",
+      "percent_survival": "95.10050251256281",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-07-11",
+      "n_baseline": "796",
+      "n_surviving": "726",
+      "n_recorded_dead": "70",
+      "n_unresolved": "0",
+      "percent_survival": "91.20603015075378",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-08-04",
+      "n_baseline": "796",
+      "n_surviving": "716",
+      "n_recorded_dead": "80",
+      "n_unresolved": "0",
+      "percent_survival": "89.94974874371859",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-09-08",
+      "n_baseline": "796",
+      "n_surviving": "699",
+      "n_recorded_dead": "97",
+      "n_unresolved": "0",
+      "percent_survival": "87.8140703517588",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-10-14",
+      "n_baseline": "796",
+      "n_surviving": "688",
+      "n_recorded_dead": "108",
+      "n_unresolved": "0",
+      "percent_survival": "86.4321608040201",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-11-06",
+      "n_baseline": "796",
+      "n_surviving": "686",
+      "n_recorded_dead": "110",
+      "n_unresolved": "0",
+      "percent_survival": "86.18090452261306",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2025-12-04",
+      "n_baseline": "796",
+      "n_surviving": "669",
+      "n_recorded_dead": "127",
+      "n_unresolved": "0",
+      "percent_survival": "84.04522613065326",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-01-20",
+      "n_baseline": "796",
+      "n_surviving": "661",
+      "n_recorded_dead": "135",
+      "n_unresolved": "0",
+      "percent_survival": "83.04020100502512",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-02-16",
+      "n_baseline": "796",
+      "n_surviving": "633",
+      "n_recorded_dead": "163",
+      "n_unresolved": "0",
+      "percent_survival": "79.52261306532664",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-03-25",
+      "n_baseline": "796",
+      "n_surviving": "569",
+      "n_recorded_dead": "227",
+      "n_unresolved": "0",
+      "percent_survival": "71.48241206030151",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-04-09",
+      "n_baseline": "796",
+      "n_surviving": "526",
+      "n_recorded_dead": "270",
+      "n_unresolved": "0",
+      "percent_survival": "66.08040201005025",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-05-04",
+      "n_baseline": "796",
+      "n_surviving": "515",
+      "n_recorded_dead": "281",
+      "n_unresolved": "0",
+      "percent_survival": "64.69849246231156",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-06-04",
+      "n_baseline": "796",
+      "n_surviving": "473",
+      "n_recorded_dead": "323",
+      "n_unresolved": "0",
+      "percent_survival": "59.42211055276382",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-07-15",
+      "n_baseline": "796",
+      "n_surviving": "441",
+      "n_recorded_dead": "355",
+      "n_unresolved": "0",
+      "percent_survival": "55.402010050251256",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-08-06",
+      "n_baseline": "796",
+      "n_surviving": "396",
+      "n_recorded_dead": "400",
+      "n_unresolved": "0",
+      "percent_survival": "49.74874371859296",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "2025 original outplants",
+      "first_present": "2025-05-07",
+      "survey_date": "2026-09-01",
+      "n_baseline": "796",
+      "n_surviving": "396",
+      "n_recorded_dead": "400",
+      "n_unresolved": "0",
+      "percent_survival": "49.74874371859296",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "April 2026 additions",
+      "first_present": "2026-04-09",
+      "survey_date": "2026-04-09",
+      "n_baseline": "1102",
+      "n_surviving": "1102",
+      "n_recorded_dead": "0",
+      "n_unresolved": "0",
+      "percent_survival": "100",
+      "percent_unresolved": "0"
+    },
+    {
+      "cohort": "April 2026 additions",
+      "first_present": "2026-04-09",
+      "survey_date": "2026-05-04",
+      "n_baseline": "1102",
+      "n_surviving": "1092",
+      "n_recorded_dead": "7",
+      "n_unresolved": "3",
+      "percent_survival": "99.09255898366607",
+      "percent_unresolved": "0.27223230490018147"
+    },
+    {
+      "cohort": "April 2026 additions",
+      "first_present": "2026-04-09",
+      "survey_date": "2026-06-04",
+      "n_baseline": "1102",
+      "n_surviving": "1025",
+      "n_recorded_dead": "73",
+      "n_unresolved": "4",
+      "percent_survival": "93.01270417422867",
+      "percent_unresolved": "0.3629764065335753"
+    },
+    {
+      "cohort": "April 2026 additions",
+      "first_present": "2026-04-09",
+      "survey_date": "2026-07-15",
+      "n_baseline": "1102",
+      "n_surviving": "965",
+      "n_recorded_dead": "131",
+      "n_unresolved": "6",
+      "percent_survival": "87.56805807622504",
+      "percent_unresolved": "0.5444646098003629"
+    },
+    {
+      "cohort": "April 2026 additions",
+      "first_present": "2026-04-09",
+      "survey_date": "2026-08-06",
+      "n_baseline": "1102",
+      "n_surviving": "947",
+      "n_recorded_dead": "147",
+      "n_unresolved": "8",
+      "percent_survival": "85.93466424682396",
+      "percent_unresolved": "0.7259528130671506"
+    },
+    {
+      "cohort": "April 2026 additions",
+      "first_present": "2026-04-09",
+      "survey_date": "2026-09-01",
+      "n_baseline": "1102",
+      "n_surviving": "923",
+      "n_recorded_dead": "171",
+      "n_unresolved": "8",
+      "percent_survival": "83.7568058076225",
+      "percent_unresolved": "0.7259528130671506"
+    }
+  ]
+}

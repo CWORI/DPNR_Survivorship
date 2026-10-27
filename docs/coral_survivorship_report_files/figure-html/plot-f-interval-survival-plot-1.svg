@@ -35,12 +35,6 @@
 <polyline points='50.17,145.35 495.14,145.35 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='50.17,100.96 495.14,100.96 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
 <polyline points='50.17,56.57 495.14,56.57 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='157.37,56.57 185.69,56.57 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='171.53,56.57 171.53,71.85 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='157.37,71.85 185.69,71.85 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='359.63,59.29 387.94,59.29 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='373.79,59.29 373.79,91.95 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
-<polyline points='359.63,91.95 387.94,91.95 ' style='stroke-width: 1.07; stroke: #404040; stroke-linecap: butt;' />
 <polyline points='171.53,56.57 373.79,69.56 ' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
 <circle cx='171.53' cy='56.57' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
 <circle cx='373.79' cy='69.56' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
@@ -72,7 +66,7 @@
 <line x1='514.80' y1='148.66' x2='528.63' y2='148.66' style='stroke-width: 1.49; stroke: #1B9E77; stroke-linecap: butt;' />
 <circle cx='521.71' cy='148.66' r='3.37' style='stroke-width: 0.77; stroke: #1B9E77; fill: #1B9E77;' />
 <text x='536.33' y='152.10' style='font-size: 9.60px; font-family: "Arial";' textLength='27.71px' lengthAdjust='spacingAndGlyphs'>Coki F</text>
-<text x='50.17' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='424.20px' lengthAdjust='spacingAndGlyphs'>Survival between adjacent TagLab match files; bars are exact binomial 95% CIs</text>
-<text x='50.17' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='199.07px' lengthAdjust='spacingAndGlyphs'>Outplant interval survivorship</text>
+<text x='50.17' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='401.56px' lengthAdjust='spacingAndGlyphs'>Each source object counts once through documented split/fuse connections</text>
+<text x='50.17' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='256.58px' lengthAdjust='spacingAndGlyphs'>Outplant interval descendant retention</text>
 </g>
 </svg>
