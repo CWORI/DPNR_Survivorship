@@ -479,3 +479,8 @@ independent validation of every annotation. Repeat them using
 
 The separate standalone plain-R script was not changed by this website update.
 Its earlier E-only description does not describe the website's universal method.
+
+
+### 2026-10-27: remove Coki E overview prose
+
+Removed the Overview heading and its two introductory paragraphs from the Coki E tab at the user's request. The shared method description and all figures, tables, and analysis remain unchanged.

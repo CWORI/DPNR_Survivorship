@@ -2011,11 +2011,6 @@ Use the master tracking dataset and master summary dataset listed in the Home ta
 
 ## Plot E
 
-### Overview
-
-Coki E includes all four sections through September 1, 2026. The cohort figures track individual original annotated objects through documented object-to-object correspondences. A fusion can preserve multiple original individuals in one descendant; a split counts the original individual once while any descendant remains alive. April additions are destination objects first appearing in the March–April interval without a positive-area source connection; deployment identity is not independently verified.
-
-This is **documented lineage persistence**, not proof that each contributor's tissue survives indefinitely after fusion. Missing connections remain unresolved; no missing edge is invented. Genet-level summaries elsewhere in the report use a different counting unit. The corrected October 27 Matches exports contain 796 positive-area May baseline objects. The October 20 Genet exports list 9 additional May objects absent from the first Matches files; those are not silently included without matching correspondence records. The baseline therefore describes the configured Matches coverage, not a verified complete planting inventory.
 ```{r}
 #| label: plot-e-cohort-setup
 
