@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // browsers do not reuse an older SVG after chart axes or labels change.
   for (const image of document.querySelectorAll('img[src*="/figure-html/"]')) {
     const figureUrl = new URL(image.getAttribute("src"), document.baseURI);
-    figureUrl.searchParams.set("v", "20260929-plot-d-update");
+    figureUrl.searchParams.set("v", "20261027-object-lineage");
     image.src = figureUrl.href;
   }
 
