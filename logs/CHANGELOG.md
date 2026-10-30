@@ -1,5 +1,26 @@
 # Change record
 
+## 2026-10-30: NCRMP Coral Sites website tab
+
+Added `ncrmp_coral_sites.qmd` to the website render list and navbar. It embeds
+the validated St. Thomas–St. John 2023 map from `../NCRMP_Benthic_Sites/` and
+provides a full-screen link. The HTML snapshot is retained at
+`assets/ncrmp/ncrmp_2023_st_thomas_st_john_target_coral_sites.html` and declared
+as a Quarto resource so rendering copies it into `docs/assets/ncrmp/`.
+The page documents the survey period and cover/absence limitations. Updated
+the README and pre-push required-file check. No analysis definitions, raw data,
+or existing user edits were changed for this integration.
+The source HTML was found at `Desktop/Shearwater/` after being moved out of the
+analysis outputs folder. Its embedded controls and 283 station count were
+verified before copying; the source was not moved or modified.
+Validation: full four-page render and `scripts/pre_push_check.R` passed. All
+four rendered pages contain the new navbar entry; the iframe resolves to an
+existing resource byte-identical to the source map, with 283 embedded stations.
+Render and pre-push logs are saved as `2026-10-30_ncrmp_site_render.log` and
+`2026-10-30_ncrmp_pre_push_check.log` in this directory. Publication was approved
+by the user; the map integration is committed separately from existing local
+all-coral workflow and data changes.
+
 ## 2026-09-23 — TagLab intake and website refresh
 
 - Imported 82 original CSVs (9,329 rows), preserving bytes and recording source paths and SHA-256 checksums in `2026-09-23_data_intake.csv`.

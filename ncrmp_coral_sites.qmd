@@ -1,0 +1,24 @@
+---
+title: "NCRMP Coral Sites"
+page-layout: full
+toc: false
+---
+
+Explore **283 NOAA NCRMP survey stations around St. Thomas and St. John**, sampled August 7–18, 2023. Choose a species to find stations with the highest recorded cover, or compare combined target cover and the number of target species recorded.
+
+Targets: **PPOR, MCAV, OFAV, OFRA, OANN, DLAB, PSTR, APAL, ACER, and CNAT**. Click a ranked site or map marker for coordinates, depth, habitat, and survey details. Subregion and depth filters are available within the map.
+
+[Open full-screen map](assets/ncrmp/ncrmp_2023_st_thomas_st_john_target_coral_sites.html){.btn .btn-primary target="_blank" rel="noopener"}
+
+```{=html}
+<iframe
+  src="assets/ncrmp/ncrmp_2023_st_thomas_st_john_target_coral_sites.html"
+  title="Interactive NOAA NCRMP target coral cover map for St. Thomas and St. John, August 2023"
+  style="display:block; width:100%; height:82vh; min-height:650px; margin:1rem 0; border:1px solid #d8e4e2; border-radius:12px;"
+  allow="fullscreen">
+</iframe>
+```
+
+**Use these observations to guide scouting.** Rankings describe 2023 benthic cover, not current colony numbers, health, or collection suitability. A species marked “not recorded” was not listed for that transect; it may still occur nearby. Internet access is needed for basemaps. The map's **How to read this map** section explains cover calculations, missing records, species matching, and coordinate assumptions.
+
+Source: [NOAA NCRMP, NCEI accession 0294845](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0294845). The map includes NOAA's St. Thomas–St. John offshore subregions and excludes St. Croix.

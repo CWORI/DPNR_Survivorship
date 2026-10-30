@@ -5,6 +5,9 @@ project:
     - index.qmd
     - coral_survivorship_report.qmd
     - all_coral_cover.qmd
+    - ncrmp_coral_sites.qmd
+  resources:
+    - assets/ncrmp/ncrmp_2023_st_thomas_st_john_target_coral_sites.html
 
 website:
   title: "DPNR Outplant Analyses"
@@ -16,6 +19,8 @@ website:
         text: Analysis Report
       - href: all_coral_cover.qmd
         text: All Coral Cover
+      - href: ncrmp_coral_sites.qmd
+        text: NCRMP Coral Sites
 
 format:
   html:

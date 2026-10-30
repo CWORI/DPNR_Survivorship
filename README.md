@@ -32,6 +32,8 @@ was written to `docs/index.html`.
 
 ## Main Files
 
+- `ncrmp_coral_sites.qmd`: separate NCRMP Coral Sites navigation tab, embedding the August 2023 St. Thomas–St. John target-species scouting map.
+- `assets/ncrmp/ncrmp_2023_st_thomas_st_john_target_coral_sites.html`: self-contained map snapshot copied into `docs/assets/ncrmp/` by Quarto as a declared resource.
 - `coral_survivorship_report.qmd`: Quarto report with tabs, figures, tables, and code dropdowns.
 - `index.qmd`: homepage with the interactive GPS map of Coki A-H and monitoring summaries.
 - `R/03_outplant_interval_workflow.R`: main analysis workflow.
@@ -42,6 +44,41 @@ was written to `docs/index.html`.
 - `outputs/Tables/outplant_master_summary_dataset.csv`: recommended summary output dataset.
 - `data_processed/coki_plot_polygons.geojson`: reusable GPS-defined Coki boundaries.
 - `outputs/Tables/coki_interactive_map_summary.csv`: monitoring values displayed in the map popups.
+
+## NCRMP Coral Sites map
+
+The **NCRMP Coral Sites** tab embeds 283 St. Thomas–St. John survey stations from
+August 7–18, 2023 and links to the full-screen map. Species, subregion and depth
+filters, station rankings, survey popups and filtered CSV export are available
+inside the map. The ten exact species targets are PPOR, MCAV, OFAV, OFRA, OANN,
+DLAB, PSTR, APAL, ACER and CNAT; PSTR means Pseudodiploria strigosa. Unresolved
+Orbicella species-complex records are not assigned to individual target species.
+
+This map is a website snapshot of the separate analysis at
+`../NCRMP_Benthic_Sites/`. Its `README.md` documents input provenance, fields,
+units, missingness, coordinate assumptions, validation, dependencies and reruns.
+The map HTML had been moved to
+`/Users/spencerparr/Desktop/Shearwater/ncrmp_2023_st_thomas_st_john_target_coral_sites.html`
+before this integration; that copy was verified against the analysis controls
+and its 283 embedded stations before copying it into the website.
+The original input remains unchanged in Downloads:
+`/Users/spencerparr/Downloads/CRCP_Benthic_Cover_USVI_5269_b446_2397.csv`.
+Source: NOAA NCRMP, [NCEI accession 0294845](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0294845).
+
+Cover is the sum of hardbottom, softbottom and rubble percentage-point
+contributions. It measures occupied bottom, not colony counts. Missing species
+rows remain unrecorded rather than proof of reef-wide absence. Source coordinates
+are geographic degrees; WGS84 is a display assumption because the export does
+not specify a datum. All data and controls are embedded in the HTML, while
+CartoDB/OpenStreetMap or Esri basemap tiles require internet access. Survey-era
+administration labels do not establish current access or collection permission.
+
+To refresh the website snapshot, first rebuild and validate the separate NCRMP
+analysis, then copy its generated HTML to the exact `assets/ncrmp/` path above
+and render the website with `bash scripts/render_site.sh`. The website does not
+rerun the NCRMP analysis or read Downloads when rendering. The declared resource
+keeps the iframe portable under the GitHub Pages project URL. The pre-push check
+requires both the new rendered page and its map resource.
 
 ## Adding New Plot or Month Files
 
