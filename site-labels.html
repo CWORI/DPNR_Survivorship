@@ -8,6 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
     image.src = figureUrl.href;
   }
 
+  function showLinkedReportTab() {
+    const target = document.getElementById(window.location.hash.slice(1));
+    const pane = target?.closest(".tab-pane");
+    if (!pane || pane.classList.contains("active")) return;
+
+    const tab = document.getElementById(pane.id + "-tab");
+    if (!tab || !window.bootstrap?.Tab) return;
+
+    tab.addEventListener("shown.bs.tab", () => {
+      target.scrollIntoView();
+    }, { once: true });
+    window.bootstrap.Tab.getOrCreateInstance(tab).show();
+  }
+
+  showLinkedReportTab();
+  window.addEventListener("hashchange", showLinkedReportTab);
+
   const excluded = new Set(["CODE", "PRE", "SCRIPT", "STYLE", "TEXTAREA"]);
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const nodes = [];
@@ -21,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let skip = false;
 
     while (parent) {
-      if (excluded.has(parent.tagName)) {
+      if (excluded.has(parent.tagName) || parent.classList.contains("site-hero")) {
         skip = true;
         break;
       }

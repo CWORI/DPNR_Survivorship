@@ -119,6 +119,8 @@ Each plot tab is organized with the same outline so new data can be added withou
 
 ## SOP
 
+<span id="update-workflow"></span>
+
 ### Where everything goes
 
 This workflow uses Teams and GitHub for different jobs:
@@ -312,6 +314,8 @@ Please make sure this is the repository you are adding too!
 -   [ ] Live GitHub Pages website checked.
 
 ## Analysis Report
+
+<span id="analysis-methods"></span>
 
 ::: presentation-hidden
 ### Workflow
@@ -731,6 +735,8 @@ outplant_species_depth_summary %>%
 
 ## Plot A
 
+<span id="coki-a"></span>
+
 ### Overview
 
 Plot A combines the supplied TagLab sections into one plot-level result. Survey dates and section coverage are listed below; baseline survivorship starts at the first survey with present outplants in each section.
@@ -1050,6 +1056,8 @@ outplant_plot_cover_change_source(
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot A results.
 
 ## Plot B
+
+<span id="coki-b"></span>
 
 ### Overview
 
@@ -1371,6 +1379,8 @@ Use the master tracking dataset and master summary dataset listed in the Home ta
 
 ## Plot C
 
+<span id="coki-c"></span>
+
 ### Overview
 
 Plot C now includes outplant match-file analyses for sections 0-0 and 1-0, combined into one Plot C result. The supplied surveys span November 2025 through August 2026. Baseline survivorship starts at the first survey with present outplants in each section.
@@ -1691,6 +1701,8 @@ Use the master tracking dataset and master summary dataset listed in the Home ta
 
 ## Plot D
 
+<span id="coki-d"></span>
+
 ### Overview
 
 Plot D combines the supplied TagLab sections into one plot-level result. Survey dates and section coverage are listed below; baseline survivorship starts at the first survey with present outplants in each section.
@@ -2010,6 +2022,8 @@ outplant_plot_cover_change_source(
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot D results.
 
 ## Plot E
+
+<span id="coki-e"></span>
 
 ```{r}
 #| label: plot-e-cohort-setup
@@ -2496,6 +2510,8 @@ Use the master tracking dataset and master summary dataset listed in the Home ta
 
 ## Plot F
 
+<span id="coki-f"></span>
+
 ### Overview
 
 Plot F includes sections 0-0, 0-1, and 1-0. The supplied surveys span November 6, 2025 through August 20, 2026. All three configured sections cover the same survey dates, so the combined figures represent the complete supplied Plot F dataset.
@@ -2721,6 +2737,8 @@ outplant_plot_cover_change_source(
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot F results.
 
 ## Plot G
+
+<span id="coki-g"></span>
 
 ### Overview
 
@@ -3040,6 +3058,8 @@ outplant_plot_cover_change_source(
 Use the master tracking dataset and master summary dataset listed in the Home tab for Plot G results.
 
 ## Plot H
+
+<span id="coki-h"></span>
 
 ### Overview
 

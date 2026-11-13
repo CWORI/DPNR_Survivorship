@@ -27,15 +27,13 @@ $font-family-sans-serif: "Avenir Next", "Segoe UI", system-ui, -apple-system, sa
 }
 
 .home-band--map .leaflet.html-widget {
-  height: min(72vh, 760px) !important;
-  min-height: 620px;
+  height: clamp(360px, 64vh, 640px) !important;
   width: 100% !important;
 }
 
 @media (max-width: 768px) {
   .home-band--map .leaflet.html-widget {
-    height: 620px !important;
-    min-height: 620px;
+    height: clamp(340px, 57svh, 470px) !important;
   }
 }
 
@@ -310,302 +308,81 @@ button:focus,
   box-shadow: 0 12px 28px rgb(246 200 95 / 28%);
 }
 
-.site-button--secondary {
-  border: 1px solid rgb(255 255 255 / 62%);
-  color: #ffffff;
+.site-button--primary {
+  gap: 0.6rem;
 }
 
-.site-button:hover {
-  transform: translateY(-1px);
-}
-
-.site-hero__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 1.5rem;
-}
-
-.site-hero__chips span {
-  backdrop-filter: blur(6px);
-  background: rgb(255 255 255 / 13%);
-  border: 1px solid rgb(255 255 255 / 28%);
-  border-radius: 999px;
-  color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 800;
-  padding: 0.42rem 0.7rem;
+.site-button--primary:hover {
+  background: #ffe090;
+  color: #1f2a2e;
 }
 
 .home-band {
   margin: 0 auto;
   max-width: 1180px;
-  padding: clamp(2.4rem, 5vw, 4.5rem) clamp(1.2rem, 4vw, 2.4rem);
+  padding: clamp(2.2rem, 5vw, 4rem) clamp(1.2rem, 4vw, 2.4rem);
 }
 
-.home-band--intro {
-  margin-top: -1.6rem;
-  position: relative;
-  z-index: 2;
-}
-
-.home-band--metrics {
-  margin-top: -3.8rem;
-  padding-bottom: 0;
-  position: relative;
-  z-index: 3;
-}
-
-.metric-strip {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.metric-tile {
-  border-radius: 8px;
-  box-shadow: 0 18px 42px rgb(22 52 58 / 16%);
-  color: #ffffff;
-  min-height: 118px;
-  padding: 1rem;
-}
-
-.metric-tile span {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.metric-tile p {
-  font-weight: 800;
-  margin: 0.55rem 0 0;
-}
-
-.metric-tile--teal {
-  background: var(--cwori-teal);
-}
-
-.metric-tile--coral {
-  background: var(--cwori-coral-hot);
-}
-
-.metric-tile--gold {
-  background: #b98500;
-}
-
-.metric-tile--blue {
-  background: var(--cwori-blue);
-}
-
-.home-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.home-grid--three {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.home-feature {
-  background: var(--cwori-panel);
-  border: 1px solid var(--cwori-border);
-  border-radius: 8px;
-  box-shadow: 0 18px 44px rgb(22 52 58 / 11%);
-  min-height: 260px;
-  overflow: hidden;
-  padding: 1.25rem;
-  position: relative;
-}
-
-.home-feature::after {
-  background: linear-gradient(180deg, var(--cwori-sun), var(--cwori-coral-hot));
-  content: "";
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 6px;
-}
-
-.home-feature:hover {
-  transform: translateY(-3px);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  box-shadow: 0 22px 54px rgb(22 52 58 / 16%);
-}
-
-.home-feature__icon {
-  align-items: center;
-  background: var(--cwori-soft);
-  border-radius: 999px;
-  color: var(--cwori-teal);
-  display: inline-flex;
-  font-size: 1.35rem;
-  height: 2.8rem;
-  justify-content: center;
-  margin-bottom: 1rem;
-  width: 2.8rem;
-}
-
-.home-feature__label {
-  color: var(--cwori-coral);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.home-feature h2 {
-  font-size: 1.35rem;
-  margin: 0 0 0.75rem;
-}
-
-.home-feature p {
-  color: var(--cwori-muted);
-}
-
-.home-feature a {
-  font-weight: 800;
-}
-
-.home-feature code {
-  display: inline-block;
-  white-space: normal;
-}
-
-.home-section-heading {
-  max-width: 760px;
-}
-
-.home-section-heading h2 {
-  font-size: clamp(1.9rem, 4vw, 3.2rem);
-  margin: 0;
-}
-
-.home-band--reef {
-  background:
-    linear-gradient(135deg, rgb(22 52 58 / 96%), rgb(7 75 83 / 96%));
-  color: #ffffff;
-  max-width: none;
-}
-
-.home-band--reef > * {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1180px;
-}
-
-.home-band--reef h2,
-.home-band--reef h3 {
-  color: #ffffff;
-}
-
-.home-band--reef .site-kicker {
-  color: var(--cwori-sun);
-}
-
-.reef-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 1.6rem;
-}
-
-.reef-card {
-  border-radius: 8px;
-  min-height: 240px;
-  padding: 1.25rem;
-}
-
-.reef-card span {
-  color: #ffffff;
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.reef-card h3 {
-  font-size: 1.35rem;
+.home-band h2 {
   margin-top: 0;
 }
 
-.reef-card p {
-  color: rgb(255 255 255 / 86%);
+#explore {
+  scroll-margin-top: 5rem;
 }
 
-.reef-card--survival {
-  background: #0b6f7a;
+.home-section-heading {
+  max-width: 42rem;
 }
 
-.reef-card--cover {
-  background: #c85445;
-}
-
-.reef-card--qa {
-  background: #3867d6;
-}
-
-.workflow-list {
-  counter-reset: workflow;
+.home-featured-story {
   display: grid;
-  gap: 0.85rem;
-  list-style: none;
-  margin: 2rem 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border-radius: 1rem;
+  background: var(--cwori-deep);
+  color: #f7fbfa;
+}
+
+.home-featured-story h2 {
+  color: inherit;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  margin-bottom: 0;
+}
+
+.home-featured-story a {
+  color: var(--cwori-sun);
+}
+
+.home-news-list,
+.home-resources ul {
+  display: grid;
+  gap: 0.65rem;
   padding: 0;
+  list-style: none;
 }
 
-.workflow-list li {
-  align-items: start;
-  background: #ffffff;
-  border-left: 5px solid var(--cwori-coral-hot);
-  border-radius: 8px;
-  box-shadow: 0 10px 24px rgb(22 52 58 / 6%);
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 3.4rem 1fr;
-  padding: 1rem 1.15rem;
-}
-
-.workflow-list span {
-  color: var(--cwori-teal);
-  font-size: 1.1rem;
-  font-weight: 900;
-}
-
-.workflow-list p {
-  margin: 0;
-}
-
-.home-band--outputs {
-  background: var(--cwori-soft);
-  max-width: none;
-}
-
-.home-band--outputs > * {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1180px;
-}
-
-.output-strip {
+.home-news-list li {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.4rem;
+  align-items: baseline;
+  gap: 0.25rem 1.25rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--cwori-border);
 }
 
-.output-strip code {
-  background: #ffffff;
-  border: 1px solid var(--cwori-border);
-  border-radius: 999px;
-  box-shadow: 0 8px 20px rgb(22 52 58 / 6%);
-  color: var(--cwori-deep);
-  padding: 0.65rem 0.85rem;
-  white-space: normal;
+.home-news-list time {
+  color: var(--cwori-muted);
+}
+
+.home-resources {
+  border-top: 1px solid var(--cwori-border);
+}
+
+.home-resources ul {
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 }
 
 @media (max-width: 720px) {
@@ -636,41 +413,8 @@ button:focus,
     width: 100%;
   }
 
-  .home-grid--three {
-    grid-template-columns: 1fr;
-  }
-
-  .metric-strip,
-  .reef-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-band--intro {
-    margin-top: 0;
-  }
-
-  .home-band--metrics {
-    margin-top: 0;
-  }
-
-  .workflow-list li {
-    grid-template-columns: 1fr;
-  }
-
   .tab-content {
     padding: 0.85rem;
-  }
-}
-
-// Two remaining homepage cards after the requested cleanup.
-.home-grid--two,
-.home-band--metrics .metric-strip {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-@media (max-width: 600px) {
-  .home-grid--two {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -692,9 +436,18 @@ button:focus,
   border-radius: 8px;
   padding: 1.25rem;
 }
-.plot-overview-card h3 { margin: 0 0 1rem; }
+.plot-overview-card h4 {
+  color: var(--cwori-deep);
+  font-weight: 750;
+  margin: 0 0 1rem;
+}
+.plot-overview-card a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+}
 .plot-overview-value { font-size: 2.25rem; font-weight: 800; line-height: 1.15; }
-.plot-overview-value span { display: block; font-size: 1rem; font-weight: 400; }
 .plot-overview-date, .overview-note { font-size: 0.95rem; }
 .overview-note { margin-top: 1rem; }
 /* Interactive Coki map ----------------------------------------------------- */

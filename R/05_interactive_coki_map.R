@@ -148,11 +148,16 @@ coki_map_summary <- coki_map_summary |>
 # 3. Create popup text and attach it to polygons ------------------------------
 coki_map_summary <- coki_map_summary |>
   mutate(
+    report_link = str_c(
+      "<p><a href='coral_survivorship_report.html#",
+      str_to_lower(str_replace_all(display_name, " ", "-")),
+      "'>View ", display_name, " results</a></p>"
+    ),
     popup_html = if_else(
       is.na(latest_survey_date),
       str_c(
         "<div class='coki-map-popup'><h3>", display_name, "</h3>",
-        "<p><strong>No outplant monitoring files are currently configured.</strong></p></div>"
+        "<p><strong>No outplant monitoring files are currently configured.</strong></p>", report_link, "</div>"
       ),
       str_c(
         "<div class='coki-map-popup'><h3>", display_name, "</h3>",
@@ -165,7 +170,7 @@ coki_map_summary <- coki_map_summary |>
         "<p><strong>Initial-cohort lineage persistence:</strong> ", sprintf("%.1f%%", cumulative_survivorship_percent),
         " (", surviving_outplants, " of ", baseline_outplants, "; ", unresolved_outplants, " unresolved)<br>",
         "<small>Latest complete-section survivorship survey: ", format(survival_survey_date, "%d %b %Y"), "</small></p>",
-        april_cohort_html,
+        april_cohort_html, report_link,
         "</div>"
       )
     )
@@ -244,5 +249,5 @@ if (file.exists(map_polygon_output_path)) {
 st_write(coki_polygons |> select(plot, display_name), map_polygon_output_path, quiet = TRUE)
 
 coki_map_summary |>
-  select(-species_breakdown_html, -popup_html, -april_cohort_html) |>
+  select(-species_breakdown_html, -popup_html, -april_cohort_html, -report_link) |>
   write_csv(map_summary_output_path)

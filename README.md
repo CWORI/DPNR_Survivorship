@@ -138,8 +138,8 @@ lists and QA/QC tables are collapsed in expandable details. Each available plot
 also has a total **outplant** cover bar chart by exact survey date, calculated
 from the existing summed outplant areas divided by 480 m². These charts do not
 include non-outplanted colonies. Amber bars indicate partial section coverage;
-missing sections are not filled with zeros. The homepage omits the workflow/site-count tiles
-and the Publish Check card; the local validation script remains available.
+missing sections are not filled with zeros. The publishing workflow lives in the
+SOP tab, linked from the homepage.
 
 All time-based figure axes use exact survey dates in day-month-year format.
 This keeps multiple surveys from the same named month at separate x positions,
@@ -154,10 +154,12 @@ Genotype charts are not generated because the current TagLab exports contain no
 non-missing genotype values.
 
 The homepage rebuilds the existing Matches workflow and summarizes the latest
-complete-section cumulative-survival result per plot. Its overall count sums
-baseline Genets once per plot; it is not the historical number of planted
-fragments or a count of later additions. Cards show survey dates, baseline counts,
-survivor counts, and percentages. Different plots can have different latest dates.
+complete-section cumulative-survival result per site. The page opens with the
+existing CWORI nursery photograph. Map popups and site cards link directly to
+the matching report tabs. Cards show survey dates, original annotation counts,
+living descendants, and unresolved records. The Coki E feature follows the
+April 2026 cohort separately. **What’s new** lists the sites with the most
+recent complete-section survivorship survey date.
 
 ## Interactive Coki map
 

@@ -1,5 +1,5 @@
 ---
-title: "DPNR Outplant Analyses"
+title: "How are Coki’s restored corals doing?"
 page-layout: full
 toc: false
 ---
@@ -17,7 +17,12 @@ home_latest <- outplant_cumulative_survival_summary |>
   dplyr::slice_max(survey_date, n = 1, with_ties = FALSE) |>
   dplyr::ungroup() |>
   dplyr::arrange(plot)
-home_baseline_total <- sum(home_latest$n_baseline)
+home_sites <- coki_map_summary |>
+  dplyr::select(plot, display_name) |>
+  dplyr::left_join(home_latest, by = "plot") |>
+  dplyr::arrange(plot)
+home_latest_survey <- home_latest |>
+  dplyr::slice_max(survey_date)
 home_e_april <- outplant_object_lineage_survival |>
   dplyr::filter(plot == "Plot E", cohort == "April 2026 additions") |>
   dplyr::slice_max(survey_date, n = 1, with_ties = FALSE)
@@ -32,34 +37,19 @@ home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = T
 
 <section class="site-hero" aria-labelledby="home-title">
 <div class="site-hero__content">
-<p class="site-kicker">Coral outplant monitoring</p>
-<h1 id="home-title">DPNR Outplant Analyses</h1>
-<p class="site-hero__lede">See how outplanted corals are surviving and growing across our monitoring plots.</p>
-<div class="site-hero__actions" aria-label="Primary pages">
-<a class="site-button site-button--primary" href="coral_survivorship_report.html">Open Analysis Report</a>
-<a class="site-button site-button--secondary" href="all_coral_cover.html">View All Coral Cover</a>
-</div>
-<div class="site-hero__chips" aria-label="Current report scope">
-<span>Plots A–H</span>
-<span>`r nrow(outplant_config)` match files</span>
-<span>Updated October 27, 2026</span>
-<span>Section coverage varies</span>
+<p class="site-kicker">Coral restoration · Coki, St. Thomas</p>
+<h1 id="home-title">How are Coki’s restored corals doing?</h1>
+<p class="site-hero__lede">DPNR monitors corals planted on the reef to see how many survive and how much reef area they cover over time.</p>
+<div class="site-hero__actions">
+<a class="site-button site-button--primary" href="#explore">Explore the plots <span aria-hidden="true">↓</span></a>
 </div>
 </div>
 </section>
 
-<section class="home-band home-band--metrics" aria-label="Outplant overview">
-<div class="metric-strip">
-<div class="metric-tile metric-tile--teal"><span>`r home_count(home_baseline_total)`</span><p>original annotations tracked at baseline</p></div>
-<div class="metric-tile metric-tile--coral"><span>`r nrow(home_latest)`</span><p>plots with monitoring data</p></div>
-</div>
-</section>
-
-<section class="home-band home-band--map" aria-label="Interactive Coki map">
+<section class="home-band home-band--map" id="explore" aria-labelledby="explore-heading">
 <div class="home-section-heading">
-<p class="site-kicker">Explore the site</p>
-<h2>Interactive Coki map</h2>
-<p>Zoom in to inspect the GPS-defined boundaries. Click a Coki to see its latest outplant count, species counts, observed area, percent cover, survey coverage, and survivorship.</p>
+<h2 id="explore-heading">Explore Coki’s monitoring sites</h2>
+<p>Select a boundary for a survey snapshot, or choose a site from the list below the map.</p>
 </div>
 
 ```{r}
@@ -71,14 +61,9 @@ home_count <- function(x) format(x, big.mark = ",", scientific = FALSE, trim = T
 coki_interactive_map
 ```
 
-<p class="overview-note">Use the layer control to switch between satellite imagery and the street map or hide the corner markers. The satellite layer stays visible beyond its native resolution by enlarging the closest available imagery. GPS-defined boundaries are monitoring references rather than legal survey boundaries.</p>
-</section>
+<p class="overview-note">The map shows GPS-based monitoring boundaries. Use the layer control to switch between satellite imagery and the street map.</p>
 
-<section class="home-band" aria-label="Survivorship by plot">
-<div class="home-section-heading">
-<h2>How each plot is doing</h2>
-<p>Each original annotation counts once through documented splits and fusions. The percentages below describe the initial observed cohort at the latest complete-section survey. Missing connections remain unresolved, rather than being recorded as deaths. Coki E’s 2026 additions are shown separately.</p>
-</div>
+<h3>Results by site</h3>
 
 ```{r}
 #| label: homepage-plot-cards
@@ -86,89 +71,79 @@ coki_interactive_map
 #| results: asis
 
 cat('<div class="plot-overview-grid">')
-for (i in seq_len(nrow(home_latest))) {
-  plot_row <- home_latest[i, ]
-  april_note <- if (plot_row$plot == "Plot E" && nrow(home_e_april) == 1L) {
-    sprintf('<p>April 2026 cohort: <strong>%.1f%%</strong> with a living descendant (%s unresolved).</p>',
-            home_e_april$percent_survival, home_count(home_e_april$n_unresolved))
-  } else ""
+for (i in seq_len(nrow(home_sites))) {
+  site <- home_sites[i, ]
+  site_id <- tolower(gsub(" ", "-", site$display_name, fixed = TRUE))
+  survey_summary <- if (is.na(site$survey_date)) {
+    "<p>No complete-section survivorship result is available.</p>"
+  } else {
+    sprintf(
+      paste0(
+        '<p class="plot-overview-value">%.1f%%</p>',
+        '<p>%s of %s original coral annotations had a documented living descendant. %s unresolved.</p>',
+        '<p class="plot-overview-date">Surveyed %s</p>'
+      ),
+      site$percent_cumulative_survival,
+      home_count(site$n_surviving_from_baseline),
+      home_count(site$n_baseline),
+      home_count(site$n_unresolved),
+      format(as.Date(site$survey_date), "%d %B %Y")
+    )
+  }
   cat(sprintf(
-    '<article class="plot-overview-card"><h3>%s</h3><p class="plot-overview-value">%.1f%%<span>initial-cohort lineage persistence</span></p><p><strong>%s</strong> of <strong>%s</strong> baseline annotations have a living descendant.</p><p>Unresolved: %s</p><p class="plot-overview-date">Survey: %s</p>%s</article>',
-    plot_row$plot, plot_row$percent_cumulative_survival,
-    home_count(plot_row$n_surviving_from_baseline), home_count(plot_row$n_baseline), home_count(plot_row$n_unresolved),
-    format(as.Date(plot_row$survey_date), "%d %b %Y"), april_note
+    '<article class="plot-overview-card"><h4>%s</h4>%s<a href="coral_survivorship_report.html#%s">View %s results</a></article>',
+    site$display_name, survey_summary, site_id, site$display_name
   ))
-
 }
 cat('</div>')
 ```
 
-<p class="overview-note">Counts represent original annotated objects with documented living descendants. They may differ from deployed fragment counts. Shared fused descendants retain multiple original histories. Survey dates differ between plots; Coki E includes all four sections through September 2026. <a href="coral_survivorship_report.html">See the report for data-quality flags and full results.</a></p>
+<p class="overview-note">Each card uses that site’s latest survey with complete section coverage. Researchers follow original coral annotations through documented splits and fusions. “Unresolved” means the survey record leaves the coral’s fate uncertain.</p>
 </section>
 
-<section class="home-band home-band--intro" aria-label="Project overview">
-<div class="home-grid home-grid--two">
-<article class="home-feature">
-<i class="bi bi-graph-up-arrow home-feature__icon" aria-hidden="true"></i>
-<p class="home-feature__label">Start here</p>
-<h2>Analysis Report</h2>
-<p>Presentation-ready survivorship, interval survival, cover, species prevalence, QA/QC, and plot-specific tabs.</p>
-<a href="coral_survivorship_report.html">Go to report</a>
-</article>
-<article class="home-feature">
-<i class="bi bi-grid-3x3-gap home-feature__icon" aria-hidden="true"></i>
-<p class="home-feature__label">Whole plot</p>
-<h2>All Coral Cover</h2>
-<p>Coral-cover summaries for all annotations across configured plot surveys, separate from the outplant-only workflow.</p>
-<a href="all_coral_cover.html">Review cover</a>
-</article>
+<section class="home-band" aria-labelledby="feature-heading">
+<div class="home-featured-story">
+<div>
+<p class="site-kicker">A closer look</p>
+<h2 id="feature-heading">Following Coki E’s April corals</h2>
+</div>
+<div>
+<p>New corals were planted at Coki E in April 2026. By the `r format(as.Date(home_e_april$survey_date), "%d %B %Y")` survey, <strong>`r home_count(home_e_april$n_surviving)` of `r home_count(home_e_april$n_baseline)`</strong> coral annotations from that group had a documented living descendant. The fate of `r home_count(home_e_april$n_unresolved)` remained unresolved.</p>
+<a href="coral_survivorship_report.html#april-2026-onward-both-outplant-cohorts">See how the April corals fared over time</a>
+</div>
 </div>
 </section>
 
-<section class="home-band home-band--reef" aria-label="Analysis highlights">
-<div class="home-section-heading">
-<p class="site-kicker">What this site tracks</p>
-<h2>A cleaner view of survivorship, cover, and species change</h2>
-</div>
-<div class="reef-grid">
-<article class="reef-card reef-card--survival">
-<span>Survival</span>
-<h3>Cumulative and interval survivorship</h3>
-<p>Baseline survival curves and month-to-month diagnostic checks stay side by side.</p>
-</article>
-<article class="reef-card reef-card--cover">
-<span>Cover</span>
-<h3>Outplant and whole-plot cover</h3>
-<p>Small outplant cover signals and all-coral plot cover are separated so each stays interpretable.</p>
-</article>
-<article class="reef-card reef-card--qa">
-<span>QA/QC</span>
-<h3>File checks before interpretation</h3>
-<p>Configured files, shared-month continuity, Genet identity, and missing values remain visible.</p>
-</article>
-</div>
+<section class="home-band home-band--news" aria-labelledby="news-heading">
+<h2 id="news-heading">What’s new</h2>
+<p>The most recent survey date with complete section coverage for outplant survivorship.</p>
+
+```{r}
+#| label: homepage-latest-survey
+#| echo: false
+#| results: asis
+
+cat('<ul class="home-news-list">')
+for (i in seq_len(nrow(home_latest_survey))) {
+  latest <- home_latest_survey[i, ]
+  site_name <- sub("^Plot ", "Coki ", latest$plot)
+  site_id <- tolower(gsub(" ", "-", site_name, fixed = TRUE))
+  survey_date <- as.Date(latest$survey_date)
+  cat(sprintf(
+    '<li><time datetime="%s">%s</time><a href="coral_survivorship_report.html#%s">%s survey results</a></li>',
+    format(survey_date, "%Y-%m-%d"), format(survey_date, "%d %B %Y"), site_id, site_name
+  ))
+}
+cat('</ul>')
+```
 </section>
 
-<section class="home-band" aria-label="Update workflow">
-<div class="home-section-heading">
-<p class="site-kicker">Update flow</p>
-<h2>From TagLab exports to GitHub Pages</h2>
-</div>
-<ol class="workflow-list">
-<li><span>01</span><p>Edit plot config rows under <code>config/outplant_interval_files/</code> or <code>config/all_coral_survey_files/</code>.</p></li>
-<li><span>02</span><p>Render the Quarto website so processed data, output tables, figures, and <code>docs/</code> are rebuilt together.</p></li>
-<li><span>03</span><p>Review file-audit and QA/QC tables before interpreting the plots or publishing the update.</p></li>
-<li><span>04</span><p>Run <code>Rscript scripts/pre_push_check.R</code>, then commit and push source, outputs, and rendered site files.</p></li>
-</ol>
-</section>
-
-<section class="home-band home-band--outputs" aria-label="Recommended outputs">
-<div class="home-section-heading">
-<p class="site-kicker">Recommended outputs</p>
-<h2>Open these first</h2>
-</div>
-<div class="output-strip">
-<code>data_processed/outplant_master_tracking_dataset.csv</code>
-<code>outputs/Tables/outplant_master_summary_dataset.csv</code>
-</div>
+<section class="home-band home-resources" aria-labelledby="resources-heading">
+<h2 id="resources-heading">Explore the data</h2>
+<ul>
+<li><a href="coral_survivorship_report.html#analysis-methods">Outplant analysis and methods</a></li>
+<li><a href="all_coral_cover.html">Whole-reef coral cover</a></li>
+<li><a href="ncrmp_coral_sites.html">Regional coral survey map</a></li>
+<li><a href="coral_survivorship_report.html#update-workflow">Site update instructions</a></li>
+</ul>
 </section>
