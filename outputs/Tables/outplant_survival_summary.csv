@@ -2,6 +2,7 @@ plot,interval_order,month_start,month_end,month_start_date,month_end_date,n_star
 Plot A,1,November,April,2025-11-14,2026-04-21,0,0,0,0,43,all,Plot A,NA,NA,NA,14 Nov 2025 to 21 Apr 2026,Source-object descendant retention
 Plot A,2,April,June,2026-04-21,2026-06-22,43,43,0,0,0,all,Plot A,100,NA,NA,21 Apr 2026 to 22 Jun 2026,Source-object descendant retention
 Plot A,3,June,August,2026-06-22,2026-08-12,43,43,0,0,0,all,Plot A,100,NA,NA,22 Jun 2026 to 12 Aug 2026,Source-object descendant retention
+Plot A,4,August,November,2026-08-12,2026-11-02,43,43,0,0,0,all,Plot A,100,NA,NA,12 Aug 2026 to 02 Nov 2026,Source-object descendant retention
 Plot B,1,November,April,2025-11-03,2026-04-22,0,0,0,0,43,all,Plot B,NA,NA,NA,03 Nov 2025 to 22 Apr 2026,Source-object descendant retention
 Plot B,2,April,June,2026-04-22,2026-06-09,43,43,0,0,32,all,Plot B,100,NA,NA,22 Apr 2026 to 09 Jun 2026,Source-object descendant retention
 Plot B,3,June,August,2026-06-09,2026-08-07,75,75,0,0,0,all,Plot B,100,NA,NA,09 Jun 2026 to 07 Aug 2026,Source-object descendant retention
@@ -9,8 +10,9 @@ Plot C,1,November,April,2025-11-03,2026-04-03,0,0,0,0,597,all,Plot C,NA,NA,NA,03
 Plot C,2,April,June,2026-04-03,2026-06-06,579,573,6,0,1,all,Plot C,98.96373056994818,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
 Plot C,3,June,August,2026-06-06,2026-08-05,542,514,28,0,0,all,Plot C,94.8339483394834,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
 Plot D,1,November,April,2025-11-05,2026-04-16,0,0,0,0,336,all,Plot D,NA,NA,NA,05 Nov 2025 to 16 Apr 2026,Source-object descendant retention
-Plot D,2,April,June,2026-04-16,2026-06-08,336,303,33,0,0,all,Plot D,90.17857142857143,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
-Plot D,3,June,August,2026-06-08,2026-08-06,281,260,21,0,0,all,Plot D,92.52669039145907,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,2,April,June,2026-04-16,2026-06-08,336,306,30,0,2,all,Plot D,91.07142857142857,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
+Plot D,3,June,August,2026-06-08,2026-08-06,286,266,20,0,0,all,Plot D,93.00699300699301,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,4,August,November,2026-08-06,2026-11-03,259,225,34,0,3,all,Plot D,86.87258687258688,NA,NA,06 Aug 2026 to 03 Nov 2026,Source-object descendant retention
 Plot E,1,May,June,2025-05-07,2025-06-09,796,757,39,0,1,all,Plot E,95.10050251256281,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
 Plot E,2,June,July,2025-06-09,2025-07-11,733,702,31,0,0,all,Plot E,95.77080491132332,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
 Plot E,3,July,August,2025-07-11,2025-08-04,623,613,10,0,4,all,Plot E,98.3948635634029,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention

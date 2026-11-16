@@ -2,132 +2,175 @@ plot,plot_section,cohort,first_present,original_object_id,original_individual_id
 Plot A,0-0,Initial observed cohort,2026-04-21,0,0-0__2026-04-21__0,2026-04-21,Living descendant observed,1,0,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,0,0-0__2026-04-21__0,2026-06-22,Living descendant observed,1,24,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,0,0-0__2026-04-21__0,2026-08-12,Living descendant observed,1,0,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,0,0-0__2026-04-21__0,2026-11-02,Living descendant observed,1,30,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,2,0-0__2026-04-21__2,2026-04-21,Living descendant observed,1,2,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,2,0-0__2026-04-21__2,2026-06-22,Living descendant observed,1,26,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,2,0-0__2026-04-21__2,2026-08-12,Living descendant observed,1,2,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,2,0-0__2026-04-21__2,2026-11-02,Living descendant observed,1,32,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,5,0-0__2026-04-21__5,2026-04-21,Living descendant observed,1,5,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,5,0-0__2026-04-21__5,2026-06-22,Living descendant observed,1,29,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,5,0-0__2026-04-21__5,2026-08-12,Living descendant observed,1,5,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,5,0-0__2026-04-21__5,2026-11-02,Living descendant observed,1,35,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,10,0-0__2026-04-21__10,2026-04-21,Living descendant observed,1,10,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,10,0-0__2026-04-21__10,2026-06-22,Living descendant observed,1,34,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,10,0-0__2026-04-21__10,2026-08-12,Living descendant observed,1,10,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,10,0-0__2026-04-21__10,2026-11-02,Living descendant observed,1,43,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,11,0-0__2026-04-21__11,2026-04-21,Living descendant observed,1,11,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,11,0-0__2026-04-21__11,2026-06-22,Living descendant observed,1,35,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,11,0-0__2026-04-21__11,2026-08-12,Living descendant observed,1,11,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,11,0-0__2026-04-21__11,2026-11-02,Living descendant observed,1,44,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,12,0-0__2026-04-21__12,2026-04-21,Living descendant observed,1,12,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,12,0-0__2026-04-21__12,2026-06-22,Living descendant observed,1,36,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,12,0-0__2026-04-21__12,2026-08-12,Living descendant observed,1,12,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,12,0-0__2026-04-21__12,2026-11-02,Living descendant observed,1,15,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,13,0-0__2026-04-21__13,2026-04-21,Living descendant observed,1,13,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,13,0-0__2026-04-21__13,2026-06-22,Living descendant observed,1,37,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,13,0-0__2026-04-21__13,2026-08-12,Living descendant observed,1,13,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,13,0-0__2026-04-21__13,2026-11-02,Living descendant observed,1,46,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,15,0-0__2026-04-21__15,2026-04-21,Living descendant observed,1,15,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,15,0-0__2026-04-21__15,2026-06-22,Living descendant observed,1,39,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,15,0-0__2026-04-21__15,2026-08-12,Living descendant observed,1,15,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,15,0-0__2026-04-21__15,2026-11-02,Living descendant observed,1,48,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,16,0-0__2026-04-21__16,2026-04-21,Living descendant observed,1,16,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,16,0-0__2026-04-21__16,2026-06-22,Living descendant observed,1,40,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,16,0-0__2026-04-21__16,2026-08-12,Living descendant observed,1,18,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,16,0-0__2026-04-21__16,2026-11-02,Living descendant observed,1,50,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,19,0-0__2026-04-21__19,2026-04-21,Living descendant observed,1,19,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,19,0-0__2026-04-21__19,2026-06-22,Living descendant observed,1,43,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,19,0-0__2026-04-21__19,2026-08-12,Living descendant observed,1,16,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,19,0-0__2026-04-21__19,2026-11-02,Living descendant observed,1,53,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,20,0-0__2026-04-21__20,2026-04-21,Living descendant observed,1,20,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,20,0-0__2026-04-21__20,2026-06-22,Living descendant observed,1,44,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,20,0-0__2026-04-21__20,2026-08-12,Living descendant observed,1,17,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,20,0-0__2026-04-21__20,2026-11-02,Living descendant observed,1,54,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,21,0-0__2026-04-21__21,2026-04-21,Living descendant observed,1,21,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,21,0-0__2026-04-21__21,2026-06-22,Living descendant observed,1,45,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,21,0-0__2026-04-21__21,2026-08-12,Living descendant observed,1,22,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,21,0-0__2026-04-21__21,2026-11-02,Living descendant observed,1,56,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,22,0-0__2026-04-21__22,2026-04-21,Living descendant observed,1,22,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,22,0-0__2026-04-21__22,2026-06-22,Living descendant observed,1,47,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,22,0-0__2026-04-21__22,2026-08-12,Living descendant observed,1,23,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,22,0-0__2026-04-21__22,2026-11-02,Living descendant observed,1,58,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,23,0-0__2026-04-21__23,2026-04-21,Living descendant observed,1,23,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,23,0-0__2026-04-21__23,2026-06-22,Living descendant observed,1,46,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,23,0-0__2026-04-21__23,2026-08-12,Living descendant observed,1,21,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,23,0-0__2026-04-21__23,2026-11-02,Living descendant observed,1,55,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,3,0-0__2026-04-21__3,2026-04-21,Living descendant observed,1,3,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,3,0-0__2026-04-21__3,2026-06-22,Living descendant observed,1,27,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,3,0-0__2026-04-21__3,2026-08-12,Living descendant observed,1,3,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,3,0-0__2026-04-21__3,2026-11-02,Living descendant observed,1,33,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,4,0-0__2026-04-21__4,2026-04-21,Living descendant observed,1,4,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,4,0-0__2026-04-21__4,2026-06-22,Living descendant observed,1,28,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,4,0-0__2026-04-21__4,2026-08-12,Living descendant observed,1,4,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,4,0-0__2026-04-21__4,2026-11-02,Living descendant observed,1,34,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,6,0-0__2026-04-21__6,2026-04-21,Living descendant observed,1,6,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,6,0-0__2026-04-21__6,2026-06-22,Living descendant observed,1,30,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,6,0-0__2026-04-21__6,2026-08-12,Living descendant observed,1,6,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,6,0-0__2026-04-21__6,2026-11-02,Living descendant observed,1,36,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,7,0-0__2026-04-21__7,2026-04-21,Living descendant observed,1,7,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,7,0-0__2026-04-21__7,2026-06-22,Living descendant observed,1,31,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,7,0-0__2026-04-21__7,2026-08-12,Living descendant observed,1,7,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,7,0-0__2026-04-21__7,2026-11-02,Living descendant observed,1,37,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,1,0-0__2026-04-21__1,2026-04-21,Living descendant observed,1,1,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,1,0-0__2026-04-21__1,2026-06-22,Living descendant observed,1,25,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,1,0-0__2026-04-21__1,2026-08-12,Living descendant observed,1,1,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,1,0-0__2026-04-21__1,2026-11-02,Living descendant observed,1,31,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,8,0-0__2026-04-21__8,2026-04-21,Living descendant observed,1,8,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,8,0-0__2026-04-21__8,2026-06-22,Living descendant observed,1,32,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,8,0-0__2026-04-21__8,2026-08-12,Living descendant observed,1,8,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,8,0-0__2026-04-21__8,2026-11-02,Living descendant observed,1,41,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,9,0-0__2026-04-21__9,2026-04-21,Living descendant observed,1,9,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,9,0-0__2026-04-21__9,2026-06-22,Living descendant observed,1,33,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,9,0-0__2026-04-21__9,2026-08-12,Living descendant observed,1,9,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,9,0-0__2026-04-21__9,2026-11-02,Living descendant observed,1,42,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,14,0-0__2026-04-21__14,2026-04-21,Living descendant observed,1,14,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,14,0-0__2026-04-21__14,2026-06-22,Living descendant observed,1,38,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,14,0-0__2026-04-21__14,2026-08-12,Living descendant observed,1,14,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,14,0-0__2026-04-21__14,2026-11-02,Living descendant observed,1,47,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,17,0-0__2026-04-21__17,2026-04-21,Living descendant observed,1,17,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,17,0-0__2026-04-21__17,2026-06-22,Living descendant observed,1,41,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,17,0-0__2026-04-21__17,2026-08-12,Living descendant observed,1,19,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,17,0-0__2026-04-21__17,2026-11-02,Living descendant observed,1,51,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,18,0-0__2026-04-21__18,2026-04-21,Living descendant observed,1,18,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,18,0-0__2026-04-21__18,2026-06-22,Living descendant observed,1,42,FALSE
 Plot A,0-0,Initial observed cohort,2026-04-21,18,0-0__2026-04-21__18,2026-08-12,Living descendant observed,1,20,FALSE
+Plot A,0-0,Initial observed cohort,2026-04-21,18,0-0__2026-04-21__18,2026-11-02,Living descendant observed,1,52,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,1,1-0__2026-04-21__1,2026-04-21,Living descendant observed,1,1,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,1,1-0__2026-04-21__1,2026-06-22,Living descendant observed,1,1,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,1,1-0__2026-04-21__1,2026-08-12,Living descendant observed,1,1,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,1,1-0__2026-04-21__1,2026-08-12,Living descendant observed,1,0,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,1,1-0__2026-04-21__1,2026-11-02,Living descendant observed,1,1,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,2,1-0__2026-04-21__2,2026-04-21,Living descendant observed,1,2,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,2,1-0__2026-04-21__2,2026-06-22,Living descendant observed,1,2,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,2,1-0__2026-04-21__2,2026-08-12,Living descendant observed,1,3,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,2,1-0__2026-04-21__2,2026-08-12,Living descendant observed,1,2,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,2,1-0__2026-04-21__2,2026-11-02,Living descendant observed,1,2,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,5,1-0__2026-04-21__5,2026-04-21,Living descendant observed,1,5,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,5,1-0__2026-04-21__5,2026-06-22,Living descendant observed,1,4,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,5,1-0__2026-04-21__5,2026-08-12,Living descendant observed,1,20,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,5,1-0__2026-04-21__5,2026-08-12,Living descendant observed,1,4,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,5,1-0__2026-04-21__5,2026-11-02,Living descendant observed,1,5,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,7,1-0__2026-04-21__7,2026-04-21,Living descendant observed,1,7,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,7,1-0__2026-04-21__7,2026-06-22,Living descendant observed,1,6,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,7,1-0__2026-04-21__7,2026-08-12,Living descendant observed,1,6,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,7,1-0__2026-04-21__7,2026-08-12,Living descendant observed,1,5,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,7,1-0__2026-04-21__7,2026-11-02,Living descendant observed,1,7,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,9,1-0__2026-04-21__9,2026-04-21,Living descendant observed,1,9,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,9,1-0__2026-04-21__9,2026-06-22,Living descendant observed,1,8,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,9,1-0__2026-04-21__9,2026-08-12,Living descendant observed,1,8,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,9,1-0__2026-04-21__9,2026-08-12,Living descendant observed,1,21,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,9,1-0__2026-04-21__9,2026-11-02,Living descendant observed,1,9,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,11,1-0__2026-04-21__11,2026-04-21,Living descendant observed,1,11,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,11,1-0__2026-04-21__11,2026-06-22,Living descendant observed,1,10,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,11,1-0__2026-04-21__11,2026-08-12,Living descendant observed,1,18,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,11,1-0__2026-04-21__11,2026-08-12,Living descendant observed,1,13,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,11,1-0__2026-04-21__11,2026-11-02,Living descendant observed,1,11,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,13,1-0__2026-04-21__13,2026-04-21,Living descendant observed,1,13,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,13,1-0__2026-04-21__13,2026-06-22,Living descendant observed,1,12,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,13,1-0__2026-04-21__13,2026-08-12,Living descendant observed,1,12,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,13,1-0__2026-04-21__13,2026-08-12,Living descendant observed,1,20,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,13,1-0__2026-04-21__13,2026-11-02,Living descendant observed,1,13,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,14,1-0__2026-04-21__14,2026-04-21,Living descendant observed,1,14,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,14,1-0__2026-04-21__14,2026-06-22,Living descendant observed,1,13,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,14,1-0__2026-04-21__14,2026-08-12,Living descendant observed,1,15,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,14,1-0__2026-04-21__14,2026-08-12,Living descendant observed,2,15;7,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,14,1-0__2026-04-21__14,2026-11-02,Living descendant observed,1,14,TRUE
 Plot A,1-0,Initial observed cohort,2026-04-21,15,1-0__2026-04-21__15,2026-04-21,Living descendant observed,1,15,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,15,1-0__2026-04-21__15,2026-06-22,Living descendant observed,1,14,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,15,1-0__2026-04-21__15,2026-08-12,Living descendant observed,1,16,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,15,1-0__2026-04-21__15,2026-08-12,Living descendant observed,2,16;8,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,15,1-0__2026-04-21__15,2026-11-02,Living descendant observed,1,15,TRUE
 Plot A,1-0,Initial observed cohort,2026-04-21,16,1-0__2026-04-21__16,2026-04-21,Living descendant observed,1,16,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,16,1-0__2026-04-21__16,2026-06-22,Living descendant observed,1,15,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,16,1-0__2026-04-21__16,2026-08-12,Living descendant observed,1,21,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,16,1-0__2026-04-21__16,2026-08-12,Living descendant observed,1,18,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,16,1-0__2026-04-21__16,2026-11-02,Living descendant observed,1,16,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,17,1-0__2026-04-21__17,2026-04-21,Living descendant observed,1,17,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,17,1-0__2026-04-21__17,2026-06-22,Living descendant observed,1,16,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,17,1-0__2026-04-21__17,2026-08-12,Living descendant observed,1,22,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,17,1-0__2026-04-21__17,2026-08-12,Living descendant observed,1,19,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,17,1-0__2026-04-21__17,2026-11-02,Living descendant observed,1,17,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,18,1-0__2026-04-21__18,2026-04-21,Living descendant observed,1,18,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,18,1-0__2026-04-21__18,2026-06-22,Living descendant observed,1,17,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,18,1-0__2026-04-21__18,2026-08-12,Living descendant observed,1,17,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,18,1-0__2026-04-21__18,2026-11-02,Living descendant observed,1,18,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,0,1-0__2026-04-21__0,2026-04-21,Living descendant observed,1,0,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,0,1-0__2026-04-21__0,2026-06-22,Living descendant observed,1,0,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,0,1-0__2026-04-21__0,2026-08-12,Living descendant observed,1,0,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,0,1-0__2026-04-21__0,2026-08-12,Living descendant observed,1,1,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,0,1-0__2026-04-21__0,2026-11-02,Living descendant observed,1,0,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,3,1-0__2026-04-21__3,2026-04-21,Living descendant observed,1,3,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,3,1-0__2026-04-21__3,2026-06-22,Living descendant observed,1,3,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,3,1-0__2026-04-21__3,2026-08-12,Living descendant observed,1,2,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,3,1-0__2026-04-21__3,2026-08-12,Living descendant observed,1,3,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,3,1-0__2026-04-21__3,2026-11-02,Living descendant observed,1,3,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,6,1-0__2026-04-21__6,2026-04-21,Living descendant observed,1,6,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,6,1-0__2026-04-21__6,2026-06-22,Living descendant observed,1,5,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,6,1-0__2026-04-21__6,2026-08-12,Living descendant observed,1,5,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,6,1-0__2026-04-21__6,2026-08-12,Living descendant observed,1,6,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,6,1-0__2026-04-21__6,2026-11-02,Living descendant observed,1,6,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,10,1-0__2026-04-21__10,2026-04-21,Living descendant observed,1,10,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,10,1-0__2026-04-21__10,2026-06-22,Living descendant observed,1,9,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,10,1-0__2026-04-21__10,2026-08-12,Living descendant observed,1,9,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,10,1-0__2026-04-21__10,2026-08-12,Living descendant observed,1,12,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,10,1-0__2026-04-21__10,2026-11-02,Living descendant observed,1,10,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,12,1-0__2026-04-21__12,2026-04-21,Living descendant observed,1,12,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,12,1-0__2026-04-21__12,2026-06-22,Living descendant observed,1,11,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,12,1-0__2026-04-21__12,2026-08-12,Living descendant observed,1,19,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,12,1-0__2026-04-21__12,2026-08-12,Living descendant observed,1,14,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,12,1-0__2026-04-21__12,2026-11-02,Living descendant observed,1,12,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,4,1-0__2026-04-21__4,2026-04-21,Living descendant observed,1,4,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,4,1-0__2026-04-21__4,2026-06-22,Living descendant observed,1,18,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,4,1-0__2026-04-21__4,2026-08-12,Living descendant observed,1,4,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,4,1-0__2026-04-21__4,2026-08-12,Living descendant observed,1,9,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,4,1-0__2026-04-21__4,2026-11-02,Living descendant observed,1,4,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,8,1-0__2026-04-21__8,2026-04-21,Living descendant observed,1,8,FALSE
 Plot A,1-0,Initial observed cohort,2026-04-21,8,1-0__2026-04-21__8,2026-06-22,Living descendant observed,1,7,FALSE
-Plot A,1-0,Initial observed cohort,2026-04-21,8,1-0__2026-04-21__8,2026-08-12,Living descendant observed,1,7,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,8,1-0__2026-04-21__8,2026-08-12,Living descendant observed,1,22,FALSE
+Plot A,1-0,Initial observed cohort,2026-04-21,8,1-0__2026-04-21__8,2026-11-02,Living descendant observed,1,8,FALSE
 Plot B,0-0,Initial observed cohort,2026-04-22,1,0-0__2026-04-22__1,2026-04-22,Living descendant observed,1,1,FALSE
 Plot B,0-0,Initial observed cohort,2026-04-22,1,0-0__2026-04-22__1,2026-06-09,Living descendant observed,1,1,FALSE
 Plot B,0-0,Initial observed cohort,2026-04-22,1,0-0__2026-04-22__1,2026-08-07,Living descendant observed,1,3,FALSE
@@ -1997,1010 +2040,1345 @@ Plot C,1-0,Initial observed cohort,2026-04-03,233,1-0__2026-04-03__233,2026-08-0
 Plot D,0-0,Initial observed cohort,2026-04-16,1,0-0__2026-04-16__1,2026-04-16,Living descendant observed,1,1,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,1,0-0__2026-04-16__1,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,1,0-0__2026-04-16__1,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,1,0-0__2026-04-16__1,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,2,0-0__2026-04-16__2,2026-04-16,Living descendant observed,1,2,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,2,0-0__2026-04-16__2,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,2,0-0__2026-04-16__2,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,2,0-0__2026-04-16__2,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,3,0-0__2026-04-16__3,2026-04-16,Living descendant observed,1,3,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,3,0-0__2026-04-16__3,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,3,0-0__2026-04-16__3,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,3,0-0__2026-04-16__3,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,4,0-0__2026-04-16__4,2026-04-16,Living descendant observed,1,4,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,4,0-0__2026-04-16__4,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,4,0-0__2026-04-16__4,2026-08-06,All tracked descendants recorded dead,0,,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,5,0-0__2026-04-16__5,2026-04-16,Living descendant observed,1,5,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,5,0-0__2026-04-16__5,2026-06-08,All tracked descendants recorded dead,0,,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,5,0-0__2026-04-16__5,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,4,0-0__2026-04-16__4,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,70,0-0__2026-04-16__70,2026-04-16,Living descendant observed,1,70,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,70,0-0__2026-04-16__70,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,70,0-0__2026-04-16__70,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,70,0-0__2026-04-16__70,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,81,0-0__2026-04-16__81,2026-04-16,Living descendant observed,1,81,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,81,0-0__2026-04-16__81,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,81,0-0__2026-04-16__81,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,81,0-0__2026-04-16__81,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,82,0-0__2026-04-16__82,2026-04-16,Living descendant observed,1,82,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,82,0-0__2026-04-16__82,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,82,0-0__2026-04-16__82,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,82,0-0__2026-04-16__82,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,83,0-0__2026-04-16__83,2026-04-16,Living descendant observed,1,83,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,83,0-0__2026-04-16__83,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,83,0-0__2026-04-16__83,2026-08-06,All tracked descendants recorded dead,0,,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,87,0-0__2026-04-16__87,2026-04-16,Living descendant observed,1,87,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,87,0-0__2026-04-16__87,2026-06-08,All tracked descendants recorded dead,0,,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,87,0-0__2026-04-16__87,2026-08-06,All tracked descendants recorded dead,0,,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,91,0-0__2026-04-16__91,2026-04-16,Living descendant observed,1,91,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,91,0-0__2026-04-16__91,2026-06-08,All tracked descendants recorded dead,0,,FALSE
-Plot D,0-0,Initial observed cohort,2026-04-16,91,0-0__2026-04-16__91,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,83,0-0__2026-04-16__83,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,94,0-0__2026-04-16__94,2026-04-16,Living descendant observed,1,94,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,94,0-0__2026-04-16__94,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,94,0-0__2026-04-16__94,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,94,0-0__2026-04-16__94,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,120,0-0__2026-04-16__120,2026-04-16,Living descendant observed,1,120,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,120,0-0__2026-04-16__120,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,120,0-0__2026-04-16__120,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,120,0-0__2026-04-16__120,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,122,0-0__2026-04-16__122,2026-04-16,Living descendant observed,1,122,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,122,0-0__2026-04-16__122,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,122,0-0__2026-04-16__122,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,122,0-0__2026-04-16__122,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,127,0-0__2026-04-16__127,2026-04-16,Living descendant observed,1,127,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,127,0-0__2026-04-16__127,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,127,0-0__2026-04-16__127,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,127,0-0__2026-04-16__127,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,167,0-0__2026-04-16__167,2026-04-16,Living descendant observed,1,167,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,167,0-0__2026-04-16__167,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,167,0-0__2026-04-16__167,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,167,0-0__2026-04-16__167,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,168,0-0__2026-04-16__168,2026-04-16,Living descendant observed,1,168,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,168,0-0__2026-04-16__168,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,168,0-0__2026-04-16__168,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,168,0-0__2026-04-16__168,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,172,0-0__2026-04-16__172,2026-04-16,Living descendant observed,1,172,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,172,0-0__2026-04-16__172,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,172,0-0__2026-04-16__172,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,172,0-0__2026-04-16__172,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,180,0-0__2026-04-16__180,2026-04-16,Living descendant observed,1,180,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,180,0-0__2026-04-16__180,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,180,0-0__2026-04-16__180,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,180,0-0__2026-04-16__180,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,198,0-0__2026-04-16__198,2026-04-16,Living descendant observed,1,198,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,198,0-0__2026-04-16__198,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,198,0-0__2026-04-16__198,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,198,0-0__2026-04-16__198,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,199,0-0__2026-04-16__199,2026-04-16,Living descendant observed,1,199,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,199,0-0__2026-04-16__199,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,199,0-0__2026-04-16__199,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,199,0-0__2026-04-16__199,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,209,0-0__2026-04-16__209,2026-04-16,Living descendant observed,1,209,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,209,0-0__2026-04-16__209,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,209,0-0__2026-04-16__209,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,209,0-0__2026-04-16__209,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,212,0-0__2026-04-16__212,2026-04-16,Living descendant observed,1,212,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,212,0-0__2026-04-16__212,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,212,0-0__2026-04-16__212,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,212,0-0__2026-04-16__212,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,214,0-0__2026-04-16__214,2026-04-16,Living descendant observed,1,214,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,214,0-0__2026-04-16__214,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,214,0-0__2026-04-16__214,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,214,0-0__2026-04-16__214,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,217,0-0__2026-04-16__217,2026-04-16,Living descendant observed,1,217,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,217,0-0__2026-04-16__217,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,217,0-0__2026-04-16__217,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,217,0-0__2026-04-16__217,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,218,0-0__2026-04-16__218,2026-04-16,Living descendant observed,1,218,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,218,0-0__2026-04-16__218,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,218,0-0__2026-04-16__218,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,218,0-0__2026-04-16__218,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,223,0-0__2026-04-16__223,2026-04-16,Living descendant observed,1,223,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,223,0-0__2026-04-16__223,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,223,0-0__2026-04-16__223,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,223,0-0__2026-04-16__223,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,224,0-0__2026-04-16__224,2026-04-16,Living descendant observed,1,224,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,224,0-0__2026-04-16__224,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,224,0-0__2026-04-16__224,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,224,0-0__2026-04-16__224,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,225,0-0__2026-04-16__225,2026-04-16,Living descendant observed,1,225,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,225,0-0__2026-04-16__225,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,225,0-0__2026-04-16__225,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,225,0-0__2026-04-16__225,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,228,0-0__2026-04-16__228,2026-04-16,Living descendant observed,1,228,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,228,0-0__2026-04-16__228,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,228,0-0__2026-04-16__228,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,228,0-0__2026-04-16__228,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,229,0-0__2026-04-16__229,2026-04-16,Living descendant observed,1,229,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,229,0-0__2026-04-16__229,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,229,0-0__2026-04-16__229,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,229,0-0__2026-04-16__229,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,230,0-0__2026-04-16__230,2026-04-16,Living descendant observed,1,230,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,230,0-0__2026-04-16__230,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,230,0-0__2026-04-16__230,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,230,0-0__2026-04-16__230,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,233,0-0__2026-04-16__233,2026-04-16,Living descendant observed,1,233,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,233,0-0__2026-04-16__233,2026-06-08,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,233,0-0__2026-04-16__233,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,233,0-0__2026-04-16__233,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,0,0-0__2026-04-16__0,2026-04-16,Living descendant observed,1,0,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,0,0-0__2026-04-16__0,2026-06-08,Living descendant observed,1,0,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,0,0-0__2026-04-16__0,2026-08-06,Living descendant observed,1,0,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,0,0-0__2026-04-16__0,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,6,0-0__2026-04-16__6,2026-04-16,Living descendant observed,1,6,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,6,0-0__2026-04-16__6,2026-06-08,Living descendant observed,1,2,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,6,0-0__2026-04-16__6,2026-08-06,Living descendant observed,1,2,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,6,0-0__2026-04-16__6,2026-11-03,Living descendant observed,1,3,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,7,0-0__2026-04-16__7,2026-04-16,Living descendant observed,1,7,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,7,0-0__2026-04-16__7,2026-06-08,Living descendant observed,1,1,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,7,0-0__2026-04-16__7,2026-08-06,Living descendant observed,1,1,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,7,0-0__2026-04-16__7,2026-11-03,Living descendant observed,1,2,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,8,0-0__2026-04-16__8,2026-04-16,Living descendant observed,1,8,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,8,0-0__2026-04-16__8,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,8,0-0__2026-04-16__8,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,8,0-0__2026-04-16__8,2026-11-03,Living descendant observed,1,4,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,9,0-0__2026-04-16__9,2026-04-16,Living descendant observed,1,9,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,9,0-0__2026-04-16__9,2026-06-08,Living descendant observed,1,4,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,9,0-0__2026-04-16__9,2026-08-06,Living descendant observed,1,4,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,9,0-0__2026-04-16__9,2026-11-03,Living descendant observed,1,5,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,11,0-0__2026-04-16__11,2026-04-16,Living descendant observed,1,11,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,11,0-0__2026-04-16__11,2026-06-08,Living descendant observed,1,5,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,11,0-0__2026-04-16__11,2026-08-06,Living descendant observed,1,5,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,11,0-0__2026-04-16__11,2026-11-03,Living descendant observed,1,6,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,12,0-0__2026-04-16__12,2026-04-16,Living descendant observed,1,12,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,12,0-0__2026-04-16__12,2026-06-08,Living descendant observed,1,7,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,12,0-0__2026-04-16__12,2026-08-06,Living descendant observed,1,7,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,12,0-0__2026-04-16__12,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,13,0-0__2026-04-16__13,2026-04-16,Living descendant observed,1,13,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,13,0-0__2026-04-16__13,2026-06-08,Living descendant observed,1,8,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,13,0-0__2026-04-16__13,2026-08-06,Living descendant observed,1,8,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,13,0-0__2026-04-16__13,2026-11-03,Living descendant observed,1,9,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,14,0-0__2026-04-16__14,2026-04-16,Living descendant observed,1,14,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,14,0-0__2026-04-16__14,2026-06-08,Living descendant observed,1,4,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,14,0-0__2026-04-16__14,2026-08-06,Living descendant observed,1,4,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,14,0-0__2026-04-16__14,2026-11-03,Living descendant observed,1,5,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,16,0-0__2026-04-16__16,2026-04-16,Living descendant observed,1,16,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,16,0-0__2026-04-16__16,2026-06-08,Living descendant observed,1,10,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,16,0-0__2026-04-16__16,2026-08-06,Living descendant observed,1,10,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,16,0-0__2026-04-16__16,2026-11-03,Living descendant observed,1,11,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,17,0-0__2026-04-16__17,2026-04-16,Living descendant observed,1,17,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,17,0-0__2026-04-16__17,2026-06-08,Living descendant observed,1,11,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,17,0-0__2026-04-16__17,2026-08-06,Living descendant observed,1,11,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,17,0-0__2026-04-16__17,2026-11-03,Living descendant observed,1,12,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,19,0-0__2026-04-16__19,2026-04-16,Living descendant observed,1,19,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,19,0-0__2026-04-16__19,2026-06-08,Living descendant observed,1,13,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,19,0-0__2026-04-16__19,2026-08-06,Living descendant observed,1,13,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,19,0-0__2026-04-16__19,2026-11-03,Living descendant observed,1,14,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,21,0-0__2026-04-16__21,2026-04-16,Living descendant observed,1,21,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,21,0-0__2026-04-16__21,2026-06-08,Living descendant observed,1,15,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,21,0-0__2026-04-16__21,2026-08-06,Living descendant observed,1,15,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,21,0-0__2026-04-16__21,2026-11-03,Living descendant observed,1,16,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,22,0-0__2026-04-16__22,2026-04-16,Living descendant observed,1,22,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,22,0-0__2026-04-16__22,2026-06-08,Living descendant observed,1,16,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,22,0-0__2026-04-16__22,2026-08-06,Living descendant observed,1,16,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,22,0-0__2026-04-16__22,2026-11-03,Living descendant observed,1,17,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,23,0-0__2026-04-16__23,2026-04-16,Living descendant observed,1,23,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,23,0-0__2026-04-16__23,2026-06-08,Living descendant observed,1,19,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,23,0-0__2026-04-16__23,2026-08-06,Living descendant observed,1,19,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,23,0-0__2026-04-16__23,2026-11-03,Living descendant observed,1,20,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,24,0-0__2026-04-16__24,2026-04-16,Living descendant observed,1,24,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,24,0-0__2026-04-16__24,2026-06-08,Living descendant observed,1,17,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,24,0-0__2026-04-16__24,2026-08-06,Living descendant observed,1,17,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,24,0-0__2026-04-16__24,2026-11-03,Living descendant observed,1,18,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,27,0-0__2026-04-16__27,2026-04-16,Living descendant observed,1,27,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,27,0-0__2026-04-16__27,2026-06-08,Living descendant observed,1,21,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,27,0-0__2026-04-16__27,2026-08-06,Living descendant observed,1,21,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,27,0-0__2026-04-16__27,2026-11-03,Living descendant observed,1,22,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,28,0-0__2026-04-16__28,2026-04-16,Living descendant observed,1,28,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,28,0-0__2026-04-16__28,2026-06-08,Living descendant observed,1,22,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,28,0-0__2026-04-16__28,2026-08-06,Living descendant observed,1,22,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,28,0-0__2026-04-16__28,2026-11-03,Living descendant observed,1,23,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,34,0-0__2026-04-16__34,2026-04-16,Living descendant observed,1,34,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,34,0-0__2026-04-16__34,2026-06-08,Living descendant observed,1,28,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,34,0-0__2026-04-16__34,2026-08-06,Living descendant observed,1,28,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,34,0-0__2026-04-16__34,2026-11-03,Living descendant observed,1,29,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,35,0-0__2026-04-16__35,2026-04-16,Living descendant observed,1,35,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,35,0-0__2026-04-16__35,2026-06-08,Living descendant observed,1,29,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,35,0-0__2026-04-16__35,2026-08-06,Living descendant observed,1,29,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,35,0-0__2026-04-16__35,2026-11-03,Living descendant observed,1,30,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,36,0-0__2026-04-16__36,2026-04-16,Living descendant observed,1,36,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,36,0-0__2026-04-16__36,2026-06-08,Living descendant observed,1,30,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,36,0-0__2026-04-16__36,2026-08-06,Living descendant observed,1,30,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,36,0-0__2026-04-16__36,2026-11-03,Living descendant observed,1,31,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,40,0-0__2026-04-16__40,2026-04-16,Living descendant observed,1,40,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,40,0-0__2026-04-16__40,2026-06-08,Living descendant observed,1,34,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,40,0-0__2026-04-16__40,2026-08-06,Living descendant observed,1,34,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,40,0-0__2026-04-16__40,2026-11-03,Living descendant observed,1,35,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,42,0-0__2026-04-16__42,2026-04-16,Living descendant observed,1,42,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,42,0-0__2026-04-16__42,2026-06-08,Living descendant observed,1,36,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,42,0-0__2026-04-16__42,2026-08-06,Living descendant observed,1,36,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,42,0-0__2026-04-16__42,2026-11-03,Living descendant observed,1,37,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,44,0-0__2026-04-16__44,2026-04-16,Living descendant observed,1,44,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,44,0-0__2026-04-16__44,2026-06-08,Living descendant observed,1,38,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,44,0-0__2026-04-16__44,2026-08-06,Living descendant observed,1,38,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,44,0-0__2026-04-16__44,2026-11-03,Living descendant observed,1,39,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,45,0-0__2026-04-16__45,2026-04-16,Living descendant observed,1,45,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,45,0-0__2026-04-16__45,2026-06-08,Living descendant observed,1,40,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,45,0-0__2026-04-16__45,2026-08-06,Living descendant observed,1,40,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,45,0-0__2026-04-16__45,2026-11-03,Living descendant observed,1,41,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,46,0-0__2026-04-16__46,2026-04-16,Living descendant observed,1,46,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,46,0-0__2026-04-16__46,2026-06-08,Living descendant observed,1,39,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,46,0-0__2026-04-16__46,2026-08-06,Living descendant observed,1,39,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,46,0-0__2026-04-16__46,2026-11-03,Living descendant observed,1,40,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,47,0-0__2026-04-16__47,2026-04-16,Living descendant observed,1,47,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,47,0-0__2026-04-16__47,2026-06-08,Living descendant observed,1,41,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,47,0-0__2026-04-16__47,2026-08-06,Living descendant observed,1,41,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,47,0-0__2026-04-16__47,2026-11-03,Living descendant observed,1,42,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,48,0-0__2026-04-16__48,2026-04-16,Living descendant observed,1,48,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,48,0-0__2026-04-16__48,2026-06-08,Living descendant observed,1,42,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,48,0-0__2026-04-16__48,2026-08-06,Living descendant observed,1,42,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,48,0-0__2026-04-16__48,2026-11-03,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,49,0-0__2026-04-16__49,2026-04-16,Living descendant observed,1,49,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,49,0-0__2026-04-16__49,2026-06-08,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,49,0-0__2026-04-16__49,2026-08-06,Living descendant observed,1,43,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,49,0-0__2026-04-16__49,2026-11-03,Living descendant observed,1,44,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,50,0-0__2026-04-16__50,2026-04-16,Living descendant observed,1,50,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,50,0-0__2026-04-16__50,2026-06-08,Living descendant observed,1,44,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,50,0-0__2026-04-16__50,2026-08-06,Living descendant observed,1,44,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,50,0-0__2026-04-16__50,2026-11-03,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,51,0-0__2026-04-16__51,2026-04-16,Living descendant observed,1,51,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,51,0-0__2026-04-16__51,2026-06-08,Living descendant observed,1,41,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,51,0-0__2026-04-16__51,2026-08-06,Living descendant observed,1,41,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,51,0-0__2026-04-16__51,2026-11-03,Living descendant observed,1,42,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,53,0-0__2026-04-16__53,2026-04-16,Living descendant observed,1,53,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,53,0-0__2026-04-16__53,2026-06-08,Living descendant observed,1,46,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,53,0-0__2026-04-16__53,2026-08-06,Living descendant observed,1,46,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,53,0-0__2026-04-16__53,2026-11-03,Living descendant observed,1,46,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,54,0-0__2026-04-16__54,2026-04-16,Living descendant observed,1,54,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,54,0-0__2026-04-16__54,2026-06-08,Living descendant observed,1,47,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,54,0-0__2026-04-16__54,2026-08-06,Living descendant observed,1,47,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,54,0-0__2026-04-16__54,2026-11-03,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,55,0-0__2026-04-16__55,2026-04-16,Living descendant observed,1,55,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,55,0-0__2026-04-16__55,2026-06-08,Living descendant observed,1,48,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,55,0-0__2026-04-16__55,2026-08-06,Living descendant observed,1,48,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,55,0-0__2026-04-16__55,2026-11-03,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,56,0-0__2026-04-16__56,2026-04-16,Living descendant observed,1,56,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,56,0-0__2026-04-16__56,2026-06-08,Living descendant observed,1,49,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,56,0-0__2026-04-16__56,2026-08-06,Living descendant observed,1,49,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,56,0-0__2026-04-16__56,2026-11-03,Living descendant observed,1,160,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,57,0-0__2026-04-16__57,2026-04-16,Living descendant observed,1,57,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,57,0-0__2026-04-16__57,2026-06-08,Living descendant observed,1,50,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,57,0-0__2026-04-16__57,2026-08-06,Living descendant observed,1,50,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,57,0-0__2026-04-16__57,2026-11-03,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,58,0-0__2026-04-16__58,2026-04-16,Living descendant observed,1,58,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,58,0-0__2026-04-16__58,2026-06-08,Living descendant observed,1,51,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,58,0-0__2026-04-16__58,2026-08-06,Living descendant observed,1,51,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,58,0-0__2026-04-16__58,2026-11-03,Living descendant observed,1,47,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,59,0-0__2026-04-16__59,2026-04-16,Living descendant observed,1,59,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,59,0-0__2026-04-16__59,2026-06-08,Living descendant observed,1,52,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,59,0-0__2026-04-16__59,2026-08-06,Living descendant observed,1,52,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,59,0-0__2026-04-16__59,2026-11-03,Living descendant observed,1,48,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,60,0-0__2026-04-16__60,2026-04-16,Living descendant observed,1,60,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,60,0-0__2026-04-16__60,2026-06-08,Living descendant observed,1,53,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,60,0-0__2026-04-16__60,2026-08-06,Living descendant observed,1,53,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,60,0-0__2026-04-16__60,2026-11-03,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,61,0-0__2026-04-16__61,2026-04-16,Living descendant observed,1,61,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,61,0-0__2026-04-16__61,2026-06-08,Living descendant observed,1,54,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,61,0-0__2026-04-16__61,2026-08-06,Living descendant observed,1,54,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,61,0-0__2026-04-16__61,2026-11-03,Living descendant observed,1,49,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,62,0-0__2026-04-16__62,2026-04-16,Living descendant observed,1,62,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,62,0-0__2026-04-16__62,2026-06-08,Living descendant observed,1,55,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,62,0-0__2026-04-16__62,2026-08-06,Living descendant observed,1,55,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,62,0-0__2026-04-16__62,2026-11-03,Living descendant observed,1,50,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,64,0-0__2026-04-16__64,2026-04-16,Living descendant observed,1,64,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,64,0-0__2026-04-16__64,2026-06-08,Living descendant observed,1,57,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,64,0-0__2026-04-16__64,2026-08-06,Living descendant observed,1,57,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,64,0-0__2026-04-16__64,2026-11-03,Living descendant observed,1,52,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,75,0-0__2026-04-16__75,2026-04-16,Living descendant observed,1,75,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,75,0-0__2026-04-16__75,2026-06-08,Living descendant observed,1,66,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,75,0-0__2026-04-16__75,2026-08-06,Living descendant observed,1,65,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,75,0-0__2026-04-16__75,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,84,0-0__2026-04-16__84,2026-04-16,Living descendant observed,1,84,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,84,0-0__2026-04-16__84,2026-06-08,Living descendant observed,1,71,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,84,0-0__2026-04-16__84,2026-08-06,Living descendant observed,1,71,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,84,0-0__2026-04-16__84,2026-11-03,Living descendant observed,1,65,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,92,0-0__2026-04-16__92,2026-04-16,Living descendant observed,1,92,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,92,0-0__2026-04-16__92,2026-06-08,Living descendant observed,1,78,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,92,0-0__2026-04-16__92,2026-08-06,Living descendant observed,1,78,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,92,0-0__2026-04-16__92,2026-11-03,Living descendant observed,1,72,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,99,0-0__2026-04-16__99,2026-04-16,Living descendant observed,1,99,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,99,0-0__2026-04-16__99,2026-06-08,Living descendant observed,1,83,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,99,0-0__2026-04-16__99,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,99,0-0__2026-04-16__99,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,105,0-0__2026-04-16__105,2026-04-16,Living descendant observed,1,105,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,105,0-0__2026-04-16__105,2026-06-08,Living descendant observed,1,89,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,105,0-0__2026-04-16__105,2026-08-06,Living descendant observed,1,89,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,105,0-0__2026-04-16__105,2026-11-03,Living descendant observed,1,83,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,124,0-0__2026-04-16__124,2026-04-16,Living descendant observed,1,124,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,124,0-0__2026-04-16__124,2026-06-08,Living descendant observed,1,106,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,124,0-0__2026-04-16__124,2026-08-06,Living descendant observed,1,104,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,124,0-0__2026-04-16__124,2026-11-03,Living descendant observed,1,100,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,132,0-0__2026-04-16__132,2026-04-16,Living descendant observed,1,132,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,132,0-0__2026-04-16__132,2026-06-08,Living descendant observed,1,112,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,132,0-0__2026-04-16__132,2026-08-06,Living descendant observed,1,110,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,132,0-0__2026-04-16__132,2026-11-03,Living descendant observed,1,106,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,134,0-0__2026-04-16__134,2026-04-16,Living descendant observed,1,134,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,134,0-0__2026-04-16__134,2026-06-08,Living descendant observed,1,114,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,134,0-0__2026-04-16__134,2026-08-06,Living descendant observed,1,112,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,134,0-0__2026-04-16__134,2026-11-03,Living descendant observed,1,107,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,145,0-0__2026-04-16__145,2026-04-16,Living descendant observed,1,145,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,145,0-0__2026-04-16__145,2026-06-08,Living descendant observed,1,126,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,145,0-0__2026-04-16__145,2026-08-06,Living descendant observed,1,123,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,145,0-0__2026-04-16__145,2026-11-03,Living descendant observed,1,117,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,146,0-0__2026-04-16__146,2026-04-16,Living descendant observed,1,146,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,146,0-0__2026-04-16__146,2026-06-08,Living descendant observed,1,128,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,146,0-0__2026-04-16__146,2026-08-06,Living descendant observed,1,125,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,146,0-0__2026-04-16__146,2026-11-03,Living descendant observed,1,119,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,148,0-0__2026-04-16__148,2026-04-16,Living descendant observed,1,148,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,148,0-0__2026-04-16__148,2026-06-08,Living descendant observed,1,130,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,148,0-0__2026-04-16__148,2026-08-06,Living descendant observed,1,128,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,148,0-0__2026-04-16__148,2026-11-03,Living descendant observed,1,121,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,151,0-0__2026-04-16__151,2026-04-16,Living descendant observed,1,151,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,151,0-0__2026-04-16__151,2026-06-08,Living descendant observed,1,131,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,151,0-0__2026-04-16__151,2026-08-06,Living descendant observed,1,127,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,151,0-0__2026-04-16__151,2026-11-03,Living descendant observed,1,123,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,153,0-0__2026-04-16__153,2026-04-16,Living descendant observed,1,153,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,153,0-0__2026-04-16__153,2026-06-08,Living descendant observed,1,134,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,153,0-0__2026-04-16__153,2026-08-06,Living descendant observed,1,132,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,153,0-0__2026-04-16__153,2026-11-03,Living descendant observed,1,126,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,155,0-0__2026-04-16__155,2026-04-16,Living descendant observed,1,155,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,155,0-0__2026-04-16__155,2026-06-08,Living descendant observed,1,136,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,155,0-0__2026-04-16__155,2026-08-06,Living descendant observed,1,133,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,155,0-0__2026-04-16__155,2026-11-03,Living descendant observed,1,128,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,156,0-0__2026-04-16__156,2026-04-16,Living descendant observed,1,156,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,156,0-0__2026-04-16__156,2026-06-08,Living descendant observed,1,137,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,156,0-0__2026-04-16__156,2026-08-06,Living descendant observed,1,134,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,156,0-0__2026-04-16__156,2026-11-03,Living descendant observed,1,129,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,170,0-0__2026-04-16__170,2026-04-16,Living descendant observed,1,170,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,170,0-0__2026-04-16__170,2026-06-08,Living descendant observed,1,149,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,170,0-0__2026-04-16__170,2026-08-06,Living descendant observed,1,146,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,170,0-0__2026-04-16__170,2026-11-03,Living descendant observed,1,143,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,194,0-0__2026-04-16__194,2026-04-16,Living descendant observed,1,194,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,194,0-0__2026-04-16__194,2026-06-08,Living descendant observed,1,171,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,194,0-0__2026-04-16__194,2026-08-06,Living descendant observed,1,164,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,194,0-0__2026-04-16__194,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,200,0-0__2026-04-16__200,2026-04-16,Living descendant observed,1,200,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,200,0-0__2026-04-16__200,2026-06-08,Living descendant observed,1,176,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,200,0-0__2026-04-16__200,2026-08-06,Living descendant observed,1,168,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,200,0-0__2026-04-16__200,2026-11-03,Living descendant observed,1,153,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,201,0-0__2026-04-16__201,2026-04-16,Living descendant observed,1,201,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,201,0-0__2026-04-16__201,2026-06-08,Living descendant observed,1,175,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,201,0-0__2026-04-16__201,2026-08-06,Living descendant observed,1,167,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,201,0-0__2026-04-16__201,2026-11-03,Living descendant observed,1,152,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,227,0-0__2026-04-16__227,2026-04-16,Living descendant observed,1,227,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,227,0-0__2026-04-16__227,2026-06-08,Living descendant observed,1,194,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,227,0-0__2026-04-16__227,2026-08-06,Living descendant observed,1,181,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,227,0-0__2026-04-16__227,2026-11-03,Living descendant observed,1,157,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,72,0-0__2026-04-16__72,2026-04-16,Living descendant observed,1,72,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,72,0-0__2026-04-16__72,2026-06-08,Living descendant observed,1,64,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,72,0-0__2026-04-16__72,2026-08-06,Living descendant observed,1,64,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,72,0-0__2026-04-16__72,2026-11-03,Living descendant observed,3,59;60;63,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,73,0-0__2026-04-16__73,2026-04-16,Living descendant observed,1,73,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,73,0-0__2026-04-16__73,2026-06-08,Living descendant observed,1,64,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,73,0-0__2026-04-16__73,2026-08-06,Living descendant observed,1,64,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,73,0-0__2026-04-16__73,2026-11-03,Living descendant observed,3,59;60;63,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,79,0-0__2026-04-16__79,2026-04-16,Living descendant observed,1,79,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,79,0-0__2026-04-16__79,2026-06-08,Living descendant observed,1,64,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,79,0-0__2026-04-16__79,2026-08-06,Living descendant observed,1,64,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,79,0-0__2026-04-16__79,2026-11-03,Living descendant observed,3,59;60;63,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,10,0-0__2026-04-16__10,2026-04-16,Living descendant observed,1,10,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,10,0-0__2026-04-16__10,2026-06-08,Living descendant observed,1,6,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,10,0-0__2026-04-16__10,2026-08-06,Living descendant observed,1,6,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,10,0-0__2026-04-16__10,2026-11-03,Living descendant observed,1,7,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,18,0-0__2026-04-16__18,2026-04-16,Living descendant observed,1,18,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,18,0-0__2026-04-16__18,2026-06-08,Living descendant observed,1,12,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,18,0-0__2026-04-16__18,2026-08-06,Living descendant observed,1,12,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,18,0-0__2026-04-16__18,2026-11-03,Living descendant observed,1,13,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,31,0-0__2026-04-16__31,2026-04-16,Living descendant observed,1,31,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,31,0-0__2026-04-16__31,2026-06-08,Living descendant observed,1,25,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,31,0-0__2026-04-16__31,2026-08-06,Living descendant observed,1,26,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,31,0-0__2026-04-16__31,2026-11-03,Living descendant observed,1,26,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,37,0-0__2026-04-16__37,2026-04-16,Living descendant observed,1,37,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,37,0-0__2026-04-16__37,2026-06-08,Living descendant observed,1,31,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,37,0-0__2026-04-16__37,2026-08-06,Living descendant observed,1,31,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,37,0-0__2026-04-16__37,2026-11-03,Living descendant observed,1,32,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,38,0-0__2026-04-16__38,2026-04-16,Living descendant observed,1,38,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,38,0-0__2026-04-16__38,2026-06-08,Living descendant observed,1,32,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,38,0-0__2026-04-16__38,2026-08-06,Living descendant observed,1,32,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,38,0-0__2026-04-16__38,2026-11-03,Living descendant observed,1,33,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,39,0-0__2026-04-16__39,2026-04-16,Living descendant observed,1,39,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,39,0-0__2026-04-16__39,2026-06-08,Living descendant observed,1,33,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,39,0-0__2026-04-16__39,2026-08-06,Living descendant observed,1,33,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,39,0-0__2026-04-16__39,2026-11-03,Living descendant observed,1,34,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,41,0-0__2026-04-16__41,2026-04-16,Living descendant observed,1,41,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,41,0-0__2026-04-16__41,2026-06-08,Living descendant observed,1,35,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,41,0-0__2026-04-16__41,2026-08-06,Living descendant observed,1,35,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,41,0-0__2026-04-16__41,2026-11-03,Living descendant observed,1,36,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,52,0-0__2026-04-16__52,2026-04-16,Living descendant observed,1,52,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,52,0-0__2026-04-16__52,2026-06-08,Living descendant observed,1,45,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,52,0-0__2026-04-16__52,2026-08-06,Living descendant observed,1,45,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,52,0-0__2026-04-16__52,2026-11-03,Living descendant observed,1,45,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,63,0-0__2026-04-16__63,2026-04-16,Living descendant observed,1,63,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,63,0-0__2026-04-16__63,2026-06-08,Living descendant observed,1,56,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,63,0-0__2026-04-16__63,2026-08-06,Living descendant observed,1,56,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,63,0-0__2026-04-16__63,2026-11-03,Living descendant observed,1,51,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,65,0-0__2026-04-16__65,2026-04-16,Living descendant observed,1,65,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,65,0-0__2026-04-16__65,2026-06-08,Living descendant observed,1,58,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,65,0-0__2026-04-16__65,2026-08-06,Living descendant observed,1,58,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,65,0-0__2026-04-16__65,2026-11-03,Living descendant observed,1,53,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,66,0-0__2026-04-16__66,2026-04-16,Living descendant observed,1,66,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,66,0-0__2026-04-16__66,2026-06-08,Living descendant observed,1,59,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,66,0-0__2026-04-16__66,2026-08-06,Living descendant observed,1,59,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,66,0-0__2026-04-16__66,2026-11-03,Living descendant observed,1,54,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,67,0-0__2026-04-16__67,2026-04-16,Living descendant observed,1,67,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,67,0-0__2026-04-16__67,2026-06-08,Living descendant observed,1,60,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,67,0-0__2026-04-16__67,2026-08-06,Living descendant observed,1,60,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,67,0-0__2026-04-16__67,2026-11-03,Living descendant observed,1,55,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,71,0-0__2026-04-16__71,2026-04-16,Living descendant observed,1,71,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,71,0-0__2026-04-16__71,2026-06-08,Living descendant observed,1,63,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,71,0-0__2026-04-16__71,2026-08-06,Living descendant observed,1,63,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,71,0-0__2026-04-16__71,2026-11-03,Living descendant observed,1,57,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,78,0-0__2026-04-16__78,2026-04-16,Living descendant observed,1,78,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,78,0-0__2026-04-16__78,2026-06-08,Living descendant observed,1,68,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,78,0-0__2026-04-16__78,2026-08-06,Living descendant observed,1,68,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,78,0-0__2026-04-16__78,2026-11-03,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,91,0-0__2026-04-16__91,2026-04-16,Living descendant observed,1,91,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,91,0-0__2026-04-16__91,2026-06-08,Living descendant observed,1,198,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,91,0-0__2026-04-16__91,2026-08-06,Living descendant observed,1,184,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,91,0-0__2026-04-16__91,2026-11-03,Living descendant observed,1,71,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,93,0-0__2026-04-16__93,2026-04-16,Living descendant observed,1,93,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,93,0-0__2026-04-16__93,2026-06-08,Living descendant observed,1,77,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,93,0-0__2026-04-16__93,2026-08-06,Living descendant observed,1,77,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,93,0-0__2026-04-16__93,2026-11-03,Living descendant observed,1,70,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,96,0-0__2026-04-16__96,2026-04-16,Living descendant observed,1,96,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,96,0-0__2026-04-16__96,2026-06-08,Living descendant observed,1,79,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,96,0-0__2026-04-16__96,2026-08-06,Living descendant observed,1,80,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,96,0-0__2026-04-16__96,2026-11-03,Living descendant observed,1,74,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,97,0-0__2026-04-16__97,2026-04-16,Living descendant observed,1,97,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,97,0-0__2026-04-16__97,2026-06-08,Living descendant observed,1,81,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,97,0-0__2026-04-16__97,2026-08-06,Living descendant observed,1,82,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,97,0-0__2026-04-16__97,2026-11-03,Living descendant observed,1,75,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,103,0-0__2026-04-16__103,2026-04-16,Living descendant observed,1,103,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,103,0-0__2026-04-16__103,2026-06-08,Living descendant observed,1,86,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,103,0-0__2026-04-16__103,2026-08-06,Living descendant observed,1,87,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,103,0-0__2026-04-16__103,2026-11-03,Living descendant observed,1,81,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,106,0-0__2026-04-16__106,2026-04-16,Living descendant observed,1,106,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,106,0-0__2026-04-16__106,2026-06-08,Living descendant observed,1,91,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,106,0-0__2026-04-16__106,2026-08-06,Living descendant observed,1,90,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,106,0-0__2026-04-16__106,2026-11-03,Living descendant observed,1,82,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,113,0-0__2026-04-16__113,2026-04-16,Living descendant observed,1,113,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,113,0-0__2026-04-16__113,2026-06-08,Living descendant observed,1,97,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,113,0-0__2026-04-16__113,2026-08-06,Living descendant observed,1,96,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,113,0-0__2026-04-16__113,2026-11-03,Living descendant observed,1,91,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,118,0-0__2026-04-16__118,2026-04-16,Living descendant observed,1,118,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,118,0-0__2026-04-16__118,2026-06-08,Living descendant observed,1,102,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,118,0-0__2026-04-16__118,2026-08-06,Living descendant observed,1,100,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,118,0-0__2026-04-16__118,2026-11-03,Living descendant observed,1,96,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,129,0-0__2026-04-16__129,2026-04-16,Living descendant observed,1,129,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,129,0-0__2026-04-16__129,2026-06-08,Living descendant observed,1,111,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,129,0-0__2026-04-16__129,2026-08-06,Living descendant observed,1,108,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,129,0-0__2026-04-16__129,2026-11-03,Living descendant observed,1,103,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,130,0-0__2026-04-16__130,2026-04-16,Living descendant observed,1,130,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,130,0-0__2026-04-16__130,2026-06-08,Living descendant observed,1,110,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,130,0-0__2026-04-16__130,2026-08-06,Living descendant observed,1,109,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,130,0-0__2026-04-16__130,2026-11-03,Living descendant observed,1,104,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,139,0-0__2026-04-16__139,2026-04-16,Living descendant observed,1,139,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,139,0-0__2026-04-16__139,2026-06-08,Living descendant observed,1,120,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,139,0-0__2026-04-16__139,2026-08-06,Living descendant observed,1,118,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,139,0-0__2026-04-16__139,2026-11-03,Living descendant observed,1,112,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,140,0-0__2026-04-16__140,2026-04-16,Living descendant observed,1,140,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,140,0-0__2026-04-16__140,2026-06-08,Living descendant observed,1,121,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,140,0-0__2026-04-16__140,2026-08-06,Living descendant observed,1,119,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,140,0-0__2026-04-16__140,2026-11-03,Living descendant observed,1,114,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,141,0-0__2026-04-16__141,2026-04-16,Living descendant observed,1,141,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,141,0-0__2026-04-16__141,2026-06-08,Living descendant observed,1,122,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,141,0-0__2026-04-16__141,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,141,0-0__2026-04-16__141,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,149,0-0__2026-04-16__149,2026-04-16,Living descendant observed,1,149,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,149,0-0__2026-04-16__149,2026-06-08,Living descendant observed,1,129,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,149,0-0__2026-04-16__149,2026-08-06,Living descendant observed,1,126,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,149,0-0__2026-04-16__149,2026-11-03,Living descendant observed,1,122,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,166,0-0__2026-04-16__166,2026-04-16,Living descendant observed,1,166,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,166,0-0__2026-04-16__166,2026-06-08,Living descendant observed,1,147,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,166,0-0__2026-04-16__166,2026-08-06,Living descendant observed,1,144,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,166,0-0__2026-04-16__166,2026-11-03,Living descendant observed,2,139;140,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,175,0-0__2026-04-16__175,2026-04-16,Living descendant observed,1,175,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,175,0-0__2026-04-16__175,2026-06-08,Living descendant observed,1,153,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,175,0-0__2026-04-16__175,2026-08-06,Living descendant observed,1,150,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,175,0-0__2026-04-16__175,2026-11-03,Living descendant observed,1,147,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,176,0-0__2026-04-16__176,2026-04-16,Living descendant observed,1,176,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,176,0-0__2026-04-16__176,2026-06-08,Living descendant observed,1,154,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,176,0-0__2026-04-16__176,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,176,0-0__2026-04-16__176,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,177,0-0__2026-04-16__177,2026-04-16,Living descendant observed,1,177,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,177,0-0__2026-04-16__177,2026-06-08,Living descendant observed,1,155,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,177,0-0__2026-04-16__177,2026-08-06,Living descendant observed,1,151,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,177,0-0__2026-04-16__177,2026-11-03,Living descendant observed,1,148,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,184,0-0__2026-04-16__184,2026-04-16,Living descendant observed,1,184,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,184,0-0__2026-04-16__184,2026-06-08,Living descendant observed,1,160,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,184,0-0__2026-04-16__184,2026-08-06,Living descendant observed,1,157,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,184,0-0__2026-04-16__184,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,187,0-0__2026-04-16__187,2026-04-16,Living descendant observed,1,187,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,187,0-0__2026-04-16__187,2026-06-08,Living descendant observed,1,163,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,187,0-0__2026-04-16__187,2026-08-06,Living descendant observed,1,159,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,187,0-0__2026-04-16__187,2026-11-03,Living descendant observed,1,151,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,188,0-0__2026-04-16__188,2026-04-16,Living descendant observed,1,188,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,188,0-0__2026-04-16__188,2026-06-08,Living descendant observed,1,164,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,188,0-0__2026-04-16__188,2026-08-06,Living descendant observed,1,160,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,188,0-0__2026-04-16__188,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,189,0-0__2026-04-16__189,2026-04-16,Living descendant observed,1,189,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,189,0-0__2026-04-16__189,2026-06-08,Living descendant observed,1,166,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,189,0-0__2026-04-16__189,2026-08-06,Living descendant observed,1,162,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,189,0-0__2026-04-16__189,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,190,0-0__2026-04-16__190,2026-04-16,Living descendant observed,1,190,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,190,0-0__2026-04-16__190,2026-06-08,Living descendant observed,1,167,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,190,0-0__2026-04-16__190,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,190,0-0__2026-04-16__190,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,191,0-0__2026-04-16__191,2026-04-16,Living descendant observed,1,191,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,191,0-0__2026-04-16__191,2026-06-08,Living descendant observed,1,168,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,191,0-0__2026-04-16__191,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,191,0-0__2026-04-16__191,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,195,0-0__2026-04-16__195,2026-04-16,Living descendant observed,1,195,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,195,0-0__2026-04-16__195,2026-06-08,Living descendant observed,1,170,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,195,0-0__2026-04-16__195,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,195,0-0__2026-04-16__195,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,196,0-0__2026-04-16__196,2026-04-16,Living descendant observed,1,196,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,196,0-0__2026-04-16__196,2026-06-08,Living descendant observed,1,173,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,196,0-0__2026-04-16__196,2026-08-06,Living descendant observed,1,166,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,196,0-0__2026-04-16__196,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,202,0-0__2026-04-16__202,2026-04-16,Living descendant observed,1,202,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,202,0-0__2026-04-16__202,2026-06-08,Living descendant observed,1,177,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,202,0-0__2026-04-16__202,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,202,0-0__2026-04-16__202,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,205,0-0__2026-04-16__205,2026-04-16,Living descendant observed,1,205,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,205,0-0__2026-04-16__205,2026-06-08,Living descendant observed,1,179,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,205,0-0__2026-04-16__205,2026-08-06,Living descendant observed,1,170,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,205,0-0__2026-04-16__205,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,207,0-0__2026-04-16__207,2026-04-16,Living descendant observed,1,207,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,207,0-0__2026-04-16__207,2026-06-08,Living descendant observed,1,182,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,207,0-0__2026-04-16__207,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,207,0-0__2026-04-16__207,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,222,0-0__2026-04-16__222,2026-04-16,Living descendant observed,1,222,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,222,0-0__2026-04-16__222,2026-06-08,Living descendant observed,1,192,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,222,0-0__2026-04-16__222,2026-08-06,Living descendant observed,1,180,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,222,0-0__2026-04-16__222,2026-11-03,Living descendant observed,1,156,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,231,0-0__2026-04-16__231,2026-04-16,Living descendant observed,1,231,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,231,0-0__2026-04-16__231,2026-06-08,Living descendant observed,1,195,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,231,0-0__2026-04-16__231,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,231,0-0__2026-04-16__231,2026-11-03,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,5,0-0__2026-04-16__5,2026-04-16,Living descendant observed,1,5,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,5,0-0__2026-04-16__5,2026-06-08,Living descendant observed,1,197,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,5,0-0__2026-04-16__5,2026-08-06,Living descendant observed,1,182,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,5,0-0__2026-04-16__5,2026-11-03,Living descendant observed,1,1,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,15,0-0__2026-04-16__15,2026-04-16,Living descendant observed,1,15,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,15,0-0__2026-04-16__15,2026-06-08,Living descendant observed,1,9,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,15,0-0__2026-04-16__15,2026-08-06,Living descendant observed,1,9,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,15,0-0__2026-04-16__15,2026-11-03,Living descendant observed,1,10,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,20,0-0__2026-04-16__20,2026-04-16,Living descendant observed,1,20,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,20,0-0__2026-04-16__20,2026-06-08,Living descendant observed,1,14,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,20,0-0__2026-04-16__20,2026-08-06,Living descendant observed,1,14,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,20,0-0__2026-04-16__20,2026-11-03,Living descendant observed,1,15,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,25,0-0__2026-04-16__25,2026-04-16,Living descendant observed,1,25,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,25,0-0__2026-04-16__25,2026-06-08,Living descendant observed,1,18,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,25,0-0__2026-04-16__25,2026-08-06,Living descendant observed,1,18,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,25,0-0__2026-04-16__25,2026-11-03,Living descendant observed,1,19,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,26,0-0__2026-04-16__26,2026-04-16,Living descendant observed,1,26,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,26,0-0__2026-04-16__26,2026-06-08,Living descendant observed,1,20,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,26,0-0__2026-04-16__26,2026-08-06,Living descendant observed,1,20,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,26,0-0__2026-04-16__26,2026-11-03,Living descendant observed,1,21,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,29,0-0__2026-04-16__29,2026-04-16,Living descendant observed,1,29,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,29,0-0__2026-04-16__29,2026-06-08,Living descendant observed,1,23,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,29,0-0__2026-04-16__29,2026-08-06,Living descendant observed,1,23,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,29,0-0__2026-04-16__29,2026-11-03,Living descendant observed,1,24,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,30,0-0__2026-04-16__30,2026-04-16,Living descendant observed,1,30,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,30,0-0__2026-04-16__30,2026-06-08,Living descendant observed,1,24,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,30,0-0__2026-04-16__30,2026-08-06,Living descendant observed,1,24,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,30,0-0__2026-04-16__30,2026-11-03,Living descendant observed,1,25,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,32,0-0__2026-04-16__32,2026-04-16,Living descendant observed,1,32,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,32,0-0__2026-04-16__32,2026-06-08,Living descendant observed,1,26,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,32,0-0__2026-04-16__32,2026-08-06,Living descendant observed,1,27,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,32,0-0__2026-04-16__32,2026-11-03,Living descendant observed,1,27,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,33,0-0__2026-04-16__33,2026-04-16,Living descendant observed,1,33,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,33,0-0__2026-04-16__33,2026-06-08,Living descendant observed,1,27,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,33,0-0__2026-04-16__33,2026-08-06,Living descendant observed,1,25,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,33,0-0__2026-04-16__33,2026-11-03,Living descendant observed,1,28,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,43,0-0__2026-04-16__43,2026-04-16,Living descendant observed,1,43,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,43,0-0__2026-04-16__43,2026-06-08,Living descendant observed,1,37,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,43,0-0__2026-04-16__43,2026-08-06,Living descendant observed,1,37,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,43,0-0__2026-04-16__43,2026-11-03,Living descendant observed,1,38,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,68,0-0__2026-04-16__68,2026-04-16,Living descendant observed,1,68,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,68,0-0__2026-04-16__68,2026-06-08,Living descendant observed,1,61,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,68,0-0__2026-04-16__68,2026-08-06,Living descendant observed,1,61,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,68,0-0__2026-04-16__68,2026-11-03,Living descendant observed,1,56,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,69,0-0__2026-04-16__69,2026-04-16,Living descendant observed,1,69,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,69,0-0__2026-04-16__69,2026-06-08,Living descendant observed,1,62,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,69,0-0__2026-04-16__69,2026-08-06,Living descendant observed,1,62,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,69,0-0__2026-04-16__69,2026-11-03,Living descendant observed,1,58,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,74,0-0__2026-04-16__74,2026-04-16,Living descendant observed,1,74,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,74,0-0__2026-04-16__74,2026-06-08,Living descendant observed,1,65,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,74,0-0__2026-04-16__74,2026-08-06,Living descendant observed,1,66,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,74,0-0__2026-04-16__74,2026-11-03,Living descendant observed,1,62,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,76,0-0__2026-04-16__76,2026-04-16,Living descendant observed,1,76,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,76,0-0__2026-04-16__76,2026-06-08,Living descendant observed,1,67,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,76,0-0__2026-04-16__76,2026-08-06,Living descendant observed,1,69,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,76,0-0__2026-04-16__76,2026-11-03,Living descendant observed,1,61,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,77,0-0__2026-04-16__77,2026-04-16,Living descendant observed,1,77,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,77,0-0__2026-04-16__77,2026-06-08,Living descendant observed,1,69,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,77,0-0__2026-04-16__77,2026-08-06,Living descendant observed,1,67,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,77,0-0__2026-04-16__77,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,80,0-0__2026-04-16__80,2026-04-16,Living descendant observed,1,80,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,80,0-0__2026-04-16__80,2026-06-08,Living descendant observed,1,70,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,80,0-0__2026-04-16__80,2026-08-06,Living descendant observed,1,70,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,80,0-0__2026-04-16__80,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,85,0-0__2026-04-16__85,2026-04-16,Living descendant observed,1,85,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,85,0-0__2026-04-16__85,2026-06-08,Living descendant observed,1,72,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,85,0-0__2026-04-16__85,2026-08-06,Living descendant observed,1,72,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,85,0-0__2026-04-16__85,2026-11-03,Living descendant observed,1,68,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,86,0-0__2026-04-16__86,2026-04-16,Living descendant observed,1,86,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,86,0-0__2026-04-16__86,2026-06-08,Living descendant observed,1,73,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,86,0-0__2026-04-16__86,2026-08-06,Living descendant observed,1,73,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,86,0-0__2026-04-16__86,2026-11-03,Living descendant observed,1,64,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,87,0-0__2026-04-16__87,2026-04-16,Living descendant observed,1,87,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,87,0-0__2026-04-16__87,2026-06-08,Living descendant observed,1,199,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,87,0-0__2026-04-16__87,2026-08-06,Living descendant observed,1,183,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,87,0-0__2026-04-16__87,2026-11-03,Living descendant observed,1,67,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,88,0-0__2026-04-16__88,2026-04-16,Living descendant observed,1,88,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,88,0-0__2026-04-16__88,2026-06-08,Living descendant observed,1,74,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,88,0-0__2026-04-16__88,2026-08-06,Living descendant observed,1,74,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,88,0-0__2026-04-16__88,2026-11-03,Living descendant observed,1,66,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,89,0-0__2026-04-16__89,2026-04-16,Living descendant observed,1,89,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,89,0-0__2026-04-16__89,2026-06-08,Living descendant observed,1,76,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,89,0-0__2026-04-16__89,2026-08-06,Living descendant observed,1,75,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,89,0-0__2026-04-16__89,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,90,0-0__2026-04-16__90,2026-04-16,Living descendant observed,1,90,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,90,0-0__2026-04-16__90,2026-06-08,Living descendant observed,1,75,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,90,0-0__2026-04-16__90,2026-08-06,Living descendant observed,1,76,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,90,0-0__2026-04-16__90,2026-11-03,Living descendant observed,1,69,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,95,0-0__2026-04-16__95,2026-04-16,Living descendant observed,1,95,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,95,0-0__2026-04-16__95,2026-06-08,Living descendant observed,1,80,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,95,0-0__2026-04-16__95,2026-08-06,Living descendant observed,1,79,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,95,0-0__2026-04-16__95,2026-11-03,Living descendant observed,1,73,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,98,0-0__2026-04-16__98,2026-04-16,Living descendant observed,1,98,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,98,0-0__2026-04-16__98,2026-06-08,Living descendant observed,1,82,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,98,0-0__2026-04-16__98,2026-08-06,Living descendant observed,1,81,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,98,0-0__2026-04-16__98,2026-11-03,Living descendant observed,1,77,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,100,0-0__2026-04-16__100,2026-04-16,Living descendant observed,1,100,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,100,0-0__2026-04-16__100,2026-06-08,Living descendant observed,1,84,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,100,0-0__2026-04-16__100,2026-08-06,Living descendant observed,1,83,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,100,0-0__2026-04-16__100,2026-11-03,Living descendant observed,1,78,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,101,0-0__2026-04-16__101,2026-04-16,Living descendant observed,1,101,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,101,0-0__2026-04-16__101,2026-06-08,Living descendant observed,1,85,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,101,0-0__2026-04-16__101,2026-08-06,Living descendant observed,1,85,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,101,0-0__2026-04-16__101,2026-11-03,Living descendant observed,1,79,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,102,0-0__2026-04-16__102,2026-04-16,Living descendant observed,1,102,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,102,0-0__2026-04-16__102,2026-06-08,Living descendant observed,1,87,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,102,0-0__2026-04-16__102,2026-08-06,Living descendant observed,1,84,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,102,0-0__2026-04-16__102,2026-11-03,Living descendant observed,1,80,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,104,0-0__2026-04-16__104,2026-04-16,Living descendant observed,1,104,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,104,0-0__2026-04-16__104,2026-06-08,Living descendant observed,1,88,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,104,0-0__2026-04-16__104,2026-08-06,Living descendant observed,1,86,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,104,0-0__2026-04-16__104,2026-11-03,Living descendant observed,1,85,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,107,0-0__2026-04-16__107,2026-04-16,Living descendant observed,1,107,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,107,0-0__2026-04-16__107,2026-06-08,Living descendant observed,1,90,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,107,0-0__2026-04-16__107,2026-08-06,Living descendant observed,1,88,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,107,0-0__2026-04-16__107,2026-11-03,Living descendant observed,1,84,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,108,0-0__2026-04-16__108,2026-04-16,Living descendant observed,1,108,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,108,0-0__2026-04-16__108,2026-06-08,Living descendant observed,1,93,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,108,0-0__2026-04-16__108,2026-08-06,Living descendant observed,1,91,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,108,0-0__2026-04-16__108,2026-11-03,Living descendant observed,1,86,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,109,0-0__2026-04-16__109,2026-04-16,Living descendant observed,1,109,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,109,0-0__2026-04-16__109,2026-06-08,Living descendant observed,1,94,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,109,0-0__2026-04-16__109,2026-08-06,Living descendant observed,1,93,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,109,0-0__2026-04-16__109,2026-11-03,Living descendant observed,1,89,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,110,0-0__2026-04-16__110,2026-04-16,Living descendant observed,1,110,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,110,0-0__2026-04-16__110,2026-06-08,Living descendant observed,1,92,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,110,0-0__2026-04-16__110,2026-08-06,Living descendant observed,1,92,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,110,0-0__2026-04-16__110,2026-11-03,Living descendant observed,1,87,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,111,0-0__2026-04-16__111,2026-04-16,Living descendant observed,1,111,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,111,0-0__2026-04-16__111,2026-06-08,Living descendant observed,1,95,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,111,0-0__2026-04-16__111,2026-08-06,Living descendant observed,1,94,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,111,0-0__2026-04-16__111,2026-11-03,Living descendant observed,1,85,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,112,0-0__2026-04-16__112,2026-04-16,Living descendant observed,1,112,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,112,0-0__2026-04-16__112,2026-06-08,Living descendant observed,1,96,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,112,0-0__2026-04-16__112,2026-08-06,Living descendant observed,1,95,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,112,0-0__2026-04-16__112,2026-11-03,Living descendant observed,1,88,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,114,0-0__2026-04-16__114,2026-04-16,Living descendant observed,1,114,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,114,0-0__2026-04-16__114,2026-06-08,Living descendant observed,1,101,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,114,0-0__2026-04-16__114,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,114,0-0__2026-04-16__114,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,115,0-0__2026-04-16__115,2026-04-16,Living descendant observed,1,115,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,115,0-0__2026-04-16__115,2026-06-08,Living descendant observed,1,98,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,115,0-0__2026-04-16__115,2026-08-06,Living descendant observed,1,99,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,115,0-0__2026-04-16__115,2026-11-03,Living descendant observed,1,93,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,116,0-0__2026-04-16__116,2026-04-16,Living descendant observed,1,116,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,116,0-0__2026-04-16__116,2026-06-08,Living descendant observed,1,99,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,116,0-0__2026-04-16__116,2026-08-06,Living descendant observed,1,97,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,116,0-0__2026-04-16__116,2026-11-03,Living descendant observed,1,92,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,117,0-0__2026-04-16__117,2026-04-16,Living descendant observed,1,117,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,117,0-0__2026-04-16__117,2026-06-08,Living descendant observed,1,100,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,117,0-0__2026-04-16__117,2026-08-06,Living descendant observed,1,98,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,117,0-0__2026-04-16__117,2026-11-03,Living descendant observed,1,95,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,119,0-0__2026-04-16__119,2026-04-16,Living descendant observed,1,119,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,119,0-0__2026-04-16__119,2026-06-08,Living descendant observed,1,103,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,119,0-0__2026-04-16__119,2026-08-06,Living descendant observed,1,101,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,119,0-0__2026-04-16__119,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,121,0-0__2026-04-16__121,2026-04-16,Living descendant observed,1,121,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,121,0-0__2026-04-16__121,2026-06-08,Living descendant observed,1,104,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,121,0-0__2026-04-16__121,2026-08-06,Living descendant observed,1,102,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,121,0-0__2026-04-16__121,2026-11-03,Living descendant observed,1,97,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,123,0-0__2026-04-16__123,2026-04-16,Living descendant observed,1,123,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,123,0-0__2026-04-16__123,2026-06-08,Living descendant observed,1,105,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,123,0-0__2026-04-16__123,2026-08-06,Living descendant observed,1,103,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,123,0-0__2026-04-16__123,2026-11-03,Living descendant observed,1,99,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,125,0-0__2026-04-16__125,2026-04-16,Living descendant observed,1,125,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,125,0-0__2026-04-16__125,2026-06-08,Living descendant observed,1,107,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,125,0-0__2026-04-16__125,2026-08-06,Living descendant observed,1,105,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,125,0-0__2026-04-16__125,2026-11-03,Living descendant observed,1,101,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,126,0-0__2026-04-16__126,2026-04-16,Living descendant observed,1,126,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,126,0-0__2026-04-16__126,2026-06-08,Living descendant observed,1,108,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,126,0-0__2026-04-16__126,2026-08-06,Living descendant observed,1,106,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,126,0-0__2026-04-16__126,2026-11-03,Living descendant observed,1,102,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,128,0-0__2026-04-16__128,2026-04-16,Living descendant observed,1,128,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,128,0-0__2026-04-16__128,2026-06-08,Living descendant observed,1,109,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,128,0-0__2026-04-16__128,2026-08-06,Living descendant observed,1,107,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,128,0-0__2026-04-16__128,2026-11-03,Living descendant observed,1,94,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,131,0-0__2026-04-16__131,2026-04-16,Living descendant observed,1,131,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,131,0-0__2026-04-16__131,2026-06-08,Living descendant observed,1,113,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,131,0-0__2026-04-16__131,2026-08-06,Living descendant observed,1,111,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,131,0-0__2026-04-16__131,2026-11-03,Living descendant observed,1,105,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,133,0-0__2026-04-16__133,2026-04-16,Living descendant observed,1,133,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,133,0-0__2026-04-16__133,2026-06-08,Living descendant observed,1,115,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,133,0-0__2026-04-16__133,2026-08-06,Living descendant observed,1,113,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,133,0-0__2026-04-16__133,2026-11-03,Living descendant observed,1,109,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,135,0-0__2026-04-16__135,2026-04-16,Living descendant observed,1,135,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,135,0-0__2026-04-16__135,2026-06-08,Living descendant observed,1,116,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,135,0-0__2026-04-16__135,2026-08-06,Living descendant observed,1,114,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,135,0-0__2026-04-16__135,2026-11-03,Living descendant observed,1,108,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,136,0-0__2026-04-16__136,2026-04-16,Living descendant observed,1,136,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,136,0-0__2026-04-16__136,2026-06-08,Living descendant observed,1,117,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,136,0-0__2026-04-16__136,2026-08-06,Living descendant observed,1,115,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,136,0-0__2026-04-16__136,2026-11-03,Living descendant observed,1,110,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,137,0-0__2026-04-16__137,2026-04-16,Living descendant observed,1,137,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,137,0-0__2026-04-16__137,2026-06-08,Living descendant observed,1,119,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,137,0-0__2026-04-16__137,2026-08-06,Living descendant observed,1,117,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,137,0-0__2026-04-16__137,2026-11-03,Living descendant observed,1,111,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,138,0-0__2026-04-16__138,2026-04-16,Living descendant observed,1,138,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,138,0-0__2026-04-16__138,2026-06-08,Living descendant observed,1,118,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,138,0-0__2026-04-16__138,2026-08-06,Living descendant observed,1,116,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,138,0-0__2026-04-16__138,2026-11-03,Living descendant observed,1,113,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,142,0-0__2026-04-16__142,2026-04-16,Living descendant observed,1,142,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,142,0-0__2026-04-16__142,2026-06-08,Living descendant observed,1,123,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,142,0-0__2026-04-16__142,2026-08-06,Living descendant observed,1,120,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,142,0-0__2026-04-16__142,2026-11-03,Living descendant observed,1,115,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,143,0-0__2026-04-16__143,2026-04-16,Living descendant observed,1,143,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,143,0-0__2026-04-16__143,2026-06-08,Living descendant observed,1,124,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,143,0-0__2026-04-16__143,2026-08-06,Living descendant observed,1,121,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,143,0-0__2026-04-16__143,2026-11-03,Living descendant observed,1,118,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,144,0-0__2026-04-16__144,2026-04-16,Living descendant observed,1,144,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,144,0-0__2026-04-16__144,2026-06-08,Living descendant observed,1,125,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,144,0-0__2026-04-16__144,2026-08-06,Living descendant observed,1,122,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,144,0-0__2026-04-16__144,2026-11-03,Living descendant observed,1,116,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,147,0-0__2026-04-16__147,2026-04-16,Living descendant observed,1,147,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,147,0-0__2026-04-16__147,2026-06-08,Living descendant observed,1,127,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,147,0-0__2026-04-16__147,2026-08-06,Living descendant observed,1,124,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,147,0-0__2026-04-16__147,2026-11-03,Living descendant observed,1,120,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,150,0-0__2026-04-16__150,2026-04-16,Living descendant observed,1,150,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,150,0-0__2026-04-16__150,2026-06-08,Living descendant observed,1,132,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,150,0-0__2026-04-16__150,2026-08-06,Living descendant observed,1,129,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,150,0-0__2026-04-16__150,2026-11-03,Living descendant observed,1,124,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,152,0-0__2026-04-16__152,2026-04-16,Living descendant observed,1,152,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,152,0-0__2026-04-16__152,2026-06-08,Living descendant observed,1,133,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,152,0-0__2026-04-16__152,2026-08-06,Living descendant observed,1,130,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,152,0-0__2026-04-16__152,2026-11-03,Living descendant observed,1,125,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,154,0-0__2026-04-16__154,2026-04-16,Living descendant observed,1,154,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,154,0-0__2026-04-16__154,2026-06-08,Living descendant observed,1,135,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,154,0-0__2026-04-16__154,2026-08-06,Living descendant observed,1,131,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,154,0-0__2026-04-16__154,2026-11-03,Living descendant observed,1,127,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,157,0-0__2026-04-16__157,2026-04-16,Living descendant observed,1,157,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,157,0-0__2026-04-16__157,2026-06-08,Living descendant observed,1,138,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,157,0-0__2026-04-16__157,2026-08-06,Living descendant observed,1,135,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,157,0-0__2026-04-16__157,2026-11-03,Living descendant observed,1,130,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,158,0-0__2026-04-16__158,2026-04-16,Living descendant observed,1,158,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,158,0-0__2026-04-16__158,2026-06-08,Living descendant observed,1,139,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,158,0-0__2026-04-16__158,2026-08-06,Living descendant observed,1,136,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,158,0-0__2026-04-16__158,2026-11-03,Living descendant observed,1,131,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,159,0-0__2026-04-16__159,2026-04-16,Living descendant observed,1,159,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,159,0-0__2026-04-16__159,2026-06-08,Living descendant observed,1,140,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,159,0-0__2026-04-16__159,2026-08-06,Living descendant observed,1,137,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,159,0-0__2026-04-16__159,2026-11-03,Living descendant observed,1,132,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,160,0-0__2026-04-16__160,2026-04-16,Living descendant observed,1,160,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,160,0-0__2026-04-16__160,2026-06-08,Living descendant observed,1,141,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,160,0-0__2026-04-16__160,2026-08-06,Living descendant observed,1,138,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,160,0-0__2026-04-16__160,2026-11-03,Living descendant observed,1,133,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,161,0-0__2026-04-16__161,2026-04-16,Living descendant observed,1,161,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,161,0-0__2026-04-16__161,2026-06-08,Living descendant observed,1,142,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,161,0-0__2026-04-16__161,2026-08-06,Living descendant observed,1,139,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,161,0-0__2026-04-16__161,2026-11-03,Living descendant observed,1,134,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,162,0-0__2026-04-16__162,2026-04-16,Living descendant observed,1,162,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,162,0-0__2026-04-16__162,2026-06-08,Living descendant observed,1,143,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,162,0-0__2026-04-16__162,2026-08-06,Living descendant observed,1,140,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,162,0-0__2026-04-16__162,2026-11-03,Living descendant observed,1,135,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,163,0-0__2026-04-16__163,2026-04-16,Living descendant observed,1,163,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,163,0-0__2026-04-16__163,2026-06-08,Living descendant observed,1,145,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,163,0-0__2026-04-16__163,2026-08-06,Living descendant observed,1,142,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,163,0-0__2026-04-16__163,2026-11-03,Living descendant observed,1,137,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,164,0-0__2026-04-16__164,2026-04-16,Living descendant observed,1,164,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,164,0-0__2026-04-16__164,2026-06-08,Living descendant observed,1,144,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,164,0-0__2026-04-16__164,2026-08-06,Living descendant observed,1,141,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,164,0-0__2026-04-16__164,2026-11-03,Living descendant observed,1,136,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,165,0-0__2026-04-16__165,2026-04-16,Living descendant observed,1,165,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,165,0-0__2026-04-16__165,2026-06-08,Living descendant observed,1,146,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,165,0-0__2026-04-16__165,2026-08-06,Living descendant observed,1,143,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,165,0-0__2026-04-16__165,2026-11-03,Living descendant observed,1,138,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,169,0-0__2026-04-16__169,2026-04-16,Living descendant observed,1,169,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,169,0-0__2026-04-16__169,2026-06-08,Living descendant observed,1,148,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,169,0-0__2026-04-16__169,2026-08-06,Living descendant observed,1,145,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,169,0-0__2026-04-16__169,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,171,0-0__2026-04-16__171,2026-04-16,Living descendant observed,1,171,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,171,0-0__2026-04-16__171,2026-06-08,Living descendant observed,1,150,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,171,0-0__2026-04-16__171,2026-08-06,Living descendant observed,1,147,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,171,0-0__2026-04-16__171,2026-11-03,Living descendant observed,3,141;142;144,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,173,0-0__2026-04-16__173,2026-04-16,Living descendant observed,1,173,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,173,0-0__2026-04-16__173,2026-06-08,Living descendant observed,1,151,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,173,0-0__2026-04-16__173,2026-08-06,Living descendant observed,1,148,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,173,0-0__2026-04-16__173,2026-11-03,Living descendant observed,1,143,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,174,0-0__2026-04-16__174,2026-04-16,Living descendant observed,1,174,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,174,0-0__2026-04-16__174,2026-06-08,Living descendant observed,1,152,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,174,0-0__2026-04-16__174,2026-08-06,Living descendant observed,1,149,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,174,0-0__2026-04-16__174,2026-11-03,Living descendant observed,2,145;146,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,178,0-0__2026-04-16__178,2026-04-16,Living descendant observed,1,178,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,178,0-0__2026-04-16__178,2026-06-08,Living descendant observed,1,156,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,178,0-0__2026-04-16__178,2026-08-06,Living descendant observed,1,152,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,178,0-0__2026-04-16__178,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,179,0-0__2026-04-16__179,2026-04-16,Living descendant observed,1,179,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,179,0-0__2026-04-16__179,2026-06-08,Living descendant observed,1,157,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,179,0-0__2026-04-16__179,2026-08-06,Living descendant observed,1,153,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,179,0-0__2026-04-16__179,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,181,0-0__2026-04-16__181,2026-04-16,Living descendant observed,1,181,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,181,0-0__2026-04-16__181,2026-06-08,Living descendant observed,1,158,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,181,0-0__2026-04-16__181,2026-08-06,Living descendant observed,1,154,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,181,0-0__2026-04-16__181,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,182,0-0__2026-04-16__182,2026-04-16,Living descendant observed,1,182,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,182,0-0__2026-04-16__182,2026-06-08,Living descendant observed,1,159,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,182,0-0__2026-04-16__182,2026-08-06,Living descendant observed,1,156,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,182,0-0__2026-04-16__182,2026-11-03,Living descendant observed,1,150,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,183,0-0__2026-04-16__183,2026-04-16,Living descendant observed,1,183,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,183,0-0__2026-04-16__183,2026-06-08,Living descendant observed,1,161,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,183,0-0__2026-04-16__183,2026-08-06,Living descendant observed,1,155,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,183,0-0__2026-04-16__183,2026-11-03,Living descendant observed,1,149,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,185,0-0__2026-04-16__185,2026-04-16,Living descendant observed,1,185,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,185,0-0__2026-04-16__185,2026-06-08,Living descendant observed,1,162,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,185,0-0__2026-04-16__185,2026-08-06,Living descendant observed,1,158,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,185,0-0__2026-04-16__185,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,186,0-0__2026-04-16__186,2026-04-16,Living descendant observed,1,186,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,186,0-0__2026-04-16__186,2026-06-08,Living descendant observed,1,165,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,186,0-0__2026-04-16__186,2026-08-06,Living descendant observed,1,161,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,186,0-0__2026-04-16__186,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,192,0-0__2026-04-16__192,2026-04-16,Living descendant observed,1,192,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,192,0-0__2026-04-16__192,2026-06-08,Living descendant observed,1,169,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,192,0-0__2026-04-16__192,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,192,0-0__2026-04-16__192,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,193,0-0__2026-04-16__193,2026-04-16,Living descendant observed,1,193,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,193,0-0__2026-04-16__193,2026-06-08,Living descendant observed,1,172,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,193,0-0__2026-04-16__193,2026-08-06,Living descendant observed,1,163,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,193,0-0__2026-04-16__193,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,197,0-0__2026-04-16__197,2026-04-16,Living descendant observed,1,197,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,197,0-0__2026-04-16__197,2026-06-08,Living descendant observed,1,174,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,197,0-0__2026-04-16__197,2026-08-06,Living descendant observed,1,165,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,197,0-0__2026-04-16__197,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,203,0-0__2026-04-16__203,2026-04-16,Living descendant observed,1,203,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,203,0-0__2026-04-16__203,2026-06-08,Living descendant observed,1,178,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,203,0-0__2026-04-16__203,2026-08-06,Living descendant observed,1,169,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,203,0-0__2026-04-16__203,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,204,0-0__2026-04-16__204,2026-04-16,Living descendant observed,1,204,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,204,0-0__2026-04-16__204,2026-06-08,Living descendant observed,1,180,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,204,0-0__2026-04-16__204,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,204,0-0__2026-04-16__204,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,206,0-0__2026-04-16__206,2026-04-16,Living descendant observed,1,206,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,206,0-0__2026-04-16__206,2026-06-08,Living descendant observed,1,181,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,206,0-0__2026-04-16__206,2026-08-06,Living descendant observed,1,171,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,206,0-0__2026-04-16__206,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,208,0-0__2026-04-16__208,2026-04-16,Living descendant observed,1,208,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,208,0-0__2026-04-16__208,2026-06-08,Living descendant observed,1,183,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,208,0-0__2026-04-16__208,2026-08-06,Living descendant observed,1,172,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,208,0-0__2026-04-16__208,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,210,0-0__2026-04-16__210,2026-04-16,Living descendant observed,1,210,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,210,0-0__2026-04-16__210,2026-06-08,Living descendant observed,1,184,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,210,0-0__2026-04-16__210,2026-08-06,Living descendant observed,1,173,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,210,0-0__2026-04-16__210,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,211,0-0__2026-04-16__211,2026-04-16,Living descendant observed,1,211,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,211,0-0__2026-04-16__211,2026-06-08,Living descendant observed,1,185,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,211,0-0__2026-04-16__211,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,211,0-0__2026-04-16__211,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,213,0-0__2026-04-16__213,2026-04-16,Living descendant observed,1,213,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,213,0-0__2026-04-16__213,2026-06-08,Living descendant observed,1,186,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,213,0-0__2026-04-16__213,2026-08-06,Living descendant observed,1,174,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,213,0-0__2026-04-16__213,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,215,0-0__2026-04-16__215,2026-04-16,Living descendant observed,1,215,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,215,0-0__2026-04-16__215,2026-06-08,Living descendant observed,1,187,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,215,0-0__2026-04-16__215,2026-08-06,Living descendant observed,1,175,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,215,0-0__2026-04-16__215,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,216,0-0__2026-04-16__216,2026-04-16,Living descendant observed,1,216,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,216,0-0__2026-04-16__216,2026-06-08,Living descendant observed,1,188,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,216,0-0__2026-04-16__216,2026-08-06,Living descendant observed,1,176,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,216,0-0__2026-04-16__216,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,219,0-0__2026-04-16__219,2026-04-16,Living descendant observed,1,219,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,219,0-0__2026-04-16__219,2026-06-08,Living descendant observed,1,189,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,219,0-0__2026-04-16__219,2026-08-06,Living descendant observed,1,177,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,219,0-0__2026-04-16__219,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,220,0-0__2026-04-16__220,2026-04-16,Living descendant observed,1,220,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,220,0-0__2026-04-16__220,2026-06-08,Living descendant observed,1,190,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,220,0-0__2026-04-16__220,2026-08-06,Living descendant observed,1,178,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,220,0-0__2026-04-16__220,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,221,0-0__2026-04-16__221,2026-04-16,Living descendant observed,1,221,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,221,0-0__2026-04-16__221,2026-06-08,Living descendant observed,1,191,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,221,0-0__2026-04-16__221,2026-08-06,Living descendant observed,1,179,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,221,0-0__2026-04-16__221,2026-11-03,Living descendant observed,1,155,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,226,0-0__2026-04-16__226,2026-04-16,Living descendant observed,1,226,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,226,0-0__2026-04-16__226,2026-06-08,Living descendant observed,1,193,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,226,0-0__2026-04-16__226,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,226,0-0__2026-04-16__226,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,232,0-0__2026-04-16__232,2026-04-16,Living descendant observed,1,232,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,232,0-0__2026-04-16__232,2026-06-08,Living descendant observed,1,196,FALSE
 Plot D,0-0,Initial observed cohort,2026-04-16,232,0-0__2026-04-16__232,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,0-0,Initial observed cohort,2026-04-16,232,0-0__2026-04-16__232,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,0-1,Initial observed cohort,2026-04-16,0,0-1__2026-04-16__0,2026-04-16,Living descendant observed,1,0,FALSE
 Plot D,0-1,Initial observed cohort,2026-04-16,0,0-1__2026-04-16__0,2026-06-08,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,0,1-0__2026-04-16__0,2026-04-16,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,0,1-0__2026-04-16__0,2026-06-08,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,0,1-0__2026-04-16__0,2026-08-06,Living descendant observed,1,1,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,0,1-0__2026-04-16__0,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,1,1-0__2026-04-16__1,2026-04-16,Living descendant observed,1,1,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,1,1-0__2026-04-16__1,2026-06-08,Living descendant observed,1,1,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,1,1-0__2026-04-16__1,2026-08-06,Living descendant observed,1,0,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,1,1-0__2026-04-16__1,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,2,1-0__2026-04-16__2,2026-04-16,Living descendant observed,1,2,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,2,1-0__2026-04-16__2,2026-06-08,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,2,1-0__2026-04-16__2,2026-08-06,Living descendant observed,1,1,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,2,1-0__2026-04-16__2,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,3,1-0__2026-04-16__3,2026-04-16,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,3,1-0__2026-04-16__3,2026-06-08,Living descendant observed,1,2,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,3,1-0__2026-04-16__3,2026-08-06,Living descendant observed,1,2,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,3,1-0__2026-04-16__3,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,4,1-0__2026-04-16__4,2026-04-16,Living descendant observed,1,4,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,4,1-0__2026-04-16__4,2026-06-08,Living descendant observed,1,1,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,4,1-0__2026-04-16__4,2026-08-06,Living descendant observed,1,0,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,4,1-0__2026-04-16__4,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,5,1-0__2026-04-16__5,2026-04-16,Living descendant observed,1,5,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,5,1-0__2026-04-16__5,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,5,1-0__2026-04-16__5,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,5,1-0__2026-04-16__5,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,6,1-0__2026-04-16__6,2026-04-16,Living descendant observed,1,6,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,6,1-0__2026-04-16__6,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,6,1-0__2026-04-16__6,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,6,1-0__2026-04-16__6,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,7,1-0__2026-04-16__7,2026-04-16,Living descendant observed,1,7,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,7,1-0__2026-04-16__7,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,7,1-0__2026-04-16__7,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,7,1-0__2026-04-16__7,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,9,1-0__2026-04-16__9,2026-04-16,Living descendant observed,1,9,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,9,1-0__2026-04-16__9,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,9,1-0__2026-04-16__9,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,9,1-0__2026-04-16__9,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,10,1-0__2026-04-16__10,2026-04-16,Living descendant observed,1,10,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,10,1-0__2026-04-16__10,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,10,1-0__2026-04-16__10,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,10,1-0__2026-04-16__10,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,11,1-0__2026-04-16__11,2026-04-16,Living descendant observed,1,11,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,11,1-0__2026-04-16__11,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,11,1-0__2026-04-16__11,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,11,1-0__2026-04-16__11,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,12,1-0__2026-04-16__12,2026-04-16,Living descendant observed,1,12,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,12,1-0__2026-04-16__12,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,12,1-0__2026-04-16__12,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,12,1-0__2026-04-16__12,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,13,1-0__2026-04-16__13,2026-04-16,Living descendant observed,1,13,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,13,1-0__2026-04-16__13,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,13,1-0__2026-04-16__13,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,13,1-0__2026-04-16__13,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,14,1-0__2026-04-16__14,2026-04-16,Living descendant observed,1,14,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,14,1-0__2026-04-16__14,2026-06-08,Living descendant observed,1,5,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,14,1-0__2026-04-16__14,2026-08-06,Living descendant observed,1,5,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,14,1-0__2026-04-16__14,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,15,1-0__2026-04-16__15,2026-04-16,Living descendant observed,1,15,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,15,1-0__2026-04-16__15,2026-06-08,Living descendant observed,1,5,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,15,1-0__2026-04-16__15,2026-08-06,Living descendant observed,1,5,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,15,1-0__2026-04-16__15,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,16,1-0__2026-04-16__16,2026-04-16,Living descendant observed,1,16,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,16,1-0__2026-04-16__16,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,16,1-0__2026-04-16__16,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,16,1-0__2026-04-16__16,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,17,1-0__2026-04-16__17,2026-04-16,Living descendant observed,1,17,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,17,1-0__2026-04-16__17,2026-06-08,Living descendant observed,1,5,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,17,1-0__2026-04-16__17,2026-08-06,Living descendant observed,1,5,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,17,1-0__2026-04-16__17,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,18,1-0__2026-04-16__18,2026-04-16,Living descendant observed,1,18,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,18,1-0__2026-04-16__18,2026-06-08,Living descendant observed,1,5,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,18,1-0__2026-04-16__18,2026-08-06,Living descendant observed,1,5,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,18,1-0__2026-04-16__18,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,19,1-0__2026-04-16__19,2026-04-16,Living descendant observed,1,19,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,19,1-0__2026-04-16__19,2026-06-08,Living descendant observed,1,5,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,19,1-0__2026-04-16__19,2026-08-06,Living descendant observed,1,5,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,19,1-0__2026-04-16__19,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,20,1-0__2026-04-16__20,2026-04-16,Living descendant observed,1,20,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,20,1-0__2026-04-16__20,2026-06-08,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,20,1-0__2026-04-16__20,2026-08-06,Living descendant observed,1,3,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,20,1-0__2026-04-16__20,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,22,1-0__2026-04-16__22,2026-04-16,Living descendant observed,1,22,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,22,1-0__2026-04-16__22,2026-06-08,Living descendant observed,1,7,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,22,1-0__2026-04-16__22,2026-08-06,Living descendant observed,1,7,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,22,1-0__2026-04-16__22,2026-11-03,Living descendant observed,1,2,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,24,1-0__2026-04-16__24,2026-04-16,Living descendant observed,1,24,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,24,1-0__2026-04-16__24,2026-06-08,Living descendant observed,1,9,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,24,1-0__2026-04-16__24,2026-08-06,Living descendant observed,1,9,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,24,1-0__2026-04-16__24,2026-11-03,Living descendant observed,1,4,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,26,1-0__2026-04-16__26,2026-04-16,Living descendant observed,1,26,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,26,1-0__2026-04-16__26,2026-06-08,Living descendant observed,1,11,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,26,1-0__2026-04-16__26,2026-08-06,Living descendant observed,1,11,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,26,1-0__2026-04-16__26,2026-11-03,Living descendant observed,1,6,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,27,1-0__2026-04-16__27,2026-04-16,Living descendant observed,1,27,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,27,1-0__2026-04-16__27,2026-06-08,Living descendant observed,1,11,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,27,1-0__2026-04-16__27,2026-08-06,Living descendant observed,1,11,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,27,1-0__2026-04-16__27,2026-11-03,Living descendant observed,1,6,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,33,1-0__2026-04-16__33,2026-04-16,Living descendant observed,1,33,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,33,1-0__2026-04-16__33,2026-06-08,Living descendant observed,1,17,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,33,1-0__2026-04-16__33,2026-08-06,Living descendant observed,1,14,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,33,1-0__2026-04-16__33,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,34,1-0__2026-04-16__34,2026-04-16,Living descendant observed,1,34,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,34,1-0__2026-04-16__34,2026-06-08,Living descendant observed,1,18,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,34,1-0__2026-04-16__34,2026-08-06,Living descendant observed,1,14,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,34,1-0__2026-04-16__34,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,35,1-0__2026-04-16__35,2026-04-16,Living descendant observed,1,35,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,35,1-0__2026-04-16__35,2026-06-08,Living descendant observed,1,19,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,35,1-0__2026-04-16__35,2026-08-06,Living descendant observed,1,15,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,35,1-0__2026-04-16__35,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,37,1-0__2026-04-16__37,2026-04-16,Living descendant observed,1,37,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,37,1-0__2026-04-16__37,2026-06-08,Living descendant observed,1,21,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,37,1-0__2026-04-16__37,2026-08-06,Living descendant observed,1,16,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,37,1-0__2026-04-16__37,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,39,1-0__2026-04-16__39,2026-04-16,Living descendant observed,1,39,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,39,1-0__2026-04-16__39,2026-06-08,Living descendant observed,1,21,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,39,1-0__2026-04-16__39,2026-08-06,Living descendant observed,1,16,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,39,1-0__2026-04-16__39,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,40,1-0__2026-04-16__40,2026-04-16,Living descendant observed,1,40,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,40,1-0__2026-04-16__40,2026-06-08,Living descendant observed,1,23,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,40,1-0__2026-04-16__40,2026-08-06,Living descendant observed,1,18,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,40,1-0__2026-04-16__40,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,41,1-0__2026-04-16__41,2026-04-16,Living descendant observed,1,41,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,41,1-0__2026-04-16__41,2026-06-08,Living descendant observed,1,24,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,41,1-0__2026-04-16__41,2026-08-06,Living descendant observed,1,19,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,41,1-0__2026-04-16__41,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,42,1-0__2026-04-16__42,2026-04-16,Living descendant observed,1,42,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,42,1-0__2026-04-16__42,2026-06-08,Living descendant observed,1,25,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,42,1-0__2026-04-16__42,2026-08-06,Living descendant observed,1,20,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,42,1-0__2026-04-16__42,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,43,1-0__2026-04-16__43,2026-04-16,Living descendant observed,1,43,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,43,1-0__2026-04-16__43,2026-06-08,Living descendant observed,1,26,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,43,1-0__2026-04-16__43,2026-08-06,Living descendant observed,1,21,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,43,1-0__2026-04-16__43,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,44,1-0__2026-04-16__44,2026-04-16,Living descendant observed,1,44,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,44,1-0__2026-04-16__44,2026-06-08,Living descendant observed,1,27,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,44,1-0__2026-04-16__44,2026-08-06,Living descendant observed,1,22,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,44,1-0__2026-04-16__44,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,45,1-0__2026-04-16__45,2026-04-16,Living descendant observed,1,45,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,45,1-0__2026-04-16__45,2026-06-08,Living descendant observed,1,28,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,45,1-0__2026-04-16__45,2026-08-06,Living descendant observed,1,23,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,45,1-0__2026-04-16__45,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,46,1-0__2026-04-16__46,2026-04-16,Living descendant observed,1,46,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,46,1-0__2026-04-16__46,2026-06-08,Living descendant observed,1,29,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,46,1-0__2026-04-16__46,2026-08-06,Living descendant observed,1,24,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,46,1-0__2026-04-16__46,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,47,1-0__2026-04-16__47,2026-04-16,Living descendant observed,1,47,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,47,1-0__2026-04-16__47,2026-06-08,Living descendant observed,1,30,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,47,1-0__2026-04-16__47,2026-08-06,Living descendant observed,1,25,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,47,1-0__2026-04-16__47,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,50,1-0__2026-04-16__50,2026-04-16,Living descendant observed,1,50,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,50,1-0__2026-04-16__50,2026-06-08,Living descendant observed,1,33,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,50,1-0__2026-04-16__50,2026-08-06,Living descendant observed,1,26,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,50,1-0__2026-04-16__50,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,51,1-0__2026-04-16__51,2026-04-16,Living descendant observed,1,51,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,51,1-0__2026-04-16__51,2026-06-08,Living descendant observed,1,34,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,51,1-0__2026-04-16__51,2026-08-06,Living descendant observed,1,27,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,51,1-0__2026-04-16__51,2026-11-03,Living descendant observed,1,10,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,52,1-0__2026-04-16__52,2026-04-16,Living descendant observed,1,52,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,52,1-0__2026-04-16__52,2026-06-08,Living descendant observed,1,35,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,52,1-0__2026-04-16__52,2026-08-06,Living descendant observed,1,28,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,52,1-0__2026-04-16__52,2026-11-03,Living descendant observed,1,9,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,53,1-0__2026-04-16__53,2026-04-16,Living descendant observed,1,53,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,53,1-0__2026-04-16__53,2026-06-08,Living descendant observed,1,36,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,53,1-0__2026-04-16__53,2026-08-06,Living descendant observed,1,29,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,53,1-0__2026-04-16__53,2026-11-03,Living descendant observed,1,11,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,54,1-0__2026-04-16__54,2026-04-16,Living descendant observed,1,54,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,54,1-0__2026-04-16__54,2026-06-08,Living descendant observed,1,37,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,54,1-0__2026-04-16__54,2026-08-06,Living descendant observed,1,30,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,54,1-0__2026-04-16__54,2026-11-03,Living descendant observed,1,12,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,55,1-0__2026-04-16__55,2026-04-16,Living descendant observed,1,55,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,55,1-0__2026-04-16__55,2026-06-08,Living descendant observed,1,38,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,55,1-0__2026-04-16__55,2026-08-06,Living descendant observed,1,31,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,55,1-0__2026-04-16__55,2026-11-03,Living descendant observed,1,13,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,56,1-0__2026-04-16__56,2026-04-16,Living descendant observed,1,56,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,56,1-0__2026-04-16__56,2026-06-08,Living descendant observed,1,39,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,56,1-0__2026-04-16__56,2026-08-06,Living descendant observed,1,32,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,56,1-0__2026-04-16__56,2026-11-03,Living descendant observed,1,14,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,57,1-0__2026-04-16__57,2026-04-16,Living descendant observed,1,57,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,57,1-0__2026-04-16__57,2026-06-08,Living descendant observed,1,40,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,57,1-0__2026-04-16__57,2026-08-06,Living descendant observed,1,33,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,57,1-0__2026-04-16__57,2026-11-03,Living descendant observed,1,15,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,62,1-0__2026-04-16__62,2026-04-16,Living descendant observed,1,62,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,62,1-0__2026-04-16__62,2026-06-08,Living descendant observed,1,45,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,62,1-0__2026-04-16__62,2026-08-06,Living descendant observed,1,38,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,62,1-0__2026-04-16__62,2026-11-03,Living descendant observed,1,20,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,66,1-0__2026-04-16__66,2026-04-16,Living descendant observed,1,66,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,66,1-0__2026-04-16__66,2026-06-08,Living descendant observed,1,49,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,66,1-0__2026-04-16__66,2026-08-06,Living descendant observed,1,41,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,66,1-0__2026-04-16__66,2026-11-03,Living descendant observed,1,23,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,68,1-0__2026-04-16__68,2026-04-16,Living descendant observed,1,68,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,68,1-0__2026-04-16__68,2026-06-08,Living descendant observed,1,51,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,68,1-0__2026-04-16__68,2026-08-06,Living descendant observed,1,43,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,68,1-0__2026-04-16__68,2026-11-03,Living descendant observed,1,24,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,69,1-0__2026-04-16__69,2026-04-16,Living descendant observed,1,69,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,69,1-0__2026-04-16__69,2026-06-08,Living descendant observed,1,52,FALSE
-Plot D,1-0,Initial observed cohort,2026-04-16,69,1-0__2026-04-16__69,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,69,1-0__2026-04-16__69,2026-08-06,Living descendant observed,1,71,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,69,1-0__2026-04-16__69,2026-11-03,Living descendant observed,1,25,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,70,1-0__2026-04-16__70,2026-04-16,Living descendant observed,1,70,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,70,1-0__2026-04-16__70,2026-06-08,Living descendant observed,1,53,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,70,1-0__2026-04-16__70,2026-08-06,Living descendant observed,1,44,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,70,1-0__2026-04-16__70,2026-11-03,Living descendant observed,1,26,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,71,1-0__2026-04-16__71,2026-04-16,Living descendant observed,1,71,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,71,1-0__2026-04-16__71,2026-06-08,Living descendant observed,1,54,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,71,1-0__2026-04-16__71,2026-08-06,Living descendant observed,1,45,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,71,1-0__2026-04-16__71,2026-11-03,Living descendant observed,1,27,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,73,1-0__2026-04-16__73,2026-04-16,Living descendant observed,1,73,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,73,1-0__2026-04-16__73,2026-06-08,Living descendant observed,1,56,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,73,1-0__2026-04-16__73,2026-08-06,Living descendant observed,1,48,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,73,1-0__2026-04-16__73,2026-11-03,Living descendant observed,1,27,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,74,1-0__2026-04-16__74,2026-04-16,Living descendant observed,1,74,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,74,1-0__2026-04-16__74,2026-06-08,Living descendant observed,1,58,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,74,1-0__2026-04-16__74,2026-08-06,Living descendant observed,1,49,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,74,1-0__2026-04-16__74,2026-11-03,Living descendant observed,1,29,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,76,1-0__2026-04-16__76,2026-04-16,Living descendant observed,1,76,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,76,1-0__2026-04-16__76,2026-06-08,Living descendant observed,1,59,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,76,1-0__2026-04-16__76,2026-08-06,Living descendant observed,1,50,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,76,1-0__2026-04-16__76,2026-11-03,Living descendant observed,1,30,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,81,1-0__2026-04-16__81,2026-04-16,Living descendant observed,1,81,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,81,1-0__2026-04-16__81,2026-06-08,Living descendant observed,1,64,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,81,1-0__2026-04-16__81,2026-08-06,Living descendant observed,1,55,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,81,1-0__2026-04-16__81,2026-11-03,Living descendant observed,1,34,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,86,1-0__2026-04-16__86,2026-04-16,Living descendant observed,1,86,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,86,1-0__2026-04-16__86,2026-06-08,Living descendant observed,1,70,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,86,1-0__2026-04-16__86,2026-08-06,Living descendant observed,1,57,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,86,1-0__2026-04-16__86,2026-11-03,Living descendant observed,1,36,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,87,1-0__2026-04-16__87,2026-04-16,Living descendant observed,1,87,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,87,1-0__2026-04-16__87,2026-06-08,Living descendant observed,1,69,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,87,1-0__2026-04-16__87,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,87,1-0__2026-04-16__87,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,91,1-0__2026-04-16__91,2026-04-16,Living descendant observed,1,91,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,91,1-0__2026-04-16__91,2026-06-08,Living descendant observed,1,74,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,91,1-0__2026-04-16__91,2026-08-06,Living descendant observed,1,61,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,91,1-0__2026-04-16__91,2026-11-03,Living descendant observed,1,40,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,92,1-0__2026-04-16__92,2026-04-16,Living descendant observed,1,92,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,92,1-0__2026-04-16__92,2026-06-08,Living descendant observed,1,75,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,92,1-0__2026-04-16__92,2026-08-06,Living descendant observed,1,62,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,92,1-0__2026-04-16__92,2026-11-03,Living descendant observed,1,41,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,99,1-0__2026-04-16__99,2026-04-16,Living descendant observed,1,99,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,99,1-0__2026-04-16__99,2026-06-08,Living descendant observed,1,82,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,99,1-0__2026-04-16__99,2026-08-06,Living descendant observed,1,69,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,99,1-0__2026-04-16__99,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,8,1-0__2026-04-16__8,2026-04-16,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,8,1-0__2026-04-16__8,2026-06-08,Living descendant observed,1,4,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,8,1-0__2026-04-16__8,2026-08-06,Living descendant observed,1,4,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,8,1-0__2026-04-16__8,2026-11-03,Living descendant observed,1,0,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,21,1-0__2026-04-16__21,2026-04-16,Living descendant observed,1,21,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,21,1-0__2026-04-16__21,2026-06-08,Living descendant observed,1,6,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,21,1-0__2026-04-16__21,2026-08-06,Living descendant observed,1,6,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,21,1-0__2026-04-16__21,2026-11-03,Living descendant observed,1,1,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,23,1-0__2026-04-16__23,2026-04-16,Living descendant observed,1,23,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,23,1-0__2026-04-16__23,2026-06-08,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,23,1-0__2026-04-16__23,2026-08-06,Living descendant observed,1,8,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,23,1-0__2026-04-16__23,2026-11-03,Living descendant observed,1,3,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,25,1-0__2026-04-16__25,2026-04-16,Living descendant observed,1,25,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,25,1-0__2026-04-16__25,2026-06-08,Living descendant observed,1,10,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,25,1-0__2026-04-16__25,2026-08-06,Living descendant observed,1,10,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,25,1-0__2026-04-16__25,2026-11-03,Living descendant observed,1,5,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,28,1-0__2026-04-16__28,2026-04-16,Living descendant observed,1,28,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,28,1-0__2026-04-16__28,2026-06-08,Living descendant observed,1,12,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,28,1-0__2026-04-16__28,2026-08-06,Living descendant observed,1,12,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,28,1-0__2026-04-16__28,2026-11-03,Living descendant observed,1,7,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,29,1-0__2026-04-16__29,2026-04-16,Living descendant observed,1,29,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,29,1-0__2026-04-16__29,2026-06-08,Living descendant observed,1,13,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,29,1-0__2026-04-16__29,2026-08-06,Living descendant observed,1,13,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,29,1-0__2026-04-16__29,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,30,1-0__2026-04-16__30,2026-04-16,Living descendant observed,1,30,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,30,1-0__2026-04-16__30,2026-06-08,Living descendant observed,1,14,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,30,1-0__2026-04-16__30,2026-08-06,Living descendant observed,1,14,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,30,1-0__2026-04-16__30,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,32,1-0__2026-04-16__32,2026-04-16,Living descendant observed,1,32,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,32,1-0__2026-04-16__32,2026-06-08,Living descendant observed,1,16,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,32,1-0__2026-04-16__32,2026-08-06,Living descendant observed,1,14,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,32,1-0__2026-04-16__32,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,36,1-0__2026-04-16__36,2026-04-16,Living descendant observed,1,36,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,36,1-0__2026-04-16__36,2026-06-08,Living descendant observed,1,20,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,36,1-0__2026-04-16__36,2026-08-06,Living descendant observed,1,14,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,36,1-0__2026-04-16__36,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,48,1-0__2026-04-16__48,2026-04-16,Living descendant observed,1,48,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,48,1-0__2026-04-16__48,2026-06-08,Living descendant observed,1,31,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,48,1-0__2026-04-16__48,2026-08-06,Living descendant observed,1,23,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,48,1-0__2026-04-16__48,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,49,1-0__2026-04-16__49,2026-04-16,Living descendant observed,1,49,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,49,1-0__2026-04-16__49,2026-06-08,Living descendant observed,1,32,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,49,1-0__2026-04-16__49,2026-08-06,Living descendant observed,1,26,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,49,1-0__2026-04-16__49,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,58,1-0__2026-04-16__58,2026-04-16,Living descendant observed,1,58,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,58,1-0__2026-04-16__58,2026-06-08,Living descendant observed,1,41,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,58,1-0__2026-04-16__58,2026-08-06,Living descendant observed,1,34,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,58,1-0__2026-04-16__58,2026-11-03,Living descendant observed,1,16,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,59,1-0__2026-04-16__59,2026-04-16,Living descendant observed,1,59,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,59,1-0__2026-04-16__59,2026-06-08,Living descendant observed,1,42,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,59,1-0__2026-04-16__59,2026-08-06,Living descendant observed,1,35,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,59,1-0__2026-04-16__59,2026-11-03,Living descendant observed,1,17,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,60,1-0__2026-04-16__60,2026-04-16,Living descendant observed,1,60,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,60,1-0__2026-04-16__60,2026-06-08,Living descendant observed,1,43,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,60,1-0__2026-04-16__60,2026-08-06,Living descendant observed,1,36,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,60,1-0__2026-04-16__60,2026-11-03,Living descendant observed,1,18,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,61,1-0__2026-04-16__61,2026-04-16,Living descendant observed,1,61,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,61,1-0__2026-04-16__61,2026-06-08,Living descendant observed,1,44,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,61,1-0__2026-04-16__61,2026-08-06,Living descendant observed,1,37,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,61,1-0__2026-04-16__61,2026-11-03,Living descendant observed,1,19,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,64,1-0__2026-04-16__64,2026-04-16,Living descendant observed,1,64,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,64,1-0__2026-04-16__64,2026-06-08,Living descendant observed,1,47,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,64,1-0__2026-04-16__64,2026-08-06,Living descendant observed,1,40,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,64,1-0__2026-04-16__64,2026-11-03,Living descendant observed,1,22,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,65,1-0__2026-04-16__65,2026-04-16,Living descendant observed,1,65,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,65,1-0__2026-04-16__65,2026-06-08,Living descendant observed,1,48,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,65,1-0__2026-04-16__65,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,65,1-0__2026-04-16__65,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,67,1-0__2026-04-16__67,2026-04-16,Living descendant observed,1,67,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,67,1-0__2026-04-16__67,2026-06-08,Living descendant observed,1,50,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,67,1-0__2026-04-16__67,2026-08-06,Living descendant observed,1,42,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,67,1-0__2026-04-16__67,2026-11-03,Living descendant observed,1,24,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,79,1-0__2026-04-16__79,2026-04-16,Living descendant observed,1,79,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,79,1-0__2026-04-16__79,2026-06-08,Living descendant observed,1,62,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,79,1-0__2026-04-16__79,2026-08-06,Living descendant observed,1,53,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,79,1-0__2026-04-16__79,2026-11-03,Living descendant observed,1,30,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,80,1-0__2026-04-16__80,2026-04-16,Living descendant observed,1,80,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,80,1-0__2026-04-16__80,2026-06-08,Living descendant observed,1,63,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,80,1-0__2026-04-16__80,2026-08-06,Living descendant observed,1,54,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,80,1-0__2026-04-16__80,2026-11-03,Living descendant observed,1,33,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,84,1-0__2026-04-16__84,2026-04-16,Living descendant observed,1,84,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,84,1-0__2026-04-16__84,2026-06-08,Living descendant observed,1,67,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,84,1-0__2026-04-16__84,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,84,1-0__2026-04-16__84,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,88,1-0__2026-04-16__88,2026-04-16,Living descendant observed,1,88,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,88,1-0__2026-04-16__88,2026-06-08,Living descendant observed,1,71,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,88,1-0__2026-04-16__88,2026-08-06,Living descendant observed,1,58,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,88,1-0__2026-04-16__88,2026-11-03,Living descendant observed,1,37,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,89,1-0__2026-04-16__89,2026-04-16,Living descendant observed,1,89,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,89,1-0__2026-04-16__89,2026-06-08,Living descendant observed,1,72,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,89,1-0__2026-04-16__89,2026-08-06,Living descendant observed,1,59,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,89,1-0__2026-04-16__89,2026-11-03,Living descendant observed,1,38,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,93,1-0__2026-04-16__93,2026-04-16,Living descendant observed,1,93,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,93,1-0__2026-04-16__93,2026-06-08,Living descendant observed,1,76,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,93,1-0__2026-04-16__93,2026-08-06,Living descendant observed,1,63,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,93,1-0__2026-04-16__93,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,94,1-0__2026-04-16__94,2026-04-16,Living descendant observed,1,94,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,94,1-0__2026-04-16__94,2026-06-08,Living descendant observed,1,77,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,94,1-0__2026-04-16__94,2026-08-06,Living descendant observed,1,64,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,94,1-0__2026-04-16__94,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,95,1-0__2026-04-16__95,2026-04-16,Living descendant observed,1,95,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,95,1-0__2026-04-16__95,2026-06-08,Living descendant observed,1,78,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,95,1-0__2026-04-16__95,2026-08-06,Living descendant observed,1,65,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,95,1-0__2026-04-16__95,2026-11-03,Living descendant observed,1,42,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,96,1-0__2026-04-16__96,2026-04-16,Living descendant observed,1,96,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,96,1-0__2026-04-16__96,2026-06-08,Living descendant observed,1,79,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,96,1-0__2026-04-16__96,2026-08-06,Living descendant observed,1,66,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,96,1-0__2026-04-16__96,2026-11-03,Living descendant observed,1,43,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,97,1-0__2026-04-16__97,2026-04-16,Living descendant observed,1,97,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,97,1-0__2026-04-16__97,2026-06-08,Living descendant observed,1,80,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,97,1-0__2026-04-16__97,2026-08-06,Living descendant observed,1,67,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,97,1-0__2026-04-16__97,2026-11-03,Living descendant observed,1,44,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,98,1-0__2026-04-16__98,2026-04-16,Living descendant observed,1,98,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,98,1-0__2026-04-16__98,2026-06-08,Living descendant observed,1,81,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,98,1-0__2026-04-16__98,2026-08-06,Living descendant observed,1,68,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,98,1-0__2026-04-16__98,2026-11-03,Living descendant observed,1,45,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,100,1-0__2026-04-16__100,2026-04-16,Living descendant observed,1,100,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,100,1-0__2026-04-16__100,2026-06-08,Living descendant observed,1,83,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,100,1-0__2026-04-16__100,2026-08-06,Living descendant observed,1,70,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,100,1-0__2026-04-16__100,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,31,1-0__2026-04-16__31,2026-04-16,Living descendant observed,1,31,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,31,1-0__2026-04-16__31,2026-06-08,Living descendant observed,1,15,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,31,1-0__2026-04-16__31,2026-08-06,Living descendant observed,1,14,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,31,1-0__2026-04-16__31,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,38,1-0__2026-04-16__38,2026-04-16,Living descendant observed,1,38,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,38,1-0__2026-04-16__38,2026-06-08,Living descendant observed,1,22,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,38,1-0__2026-04-16__38,2026-08-06,Living descendant observed,1,17,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,38,1-0__2026-04-16__38,2026-11-03,Living descendant observed,1,8,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,63,1-0__2026-04-16__63,2026-04-16,Living descendant observed,1,63,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,63,1-0__2026-04-16__63,2026-06-08,Living descendant observed,1,46,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,63,1-0__2026-04-16__63,2026-08-06,Living descendant observed,1,39,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,63,1-0__2026-04-16__63,2026-11-03,Living descendant observed,1,21,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,72,1-0__2026-04-16__72,2026-04-16,Living descendant observed,1,72,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,72,1-0__2026-04-16__72,2026-06-08,Living descendant observed,1,55,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,72,1-0__2026-04-16__72,2026-08-06,Living descendant observed,1,46,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,72,1-0__2026-04-16__72,2026-11-03,Living descendant observed,1,28,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,75,1-0__2026-04-16__75,2026-04-16,Living descendant observed,1,75,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,75,1-0__2026-04-16__75,2026-06-08,Living descendant observed,1,57,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,75,1-0__2026-04-16__75,2026-08-06,Living descendant observed,1,47,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,75,1-0__2026-04-16__75,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,77,1-0__2026-04-16__77,2026-04-16,Living descendant observed,1,77,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,77,1-0__2026-04-16__77,2026-06-08,Living descendant observed,1,60,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,77,1-0__2026-04-16__77,2026-08-06,Living descendant observed,1,51,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,77,1-0__2026-04-16__77,2026-11-03,Living descendant observed,1,31,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,78,1-0__2026-04-16__78,2026-04-16,Living descendant observed,1,78,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,78,1-0__2026-04-16__78,2026-06-08,Living descendant observed,1,61,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,78,1-0__2026-04-16__78,2026-08-06,Living descendant observed,1,52,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,78,1-0__2026-04-16__78,2026-11-03,Living descendant observed,1,32,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,82,1-0__2026-04-16__82,2026-04-16,Living descendant observed,1,82,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,82,1-0__2026-04-16__82,2026-06-08,Living descendant observed,1,65,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,82,1-0__2026-04-16__82,2026-08-06,Living descendant observed,1,56,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,82,1-0__2026-04-16__82,2026-11-03,Living descendant observed,1,35,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,83,1-0__2026-04-16__83,2026-04-16,Living descendant observed,1,83,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,83,1-0__2026-04-16__83,2026-06-08,Living descendant observed,1,66,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,83,1-0__2026-04-16__83,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,83,1-0__2026-04-16__83,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,85,1-0__2026-04-16__85,2026-04-16,Living descendant observed,1,85,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,85,1-0__2026-04-16__85,2026-06-08,Living descendant observed,1,68,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,85,1-0__2026-04-16__85,2026-08-06,All tracked descendants recorded dead,0,,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,85,1-0__2026-04-16__85,2026-11-03,All tracked descendants recorded dead,0,,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,90,1-0__2026-04-16__90,2026-04-16,Living descendant observed,1,90,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,90,1-0__2026-04-16__90,2026-06-08,Living descendant observed,1,73,FALSE
 Plot D,1-0,Initial observed cohort,2026-04-16,90,1-0__2026-04-16__90,2026-08-06,Living descendant observed,1,60,FALSE
+Plot D,1-0,Initial observed cohort,2026-04-16,90,1-0__2026-04-16__90,2026-11-03,Living descendant observed,1,39,FALSE
 Plot E,0-0,2025 original outplants,2025-05-07,6,0-0__2025-05-07__6,2025-05-07,Living descendant observed,1,6,FALSE
 Plot E,0-0,2025 original outplants,2025-05-07,6,0-0__2025-05-07__6,2025-06-09,All tracked descendants recorded dead,0,,FALSE
 Plot E,0-0,2025 original outplants,2025-05-07,6,0-0__2025-05-07__6,2025-07-11,All tracked descendants recorded dead,0,,FALSE

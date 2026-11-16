@@ -505,3 +505,18 @@ Its earlier E-only description does not describe the website's universal method.
 ### 2026-10-27: remove Coki E overview prose
 
 Removed the Overview heading and its two introductory paragraphs from the Coki E tab at the user's request. The shared method description and all figures, tables, and analysis remain unchanged.
+
+## 2026-11-16
+
+Preserved eight superseded Coki A and D Matches exports and their two previous
+config files in `archive/2026-11-16_before_a_d_matches_update/`. Four new
+November intervals and eight revised exports were imported from the supplied
+OneDrive copy. See `2026-11-16_a_d_matches_intake.csv` for original paths,
+active paths, archived paths, row counts, and SHA-256 hashes.
+
+The independent lineage check compared all 121 configured Matches exports to
+23,908 original-object survey records and 14,409 source-object intervals with
+zero mismatches. Coki A's November 2 result was 43 living out of 43 originals.
+Coki D's November 3 partial result had 251 documented living, 84 recorded dead,
+zero unresolved links in surveyed sections, and one original without a section
+result, retaining all 336 originals in the denominator.

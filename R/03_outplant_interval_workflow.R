@@ -1346,6 +1346,31 @@ outplant_plot_cumulative_survival <- function(cumulative_survival_summary, daily
     )
 }
 
+# Single-site presentation follows the Coki E cohort chart. Partial surveys
+# are separate points because a missing section can only give a lower bound.
+outplant_plot_site_lineage <- function(plot_name, complete_surveys, partial_surveys) {
+  complete <- filter(complete_surveys, plot == plot_name)
+  partial <- filter(partial_surveys, plot == plot_name)
+  ggplot(complete, aes(survey_date, percent_cumulative_survival)) +
+    geom_line(linewidth = 1, color = "#0072B2") +
+    geom_point(size = 2.6, color = "#0072B2") +
+    geom_text(aes(label = sprintf("%.1f%%", percent_cumulative_survival)),
+              vjust = -0.9, size = 3, color = "#0072B2") +
+    geom_point(data = partial, aes(y = percent_confirmed_living,
+                                   shape = "Partial survey, confirmed minimum"),
+               size = 3.3, color = "#D55E00") +
+    scale_x_date(breaks = sort(unique(c(complete$survey_date, partial$survey_date))),
+                 date_labels = "%d %b %Y", expand = expansion(mult = c(0.05, 0.08))) +
+    scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 25),
+                       labels = scales::label_percent(scale = 1),
+                       expand = expansion(mult = c(0.02, 0.08))) +
+    scale_shape_manual(values = c("Partial survey, confirmed minimum" = 17)) +
+    labs(title = paste0(outplant_coki_label(plot_name), ": original-object lineage persistence"),
+         x = "Survey date", y = "Original objects with a living descendant (%)", shape = NULL) +
+    outplant_theme() +
+    theme(axis.text.x = element_text(angle = 35, hjust = 1), legend.position = "bottom")
+}
+
 outplant_add_monitoring_labels <- function(summary_data) {
   summary_data %>%
     arrange(plot, plot_section, month_order) %>%
@@ -1417,7 +1442,8 @@ outplant_plot_interval_survival <- function(survival_summary) {
       title = "Outplant interval descendant retention",
       subtitle = "Each source object counts once through documented split/fuse connections"
     ) +
-    scale_color_brewer(palette = "Dark2") +
+    {if (n_distinct(survival_summary$plot_section_label) == 1L)
+       scale_color_manual(values = "#0072B2") else scale_color_brewer(palette = "Dark2")} +
     outplant_theme() +
     theme(axis.text.x = element_text(angle = 25, hjust = 1))
 }
@@ -1480,7 +1506,8 @@ outplant_plot_cover <- function(cover_summary) {
       title = "Outplant coral cover through time",
       subtitle = "Cover = summed outplant planar area / 480 m2 Coki area"
     ) +
-    scale_color_brewer(palette = "Dark2") +
+    {if (n_distinct(cover_summary$plot_section_label) == 1L)
+       scale_color_manual(values = "#0072B2") else scale_color_brewer(palette = "Dark2")} +
     outplant_theme() +
     theme(axis.text.x = element_text(angle = 35, hjust = 1))
 }
@@ -1508,8 +1535,8 @@ outplant_plot_total_cover_bars <- function(cover_summary, section_observations, 
     ) %>%
     ggplot(aes(x = survey_label, y = percent_outplant_cover, fill = coverage_label)) +
     geom_col(width = 0.72) +
-    scale_fill_manual(values = c("All configured sections" = "#237C83",
-                                "Partial section coverage" = "#D58A37")) +
+    scale_fill_manual(values = c("All configured sections" = "#0072B2",
+                                "Partial section coverage" = "#D55E00")) +
     scale_y_continuous(labels = scales::label_percent(scale = 1),
                        expand = expansion(mult = c(0, 0.08))) +
     labs(
@@ -1535,7 +1562,7 @@ outplant_plot_species_prevalence <- function(species_prevalence) {
     ggplot(aes(x = survey_label, y = percent_prevalence, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
     facet_wrap(vars(plot_section_label), ncol = 1, scales = "free_x") +
-    scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = FALSE) +
+    scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = TRUE) +
     scale_y_continuous(
       breaks = c(0, 50, 100),
       labels = scales::label_percent(scale = 1),
@@ -1566,7 +1593,7 @@ outplant_plot_species_cover <- function(species_prevalence) {
     ggplot(aes(x = survey_label, y = percent_cover_within_outplants, fill = species)) +
     geom_col(color = "white", linewidth = 0.25, width = 0.72) +
     facet_wrap(vars(plot_section_label), ncol = 1, scales = "free_x") +
-    scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = FALSE) +
+    scale_fill_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = TRUE) +
     scale_y_continuous(
       breaks = c(0, 50, 100),
       labels = scales::label_percent(scale = 1),
@@ -1614,7 +1641,7 @@ outplant_plot_species_area <- function(species_area) {
     )) +
     geom_line(linewidth = 0.8) +
     geom_point(size = 2.6) +
-    scale_color_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = FALSE) +
+    scale_color_manual(values = outplant_species_palette, labels = outplant_format_species_labels, drop = TRUE) +
     scale_x_date(
       breaks = sort(unique(as.Date(species_area$survey_date))),
       date_labels = "%d %b %Y"
@@ -1786,6 +1813,7 @@ outplant_write_named_csvs(
   list(
     outplant_cumulative_survival_summary = outplant_cumulative_survival_summary,
     outplant_section_cumulative_survival_summary = outplant_section_cumulative_survival_summary,
+    outplant_partial_cumulative_survival_summary = outplant_partial_cumulative_survival_summary,
     outplant_survival_summary = outplant_survival_summary,
     outplant_section_survival_summary = outplant_section_survival_summary,
     outplant_species_survival_summary = outplant_species_survival_summary,

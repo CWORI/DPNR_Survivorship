@@ -24,31 +24,31 @@
 <rect x='0.00' y='0.00' width='576.00' height='360.00' style='stroke-width: 1.16; stroke: #FFFFFF; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpNDkuNjR8NTcwLjAyfDQyLjM2fDIzMS4zMw=='>
-    <rect x='49.64' y='42.36' width='520.38' height='188.97' />
+  <clipPath id='cpNDkuNjR8NTcwLjAyfDI1LjEyfDIzMS4zMw=='>
+    <rect x='49.64' y='25.12' width='520.38' height='206.21' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpNDkuNjR8NTcwLjAyfDQyLjM2fDIzMS4zMw==)'>
-<rect x='49.64' y='42.36' width='520.38' height='188.97' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<polyline points='49.64,217.99 570.02,217.99 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='49.64,158.58 570.02,158.58 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<polyline points='49.64,99.16 570.02,99.16 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
-<rect x='88.67' y='50.95' width='117.09' height='167.04' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
-<rect x='251.29' y='141.33' width='117.09' height='62.37' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
-<rect x='251.29' y='203.70' width='117.09' height='14.30' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<rect x='251.29' y='217.99' width='117.09' height='4.75' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
-<rect x='413.91' y='179.27' width='117.09' height='38.72' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
-<rect x='413.91' y='217.99' width='117.09' height='2.24' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
-<line x1='49.64' y1='217.99' x2='570.02' y2='217.99' style='stroke-width: 0.85; stroke: #404040; stroke-linecap: butt;' />
+<g clip-path='url(#cpNDkuNjR8NTcwLjAyfDI1LjEyfDIzMS4zMw==)'>
+<rect x='49.64' y='25.12' width='520.38' height='206.21' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<polyline points='49.64,216.78 570.02,216.78 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='49.64,151.94 570.02,151.94 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<polyline points='49.64,87.10 570.02,87.10 ' style='stroke-width: 0.53; stroke: #E5E5E5; stroke-linecap: butt;' />
+<rect x='88.67' y='34.50' width='117.09' height='182.28' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
+<rect x='251.29' y='133.12' width='117.09' height='68.06' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #56B4E9;' />
+<rect x='251.29' y='201.18' width='117.09' height='15.60' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='251.29' y='216.78' width='117.09' height='5.18' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
+<rect x='413.91' y='174.52' width='117.09' height='42.26' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #009E73;' />
+<rect x='413.91' y='216.78' width='117.09' height='2.45' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D55E00;' />
+<line x1='49.64' y1='216.78' x2='570.02' y2='216.78' style='stroke-width: 0.85; stroke: #404040; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)'>
-<polyline points='49.64,231.33 49.64,42.36 ' style='stroke-width: 1.16; stroke-linecap: square;' />
-<text x='44.26' y='221.44' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.000</text>
-<text x='44.26' y='162.02' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.020</text>
-<text x='44.26' y='102.60' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.040</text>
-<polyline points='46.65,217.99 49.64,217.99 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='46.65,158.58 49.64,158.58 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
-<polyline points='46.65,99.16 49.64,99.16 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='49.64,231.33 49.64,25.12 ' style='stroke-width: 1.16; stroke-linecap: square;' />
+<text x='44.26' y='220.22' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.000</text>
+<text x='44.26' y='155.38' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.020</text>
+<text x='44.26' y='90.54' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='24.00px' lengthAdjust='spacingAndGlyphs'>0.040</text>
+<polyline points='46.65,216.78 49.64,216.78 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='46.65,151.94 49.64,151.94 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
+<polyline points='46.65,87.10 49.64,87.10 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
 <polyline points='49.64,231.33 570.02,231.33 ' style='stroke-width: 1.16; stroke-linecap: square;' />
 <polyline points='147.21,234.32 147.21,231.33 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
 <polyline points='309.83,234.32 309.83,231.33 ' style='stroke-width: 1.16; stroke-linecap: butt;' />
@@ -57,7 +57,7 @@
 <text transform='translate(313.78,242.35) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='52.80px' lengthAdjust='spacingAndGlyphs'>09 Jun 2026</text>
 <text transform='translate(476.40,242.35) rotate(-35)' text-anchor='end' style='font-size: 9.60px;fill: #262626; font-family: "Arial";' textLength='54.41px' lengthAdjust='spacingAndGlyphs'>07 Aug 2026</text>
 <text x='309.83' y='286.92' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='99.39px' lengthAdjust='spacingAndGlyphs'>Later survey date</text>
-<text transform='translate(14.62,136.85) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='168.72px' lengthAdjust='spacingAndGlyphs'>Change in observed area (m²)</text>
+<text transform='translate(14.62,128.23) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='168.72px' lengthAdjust='spacingAndGlyphs'>Change in observed area (m²)</text>
 <rect x='119.67' y='301.53' width='380.31' height='52.49' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
 <text x='125.65' y='332.10' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='69.38px' lengthAdjust='spacingAndGlyphs'>Area source</text>
 <rect x='201.01' y='307.51' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
@@ -69,7 +69,6 @@
 <text x='224.27' y='319.59' style='font-size: 9.60px; font-family: "Arial";' textLength='112.00px' lengthAdjust='spacingAndGlyphs'>Area added by outplanting</text>
 <text x='365.51' y='319.59' style='font-size: 9.60px; font-family: "Arial";' textLength='128.51px' lengthAdjust='spacingAndGlyphs'>Area gained from coral growth</text>
 <text x='224.27' y='342.85' style='font-size: 9.60px; font-family: "Arial";' textLength='37.86px' lengthAdjust='spacingAndGlyphs'>Area lost</text>
-<text x='49.64' y='33.74' style='font-size: 12.00px;fill: #4D4D4D; font-family: "Arial";' textLength='534.95px' lengthAdjust='spacingAndGlyphs'>Blue is area added by outplanting; green is area gained from growth; orange is shrinkage or mortality</text>
 <text x='49.64' y='16.05' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='349.09px' lengthAdjust='spacingAndGlyphs'>Outplanting, growth, and losses by monitoring cycle</text>
 </g>
 </svg>

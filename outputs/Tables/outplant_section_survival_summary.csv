@@ -1,8 +1,10 @@
 plot,plot_section,plot_section_label,interval_order,month_start,month_end,month_start_date,month_end_date,n_start,n_survived,n_died,n_unresolved,n_born,percent_survival,percent_survival_low,percent_survival_high,interval_label,method
 Plot A,0-0,Plot A 0-0,2,April,June,2026-04-21,2026-06-22,24,24,0,0,0,100,NA,NA,21 Apr 2026 to 22 Jun 2026,Source-object descendant retention
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,24,24,0,0,0,100,NA,NA,22 Jun 2026 to 12 Aug 2026,Source-object descendant retention
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,24,24,0,0,0,100,NA,NA,12 Aug 2026 to 02 Nov 2026,Source-object descendant retention
 Plot A,1-0,Plot A 1-0,2,April,June,2026-04-21,2026-06-22,19,19,0,0,0,100,NA,NA,21 Apr 2026 to 22 Jun 2026,Source-object descendant retention
 Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,19,19,0,0,0,100,NA,NA,22 Jun 2026 to 12 Aug 2026,Source-object descendant retention
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,19,19,0,0,0,100,NA,NA,12 Aug 2026 to 02 Nov 2026,Source-object descendant retention
 Plot B,0-0,Plot B 0-0,2,April,June,2026-04-22,2026-06-09,22,22,0,0,32,100,NA,NA,22 Apr 2026 to 09 Jun 2026,Source-object descendant retention
 Plot B,0-0,Plot B 0-0,3,June,August,2026-06-09,2026-08-07,54,54,0,0,0,100,NA,NA,09 Jun 2026 to 07 Aug 2026,Source-object descendant retention
 Plot B,1-0,Plot B 1-0,2,April,June,2026-04-22,2026-06-09,21,21,0,0,0,100,NA,NA,22 Apr 2026 to 09 Jun 2026,Source-object descendant retention
@@ -11,11 +13,13 @@ Plot C,0-0,Plot C 0-0,2,April,June,2026-04-03,2026-06-06,342,340,2,0,0,99.415204
 Plot C,0-0,Plot C 0-0,3,June,August,2026-06-06,2026-08-05,295,272,23,0,0,92.20338983050847,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
 Plot C,1-0,Plot C 1-0,2,April,June,2026-04-03,2026-06-06,237,233,4,0,1,98.31223628691983,NA,NA,03 Apr 2026 to 06 Jun 2026,Source-object descendant retention
 Plot C,1-0,Plot C 1-0,3,June,August,2026-06-06,2026-08-05,247,242,5,0,0,97.97570850202429,NA,NA,06 Jun 2026 to 05 Aug 2026,Source-object descendant retention
-Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,234,201,33,0,0,85.8974358974359,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
-Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,197,182,15,0,0,92.38578680203045,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,234,204,30,0,2,87.17948717948718,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
+Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,202,187,15,0,0,92.57425742574257,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,187,158,29,0,3,84.49197860962566,NA,NA,06 Aug 2026 to 03 Nov 2026,Source-object descendant retention
 Plot D,0-1,Plot D 0-1,2,April,June,2026-04-16,2026-06-08,1,1,0,0,0,100,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
 Plot D,1-0,Plot D 1-0,2,April,June,2026-04-16,2026-06-08,101,101,0,0,0,100,NA,NA,16 Apr 2026 to 08 Jun 2026,Source-object descendant retention
-Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,84,78,6,0,0,92.85714285714286,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,84,79,5,0,0,94.04761904761905,NA,NA,08 Jun 2026 to 06 Aug 2026,Source-object descendant retention
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,72,67,5,0,0,93.05555555555556,NA,NA,06 Aug 2026 to 03 Nov 2026,Source-object descendant retention
 Plot E,0-0,Plot E 0-0,1,May,June,2025-05-07,2025-06-09,235,231,4,0,0,98.29787234042553,NA,NA,07 May 2025 to 09 Jun 2025,Source-object descendant retention
 Plot E,0-0,Plot E 0-0,2,June,July,2025-06-09,2025-07-11,228,223,5,0,0,97.80701754385964,NA,NA,09 Jun 2025 to 11 Jul 2025,Source-object descendant retention
 Plot E,0-0,Plot E 0-0,3,July,August,2025-07-11,2025-08-04,191,189,2,0,1,98.95287958115183,NA,NA,11 Jul 2025 to 04 Aug 2025,Source-object descendant retention

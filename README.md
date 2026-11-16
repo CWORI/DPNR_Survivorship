@@ -488,3 +488,23 @@ independent validation of every annotation. Repeat them using
 
 The separate standalone plain-R script was not changed by this website update.
 Its earlier E-only description does not describe the website's universal method.
+
+## 2026-11-16: Coki A and D surveys and site charts
+
+Coki A and D use the refreshed Matches files documented in
+[the intake manifest](logs/2026-11-16_a_d_matches_intake.csv). The per-site
+cumulative plots use Coki E's original-object presentation, and their other
+charts use matching colors and reduced annotation. Coki E retains its
+documented two-cohort series. The homepage lists site surveys from the latest
+monitoring month and identifies partial coverage.
+
+Complete-section cumulative results retain the original denominator across
+survey dates. The separate `outputs/Tables/outplant_partial_cumulative_survival_summary.csv`
+reports dates after the original roster is established with fewer than all
+configured sections. `n_baseline` is the observed sections' subtotal and
+`full_baseline` is the full original roster. `n_baseline_without_section_result`
+counts originals from sections without a result. `percent_confirmed_living`
+divides observed living lineages by the full roster and gives a minimum, not a
+full-coverage estimate. Missing section results stay separate from unmatched
+lineages in surveyed sections. Coki D's latest complete date is June 8 and its
+November 3 survey covers two of three configured sections.

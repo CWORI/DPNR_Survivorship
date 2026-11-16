@@ -2,7 +2,10 @@ plot,survey_date,change_source,area_change_m2
 Plot A,2026-04-21,Area added by outplanting,0.053387000000000004
 Plot A,2026-06-22,Area gained from coral growth,0.004328500000000001
 Plot A,2026-06-22,Area lost,-0.00205625
-Plot A,2026-08-12,Area gained from coral growth,0.01983725
+Plot A,2026-08-12,Area gained from coral growth,0.007567249999999999
+Plot A,2026-08-12,Area lost,-0.001201250000000001
+Plot A,2026-11-02,Area gained from coral growth,0.008037999999999998
+Plot A,2026-11-02,Area lost,-0.00183825
 Plot B,2026-04-22,Area added by outplanting,0.05622525000000001
 Plot B,2026-06-09,Area added by outplanting,0.02099375
 Plot B,2026-06-09,Area gained from coral growth,0.004812250000000002
@@ -15,11 +18,15 @@ Plot C,2026-06-06,Area gained from coral growth,0.018185999999999994
 Plot C,2026-06-06,Area lost,-0.04737024999999997
 Plot C,2026-08-05,Area gained from coral growth,0.028105249999999995
 Plot C,2026-08-05,Area lost,-0.030726749999999997
-Plot D,2026-04-16,Area added by outplanting,0.22224750000000001
-Plot D,2026-06-08,Area gained from coral growth,0.015096250000000002
-Plot D,2026-06-08,Area lost,-0.023969999999999995
-Plot D,2026-08-06,Area gained from coral growth,0.009499000000000002
-Plot D,2026-08-06,Area lost,-0.02622825000000001
+Plot D,2026-04-16,Area added by outplanting,0.22224750000000007
+Plot D,2026-06-08,Area added by outplanting,3.7925000000000003e-4
+Plot D,2026-06-08,Area gained from coral growth,0.014956500000000006
+Plot D,2026-06-08,Area lost,-0.022730999999999998
+Plot D,2026-08-06,Area gained from coral growth,0.009101500000000002
+Plot D,2026-08-06,Area lost,-0.025563500000000003
+Plot D,2026-11-03,Area added by outplanting,7.539999999999999e-4
+Plot D,2026-11-03,Area gained from coral growth,0.032012249999999985
+Plot D,2026-11-03,Area lost,-0.022201249999999992
 Plot E,2025-06-09,Area gained from coral growth,0.05003299999999999
 Plot E,2025-06-09,Area lost,-0.06131574999999999
 Plot E,2025-07-11,Area gained from coral growth,0.04480250000000001

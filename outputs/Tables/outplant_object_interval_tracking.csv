@@ -1187,13 +1187,10 @@ Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,1,Porites porites,All t
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,2,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,3,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,4,Porites porites,All tracked descendants recorded dead,
-Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,5,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,70,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,81,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,82,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,83,Porites porites,All tracked descendants recorded dead,
-Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,87,Porites porites,All tracked descendants recorded dead,
-Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,91,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,94,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,120,Porites porites,All tracked descendants recorded dead,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,122,Porites porites,All tracked descendants recorded dead,
@@ -1295,6 +1292,7 @@ Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,66,Orbicella annularis,
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,67,Porites porites,Living descendant observed,60
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,71,Porites porites,Living descendant observed,63
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,78,Montastraea cavernosa,Living descendant observed,68
+Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,91,Porites porites,Living descendant observed,198
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,93,Porites porites,Living descendant observed,77
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,96,Montastraea cavernosa,Living descendant observed,79
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,97,Porites porites,Living descendant observed,81
@@ -1325,6 +1323,7 @@ Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,205,Porites porites,Liv
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,207,Porites porites,Living descendant observed,182
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,222,Orbicella annularis,Living descendant observed,192
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,231,Porites porites,Living descendant observed,195
+Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,5,Porites porites,Living descendant observed,197
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,15,Montastraea cavernosa,Living descendant observed,9
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,20,Montastraea cavernosa,Living descendant observed,14
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,25,Montastraea cavernosa,Living descendant observed,18
@@ -1342,6 +1341,7 @@ Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,77,Montastraea cavernos
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,80,Montastraea cavernosa,Living descendant observed,70
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,85,Porites porites,Living descendant observed,72
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,86,Montastraea cavernosa,Living descendant observed,73
+Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,87,Porites porites,Living descendant observed,199
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,88,Montastraea cavernosa,Living descendant observed,74
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,89,Montastraea cavernosa,Living descendant observed,76
 Plot D,0-0,Plot D 0-0,2,April,June,2026-04-16,2026-06-08,90,Montastraea cavernosa,Living descendant observed,75
@@ -2657,30 +2657,30 @@ Plot E,1-1,Plot E 1-1,2,June,July,2025-06-09,2025-07-11,200,Acropora palmata,Liv
 Plot E,1-1,Plot E 1-1,2,June,July,2025-06-09,2025-07-11,201,Acropora palmata,Living descendant observed,188
 Plot E,1-1,Plot E 1-1,2,June,July,2025-06-09,2025-07-11,202,Acropora palmata,Living descendant observed,189
 Plot E,1-1,Plot E 1-1,2,June,July,2025-06-09,2025-07-11,203,Acropora palmata,Living descendant observed,192
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,24,Orbicella annularis,Living descendant observed,0
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,25,Porites porites,Living descendant observed,1
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,26,Porites porites,Living descendant observed,2
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,27,Orbicella annularis,Living descendant observed,3
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,28,Orbicella annularis,Living descendant observed,4
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,29,Orbicella annularis,Living descendant observed,5
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,30,Orbicella annularis,Living descendant observed,6
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,31,Orbicella annularis,Living descendant observed,7
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,32,Porites porites,Living descendant observed,8
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,33,Porites porites,Living descendant observed,9
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,34,Porites porites,Living descendant observed,10
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,35,Porites porites,Living descendant observed,11
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,36,Orbicella annularis,Living descendant observed,12
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,40,Orbicella annularis,Living descendant observed,18
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,41,Porites porites,Living descendant observed,19
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,43,Porites porites,Living descendant observed,16
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,44,Porites porites,Living descendant observed,17
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,46,Porites porites,Living descendant observed,21
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,47,Orbicella annularis,Living descendant observed,23
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,24,Orbicella annularis,Living descendant observed,0
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,26,Porites porites,Living descendant observed,2
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,28,Orbicella annularis,Living descendant observed,4
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,37,Orbicella annularis,Living descendant observed,13
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,38,Orbicella annularis,Living descendant observed,14
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,39,Orbicella annularis,Living descendant observed,15
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,40,Orbicella annularis,Living descendant observed,18
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,41,Porites porites,Living descendant observed,19
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,42,Porites porites,Living descendant observed,20
 Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,45,Porites porites,Living descendant observed,22
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,46,Porites porites,Living descendant observed,21
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,47,Orbicella annularis,Living descendant observed,23
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,43,Porites porites,Living descendant observed,16
-Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,44,Porites porites,Living descendant observed,17
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,29,Orbicella annularis,Living descendant observed,5
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,34,Porites porites,Living descendant observed,10
+Plot A,0-0,Plot A 0-0,3,June,August,2026-06-22,2026-08-12,42,Porites porites,Living descendant observed,20
 Plot B,0-0,Plot B 0-0,3,June,August,2026-06-09,2026-08-07,0,Orbicella annularis,Living descendant observed,2
 Plot B,0-0,Plot B 0-0,3,June,August,2026-06-09,2026-08-07,1,Orbicella annularis,Living descendant observed,3
 Plot B,0-0,Plot B 0-0,3,June,August,2026-06-09,2026-08-07,2,Orbicella annularis,Living descendant observed,1
@@ -3081,6 +3081,8 @@ Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,189,Porites porites,Li
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,190,Porites porites,Living descendant observed,178
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,191,Porites porites,Living descendant observed,179
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,192,Orbicella annularis,Living descendant observed,180
+Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,197,Porites porites,Living descendant observed,182
+Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,200,Porites porites,Living descendant observed,185
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,2,Montastraea cavernosa,Living descendant observed,2
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,4,Montastraea cavernosa,Living descendant observed,4
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,6,Montastraea cavernosa,Living descendant observed,6
@@ -3165,6 +3167,7 @@ Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,176,Porites porites,Li
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,178,Porites porites,Living descendant observed,169
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,181,Porites porites,Living descendant observed,171
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,187,Porites porites,Living descendant observed,175
+Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,198,Porites porites,Living descendant observed,184
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,3,Montastraea cavernosa,Living descendant observed,3
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,12,Montastraea cavernosa,Living descendant observed,12
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,14,Montastraea cavernosa,Living descendant observed,14
@@ -3227,6 +3230,8 @@ Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,173,Porites porites,Li
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,175,Porites porites,Living descendant observed,167
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,188,Porites porites,Living descendant observed,176
 Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,194,Orbicella annularis,Living descendant observed,181
+Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,199,Porites porites,Living descendant observed,183
+Plot D,0-0,Plot D 0-0,3,June,August,2026-06-08,2026-08-06,201,Porites porites,Living descendant observed,186
 Plot E,0-0,Plot E 0-0,3,July,August,2025-07-11,2025-08-04,720,Acropora palmata,All tracked descendants recorded dead,
 Plot E,0-0,Plot E 0-0,3,July,August,2025-07-11,2025-08-04,815,Orbicella annularis,All tracked descendants recorded dead,
 Plot E,0-0,Plot E 0-0,3,July,August,2025-07-11,2025-08-04,118,Orbicella faveolata,Living descendant observed,107
@@ -3654,25 +3659,25 @@ Plot G,0-1,Plot G 0-1,3,May,August,2026-05-26,2026-08-13,2,Orbicella annularis,L
 Plot H,0-1,Plot H 0-1,3,May,August,2026-05-25,2026-08-13,1,Orbicella annularis,Living descendant observed,1
 Plot H,0-1,Plot H 0-1,3,May,August,2026-05-25,2026-08-13,2,Orbicella annularis,Living descendant observed,2
 Plot H,0-1,Plot H 0-1,3,May,August,2026-05-25,2026-08-13,0,Orbicella annularis,Living descendant observed,0
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,0,Porites porites,Living descendant observed,0
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,1,Porites porites,Living descendant observed,1
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,2,Orbicella annularis,Living descendant observed,3
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,3,Orbicella annularis,Living descendant observed,2
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,4,Porites porites,Living descendant observed,20
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,5,Orbicella annularis,Living descendant observed,5
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,6,Orbicella annularis,Living descendant observed,6
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,7,Porites porites,Living descendant observed,7
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,8,Porites porites,Living descendant observed,8
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,9,Orbicella annularis,Living descendant observed,9
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,10,Porites porites,Living descendant observed,18
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,11,Porites porites,Living descendant observed,19
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,12,Orbicella annularis,Living descendant observed,12
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,13,Porites porites,Living descendant observed,15
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,14,Porites porites,Living descendant observed,16
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,15,Porites porites,Living descendant observed,21
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,2,Orbicella annularis,Living descendant observed,2
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,3,Orbicella annularis,Living descendant observed,3
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,6,Orbicella annularis,Living descendant observed,5
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,7,Porites porites,Living descendant observed,22
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,10,Porites porites,Living descendant observed,13
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,11,Porites porites,Living descendant observed,14
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,15,Porites porites,Living descendant observed,18
 Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,17,Orbicella annularis,Living descendant observed,17
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,18,Porites porites,Living descendant observed,4
-Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,16,Porites porites,Living descendant observed,22
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,18,Porites porites,Living descendant observed,9
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,13,Porites porites,Living descendant observed,15;7
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,14,Porites porites,Living descendant observed,16;8
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,0,Porites porites,Living descendant observed,1
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,1,Porites porites,Living descendant observed,0
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,9,Orbicella annularis,Living descendant observed,12
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,4,Porites porites,Living descendant observed,4
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,5,Orbicella annularis,Living descendant observed,6
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,8,Porites porites,Living descendant observed,21
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,12,Orbicella annularis,Living descendant observed,20
+Plot A,1-0,Plot A 1-0,3,June,August,2026-06-22,2026-08-12,16,Porites porites,Living descendant observed,19
 Plot B,1-0,Plot B 1-0,3,June,August,2026-06-09,2026-08-07,0,Orbicella annularis,Living descendant observed,0
 Plot B,1-0,Plot B 1-0,3,June,August,2026-06-09,2026-08-07,1,Orbicella annularis,Living descendant observed,1
 Plot B,1-0,Plot B 1-0,3,June,August,2026-06-09,2026-08-07,2,Orbicella annularis,Living descendant observed,7
@@ -3942,7 +3947,6 @@ Plot C,1-0,Plot C 1-0,3,June,August,2026-06-06,2026-08-05,239,Porites porites,Li
 Plot C,1-0,Plot C 1-0,3,June,August,2026-06-06,2026-08-05,242,Porites porites,Living descendant observed,235
 Plot C,1-0,Plot C 1-0,3,June,August,2026-06-06,2026-08-05,245,Orbicella franksi,Living descendant observed,238
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,48,Orbicella annularis,All tracked descendants recorded dead,
-Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,52,Orbicella annularis,All tracked descendants recorded dead,
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,66,Porites porites,All tracked descendants recorded dead,
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,67,Porites porites,All tracked descendants recorded dead,
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,68,Porites porites,All tracked descendants recorded dead,
@@ -4016,6 +4020,7 @@ Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,39,Porites porites,Liv
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,41,Orbicella annularis,Living descendant observed,34
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,45,Porites porites,Living descendant observed,38
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,49,Orbicella annularis,Living descendant observed,41
+Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,52,Orbicella annularis,Living descendant observed,71
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,54,Orbicella annularis,Living descendant observed,45
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,56,Orbicella annularis,Living descendant observed,48
 Plot D,1-0,Plot D 1-0,3,June,August,2026-06-08,2026-08-06,64,Porites porites,Living descendant observed,55
@@ -4348,6 +4353,217 @@ Plot E,1-1,Plot E 1-1,3,July,August,2025-07-11,2025-08-04,106,Orbicella franksi,
 Plot E,1-1,Plot E 1-1,3,July,August,2025-07-11,2025-08-04,111,Orbicella franksi,Living descendant observed,120
 Plot E,1-1,Plot E 1-1,3,July,August,2025-07-11,2025-08-04,115,Orbicella franksi,Living descendant observed,123
 Plot E,1-1,Plot E 1-1,3,July,August,2025-07-11,2025-08-04,125,Orbicella annularis,Living descendant observed,133
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,0,Orbicella annularis,Living descendant observed,30
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,5,Orbicella annularis,Living descendant observed,35
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,6,Orbicella annularis,Living descendant observed,36
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,7,Orbicella annularis,Living descendant observed,37
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,8,Porites porites,Living descendant observed,41
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,10,Porites porites,Living descendant observed,43
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,12,Orbicella annularis,Living descendant observed,15
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,13,Orbicella annularis,Living descendant observed,46
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,14,Orbicella annularis,Living descendant observed,47
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,18,Orbicella annularis,Living descendant observed,50
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,19,Porites porites,Living descendant observed,51
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,20,Porites porites,Living descendant observed,52
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,2,Porites porites,Living descendant observed,32
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,3,Orbicella annularis,Living descendant observed,33
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,4,Orbicella annularis,Living descendant observed,34
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,15,Orbicella annularis,Living descendant observed,48
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,21,Porites porites,Living descendant observed,55
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,22,Porites porites,Living descendant observed,56
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,23,Orbicella annularis,Living descendant observed,58
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,1,Porites porites,Living descendant observed,31
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,9,Porites porites,Living descendant observed,42
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,11,Porites porites,Living descendant observed,44
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,16,Porites porites,Living descendant observed,53
+Plot A,0-0,Plot A 0-0,4,August,November,2026-08-12,2026-11-02,17,Porites porites,Living descendant observed,54
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,65,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,67,Montastraea cavernosa,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,68,Montastraea cavernosa,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,70,Montastraea cavernosa,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,75,Montastraea cavernosa,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,101,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,145,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,152,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,153,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,154,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,157,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,158,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,160,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,161,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,162,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,163,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,164,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,165,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,166,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,169,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,170,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,171,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,172,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,173,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,174,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,175,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,176,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,177,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,178,Porites porites,All tracked descendants recorded dead,
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,1,Montastraea cavernosa,Living descendant observed,2
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,2,Montastraea cavernosa,Living descendant observed,3
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,3,Montastraea cavernosa,Living descendant observed,4
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,4,Montastraea cavernosa,Living descendant observed,5
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,6,Montastraea cavernosa,Living descendant observed,7
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,7,Montastraea cavernosa,Living descendant observed,8
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,9,Montastraea cavernosa,Living descendant observed,10
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,10,Montastraea cavernosa,Living descendant observed,11
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,12,Montastraea cavernosa,Living descendant observed,13
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,13,Montastraea cavernosa,Living descendant observed,14
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,14,Montastraea cavernosa,Living descendant observed,15
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,16,Porites porites,Living descendant observed,17
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,17,Montastraea cavernosa,Living descendant observed,18
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,18,Montastraea cavernosa,Living descendant observed,19
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,19,Montastraea cavernosa,Living descendant observed,20
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,20,Montastraea cavernosa,Living descendant observed,21
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,21,Montastraea cavernosa,Living descendant observed,22
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,22,Montastraea cavernosa,Living descendant observed,23
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,23,Montastraea cavernosa,Living descendant observed,24
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,24,Montastraea cavernosa,Living descendant observed,25
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,25,Montastraea cavernosa,Living descendant observed,28
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,26,Montastraea cavernosa,Living descendant observed,26
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,27,Montastraea cavernosa,Living descendant observed,27
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,28,Montastraea cavernosa,Living descendant observed,29
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,29,Montastraea cavernosa,Living descendant observed,30
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,30,Montastraea cavernosa,Living descendant observed,31
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,31,Montastraea cavernosa,Living descendant observed,32
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,32,Orbicella annularis,Living descendant observed,33
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,33,Orbicella annularis,Living descendant observed,34
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,34,Orbicella annularis,Living descendant observed,35
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,35,Porites porites,Living descendant observed,36
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,36,Porites porites,Living descendant observed,37
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,37,Porites porites,Living descendant observed,38
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,40,Porites porites,Living descendant observed,41
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,46,Porites porites,Living descendant observed,46
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,56,Orbicella annularis,Living descendant observed,51
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,57,Porites porites,Living descendant observed,52
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,58,Porites porites,Living descendant observed,53
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,61,Porites porites,Living descendant observed,56
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,73,Montastraea cavernosa,Living descendant observed,64
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,77,Porites porites,Living descendant observed,70
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,80,Montastraea cavernosa,Living descendant observed,74
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,82,Porites porites,Living descendant observed,75
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,84,Porites porites,Living descendant observed,80
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,85,Porites porites,Living descendant observed,79
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,89,Porites porites,Living descendant observed,83
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,90,Montastraea cavernosa,Living descendant observed,82
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,91,Porites porites,Living descendant observed,86
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,92,Porites porites,Living descendant observed,87
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,93,Porites porites,Living descendant observed,89
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,95,Montastraea cavernosa,Living descendant observed,88
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,96,Porites porites,Living descendant observed,91
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,99,Porites porites,Living descendant observed,93
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,102,Montastraea cavernosa,Living descendant observed,97
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,103,Montastraea cavernosa,Living descendant observed,99
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,105,Porites porites,Living descendant observed,101
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,109,Porites porites,Living descendant observed,104
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,110,Porites porites,Living descendant observed,106
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,111,Porites porites,Living descendant observed,105
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,114,Porites porites,Living descendant observed,108
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,115,Porites porites,Living descendant observed,110
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,117,Porites porites,Living descendant observed,111
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,118,Porites porites,Living descendant observed,112
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,119,Orbicella annularis,Living descendant observed,114
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,120,Porites porites,Living descendant observed,115
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,121,Porites porites,Living descendant observed,118
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,122,Porites porites,Living descendant observed,116
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,123,Porites porites,Living descendant observed,117
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,124,Porites porites,Living descendant observed,120
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,125,Porites porites,Living descendant observed,119
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,126,Porites porites,Living descendant observed,122
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,128,Porites porites,Living descendant observed,121
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,129,Porites porites,Living descendant observed,124
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,130,Porites porites,Living descendant observed,125
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,131,Porites porites,Living descendant observed,127
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,132,Porites porites,Living descendant observed,126
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,134,Porites porites,Living descendant observed,129
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,135,Porites porites,Living descendant observed,130
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,136,Porites porites,Living descendant observed,131
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,137,Porites porites,Living descendant observed,132
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,138,Porites porites,Living descendant observed,133
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,139,Porites porites,Living descendant observed,134
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,140,Porites porites,Living descendant observed,135
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,141,Porites porites,Living descendant observed,136
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,142,Porites porites,Living descendant observed,137
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,143,Porites porites,Living descendant observed,138
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,151,Orbicella annularis,Living descendant observed,148
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,180,Orbicella annularis,Living descendant observed,156
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,181,Orbicella annularis,Living descendant observed,157
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,183,Porites porites,Living descendant observed,67
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,186,Porites porites,Living descendant observed,154
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,39,Porites porites,Living descendant observed,40
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,42,Porites porites,Living descendant observed,43
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,44,Porites porites,Living descendant observed,43
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,45,Porites porites,Living descendant observed,45
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,47,Porites porites,Living descendant observed,43
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,48,Porites porites,Living descendant observed,43
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,50,Porites porites,Living descendant observed,43
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,53,Porites porites,Living descendant observed,43
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,60,Porites porites,Living descendant observed,55
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,63,Porites porites,Living descendant observed,57
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,64,Porites porites,Living descendant observed,59;60;63
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,76,Montastraea cavernosa,Living descendant observed,69
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,86,Montastraea cavernosa,Living descendant observed,85
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,94,Montastraea cavernosa,Living descendant observed,85
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,107,Porites porites,Living descendant observed,94
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,144,Porites porites,Living descendant observed,139;140
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,146,Porites porites,Living descendant observed,143
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,147,Porites porites,Living descendant observed,141;142;144
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,148,Porites porites,Living descendant observed,143
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,149,Porites porites,Living descendant observed,145;146
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,5,Montastraea cavernosa,Living descendant observed,6
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,8,Montastraea cavernosa,Living descendant observed,9
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,11,Montastraea cavernosa,Living descendant observed,12
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,15,Porites porites,Living descendant observed,16
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,51,Porites porites,Living descendant observed,47
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,52,Porites porites,Living descendant observed,48
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,59,Orbicella annularis,Living descendant observed,54
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,79,Montastraea cavernosa,Living descendant observed,73
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,106,Porites porites,Living descendant observed,102
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,108,Porites porites,Living descendant observed,103
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,155,Porites porites,Living descendant observed,149
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,159,Porites porites,Living descendant observed,151
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,184,Porites porites,Living descendant observed,71
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,0,Orbicella annularis,Living descendant observed,0
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,38,Porites porites,Living descendant observed,39
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,41,Porites porites,Living descendant observed,42
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,43,Porites porites,Living descendant observed,44
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,49,Porites porites,Living descendant observed,160
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,54,Porites porites,Living descendant observed,49
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,55,Porites porites,Living descendant observed,50
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,62,Porites porites,Living descendant observed,58
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,66,Porites porites,Living descendant observed,62
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,69,Porites porites,Living descendant observed,61
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,71,Porites porites,Living descendant observed,65
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,72,Porites porites,Living descendant observed,68
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,74,Montastraea cavernosa,Living descendant observed,66
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,78,Porites porites,Living descendant observed,72
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,81,Montastraea cavernosa,Living descendant observed,77
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,83,Montastraea cavernosa,Living descendant observed,78
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,87,Porites porites,Living descendant observed,81
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,88,Montastraea cavernosa,Living descendant observed,84
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,97,Porites porites,Living descendant observed,92
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,98,Porites porites,Living descendant observed,95
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,100,Porites porites,Living descendant observed,96
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,104,Porites porites,Living descendant observed,100
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,112,Porites porites,Living descendant observed,107
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,113,Porites porites,Living descendant observed,109
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,116,Porites porites,Living descendant observed,113
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,127,Porites porites,Living descendant observed,123
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,133,Porites porites,Living descendant observed,128
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,150,Porites porites,Living descendant observed,147
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,156,Porites porites,Living descendant observed,150
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,167,Porites porites,Living descendant observed,152
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,168,Porites porites,Living descendant observed,153
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,179,Porites porites,Living descendant observed,155
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,182,Porites porites,Living descendant observed,1
+Plot D,0-0,Plot D 0-0,4,August,November,2026-08-06,2026-11-03,185,Porites porites,Living descendant observed,98
 Plot E,0-0,Plot E 0-0,4,August,September,2025-08-04,2025-09-08,1,Orbicella annularis,All tracked descendants recorded dead,
 Plot E,0-0,Plot E 0-0,4,August,September,2025-08-04,2025-09-08,116,Orbicella faveolata,All tracked descendants recorded dead,
 Plot E,0-0,Plot E 0-0,4,August,September,2025-08-04,2025-09-08,633,Orbicella annularis,All tracked descendants recorded dead,
@@ -4705,6 +4921,97 @@ Plot E,0-1,Plot E 0-1,4,August,September,2025-08-04,2025-09-08,420,Acropora palm
 Plot E,0-1,Plot E 0-1,4,August,September,2025-08-04,2025-09-08,422,Acropora palmata,Living descendant observed,434
 Plot E,0-1,Plot E 0-1,4,August,September,2025-08-04,2025-09-08,529,Orbicella annularis,Living descendant observed,544
 Plot E,0-1,Plot E 0-1,4,August,September,2025-08-04,2025-09-08,533,Orbicella annularis,Living descendant observed,547
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,0,Porites porites,Living descendant observed,1
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,2,Orbicella annularis,Living descendant observed,2
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,3,Orbicella annularis,Living descendant observed,3
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,4,Porites porites,Living descendant observed,5
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,5,Orbicella annularis,Living descendant observed,7
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,6,Orbicella annularis,Living descendant observed,6
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,7,Porites porites,Living descendant observed,14
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,9,Porites porites,Living descendant observed,4
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,12,Orbicella annularis,Living descendant observed,10
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,18,Porites porites,Living descendant observed,16
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,19,Porites porites,Living descendant observed,17
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,20,Orbicella annularis,Living descendant observed,13
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,21,Porites porites,Living descendant observed,9
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,8,Porites porites,Living descendant observed,15
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,17,Orbicella annularis,Living descendant observed,18
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,1,Porites porites,Living descendant observed,0
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,13,Porites porites,Living descendant observed,11
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,14,Porites porites,Living descendant observed,12
+Plot A,1-0,Plot A 1-0,4,August,November,2026-08-12,2026-11-02,22,Porites porites,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,47,Orbicella annularis,All tracked descendants recorded dead,
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,63,Porites porites,All tracked descendants recorded dead,
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,64,Porites porites,All tracked descendants recorded dead,
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,69,Porites porites,All tracked descendants recorded dead,
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,70,Porites porites,All tracked descendants recorded dead,
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,0,Orbicella annularis,Living descendant observed,0
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,1,Orbicella annularis,Living descendant observed,0
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,2,Orbicella annularis,Living descendant observed,0
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,3,Orbicella annularis,Living descendant observed,0
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,4,Orbicella annularis,Living descendant observed,0
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,5,Orbicella annularis,Living descendant observed,0
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,6,Orbicella annularis,Living descendant observed,1
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,7,Orbicella annularis,Living descendant observed,2
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,8,Orbicella franksi,Living descendant observed,3
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,9,Orbicella franksi,Living descendant observed,4
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,32,Porites porites,Living descendant observed,14
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,33,Porites porites,Living descendant observed,15
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,34,Orbicella annularis,Living descendant observed,16
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,35,Orbicella annularis,Living descendant observed,17
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,36,Orbicella franksi,Living descendant observed,18
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,37,Orbicella franksi,Living descendant observed,19
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,38,Porites porites,Living descendant observed,20
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,41,Orbicella annularis,Living descendant observed,23
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,44,Orbicella annularis,Living descendant observed,26
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,46,Orbicella annularis,Living descendant observed,28
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,49,Orbicella annularis,Living descendant observed,29
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,51,Orbicella annularis,Living descendant observed,31
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,52,Orbicella annularis,Living descendant observed,32
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,55,Porites porites,Living descendant observed,34
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,59,Orbicella annularis,Living descendant observed,38
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,62,Porites porites,Living descendant observed,41
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,71,Orbicella annularis,Living descendant observed,25
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,13,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,14,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,15,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,16,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,17,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,18,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,19,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,20,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,21,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,22,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,23,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,24,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,25,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,26,Orbicella annularis,Living descendant observed,8
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,42,Orbicella annularis,Living descendant observed,24
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,43,Orbicella annularis,Living descendant observed,24
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,45,Orbicella annularis,Living descendant observed,27
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,48,Orbicella annularis,Living descendant observed,27
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,50,Orbicella annularis,Living descendant observed,30
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,53,Orbicella annularis,Living descendant observed,30
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,10,Orbicella franksi,Living descendant observed,5
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,12,Orbicella franksi,Living descendant observed,7
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,28,Porites porites,Living descendant observed,9
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,29,Porites porites,Living descendant observed,11
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,30,Porites porites,Living descendant observed,12
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,40,Orbicella franksi,Living descendant observed,22
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,56,Porites porites,Living descendant observed,35
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,57,Orbicella annularis,Living descendant observed,36
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,58,Orbicella annularis,Living descendant observed,37
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,61,Porites porites,Living descendant observed,40
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,66,Orbicella annularis,Living descendant observed,43
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,11,Porites porites,Living descendant observed,6
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,27,Porites porites,Living descendant observed,10
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,31,Orbicella annularis,Living descendant observed,13
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,39,Porites porites,Living descendant observed,21
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,54,Orbicella franksi,Living descendant observed,33
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,60,Orbicella franksi,Living descendant observed,39
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,65,Orbicella franksi,Living descendant observed,42
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,67,Orbicella franksi,Living descendant observed,44
+Plot D,1-0,Plot D 1-0,4,August,November,2026-08-06,2026-11-03,68,Orbicella annularis,Living descendant observed,45
 Plot E,1-0,Plot E 1-0,4,August,September,2025-08-04,2025-09-08,4,Orbicella annularis,All tracked descendants recorded dead,
 Plot E,1-0,Plot E 1-0,4,August,September,2025-08-04,2025-09-08,5,Orbicella annularis,All tracked descendants recorded dead,
 Plot E,1-0,Plot E 1-0,4,August,September,2025-08-04,2025-09-08,7,Orbicella annularis,All tracked descendants recorded dead,

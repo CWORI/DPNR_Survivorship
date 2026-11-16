@@ -21,8 +21,14 @@ home_sites <- coki_map_summary |>
   dplyr::select(plot, display_name) |>
   dplyr::left_join(home_latest, by = "plot") |>
   dplyr::arrange(plot)
-home_latest_survey <- home_latest |>
-  dplyr::slice_max(survey_date)
+home_partial <- outplant_partial_cumulative_survival_summary |>
+  dplyr::group_by(plot) |>
+  dplyr::slice_max(survey_date, n = 1, with_ties = FALSE) |>
+  dplyr::ungroup()
+home_latest_survey <- coki_map_summary |>
+  dplyr::filter(!is.na(latest_survey_date)) |>
+  dplyr::filter(format(latest_survey_date, "%Y-%m") == format(max(latest_survey_date), "%Y-%m")) |>
+  dplyr::arrange(dplyr::desc(latest_survey_date), display_name)
 home_e_april <- outplant_object_lineage_survival |>
   dplyr::filter(plot == "Plot E", cohort == "April 2026 additions") |>
   dplyr::slice_max(survey_date, n = 1, with_ties = FALSE)
@@ -90,6 +96,15 @@ for (i in seq_len(nrow(home_sites))) {
       format(as.Date(site$survey_date), "%d %B %Y")
     )
   }
+  site_partial <- dplyr::filter(home_partial, plot == site$plot)
+  if (nrow(site_partial) > 0L &&
+      (is.na(site$survey_date) || site_partial$survey_date > site$survey_date)) {
+    survey_summary <- paste0(survey_summary, sprintf(
+      '<p class="plot-overview-date">Newer partial survey: %s (%s of %s sections).</p>',
+      format(site_partial$survey_date, "%d %B %Y"),
+      site_partial$n_observed_sections, site_partial$expected_plot_sections
+    ))
+  }
   cat(sprintf(
     '<article class="plot-overview-card"><h4>%s</h4>%s<a href="coral_survivorship_report.html#%s">View %s results</a></article>',
     site$display_name, survey_summary, site_id, site$display_name
@@ -116,7 +131,7 @@ cat('</div>')
 
 <section class="home-band home-band--news" aria-labelledby="news-heading">
 <h2 id="news-heading">What’s new</h2>
-<p>The most recent survey date with complete section coverage for outplant survivorship.</p>
+<p>Outplant surveys from the most recent monitoring month.</p>
 
 ```{r}
 #| label: homepage-latest-survey
@@ -126,12 +141,12 @@ cat('</div>')
 cat('<ul class="home-news-list">')
 for (i in seq_len(nrow(home_latest_survey))) {
   latest <- home_latest_survey[i, ]
-  site_name <- sub("^Plot ", "Coki ", latest$plot)
+  site_name <- latest$display_name
   site_id <- tolower(gsub(" ", "-", site_name, fixed = TRUE))
-  survey_date <- as.Date(latest$survey_date)
+  survey_date <- latest$latest_survey_date
   cat(sprintf(
-    '<li><time datetime="%s">%s</time><a href="coral_survivorship_report.html#%s">%s survey results</a></li>',
-    format(survey_date, "%Y-%m-%d"), format(survey_date, "%d %B %Y"), site_id, site_name
+    '<li><time datetime="%s">%s</time><a href="coral_survivorship_report.html#%s">%s survey results</a><span>%s</span></li>',
+    format(survey_date, "%Y-%m-%d"), format(survey_date, "%d %B %Y"), site_id, site_name, latest$coverage_status
   ))
 }
 cat('</ul>')

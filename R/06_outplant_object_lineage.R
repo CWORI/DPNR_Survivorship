@@ -163,7 +163,37 @@ outplant_cumulative_survival_summary <- outplant_section_cumulative_survival_sum
 stopifnot(all(with(outplant_cumulative_survival_summary,
   n_baseline == n_surviving_from_baseline + cumulative_deaths_observed + n_unresolved)))
 
-# 6. Adjacent intervals count unique source objects rather than Genet groups ----
+# 6. Report partial surveys with the full established baseline roster ----
+# Count only observed outcomes at this date. The rest of the original roster
+# belongs to sections without a survey result and is kept separate from gaps.
+lineage_section_rosters <- outplant_section_cumulative_survival_summary |>
+  distinct(plot, plot_section, baseline_date, n_baseline) |>
+  group_by(plot) |>
+  summarise(full_baseline = sum(n_baseline),
+            roster_established_date = max(baseline_date), .groups = "drop")
+outplant_partial_cumulative_survival_summary <- outplant_section_cumulative_survival_summary |>
+  group_by(plot, survey_date) |>
+  summarise(
+    observed_sections = paste(sort(unique(plot_section)), collapse = ", "),
+    n_observed_sections = n_distinct(plot_section),
+    across(c(n_baseline, n_surviving_from_baseline, cumulative_deaths_observed, n_unresolved), sum),
+    .groups = "drop"
+  ) |>
+  left_join(lineage_expected_sections, by = "plot") |>
+  left_join(lineage_section_rosters, by = "plot") |>
+  filter(n_observed_sections < expected_plot_sections, survey_date >= roster_established_date) |>
+  mutate(
+    n_baseline_without_section_result = full_baseline - n_baseline,
+    percent_confirmed_living = 100 * n_surviving_from_baseline / full_baseline
+  ) |>
+  select(-roster_established_date)
+stopifnot(all(with(outplant_partial_cumulative_survival_summary,
+  full_baseline == n_surviving_from_baseline + cumulative_deaths_observed + n_unresolved +
+    n_baseline_without_section_result)))
+stopifnot(all(vapply(split(outplant_cumulative_survival_summary$n_baseline,
+  outplant_cumulative_survival_summary$plot), function(counts) n_distinct(counts) == 1L, logical(1))))
+
+# 7. Adjacent intervals count unique source objects rather than Genet groups ----
 lineage_interval_results <- list()
 lineage_birth_results <- list()
 interval_groups <- c("plot", "plot_section", "plot_section_label", "interval_order",

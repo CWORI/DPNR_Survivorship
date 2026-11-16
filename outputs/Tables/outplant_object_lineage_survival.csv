@@ -2,6 +2,7 @@ plot,cohort,first_present,survey_date,n_baseline,n_surviving,n_recorded_dead,n_u
 Plot A,Initial observed cohort,2026-04-21,2026-04-21,43,43,0,0,100,0
 Plot A,Initial observed cohort,2026-04-21,2026-06-22,43,43,0,0,100,0
 Plot A,Initial observed cohort,2026-04-21,2026-08-12,43,43,0,0,100,0
+Plot A,Initial observed cohort,2026-04-21,2026-11-02,43,43,0,0,100,0
 Plot B,Initial observed cohort,2026-04-22,2026-04-22,43,43,0,0,100,0
 Plot B,Initial observed cohort,2026-04-22,2026-06-09,43,43,0,0,100,0
 Plot B,Initial observed cohort,2026-04-22,2026-08-07,43,43,0,0,100,0
@@ -9,8 +10,9 @@ Plot C,Initial observed cohort,2026-04-03,2026-04-03,579,579,0,0,100,0
 Plot C,Initial observed cohort,2026-04-03,2026-06-06,579,573,6,0,98.96373056994818,0
 Plot C,Initial observed cohort,2026-04-03,2026-08-05,579,537,34,8,92.74611398963731,1.381692573402418
 Plot D,Initial observed cohort,2026-04-16,2026-04-16,336,336,0,0,100,0
-Plot D,Initial observed cohort,2026-04-16,2026-06-08,336,303,33,0,90.17857142857143,0
-Plot D,Initial observed cohort,2026-04-16,2026-08-06,335,281,54,0,83.88059701492537,0
+Plot D,Initial observed cohort,2026-04-16,2026-06-08,336,306,30,0,91.07142857142857,0
+Plot D,Initial observed cohort,2026-04-16,2026-08-06,335,285,50,0,85.07462686567165,0
+Plot D,Initial observed cohort,2026-04-16,2026-11-03,335,251,84,0,74.92537313432835,0
 Plot E,2025 original outplants,2025-05-07,2025-05-07,796,796,0,0,100,0
 Plot E,2025 original outplants,2025-05-07,2025-06-09,796,757,39,0,95.10050251256281,0
 Plot E,2025 original outplants,2025-05-07,2025-07-11,796,726,70,0,91.20603015075378,0

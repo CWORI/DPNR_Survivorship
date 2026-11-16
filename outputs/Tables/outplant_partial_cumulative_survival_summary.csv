@@ -1,0 +1,3 @@
+plot,survey_date,observed_sections,n_observed_sections,n_baseline,n_surviving_from_baseline,cumulative_deaths_observed,n_unresolved,expected_plot_sections,full_baseline,n_baseline_without_section_result,percent_confirmed_living
+Plot D,2026-08-06,"0-0, 1-0",2,335,285,50,0,3,336,1,84.82142857142857
+Plot D,2026-11-03,"0-0, 1-0",2,335,251,84,0,3,336,1,74.70238095238095

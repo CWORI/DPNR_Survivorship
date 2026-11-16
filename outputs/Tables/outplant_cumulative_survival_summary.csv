@@ -2,6 +2,7 @@ plot,survey_date,n_plot_sections,plot_section_labels,baseline_date,n_baseline,n_
 Plot A,2026-04-21,2,Plot A 0-0; Plot A 1-0,2026-04-21,43,0,0,43,0,2,all,Plot A,1,April,April,100,NA,NA,NA,Original-object lineage persistence
 Plot A,2026-06-22,2,Plot A 0-0; Plot A 1-0,2026-04-21,43,0,0,43,0,2,all,Plot A,2,June,April,100,NA,NA,NA,Original-object lineage persistence
 Plot A,2026-08-12,2,Plot A 0-0; Plot A 1-0,2026-04-21,43,0,0,43,0,2,all,Plot A,3,August,April,100,NA,NA,NA,Original-object lineage persistence
+Plot A,2026-11-02,2,Plot A 0-0; Plot A 1-0,2026-04-21,43,0,0,43,0,2,all,Plot A,4,November,April,100,NA,NA,NA,Original-object lineage persistence
 Plot B,2026-04-22,2,Plot B 0-0; Plot B 1-0,2026-04-22,43,0,0,43,0,2,all,Plot B,1,April,April,100,NA,NA,NA,Original-object lineage persistence
 Plot B,2026-06-09,2,Plot B 0-0; Plot B 1-0,2026-04-22,43,0,0,43,0,2,all,Plot B,2,June,April,100,NA,NA,NA,Original-object lineage persistence
 Plot B,2026-08-07,2,Plot B 0-0; Plot B 1-0,2026-04-22,43,0,0,43,0,2,all,Plot B,3,August,April,100,NA,NA,NA,Original-object lineage persistence
@@ -9,7 +10,7 @@ Plot C,2026-04-03,2,Plot C 0-0; Plot C 1-0,2026-04-03,579,0,0,579,0,2,all,Plot C
 Plot C,2026-06-06,2,Plot C 0-0; Plot C 1-0,2026-04-03,579,6,6,573,0,2,all,Plot C,2,June,April,98.96373056994818,NA,NA,NA,Original-object lineage persistence
 Plot C,2026-08-05,2,Plot C 0-0; Plot C 1-0,2026-04-03,579,28,34,537,8,2,all,Plot C,3,August,April,92.74611398963731,NA,NA,NA,Original-object lineage persistence
 Plot D,2026-04-16,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,2026-04-16,336,0,0,336,0,3,all,Plot D,1,April,April,100,NA,NA,NA,Original-object lineage persistence
-Plot D,2026-06-08,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,2026-04-16,336,33,33,303,0,3,all,Plot D,2,June,April,90.17857142857143,NA,NA,NA,Original-object lineage persistence
+Plot D,2026-06-08,3,Plot D 0-0; Plot D 0-1; Plot D 1-0,2026-04-16,336,30,30,306,0,3,all,Plot D,2,June,April,91.07142857142857,NA,NA,NA,Original-object lineage persistence
 Plot E,2025-05-07,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,0,0,796,0,4,all,Plot E,1,May,May,100,NA,NA,NA,Original-object lineage persistence
 Plot E,2025-06-09,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,39,39,757,0,4,all,Plot E,2,June,May,95.10050251256281,NA,NA,NA,Original-object lineage persistence
 Plot E,2025-07-11,4,Plot E 0-0; Plot E 0-1; Plot E 1-0; Plot E 1-1,2025-05-07,796,31,70,726,0,4,all,Plot E,3,July,May,91.20603015075378,NA,NA,NA,Original-object lineage persistence

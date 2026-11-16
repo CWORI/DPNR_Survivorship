@@ -259,3 +259,15 @@ independent validation of every annotation. Repeat them using
 
 The separate standalone plain-R script was not changed by this website update.
 Its earlier E-only description does not describe the website's universal method.
+
+## November 16, 2026: Coki A and D refresh
+
+Imported four November interval exports and eight historical revisions from
+the supplied `OneDrive_1_11-16-2026` folder. Six other supplied files match
+the active bytes. The source-to-active mapping, row counts, and SHA-256
+hashes are in [the intake manifest](../../logs/2026-11-16_a_d_matches_intake.csv).
+Earlier versions and configs are preserved in
+`archive/2026-11-16_before_a_d_matches_update/`. Coki A has both configured
+sections through November 2. Coki D has sections 0-0 and 1-0 through
+November 3. D section 0-1 ends June 8, and no exports were supplied for D
+section 1-1.

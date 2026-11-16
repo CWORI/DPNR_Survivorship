@@ -19,6 +19,7 @@ map_coordinate_path <- file.path("data_raw", "metadata", "Plot_Map_GPS_Points.cs
 map_monthly_path <- file.path("data_processed", "outplant_monthly_observations.csv")
 map_section_monthly_path <- file.path("data_processed", "outplant_section_monthly_observations.csv")
 map_survival_path <- file.path("outputs", "Tables", "outplant_cumulative_survival_summary.csv")
+map_partial_survival_path <- file.path("outputs", "Tables", "outplant_partial_cumulative_survival_summary.csv")
 map_config_dir <- file.path("config", "outplant_interval_files")
 map_polygon_output_path <- file.path("data_processed", "coki_plot_polygons.geojson")
 map_summary_output_path <- file.path("outputs", "Tables", "coki_interactive_map_summary.csv")
@@ -129,12 +130,22 @@ latest_survival <- read_csv(map_survival_path, show_col_types = FALSE) |>
     cumulative_survivorship_percent = percent_cumulative_survival
   )
 
+# Only show a partial minimum on a popup if it matches the displayed snapshot.
+partial_survival <- read_csv(map_partial_survival_path, show_col_types = FALSE) |>
+  transmute(plot, latest_survey_date = as.Date(survey_date),
+            partial_lineage_html = sprintf(
+              "<p><strong>Confirmed minimum at this survey:</strong> %s of %s original objects (%.1f%%). %s had no section result.</p>",
+              n_surviving_from_baseline, full_baseline, percent_confirmed_living,
+              n_baseline_without_section_result
+            ))
+
 coki_map_summary <- coki_polygons |>
   st_drop_geometry() |>
   left_join(latest_totals, by = "plot") |>
   left_join(latest_species, by = "plot") |>
   left_join(latest_section_coverage, by = "plot") |>
   left_join(latest_survival, by = "plot") |>
+  left_join(partial_survival, by = c("plot", "latest_survey_date")) |>
   arrange(plot)
 
 april_latest <- read_csv("outputs/Tables/outplant_object_lineage_survival.csv", show_col_types = FALSE) |>
@@ -170,7 +181,7 @@ coki_map_summary <- coki_map_summary |>
         "<p><strong>Initial-cohort lineage persistence:</strong> ", sprintf("%.1f%%", cumulative_survivorship_percent),
         " (", surviving_outplants, " of ", baseline_outplants, "; ", unresolved_outplants, " unresolved)<br>",
         "<small>Latest complete-section survivorship survey: ", format(survival_survey_date, "%d %b %Y"), "</small></p>",
-        april_cohort_html, report_link,
+        coalesce(partial_lineage_html, ""), april_cohort_html, report_link,
         "</div>"
       )
     )
@@ -249,5 +260,5 @@ if (file.exists(map_polygon_output_path)) {
 st_write(coki_polygons |> select(plot, display_name), map_polygon_output_path, quiet = TRUE)
 
 coki_map_summary |>
-  select(-species_breakdown_html, -popup_html, -april_cohort_html, -report_link) |>
+  select(-species_breakdown_html, -popup_html, -april_cohort_html, -partial_lineage_html, -report_link) |>
   write_csv(map_summary_output_path)
